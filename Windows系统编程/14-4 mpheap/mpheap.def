@@ -1,0 +1,13 @@
+LIBRARY MPHEAP
+
+DESCRIPTION 'Windows NT MP Heap Package DLL'
+
+EXPORTS
+    MpHeapAlloc
+    MpHeapCompact
+    MpHeapCreate
+    MpHeapDestroy
+    MpHeapFree
+    MpHeapGetStatistics
+    MpHeapReAlloc
+    MpHeapValidate

@@ -1,0 +1,144 @@
+#include "pwalk.h"
+
+IDR_MAINICON	ICON LOADONCALL DISCARDABLE    "pwalk.ico"
+IDR_PROSTATICON ICON LOADONCALL DISCARDABLE    "procstat.ico"
+IDR_SYSSTATICON ICON LOADONCALL DISCARDABLE    "sysstat.ico"
+
+IDR_WALKERMENU MENU LOADONCALL DISCARDABLE
+{
+    POPUP    "&Process"
+	{
+	MENUITEM    "Re&walk process",		 IDM_PROCESSREWALK
+	MENUITEM    "&Load process",		 IDM_PROCESSLOAD
+	MENUITEM    "&Unload process",		 IDM_PROCESSUNLOAD
+	MENUITEM    SEPARATOR
+	MENUITEM    "&Suspend process", 	 IDM_PROCESSSUSPEND
+	MENUITEM    "&Resume process",		 IDM_PROCESSRESUME
+	MENUITEM    SEPARATOR
+	MENUITEM    "E&xit",			 IDM_EXIT
+	}
+    POPUP    "&Sort"
+	{
+	MENUITEM    "by &Address",		 IDM_SORTADDRESS
+	MENUITEM    "by &State",		 IDM_SORTSTATE
+	MENUITEM    "by &Protection",		 IDM_SORTPROTECTION
+	MENUITEM    "by &Size", 		 IDM_SORTSIZE
+	MENUITEM    "by &BaseAddress",		 IDM_SORTBASEADDRESS
+	}
+    POPUP    "&View"
+	{
+	MENUITEM    "&System statistics",	 IDM_VIEWSYSSTAT
+	MENUITEM    "&Process statistics",	 IDM_VIEWPROSTAT
+	MENUITEM    SEPARATOR
+	MENUITEM    "View selected &memory",	 IDM_VIEWMEMORY
+	MENUITEM    "View memory at &address...", IDM_VIEWADDRESS
+	}
+    POPUP    "&Options"
+        {
+        MENUITEM    "Numbers in &Bytes",         IDM_OPTBYTES CHECKED
+        MENUITEM    "Numbers in &Pages",         IDM_OPTPAGES
+        }
+}
+
+
+STRINGTABLE
+    {
+    IDS_WALKERCLASS			 "ProcessWalker"
+    IDS_SYSSTATCLASS			 "SysStatClass"
+    IDS_PROSTATCLASS			 "ProStatClass"
+    IDS_STATUSCLASS			 "ProcessWalkerStatusWnd"
+    IDS_MEMVIEWCLASS			 "MemoryViewClass"
+    IDS_SYSSTATTITLE			 "System statistics"
+    IDS_PROSTATTITLE			 "Process statistics"
+    IDS_MEMVIEWTITLE			 "View Memory -"
+    IDS_CAPTION 			 "Process Walker - "
+    IDS_UNAVAILABLE			 "Command is not available."
+    IDS_LISTBOX 			 "listbox"
+    IDS_EXEFILEEXT			 "EXE"
+    IDS_FILEOPENTITLE			 "Open executable image"
+    IDS_SELF				 "<No Process>"
+    IDS_ERROR				 "Error"
+    IDS_NOTENOUGHMEM			 "Not enough memory available"
+    IDS_HEAPCREATEFAILED		 "Can't create debug heap, aborting command."
+    IDS_DBGEVNTACTIVE			 "DBGEVNTACTIVE"
+    IDS_DBGEVNTCLOSE			 "DBGEVNTCLOSE"
+    IDS_DBGEVNTSTOP			 "DBGEVNTSTOP"
+    IDS_DBGEVNTSTART			 "DBGEVNTSTART"
+    IDS_DBGEVNTREAD			 "DBGEVNTREAD"
+    IDS_DBGEVNTWRITE			 "DBGEVNTWRITE"
+    IDS_DBGEVNTACK			 "DBGEVNTACK"
+    IDS_EXCEPTION			 "Unhandled Exception"
+    IDS_APPEXCEPTION			 "Exception occurred in dependent process."
+    IDS_CHILDAPPEXCEPTION		 "Exception occurred in sibling of dependent process."
+    IDS_ERRDUPLICATEHANDLE		 "Error - DuplicateHandle"
+    IDS_ERRGETTHREADCONTEXT		 "Error - GetThreadContext"
+    IDS_ERRSETTHREADCONTEXT		 "Error - SetThreadContext"
+    IDS_ERRCREATEPROCESS		 "Error - CreateProcess"
+    IDS_ERROPENPROCESS			 "Error - OpenProcess"
+    IDS_ERRCREATEFILEMAPPING		 "Error - CreateFileMapping"
+    IDS_ERRHEAPALLOC			 "Error - HeapAlloc"
+    IDS_ERRREADPROCESSMEMORY		 "Error - ReadProcessMemory"
+    IDS_ERRWRITEPROCESSMEMORY		 "Error - WriteProcessMemory"
+    IDS_ERRCREATEWINDOW 		 "Error - CreateWindow"
+    IDS_ERRVIRTUALFREE			 "Error - VirtualFree"
+    IDS_ERRVIRTUALALLOC 		 "Error - VirtualAlloc"
+    IDS_STATUSREADY			 "Ready"
+    IDS_NOTCOMMITTEDMEMORY		 "Can only view committed memory"
+    IDS_COULDNOTREADPROCESS		 "Unable to read debuggee process memory"
+    IDS_EXITPROCESS			 "Child process terminated"
+    IDS_EXITTHREAD			 "Thread terminated"
+    IDS_CREATEPROCESS			 "Child process created"
+    IDS_CREATETHREAD			 "Thread created"
+    IDS_LOADDLL 			 "DLL Loaded"
+    IDS_UNLOADDLL			 "DLL unloaded"
+    IDS_OUTPUTDEBUGSTRING		 "Output debug event occurred"
+    IDS_RIPEVENT			 "RIP event occurred"
+    IDS_UNHANDLEDEXCEPTION		 "Unhandled Exception occurred"
+    IDS_BREAKPOINTEXCEPTION		 "Breakpoint Exception occurred"
+    IDS_ACCESSVIOLATIONEXCEPTION	 "Access Violation Exception occurred"
+
+    IDS_PROCESSSUSPENDED		 "Child process suspended"
+    IDS_PROCESSRESUMED			 "Child process resumed"
+    IDS_PROCESSINIT			 "Initializing child process"
+    IDS_INITPROBE			 "Could not initialize probe DLL"
+    IDM_PROCESSREWALK			 "Rewalk process address space"
+    IDM_PROCESSLOAD			 "Load new child process"
+    IDM_PROCESSUNLOAD			 "Unload current child process"
+    IDM_PROCESSSUSPEND			 "Suspend child process"
+    IDM_PROCESSRESUME			 "Resume child process"
+    IDM_EXIT				 "Exit ProcessWalker"
+    IDM_SORTADDRESS			 "Sort process objects by address"
+    IDM_SORTSTATE			 "Sort process objects by state"
+    IDM_SORTPROTECTION			 "Sort process objects by protection"
+    IDM_SORTSIZE			 "Sort process objects by size"
+    IDM_SORTBASEADDRESS 		 "Sort process objects by base address"
+    IDM_VIEWSYSSTAT			 "View system statistics window"
+    IDM_VIEWPROSTAT			 "View process statistics window"
+    IDM_POPUPPROCESS			 "Child process commands"
+    IDM_POPUPSORT			 "Sort process objects"
+    IDM_POPUPVIEW			 "View process statistics"
+    IDM_POPUPOPTIONS                     "Output Formatting Options"
+    IDM_OPTBYTES                         "Display numbers in main list as bytes"
+    IDM_OPTPAGES                         "Display numbers in main list as pages"
+    }
+
+
+IDD_ADDR DIALOG 25, 25, 100, 45
+CAPTION "View Memory"
+STYLE WS_BORDER | DS_MODALFRAME | WS_CAPTION | WS_DLGFRAME | WS_POPUP | WS_SYSMENU
+BEGIN
+    CONTROL "Address:", -1,	  "static", SS_RIGHT | WS_CHILD, 5, 5, 35, 8
+    CONTROL "", 	IDC_ADDR, "edit",   ES_RIGHT | WS_BORDER | WS_TABSTOP | WS_CHILD, 41, 3, 50, 12
+    CONTROL "Hexidecimal", IDC_HEX,  "button"  BS_AUTOCHECKBOX | WS_CHILD, 12, 18, 50, 8
+    CONTROL "OK",	IDOK,	  "button", BS_DEFPUSHBUTTON | WS_TABSTOP | WS_CHILD, 15, 30, 30, 12
+    CONTROL "Cancel",	IDCANCEL, "button", BS_PUSHBUTTON | WS_TABSTOP | WS_CHILD, 55, 30, 30, 12
+END
+
+
+IDD_INITIALIZING DIALOG 65, 42, 142, 38
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "ProcessWalker"
+BEGIN
+    LTEXT           "Initializing child process...", 101, 26, 15, 92, 8
+END

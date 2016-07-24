@@ -1,0 +1,74 @@
+
+//-----------------------------------------------------------------------------
+// This is a part of the Microsoft Source Code Samples. 
+// Copyright 1993 - 1997 Microsoft Corporation.
+// All rights reserved. 
+//  
+// This source code is only intended as a supplement to 
+// Microsoft Development Tools and/or WinHelp documentation.
+// See these sources for detailed information regarding the 
+// Microsoft samples programs.
+//-----------------------------------------------------------------------------
+
+1 DLGINCLUDE "deb.h"
+
+ABOUTDLGBOX DIALOG 16, 16, 172, 65
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "About Debug Event Browser"
+FONT 10, "System"
+BEGIN
+    LTEXT           "Microsoft Win32 SDK Sample", -1, 24, 1, 100, 8, NOT 
+                    WS_GROUP
+    LTEXT           "Debug Event Browser", -1, 24, 9, 100, 8, NOT WS_GROUP
+    LTEXT           "Version 1.1", -1, 24, 17, 100, 8
+    DEFPUSHBUTTON   "&OK", IDOK, 136, 3, 32, 12, WS_GROUP
+    LTEXT           "Microsoft Developer Support", -1, 24, 31, 133, 8
+    LTEXT           "Copyright 1992 - 1997 Microsoft Corp.", -1, 24, 39,
+                    141, 8
+    CONTROL         "", -1, "Static", SS_BLACKFRAME, 24, 50, 142, 1
+    LTEXT           "Developed by Paul Tissue", -1, 24, 54, 133, 8
+END
+
+ATTACHDLGBOX DIALOG 16, 16, 216, 111
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Attach to a Process"
+FONT 10, "System"
+BEGIN
+    LTEXT           "&Process List:", 101, 5, 1, 45, 8, NOT WS_GROUP
+    LISTBOX         9002, 5, 10, 168, 97, LBS_SORT | LBS_USETABSTOPS | 
+                    LBS_DISABLENOSCROLL | WS_VSCROLL | WS_HSCROLL | 
+                    WS_TABSTOP
+    DEFPUSHBUTTON   "&OK", IDOK, 179, 5, 32, 12, WS_GROUP
+    PUSHBUTTON      "&Cancel", IDCANCEL, 179, 20, 32, 12
+    PUSHBUTTON      "&Help", 3, 179, 39, 32, 12, WS_DISABLED
+END
+
+PREFERENCESDLGBOX DIALOG 16, 16, 234, 102
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Debug Event Browser Preferences"
+FONT 10, "System"
+BEGIN
+    GROUPBOX        "Debugger Setting", -1, 4, 2, 82, 32, WS_GROUP
+    AUTORADIOBUTTON "All Processes", 9004, 8, 12, 75, 9
+    AUTORADIOBUTTON "Only This Process", 9003, 8, 22, 75, 9
+    GROUPBOX        "Debuggee Priority", -1, 4, 36, 82, 52, WS_GROUP
+    AUTORADIOBUTTON "Idle", 9005, 8, 47, 75, 9
+    AUTORADIOBUTTON "Normal", 9006, 8, 57, 75, 9
+    AUTORADIOBUTTON "High", 9007, 8, 67, 75, 9
+    AUTORADIOBUTTON "Realtime", 9008, 8, 77, 75, 9
+    GROUPBOX        "Miscellaneous Options", -1, 90, 2, 104, 32, WS_GROUP
+    AUTOCHECKBOX    "Clear on New Debuggee", 9009, 96, 12, 95, 9
+    AUTOCHECKBOX    "Verbose Information", 9010, 96, 22, 87, 9
+    GROUPBOX        "Debug Error Level", -1, 90, 36, 104, 52, WS_GROUP
+    AUTORADIOBUTTON "None (Default)", 9020, 96, 47, 87, 9
+    AUTORADIOBUTTON "Error-Level", 9021, 96, 57, 87, 9
+    AUTORADIOBUTTON "Minor Error", 9022, 96, 67, 87, 9
+    AUTORADIOBUTTON "Warning", 9023, 96, 77, 87, 9
+    AUTOCHECKBOX    "Save Preferences on Exit", 9999, 4, 90, 99, 9
+    DEFPUSHBUTTON   "&OK", IDOK, 198, 6, 32, 12
+    PUSHBUTTON      "&Cancel", IDCANCEL, 198, 21, 32, 12
+    PUSHBUTTON      "&Help", 3, 198, 41, 32, 12, WS_DISABLED
+END

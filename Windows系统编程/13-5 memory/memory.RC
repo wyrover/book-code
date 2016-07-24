@@ -1,0 +1,220 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+#include "memory.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+MAINMENU MENU DISCARDABLE 
+BEGIN
+    POPUP "&Create"
+    BEGIN
+        MENUITEM "&Server",                     MM_SERVER
+        MENUITEM "&Client",                     MM_CLIENT
+        MENUITEM SEPARATOR
+        MENUITEM "&About ...",                  MM_ABOUT
+    END
+    POPUP "&Window"
+    BEGIN
+        MENUITEM "&Cascade",                    IDM_CASCADE, GRAYED
+        MENUITEM "&Tile",                       IDM_TILE, GRAYED
+        MENUITEM "Arrange &Icons",              IDM_ARRANGE, GRAYED
+    END
+END
+
+SERVERMENU MENU DISCARDABLE 
+BEGIN
+    POPUP "&Create"
+    BEGIN
+        MENUITEM "&Server",                     MM_SERVER, GRAYED
+        MENUITEM "&Client",                     MM_CLIENT, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "&About ...",                  MM_ABOUT
+    END
+    POPUP "Server"
+    BEGIN
+        MENUITEM "Create File...",              MM_OPT_1
+        MENUITEM "Create File Mapping...",      MM_OPT_2, GRAYED
+        MENUITEM "Map View of File",            MM_OPT_3, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "Access",                      MM_OPT_4, GRAYED
+    END
+    POPUP "&Window"
+    BEGIN
+        MENUITEM "&Cascade",                    IDM_CASCADE
+        MENUITEM "&Tile",                       IDM_TILE
+        MENUITEM "Arrange &Icons",              IDM_ARRANGE
+    END
+END
+
+CLIENTMENU MENU DISCARDABLE 
+BEGIN
+    POPUP "&Create"
+    BEGIN
+        MENUITEM "&Server",                     MM_SERVER, GRAYED
+        MENUITEM "&Client",                     MM_CLIENT, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "&About ...",                  MM_ABOUT
+    END
+    POPUP "Client"
+    BEGIN
+        MENUITEM "Open File Mapping...",        MM_OPT_5
+        MENUITEM "Map View of File",            MM_OPT_6, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "Access",                      MM_OPT_7, GRAYED
+        MENUITEM "Refresh Now",                 MM_OPT_8, GRAYED
+    END
+    POPUP "&Window"
+    BEGIN
+        MENUITEM "&Cascade",                    IDM_CASCADE
+        MENUITEM "&Tile",                       IDM_TILE
+        MENUITEM "Arrange &Icons",              IDM_ARRANGE
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+ABOUTBOX DIALOG DISCARDABLE  16, 16, 192, 96
+STYLE DS_MODALFRAME | WS_VISIBLE | WS_CAPTION
+CAPTION "About Memory"
+FONT 10, "System"
+BEGIN
+    CTEXT           "Memory",-1,0,24,192,8
+    CTEXT           "Version 0.01",-1,0,40,192,8
+    DEFPUSHBUTTON   "OK!",IDOK,71,60,50,14
+END
+
+FILETYPE DIALOG DISCARDABLE  11, 19, 168, 80
+STYLE DS_MODALFRAME | WS_VISIBLE | WS_CAPTION
+CAPTION "File Type"
+BEGIN
+    CTEXT           "Use Page File or Create Map File with the following name",
+                    100,22,6,119,20,NOT WS_GROUP
+    DEFPUSHBUTTON   "Page File",IDBTN_PAGE,22,52,38,14
+    PUSHBUTTON      "Map File",IDBTN_MAP,101,52,35,14
+    EDITTEXT        IDEDIT_MAPFILE,23,30,115,12,ES_AUTOHSCROLL
+END
+
+MAPNAME DIALOG DISCARDABLE  62, 53, 152, 64
+STYLE DS_MODALFRAME | WS_VISIBLE | WS_CAPTION
+CAPTION "Map Name"
+BEGIN
+    LTEXT           "Enter name for Map File",100,18,8,100,10,NOT WS_GROUP
+    EDITTEXT        IDEDIT_MAPNAME,18,21,94,12,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDBTN_OK,61,39,32,14
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""memory.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ERR_INITAPP_FAILED  "Memory: InitializeApp failure"
+    IDS_ERR_CREATE_CHILD_FAILED "Failed to Create Child Window"
+    IDS_ERR_CREATE_DLG_FAILED "Memory: About Dialog Creation Error"
+    IDS_ERR_MAPFILE_FAILED  "Map File creation failed"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ERR_MAPPING_FAILED  "File Mapping creation failed"
+    IDS_ERR_MAPVIEW_FAILED  "Map View of File failed"
+    IDS_ERR_ACCESS_WRITE_FAILED "Accessing for writing failed"
+    IDS_ERR_ACCESS_READ_FAILED "Accessing for reading failed"
+    IDS_ERR_OPEN_MAPPING_FAILED "Open File Mapping failed"
+    IDS_SERVER              "Server %d"
+    IDS_CLIENT              "Client %d"
+    IDS_CREATE_MAP_FILE     "Creating Map File"
+    IDS_CREATE_MAPPING      "Creating File Mapping"
+    IDS_MAPPING_VIEW        "Mapping view of File"
+    IDS_ACCESSING_SERVER_WRITE "Accessing Server for writing"
+    IDS_OPENING_FILE        "Opening Mapping File"
+    IDS_ACCESSING_SERVER_READ "Accessing Server for reading"
+    IDS_SEL_CREATE_FILE_MAPPING "Select 'Create File Mapping...'"
+    IDS_SEL_MAP_VIEW        "Select 'Map View of File'"
+    IDS_SEL_ACCESS          "Select 'Access' to enter text"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_SEL_CREATE_FILE     "Select 'Create File...'"
+    IDS_SEL_ACCESS_READ     "Select 'Access' for reading Server"
+    IDS_SEL_OPEN_FILE       "Select 'Open File...'"
+    IDS_ERROR               "Error on %s = %d\n"
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

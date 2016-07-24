@@ -1,0 +1,497 @@
+{\rtf1\ansi \deff0\deflang1024
+
+
+{\fonttbl
+{\f0\froman Times New Roman;}
+{\f1\froman Symbol;}
+{\f2\fswiss Arial;}
+{\f3\froman Tms Rmn;}
+{\f4\fswiss Helv;}
+{\f5\fdecor ZapfDingbats;}
+{\f6\fmodern Courier;}}
+
+
+{\colortbl;
+\red0\green0\blue0;
+\red0\green0\blue255;
+\red0\green255\blue255;
+\red0\green255\blue0;
+\red255\green0\blue255;
+\red255\green0\blue0;
+\red255\green255\blue0;
+\red255\green255\blue255;
+\red0\green0\blue127;
+\red0\green127\blue127;
+\red0\green127\blue0;
+\red127\green0\blue127;
+\red127\green0\blue0;
+\red127\green127\blue0;
+\red127\green127\blue127;
+\red192\green192\blue192;}
+
+
+{\stylesheet
+{\s244 \fs16\up6\lang1033 \sbasedon0\snext0 footnote reference;}
+{\s245 \fs20\lang1033 \sbasedon0\snext245 footnote text;}
+{\fs20\lang1033 \snext0 Normal;}
+{\s2\keepn \b\f2\fs28\lang1033 \sbasedon0\snext2 Title;}
+{\s3\li720 \lang1033 \sbasedon0\snext3 Body;}
+{\s4\fi-1526\li2246\sb120\tx2070\tx2250 \lang1033 \sbasedon0\snext4 List;}
+{\s5 \fs20\lang1033 \sbasedon3\snext5 JumpBody;}
+{\s6\brdrb\brdrs\brdrw30\brsp20\brdrcf2 \b\f2\lang1033 \sbasedon0\snext6 PopUpTitle;}
+{\s7\li180 \fs20\lang1033 \sbasedon5\snext7 PopUpBody;}
+{\s8\fi-1526\li2246\tx2070\tx2250 \lang1033 \sbasedon4\snext8 GlossaryEntry;}
+{\s9 \lang1033 \sbasedon0\snext3 Unindented;}
+{\s10\keep \f6\fs20\lang1033 \sbasedon0\snext3 Source Code;}}
+
+
+{\info
+{\author Paul Tissue}
+{\creatim\yr1993\mo6\dy1\hr1\min1}
+{\version1}}
+
+
+#{\footnote {#} Contents}
+${\footnote {$} Debug Event Browser Contents}
+K{\footnote {K} Contents}
+\s2\keepn \b\f2\fs28\lang1033
+\{bmc deb.bmp\} Debug Event Browser
+\par\pard\plain
+\s9 \lang1033
+{\b Overviews}\line
+{\uldb General Overview}{\v GenOverview}\line
+{\uldb Programming Overview}{\v ProgOverview}\line
+\line
+{\b How To...}\line
+{\uldb Using the Toolbar}{\v Toolbar}\line
+\line
+{\b Commands}\line
+{\uldb File Menu}{\v File}\line
+{\uldb Edit Menu}{\v Edit}\line
+{\uldb Options Menu}{\v Options}\line
+{\uldb Help Menu}{\v Help}\line
+{\uldb Keyboard}{\v Keyboard}\line
+\par\pard\plain
+\page
+
+
+#{\footnote {#} GenOverview}
+${\footnote {$} General Overview}
+K{\footnote {K} Overview - General}
+K{\footnote {K} Overviews}
+\s2\keepn \b\f2\fs28\lang1033
+General Overview
+\par\pard\plain
+\s9 \lang1033
+{\b Debug Event Browser} ({\b DEB}) is a Win32 application demonstrating the
+ Win32 debug API.  This preliminary version of {\b DEB} only performs the
+ most rudimentary debugging operations.  {\b DEB} is not a debugger in the
+ traditional sense but a browser which merely displays the debug events
+ occurring in a debuggee.  The handling of debug events is restricted only
+ to those actions which are necessary to display event information and
+ continue the debuggee.\line
+\line
+{\b This Sample is brought to you by:}\line
+{\b   Microsoft Developer Support}\line
+{\b   Developed by Paul Tissue}\line
+\par\pard\plain
+\page
+
+
+#{\footnote {#} ProgOverview}
+${\footnote {$} Programming Overview}
+K{\footnote {K} Programming}
+K{\footnote {K} Overview - Programming}
+K{\footnote {K} Overviews}
+\s2\keepn \b\f2\fs28\lang1033
+Programming Overview
+\par\pard\plain
+\s9 \lang1033
+The {\b Debug Event Browser} ({\b DEB}) sample demonstrates the following
+ Win32 debug API features:\line
+\line
+{\uldb Debug Event Handler}{\v Handler}\line
+{\uldb Modifying a Thread's Context}{\v Context}\line
+{\uldb Reading the Executable's Header}{\v Header}\line
+\par\pard\plain
+\page
+
+
+
+#{\footnote {#} Handler}
+${\footnote {$} Debug Event Handler}
+K{\footnote {K} Debug Event Handler}
+K{\footnote {K} Debug API}
+K{\footnote {K} WaitForDebugEvent}
+K{\footnote {K} ContinueDebugEvent}
+\s2\keepn \b\f2\fs28\lang1033
+Debug Event Handler
+\par\pard\plain
+\s9 \lang1033
+The debug event handler is responsible for the processing of the debug
+ events.\line
+\par\pard\plain
+\s10\keep \f6\fs20\lang1033
+// ************************************************************************\line
+// FUNCTION : DebugEventThread( DWORD )\line
+// PURPOSE  : Main debug event processing loop\line
+// COMMENTS : The same debugger thread which creates a debuggee process or\line
+//            attaches to a currently running process must also handle all\line
+//            the debug events for that process.\line
+// ************************************************************************\line
+DWORD WINAPI\line
+DebugEventThread( DWORD UserDefinedValue )\line
+\{\line
+  DEBUG_EVENT DebugEvent;\line
+\line
+  for(;;) \{\line
+    if( !WaitForDebugEvent( &DebugEvent, INFINITE ) ) \line
+      continue;\line
+    switch( DebugEvent.dwDebugEventCode ) \{\line
+      case EXCEPTION_DEBUG_EVENT:\line
+        // ...\line
+        switch( DebugEvent.u.Exception.ExceptionRecord.ExceptionCode \line
+          case EXCEPTION_ACCESS_VIOLATION:\line
+            // ...handle exception\line
+            break;\line
+          case EXCEPTION_BREAKPOINT:\line
+            // ...handle exception\line
+            break;\line
+          //...\line
+          default:  // An unknown exception occurred\line
+            // ...handle exception\line
+            break;\line
+        \}\line
+      case CREATE_THREAD_DEBUG_EVENT:\line
+        // ...handle debug event\line
+        break;\line
+      case CREATE_PROCESS_DEBUG_EVENT:\line
+        // ...handle debug event\line
+        break;\line
+      // ...\line
+      default:\line
+        // ...handle debug event\line
+        break;\line
+    \}\line
+    //-- default action - just continue\line
+    ContinueDebugEvent( DebugEvent.dwProcessId, DebugEvent.dwThreadId,\line
+      DBG_CONTINUE );\line
+  \}\line
+\line
+  return( NULL );\line
+\}\line
+\par\pard\plain
+\page
+
+
+#{\footnote {#} Header}
+${\footnote {$} Reading the Executable's Header}
+K{\footnote {K} Executable Header}
+K{\footnote {K} Image Header}
+K{\footnote {K} Debug API}
+K{\footnote {K} ReadProcessMemory}
+\s2\keepn \b\f2\fs28\lang1033
+Reading the Executable's Header
+\par\pard\plain
+\s9 \lang1033
+Reading the information stored in the executable's headers is important for
+ obtaining such things as symbolic information and details about the
+ object.\line
+\line
+\par\pard\plain
+\s10\keep \f6\fs20\lang1033
+// ************************************************************************\line
+// FUNCTION : GetModuleFileNameFromHeader( HANDLE, HANDLE, DWORD, LPTSTR, DWORD )\line
+// PURPOSE  : Retrieves the DLL module name for a given file handle of a\line
+//            the module.  Reads the module name from the EXE header.\line
+// COMMENTS :\line
+//   Retrieves only the module name and not the pathname.  Returns the\line
+//   number of characters copies to the buffer, else returns 0.\line
+// ************************************************************************\line
+DWORD\line
+GetModuleFileNameFromHeader( HANDLE hProcess, HANDLE hFile, DWORD BaseOfDll,\line
+  LPTSTR lpszPath, DWORD cchPath )\line
+\{\line
+  #define IMAGE_SECOND_HEADER_OFFSET    (15 * sizeof(ULONG)) // relative to file beginning\line
+  #define IMAGE_BASE_OFFSET             (13 * sizeof(DWORD)) // relative to PE header base\line
+  #define IMAGE_EXPORT_TABLE_RVA_OFFSET (30 * sizeof(DWORD)) // relative to PE header base\line
+  #define IMAGE_NAME_RVA_OFFSET         offsetof(IMAGE_EXPORT_DIRECTORY, Name)\line
+\line
+  WORD   DosSignature;\line
+  DWORD  NtSignature;\line
+  DWORD  dwNumberOfBytesRead = 0;\line
+  DWORD  PeHeader, ImageBase, ExportTableRVA, NameRVA;\line
+\line
+  //-- verify that the handle is not NULL\line
+  if( !hFile ) \{\line
+    lstrcpy( lpszPath, "Invalid File Handle" );\line
+    return( 0 );\line
+  \}\line
+\line
+  //-- verify that the handle is for a disk file\line
+  if( GetFileType(hFile) != FILE_TYPE_DISK ) \{\line
+    lstrcpy( lpszPath, "Invalid File Type" );\line
+    return( 0 );\line
+  \}\line
+\line
+  //-- Extract the filename from the EXE header\line
+  SetFilePointer( hFile, 0L, NULL, FILE_BEGIN );\line
+  ReadFile( hFile, &DosSignature, sizeof(DosSignature), &dwNumberOfBytesRead,\line
+    (LPOVERLAPPED) NULL);\line
+\line
+  //-- verify DOS signature found\line
+  if( DosSignature != IMAGE_DOS_SIGNATURE ) \{\line
+    wsprintf( lpszPath, TEXT( "Bad MZ Signature: 0x%x" ), DosSignature );\line
+    return( 0 );\line
+  \}\line
+\line
+  SetFilePointer( hFile, IMAGE_SECOND_HEADER_OFFSET, (LPLONG) NULL,\line
+    FILE_BEGIN );\line
+  ReadFile( hFile, &PeHeader, sizeof(PeHeader), &dwNumberOfBytesRead,\line
+    (LPOVERLAPPED) NULL );\line
+  SetFilePointer( hFile, PeHeader, (LPLONG) NULL, FILE_BEGIN );\line
+  ReadFile( hFile, &NtSignature, sizeof(NtSignature), &dwNumberOfBytesRead,\line
+    (LPOVERLAPPED) NULL);\line
+\line
+  //-- verify Windows NT (PE) signature found\line
+  if( NtSignature != IMAGE_NT_SIGNATURE ) \{\line
+    wsprintf( lpszPath, TEXT( "Bad PE Signature: 0x%x" ), DosSignature );\line
+    return( 0 );\line
+  \}\line
+\line
+  SetFilePointer( hFile, PeHeader + IMAGE_BASE_OFFSET, (LPLONG) NULL,\line
+    FILE_BEGIN );\line
+  ReadFile( hFile, &ImageBase, sizeof(ImageBase), &dwNumberOfBytesRead,\line
+    (LPOVERLAPPED) NULL);\line
+  SetFilePointer( hFile, PeHeader + IMAGE_EXPORT_TABLE_RVA_OFFSET,\line
+    (LPLONG) NULL, FILE_BEGIN );\line
+  ReadFile( hFile, &ExportTableRVA, sizeof(ExportTableRVA),\line
+    &dwNumberOfBytesRead, (LPOVERLAPPED) NULL);\line
+\line
+  //-- now read from the virtual address space in the process\line
+  ReadProcessMemory( hProcess,\line
+     (LPVOID) (BaseOfDll + ExportTableRVA + IMAGE_NAME_RVA_OFFSET),\line
+     &NameRVA, sizeof(NameRVA), &dwNumberOfBytesRead );\line
+  lstrcpy( lpszPath, "Empty!" );\line
+  if( !ReadProcessMemory( hProcess,\line
+         (LPVOID) (BaseOfDll + NameRVA),\line
+         lpszPath, cchPath, &dwNumberOfBytesRead ) )\line
+     lstrcpy( lpszPath, "Access Denied!" );\line
+\line
+  return( dwNumberOfBytesRead );\line
+\}\line
+\par\pard\plain
+\page
+
+
+#{\footnote {#} Context}
+${\footnote {$} Modifying a Thread's Context}
+K{\footnote {K} Thread Context}
+K{\footnote {K} Context}
+K{\footnote {K} Debug API}
+K{\footnote {K} GetThreadContext}
+K{\footnote {K} SetThreadContext}
+\s2\keepn \b\f2\fs28\lang1033
+Modifying a Thread's Context
+\par\pard\plain
+\s9 \lang1033
+The ability to query and modify a thread's context is one of the more
+ powerful features of the Win32 debug API set.\line
+\par\pard\plain
+\s10\keep \f6\fs20\lang1033
+// ************************************************************************\line
+// FUNCTION : SkipThreadBreakPoint( HANDLE );\line
+// PURPOSE  : Skip over the break point instruction belonging to\line
+//            hThread.\line
+// COMMENTS :\line
+//   Only the MIPS R4x00 and Alpha AXP require this.\line
+// ************************************************************************\line
+BOOL\line
+SkipBreakPoint( HANDLE hThread )\line
+\{\line
+  static CONTEXT Context;\line
+\line
+  Context.ContextFlags = CONTEXT_CONTROL;\line
+  if( !GetThreadContext( hThread, &Context ) )\line
+    return( FALSE );\line
+  Context.Fir += 4L;  // Fir is the PC (program counter)\line
+                      // BREAK (breakpoint instruction) occupies 4 bytes\line
+  SetThreadContext( hThread, &Context );\line
+\line
+  return( TRUE );\line
+\}\line
+\par\pard\plain
+\page
+
+
+#{\footnote {#} Toolbar}
+${\footnote {$} Toolbar}
+K{\footnote {K} Toolbar}
+\s2\keepn \b\f2\fs28\lang1033
+How To Use The Toolbar
+\par\pard\plain
+\s9 \lang1033
+The Toolbar allows quick and convenient access to several
+ {\b Debug Event Browser} options simply with the click of the mouse.\line
+\line
+\par\pard\plain
+\qc \{bmc toolbar.bmp\}\par
+\par\pard\plain
+\page
+
+
+#{\footnote {#} File}
+${\footnote {$} File Menu}
+K{\footnote {K} File Menu}
+K{\footnote {K} Menu Commands}
+\s2\keepn \b\f2\fs28\lang1033
+File Menu Commands
+\par\pard\plain
+\s9 \lang1033
+Allows the user to select the debuggee for this application.\line
+\line
+{\b Open...}\line
+Displays a dialog box that will allow you to open and run an executable
+ file using a common dialog box.  This executable file will become the
+ debuggee.\line
+\line
+{\b Attach...}\line
+Displays a dialog box that will allow you to select a currently running
+ process to attach to.  This process will become the debuggee.\line
+\line
+{\b Exit}\line
+Exits the {\b Debug Event Browser} application.\line
+\par\pard\plain
+\page
+
+
+#{\footnote {#} Edit}
+${\footnote {$} Edit Menu}
+K{\footnote {K} Edit Menu}
+K{\footnote {K} Menu Commands}
+\s2\keepn \b\f2\fs28\lang1033
+Edit Menu Commands
+\par\pard\plain
+\s9 \lang1033
+Allows the user to copy text to the clipboard.\line
+\line
+{\b Cut}\line
+Copies the text in the Debug Event window and then delete it from the
+ window.\line
+\line
+{\b Copy}\line
+Copies the text in the Debug Event window.\line
+\line
+{\b Delete}\line
+Deletes the text in the Debug Event window.\line
+\par\pard\plain
+\page
+
+
+#{\footnote {#} Options}
+${\footnote {$} Options Menu}
+K{\footnote {K} Options Menu}
+K{\footnote {K} Menu Commands}
+\s2\keepn \b\f2\fs28\lang1033
+Options Menu Commands
+\par\pard\plain
+\s9 \lang1033
+Allows the user to set various options and preferences for this
+ application.\line
+\line
+{\b Fonts...}\line
+Displays a dialog box that will allow you to set the font for the Debug
+ Event window.\line
+\line
+{\b Background Color...}\line
+Displays a dialog box that will allow you to set the background color for
+ the Debug Event window.\line
+\line
+{\b Preferences...}\line
+Displays a dialog box that will allow you to set the options and preferences
+ for this application.\line
+\line
+{\b Toolbar}\line
+Displays the Tool Bar when checked.\line
+\line
+{\b Use Saved Directory}\line
+This menu option will set the default directory to the one that was
+ previously saved.  This only occurs when checked.\line
+\line
+{\b Save Settings On Exit}\line
+This menu option will save all the current session settings upon exiting.
+ This only occurs when checked.\line
+\line
+{\b Save Settings Now}\line
+This menu option will save all the current session settings now.
+\par\pard\plain
+\page
+
+
+#{\footnote {#} Help}
+${\footnote {$} Help Menu}
+K{\footnote {K} Help Menu}
+K{\footnote {K} Menu Commands}
+\s2\keepn \b\f2\fs28\lang1033
+Help Menu Commands
+\par\pard\plain
+\s9 \lang1033
+Displays various types of information regarding to the
+ {\b Debug Event Browser} application.\line
+\line
+{\b Contents}\line
+Displays the contents of the Online Help.\line
+\line
+{\b Search for Help on...}\line
+Displays a list of keywords to search for Online Help topics.\line
+\line
+{\b How to use Help}\line
+Displays the instructions for using the Online Help facilities.\line
+\line
+{\b About Debug Event Browser...}\line
+Displays product information about the {\b Debug Event Browser}.\line
+\par\pard\plain
+\page
+
+
+#{\footnote {#} Keyboard}
+${\footnote {$} Keyboard Commands}
+K{\footnote {K} Keyboard Commands}
+\s2\keepn \b\f2\fs28\lang1033
+Keyboard Commands
+\par\pard\plain
+\s9 \lang1033
+The keyboard commands allows quick and convenient access to several
+ {\b Debug Event Browser} options using simple key combinations.\line
+\line
+{\ul Control Keys}\line
+\line
+{\b Ctrl+A}\line
+Attaches to a currently running process and begins debugging it.\line
+\line
+{\b Ctrl+C}\line
+Copies the text in the Debug Event window.\line
+\line
+{\b Ctrl+O}\line
+Opens an executable and debugs it.\line
+\line
+{\b Ctrl+X}\line
+Copies the text in the Debug Event window and then delete it from the
+ window.\line
+\line
+{\ul Alternate Keys}\line
+\line
+{\b Alt+F4}\line
+Exits the {\b Debug Event Browser}.\line
+\line
+{\ul Single Keys}\line
+\line
+{\b F1}\line
+Invokes the help file for the {\b Debug Event Browser}.\line
+\line
+{\b Del}\line
+Deletes the text in the Debug Event window.\line
+\par\pard\plain
+\page
+
+}

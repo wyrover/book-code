@@ -1,0 +1,7 @@
+    线程用于描述进程中的运行路径。每当进程被初始化时，系统就要创建一个主
+线程。该主线程与C/C++运行期库的启动代码一道开始运行，启动代码则调用进入
+点函数（WinMain()、wWinMain()等函数），并且继续运行直到进入点函数返回，
+并且C/C++运行期库的启动代码调用ExitProcess()为止。
+
+    Mmemory is allocated from gmem_get, using hHeap as the heap handle.
+hHeap must be declared and initialised elsewhere.

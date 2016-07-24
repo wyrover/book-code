@@ -1,0 +1,14 @@
+LIBRARY     Probe
+
+DESCRIPTION 'Win32 Process Walker DLL Probe'
+
+VERSION     1.0
+
+CODE	    READ SHARED EXECUTE
+DATA	    READ WRITE
+
+HEAPSIZE    0x10000 0x1000
+
+EXPORTS
+	    ResetProbe		   @1
+	    RetrieveProbeData	   @2

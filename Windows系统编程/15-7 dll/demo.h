@@ -1,0 +1,13 @@
+
+
+#define IDM_BOX     101
+#define IDM_BLOCK   102
+#define IDM_RETAIN  103
+#define IDM_ABOUT   104
+
+#define IDS_APPNAME     1001
+#define IDS_NOMEM       1002
+
+BOOL DemoInit(HANDLE);
+LONG APIENTRY DemoWndProc(HWND, UINT, UINT, LONG);
+BOOL APIENTRY About(HWND, UINT, UINT, LONG);

@@ -1,0 +1,21 @@
+;  ************************************************************************
+;
+;                       Microsoft Developer Support
+;              Copyright 1992 - 1997 Microsoft Corporation
+;
+;  ************************************************************************
+;  MODULE    : DEB.HPJ
+;  PURPOSE   : Help Project File for the Debug Event Browser Application
+;  COMMENTS  :
+;  ************************************************************************
+[OPTIONS]
+title = Debug Event Browser
+compress = 1
+warning = 3
+
+[FILES]
+deb.rtf
+
+[BITMAPS]
+deb.bmp
+toolbar.bmp

@@ -1,0 +1,75 @@
+DLGINCLUDE RCDATA DISCARDABLE
+
+BEGIN
+    "WDIFFRC.H\0"
+END
+
+DIRECTORY DIALOG 9, 26, 185, 86
+STYLE WS_POPUP | WS_CAPTION
+CAPTION "Select Directories"
+BEGIN
+    LTEXT           "Enter complete pathname of directories:", IDD_LABEL, 5,
+                    5, 130, 10, NOT WS_GROUP
+    CONTROL         "&Include subdirectories", IDD_RECURSIVE, "Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP, 50, 15, 90, 10
+    LTEXT           "Dir &1", IDD_LAB1, 5, 25, 35, 10, NOT WS_GROUP
+    EDITTEXT        IDD_DIR1, 50, 25, 130, 12, ES_AUTOHSCROLL
+    LTEXT           "Dir &2", IDD_LAB2, 5, 40, 35, 10, NOT WS_GROUP
+    EDITTEXT        IDD_DIR2, 50, 40, 130, 12, ES_AUTOHSCROLL
+    PUSHBUTTON      "&Cancel", IDCANCEL, 115, 60, 30, 15
+    DEFPUSHBUTTON   "&OK", IDOK, 150, 60, 25, 15
+END
+
+ABOUT DIALOG 49, 30, 135, 90
+STYLE WS_POPUP | WS_CAPTION
+CAPTION "About WinDiff"
+BEGIN
+    ICON            "WinDiff", IDD_ICON, 10, 10, 16, 16
+    CTEXT           "Windows File And Directory Comparisons", 103, 35, 10,
+                    85, 20, NOT WS_GROUP
+    RTEXT           "Version:", 104, 40, 40, 30, 10, NOT WS_GROUP
+    LTEXT           "1.00", IDD_VERSION, 75, 40, 30, 10, NOT WS_GROUP
+    DEFPUSHBUTTON   "&OK", IDOK, 55, 70, 27, 12
+END
+
+SAVELIST DIALOG 28, 23, 232, 116
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Save File List"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Save to &file:", IDM_INCSAME, 4, 8, 41, 8
+    EDITTEXT        IDD_FILE, 47, 6, 130, 12, ES_AUTOHSCROLL
+    LTEXT           "Include:", IDM_INCDIFFER, 4, 25, 32, 8
+    CONTROL         "&Identical files", IDD_IDENTICAL, "Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP, 47, 26, 60, 10
+    CONTROL         "&Different files", IDD_DIFFER, "Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP, 47, 37, 64, 10
+    CONTROL         "Files only in &left tree", IDD_LEFT, "Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP, 47, 49, 182, 10
+    CONTROL         "Files only in &right tree", IDD_RIGHT, "Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP, 47, 62, 181, 10
+    PUSHBUTTON      "Cancel", IDCANCEL, 139, 94, 40, 14
+    DEFPUSHBUTTON   "OK", IDOK, 187, 94, 40, 14
+END
+
+CopyFiles DIALOG 35, 23, 232, 143
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Copy Files"
+BEGIN
+    LTEXT           "Copy to directory:", IDD_LAB1, 6, 8, 60, 8
+    EDITTEXT        IDD_DIR1, 86, 6, 130, 12, ES_AUTOHSCROLL
+    GROUPBOX        "Copy &from", IDD_FROMGROUP, 3, 31, 172, 37, WS_GROUP
+    CONTROL         "Left tree", IDD_FROMLEFT, "Button", BS_AUTORADIOBUTTON |
+                    WS_TABSTOP, 8, 42, 162, 10
+    CONTROL         "Right tree", IDD_FROMRIGHT, "Button",
+                    BS_AUTORADIOBUTTON | WS_TABSTOP, 8, 54, 161, 10
+    LTEXT           "Include:", IDD_LAB2, 3, 77, 32, 8
+    CONTROL         "&Identical files", IDD_IDENTICAL, "Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP, 42, 77, 60, 10
+    CONTROL         "&Different files", IDD_DIFFER, "Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP, 42, 89, 64, 10
+    CONTROL         "Files only in &left tree", IDD_LEFT, "Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP, 42, 101, 182, 10
+    PUSHBUTTON      "Cancel", IDCANCEL, 134, 122, 40, 14
+    DEFPUSHBUTTON   "OK", IDOK, 183, 122, 40, 14
+END

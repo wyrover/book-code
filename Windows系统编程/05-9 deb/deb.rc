@@ -1,0 +1,149 @@
+
+//-----------------------------------------------------------------------------
+// This is a part of the Microsoft Source Code Samples. 
+// Copyright (C) 1993-1997 Microsoft Corporation.
+// All rights reserved. 
+//  
+// This source code is only intended as a supplement to 
+// Microsoft Development Tools and/or WinHelp documentation.
+// See these sources for detailed information regarding the 
+// Microsoft samples programs.
+//-----------------------------------------------------------------------------
+
+#include <Windows.H>
+#include "DEB.H"      // contains the IDs
+
+// Miscellaneous Included Resources
+// ------------------------------------------------------------------------
+#include "DEB.Dlg"    // contains the dialog boxes
+
+DebugIcon  ICON DEB.Ico
+DebugIcon1 ICON DEB1.Ico
+DebugIcon2 ICON DEB2.Ico
+DebugIcon3 ICON DEB3.Ico
+DebugIcon4 ICON DEB4.Ico
+DebugIcon5 ICON DEB5.Ico
+DebugIcon6 ICON DEB6.Ico
+DebugIcon7 ICON DEB7.Ico
+DebugIcon8 ICON DEB8.Ico
+
+// Menus
+// ------------------------------------------------------------------------
+DebugMenu MENU
+BEGIN
+
+  POPUP "&File"
+  BEGIN
+    MENUITEM "&Open...\tCtrl+O",              IDM_FILE_OPEN
+    MENUITEM "&Attach...\tCtrl+A",            IDM_FILE_ATTACH
+    MENUITEM SEPARATOR
+    MENUITEM "E&xit\tAlt+F4",                 IDM_FILE_EXIT
+  END
+
+  POPUP "&Edit"
+  BEGIN
+    MENUITEM "Cu&t\tCtrl+X",                  IDM_EDIT_CUT
+    MENUITEM "&Copy\tCtrl+C",                 IDM_EDIT_COPY
+    MENUITEM "&Delete\tDel",                  IDM_EDIT_DELETE
+  END
+
+  POPUP "&Options"
+  BEGIN
+    MENUITEM "&Font...",                      IDM_OPTIONS_FONT
+    MENUITEM "Background &Color...",          IDM_OPTIONS_COLOR
+    MENUITEM "&Preferences...",               IDM_OPTIONS_PREFERENCES
+    MENUITEM SEPARATOR
+    MENUITEM "&Tool Bar",                     IDM_OPTIONS_TOOLBAR
+    MENUITEM "Use Saved &Directory",          IDM_OPTIONS_SAVEDDIR
+    MENUITEM "Save Settings on E&xit",        IDM_OPTIONS_SAVEONEXIT
+    MENUITEM SEPARATOR
+    MENUITEM "Save Settings &Now",            IDM_OPTIONS_SAVENOW
+  END
+
+  POPUP "&Help"
+  BEGIN
+    MENUITEM "&Contents",                     IDM_HELP_CONTENTS
+    MENUITEM "&Search for Help on...",        IDM_HELP_SEARCH
+    MENUITEM "&How to Use Help",              IDM_HELP_HOWTOUSE
+    MENUITEM SEPARATOR
+    MENUITEM "&About Debug Event Browser...", IDM_HELP_ABOUT
+  END
+
+END
+
+// Accelerator Tables
+// ------------------------------------------------------------------------
+DebugAccel ACCELERATORS
+BEGIN
+   VK_F12,    IDM_FILE_OPEN,     VIRTKEY, CONTROL
+   "O",       IDM_FILE_OPEN,     VIRTKEY, CONTROL
+   "A",       IDM_FILE_ATTACH,   VIRTKEY, CONTROL
+   VK_F4,     IDM_FILE_EXIT,     VIRTKEY, ALT
+   "X",       IDM_EDIT_CUT,      VIRTKEY, CONTROL
+   "C",       IDM_EDIT_COPY,     VIRTKEY, CONTROL
+   VK_DELETE, IDM_EDIT_CUT,      VIRTKEY, SHIFT
+   VK_INSERT, IDM_EDIT_COPY,     VIRTKEY, CONTROL
+   VK_DELETE, IDM_EDIT_DELETE,   VIRTKEY
+   VK_F1,     IDM_HELP_CONTENTS, VIRTKEY
+END
+
+// String Tables
+// ------------------------------------------------------------------------
+STRINGTABLE
+BEGIN
+  IDS_APPNAME,            "Debug Event Browser"
+  IDS_SHORT_APPNAME,      "DEB"
+  IDS_DEBUG_EVENTS,       "Debug Events"
+  IDS_OFN_TITLE,          "Select an Executable"
+  IDS_OFN_DEBUGGEE_TITLE, "Debug Event Browser - Debuggee"
+  IDS_OFN_FILTERNAME,     "Executable Files(*.EXE)"
+  IDS_OFN_FILTER,         "*.EXE"
+  IDS_BUTTON_OPEN,        "Open"
+  IDS_BUTTON_ATTACH,      "Attach"
+  IDS_BUTTON_CUT,         "Cut"
+  IDS_BUTTON_COPY,        "Copy"
+  IDS_BUTTON_DELETE,      "Delete"
+  IDS_BUTTON_HELP,        "Help"
+  IDS_EXIT_BOX_TITLE,     "Exit the Debug Event Browser"
+  IDS_EXIT_BOX_TEXT,      "Some Debuggee processes are still active.\nDo you want to Exit anyway?"
+  IDS_API_FAILED_MSG      "A Windows API Failed"
+
+  IDS_WINDOWS_NT_REQUIRED_TITLE "Windows NT Required"
+  IDS_WINDOWS_NT_REQUIRED       "Sorry, the Debug Event Browser\nrequires Windows NT.  This application\nwill now terminate."
+END
+
+// Version Information
+// ------------------------------------------------------------------------
+#include <winver.h>
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION     1,0
+PRODUCTVERSION  1,0
+FILEFLAGSMASK   VS_FFI_FILEFLAGSMASK
+FILEFLAGS       (VS_FF_PRIVATEBUILD|VS_FF_PRERELEASE|VS_FF_DEBUG)
+FILEOS          VOS_NT_WINDOWS32
+FILETYPE        VFT_APP
+FILESUBTYPE     VFT2_UNKNOWN
+BEGIN
+
+  BLOCK "StringFileInfo"
+  BEGIN
+    BLOCK "040904B0"
+    BEGIN
+      VALUE "CompanyName",     "Microsoft Corporation\0"
+      VALUE "FileDescription", "Win32 SDK Debug Event Browser Sample Application\0"
+      VALUE "FileVersion",     "1.1\0"
+      VALUE "InternalName",    "DEB.EXE\0"
+      VALUE "LegalCopyright",  "Copyright 1992 - 1997 Microsoft Corp.\0"
+      VALUE "LegalTrademarks", "Microsoft\256 is a registered trademark of Microsoft Corporation. Windows(TM) and Windows NT(TM) are trademarks of Microsoft Corporation.\0"
+      VALUE "ProductName",     "Debug Event Browser\0"
+      VALUE "ProductVersion",  "1.1\0"
+    END
+  END
+
+  BLOCK "VarFileInfo"
+  BEGIN
+    VALUE "Translation", 0x409, 1200
+  END
+
+END

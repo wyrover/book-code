@@ -1,0 +1,92 @@
+1 DLGINCLUDE "DIALOGS.H"
+
+DID_ABOUT DIALOG 10, 10, 206, 56
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "About Spy"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            "Spy", -1, 12, 12, 18, 20
+    CTEXT           "Microsoft Windows", -1, 60, 6, 76, 8
+    CTEXT           "Spy Utility", -1, 60, 18, 76, 8
+    CTEXT           "Version 3.20", -1, 60, 30, 76, 8
+    CTEXT           "Copyright © 1988-1995 Microsoft Corp.", -1, 20, 42, 156,
+                    8
+    DEFPUSHBUTTON   "OK", IDOK, 160, 6, 40, 14, WS_GROUP
+END
+
+DID_MESSAGES DIALOG 0, 0, 294, 188
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Messages"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Messages to Spy &On:", -1, 6, 6, 70, 8
+    LISTBOX         DID_MSGSLIST, 6, 18, 134, 166, LBS_SORT |
+                    LBS_MULTIPLESEL | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Message &Groups", -1, 148, 6, 92, 174, WS_GROUP
+    PUSHBUTTON      "&All", DID_MSGSALL, 152, 23, 40, 14
+    PUSHBUTTON      "&None", DID_MSGSNONE, 196, 23, 40, 14
+    STATE3          "&DDE", DID_MSGSDDE, 152, 44, 27, 10
+    STATE3          "&Clipboard", DID_MSGSCLIP, 152, 54, 43, 10
+    STATE3          "&Mouse", DID_MSGSMOUSE, 152, 64, 34, 10
+    STATE3          "Non-C&lient", DID_MSGSNC, 152, 74, 46, 10
+    STATE3          "&Keyboard", DID_MSGSKEYBD, 152, 84, 43, 10
+    STATE3          "&IME", DID_MSGSIME, 152, 94, 43, 10
+#ifndef FE_IME
+							, WS_DISABLED
+#endif
+    STATE3          "&Button Control", DID_MSGSBM, 152, 104, 59, 10
+    STATE3          "Combo Bo&x Control", DID_MSGSCB, 152, 114, 74, 10
+    STATE3          "&Edit Field Control", DID_MSGSEM, 152, 124, 68, 10
+    STATE3          "&Listbox Control", DID_MSGSLB, 152, 134, 60, 10
+    STATE3          "&Static Control", DID_MSGSSTM, 152, 144, 56, 10
+    AUTOCHECKBOX    "&WM_USER", DID_MSGSUSER, 152, 154, 48, 10
+    AUTOCHECKBOX    "&Unknown", DID_MSGSUNKNOWN, 152, 164, 43, 10
+    DEFPUSHBUTTON   "OK", IDOK, 248, 6, 40, 14, WS_GROUP
+    PUSHBUTTON      "Cancel", IDCANCEL, 248, 23, 40, 14
+END
+
+DID_OUTPUT DIALOG 19, 15, 183, 62
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Output"
+FONT 8, "MS Sans Serif"
+BEGIN
+    AUTOCHECKBOX    "&Window", DID_OUTPUTWINDOW, 6, 12, 38, 10
+    LTEXT           "&Lines:", 306, 60, 14, 20, 8
+    EDITTEXT        DID_OUTPUTLINES, 83, 12, 25, 12
+    AUTOCHECKBOX    "Com&1", DID_OUTPUTCOM1, 6, 28, 30, 10
+    AUTOCHECKBOX    "&File:", DID_OUTPUTFILE, 6, 44, 26, 10
+    EDITTEXT        DID_OUTPUTFILENAME, 34, 43, 96, 12, ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK", IDOK, 137, 6, 40, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 137, 23, 40, 14
+END
+
+DID_SELECTWINDOW DIALOG 2, 12, 300, 126
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Select Window"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "&Window List:", -1, 6, 6, 43, 8
+    LISTBOX         DID_SELWINLIST, 6, 18, 126, 68, LBS_SORT | WS_VSCROLL |
+                    WS_TABSTOP
+    CONTROL         "", -1, "Static", SS_BLACKFRAME | WS_GROUP, 138, 18, 156,
+                    66
+    LTEXT           "Current Selection:", -1, 139, 6, 59, 8
+    LTEXT           "Window", -1, 141, 23, 27, 8
+    LTEXT           "Class", -1, 141, 35, 18, 8
+    LTEXT           "Parent", -1, 141, 47, 22, 8
+    LTEXT           "Rect", -1, 141, 59, 16, 8
+    LTEXT           "Style", -1, 141, 71, 17, 8
+    LTEXT           "", DID_SELWINWINDOW, 176, 23, 112, 8
+    LTEXT           "", DID_SELWINCLASS, 176, 35, 112, 8
+    LTEXT           "", DID_SELWINPARENT, 176, 47, 112, 8
+    LTEXT           "", DID_SELWINRECT, 176, 59, 112, 8
+    LTEXT           "", DID_SELWINSTYLE, 176, 71, 112, 8
+    CONTROL         "", -1, "Static", SS_BLACKRECT, 172, 18, 1, 66
+    AUTOCHECKBOX    "&All Windows", DID_SELWINALLWINDOWS, 6, 90, 52, 10
+    DEFPUSHBUTTON   "OK", IDOK, 101, 106, 40, 14, WS_GROUP
+    PUSHBUTTON      "Cancel", IDCANCEL, 157, 106, 40, 14
+END

@@ -1,0 +1,24 @@
+LIBRARY     PEFile
+
+DESCRIPTION 'Portable Executable File Format DLL'
+
+VERSION     1.0
+
+CODE	    READ SHARED EXECUTE
+DATA	    READ WRITE
+
+HEAPSIZE    0x10000 0x1000
+
+EXPORTS
+	    FileHeaderOffset		      @1
+	    OptionalHeaderOffset	      @2
+	    SectionHeaderOffset 	      @3
+	    ImportDirectoryOffset	      @4
+	    NumOfSections		      @5
+	    RetrieveModuleName		      @6
+	    RetrieveSectionNames	      @7
+	    GetModuleEntryPoint 	      @8
+	    GetImageBase		      @9
+	    GetImportModuleNames	      @10
+	    GetImportFunctionNamesByModule    @11
+	    GetExportFunctionNames	      @12

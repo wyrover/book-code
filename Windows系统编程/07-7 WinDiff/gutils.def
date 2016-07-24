@@ -1,0 +1,89 @@
+LIBRARY   GUtils
+
+CODE	  PRELOAD MOVEABLE DISCARDABLE
+DATA	  PRELOAD SINGLE
+
+HEAPSIZE  1024
+
+EXPORTS
+        gmem_init	
+        gmem_get
+        gmem_free
+        gmem_freeall
+
+        gdate_daytodmy
+        gdate_dmytoday
+        gdate_weekday
+        gdate_monthdays
+
+        StatusCreate
+        StatusHeight
+        StatusAlloc	
+        StatusAddItem
+
+        gbit_init
+        gbit_alloc
+        gbit_free
+        gbit_findfree
+
+        AbortDlg	
+        AbortProc	
+        gtab_wndproc
+        StatusWndProc
+
+        dodlg_stringin
+        readfile_new
+        readfile_next
+        readfile_delete
+        hash_string
+        utils_isblank
+        utils_CompPath
+        StringInput
+
+        tree_create
+        tree_delete
+        tree_update
+        tree_find
+        tree_search
+        tree_addafter
+        ctree_create
+        ctree_delete
+        ctree_update
+        ctree_getcount
+        ctree_find
+
+        List_Init
+        List_Dump
+        List_Show
+        List_Create
+        List_Destroy
+        List_AddFirst
+        List_NewFirst
+        List_DeleteFirst
+        List_AddLast
+        List_NewLast
+        List_DeleteLast
+        List_AddAfter
+        List_NewAfter
+        List_AddBefore
+        List_NewBefore
+        List_Delete
+        List_ItemLength
+        List_First
+        List_Last
+        List_Next
+        List_Prev
+        List_Clear
+        List_IsEmpty
+        List_Join
+        List_InsertListAfter
+        List_InsertListBefore
+        List_SplitAfter
+        List_SplitBefore
+        List_Card
+        List_IsOK
+        List_MakeOK
+        List_Check
+; added a function for internationalization
+        LoadRcString
+        LoadRcString2

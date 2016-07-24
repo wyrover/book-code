@@ -1,0 +1,13 @@
+; -------------------------------------------------------------------------
+;
+;                       Microsoft Developer Support
+;              Copyright (c) 1992-1997 Microsoft Corporation
+;
+; -------------------------------------------------------------------------
+; MODULE   : DEB.DEF
+; PURPOSE  : module-definition file for the Debug Event Browser
+; COMMENTS : currently this file is not used by the linker
+; -------------------------------------------------------------------------
+NAME         DEB
+DESCRIPTION  'Microsoft Developer Support's Debug Event Browser'
+EXETYPE      WINDOWS

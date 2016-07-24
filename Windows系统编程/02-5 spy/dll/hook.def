@@ -1,0 +1,9 @@
+LIBRARY hook
+
+DESCRIPTION 'Spy Message Hook DLL'
+
+EXETYPE WINDOWS
+
+EXPORTS
+    SpyGetMsgProc       @2
+    SpyCallWndProc      @3

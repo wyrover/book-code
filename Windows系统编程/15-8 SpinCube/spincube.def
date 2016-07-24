@@ -1,0 +1,15 @@
+LIBRARY   SPINCUBE
+
+DATA      READ WRITE
+
+SECTIONS
+      .MYSEG READ WRITE SHARED
+
+EXPORTS
+    CustomControlInfoA
+    SpincubeStyle
+    SpincubeSizeToText
+    SpincubeWndProc
+    SpincubeDlgProc
+    giNumSpincubesThisProcess  DATA
+    giNumSpincubesAllProcesses DATA

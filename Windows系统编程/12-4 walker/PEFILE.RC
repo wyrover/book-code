@@ -1,0 +1,7 @@
+#include "pefile.h"
+
+
+STRINGTABLE
+    {
+    IDS_ERRBADFILENAME	  "Error in filename"
+    }

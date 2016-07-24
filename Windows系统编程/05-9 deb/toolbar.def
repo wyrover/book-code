@@ -1,0 +1,15 @@
+; -------------------------------------------------------------------------
+;
+;                       Microsoft Developer Support
+;              Copyright (c) 1992-1997 Microsoft Corporation
+;
+; -------------------------------------------------------------------------
+; MODULE   : ToolBar.DEF
+; PURPOSE  : module-definition file for the Debug Event Browser Toolbar
+; COMMENTS :
+; -------------------------------------------------------------------------
+LIBRARY      ToolBar
+DESCRIPTION  'Microsoft Developer Support's ToolBar DLL'
+
+EXPORTS
+  TextButtonBar

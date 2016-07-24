@@ -1,0 +1,70 @@
+
+//-----------------------------------------------------------------------------
+// This is a part of the Microsoft Source Code Samples. 
+// Copyright (C) 1993-1997 Microsoft Corporation.
+// All rights reserved. 
+//  
+// This source code is only intended as a supplement to 
+// Microsoft Development Tools and/or WinHelp documentation.
+// See these sources for detailed information regarding the 
+// Microsoft samples programs.
+//-----------------------------------------------------------------------------
+
+#include "spy.h"
+
+
+#include "dialogs.dlg"
+
+
+Spy ICON spy.ico
+
+
+Spy ACCELERATORS
+BEGIN
+    "^X",   MENU_EDIT_CUT
+    "^C",   MENU_EDIT_COPY
+    "^L",   MENU_EDIT_CLEAR
+END
+
+
+Spy MENU
+BEGIN
+    POPUP "&Spy"
+    BEGIN
+        MENUITEM "&Select Window...",           MENU_SPY_SELECTWINDOW
+        MENUITEM "&About...",                   MENU_SPY_ABOUT
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       MENU_SPY_EXIT
+    END
+
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "Cu&t\tCtrl+X",                MENU_EDIT_CUT
+        MENUITEM "&Copy\tCtrl+C",               MENU_EDIT_COPY
+        MENUITEM "C&lear\tCtrl+L",              MENU_EDIT_CLEAR
+    END
+
+    POPUP "&Options"
+    BEGIN
+        MENUITEM "&Messages...",                MENU_OPTIONS_MESSAGES
+        MENUITEM "&Font...",                    MENU_OPTIONS_FONT
+        MENUITEM "&Output...",                  MENU_OPTIONS_OUTPUT
+    END
+
+    MENUITEM "S&tart!",                         MENU_START
+END
+
+STRINGTABLE
+BEGIN
+    IDS_APPLICATION_NAME       "Spy"
+    IDS_MENU_START             "S&tart!"
+    IDS_MENU_STOP              "S&top!"
+    IDS_PARENT                 " [ parent... ]"
+    IDS_NOPARENT               "<No Parent>"
+    IDS_UNDEFINED              "<Undefined>"
+    IDS_ERROR_WND_LINE         "Window lines should be between 1-%d"
+    IDS_ERROR_CANT_OPEN_FILE   "Cannot open %s"
+    IDS_ERROR_CANT_OPEN_COM1   "Cannot open com1"
+    IDS_ERROR_CANT_LOAD_DLL    "Cannot load HOOK.DLL"
+END
+

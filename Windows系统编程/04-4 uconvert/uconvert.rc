@@ -1,0 +1,386 @@
+
+#include "windows.h"
+#include "uconvert.h"
+#include "install.h"
+
+uconvertIcon  ICON	uconvert.ico
+
+
+
+
+
+uconvertMenu MENU
+BEGIN
+
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&Open Source File ...",          MID_OPEN
+        MENUITEM "&Save Destination As ...",       MID_SAVEAS
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                          MID_EXIT
+    END
+
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "&Copy Destination to Clipboard\aCtrl+C", MID_COPYDESTINATION
+        MENUITEM "&Paste Clipboard to Source\aCtrl+V",     MID_PASTESOURCE
+        MENUITEM SEPARATOR
+        MENUITEM "Clear &Source",                  MID_CLEARSOURCE
+        MENUITEM "Clear &Destination",             MID_CLEARDESTINATION
+    END
+
+    POPUP "&Conversion"
+    BEGIN
+        MENUITEM "&Convert Now \aF3",                  MID_CONVERTNOW
+        MENUITEM SEPARATOR
+        MENUITEM "Change &Source Options....",     MID_SOURCEOPT
+        MENUITEM "Change &Destination Options....",MID_DESTINATIONOPT
+        MENUITEM "Change Con&version Options....", MID_CONVERSIONOPT
+        MENUITEM SEPARATOR
+        MENUITEM "Swap &byte order in Source",      MID_SWAPSOURCE
+        MENUITEM "Swap byte &order in Destination", MID_SWAPDESTINATION
+        MENUITEM SEPARATOR
+        MENUITEM "&Install new conversion tables ...",  MID_INSTALLTABLES
+    END
+
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&Contents",                  MID_HELP
+        MENUITEM SEPARATOR
+        MENUITEM "&About",                     MID_ABOUT
+    END
+END
+
+
+/* Support Ctrl+C/V as well as <crtl>+<ins> and <shift>+<ins> */
+uconvertAccel ACCELERATORS
+BEGIN
+  VK_INSERT, MID_COPYDESTINATION , CONTROL, VIRTKEY
+  "^C",      MID_COPYDESTINATION
+  VK_INSERT, MID_PASTESOURCE, SHIFT  , VIRTKEY
+  "^V",      MID_PASTESOURCE
+  VK_F3,     MID_CONVERTNOW,    VIRTKEY
+  VK_F1,     MID_HELP,          VIRTKEY
+  "S",       BID_VIEWSOURCE,      ALT
+  "s",       BID_VIEWSOURCE,      ALT
+  "D",       BID_VIEWDESTINATION, ALT
+  "d",       BID_VIEWDESTINATION, ALT
+END
+
+
+
+
+
+
+
+DataOptionsDlg DIALOG 5, 10, 160, 150
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Replace"
+FONT 8, "MS Shell Dlg"
+BEGIN
+    GROUPBOX        "", -1, 15, 6, 130, 78
+    AUTORADIOBUTTON "&Unicode",   DID_RBUNICODE, 24, 14, 51, 10
+    AUTORADIOBUTTON "&Ansi CodePage",   DID_RBANSICP,    24, 35, 75, 10
+    AUTORADIOBUTTON "O&EM CodePage",   DID_RBOEMCP,     24, 50, 75, 10
+    AUTORADIOBUTTON "Othe&r CodePage:", DID_RBOTHERCP,   24, 65, 70, 10
+    COMBOBOX        DID_CODEPAGELIST, 96, 65, 40, 77, WS_VSCROLL | WS_TABSTOP | CBS_DROPDOWNLIST | CBS_SORT
+
+    PUSHBUTTON   "Cancel", IDCANCEL, 15, 120, 60, 18
+    DEFPUSHBUTTON   "OK", IDOK,      85, 120, 60, 18
+END
+
+
+
+
+
+ConversionOptionsDlg DIALOG 10, 20, 160, 277
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Conversion Options"
+FONT 8, "MS Shell Dlg"
+BEGIN
+    GROUPBOX        "MulitByteToWideChar", -1, 10, 18, 140, 66
+    RADIOBUTTON     "MB_PRECOMPOSED",   DID_PRECOMPOSED,   25, 34, 100, 10
+    RADIOBUTTON     "MB_COMPOSITE",     DID_COMPOSITE,     25, 48, 100, 10
+    AUTOCHECKBOX    "MB_USEGLYPHCHARS", DID_USEGLYPHCHARS, 25, 64, 100, 10
+
+    GROUPBOX        "WideCharToMultiByte", -1, 10, 104, 140, 124
+    AUTOCHECKBOX    "WC_COMPOSITECHECK", DID_COMPOSITECHECK, 25, 122, 100, 10
+    AUTOCHECKBOX    "WC_DISCARDNS",      DID_DISCARDNS,      25, 142, 100, 10
+    AUTOCHECKBOX    "WC_SEPCHARS",       DID_SEPCHARS,       25, 156, 100, 10
+    AUTOCHECKBOX    "WC_DEFAULTCHAR",    DID_DEFAULTCHAR,    25, 170, 100, 10
+
+    LTEXT           "&Default Char:", -1, 39, 194, 46, 8
+    EDITTEXT        DID_EFDEFAULTCHAR, 88, 193, 21, 12, ES_AUTOHSCROLL
+    AUTOCHECKBOX    "Used Default Char", DID_USEDDEFAULTCHAR, 36, 209, 79, 10
+
+    PUSHBUTTON   "Cancel", IDCANCEL, 15, 250, 60, 18
+    DEFPUSHBUTTON   "OK", IDOK,      85, 250, 60, 18
+END
+
+
+
+ShowTextDlg DIALOG  5, 10, 280, 190
+STYLE WS_THICKFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "View Text"
+BEGIN
+    LTEXT           "-", DID_NAME,     55, 4, 300, 8
+    LTEXT           "-", DID_TYPE, 55, 12, 300, 8
+    LTEXT  "Warning: Font character set may not match text character set.", DID_FONT, 55, 20, 300, 8
+
+    DEFPUSHBUTTON   "OK", IDOK, 10, 10, 35, 14
+    EDITTEXT        DID_TEXT, 2, 34, 276, 135, ES_AUTOVSCROLL | ES_MULTILINE | ES_READONLY | WS_VSCROLL
+END
+
+
+
+
+InstallTableDlg DIALOG 5, 10, 234, 136
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Conversion Tables"
+FONT 8, "MS Shell Dlg"
+BEGIN
+    LISTBOX         DID_LISTBOX, 7, 26, 168, 107, LBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Installed Tables:", -1, 5, 9, 80, 8
+    DEFPUSHBUTTON   "OK", IDOK, 186, 25, 40, 14
+    PUSHBUTTON      "&Add...", BID_ADD, 186, 45, 40, 14
+    PUSHBUTTON      "&Remove...", -1, 186, 65, 40, 14, WS_DISABLED
+    PUSHBUTTON      "&Help...", -1, 186, 85, 40, 14, WS_DISABLED
+END
+
+
+
+
+STRINGTABLE
+BEGIN
+    IDS_SOURCE,               "Source:"
+    IDS_DESTINATION,          "Destination:"
+    IDS_VIEW_SOURCE_BTN,      "View &Source..."
+    IDS_VIEW_DESTINATION_BTN, "View &Destination..."
+    IDS_FILE_FILTER_SPEC1,    "All Files (*.*)"
+    IDS_FILE_FILTER_SPEC2,    "Text Files (*.txt)"
+    IDS_FILE_FILTER_SPEC3,    "Unicode Files (*.utf)"
+    IDS_CODE_PAGE,            "CodePage: %d"
+    IDS_OPEN_FILE_TITLE,      "Open File"
+    IDS_OPEN_FILE_FAILED,     "open file failed."
+    IDS_FILE_TOO_BIG,         "File too big, > 2^32."
+    IDS_READFILE_FAILED,      "ReadFile() failed."
+    IDS_SWAPPING_BYTE_ORDER,  "Reverse byte order mark detected.\n Automatically swapping byte order."
+    IDS_NOTEXT_TO_SAVE,       "No text to save"
+    IDS_SAVE_AS_TITLE,        "Save As"
+    IDS_CREATEFILE_FAILED,    "CreateFile() failed."
+    IDS_WRITEFILE_FAILED,     "WriteFile() failed."
+    IDS_FROM_CLIPBOARD,       "<from Clipboard>"
+    IDS_LOAD_SOURCE_FILE,     "Load Source File"
+    IDS_SOURCE_TYPE_UNKNOWN,  "Source type unknown.\n Specify Source Options"
+    IDS_DATA_NOT_SAVED,       "Data not saved yet!"
+    IDS_BYTES,                "bytes: %d"
+    IDS_BYTE_ORDER_REVERSED,  "Byte Order Reversed."
+    IDS_APP_WARNING,          "Application Warning"
+    IDS_INTERPRET_SOURCE_AS,  "Interpret Source As..."
+    IDS_CONVERT_DEST_TO,      "Convert Destination To..."
+    IDS_VIEW_SOURCE_TITLE,    "View Source"
+    IDS_VIEW_DEST_TITLE,      "View Destination"
+    IDS_FILE_FILTER_SPEC4,    "Conversion Table (*.nls)"
+    IDS_TABLE_FILE_TITLE,     "Locate c_*.nls files from distribution media."
+    IDS_INCORRECT_FILE_TYPE,  "Incorrect file type.\n Need c_*.nls."
+    IDS_FILENAME_OVERFLOW,    "File name overflow."
+    IDS_LOGON_AS_ADMIN,       "Log on as Administrator to complete this action."
+    IDS_ACCESS_DENIED,        "Access Denied, Insufficient Privilege"
+    IDS_REGOPENKEYEX_FAILED,  "RegOpenKeyEx() failed."
+    IDS_FILE_ALREADY_EXISTS,  "File already exists.\n Replace existing?"
+    IDS_FILE_CP_FAILED_AGAIN, "File copy failed again."
+    IDS_FILE_CP_FAILED,       "File copy failed."
+    IDS_FILE_PARSE_FAILED,    "Parsing file title failed."
+    IDS_FIRSTCALL_FAILED,     "System conversion API failed."
+END
+
+
+#ifdef JAPAN
+
+//////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+LANGUAGE LANG_JAPANESE, SUBLANG_NEUTRAL
+
+
+uconvertMenu MENU
+BEGIN
+
+    POPUP "ﾌｧｲﾙ(&F)"
+    BEGIN
+        MENUITEM "変換元ﾌｧｲﾙを開く(&O)...",       MID_OPEN
+        MENUITEM "変換先ﾌｧｲﾙの保存(&S)...",       MID_SAVEAS
+        MENUITEM SEPARATOR
+        MENUITEM "Uconvert の終了(&X)",           MID_EXIT
+    END
+
+    POPUP "編集(&E)"
+    BEGIN
+        MENUITEM "変換先ﾌｧｲﾙをｸﾘｯﾌﾟﾎﾞｰﾄﾞにｺﾋﾟｰ(&C)\bCtrl+C",        MID_COPYDESTINATION
+        MENUITEM "ｸﾘｯﾌﾟﾎﾞｰﾄﾞから変換元ﾌｧｲﾙに貼り付け(&P)\bCtrl+V",  MID_PASTESOURCE
+        MENUITEM SEPARATOR
+        MENUITEM "変換元ﾌｧｲﾙの消去(&S)",                            MID_CLEARSOURCE
+        MENUITEM "変換先ﾌｧｲﾙの消去(&D)",                            MID_CLEARDESTINATION
+    END
+
+    POPUP "変換(&C)"
+    BEGIN
+        MENUITEM "変換(&C)\bF3",                     MID_CONVERTNOW
+        MENUITEM SEPARATOR
+        MENUITEM "変換元のｵﾌﾟｼｮﾝを変更(&S)....",     MID_SOURCEOPT
+        MENUITEM "変換先のｵﾌﾟｼｮﾝを変更(&D)....",     MID_DESTINATIONOPT
+        MENUITEM "変換ｵﾌﾟｼｮﾝを変更(&V)....",         MID_CONVERSIONOPT
+        MENUITEM SEPARATOR
+        MENUITEM "変換元のﾊﾞｲﾄ ｵｰﾀﾞｰを交換(&B)",     MID_SWAPSOURCE
+        MENUITEM "変換先のﾊﾞｲﾄ ｵｰﾀﾞｰを交換(&O)",     MID_SWAPDESTINATION
+        MENUITEM SEPARATOR
+        MENUITEM "変換ﾃｰﾌﾞﾙのｲﾝｽﾄｰﾙ(&I)...",         MID_INSTALLTABLES
+    END
+
+    POPUP "ﾍﾙﾌﾟ(&H)"
+    BEGIN
+        MENUITEM "目次(&C)",                  MID_HELP
+        MENUITEM SEPARATOR
+        MENUITEM "ﾊﾞｰｼﾞｮﾝ情報(&A)",           MID_ABOUT
+    END
+END
+
+
+/* Support Ctrl+C/V as well as <crtl>+<ins> and <shift>+<ins> */
+uconvertAccel ACCELERATORS
+BEGIN
+  VK_INSERT, MID_COPYDESTINATION , CONTROL, VIRTKEY
+  "^C",      MID_COPYDESTINATION
+  VK_INSERT, MID_PASTESOURCE, SHIFT  , VIRTKEY
+  "^V",      MID_PASTESOURCE
+  VK_F3,     MID_CONVERTNOW,    VIRTKEY
+  VK_F1,     MID_HELP,          VIRTKEY
+  "S",       BID_VIEWSOURCE,      ALT
+  "s",       BID_VIEWSOURCE,      ALT
+  "D",       BID_VIEWDESTINATION, ALT
+  "d",       BID_VIEWDESTINATION, ALT
+END
+
+
+
+
+
+DataOptionsDlg DIALOG 5, 10, 180, 116
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "置き換え"
+FONT 9, "MS Shell Dlg"
+BEGIN
+    GROUPBOX        "", -1, 15, 6, 150, 78
+    AUTORADIOBUTTON "Unicode(&U)",   DID_RBUNICODE, 24, 14, 51, 10
+    AUTORADIOBUTTON "ANSI ｺｰﾄﾞﾍﾟｰｼﾞ(&A)",   DID_RBANSICP,    24, 35, 75, 10
+    AUTORADIOBUTTON "OEM ｺｰﾄﾞﾍﾟｰｼﾞ(&E)",   DID_RBOEMCP,     24, 50, 75, 10
+    AUTORADIOBUTTON "その他のｺｰﾄﾞﾍﾟｰｼﾞ(&R):", DID_RBOTHERCP,   24, 65, 88, 10
+    COMBOBOX        DID_CODEPAGELIST, 114, 65, 40, 77, WS_VSCROLL | WS_TABSTOP | CBS_DROPDOWNLIST | CBS_SORT
+
+    PUSHBUTTON   "ｷｬﾝｾﾙ", IDCANCEL, 22, 92, 60, 14
+    DEFPUSHBUTTON   "OK", IDOK,      98, 92, 60, 14
+END
+
+
+
+
+
+ConversionOptionsDlg DIALOG 10, 20, 195, 188
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "変換ｵﾌﾟｼｮﾝ"
+FONT 9, "MS Shell Dlg"
+BEGIN
+    GROUPBOX        "MulitByteToWideChar", -1, 10, 1, 177, 53
+    RADIOBUTTON     "MB_PRECOMPOSED",   DID_PRECOMPOSED,   25, 12, 100, 10
+    RADIOBUTTON     "MB_COMPOSITE",     DID_COMPOSITE,     25, 24, 100, 10
+    AUTOCHECKBOX    "MB_USEGLYPHCHARS", DID_USEGLYPHCHARS, 25, 38, 100, 10
+
+    GROUPBOX        "WideCharToMultiByte", -1, 10, 59, 177, 98
+    AUTOCHECKBOX    "WC_COMPOSITECHECK", DID_COMPOSITECHECK, 25, 70, 100, 10
+    AUTOCHECKBOX    "WC_DISCARDNS",      DID_DISCARDNS,      25, 85, 100, 10
+    AUTOCHECKBOX    "WC_SEPCHARS",       DID_SEPCHARS,       25, 97, 100, 10
+    AUTOCHECKBOX    "WC_DEFAULTCHAR",    DID_DEFAULTCHAR,    25, 109, 100, 10
+
+    LTEXT           "ﾃﾞﾌｫﾙﾄの文字(&D):", -1, 36, 125, 80, 9
+    EDITTEXT        DID_EFDEFAULTCHAR, 118, 123, 21, 12, ES_AUTOHSCROLL
+    AUTOCHECKBOX    "ﾃﾞﾌｫﾙﾄの文字が使用されました", DID_USEDDEFAULTCHAR, 36, 138, 140, 10
+
+    PUSHBUTTON   "ｷｬﾝｾﾙ", IDCANCEL, 29, 164, 60, 14
+    DEFPUSHBUTTON   "OK", IDOK,      105, 164, 60, 14
+END
+
+
+
+ShowTextDlg DIALOG  5, 10, 307, 178
+STYLE WS_THICKFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "ﾃｷｽﾄの表示"
+FONT 9, "MS Shell Dlg"
+BEGIN
+    LTEXT           "-", DID_NAME,     48, 1, 259, 8
+    LTEXT           "-", DID_TYPE, 48, 9, 259, 8
+    LTEXT  "警告: ﾌｫﾝﾄ ｷｬﾗｸﾀ ｾｯﾄがﾃｷｽﾄ ｷｬﾗｸﾀ ｾｯﾄと一致しない可能性があります。", DID_FONT, 48, 19, 259, 8
+
+    DEFPUSHBUTTON   "OK", IDOK, 6, 10, 35, 14
+    EDITTEXT        DID_TEXT, 2, 40, 276, 129, ES_AUTOVSCROLL | ES_MULTILINE | ES_READONLY | WS_VSCROLL
+END
+
+
+
+
+InstallTableDlg DIALOG 5, 10, 234, 136
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "変換ﾃｰﾌﾞﾙ"
+FONT 9, "MS Shell Dlg"
+BEGIN
+    LISTBOX         DID_LISTBOX, 7, 26, 168, 107, LBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "ｲﾝｽﾄｰﾙされているﾃｰﾌﾞﾙ:", -1, 5, 9, 91, 8
+    DEFPUSHBUTTON   "OK", IDOK, 184, 25, 42, 14
+    PUSHBUTTON      "追加(&A)...", BID_ADD, 184, 45, 42, 14
+    PUSHBUTTON      "削除(&R)...", -1, 184, 65, 42, 14, WS_DISABLED
+    PUSHBUTTON      "ﾍﾙﾌﾟ(&H)...", -1, 184, 85, 42, 14, WS_DISABLED
+END
+
+STRINGTABLE
+BEGIN
+    IDS_SOURCE,               "変換元:"
+    IDS_DESTINATION,          "変換先:"
+    IDS_VIEW_SOURCE_BTN,      "変換元の表示(&S)..."
+    IDS_VIEW_DESTINATION_BTN, "変換先の表示(&D)..."
+    IDS_FILE_FILTER_SPEC1,    "すべてのﾌｧｲﾙ (*.*)"
+    IDS_FILE_FILTER_SPEC2,    "ﾃｷｽﾄ ﾌｧｲﾙ (*.txt)"
+    IDS_FILE_FILTER_SPEC3,    "Unicode ﾌｧｲﾙ (*.utf)"
+    IDS_CODE_PAGE,            "ｺｰﾄﾞﾍﾟｰｼﾞ: %d"
+    IDS_OPEN_FILE_TITLE,      "ﾌｧｲﾙを開く"
+    IDS_OPEN_FILE_FAILED,     "ﾌｧｲﾙを開けませんでした"
+    IDS_FILE_TOO_BIG,         "ﾌｧｲﾙが大きすぎます > 2^32"
+    IDS_READFILE_FAILED,      "ReadFile() でｴﾗｰが発生しました"
+    IDS_SWAPPING_BYTE_ORDER,  "ﾊﾞｲﾄの並び順入れ換えのためのﾏｰｸが見つかりました。\n 自動的にﾊﾞｲﾄの並び順を入れ換えます。"
+    IDS_NOTEXT_TO_SAVE,       "保存するﾃｷｽﾄがありません"
+    IDS_SAVE_AS_TITLE,        "名前を付けて保存"
+    IDS_CREATEFILE_FAILED,    "CreateFile() でｴﾗｰが発生しました"
+    IDS_WRITEFILE_FAILED,     "WriteFile() でｴﾗｰが発生しました"
+    IDS_FROM_CLIPBOARD,       "<ｸﾘｯﾌﾟﾎﾞｰﾄﾞから>"
+    IDS_LOAD_SOURCE_FILE,     "変換元ﾌｧｲﾙのﾛｰﾄﾞ"
+    IDS_SOURCE_TYPE_UNKNOWN,  "変換元ﾀｲﾌﾟが不明です。\n 変換元ｵﾌﾟｼｮﾝを指定してください。"
+    IDS_DATA_NOT_SAVED,       "ﾃﾞｰﾀ未保存!!"
+    IDS_BYTES,                "ﾊﾞｲﾄ数: %d"
+    IDS_BYTE_ORDER_REVERSED,  "ﾊﾞｲﾄ ｵｰﾀﾞｰ 交換"
+    IDS_APP_WARNING,          "警告"
+    IDS_INTERPRET_SOURCE_AS,  "変換元ｵﾌﾟｼｮﾝ..."
+    IDS_CONVERT_DEST_TO,      "変換先ｵﾌﾟｼｮﾝ..."
+    IDS_VIEW_SOURCE_TITLE,    "変換元の表示"
+    IDS_VIEW_DEST_TITLE,      "変換先の表示"
+    IDS_FILE_FILTER_SPEC4,    "変換ﾃｰﾌﾞﾙ (*.nls)"
+    IDS_TABLE_FILE_TITLE,     "製品ﾒﾃﾞｨｱから c_*.nls ﾌｧｲﾙを探して下さい"
+    IDS_INCORRECT_FILE_TYPE,  "不正なﾌｧｲﾙ ﾀｲﾌﾟです。\n c_*.nls でなければなりません。"
+    IDS_FILENAME_OVERFLOW,    "ﾌｧｲﾙ名が長すぎます"
+    IDS_LOGON_AS_ADMIN,       "この操作を行うためには、管理者としてﾛｸﾞｵﾝしなければなりません。"
+    IDS_ACCESS_DENIED,        "ｱｸｾｽが拒否されました。特権が不十分です。"
+    IDS_REGOPENKEYEX_FAILED,  "RegOpenKeyEx() でｴﾗｰが発生しました。"
+    IDS_FILE_ALREADY_EXISTS,  "ﾌｧｲﾙはすでに存在します。\n 置き換えますか?"
+    IDS_FILE_CP_FAILED_AGAIN, "ﾌｧｲﾙのｺﾋﾟｰに再び失敗しました。"
+    IDS_FILE_CP_FAILED,       "ﾌｧｲﾙのｺﾋﾟｰに失敗しました。"
+    IDS_FILE_PARSE_FAILED,    "ﾌｧｲﾙ ﾀｲﾄﾙの解析に失敗しました。"
+    IDS_FIRSTCALL_FAILED,     "System conversion API failed."
+END
+
+#endif

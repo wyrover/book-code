@@ -1,0 +1,7 @@
+#include "pwalk.h"
+
+
+STRINGTABLE
+    {
+    IDS_MAPFILENAME    "ProbeDllMapFile"
+    }
