@@ -1,0 +1,515 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\TCPInfo.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 78
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About TCPInfo"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "TCPInfo Version 1.0",IDC_STATIC,44,36,119,8,SS_NOPREFIX
+    DEFPUSHBUTTON   "OK",IDOK,178,7,50,14,WS_GROUP
+END
+
+IDD_TCPINFO_DIALOG DIALOGEX 0, 0, 136, 130
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | 
+    WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "TCP信息"
+MENU IDR_MENU1
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "TCP统计",IDC_BUTTON1,16,13,105,14,0,WS_EX_STATICEDGE
+    PUSHBUTTON      "UDP统计",IDC_BUTTON2,16,31,105,14,0,WS_EX_STATICEDGE
+    PUSHBUTTON      "IP统计",IDC_BUTTON3,16,49,105,14,0,WS_EX_STATICEDGE
+    PUSHBUTTON      "ICMP统计",IDC_BUTTON4,16,66,105,14,0,WS_EX_STATICEDGE
+    PUSHBUTTON      "TCP连接",IDC_BUTTON5,16,85,105,14,0,WS_EX_STATICEDGE
+    GROUPBOX        "",IDC_STATIC,7,3,122,120
+    PUSHBUTTON      "UDP连接",IDC_BUTTON6,16,102,105,14,0,WS_EX_STATICEDGE
+END
+
+IDD_DIALOG1 DIALOG DISCARDABLE  0, 0, 220, 229
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "TCP统计"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "关闭",IDOK,136,208,50,14
+    LTEXT           "Time Out Algorithm:",IDC_STATIC,61,15,62,8
+    LTEXT           "Minimum Timeout (ms):",IDC_STATIC,51,27,72,8
+    LTEXT           "Maximum Timeout(ms):",IDC_STATIC,51,39,72,8
+    LTEXT           "Maximum Connections:",IDC_STATIC,49,51,74,8
+    LTEXT           "Active Open Connections:",IDC_STATIC,39,63,84,8
+    LTEXT           "Passive Open Connections:",IDC_STATIC,35,75,88,8
+    LTEXT           "Failed Connection Attempts:",IDC_STATIC,33,87,89,8
+    LTEXT           "Total Connections Reset:",IDC_STATIC,41,98,81,8
+    LTEXT           "Current Established Connections:",IDC_STATIC,17,111,105,
+                    8
+    LTEXT           "Segments Received:",IDC_STATIC,55,123,67,8
+    LTEXT           "Segments Sent:",IDC_STATIC,71,135,51,8
+    LTEXT           "Segments Retransmitted:",IDC_STATIC,42,147,80,8
+    LTEXT           "Errors Received:",IDC_STATIC,69,159,54,8
+    LTEXT           "Segments sent with reset flag:",IDC_STATIC,27,170,95,8
+    LTEXT           "Cumulative Number of Connections:",IDC_STATIC,8,183,114,
+                    8
+    CONTROL         "",IDC_STATIC1,"Static",SS_LEFTNOWORDWRAP | SS_SUNKEN | 
+                    WS_GROUP,127,15,80,10
+    CONTROL         "",IDC_STATIC2,"Static",SS_LEFTNOWORDWRAP | SS_SUNKEN | 
+                    WS_GROUP,127,27,80,8
+    CONTROL         "",IDC_STATIC3,"Static",SS_LEFTNOWORDWRAP | SS_SUNKEN | 
+                    WS_GROUP,127,37,80,10
+    CONTROL         "",IDC_STATIC4,"Static",SS_LEFTNOWORDWRAP | SS_SUNKEN | 
+                    WS_GROUP,127,49,80,10
+    CONTROL         "",IDC_STATIC5,"Static",SS_LEFTNOWORDWRAP | SS_SUNKEN | 
+                    WS_GROUP,127,61,80,10
+    CONTROL         "",IDC_STATIC6,"Static",SS_LEFTNOWORDWRAP | SS_SUNKEN | 
+                    WS_GROUP,127,73,80,10
+    CONTROL         "",IDC_STATIC7,"Static",SS_LEFTNOWORDWRAP | SS_SUNKEN | 
+                    WS_GROUP,127,85,80,10
+    CONTROL         "",IDC_STATIC8,"Static",SS_LEFTNOWORDWRAP | SS_SUNKEN | 
+                    WS_GROUP,127,97,80,10
+    CONTROL         "",IDC_STATIC9,"Static",SS_LEFTNOWORDWRAP | SS_SUNKEN | 
+                    WS_GROUP,127,109,80,10
+    CONTROL         "",IDC_STATIC10,"Static",SS_LEFTNOWORDWRAP | SS_SUNKEN | 
+                    WS_GROUP,127,121,80,10
+    CONTROL         "",IDC_STATIC11,"Static",SS_LEFTNOWORDWRAP | SS_SUNKEN | 
+                    WS_GROUP,127,133,80,10
+    CONTROL         "",IDC_STATIC12,"Static",SS_LEFTNOWORDWRAP | SS_SUNKEN | 
+                    WS_GROUP,127,145,80,10
+    CONTROL         "",IDC_STATIC13,"Static",SS_LEFTNOWORDWRAP | SS_SUNKEN | 
+                    WS_GROUP,127,157,80,10
+    CONTROL         "",IDC_STATIC14,"Static",SS_LEFTNOWORDWRAP | SS_SUNKEN | 
+                    WS_GROUP,127,169,80,10
+    CONTROL         "",IDC_STATIC15,"Static",SS_LEFTNOWORDWRAP | SS_SUNKEN | 
+                    WS_GROUP,127,181,80,10
+    PUSHBUTTON      "刷新",IDC_BUTTON1,81,208,50,14
+    GROUPBOX        "",IDC_STATIC,8,3,205,196
+END
+
+IDD_DIALOG2 DIALOG DISCARDABLE  0, 0, 220, 100
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "UDP统计"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "关闭",IDOK,112,79,50,14
+    PUSHBUTTON      "刷新",IDC_BUTTON1,56,79,50,14
+    GROUPBOX        "",IDC_STATIC,7,3,206,72
+    LTEXT           "Total Datagrams Received:",IDC_STATIC,31,14,88,8
+    LTEXT           "Datagrams having no port:",IDC_STATIC,35,25,84,8
+    LTEXT           "Errors on received datagrams:",IDC_STATIC,24,36,95,8
+    LTEXT           "Sent datagrams:",IDC_STATIC,67,47,52,8
+    LTEXT           "Number of Listening connections:",IDC_STATIC,14,58,106,
+                    8
+    LTEXT           "",IDC_STATIC1,125,14,80,10,SS_SUNKEN
+    LTEXT           "",IDC_STATIC5,125,58,80,10,SS_SUNKEN
+    LTEXT           "",IDC_STATIC2,125,25,80,10,SS_SUNKEN
+    LTEXT           "",IDC_STATIC3,125,36,80,10,SS_SUNKEN
+    LTEXT           "",IDC_STATIC4,125,47,80,10,SS_SUNKEN
+END
+
+IDD_DIALOG3 DIALOG DISCARDABLE  0, 0, 239, 322
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "IP统计"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "关闭",IDOK,119,301,50,14
+    LTEXT           "Forwarding:",IDC_STATIC,100,15,38,8
+    GROUPBOX        "",IDC_STATIC,7,3,225,293
+    LTEXT           "Default Time To Live (TTL):",IDC_STATIC,50,27,88,8
+    LTEXT           "Datagrams Received:",IDC_STATIC,68,39,70,8
+    LTEXT           "Datagrams with Header Errors:",IDC_STATIC,41,51,97,8
+    LTEXT           "Datagrams with Address Errors:",IDC_STATIC,39,63,99,8
+    LTEXT           "Datagrams Forwarded:",IDC_STATIC,66,75,72,8
+    LTEXT           "Datagrams with Protocol Errors:",IDC_STATIC,38,87,100,8
+    LTEXT           "Incoming Datagrams Discarded:",IDC_STATIC,36,99,102,8
+    LTEXT           "Datagrams Delivered:",IDC_STATIC,69,111,69,8
+    LTEXT           "Datagrams Sent:",IDC_STATIC,84,123,54,8
+    LTEXT           "Routing Datagrams Discarded:",IDC_STATIC,40,135,98,8
+    LTEXT           "Datagrams with No Routes:",IDC_STATIC,50,147,88,8
+    LTEXT           "Reassemble Time-Out:",IDC_STATIC,66,159,72,8
+    LTEXT           "Datagrams Requiring Reassembly",IDC_STATIC,31,171,107,8
+    LTEXT           "Datagrams Successfully Reassembled:",IDC_STATIC,15,183,
+                    123,8
+    LTEXT           "Datagrams Failed to Reassemble:",IDC_STATIC,32,195,106,
+                    8
+    LTEXT           "Datagrams Fragmented Successfully:",IDC_STATIC,20,207,
+                    118,8
+    LTEXT           "Datagrams Failed to Fragment:",IDC_STATIC,41,219,97,8
+    LTEXT           "Fragments Created:",IDC_STATIC,76,231,62,8
+    LTEXT           "Number of Interfaces:",IDC_STATIC,69,243,69,8
+    LTEXT           "local machine IP Addresses:",IDC_STATIC,48,255,90,8
+    LTEXT           "Number of Routes:",IDC_STATIC,78,267,60,8
+    LTEXT           "",IDC_STATIC1,147,15,80,10,SS_SUNKEN
+    LTEXT           "",IDC_STATIC2,147,27,80,10,SS_SUNKEN
+    LTEXT           "",IDC_STATIC3,147,39,80,10,SS_SUNKEN
+    LTEXT           "",IDC_STATIC4,147,51,80,10,SS_SUNKEN
+    LTEXT           "",IDC_STATIC5,147,63,80,10,SS_SUNKEN
+    LTEXT           "",IDC_STATIC6,147,75,80,10,SS_SUNKEN
+    LTEXT           "",IDC_STATIC7,147,87,80,10,SS_SUNKEN
+    LTEXT           "",IDC_STATIC8,147,99,80,10,SS_SUNKEN
+    LTEXT           "",IDC_STATIC9,147,111,80,10,SS_SUNKEN
+    LTEXT           "",IDC_STATIC10,147,123,80,10,SS_SUNKEN
+    LTEXT           "",IDC_STATIC11,147,135,80,10,SS_SUNKEN
+    LTEXT           "",IDC_STATIC12,147,147,80,10,SS_SUNKEN
+    LTEXT           "",IDC_STATIC13,147,159,80,10,SS_SUNKEN
+    LTEXT           "",IDC_STATIC14,147,171,80,10,SS_SUNKEN
+    LTEXT           "",IDC_STATIC15,147,183,80,10,SS_SUNKEN
+    LTEXT           "",IDC_STATIC16,147,195,80,10,SS_SUNKEN
+    LTEXT           "",IDC_STATIC17,147,207,80,10,SS_SUNKEN
+    LTEXT           "",IDC_STATIC18,147,219,80,10,SS_SUNKEN
+    LTEXT           "",IDC_STATIC19,147,231,80,10,SS_SUNKEN
+    LTEXT           "",IDC_STATIC20,147,243,80,10,SS_SUNKEN
+    LTEXT           "",IDC_STATIC21,147,255,80,10,SS_SUNKEN
+    LTEXT           "",IDC_STATIC22,147,267,80,10,SS_SUNKEN
+    PUSHBUTTON      "刷新",IDOK2,61,301,50,14
+    LTEXT           "Total Datagrams Discarded:",IDC_STATIC,50,280,89,8
+    LTEXT           "",IDC_STATIC23,147,280,80,10,SS_SUNKEN
+END
+
+IDD_DIALOG4 DIALOG DISCARDABLE  0, 0, 226, 354
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "ICMP统计"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "关闭",IDOK,113,333,50,14
+    PUSHBUTTON      "刷新",IDOK2,61,333,50,14
+    GROUPBOX        "Incoming Stats",IDC_STATIC,7,7,212,159
+    GROUPBOX        "Outgoing Stats",IDC_STATIC,7,168,212,160
+    LTEXT           "Number of Messages:",IDC_STATIC,56,20,70,8
+    LTEXT           "Number of Errors:",IDC_STATIC,70,31,56,8
+    LTEXT           "Destination Unreachable Messages:",IDC_STATIC,11,42,115,
+                    8
+    LTEXT           "TTL Exceeded Messages:",IDC_STATIC,42,53,84,8
+    LTEXT           "Parameter problem Messages:",IDC_STATIC,30,64,96,8
+    LTEXT           "Source Quench Messages:",IDC_STATIC,39,75,87,8
+    LTEXT           "Redirection Messages:",IDC_STATIC,53,86,73,8
+    LTEXT           "Echo Messages:",IDC_STATIC,72,97,54,8
+    LTEXT           "Echo Replies:",IDC_STATIC,81,108,45,8
+    LTEXT           "Time Stamp Messages:",IDC_STATIC,52,119,74,8
+    LTEXT           "Time Stamp Replies:",IDC_STATIC,60,130,66,8
+    LTEXT           "Address Mask Messages:",IDC_STATIC,44,141,82,8
+    LTEXT           "Address Mask Replies:",IDC_STATIC,53,152,73,8
+    LTEXT           "",IDC_STATIC1,130,20,80,10,SS_SUNKEN
+    LTEXT           "",IDC_STATIC2,130,31,80,10,SS_SUNKEN
+    LTEXT           "",IDC_STATIC3,130,42,80,10,SS_SUNKEN
+    LTEXT           "",IDC_STATIC4,130,53,80,10,SS_SUNKEN
+    LTEXT           "",IDC_STATIC5,130,64,80,10,SS_SUNKEN
+    LTEXT           "",IDC_STATIC6,130,75,80,10,SS_SUNKEN
+    LTEXT           "",IDC_STATIC7,130,86,80,10,SS_SUNKEN
+    LTEXT           "",IDC_STATIC8,130,97,80,10,SS_SUNKEN
+    LTEXT           "",IDC_STATIC9,130,108,80,10,SS_SUNKEN
+    LTEXT           "",IDC_STATIC10,130,119,80,10,SS_SUNKEN
+    LTEXT           "",IDC_STATIC11,130,130,80,10,SS_SUNKEN
+    LTEXT           "",IDC_STATIC12,130,141,80,10,SS_SUNKEN
+    LTEXT           "",IDC_STATIC13,130,152,80,10,SS_SUNKEN
+    LTEXT           "Number of Messages:",IDC_STATIC,56,179,70,8
+    LTEXT           "Number of Errors:",IDC_STATIC,70,190,56,8
+    LTEXT           "Destination Unreachable Messages:",IDC_STATIC,11,201,
+                    115,8
+    LTEXT           "TTL Exceeded Messages:",IDC_STATIC,42,212,84,8
+    LTEXT           "Parameter problem Messages:",IDC_STATIC,30,223,96,8
+    LTEXT           "Source Quench Messages:",IDC_STATIC,39,234,87,8
+    LTEXT           "Redirection Messages:",IDC_STATIC,53,245,73,8
+    LTEXT           "Echo Messages:",IDC_STATIC,72,256,54,8
+    LTEXT           "Echo Replies:",IDC_STATIC,81,267,45,8
+    LTEXT           "Time Stamp Messages:",IDC_STATIC,52,278,74,8
+    LTEXT           "Time Stamp Replies:",IDC_STATIC,60,289,66,8
+    LTEXT           "Address Mask Messages:",IDC_STATIC,44,300,82,8
+    LTEXT           "Address Mask Replies:",IDC_STATIC,53,311,73,8
+    LTEXT           "",IDC_STATIC24,130,179,80,10,SS_SUNKEN
+    LTEXT           "",IDC_STATIC25,130,190,80,10,SS_SUNKEN
+    LTEXT           "",IDC_STATIC26,130,201,80,10,SS_SUNKEN
+    LTEXT           "",IDC_STATIC27,130,212,80,10,SS_SUNKEN
+    LTEXT           "",IDC_STATIC28,130,223,80,10,SS_SUNKEN
+    LTEXT           "",IDC_STATIC29,130,234,80,10,SS_SUNKEN
+    LTEXT           "",IDC_STATIC30,130,245,80,10,SS_SUNKEN
+    LTEXT           "",IDC_STATIC31,130,256,80,10,SS_SUNKEN
+    LTEXT           "",IDC_STATIC32,130,267,80,10,SS_SUNKEN
+    LTEXT           "",IDC_STATIC33,130,278,80,10,SS_SUNKEN
+    LTEXT           "",IDC_STATIC34,130,289,80,10,SS_SUNKEN
+    LTEXT           "",IDC_STATIC35,130,300,80,10,SS_SUNKEN
+    LTEXT           "",IDC_STATIC36,130,311,80,10,SS_SUNKEN
+END
+
+IDD_DIALOG5 DIALOG DISCARDABLE  0, 0, 283, 242
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "TCP连接"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "关闭",IDOK,134,221,50,14
+    PUSHBUTTON      "刷新",IDOK2,81,221,50,14
+    GROUPBOX        "",IDC_STATIC,7,3,269,213
+    CONTROL         "List1",IDC_LIST1,"SysListView32",LVS_REPORT | WS_BORDER | 
+                    WS_TABSTOP,13,14,254,195
+END
+
+IDD_DIALOG6 DIALOG DISCARDABLE  0, 0, 283, 242
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "UDP连接"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "关闭",IDOK,134,221,50,14
+    PUSHBUTTON      "刷新",IDOK2,81,221,50,14
+    GROUPBOX        "",IDC_STATIC,7,3,269,213
+    CONTROL         "List1",IDC_LIST1,"SysListView32",LVS_REPORT | WS_BORDER | 
+                    WS_TABSTOP,13,14,254,195
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "TCPInfo MFC Application\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "TCPInfo\0"
+            VALUE "LegalCopyright", "Copyright (C) 2001\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "TCPInfo.EXE\0"
+            VALUE "ProductName", "TCPInfo Application\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 71
+    END
+
+    IDD_TCPINFO_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 129
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 123
+    END
+
+    IDD_DIALOG1, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 213
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 222
+    END
+
+    IDD_DIALOG2, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 213
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 93
+    END
+
+    IDD_DIALOG3, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 232
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 315
+    END
+
+    IDD_DIALOG4, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 219
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 347
+    END
+
+    IDD_DIALOG5, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 276
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 235
+    END
+
+    IDD_DIALOG6, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 276
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 235
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU1 MENU DISCARDABLE 
+BEGIN
+    POPUP "文件"
+    BEGIN
+        MENUITEM "退出",                        ID_FILE_EXIT
+    END
+    POPUP "帮助"
+    BEGIN
+        MENUITEM "关于",                        ID_HELP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "&About TCPInfo..."
+    IDP_SOCKETS_INIT_FAILED "Windows sockets initialization failed."
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\TCPInfo.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\TCPInfo.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,237 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+#include <winsock2.h>
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ICON                ICON    DISCARDABLE     "icon.ico"
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "#include <winsock2.h>\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU MENU DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&About",                      IDM_ABOUT
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       IDM_EXIT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUT DIALOG DISCARDABLE  0, 0, 189, 70
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About Enumerate Protocols"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,97,49,50,14
+    CONTROL         106,IDC_STATIC,"Static",SS_BITMAP,17,13,53,49
+    LTEXT           "WinSock 2 Enumerate Protocols",IDC_STATIC,75,16,104,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 182
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 63
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_WS2_BITMAP          BITMAP  DISCARDABLE     "ws2.bmp"
+IDB_BITMAP1             BITMAP  DISCARDABLE     "bitmap1.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    WSAEINTR                "WSAEINTR: Interrupted function call"
+    WSAEBADF                "WSAEBADF: Bad file number"
+    WSAEACCES               "WSAEACCES: Permission denied"
+    WSAEFAULT               "WSAEFAULT: Address fault"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    WSAEINVAL               "WSAEINVAL: Invalid argument"
+    WSAEMFILE               "WSAEMFILE: Too many open files"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    WSAEWOULDBLOCK          "WSAEWOULDBLOCK: Resource temporarily unavailable (Would block)"
+    WSAEINPROGRESS          "WSAEINPROGRESS: Operation now in progress"
+    WSAEALREADY             "WSAEALREADY: Operation already in progress"
+    WSAENOTSOCK             "WSAENOTSOCK: Socket operation on non-socket"
+    WSAEDESTADDRREQ         "WSAEDESTADDRREQ: Destination address required"
+    WSAEMSGSIZE             "WSAEMSGSIZE: Message too long"
+    WSAEPROTOTYPE           "WSAEPROTOTYPE: Protocol wrong type for socket"
+    WSAENOPROTOOPT          "WSAENOPROTOOPT: Bad protocol option"
+    WSAEPROTONOSUPPORT      "WSAEPROTONOSUPPORT: Protocol not supported"
+    WSAESOCKTNOSUPPORT      "WSAESOCKTNOSUPPORT: Socket type not supported"
+    WSAEOPNOTSUPP           "WSAEOPNOTSUPP: Operation not supported"
+    WSAEPFNOSUPPORT         "WSAEPFNOSUPPORT: Protocol family not supported"
+    WSAEAFNOSUPPORT         "WSAEAFNOSUPPORT: Address family not supported by protocol family"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    WSAEADDRINUSE           "WSAEADDRINUSE: Address already in use"
+    WSAEADDRNOTAVAIL        "WSAEADDRNOTAVAIL: Cannot assign requested address"
+    WSAENETDOWN             "WSAENETDOWN: Network is down"
+    WSAENETUNREACH          "WSAENETUNREACH: Network is unreachable"
+    WSAENETRESET            "WSAENETRESET: Network dropped connection on reset"
+    WSAECONNABORTED         "WSAECONNABORTED: Software caused connection abort"
+    WSAECONNRESET           "WSAECONNRESET: Connection reset by peer"
+    WSAENOBUFS              "WSAENOBUFS: No buffer space available"
+    WSAEISCONN              "WSAEISCONN: Socket is already connected"
+    WSAENOTCONN             "WSAENOTCONN: Socket is not connected"
+    WSAESHUTDOWN            "WSAESHUTDOWN: Cannot send after socket shutdown"
+    WSAETOOMANYREFS         "WSAETOOMANYREFS: Too many references"
+    WSAETIMEDOUT            "WSAETIMEDOUT: Connection timed out"
+    WSAECONNREFUSED         "WSAECONNREFUSED: Connection refused"
+    WSAELOOP                "WSAELOOP: Loop"
+    WSAENAMETOOLONG         "WSAENAMETOOLONG: Name too long"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    WSAEHOSTDOWN            "WSAEHOSTDOWN: Host is down"
+    WSAEHOSTUNREACH         "WSAEHOSTUNREACH: No route to host"
+    WSAENOTEMPTY            "WSAENOTEMPTY: Directory not empty"
+    WSAEPROCLIM             "WSAEPROCLIM: Too many processes"
+    WSAEUSERS               "WSAEUSERS: Too many users"
+    WSAEDQUOT               "WSAEDQUOT: Disk quota"
+    WSAESTALE               "WSAESTALE: Stale"
+    WSAEREMOTE              "WSAEREMOTE: Remote"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    WSASYSNOTREADY          "WSASYSNOTREADY: Network subsystem is unavailable"
+    WSAVERNOTSUPPORTED      "WSAVERNOTSUPPORTED: WINSOCK.DLL version out of range"
+    WSANOTINITIALISED       "WSANOTINITIALISED: Successful WSAStartup() not yet performed"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    WSAEDISCON              "WSAEDISCON: Graceful shutdown in progress"
+    WSAENOMORE              "WSAENOMORE: "
+    WSAECANCELLED           "WSAECANCELLED: Cancelled"
+    WSAEINVALIDPROCTABLE    "WSAEINVALIDPROCTABLE: Invalid procedure table from service provider"
+    WSAEINVALIDPROVIDER     "WSAEINVALIDPROVIDER: Invalid service provider version number"
+    WSAEPROVIDERFAILEDINIT  "WSAEPROVIDERFAILEDINIT: Unable to initialize a service provider"
+    WSASYSCALLFAILURE       "WSASYSCALLFAILURE: System call failure"
+    WSASERVICE_NOT_FOUND    "WSASERVICE_NOT_FOUND: Service not found"
+    WSATYPE_NOT_FOUND       "WSATYPE_NOT_FOUND: Type not found"
+    WSA_E_NO_MORE           "WSA_E_NO_MORE"
+    WSA_E_CANCELLED         "WSA_E_CANCELLED"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    WSAHOST_NOT_FOUND       "WSAHOST_NOT_FOUND: Host not found"
+    WSATRY_AGAIN            "WSATRY_AGAIN: Non-authoritative host not found"
+    WSANO_RECOVERY          "WSANO_RECOVERY: Non-recoverable error"
+    WSANO_DATA              "WSANO_DATA: Valid name no data record of requested type"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    WSAEREFUSED             "WSAEREFUSED: Refused"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

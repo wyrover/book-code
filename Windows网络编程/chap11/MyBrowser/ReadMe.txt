@@ -1,0 +1,1 @@
+这是一个通过MFC WinInet类实现的HTTP客户程序
