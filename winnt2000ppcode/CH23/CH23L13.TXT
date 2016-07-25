@@ -1,0 +1,15 @@
+LIBRARY HPSCAN32
+
+DESCRIPTION 'Application-based VDD for HP Scanners.'
+
+EXPORTS
+    VDDInit
+    VDDDispatch
+    VDDScannerCommand
+
+
+
+
+
+
+

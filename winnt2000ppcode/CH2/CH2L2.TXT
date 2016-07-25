@@ -1,0 +1,67 @@
+/*
+ * User routine DllMain is called on all notifications
+ */
+
+extern BOOL WINAPI DllMain(
+        HANDLE  hDllHandle,
+        DWORD   dwReason,
+        LPVOID  lpreserved
+        ) ;
+
+
+/***
+*BOOL WINAPI _DllMainCRTStartup(hDllHandle, dwReason, lpreserved) - C++ DLL
+*       initialization.
+*
+*Purpose:
+*       This is the entry point for DLL's linked with the C/C++ run-time libs.
+*       This routine does the C runtime initialization for a DLL linked with
+*       MSVCRT.LIB (whose C run-time code is thus in MSVCRT*.DLL.)
+*       It will call the user notification routine DllMain on all 4 types of
+*       DLL notifications.  The return code from this routine is the return
+*       code from the user notification routine.
+*
+*       On DLL_PROCESS_ATTACH, the C++ constructors for the DLL will be called.
+*
+*       On DLL_PROCESS_DETACH, the C++ destructors and _onexit/atexit routines
+*       will be called.
+*
+*Entry:
+*
+*Exit:
+*
+************************************************************************
+*******/
+
+
+BOOL WINAPI _DllMainCRTStartup(
+        HANDLE  hDllHandle,
+        DWORD   dwReason,
+        LPVOID  lpreserved
+        )
+{
+        BOOL retcode = TRUE;
+
+        /*
+         * If this is a process detach notification, check that there has
+         * been a prior process attach notification.
+         */
+        if ( (dwReason == DLL_PROCESS_DETACH) && (__proc_attached == 0) )
+            return FALSE;
+        if ( dwReason == DLL_PROCESS_ATTACH || dwReason == 
+DLL_THREAD_ATTACH )
+        {
+            // process attach notification
+        }
+        retcode = DllMain(hDllHandle, dwReason, lpreserved);
+        if ( (dwReason == DLL_PROCESS_ATTACH) && !retcode )
+             // Call a routine to clean up the RTL because the
+             // user's DllMain routine returned failure.
+        if ( (dwReason == DLL_PROCESS_DETACH) ||
+             (dwReason == DLL_THREAD_DETACH) )
+        {
+             // process detach notification
+        }
+
+        return retcode ;
+}

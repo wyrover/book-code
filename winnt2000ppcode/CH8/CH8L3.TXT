@@ -1,0 +1,84 @@
+#ifndef CWDLG_H
+#define CWDLG_H
+
+#include "cwobj.h"
+
+// Define this for Win32 and Windows NT:
+// #define WIN_32
+// Borland uses __FLAT__
+// Symantec uses __NT__ 
+#ifdef WIN_32
+#define GET_WM_COMMAND_CMD(wp,lp)    HIWORD(wp)
+#else   // 16 bit Windows
+#define GET_WM_COMMAND_CMD(wp,lp)    HIWORD(lp)
+#endif
+
+extern HINSTANCE gdlg_instance;
+// Must be set to current instance before using any dialogs.
+
+int check_gdlg_instance (void);
+
+class tdialog {
+   public:
+   LPCSTR rc_title,caption_title;
+   HWND hwndParent,hdialog;
+   BOOL dlg_return_value;
+   DLGPROC lpDialogProc;
+   tdialog (HWND Parent,LPCSTR resource_name, LPCSTR caption_name);
+   virtual void center_dialog (void);
+   virtual BOOL respond_wm_initdialog (void);
+   virtual BOOL respond_wm_command (WPARAM wParam, LPARAM lParam);
+   virtual BOOL handle_message (HWND hwnd,UINT message,
+       WPARAM wParam,LPARAM lParam);
+   virtual BOOL exec_dialog (void);
+   virtual ~tdialog (void); };
+
+#define MAX_INPUT_LENGTH 80
+
+class tinput_dialog: public tdialog {
+   public:
+   char input_text [MAX_INPUT_LENGTH + 1];
+   LPCSTR input_caption;
+   int input_id,input_caption_id;
+   tinput_dialog (HWND Parent,LPCSTR caption_name,
+       LPCSTR input_name,LPCSTR init_text);
+   virtual BOOL respond_wm_initdialog(void);
+   virtual BOOL respond_wm_command (WPARAM wParam, LPARAM lParam);
+   virtual BOOL exec_dialog (void);
+   virtual ~tinput_dialog (void); };
+
+class tlist_dialog: public tdialog {
+   public:
+   int selected;
+   tlist_box_data *list_box_data;
+   LPCSTR list_box_descr;
+   tlist_dialog (HWND Parent,LPCSTR caption_name,
+        LPCSTR descr_name,tlist_box_data *the_data_rec,int init_selected);
+   virtual void set_data (tlist_box_data *data_rec);
+   virtual void get_data (tlist_box_data *data_rec);
+   virtual BOOL respond_wm_initdialog(void);
+   virtual BOOL respond_wm_command (WPARAM wParam, LPARAM lParam);
+   virtual void set_selected (int sel);
+   virtual LPSTR get_item_string (int item);
+   virtual void clear_list_box (void);
+   virtual BOOL exec_dialog (void);
+   virtual ~tlist_dialog (void); };
+
+class tdata_list_dialog: public tlist_dialog {
+   public:
+   tdata_list_dialog (HWND Parent,LPCSTR caption_name,
+       LPCSTR descr_name,tlist_box_data *the_data_rec, int init_selected):
+   tlist_dialog (Parent,caption_name,descr_name, the_data_rec,
+       init_selected) { } ;
+   virtual BOOL respond_wm_command (WPARAM wParam, LPARAM lParam);
+   virtual LPSTR get_item_string (int item);
+   virtual BOOL exec_dialog (void);
+   };
+#endif
+
+
+
+
+
+
+

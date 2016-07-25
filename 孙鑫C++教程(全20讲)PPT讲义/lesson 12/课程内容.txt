@@ -1,0 +1,1 @@
+const char *与char * const的区别。C语言对文件读写的支持，FILE指针；文本文件和二进制文件的区别。用文本方式读写文件和以二进制方式读写文件的注意事项。C++对文件读写的支持，ofstream和ifstream的用法。Win32 SDK对文件读写的支持，CreateFile函数、WriteFile函数、ReadFile函数的使用；MFC对文件读写的支持，CFile类和CFileDialog的使用，文件过滤器的设置。win.ini文件和注册表的读写方式及相关知识点。

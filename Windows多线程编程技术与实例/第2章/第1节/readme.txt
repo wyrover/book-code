@@ -1,0 +1,1 @@
+用cl multThread.c LIBCMT.LIB　编译连接生成可执行文件 来自MSDN

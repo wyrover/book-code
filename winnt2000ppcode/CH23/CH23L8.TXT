@@ -1,0 +1,50 @@
+VOID IoVDD_WriteByte(WORD wPort, BYTE byteData)
+{
+   HANDLE hDevice=NULL;
+   DWORD dwCount=0L;
+
+   // handle ports that apps write to
+   switch(wPort)
+   {
+      case IOVDD_PORT_READ:
+         Debug("IOVDD: IOVDD_PORT_READ\n");
+         byteStatus = FALSE;
+         // request kernel-mode driver to read,
+         // when read completes, set status
+         if (byteCount > 35) byteCount = 35;
+         memcpy(pMem,
+            "This would be data read from device",
+            byteCount);
+         byteStatus = TRUE;
+         break;
+
+      case IOVDD_PORT_WRITE:
+         Debug("IOVDD: IOVDD_PORT_WRITE\n");
+         byteStatus = FALSE;
+         // request kernel-mode driver to write,
+         // when write request completes, set status
+         byteStatus = TRUE;
+         break;
+
+      case IOVDD_PORT_COUNT:
+         Debug("IOVDD: IOVDD_PORT_COUNT\n");
+         // this is how many bytes to write
+         byteCount = byteData;
+         if (byteCount > IOVDD_MIO_RANGE)
+            byteCount = IOVDD_MIO_RANGE;
+         break;
+
+      default:
+         Debug("IOVDD: Unsupported port write\n");
+         break;
+   }
+
+   return;
+} // IoVDD_WriteByte
+
+
+
+
+
+
+

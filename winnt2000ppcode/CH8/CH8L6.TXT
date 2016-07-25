@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <string.h>
+
+#include "cwdlg.h"
+#include "cwdialgs.h"
+
+int string_dialog (HWND Parent,LPCSTR dlg_title,
+       LPCSTR descr,int maxlen,void *the_string) {
+    char buffer[80],buffer2[80];
+    strncpy (buffer,(char *)the_string,maxlen);
+    sprintf (buffer2,"Enter new %s:",descr);
+    tinput_dialog *p= new tinput_dialog(Parent, dlg_title,buffer2, buffer);
+    if (!(p->exec_dialog ())) {
+       delete p;
+       return 0; }
+    strncpy ((char *)the_string,p->input_text,maxlen);
+    ((char *)the_string)[maxlen-1] = '\0';
+    delete p;
+    return 1;
+    }  // end string_dialog
+
+
+
+
+
+
+

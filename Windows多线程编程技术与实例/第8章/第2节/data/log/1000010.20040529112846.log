@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="gb2312"?>
+<asc-msp><log-data><match_record time="2004529112846" action="1" category_id="22" client_ip="192.168.0.56" ip_zone="1" size="523"><condition>0023-001-000000-000013</condition><action>1</action><sender>zhouj@in.com</sender><subject>kwefrjkdfk</subject><mail_header>Date: Sat, 29 May 2004 11:28:21 +0800&#13;
+From: "zhouj.in.com" &lt;zhouj@in.com&gt;&#13;
+To: "zhouj" &lt;zhouj@in.com&gt;&#13;
+Subject: kwefrjkdfk&#13;
+X-mailer: Foxmail 5.0 [cn]&#13;
+Mime-Version: 1.0&#13;
+Content-Type: text/plain;&#13;
+	charset="gb2312"&#13;
+Content-Transfer-Encoding: base64&#13;
+</mail_header><mail_content>ZW1odmRXcWpyTVQ2dXNPam9RMEtJQ0FnSUNBZ0lDQWdJQ0FnSUNBZ0lDQWdJQ0FnSUNCa1puTmtaQTBLQ1NBZ3U4YlB3c0xrc3J2RA0KOXlBZ0lDQWdJQ0JtWkEwS0RRcWhvYUdob2FHaG9hR2hvYUdob2FHaDFzSU5Dc0R4bzZFTkNpQUpDUWtKRFFvTkNxR2hvYUdob2FHaA0Kb2FHaG9hR2hvYUY2YUc5MWFnMEtvYUdob2FHaG9hR2hvYUdob2FHaG9YcG9iM1ZxUUdGc1pYZ3VZMjl0RFFxaG9hR2hvYUdob2FHaA0Kb2FHaG9hR2hvYUdob1RJd01EUXRNRFV0TWpFTkNnPT0NCg==</mail_content></match_record></log-data></asc-msp>

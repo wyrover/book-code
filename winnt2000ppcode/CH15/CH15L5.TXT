@@ -1,0 +1,135 @@
+#include "directio.h"
+
+extern CRITICAL_SECTION GlobalCriticalSection;
+
+ULONG handles = 0, handlesp = 0, handle_mod = 1, NoPrimes[MAX_CALLS];
+ULONG GlobalComputerHandleBuffer[MAX_CALLS];
+char GCompName[MAX_CALLS][STRING_LENGTH];
+
+ULONG InitPServer(handle_t h1, PPCONTEXT_HANDLE_TYPE pphContext,
+       UCHAR *CompName) {
+   ULONG unique_handle;
+   char Buffer[STRING_LENGTH];
+   EnterCriticalSection(&GlobalCriticalSection);
+   unique_handle = handles + 10 * handle_mod++;
+   strcpy(GCompName[handles], CompName);
+   mxyputc(2, 21, (char)32, 75, CYAN_ON_CYAN);
+   PutString(27, 21, RED_ON_CYAN, "Computer %s", CompName, "");
+   PutString(54, 21, RED_ON_CYAN, "(%ld)", unique_handle, "");
+   Sleep(2 * WAIT_DISPLAY);
+   mxyputc(2, 21, (char)32, 75, CYAN_ON_CYAN);
+   GlobalComputerHandleBuffer[handles] = unique_handle;
+   *pphContext = (PCONTEXT_HANDLE_TYPE)unique_handle;
+   NoPrimes[handles] = 0;
+   handlesp = ++handles;
+   LeaveCriticalSection(&GlobalCriticalSection);
+   return unique_handle;
+   }
+
+UCHAR RemoteIsPrime(handle_t h1, ULONG PrimeSHandle, ULONG TestNumber)
+   {
+   ULONG count, HalfNumber = TestNumber / 2 + 1;
+   SMALL_RECT pRectTest = { TEST_X1+1, TEST_Y1+2, TEST_X2-1, TEST_Y2-1 };
+   SMALL_RECT pRectPrime = { PRIME_X1+1, PRIME_Y1+2,PRIME_X2-1, PRIME_Y2-1 };
+   COORD coordTest = { TEST_X1+1, TEST_Y1+1 };
+   COORD coordPrime = { PRIME_X1+1, PRIME_Y1+1 };
+   CHAR_INFO pchiFill = { (char)32, WHITE_ON_BLUE };
+   COORD ComputTestCoord = { TEST_X2-7, TEST_Y2-1 };
+   COORD ComputPrimeCoord = { PRIME_X2-7, PRIME_Y2-1 };
+   DWORD dummy;
+   WORD Local[C_N_LENGTH];
+   char Buffer[STRING_LENGTH], LocalCompName[STRING_LENGTH];
+   unsigned loop;
+   EnterCriticalSection(&GlobalCriticalSection);
+   for(loop = 0; loop < handles; loop++)
+      if(GlobalComputerHandleBuffer[loop] == PrimeSHandle) {
+         strcpy(LocalCompName, GCompName[loop]);
+         PrimeSHandle = loop;
+         break;
+         }
+
+   LeaveCriticalSection(&GlobalCriticalSection);
+   for(loop = 0; loop < C_N_LENGTH; loop++)
+      Local[loop] = WHITE_ON_BLUE;
+   if(VK_ESCAPE == get_character(NO_WAIT)) {
+      EnterCriticalSection(&GlobalCriticalSection);
+      Sleep(WAIT);
+      clearscreen(0);
+      exit(SUCCESS_EXIT);
+      LeaveCriticalSection(&GlobalCriticalSection);
+      DeleteCriticalSection(&GlobalCriticalSection);
+      }
+
+   EnterCriticalSection(&GlobalCriticalSection);
+   ScrollConsoleScreenBuffer(hStdOut, &pRectTest, NULL, coordTest,
+      &pchiFill);
+   PutString(TEST_X1+2, TEST_Y2-1, WHITE_ON_BLUE, "%d", TestNumber, "");
+   WriteConsoleOutputAttribute(hStdOut, Local, C_N_LENGTH,
+      ComputTestCoord, &dummy);
+   LocalCompName[C_N_LENGTH] = 0;
+   mxyputs((UCHAR)(TEST_X2-7), (UCHAR)TEST_Y2-1, LocalCompName,
+      WHITE_ON_BLUE);
+   LeaveCriticalSection(&GlobalCriticalSection);
+   for(count = 2; count < HalfNumber; count++)
+      if(TestNumber % count == 0)
+         return NOT_PRIME;
+   EnterCriticalSection(&GlobalCriticalSection);
+   ScrollConsoleScreenBuffer(hStdOut, &pRectPrime, NULL, coordPrime,
+      &pchiFill);
+   PutString(PRIME_X1+2, PRIME_Y2-1, WHITE_ON_BLUE, "%d", TestNumber, "");
+   WriteConsoleOutputAttribute(hStdOut, Local, C_N_LENGTH,
+      ComputPrimeCoord, &dummy);
+   mxyputs((UCHAR)(PRIME_X2-7), (UCHAR)PRIME_Y2-1, LocalCompName,
+      WHITE_ON_BLUE);
+   NoPrimes[PrimeSHandle]++;
+   LeaveCriticalSection(&GlobalCriticalSection);
+   return PRIME;
+   }
+
+void TerminatePServer(handle_t h1, ULONG PrimeSHandle) {
+   UCHAR loop, loopshift;
+   char Buffer[256+STRING_LENGTH];
+   EnterCriticalSection(&GlobalCriticalSection);
+   for(loop = 0; loop < (UCHAR)handles; loop++) {
+      if(GlobalComputerHandleBuffer[loop] == PrimeSHandle) {
+         mxyputc(2, 21, (char)32, 75, CYAN_ON_CYAN);
+         PutString(27, 21, RED_ON_CYAN, "Computer %s Exited!",
+            GCompName[loop], "");
+         mxyputc(59, (UCHAR)(4+loop), (char)32, 15, CYAN_ON_CYAN);
+         Sleep(WAIT_DISPLAY);
+         mxyputc(2, 21, (char)32, 75, CYAN_ON_CYAN);
+         break;
+         }
+      }
+
+   if(loop < handles-1) {
+      loopshift = loop;
+      for(loop = loopshift; loop < (UCHAR)(handles-1); loop++) {
+         strcpy(GCompName[loop], GCompName[loop+1]);
+         GlobalComputerHandleBuffer[loop] =
+            GlobalComputerHandleBuffer[loop+1];
+         NoPrimes[loop] = NoPrimes[loop+1];
+         }
+      }
+   handles--;
+   LeaveCriticalSection(&GlobalCriticalSection);
+   }
+
+void PCONTEXT_HANDLE_TYPE_rundown(PCONTEXT_HANDLE_TYPE phContext)
+   {
+   handle_t dummmy;
+   if(handlesp == handles) {
+      mxyputs(27, 2, "Rundown Executed", RED_ON_CYAN);
+      TerminatePServer(dummmy, (ULONG)phContext);
+      Sleep(WAIT_DISPLAY);
+      mxyputs(27, 2, "                ", CYAN_ON_CYAN);
+      }
+   handlesp = handles;
+   }
+
+
+
+
+
+
+

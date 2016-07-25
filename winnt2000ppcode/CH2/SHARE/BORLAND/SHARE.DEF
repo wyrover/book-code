@@ -1,0 +1,9 @@
+;  SHARE.DEF
+;  module definition file for the SHARE DLL
+
+LIBRARY
+
+SECTIONS
+  .PUBLICDATA CLASS '.PUBLICCLASS' SHARED
+
+

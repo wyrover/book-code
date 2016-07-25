@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asc-msp><log-data><match_record time="20040729194322" rule_id="msp000001" category_id="100000" client_ip="192.168.0.120" ip_zone="1" size="1369" body_size="10"><condition>msp000001</condition><action>1</action><sender>alex@siweicn01.com</sender><subject>sex</subject><mail_header>Received: from siweicn01 [192.168.0.120] by siweicn01.com with ESMTP&#13;
+  (SMTPD32-8.02) id A2D144020A; Thu, 29 Jul 2004 19:43:13 +0800&#13;
+Message-ID: &lt;011601c47561$3ac62c40$7800a8c0@siweicn01&gt;&#13;
+From: "alex01" &lt;alex@siweicn01.com&gt;&#13;
+To: &lt;alex@siweicn02.com&gt;&#13;
+Subject: sex&#13;
+Date: Thu, 29 Jul 2004 19:43:13 +0800&#13;
+MIME-Version: 1.0&#13;
+Content-Type: multipart/alternative;&#13;
+	boundary="----=_NextPart_000_0113_01C475A4.48E24050"&#13;
+X-Priority: 3&#13;
+X-MSMail-Priority: Normal&#13;
+X-Mailer: Microsoft Outlook Express 6.00.2800.1106&#13;
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2800.1106&#13;
+</mail_header></match_record></log-data></asc-msp>

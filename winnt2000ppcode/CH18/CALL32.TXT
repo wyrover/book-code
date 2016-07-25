@@ -1,0 +1,153 @@
+[[Dr. Dobb's editors: This text file (call32.txt) alongwith
+the binary file (call32.dll) are not for publication with the
+article. I would appreciate if you could allow our readers to
+download them from CompuServe if needed.  You can format this
+text file in any fashion. Thanks!]]
+
+CALL32.DLL: A 16-bit DLL for calling a 32-bit DLL from a
+16-bit application like Visual Basic.
+
+1. Summary
+----------
+
+CALL32.DLL is a DLL that can be used for calling routines in 32-bit
+DLLs on Windows NT.  It cannot be used on Windows 3.1, Win32s,  or 
+any other operating system.  Using it, a Visual Basic program, running
+in the Win16 subsystem under Windows NT, can declare and call functions in 
+any 32-bit DLL (including, but not limited to, the system DLLs).  
+CALL32.DLL works on both the Intel x86 and MIPS versions on NT, but it has not
+been tested on Alpha or other versions.
+ 
+ 
+2. Usage
+--------
+
+To call a function in a 32-bit DLL, simply follow the steps 
+described below.  Declare the "Declare32" function as follows:
+
+Declare Function Declare32 Lib "call32.dll" (ByVal Func$,
+       ByVal Library$, ByVal Args$) As Long
+
+Next, declare the function you wish to call with the
+following considerations:
+
+   - Use a library name of "call32.dll"
+   - Use an Alias of "Call32"
+   - Add an additional argument of type ByVal Long at the end
+
+For example, if you are calling the function:
+
+    GetWindowText(HWND hwnd, LPSTR lpsz, int cch)
+
+declare it as follows (Remember that integers and handles are 32 bits
+under Windows NT, and hence they are declaed as Long):
+
+  Declare Function GetWindowText Lib "call32.dll" Alias "Call32"
+        (ByVal hwnd As Long, ByVal lpsz As String, 
+         ByVal cch As Long, ByVal id As Long) As Long
+
+In the initialization section of your application, declare the
+actual library and the name of the function that you want to call with 
+the Declare32 function.  Pass the name of the function, the
+library, and a string describing the argument types to it.  Each letter
+in the string declares the type of the corresponding argument, and 
+should be "i" for a 32 bit integer or handle type, "p" for any
+pointer type, and "w" for an HWND parameter to which you want to pass
+a 16 bit HWND and have it automatically converted to a 32 bit
+HWND.  The return value of Declare32 should be saved away in 
+a global variable to be passed as the last parameter to the
+function you declared earlier.  Continuing the above example, 
+the Declare32 function could be called as:
+
+  idGetWindowText = Declare32("GetWindowText", "user32", "wpi")
+  
+(As a side note, this could be more properly declared as 
+"GetWindowTextA", since this is the decorated exported name.  However,
+Declare32 will automatically add an "A" to the end of a 
+function name if necessary).
+
+Now the actual function could be called as follows:
+
+  cbCopy = GetWindowText(hwnd, sz, cb, idGetWindowText)   
+   
+   
+3. Data Types and Handles 
+-------------------------
+
+It is important to use the correct data types when calling DLL
+functions.  Here are two significant points to consider. First of all, 
+only 32-bit integers can be passed to a DLL procedure.  Since virtually 
+all 32-bit functions take int, UINT, LONG, DWORD, or HANDLE parameters,
+which are all 32 bits, this is not a major restriction.  However,
+you must remember to declare functions arguments as Long, and not as Integer.
+
+Secondly, 16-bit handles and 32-bit handles are not interchangable.
+For example, a 16-bit bitmap handle that you get from calling
+a 16-bit DLL or from the Visual Basic environment cannot be passed to
+a 32-bit function expecting a bitmap handle.  Similarly, a 
+32-bit handle created by a 32-bit function cannot be passed to a 
+16-bit DLL.  The only exception to this rule is Window handles (HWND),
+which can attributed as "w".  If you declare a function parameter with the 
+letter "w" in the argument description string passed to Declare32, 
+the corresponding parameter will be automatically converted from a 16-bit 
+HWND to a 32-bit HWND when the call is made.  However, you must still declare 
+the argument as a LONG.  
+
+Summary of data types:
+
+C data type      Type specified in Declare   Character for Declare32
+
+int, UINT          ByVal Long                  i
+LONG, DWORD        ByVal Long                  i
+HANDLE             ByVal Long                  i
+WORD, short        not supported                 
+HWND               ByVal Long                  w (i for no 16->32
+                                                  translation)
+LPSTR              ByVal String                p
+LPLONG, LPDWORD,
+LPUINT, int FAR *  Long                        p
+LPWORD             Integer                     p
+
+
+4. Note on Declare32 function names
+-----------------------------------
+
+Declare32 will automatically try three different names for
+the function name you pass in.  First, it uses the exact
+name you pass in.  If that function name isn't found,
+it converts the name to the stdcall decorated name convention,
+by adding an underscore at the beginning, and adding "@nn" at
+the end, where "nn" is the number of bytes of arguments.  If
+that name isn't found, it adds an "A" to the end of the original
+name to try the Win32 ANSI function calling convention.
+
+
+5. Run-time Error Summary
+-------------------------
+
+The following run-time errors may be generated by the CALL32.DLL
+
+30001   Can't load DLL: "|" (error=|)
+   The DLL name passed to Declare32 was not the name of a 
+   valid 32-bit DLL. The Win32 error code is specified at the
+   end of the error message and this can help determine why
+   the DLL didn't load.  
+   
+30002   Can't find specified function
+   The function name passed to Declare32 could not be found
+   in the DLL.
+   
+30003   Invalid parameter definition string
+   The parameter definition string passed to Declare32 had
+   an invalid character in it, or was too long (32 parameters
+   is the limit).
+   
+30004   Not running on Windows NT
+   The program is not running in the Windows16 subsystem under
+   Windows NT.
+   
+30005   Invalid window handle
+   The 16-bit Window handle passed as a parameter declared
+   with the 'w' character was not a valid 16-bit window handle,
+   or it refers to a Window from a different process.  
+

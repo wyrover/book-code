@@ -1,0 +1,19 @@
+#include <windows.h>      /* normal include for all windows applications*/
+/* The following window procedure declaration is NOT portable to WindowsNT! */
+LONG FAR PASCAL MyWinProc (HWND hwnd, WORD wMsg, WORD wParam, 
+WORD wParam)
+{
+    switch ( wMsg )
+    {
+         case WM_COMMAND:
+         /* Nonportable reference to control ID in message params */
+         switch ( wParam )
+         {
+         /* processing for WM_COMMAND based on control ID goes here...*/
+         }
+         case WM_SOMEMESSAGE:
+         /* non-portable method to send WM_COMMAND message to parent */
+         SendMessage ( GetParent (hwnd), WM_COMMAND, wMyID,
+                       MAKELONG (hwnd, wNotifyCode) );
+    }
+}

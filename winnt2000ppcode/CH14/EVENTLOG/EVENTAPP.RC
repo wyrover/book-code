@@ -1,0 +1,27 @@
+// loaddrv.rc
+#include <windows.h>
+#include "eventapp.h"
+
+IDD_EVENT DIALOG DISCARDABLE  20, 20, 226, 108
+STYLE DS_MODALFRAME|WS_POPUP|WS_VISIBLE|WS_CAPTION|WS_SYSMENU
+CAPTION "EventApp"
+FONT 8, "MS Sans Serif"
+BEGIN
+   LTEXT         "Enter custrom event message text",-1,12,12,112,8
+   EDITTEXT      IDC_CUSTOM,12,23,112,14,ES_AUTOHSCROLL
+   PUSHBUTTON    "Log Custom Event",IDC_LOGCUSTOM,12,40,112,14
+   GROUPBOX      "Event Type",-1,145,10,65,44
+   CONTROL       "Error",IDC_ERR,"Button",BS_AUTORADIOBUTTON,
+                    152,20,54,10
+   CONTROL       "Warning",IDC_WARN,"Button",BS_AUTORADIOBUTTON,
+                    152,31,54,10
+   CONTROL       "Information",IDC_INFO,"Button",
+                    BS_AUTORADIOBUTTON,152,42,54,10
+   PUSHBUTTON    "Error",IDC_LOGERR,12,66,38,14
+   PUSHBUTTON    "Warn",IDC_LOGWARN,52,66,38,14
+   PUSHBUTTON    "Info",IDC_LOGINFO,92,66,38,14
+   PUSHBUTTON    "Read", IDC_READ,12,82,38,14
+   PUSHBUTTON    "Backup",IDC_BACKUP,52,82,38,14
+   PUSHBUTTON    "Clear",IDC_CLEAR,92,82,38,14
+   DEFPUSHBUTTON "OK",IDOK,162,82,48,14
+END

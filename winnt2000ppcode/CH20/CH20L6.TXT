@@ -1,0 +1,57 @@
+      include 'mt.fi'
+
+      program ChildProcess
+      include 'mt.fd'
+
+      character*255 buffer
+      character*100 filename, strReadEvent, strWriteEvent
+      integer*4 hReadEvent, hWriteEvent, OpenEvent, SetEvent
+      integer*2 status
+      integer*4 EVENT_ALL_ACCESS
+      integer*4 waitResult, WaitForSingleObject
+
+Retrieving the first command line parameter which is the name of the ReadEvent
+      Call Getarg (1, buffer, status)
+      strReadEvent(1:status) = buffer(1:status)
+      status = status+1
+      strReadEvent(status:status) = char(0) ! to make it a C string
+
+Retrieving the second command line parameter which is the name of the WriteEvent
+      Call Getarg (2, buffer, status)
+      strWriteEvent(1:status) = buffer(1:status)
+      status = status+1
+      strWriteEvent(status:status) = char(0) ! to make it a C string
+
+Setting the access privilege for the child
+      EVENT_ALL_ACCESS = IOR (STANDARD_RIGHTS_REQUIRED, SYNCHRONIZE)
+      EVENT_ALL_ACCESS = IOR (EVENT_ALL_ACCESS, #3)
+
+Opening handles for event objects passed from parent as named objects
+      hReadEvent=OpenEvent(EVENT_ALL_ACCESS, .FALSE.,  loc(strReadEvent))
+      hWriteEvent=OpenEvent(EVENT_ALL_ACCESS, .FALSE., loc(strWriteEvent))
+
+Wait until the parent signals the WriteEvent
+      waitResult = WaitForSingleObject(hWriteEvent, WAIT_INFINITE)
+
+Retrieve the file name which is the third argument
+      Call Getarg (3, buffer, status)
+      filename (1:status) = buffer(1:status)
+
+Read the parent's question and then reply
+      open (11, file= filename, mode ='readwrite')
+      read(11, '(A)') buffer
+      print *, buffer
+      rewind 11
+      write(11, '(A)') 'September 1993 issue'
+      close (11)
+
+Signal the parent to continue
+      waitResult = SetEvent(hReadEvent)
+      end
+
+
+
+
+
+
+

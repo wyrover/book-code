@@ -1,0 +1,23 @@
+// IOVDD.H - Include file for SIMPLVDD.C
+
+#define IOVDD_PORT_START      0x300
+#define IOVDD_PORT_END        0x304
+
+#define IOVDD_PORT_IDENTIFY   0x300
+#define IOVDD_PORT_READ       0x301
+#define IOVDD_PORT_WRITE      0x302
+#define IOVDD_PORT_COUNT      0x303
+#define IOVDD_PORT_STATUS     0x304
+
+#define IOVDD_MIO_SEG   0xCC00
+#define IOVDD_MIO_ADDR  (((ULONG)IOVDD_MIO_SEG) << 16)
+#define IOVDD_MIO_RANGE 128+1
+
+// SimplDrv information
+#define FILE_DEVICE_SIMPLDRV     0x00008300
+#define SIMPLDRV_IOCTL_INDEX     0x830
+#define IOCTL_SIMPLDRV_HELLO    CTL_CODE(FILE_DEVICE_SIMPLDRV, \
+   SIMPLDRV_IOCTL_INDEX, METHOD_BUFFERED, FILE_ANY_ACCESS)
+
+// end of file
+

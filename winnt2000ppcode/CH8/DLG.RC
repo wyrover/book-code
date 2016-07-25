@@ -1,0 +1,23 @@
+// DLG.RC Dialog Box resources
+
+#ifndef DLG_RC
+#define DLG_RC
+#define STRICT
+#include <windows.h>
+#include "dlgids.h"
+
+INPUT_DIALOG DIALOG 40, 60, 180, 80
+STYLE DS_MODALFRAME | WS_SYSMENU | WS_CAPTION
+CAPTION "Input Dialog"
+BEGIN
+  LTEXT "Enter Text:", ID_DLG_INPUT_CAPTION,5,8,150,10
+  EDITTEXT ID_DLG_INPUT, 5, 20, 70,12,ES_AUTOHSCROLL
+  PUSHBUTTON "&OK" IDOK, 40, 50, 40, 14
+  PUSHBUTTON "&Cancel" IDCANCEL,100, 50, 40, 14
+END
+
+#include "lstdialg.rc"
+
+#endif
+
+

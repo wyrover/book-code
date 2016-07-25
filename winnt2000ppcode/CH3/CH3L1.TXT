@@ -1,0 +1,55 @@
+// ****************************************************************************
+// Module:  ipcshmem.h  -- Author:  Dick Lam
+// Purpose: C++ class header file for ipcSharedMemory
+// Notes:  This is a base class. It is the interface class for creating and
+//     accessing a memory block that is sharable between processes and threads.
+// ****************************************************************************
+
+#ifndef MODULE_ipcSharedMemoryh
+#define MODULE_ipcSharedMemoryh
+
+// forward declaration
+class osSharedMemory;
+
+// class declaration
+class ipcSharedMemory {
+
+friend class osSharedMemory;
+
+public:
+
+   // constructor and destructor
+   ipcSharedMemory(const char *name,    // unique name for creating block
+                   long blocksize);     // requested size (in bytes)
+   ipcSharedMemory(const char *name);   // name of block to open
+   virtual ~ipcSharedMemory();
+   // methods for getting memory block parameters [name, pointer to the block,
+   // and whether this is the owner (creator) of the block]
+   char *Name() const;
+   void *Pointer() const;
+   int Owner() const;
+
+   // class version and object state data types
+   enum version { MajorVersion = 1, MinorVersion = 0 };
+   enum state { good = 0, bad = 1, badname = 2, notfound = 3 };
+
+   // methods to get the object state
+   inline int rdstate() const { return myState; }
+   inline int operator!() const { return(myState != good); }
+protected:
+   osSharedMemory *myImpl; // implementation
+   state myState;          // (object state (good, bad, etc.)
+private:
+   // private copy constructor and operator= (define these and make them
+   // public to enable copy and assignment of the class)
+   ipcSharedMemory(const ipcSharedMemory&);
+   ipcSharedMemory& operator=(const ipcSharedMemory&);
+};
+#endif
+
+
+
+
+
+
+

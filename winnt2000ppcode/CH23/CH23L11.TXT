@@ -1,0 +1,254 @@
+/**-------------------------------------------------------**
+** HPSCAN32.C:  HP Scanner Application-based VDD.
+** Environment: Windows NT.
+** (C) Hewlett-Packard Company 1993.
+**-------------------------------------------------------**/
+
+#include <windows.h>
+#include <devioctl.h>
+#include <ntddscsi.h>
+#include <vddsvc.h>
+#include <stdio.h>          /* prototype for sprintf */
+#include "hpscan32.h"
+
+/**---------------------- Globals -----------------------**/
+HANDLE hScanner=NULL;    /* handle to scanner driver */
+PASS_THROUGH_STRUCT PassThru;
+
+/**---------------------------------------------------------
+** VDDLibMain - serves as LibMain for this DLL.
+**-------------------------------------------------------**/
+BOOL VDDLibMain(HINSTANCE hInst, ULONG ulReason,
+   LPVOID lpReserved)
+{
+   switch (ulReason) 
+   {
+      case DLL_PROCESS_ATTACH:
+         if ((hScanner = HPScannerOpen()) ==
+            INVALID_HANDLE_VALUE) return FALSE;
+         break;
+
+      case DLL_PROCESS_DETACH:
+         HPScannerClose(hScanner);
+         break;
+
+      default: break;
+   }
+   return TRUE;
+} /* VDDLibMain */
+
+/**---------------------------------------------------------
+** VDDInit - Called when HPSCAN16.SYS initializes, via
+**     the BIOS Operation Manager.
+**-------------------------------------------------------**/
+VOID VDDInit(VOID)
+{
+   setCF(0);           /* Clear flags to indicate success */
+   return;
+} /* VDDInit */
+
+/**---------------------------------------------------------
+** VDDDispatch - called when HPSCAN16.SYS sends a request.
+** Arguments:
+**    Client (DX) = Command code
+**    Client (CX) = Buffer size
+**    Client (ES:BX) = Request Header
+** Returns: 
+**    (CX) = Count transfered
+**    (DI) = status
+**-------------------------------------------------------**/
+VOID VDDDispatch(VOID)
+{
+   PCHAR Buffer, DrvBuffer;
+   USHORT cb, i=0;
+   ULONG bytes=0L, ulAddr, ulIoAddr;
+   PHPSCAN_IOCTL pIoctl;
+
+   if (hScanner == NULL) return;
+
+   /* client put the count in cx, request header in es:bx */
+   cb = getCX();
+   ulAddr = (ULONG)MAKELONG(getBX(), getES());
+   Buffer = (PCHAR)GetVDMPointer(ulAddr, (ULONG)cb, FALSE);
+
+   switch (getDX())     /* command code is in dx */
+   {
+      case CMD_READ:
+         if ((bytes = HPScannerRead(hScanner, Buffer, 
+            (ULONG)cb)) == NULL) setDI(STAT_GF);
+         else setDI(STAT_OK);
+         setCX((USHORT)bytes);
+         break;
+
+      case CMD_WRITE:
+      case CMD_WRITE_VFY:
+         if ((bytes = HPScannerWrite(hScanner, Buffer,
+            (ULONG)cb)) == NULL) setDI(STAT_GF);
+         else setDI(STAT_OK);
+         setCX((USHORT)bytes);
+         break;
+
+      case CMD_OUT_IOCTL:
+         pIoctl = (PHPSCAN_IOCTL)Buffer;
+         ulIoAddr = (ULONG)MAKELONG(pIoctl->Offset,
+            pIoctl->Segment);
+         DrvBuffer = (PCHAR)GetVDMPointer(ulIoAddr,
+            (ULONG)pIoctl->Count, FALSE);
+         if ((pIoctl->Count = (USHORT)HPScannerIOCTL(hScanner,
+            pIoctl->Command, DrvBuffer, (ULONG)pIoctl->Count))
+            != NULL) setDI(STAT_OK);
+         else setDI(STAT_CE);
+         FreeVDMPointer(ulIoAddr, (ULONG)pIoctl->Count, DrvBuffer,
+             FALSE);
+         break;
+
+      default:
+         setDI(STAT_CE);       /* unsupported command */
+         break;
+   }
+   FreeVDMPointer(ulAddr, (ULONG)cb, Buffer, FALSE);
+   return;
+} /* VDDDispatch */
+
+/**---------------------------------------------------------
+** VDDScannerCommand - 32-bit private API
+**-------------------------------------------------------**/
+ULONG APIENTRY VDDScannerCommand(USHORT usCommand, 
+   PCHAR pcBuffer, ULONG ulLength)
+{
+   switch(usCommand)
+   {
+      case CMD_READ:
+         return HPScannerRead(hScanner, pcBuffer, ulLength);
+
+      case CMD_WRITE:
+         return HPScannerWrite(hScanner, pcBuffer, ulLength);
+
+      case CMD_IOCTL_READBUFFER:
+      case CMD_IOCTL_WRITEBUFFER:
+      case CMD_IOCTL_SCSIINQ:
+         return HPScannerIOCTL(hScanner, usCommand, pcBuffer,
+           ulLength);
+
+      default: return NULL;
+   }
+   return NULL;
+} /* VDD_ScannerCommand */
+
+/**------------------- private routines -----------------**/
+
+/**---------------------------------------------------------
+** HPScannerOpen - returns handle to scanner device
+**-------------------------------------------------------**/
+HANDLE HPScannerOpen(VOID)
+{
+   /* for simplicity, we'll assume only one scanner */
+   return CreateFile((LPTSTR)"\\\\.\\Scanner0",
+      GENERIC_READ | GENERIC_WRITE, 0, NULL,
+      OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
+} /* HPScannerOpen */
+
+/**---------------------------------------------------------
+** HPScannerClose - close handle passed in
+**-------------------------------------------------------**/
+BOOL HPScannerClose(HANDLE handle)
+{
+   return CloseHandle(handle);
+} /* HPScannerClose */
+
+/**---------------------------------------------------------
+** HPScannerRead
+**-------------------------------------------------------**/
+ULONG HPScannerRead(HANDLE handle, PCHAR buffer, ULONG len)
+{
+   DWORD cnt=0;
+
+   if (!(ReadFile(handle, buffer, len, &cnt, NULL)))
+      return NULL;
+   else return cnt;
+} /* HPScannerRead */
+
+/**---------------------------------------------------------
+** HPScannerWrite
+**-------------------------------------------------------**/
+ULONG HPScannerWrite(HANDLE handle, PCHAR buffer, ULONG len)
+{
+   DWORD cnt=0;
+
+   if (!(WriteFile(handle, buffer, len, &cnt, NULL)))
+      return NULL;
+   else return cnt;
+} /* HPScannerWrite */
+
+/**---------------------------------------------------------
+** HPScannerIOCTL
+**-------------------------------------------------------**/
+ULONG HPScannerIOCTL(HANDLE handle, USHORT usCommand, 
+   PCHAR pBuffer, ULONG ulLength)
+{
+   USHORT i=0;
+   DWORD bytes=0L;
+
+   /* clear CDB and data buffer before IOCTL call */
+   memset(PassThru.ucDataBuf, 0, sizeof(PassThru.ucDataBuf));
+   for (i=0; i <= 16; i++) PassThru.sptCmd.Cdb[i] = 0;
+
+   PassThru.sptCmd.Length = sizeof(SCSI_PASS_THROUGH_DIRECT);
+   PassThru.sptCmd.SenseInfoLength = 
+      sizeof(PassThru.ucSenseBuf);
+   PassThru.sptCmd.DataTransferLength = ulLength;
+   PassThru.sptCmd.TimeOutValue = 10;
+   PassThru.sptCmd.DataBuffer = pBuffer;
+   PassThru.sptCmd.SenseInfoOffset = PassThru.ucSenseBuf
+      - (UCHAR*)&PassThru;
+
+   switch(usCommand)
+   {
+      case CMD_IOCTL_READBUFFER:
+         PassThru.sptCmd.CdbLength = 10;
+         PassThru.sptCmd.DataIn = TRUE;
+         PassThru.sptCmd.Cdb[0] = 0x3c;
+         PassThru.sptCmd.Cdb[1] = 2;
+         PassThru.sptCmd.Cdb[7] = HIBYTE(ulLength);
+         PassThru.sptCmd.Cdb[8] = LOBYTE(ulLength);
+
+         DeviceIoControl(hScanner, IOCTL_SCSI_MINIPORT_DIRECT,
+            &PassThru, sizeof(SCSI_PASS_THROUGH), &PassThru,
+            sizeof(PassThru), &bytes, FALSE);
+         return PassThru.sptCmd.DataTransferLength;
+
+      case CMD_IOCTL_WRITEBUFFER:
+         PassThru.sptCmd.CdbLength = 10;
+         PassThru.sptCmd.DataIn = TRUE;
+         PassThru.sptCmd.Cdb[0] = 0x3b;
+         PassThru.sptCmd.Cdb[1] = 2;
+         PassThru.sptCmd.Cdb[7] = HIBYTE(ulLength);
+         PassThru.sptCmd.Cdb[8] = LOBYTE(ulLength);
+
+         DeviceIoControl(hScanner, IOCTL_SCSI_MINIPORT_DIRECT,
+            &PassThru, sizeof(PassThru), &PassThru,
+            sizeof(PassThru), &bytes, FALSE);
+         return PassThru.sptCmd.DataTransferLength;
+
+      case CMD_IOCTL_SCSIINQ:
+         PassThru.sptCmd.CdbLength = 6;
+         PassThru.sptCmd.DataIn = TRUE;
+         PassThru.sptCmd.Cdb[0] = 0x12;
+         PassThru.sptCmd.Cdb[4] = (UCHAR)ulLength;
+
+         DeviceIoControl(hScanner, IOCTL_SCSI_MINIPORT_DIRECT,
+            &PassThru, sizeof(PassThru), &PassThru,
+            sizeof(PassThru), &bytes, FALSE);
+         return PassThru.sptCmd.DataTransferLength;
+
+      default: return NULL;            /* invalid command */
+   } /* switch */
+   return NULL;
+} /* HPScannerIOCTL */
+
+
+
+
+
+
+

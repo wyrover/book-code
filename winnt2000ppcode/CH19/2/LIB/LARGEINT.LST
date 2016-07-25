@@ -1,0 +1,10 @@
+Microsoft (R) 32-Bit Library Manager Version 1.00
+Copyright (C) Microsoft Corp 1992-93. All rights reserved.
+
+ADDSUB.OBJ 
+DIVIDE.OBJ 
+DIVREM.OBJ 
+LARGEINT.OBJ 
+LINTFUN.OBJ 
+MISC.OBJ 
+MULTIPLY.OBJ 

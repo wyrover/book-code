@@ -1,0 +1,46 @@
+#
+#  Builds the SHARE DLL and its TEST client 
+#  using Microsoft's NMAKE and command line tools
+#
+
+all: test.exe share.dll
+test.exe: test.obj share.lib
+share.lib: share.obj share.def
+share.dll: share.obj share.exp
+
+# the environment variable CPU is not defined under WIN95
+!ifndef CPU
+CPU = i386
+!endif
+
+CFLAGS = -c -MD -W3 -DWIN32 -D_MT -D_DLL -D_X86_ -DWINVER=0x0400
+LFLAGS = -incremental:no -pdb:none -nodefaultlib
+SUBSYS = -subsystem:console,4
+LIBS   = msvcrt.lib kernel32.lib oldnames.lib user32.lib
+IMPLIB = share.lib 
+
+!ifdef NODEBUG
+CFLAGS = $(CFLAGS) -Ox
+LFLAGS = $(LFLAGS) -release
+!else
+CFLAGS = $(CFLAGS) -Od -Z7
+LFLAGS = $(LFLAGS) -debug:full -debugtype:cv
+!endif
+
+# to make header declare dllexport, define __DLL__
+share.obj: share.c share.h
+   cl $(CFLAGS) -D__DLL__ $*.c
+
+test.obj: test.c share.h
+   cl $(CFLAGS) $*.c
+
+.obj.lib:
+   lib -machine:$(CPU) $*.obj -out:$*.lib -def:$*.def
+
+.obj.exe:
+   link $(LFLAGS) $(SUBSYS) -out:$*.exe $*.obj \
+   $(LIBS) $(IMPLIB)
+
+.obj.dll:
+   link $(LFLAGS) -DLL -entry:_DllMainCRTStartup@12 \
+      -out:$*.dll $*.obj $*.exp $(LIBS)

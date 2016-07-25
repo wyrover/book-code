@@ -1,0 +1,21 @@
+// WTEST16.RC - Resource file for WTEST16.EXE
+
+#include "windows.h"
+#include "wtest16.h"
+
+WTEST16_MENU MENU DISCARDABLE 
+BEGIN
+   POPUP "&Test"
+   BEGIN
+      MENUITEM "Create Subkey",  IDM_CREATESUBKEY
+      MENUITEM "Delete Subkey",  IDM_DELETESUBKEY
+      MENUITEM "Write Value",    IDM_WRITEVALUE
+      MENUITEM "Read Value",     IDM_READVALUE
+      MENUITEM "Delete Value",   IDM_DELETEVALUE
+   END
+END
+
+// End of File
+
+
+

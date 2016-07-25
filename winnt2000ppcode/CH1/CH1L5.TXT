@@ -1,0 +1,100 @@
+/* File:    MOVE2NT.H - Message extractor and packer macros for Win16
+ * Author:  David Van Camp, July 1993  */
+
+#if !defined (MOVE2NT_INCL) && !defined (_WINNT_)
+#define MOVE2NT_INCL
+
+#define GET_EM_LINESCROLL_MPS(vert, horz)           (WPARAM)0, MAKELONG 
+(vert, horz)
+#define GET_EM_SETSEL_START(wp, lp)                 (INT)HIWORD(lp)
+#define GET_EM_SETSEL_END(wp, lp)                   (INT)LOWORD(lp)
+
+#define GET_EM_SETSEL_MPS(iStart, iEnd)         (WPARAM)0, 
+MAKELONG(iStart, iEnd)
+#define GET_WM_ACTIVATE_STATE(wp, lp)           (wp)
+#define GET_WM_ACTIVATE_FMINIMIZED(wp, lp)      (BOOL)HIWORD(lp)
+#define GET_WM_ACTIVATE_HWND(wp, lp)            (HWND)LOWORD(lp)
+#define GET_WM_ACTIVATE_MPS(s, fmin, hwnd)      (WPARAM)(s), 
+MAKELONG((hwnd), (fmin))
+#define GET_WM_CHANGECBCHAIN_HWNDNEXT(wp, lp)   
+(HWND)LOWORD(lp)
+
+#define GET_WM_CHARTOITEM_CHAR(wp, lp)          (CHAR)(wp)
+#define GET_WM_CHARTOITEM_POS(wp, lp)           HIWORD(lp)
+#define GET_WM_CHARTOITEM_HWND(wp, lp)          (HWND)LOWORD(lp)
+#define GET_WM_CHARTOITEM_MPS(ch, pos, hwnd)    (WPARAM)(ch), 
+MAKELONG((hwnd), (pos))
+#define GET_WM_COMMAND_ID(wp, lp)               (wp)
+#define GET_WM_COMMAND_HWND(wp, lp)             (HWND)LOWORD(lp)
+#define GET_WM_COMMAND_CMD(wp, lp)              HIWORD(lp)
+#define GET_WM_COMMAND_MPS(id, hwnd, cmd)       (WPARAM)(id), 
+MAKELONG(hwnd, cmd))
+
+/* The WM_CTLCOLOR message was split in to multiple messages for NT, one
+ * for each supported control type. For this reason, a extra macro is added,
+ * GET_WM_CTLCOLOR_MSG which must be used to determine the message ID
+ * to use for a particular type.  Use this macro in the following manner:
+ *   SendMessage (hwnd, GET_WM_CTLCOLOR_MSG(type)
+ *                      GET_WM_CTLCOLOR_MPS(hdc,hwnd,type));
+ * where type is any of the types used in the Win16 WM_CTLCOLOR message.
+ * Also notice that the extractor macros require the message ID in addition
+ * to the two message parameters.  */
+#define GET_WM_CTLCOLOR_HDC(wp, lp, msg)        (HDC)(wp)
+#define GET_WM_CTLCOLOR_HWND(wp, lp, msg)
+       (HWND)LOWORD(lp)
+#define GET_WM_CTLCOLOR_TYPE(wp, lp, msg)       HIWORD(lp)
+#define GET_WM_CTLCOLOR_MSG(type)               (WORD)(WM_CTLCOLOR)
+#define GET_WM_CTLCOLOR_MPS(hdc, hwnd, type)    (WPARAM)(hdc), 
+MAKELONG(hwnd,type)
+#define GET_WM_HSCROLL_CODE(wp, lp)             (wp)
+#define GET_WM_HSCROLL_POS(wp, lp)              LOWORD(lp)
+#define GET_WM_HSCROLL_HWND(wp, lp)             (HWND)HIWORD(lp)
+#define GET_WM_HSCROLL_MPS(code, pos, hwnd)     (WPARAM)(code), 
+MAKELONG(hwnd, pos)
+#define GET_WM_MENUSELECT_CMD(wp, lp)           (wp)
+#define GET_WM_MENUSELECT_FLAGS(wp, lp)         (UINT)LOWORD(lp)
+#define GET_WM_MENUSELECT_HMENU(wp, lp)         (HMENU)HIWORD(lp)
+#define GET_WM_MENUSELECT_MPS(cmd, f, hmenu)    (WPARAM)(wp), 
+MAKELONG(f, hmenu)
+/* These extractors are for MDIclient to MDI child messages only. */
+#define GET_WM_MDIACTIVATE_FACTIVATE(hwnd, wp, lp)  (wp)
+#define GET_WM_MDIACTIVATE_HWNDDEACT(wp, lp)        
+(HWND)HIWORD(lp)
+#define GET_WM_MDIACTIVATE_HWNDACTIVATE(wp, lp)     
+(HWND)LOWORD(lp)
+/* This packer is for sending to the MDI client window only. */
+#define GET_WM_MDIACTIVATE_MPS(f, hwndD, hwndA)     
+(WPARAM)(hwndA), 0L
+
+#define GET_WM_MDISETMENU_MPS(hmenuF, hmenuW)
+       (WPARAM)!(hmenuF||hmenuW), MAKELONG(hmenuF, hmenuW)
+#define GET_WM_MENUCHAR_CHAR(wp, lp)                (CHAR)(wp)
+#define GET_WM_MENUCHAR_HMENU(wp, lp)               (HMENU)HIWORD(lp)
+#define GET_WM_MENUCHAR_FMENU(wp, lp)               (BOOL)LOWORD(lp)
+#define GET_WM_MENUCHAR_MPS(ch, hmenu, f)           (WPARAM)(ch), 
+MAKELONG(f, hmenu)
+#define GET_WM_PARENTNOTIFY_MSG(wp, lp)             (wp)
+#define GET_WM_PARENTNOTIFY_ID(wp, lp)              HIWORD(lp)
+#define GET_WM_PARENTNOTIFY_HWNDCHILD(wp, lp)       
+(HWND)LOWORD(lp)
+#define GET_WM_PARENTNOTIFY_X(wp, lp)               (int)(short)LOWORD(lp)
+#define GET_WM_PARENTNOTIFY_Y(wp, lp)               (int)(short)HIWORD(lp)
+/* Use this packer for WM_CREATE or WM_DESTROY msg values only */
+#define GET_WM_PARENTNOTIFY_MPS(msg, id, hwnd)      (WPARAM)(msg), 
+MAKELONG(hwnd, id)
+
+/* Use this packer for all other msg values */
+#define GET_WM_PARENTNOTIFY2_MPS(msg, x, y) (WPARAM)(msg), 
+MAKELONG(x, y)
+
+#define GET_WM_VKEYTOITEM_CODE(wp, lp)              (int)(wp)
+#define GET_WM_VKEYTOITEM_ITEM(wp, lp)              HIWORD(lp)
+#define GET_WM_VKEYTOITEM_HWND(wp, lp)              (HWND)LOWORD(lp)
+#define GET_WM_VKEYTOITEM_MPS(code, item, hwnd)
+     (WPARAM)(code), MAKELONG(item, hwnd)
+#define GET_WM_VSCROLL_CODE(wp, lp)                 (wp)
+#define GET_WM_VSCROLL_POS(wp, lp)                  LOWORD(lp)
+#define GET_WM_VSCROLL_HWND(wp, lp)                 (HWND)HIWORD(lp)
+#define GET_WM_VSCROLL_MPS(code, pos, hwnd)         (WPARAM)(code), 
+MAKELONG(hwnd, pos)
+#endif /*MOVE2NT_INCL && _WINNT_*/

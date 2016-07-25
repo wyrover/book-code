@@ -1,0 +1,9 @@
+; IOVDD.DEF - Module definition file for IOVDD.DLL
+LIBRARY IOVDD
+DESCRIPTION 'VDD to demonstrate port I/O trapping
+
+EXPORTS
+   VDDLibMain
+
+; end of file
+

@@ -1,0 +1,115 @@
+#include "directio.h"
+
+extern char IsPrime(ULONG TestNumber), GCompName[MAX_CALLS][STRING_LENGTH];
+extern void Usage(void), thread_server(void);
+extern ULONG NoPrimes[MAX_CALLS], handles;
+
+DWORD  IDThrd;
+HANDLE hthread_server;
+CRITICAL_SECTION GlobalCriticalSection;
+
+void _CRTAPI1 main(int argc, char *argv[]) {
+   RPC_STATUS status;
+   UCHAR *pProtocolS = "ncacn_np", *pSecurity = NULL,
+      *pEndp = "\\pipe\\prime";
+   unsigned cMinCalls = 1, cMaxCalls = MAX_CALLS, i;
+   for(i = 1; (int)i < argc; i++) {
+      if((*argv[i] == '-') || (*argv[i] == '/')) {
+         switch(tolower(*(argv[i]+1))) {
+            case 'p':
+               pProtocolS = argv[++i];
+               break;
+            case 'e':
+               pEndp = argv[++i];
+               break;
+            default:
+               Usage();
+            }
+         }
+      else
+         Usage();
+      }
+   status = RpcServerUseProtseqEp(pProtocolS, cMaxCalls, pEndp, pSecurity);
+   CheckStatus(RpcServerUseProtseqEp);
+   status = RpcServerRegisterIf(prime_ServerIfHandle, NULL, NULL);
+
+   CheckStatus(RpcServerRegisterIf);
+   InitializeCriticalSection(&GlobalCriticalSection);
+   set_vid_mem();
+   clearscreen(BACKGROUND_CYAN);
+   box(0, 0, 79, 24, DOUBLE);
+   mxyputs(37, 0, " PRIMES ", WHITE_ON_CYAN);
+   mxyputs(TEST_X1, 2, "Testing...", WHITE_ON_CYAN);
+   box(TEST_X1, TEST_Y1, TEST_X2, TEST_Y2, SINGLE);
+   mxyputs(PRIME_X1, 2, "Prime!", WHITE_ON_CYAN);
+   box(PRIME_X1, PRIME_Y1, PRIME_X2, PRIME_Y2, SINGLE);
+   mxyputs(32, 23, "Press Esc to exit", WHITE_ON_CYAN);
+   hthread_server = CreateThread(NULL, 0,
+      (LPTHREAD_START_ROUTINE)thread_server, NULL, CREATE_SUSPENDED,
+      &IDThrd);
+   SetThreadPriority(hthread_server, THREAD_PRIORITY_LOWEST);
+   ResumeThread(hthread_server);
+   mxyputs(23, 21, "Listening for prime number requests.", RED_ON_CYAN);
+   status = RpcServerListen(cMinCalls, cMaxCalls, FALSE);
+   CheckStatus(RpcServerListen);
+   }
+
+void Usage(void) {
+   printf("Usage: SERVER\n");
+   printf(" -p protocol_sequence\n");
+   printf(" -e endpoint\n");
+
+   exit(EXIT_SUCCESS);
+   }
+
+void __RPC_FAR *__RPC_API midl_user_allocate(size_t len) {
+   return(malloc(len));
+   }
+
+void __RPC_API midl_user_free(void __RPC_FAR *ptr) {
+   free(ptr);
+   }
+
+void thread_server(void) {
+   while(1) {
+      char Buffer[STRING_LENGTH], Buffert[STRING_LENGTH];
+      UCHAR i;
+      if(VK_ESCAPE == get_character(NO_WAIT)) {
+         EnterCriticalSection(&GlobalCriticalSection);
+         Sleep(WAIT);
+         clearscreen(0);
+         exit(EXIT_SUCCESS);
+         LeaveCriticalSection(&GlobalCriticalSection);
+         DeleteCriticalSection(&GlobalCriticalSection);
+         }
+      if(handles) {
+         mxyputs(58, 2, "Number of Primes", WHITE_ON_CYAN);
+         EnterCriticalSection(&GlobalCriticalSection);
+         for(i = 0; i < handles; i++) {
+            strncpy(Buffert, strupr(GCompName[i]), C_N_LENGTH);
+            Buffert[C_N_LENGTH] = 0;
+            PutString(59, 4+i, WHITE_ON_BLUE, " %7s:%5d ", Buffert,
+               NoPrimes[i]);
+            }
+         box(58, 3, 74, (UCHAR)(4 + handles), SINGLE);
+         mxyputc(58, (UCHAR)(5+i), (char)32, 17, CYAN_ON_CYAN);
+         LeaveCriticalSection(&GlobalCriticalSection);
+         }
+      else
+         for(i = 0; i < 13; i++)
+            mxyputc(58, (UCHAR)(2+i), (char)32, 17, CYAN_ON_CYAN);
+      if(!handles) {
+         mxyputs(23, 21, "Listening for prime number requests.",
+            RED_ON_CYAN);
+         Sleep(WAIT_DISPLAY);
+         }
+      mxyputc(23, 21, (char)32, 36, CYAN_ON_CYAN);
+      }
+   }
+
+
+
+
+
+
+

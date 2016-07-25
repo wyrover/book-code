@@ -1,0 +1,66 @@
+// Globals
+HANDLE hVDD = NULL;
+VDD_IO_PORTRANGE portRange;
+ULONG ulAddr;
+PBYTE pMem;
+BYTE byteStatus = 0;
+BYTE byteCount = 0;
+BOOLEAN bIoHooked = FALSE;
+BOOLEAN bMemHooked= FALSE;
+BOOLEAN bMemAllocated = FALSE;
+BOOLEAN bDebug = TRUE;
+...
+VDD_IO_HANDLERS ioHandlers;
+hVDD = hInst;
+...
+case DLL_PROCESS_ATTACH:
+     Debug("IOVDD: VDDLibMain - Attach\n");
+
+     portRange.First = IOVDD_PORT_START;
+     portRange.Last  = IOVDD_PORT_END;
+
+     ioHandlers.inb_handler   = IoVDD_ReadByte;
+     ioHandlers.inw_handler   = NULL;
+     ioHandlers.insb_handler  = NULL;
+     ioHandlers.insw_handler  = NULL;
+     ioHandlers.outb_handler  = IoVDD_WriteByte;
+     ioHandlers.outw_handler  = NULL;
+     ioHandlers.outsb_handler = NULL;
+     ioHandlers.outsw_handler = NULL;
+
+     if (!(bIoHooked = VDDInstallIOHook(hVDD,
+        1, &portRange, &ioHandlers)))
+     {
+        Debug("IOVDD: Port hook failed");
+        return FALSE;
+     }
+
+     ulAddr = (ULONG)MAKELONG(0, 0xCC00);
+     pMem = (PBYTE)GetVDMPointer(ulAddr, IOVDD_MIO_RANGE, 0);
+     if (!(bMemHooked = VDDInstallMemoryHook(
+        hVDD, pMem, IOVDD_MIO_RANGE,
+        (PVDD_MEMORY_HANDLER)IoVDD_Memory)))
+     {
+        Debug("IOVDD: Memory hook failed");
+        return FALSE;
+     }
+     break;
+
+case DLL_PROCESS_DETACH:
+     Debug("IOVDD: VDDLibMain - Detach\n");
+     if (bIoHooked)
+        VDDDeInstallIOHook(hVDD, 1, &portRange);
+     if (bMemHooked)
+        VDDDeInstallMemoryHook(hVDD, pMem, IOVDD_MIO_RANGE);
+     if (bMemAllocated)
+        VDDFreeMem(hVDD, (PVOID)pMem, IOVDD_MIO_RANGE);
+     if (pMem)
+         FreeVDMPointer(ulAddr, IOVDD_MIO_RANGE, pMem, FALSE);
+     break;
+
+
+
+
+
+
+

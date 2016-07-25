@@ -1,0 +1,1 @@
+讲述MFC AppWizard的原理与MFC程序框架的剖析。AppWizard是一个源代码生成工具，是计算机辅助程序设计工具，WinMain在MFC程序中是如何从源程序中被隐藏的，theApp全局变量是如何被分配的，MFC框架中的几个类的作用与相互关系，MFC框架窗口是如何产生和销毁的，对窗口类的PreCreateWidow和OnCreate两个函数的着重分析,Windows窗口与C++中的CWnd类的关系。

@@ -1,0 +1,14 @@
+C The triple DO loop that performs matrix multiplication
+      Do i = 1, A_ROWS
+         Do j = 1, B_COLUMNS
+             Do k = 1, A_COLUMNS
+                 C(i, j)  =  C(i, j) + A(i, k) * B(k, j)
+             End Do
+         End Do      End Do
+
+
+
+
+
+
+

@@ -1,0 +1,196 @@
+/*----------------------------------------------------
+    TOGGLE BREAKPOINT
+  ----------------------------------------------------*/
+BOOL ToggleBreakpoint( UINT uLine )
+{
+  PBPNODE pBP = NULL;
+  BOOL bFound = FALSE;
+
+  if (!CanBreakOnLine(uLine))
+    return(FALSE);
+
+  /* search to end of list for */
+  /* hard breaks on uLine */
+
+  pBP = FindNextBPbyLine(NULL, uLine);
+  while (pBP != NULL) {
+    if (!pBP->bOnceOnly) {
+      bFound = TRUE;
+      RemoveBreakpoint(Debuggee.hProcess, pBP);
+      DeleteNode(pBP);
+      if (pBP == pbpPending)
+        pbpPending = NULL;
+      SetLinePrefix(pBP->uLine, PREFIX_BREAK_LINE);
+    }
+    /* any more breakpoints on this line? */
+    pBP = FindNextBPbyLine(NULL, uLine);
+  }
+
+  /* if no breakpoints were found, create one */
+  if (!bFound) {
+    int iIndex = 0;
+    PBYTE pAddress;
+
+    pAddress = GetNextAddressForLine(&iIndex, uLine);
+    while (pAddress) {
+      pBP = NewNode();
+      if (!pBP) return(FALSE);
+      pBP->uLine = uLine;
+      pBP->pAddress = pAddress;
+      pBP->bOnceOnly = FALSE;
+      if (!SetBreakpoint(Debuggee.hProcess, pBP)) {
+        DeleteNode(pBP);
+        return(FALSE);
+      }
+      pAddress = GetNextAddressForLine(&iIndex, uLine);
+    }
+    SetLinePrefix(pBP->uLine, PREFIX_BREAKPOINT);
+  }
+  return(TRUE);
+}
+
+/*----------------------------------------------------
+    RUN TO LINE
+  ----------------------------------------------------*/
+BOOL RunToLine( UINT uLine )
+{
+  int iIndex = 0;
+  PBYTE pAddress;
+  PBPNODE pBP = NULL;
+
+  if (!CanBreakOnLine(uLine))
+    return(FALSE);
+
+  pAddress = GetNextAddressForLine(&iIndex, uLine);
+  if (pAddress == GetIPAddress(Debuggee.hThread))
+    return(TRUE);
+
+  pBP = NewNode();
+  if (!pBP) return(FALSE);
+  pBP->uLine = uLine;
+  pBP->pAddress = pAddress;
+  pBP->bOnceOnly = TRUE;
+  if (!SetBreakpoint(Debuggee.hProcess, pBP)) {
+    DeleteNode(pBP);
+    return(FALSE);
+  }
+  /* do not show breakpoint glyph on screen */
+
+  /* initiate the Run command */
+  FORWARD_WM_COMMAND(ghMainWnd, CMD_RUN, NULL,
+    0, SendMessage);
+  return(TRUE);
+}
+
+/*----------------------------------------------------
+    SET ALL BREAKPOINTS
+  ----------------------------------------------------*/
+BOOL SetAllBreakpoints( void )
+{
+  PBPNODE pBP;
+  int i;
+
+  for (i=0; i<iBreakLineCount; i++) {
+    pBP = NewNode();
+    if (!pBP) return(FALSE);
+    pBP->uLine = BreakLines[i];
+    pBP->pAddress = Debuggee.pStartAddress + LineAddress[i];
+    pBP->bOnceOnly = FALSE;
+    if (!SetBreakpoint(Debuggee.hProcess, pBP)) {
+      DeleteNode(pBP);
+      return(FALSE);
+    }
+    SetLinePrefix(pBP->uLine, PREFIX_BREAKPOINT);
+  }
+  return(TRUE);
+}
+
+/*----------------------------------------------------
+    CLEAR ALL BREAKPOINTS
+  ----------------------------------------------------*/
+BOOL ClearAllBreakpoints( void )
+{
+  PBPNODE pTemp, pBP;
+  BOOL bSuccess = TRUE;
+
+  pBP = FirstNode();
+  while (pBP && bSuccess) {
+    bSuccess = RemoveBreakpoint(Debuggee.hProcess, pBP);
+    if (bSuccess) {
+      /* remove the breakpoint glyph */
+      if (pBP->uLine != 0)
+        SetLinePrefix(pBP->uLine, PREFIX_BREAK_LINE);
+
+      /* remember not to restore bp after */
+      /* next single-step */
+      if (pBP == pbpPending)
+        pbpPending = NULL;
+
+      pTemp = NextNode(pBP);
+      DeleteNode(pBP);
+      pBP = pTemp;
+    }
+  }
+  return(bSuccess);
+}
+
+/*----------------------------------------------------
+    CAN BREAK ON LINE
+    Return TRUE if it is possible to set a breakpoint
+    on the given line of source code.
+  ----------------------------------------------------*/
+BOOL CanBreakOnLine( UINT uLine )
+{
+  int i = 0;
+  BOOL bFound = FALSE;
+
+  while ((i<iBreakLineCount) && !bFound)
+    bFound = (uLine == BreakLines[i++]);
+
+  return(bFound);
+}
+
+/*----------------------------------------------------
+    GET NEXT ADDRESS FOR LINE
+    Starting from the given array index, search for
+    the next machine code address associated with
+    a given line number.  Use this function to find
+    all the stoppable instructions that fall on a
+    particular source code line.
+  ----------------------------------------------------*/
+PBYTE GetNextAddressForLine( PINT pIndex, int iLine )
+{
+  PBYTE pAddress = NULL;
+  BOOL bFound = FALSE;
+  int iIndex = *pIndex;
+
+  iIndex = max(iIndex, 0);      /* assert *pIndex >= 0 */
+
+  while (!bFound && (iIndex < iBreakLineCount))
+    bFound = (BreakLines[iIndex++] == iLine);
+
+  if (bFound) {
+    *pIndex = iIndex--;
+    pAddress = LineAddress[iIndex] + Debuggee.pStartAddress;
+  }
+  return(pAddress);
+}
+
+/*----------------------------------------------------
+    MARK ALL BREAK LINES
+    Place a PREFIX_BREAK_LINE character in front of
+    each source line where a breakpoint may be set.
+  ----------------------------------------------------*/
+void MarkAllBreakLines( void )
+{
+  int i;
+  for (i=0; i<iBreakLineCount; i++)
+    SetLinePrefix(BreakLines[i], PREFIX_BREAK_LINE);
+}
+
+
+
+
+
+
+

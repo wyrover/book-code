@@ -1,0 +1,12 @@
+;HPSCANAP.DEF - Module Definition file for HPSCANAP.DLL
+
+LIBRARY  HPScanAp
+
+CODE     PRELOAD MOVEABLE DISCARDABLE
+DATA     PRELOAD SINGLE
+
+EXPORTS
+   CPL_ScannerConfigure    @1
+   CPL_ScannerInstall      @2
+   CPL_ScannerUninstall    @3
+   ConfigureDlgProc        @10

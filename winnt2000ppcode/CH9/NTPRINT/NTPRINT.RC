@@ -1,0 +1,44 @@
+
+/*  NTRPINT.RC   Windows NT, MS Visual C/C++ (32-bit) 1.1 */
+#include "windows.h"
+#include "ntprint.h"
+#include "cprint.h"
+
+IDB_WINLOGO  BITMAP  winlogo.bmp
+
+NTPrintSample MENU
+BEGIN
+   POPUP "&File" {
+      MENUITEM "&Print...",           IDM_PRINT
+      MENUITEM "P&rint Setup...",     IDM_PRINTSETUP
+      MENUITEM SEPARATOR
+      MENUITEM "&Enumerate Forms...", IDM_ENUMFORMS
+      MENUITEM "&Add Form",           IDM_ADDFORM
+      MENUITEM "&Change Form",        IDM_CHANGEFORM
+      MENUITEM "&Delete Form",        IDM_DELETEFORM
+      MENUITEM SEPARATOR
+      MENUITEM "E&xit",               IDM_EXIT
+   }
+END
+
+DlgForms DIALOG 16, 16, 118, 94
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+STYLE DS_MODALFRAME|WS_POPUP|WS_VISIBLE|WS_CAPTION|WS_SYSMENU
+CAPTION "Forms (default printer)"
+FONT 8, "MS Sans Serif"
+BEGIN          
+  LISTBOX    IDC_FORMS, 10, 10, 98, 60, WS_VSCROLL|WS_TABSTOP
+  PUSHBUTTON "OK", IDOK, 68, 70, 40, 14
+END
+
+DlgAbort DIALOG 16, 16, 156, 72
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION
+CAPTION "Sample Application"
+FONT 8, "MS Sans Serif"
+BEGIN
+  CTEXT      "Printing", IDNULL, 10, 10, 135, 8
+  CTEXT      "(Untitled)", IDC_DOCTITLE, 10, 20, 135, 8
+  PUSHBUTTON "Cancel", IDCANCEL, 53, 48, 49, 14
+END
+

@@ -1,0 +1,44 @@
+/*-------------------------------------------------
+  GET PROCESS COUNTER TITLE INDICES
+  Loads block of strings from performance
+  monitor and searches for string index
+  values for process-related counters.
+  Stores the values in the global Index
+  structure.  Returns FALSE for errors.
+  -------------------------------------------------*/
+BOOL GetTitleIndices ( PTSTR szComputerName )
+{
+  PTSTR pstrNameBlock;
+
+  pstrNameBlock = LoadNameStrings( szComputerName );
+  if (!pstrNameBlock)
+    return( FALSE );
+
+  /* search data block for index numbers to  */
+  /* process counters  */
+  Index.ThreadCount  = (UINT)GetTitleIndexValue( pstrNameBlock,
+                                             TEXT("Thread Count") );
+  Index.PriorityBase = (UINT)GetTitleIndexValue( pstrNameBlock,
+                                             TEXT("Priority Base") );
+  Index.IDProcess    = (UINT)GetTitleIndexValue( pstrNameBlock,
+                                             TEXT("ID Process") );
+  /* get string and value of index to object name  */
+  Index.ProcessIndexString = GetTitleIndexString( pstrNameBlock,
+                                             TEXT("Process") );
+  Index.ProcessIndexValue = tstr_to_uint( Index.ProcessIndexString );
+
+  GlobalFree( pstrNameBlock );
+
+  /* return TRUE if all indices were found */
+  return( (Index.ThreadCount != GET_INDEX_FAILURE)
+          && (Index.PriorityBase != GET_INDEX_FAILURE)
+          && (Index.IDProcess != GET_INDEX_FAILURE)
+          && (Index.ProcessIndexString != NULL) );
+}
+
+
+
+
+
+
+

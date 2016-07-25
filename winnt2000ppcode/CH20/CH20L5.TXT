@@ -1,0 +1,70 @@
+      include 'mt.fi'
+
+      program Parent
+      include 'mt.fd'
+      logical*4 procHandle, CreateProcess
+      integer*4 CreateEvent, hReadEvent, hWriteEvent, SetEvent
+      integer*4 waitResult, WaitForSingleObject
+      character*255 buffer
+      character*10 strReadEvent, strWriteEvent, FileName
+
+      record /PROCESS_INFORMATION/ pi
+      record /STARTUPINFO/ si
+
+Initializing the strings
+
+      strReadEvent = 'ReadEvent '
+      strWriteEvent = 'WriteEvent '
+      FileName = ' file.out '
+      buffer = "child "//strReadEvent//strWriteEvent//FileName//" "C
+      strReadEvent(10:10) = char(0)
+      strWriteEvent(10:10) = char(0)
+
+Initializing the STARTUPINFO structure
+
+      si.cb = 68             ! sizeof (STARTUPINFO)
+      si.lpReserved = 0
+      si.lpDeskTop = 0
+      si.lpTitle = 0
+      si.dwFlags = 0
+      si.cbReserved2 = 0
+      si.lpReserved2 = 0
+      si.hStdInput = 0
+      si.hStdOutput = 0
+      si.hStdError = 0
+
+Creating Read and Write Event objects
+
+      hReadEvent = CreateEvent(0, .FALSE., .FALSE., loc(strReadEvent))
+      hWriteEvent = CreateEvent(0, .FALSE., .FALSE.,loc(strWriteEvent))
+
+Spawning the child prcoess
+
+      procHandle = CreateProcess( 0,  loc(buffer), 0, 0, .TRUE. , 0, 0,
+                                  0, loc(si), loc(pi))
+
+Providing a question for the child
+
+      open (10, file= FileName)
+      write(10, '(A)') "What issue of Dr. Dobb's is this?"
+      close (10)
+
+      write(*,*) 'Providing the green signal for child to continue...'
+      waitResult = SetEvent(hWriteEvent)
+      write(*,*) 'Waiting for the child to answer the question - '
+      waitResult = WaitForSingleObject (hReadEvent, WAIT_INFINITE)
+
+Writing the reply from the child on to the screen
+
+      open (10, file= FileName)
+      read(10, '(A)') buffer
+      close (10)
+      write(*,*) buffer 
+      end
+
+
+
+
+
+
+

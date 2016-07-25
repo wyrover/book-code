@@ -1,0 +1,70 @@
+#include <windows.h>
+
+HANDLE StdIn, StdOut, StdErr;
+
+void StdioInit()
+{
+   AllocConsole();
+
+   StdIn = GetStdHandle(STD_INPUT_HANDLE);
+   StdOut = GetStdHandle(STD_OUTPUT_HANDLE);
+   StdErr = GetStdHandle(STD_ERROR_HANDLE);
+
+   SetConsoleMode(StdIn, ENABLE_LINE_INPUT | ENABLE_ECHO_INPUT |
+                  ENABLE_PROCESSED_INPUT );
+   SetConsoleMode(StdOut, ENABLE_PROCESSED_OUTPUT | ENABLE_WRAP_AT_EOL_OUTPUT );
+   SetConsoleMode(StdErr, ENABLE_PROCESSED_OUTPUT | ENABLE_WRAP_AT_EOL_OUTPUT );
+}
+
+void StdioPuts(char *s)
+{
+   int n;
+
+    // Write the string to StdOut
+    WriteFile(StdOut, s, strlen(s), &n, NULL);
+}
+
+int StdioGetch()
+{
+   DWORD dwFlags;
+   int n;
+   char c;
+
+   // Reset the console into single-character no-echo input
+   GetConsoleMode(StdIn, &dwFlags);
+   SetConsoleMode(StdIn, dwFlags & ~(ENABLE_LINE_INPUT | ENABLE_ECHO_INPUT));
+
+   // Read in a single character, no echo
+   ReadFile(StdIn, &c, 1, &n, NULL);
+
+   // Reset the console mode
+   SetConsoleMode(StdIn, dwFlags);
+   return(c);
+}
+
+int StdioGetchE()
+{
+   char c;
+
+   // Get a character, echo it back
+   c = StdioGetch();
+
+   WriteFile(StdOut, &c, 1, &n, NULL);
+
+   return(c);
+}
+
+int StdioPrintf(format, ...)
+{
+   char szBuff[256];
+
+   vsprintf(szBuff, format, va_arg);
+   StdioPuts(szBuff);
+}
+
+
+
+
+
+
+

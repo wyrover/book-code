@@ -1,0 +1,66 @@
+      include 'mt.fi'
+
+Thread Function as a subroutine
+
+      subroutine ThreadFunc (param)
+      include 'mt.fd'
+      integer*4 param, result
+      record /RTL_CRITICAL_SECTION/ GlobalCriticalSection
+      record /RTL_CRITICAL_SECTION_DEBUG/ AuxCriticalSection
+      common result, GlobalCriticalSection
+
+Critical Section region begins...
+
+      Call EnterCriticalSection ( loc(GlobalCriticalSection))
+            result = param + result
+
+Critical Section region ends...
+
+      Call LeaveCriticalSection ( loc(GlobalCriticalSection))
+      Call ExitThread(0)
+      return
+      end
+
+Main program begins here
+      program test
+      include 'mt.fd'
+      external ThreadFunc
+      integer*4 ThreadHandle(MAX_THREADS), inarray(MAX_THREADS)
+      integer*4 CreateThread, threadId
+      integer*4 waitResult, WaitForMultipleObjects
+      integer*4 loop, result
+      record /RTL_CRITICAL_SECTION/ GlobalCriticalSection
+      record /RTL_CRITICAL_SECTION_DEBUG/ AuxCriticalSection
+      common result, GlobalCriticalSection
+
+Creating the cyclic structure for the critical section object
+
+      GlobalCriticalSection.Address = loc(AuxCriticalSection)
+      AuxCriticalSection.Address = loc(GlobalCriticalSection)
+
+      result = 0
+
+Initializing Critical Section ...
+
+      Call InitializeCriticalSection(loc(GlobalCriticalSection))
+
+      do loop = 1, MAX_THREADS
+         inarray(loop)= loop
+         write(*, '(1x, A, I3)') 'Creating Thread # ', loop
+         ThreadHandle(loop) = CreateThread( 0, 0, ThreadFunc,
+                                            inarray(loop), 0, threadId)
+      end do
+
+      write(*,*) 'Waiting for all the threads to complete ...'
+      waitResult = WaitForMultipleObjects
+     +   (MAX_THREADS, ThreadHandle, .TRUE. , WAIT_INFINITE)
+         write(*, '(1x, A, I6, A, I10)' )
+     +   'The sum of the first ', MAX_THREADS,' #s is ', result
+      end
+
+
+
+
+
+
+

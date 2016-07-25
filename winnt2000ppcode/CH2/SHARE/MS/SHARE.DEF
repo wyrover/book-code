@@ -1,0 +1,8 @@
+;  SHARE.DEF
+;  module definition file for the Share DLL
+
+LIBRARY
+
+SECTIONS
+   .Public READ WRITE SHARED
+

@@ -1,0 +1,295 @@
+      interface to logical*4 function CloseHandle
+     +    [stdcall, alias: '_CloseHandle@4'] (handle)
+     +    (security, owner, string)
+        integer*4 handle [value]
+      end
+
+      interface to integer*4 function CreateEvent
+     +    [stdcall, alias: '_CreateEventA@16']
+     +    (security, reset, init_state, string)
+        integer*4 security [value]
+        Logical*4 reset [value]
+        Logical*4 init_state [value]
+        integer*4 string [value]
+      end
+
+      interface to integer*4 function CreateMutex
+     +    [stdcall, alias: '_CreateMutexA@12']
+     +    (security, owner, string)
+        integer*4 security [value]
+        Logical*4 owner [value]
+        integer*4 string [value]
+      end
+
+      interface to logical*4 function CreateProcess
+     +    [stdcall, alias: '_CreateProcessA@40']
+     +    (lpApplicationName, lpCommandLine, lpProcessAttributes,
+     +     lpThreadAttributes, bInheritHandles, dwCreationFlags,
+     +     lpEnvironment, lpCurrentDirectory, lpStartupInfo,
+     +     lpProcessInformation)
+        integer*4 lpApplicationName [value]
+        integer*4 lpCommandLine [value]
+        integer*4 lpProcessAttributes [value]
+        integer*4 lpThreadAttributes [value]
+        logical*4 bInheritHandles [value]
+        integer*4 dwCreationFlags [value]
+        integer*4 lpEnvironment [value]
+        integer*4 lpCurrentDirectory [value]
+        integer*4 lpStartupInfo [value]
+        integer*4 lpProcessInformation [value]
+      end
+
+      interface to integer*4 function CreateSemaphore
+     +    [stdcall, alias: '_CreateSemaphoreA@16']
+     +    (security, InitialCount, MaxCount, string)
+        integer*4 security [value]
+        integer*4 InitialCount [value]
+        integer*4 MaxCount [value]
+        integer*4 string [value]
+      end
+
+      interface to integer*4 function CreateThread
+     +    [stdcall, alias: '_CreateThread@24']
+     +    (security, stack, thread_func,
+     +    argument, flags, thread_id)
+        integer*4 security [value]
+        integer*4 stack [value]
+        external thread_func
+        integer*4 argument [reference]
+        integer*4 flags [value]
+        integer*4 thread_id [reference]
+      end
+
+      interface to subroutine DeleteCriticalSection
+     +    [stdcall, alias: '_DeleteCriticalSection@4'] (object)
+        integer*4 object [value]
+      end
+
+      interface to logical*4 function DuplicateHandle
+     +    [stdcall, alias: '_DuplicateHandle@28']
+     +    (hSourceProcessHandle, hSourceHandle,
+     +     hTargetProcessHandle, lpTargetHandle,
+     +     dwDesiredAccess, bInheritHandle, dwOptions)
+        integer*4 hSourceProcessHandle [value]
+        integer*4 hSourceHandle [value]
+        integer*4 hTargetProcessHandle [value]
+        integer*4 lpTargetHandle [reference]
+        integer*4 dwDesiredAccess [value]
+        logical*4 bInheritHandle [value]
+        integer*4 dwOptions [value]
+      end
+
+      interface to subroutine EnterCriticalSection
+     +    [stdcall, alias: '_EnterCriticalSection@4'] (object)
+        integer*4 object [value]
+      end
+
+      interface to subroutine ExitProcess
+     +    [stdcall, alias: '_ExitProcess@4'] (ExitCode)
+        integer*4 ExitCode [value]
+      end
+
+      interface to subroutine ExitThread
+     +    [stdcall, alias: '_ExitThread@4'] (ExitCode)
+        integer*4 ExitCode [value]
+      end
+
+      interface to integer*4 function GetCurrentProcess
+     +   [stdcall, alias: '_GetCurrentProcess@0'] ()
+      end
+
+      interface to integer*4 function GetCurrentProcessId
+     +   [stdcall, alias: '_GetCurrentProcessId@0'] ()
+      end
+
+      interface to integer*4 function GetCurrentThread
+     +   [stdcall, alias: '_GetCurrentThread@0'] ()
+      end
+
+      interface to integer*4 function GetCurrentThreadId
+     +   [stdcall, alias: '_GetCurrentThreadId@0'] ()
+      end
+
+      interface to logical*4 function GetExitCodeProcess
+     +   [stdcall, alias: '_GetExitCodeProcess@8']
+     +   (hProcess, lpExitCode)
+        integer*4 hProcess [value]
+        integer*4 lpExitCode [reference]
+      end
+
+      interface to logical*4 function GetExitCodeThread
+     +   [stdcall, alias: '_GetExitCodeThread@8']
+     +   (hThread, lpExitCode)
+        integer*4 hThread [value]
+        integer*4 lpExitCode [reference]
+      end
+
+      interface to integer*4 function GetLastError
+     +    [stdcall, alias: '_GetLastError@0'] ()
+      end
+
+      interface to integer*4 function GetPriorityClass
+     +   [stdcall, alias: '_ GetPriorityClass@4'] (hProcess)
+        integer*4 hProcess [value]
+      end
+
+      interface to integer*4 function GetThreadPriority
+     +   [stdcall, alias: '_GetThreadPriority@4'] (hThread)
+        integer*4 hThread [value]
+      end
+
+      interface to logical*4 function GetThreadSelectorEntry
+     +   [stdcall, alias: '_GetThreadSelectorEntry@12']
+     +   (hThread, dwSelector, lpSelectorEntry)
+        integer*4 hThread [value]
+        integer*4 dwSelector [value]
+        integer*4 lpSelectorEntry [value]    ! Pass loc of the struct
+      end
+
+      interface to subroutine InitializeCriticalSection
+     +    [stdcall, alias: '_InitializeCriticalSection@4'] (object)
+        integer*4 object [value]
+      end
+
+      interface to subroutine LeaveCriticalSection
+     +    [stdcall, alias: '_LeaveCriticalSection@4'] (object)
+        integer*4 object [value]
+      end
+
+      interface to integer*4 function OpenEvent
+     +     [stdcall, alias: '_OpenEventA@12']
+     +     (dwDesiredAccess, bInheritHandle, lpName)
+        integer*4 dwDesiredAccess [value]
+        logical*4 bInheritHandle [value]
+        integer*4 lpName [value]
+      end
+
+      interface to integer*4 function OpenMutex
+     +     [stdcall, alias: '_OpenMutexA@12']
+     +     (dwDesiredAccess, bInheritHandle, lpName)
+        integer*4 dwDesiredAccess [value]
+        logical*4 bInheritHandle [value]
+        integer*4 lpName [value]
+      end
+
+      interface to integer*4 function OpenProcess
+     +     [stdcall, alias: '_OpenProcess@12']
+     +     (dwDesiredAccess, bInheritHandle, lpName)
+        integer*4 dwDesiredAccess [value]
+        logical*4 bInheritHandle [value]
+        integer*4 IdProcess [value]
+      end
+
+      interface to integer*4 function OpenSemaphore
+     +     [stdcall, alias: '_OpenSemaphoreA@12']
+     +     (dwDesiredAccess, bInheritHandle, lpName)
+        integer*4 dwDesiredAccess [value]
+        logical*4 bInheritHandle [value]
+        integer*4 lpName [value]
+      end
+
+      interface to integer*4 function PulseEvent
+     +    [stdcall, alias: '_PulseEvent@4'] (hEvent)
+        integer*4 hEvent [value]      end
+
+      interface to Logical*4 function ReleaseMutex
+     +    [stdcall, alias: '_ReleaseMutex@4'] (handle)
+        integer*4 handle [value]
+      end
+
+      interface to Logical*4 function ReleaseSemaphore
+     +    [stdcall, alias: '_ReleaseSemaphore@12']
+     +    (handle, ReleaseCount, LpPreviousCount)
+        integer*4 handle [value]
+        integer*4 ReleaseCount [value]
+        integer*4 LpPreviousCount [reference]
+      end
+
+      interface to integer*4 function ResumeThread
+     +   [stdcall, alias: '_ResumeThread@4'] (hThread)
+        integer*4 hThread [value]
+       end
+
+      interface to integer*4 function SetEvent
+     +    [stdcall, alias: '_SetEvent@4'] (handle)
+        integer*4 handle [value]
+      end
+
+      interface to subroutine SetLastError
+     +    [stdcall, alias: '_SetLastError@4'] (dwErrorCode)
+        integer*4 dwErrorCode [value]
+      end
+
+      interface to logical*4 function SetPriorityClass
+     +   [stdcall, alias: '_SetPriorityClass@8'](hProcess, nPriority)
+        integer*4 hProcess [value]
+        integer*4 nPriority [value]
+      end
+
+      interface to logical*4 function SetThreadPriority
+     +   [stdcall, alias: '_SetThreadPriority@8'](hThread, nPriority)
+        integer*4 hThread [value]
+        integer*4 nPriority [value
+       end
+
+      interface to integer*4 function SuspendThread
+     +   [stdcall, alias: '_SuspendThread@4'] (hThread)
+        integer*4 hThread [value]
+      end
+
+      interface to logical*4 function TerminateProcess
+     +   [stdcall, alias: '_TerminateProcess@8']
+     +   (hProcess, uExitCode)
+        integer*4 hProcess [value]
+        integer*4 uExitCode [value]
+      end
+
+      interface to logical*4 function TerminateThread
+     +   [stdcall, alias: '_TerminateThread@8']
+     +   (hThread, dwExitCode)
+        integer*4 hThread [value]
+        integer*4 dwExitCode [value]
+      end
+
+      interface to integer*4 function TlsAlloc
+     +   [stdcall, alias: '_TlsAlloc@0'] ()
+      end
+
+      interface to logical*4 function TlsFree
+     +   [stdcall, alias: '_TlsFree@4'] (dwTlsIndex)
+        integer*4 dwTlsIndex [value]
+      end
+
+      interface to integer*4 function TlsGetValue
+     +   [stdcall, alias: '_TlsGetValue@4'] (dwTlsIndex)
+        integer*4 dwTlsIndex [value]
+      end
+
+      interface to logical*4 function TlsSetValue
+     +   [stdcall, alias: '_TlsSetValue@8'] (dwTlsIndex, lpTlsVal)
+        integer*4 dwTlsIndex [value]
+        integer*4 lpTlsVal [value]
+      end
+
+      interface to integer*4 function WaitForMultipleObjects
+     +    [stdcall, alias: '_WaitForMultipleObjects@16']
+     +    (Count, LpHandles, WaitAll, Mseconds)
+        integer*4 Count [value]
+        integer*4 LpHandles [reference]
+        logical*4 WaitAll [value]
+        integer*4 Mseconds [value]
+      end
+
+      interface to integer*4 function WaitForSingleObject
+     +    [stdcall, alias: '_WaitForSingleObject@8']
+     +    (handle, Mseconds)
+        integer*4 handle [value]
+        integer*4 Mseconds [value]
+      end
+
+
+
+
+
+
+

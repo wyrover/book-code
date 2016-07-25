@@ -1,0 +1,56 @@
+/*-------------------------------------------------
+  LOAD COUNTER DATA
+  Read from the performance monitor a block of data holding
+  counter values for the given object. Return a pointer to the
+  data block, which the caller must free, or NULL on errors.
+  -------------------------------------------------*/
+PPERF_DATA_BLOCK LoadCounterData ( PTSTR szComputerName,
+                                   PTSTR pObjectTitleIndex )
+{
+  PPERF_DATA_BLOCK pCounters;
+  DWORD dwDataSize = 30*BUFFER_INCREMENT;      /* 30k */
+  LONG lResult;
+  DWORD Type;
+  HKEY hPerfKey = HKEY_PERFORMANCE_DATA;
+
+  /* attempt a remote connection if caller requests it */
+  if (szComputerName)
+  {
+    lResult = RegConnectRegistry( szComputerName,
+                                  HKEY_PERFORMANCE_DATA, &hPerfKey );
+    if (lResult != ERROR_SUCCESS)
+      return( NULL );
+  }
+
+  /* allocate buffer for data (guessing its size) */
+  pCounters = (PPERF_DATA_BLOCK)
+    LocalAlloc(    LMEM_FIXED, (UINT)dwDataSize );
+  do {
+    /* try to load the data */
+    lResult = RegQueryValueEx (hPerfKey, pObjectTitleIndex, NULL,
+                               &Type, (PBYTE)pCounters, &dwDataSize );
+
+    /* if there wasn't room, expand the buffer */
+    if (lResult == ERROR_MORE_DATA) {
+      LocalFree( pCounters );
+      dwDataSize += BUFFER_INCREMENT;
+      pCounters = (PPERF_DATA_BLOCK)
+        LocalAlloc( LMEM_FIXED, (UINT)dwDataSize );
+    }
+    /* if some other error occurred, quit */
+    else if (!pCounters)
+      return( NULL );
+
+  } while (lResult == ERROR_MORE_DATA);
+
+  /* close key so system won't lock monitored objects */
+  RegCloseKey( hPerfKey );
+  return( pCounters );
+}
+
+
+
+
+
+
+

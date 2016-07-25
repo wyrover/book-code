@@ -1,0 +1,23 @@
+C This is variation in the MatMult subroutine Do loops. Loop variable i ranges
+C from current thread number to maximum number of rows in A in steps of
+C maximum number of threads. Loop variable j ranges across all columns of B,
+C but is staggered according to current thread number to minimize memory
+C contention on an SMP machine. Loop variable jj translates (maps) value of j
+C to fall within permissible range of B, that is from 1 to B_Columns
+
+      Do i = CurrentThread, A_Rows,  MaxThreadCount
+         Do j = (CurrentThread-1)*MaxThreadCount,
+     +           B_Columns + (CurrentThread-1)*MaxThreadCount - 1
+            jj =  1 + mod(j, B_Columns)
+            Do k = 1, A_Columns
+               C(i, jj)  =  C(i, jj) + A(i, k) * B(k, jj)
+            End Do
+         End Do
+      End Do
+
+
+
+
+
+
+

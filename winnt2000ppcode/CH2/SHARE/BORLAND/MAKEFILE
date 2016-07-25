@@ -1,0 +1,38 @@
+#
+#  Builds the SHARE DLL and its TEST client 
+#  using Borland's MAKE and command line tools
+#
+
+!if !$d(BCROOT)
+BCROOT = $(MAKEDIR)\..
+!endif
+
+CFLAGS = -c -I$(BCROOT)\include -D_MT
+LFLAGS = -L$(BCROOT)\lib
+LIBS   = cw32mt import32
+
+!if $d(NODEBUG)
+CFLAGS = $(CFLAGS) -O2 -D_MT
+!else
+CFLAGS = $(CFLAGS) -Od -v -D_MT
+LFLAGS = $(LFLAGS) -v
+!endif
+
+all: share.dll test.exe
+
+test.obj: test.c share.h
+  bcc32 $(CFLAGS) -W $*.c               # Windows .EXE
+
+share.obj: share.c share.h
+  bcc32 $(CFLAGS) -WD $*.c		# DLL, explicit functions exported
+
+public.obj: public.c
+  bcc32 $(CFLAGS) -WD $*.c		# DLL, explicit functions exported
+
+share.dll: share.obj public.obj share.def
+  tlink32 $(LFLAGS) -Tpd c0d32 public $*, $*.dll,, $(LIBS), $*.def,
+  implib $*.lib $<
+
+test.exe: test.obj share.lib
+  tlink32 $(LFLAGS) -Tpe c0x32 $*, $*.exe, , $(LIBS) share,
+

@@ -1,0 +1,182 @@
+//Microsoft App Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+#ifdef APSTUDIO_INVOKED
+//////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""res\\Poker.rc2""  // non-App Studio edited resources\r\n"
+    "\r\n"
+    "#include ""afxres.rc""  \011// Standard components\r\n"
+    "\0"
+END
+
+/////////////////////////////////////////////////////////////////////////////////////
+#endif    // APSTUDIO_INVOKED
+
+
+//////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+IDR_POKER_ICON          ICON    DISCARDABLE     "RES\\POKER.ICO"
+
+//////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_POKER_MENU MENU DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&About...",                   ID_ABOUT
+        MENUITEM "E&xit\tCtrl+X",               IDCANCEL
+    END
+    POPUP "&Dialogs"
+    BEGIN
+        MENUITEM "System &About...",            ID_DIALOGS_ABOUT
+    END
+END
+
+
+//////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_POKER_ACCEL ACCELERATORS PRELOAD MOVEABLE PURE 
+BEGIN
+    "A",            ID_ABOUT,               VIRTKEY,CONTROL, NOINVERT
+    "O",            ID_DIALOGS_FILEOPEN,    VIRTKEY,CONTROL, NOINVERT
+    "S",            ID_DIALOGS_FILESAVE,    VIRTKEY,CONTROL, NOINVERT
+    "X",            IDCANCEL,               VIRTKEY,CONTROL, NOINVERT
+END
+
+
+//////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  34, 22, 217, 67
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About Poker"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_POKER_ICON,IDC_STATIC,11,17,18,20
+    LTEXT           "Poker Application Version 1.0",IDC_STATIC,40,10,119,8
+    LTEXT           "Copyright\251 Mark Szamrej",IDC_STATIC,89,42,119,
+                    8
+    DEFPUSHBUTTON   "OK",IDOK,176,6,32,14,WS_GROUP
+    LTEXT           "szamrej%fujitsu@mcimail.com",IDC_STATIC,89,54,107,8
+    LTEXT           "Demos sharing data between applications via memory mapped files.",
+                    IDC_STATIC,40,21,126,20
+END
+
+MAIN_DLG_WINDOW DIALOG DISCARDABLE  80, 60, 162, 132
+STYLE DS_NOIDLEMSG | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Poker Application"
+MENU IDR_POKER_MENU
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Cards",IDC_STATIC,78,47,79,81
+    LTEXT           "Card-1",IDC_CARD1,81,58,69,8,NOT WS_VISIBLE
+    LTEXT           "Card-2",IDC_CARD2,81,68,69,8,NOT WS_VISIBLE
+    LTEXT           "Card-3",IDC_CARD3,81,78,69,8,NOT WS_VISIBLE
+    LTEXT           "Card-4",IDC_CARD4,81,88,69,8,NOT WS_VISIBLE
+    LTEXT           "Card-5",IDC_CARD5,81,98,69,8,NOT WS_VISIBLE
+    LTEXT           "Card-6",IDC_CARD6,81,108,69,8,NOT WS_VISIBLE
+    LTEXT           "Card-7",IDC_CARD7,81,118,69,8,NOT WS_VISIBLE
+    GROUPBOX        "Hands",IDC_STATIC,3,4,70,124
+    LTEXT           "St. Flush",IDC_STATIC,7,17,39,8,SS_NOPREFIX
+    LTEXT           "4-Kind",IDC_STATIC,7,28,39,8,SS_NOPREFIX
+    LTEXT           "Full House",IDC_STATIC,7,39,39,8,SS_NOPREFIX
+    LTEXT           "Flush",IDC_STATIC,7,50,39,8,SS_NOPREFIX
+    LTEXT           "Straight",IDC_STATIC,7,60,39,8,SS_NOPREFIX
+    LTEXT           "3-Kind",IDC_STATIC,7,71,39,8,SS_NOPREFIX
+    LTEXT           "2-Pair",IDC_STATIC,7,82,39,8,SS_NOPREFIX
+    LTEXT           "Pair",IDC_STATIC,7,94,39,8,SS_NOPREFIX
+    LTEXT           "High Card",IDC_STATIC,7,105,39,8,SS_NOPREFIX
+    GROUPBOX        "Money",IDC_STATIC,78,4,77,41
+    LTEXT           "Jackpot",IDC_STATIC,81,15,37,8,SS_NOPREFIX
+    LTEXT           "Winnings",IDC_STATIC,81,25,37,8,SS_NOPREFIX
+    LTEXT           "# Wins",IDC_STATIC,81,35,37,8,SS_NOPREFIX
+    CONTROL         "$100",IDC_TOTALWIN,"Static",SS_SIMPLE | SS_NOPREFIX | 
+                    WS_GROUP,121,25,29,8
+    CONTROL         "???",IDC_JACKPOT,"Static",SS_SIMPLE | SS_NOPREFIX | 
+                    WS_GROUP,121,15,29,8
+    CONTROL         "0",IDC_NUMWIN,"Static",SS_SIMPLE | SS_NOPREFIX | 
+                    WS_GROUP,121,35,29,8
+    CONTROL         "0",IDC_HAND8,"Static",SS_SIMPLE | SS_NOPREFIX | 
+                    WS_GROUP,52,17,17,8
+    CONTROL         "0",IDC_HAND7,"Static",SS_SIMPLE | SS_NOPREFIX | 
+                    WS_GROUP,52,28,17,8
+    CONTROL         "0",IDC_HAND6,"Static",SS_SIMPLE | SS_NOPREFIX | 
+                    WS_GROUP,52,39,17,8
+    CONTROL         "0",IDC_HAND5,"Static",SS_SIMPLE | SS_NOPREFIX | 
+                    WS_GROUP,52,50,17,8
+    CONTROL         "0",IDC_HAND4,"Static",SS_SIMPLE | SS_NOPREFIX | 
+                    WS_GROUP,52,60,17,8
+    CONTROL         "0",IDC_HAND3,"Static",SS_SIMPLE | SS_NOPREFIX | 
+                    WS_GROUP,52,71,17,8
+    CONTROL         "0",IDC_HAND2,"Static",SS_SIMPLE | SS_NOPREFIX | 
+                    WS_GROUP,52,82,17,8
+    CONTROL         "0",IDC_HAND1,"Static",SS_SIMPLE | SS_NOPREFIX | 
+                    WS_GROUP,52,94,17,8
+    CONTROL         "0",IDC_HAND0,"Static",SS_SIMPLE | SS_NOPREFIX | 
+                    WS_GROUP,52,105,17,8
+END
+
+
+//////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "Poker Windows Application"
+END
+
+
+#ifndef APSTUDIO_INVOKED
+////////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#include "res\Poker.rc2"  // non-App Studio edited resources
+
+#include "afxres.rc"  	// Standard components
+
+/////////////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

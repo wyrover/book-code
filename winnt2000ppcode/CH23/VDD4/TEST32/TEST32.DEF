@@ -1,0 +1,14 @@
+; TEST32.DEF - module definition file for TEST32.EXE
+
+NAME          Test32
+DESCRIPTION   "32-bit Test Program"
+EXETYPE       WINDOWS
+STUB          "WINSTUB.EXE"
+
+CODE          PRELOAD MOVEABLE DISCARDABLE
+DATA          PRELOAD MOVEABLE MULTIPLE
+HEAPSIZE      1024
+STACKSIZE     5120
+
+EXPORTS
+

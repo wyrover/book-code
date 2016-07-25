@@ -1,0 +1,30 @@
+/*----------------------------------------------------
+    DBTRACE.RC
+  ----------------------------------------------------*/
+#include <windows.h>
+#include "dbtrace.h"
+
+IDI_APPICON ICON  dbtrace.ico
+
+IDM_APPMENU MENU 
+BEGIN
+  POPUP "&File"
+  BEGIN
+    MENUITEM "&Launch...",  CMD_FILELAUNCH
+    MENUITEM "&Detach",     CMD_FILEDETACH
+    MENUITEM SEPARATOR
+    MENUITEM "E&xit",       CMD_FILEEXIT
+    MENUITEM "A&bout...",   CMD_ABOUT
+  END
+  POPUP "&Edit"
+  BEGIN
+    MENUITEM "Cu&t",        CMD_EDITCUT
+    MENUITEM "&Copy",       CMD_EDITCOPY
+    MENUITEM "&Paste",      CMD_EDITPASTE
+    MENUITEM SEPARATOR
+    MENUITEM "C&lear",      CMD_EDITCLEAR
+    MENUITEM "Clear &All",  CMD_EDITCLEARALL
+    MENUITEM "&Select All", CMD_EDITSELECTALL
+  END
+END
+

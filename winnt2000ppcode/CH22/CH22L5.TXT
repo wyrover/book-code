@@ -1,0 +1,36 @@
+# Nmake macros for building Windows 32-Bit apps
+!include <win32.mak>
+
+all: hpscanap.dll scanaplt.dll
+
+.c.obj:
+  $(cc) $(cdebug) $(cflags) $(cvarsdll) $*.c
+
+hpscanap.res: hpscanap.rc hpscanap.h
+    $(rc) $(rcflags) $(rcvars) -r hpscanap.rc
+
+scanaplt.res: scanaplt.rc scanaplt.h
+    $(rc) $(rcflags) $(rcvars) -r scanaplt.rc
+
+hpscanap.dll: hpscanap.obj hpscanap.res hpscanap.def
+    $(link) $(linkdebug) $(dlllflags) \
+    hpscanap.obj hpscanap.res $(guilibsdll) version.lib \
+    -dll                      \
+    -def:hpscanap.def         \
+    -entry:LibMain$(DLLENTRY) \
+    -out:hpscanap.dll $(MAPFILE)
+
+scanaplt.dll: scanaplt.obj scanaplt.res scanaplt.def
+    $(link) $(linkdebug) $(dlllflags) \
+    scanaplt.obj scanaplt.res $(guilibsdll) version.lib \
+    -dll                      \
+    -def:scanaplt.def         \
+    -entry:LibMain$(DLLENTRY) \
+    -out:scanaplt.dll $(MAPFILE)
+
+
+
+
+
+
+

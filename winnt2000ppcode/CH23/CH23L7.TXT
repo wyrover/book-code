@@ -1,0 +1,40 @@
+VOID IoVDD_ReadByte(WORD wPort, PBYTE byteData)
+{
+   HANDLE hDevice=NULL;
+   DWORD dwCount=0L;
+
+   // handle ports that apps reads from
+   switch(wPort)
+   {
+      case IOVDD_PORT_IDENTIFY:
+         Debug("IOVDD: IOVDD_PORT_IDENTIFY\n");
+         hDevice = CreateFile((LPTSTR)"\\\\.\\simpldrv", GENERIC_READ |
+            GENERIC_WRITE, 0, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
+         DeviceIoControl(hDevice, (DWORD)IOCTL_SIMPLDRV_HELLO,
+            NULL, 0, byteData, 1, &dwCount, NULL);
+         CloseHandle(hDevice);
+         break;
+
+      case IOVDD_PORT_STATUS:
+         Debug("IOVDD: IOVDD_PORT_STATUS\n");
+         *byteData = byteStatus;
+         break;
+
+      case IOVDD_PORT_COUNT:
+         Debug("IOVDD: IOVDD_PORT_COUNT\n");
+         *byteData = byteCount;
+         break;
+
+      default:
+         Debug("IOVDD: Unsupported port read\n");
+         break;
+   }
+   return;
+} // IoVDD_ReadByte
+
+
+
+
+
+
+

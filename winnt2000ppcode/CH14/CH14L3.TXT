@@ -1,0 +1,71 @@
+//
+//  Values are 32 bit values layed out as follows:
+//
+//   3 3 2 2 2 2 2 2 2 2 2 2 1 1 1 1 1 1 1 1 1 1
+//   1 0 9 8 7 6 5 4 3 2 1 0 9 8 7 6 5 4 3 2 1 0 9 8 7 6 5 4 3 2 1 0
+//  +---+-+-+-----------------------+-------------------------------+
+//  |Sev|C|R|     Facility          |               Code            |
+//  +---+-+-+-----------------------+-------------------------------+
+//
+//  where
+//
+//      Sev - is the severity code
+//
+//          00 - Success
+//          01 - Informational
+//          10 - Warning
+//          11 - Error
+//
+//      C - is the Customer code flag
+//
+//      R - is a reserved bit
+//
+//      Facility - is the facility code
+//
+//      Code - is the facility's status code
+//
+//
+// Define the facility codes
+//
+
+//
+// Define the severity codes
+//
+#define SEVERITY_WARNING                 0x2
+#define SEVERITY_SUCCESS                 0x0
+#define SEVERITY_INFORMATIONAL           0x1
+#define SEVERITY_ERROR                   0x3
+
+
+//
+// MessageId: MSG_LOADSUCCESS//
+// MessageText:
+//
+//  The %1 module was loaded successfully.
+//
+#define MSG_LOADSUCCESS                  ((DWORD)0x40000001L)
+
+//
+// MessageId: MSG_LOWDISKSPACE
+//
+// MessageText:
+//
+//  Disk space on drive %1 is getting low.
+//
+#define MSG_LOWDISKSPACE                 ((DWORD)0x80000002L)
+
+//
+// MessageId: MSG_CANTFINDFILE
+//
+// MessageText:
+//
+//  Could not locate file %1.
+//
+#define MSG_CANTFINDFILE                 ((DWORD)0xC0000003L)
+
+
+
+
+
+
+

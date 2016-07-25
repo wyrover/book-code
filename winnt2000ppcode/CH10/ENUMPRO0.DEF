@@ -1,0 +1,10 @@
+;
+;        ENUMPROC.DEF
+;        Module definition file for the ENUMPROC.DLL library.
+;
+
+LIBRARY enumproc
+
+SEGMENTS 
+      	_DATA	class 'DATA' NONSHARED 
+

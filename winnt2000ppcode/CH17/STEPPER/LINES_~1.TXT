@@ -1,0 +1,7 @@
+Source files:
+    File: foo.c [002]  Offset: 082BA
+    Range: 0001:0007C-0009A
+      Line numbers:
+      0004:0007C  0007:0007D  0008:0007F  0009:00093  
+      0010:00098  0000:0009A  
+

@@ -1,0 +1,149 @@
+#include "assert.h"
+#include "windows.h"
+#include "ver.h"
+#include "wversion.h"
+
+BOOL IsWindowsForWorkgroups(unsigned short);
+
+/**-----------------------------------------------------**/
+BOOL FAR PASCAL WVersion(LPDWORD lpdwEnviron,
+   LPDWORD lpdwVersion)
+{
+   DWORD dwEnviron = ENV_UNKNOWN;
+   DWORD dwVersion = GetVersion();
+
+   //-------------------------------------------------
+   // 32-bit code gets version info this way
+   //-------------------------------------------------
+
+   #if defined _WIN32 || defined WIN32
+   {
+      // if the highbit returned from GetVersion is 1, then
+      // it's either Win32s or Win32c.
+
+      if (dwVersion & 0x80000000)
+      {         // check major version number to distinguish
+         // Win32s from Win32c (in the LOBYTE of the LOWORD)
+         if (LOBYTE(LOWORD(dwVersion)) == 3)
+            dwEnviron = ENV_WIN32S;
+         else dwEnviron = ENV_WIN32C;
+      }
+
+      // if the highbit returned from GetVersion is 0, then
+      // it's either Win NT or Win NT Advanced Server.
+
+      else
+      {
+         // Check registry to distinguish NT from NTAS
+         HKEY hKey;
+         BYTE szValue[128];
+         DWORD dwSize = 128;
+
+         RegOpenKeyEx(HKEY_LOCAL_MACHINE,
+            "SYSTEM\\CurrentControlSet\\Control",
+            "\\ProductOptions", 0, KEY_READ, &hKey);
+         RegQueryValueEx(hKey, "ProductType", 0, NULL,
+                         szValue, &dwSize);
+         RegCloseKey(hKey);
+
+         if (stricmp(szValue, "Winnt") == 0)
+             dwEnviron = ENV_WINNT;
+         else
+            dwEnviron = ENV_WINNTAS;
+      }
+   }
+
+   // 16-bit code gets version info this way
+
+#else
+   {      // For 16-bit code, use GetWinFlags to tell if
+      // running on the WOW layer of NT/NTAS
+
+      if (GetWinFlags() & 0x4000)
+          dwEnviron = ENV_WINNT;
+      else 
+      {
+         // check major version number to distinguish
+         // Win 3.x from Win32c (in the LOBYTE of the LOWORD)
+          if ((LOBYTE(LOWORD(dwVersion)) > 3) ||
+             (HIBYTE(LOWORD(dwVersion)) > 50))
+               dwEnviron = ENV_WIN32C;
+         else
+         {
+            // finally, determine if Win 3.x or WFW
+            if (IsWindowsForWorkgroups(METHOD_FILEVERSION))
+               dwEnviron = ENV_WFW;
+            else if (IsWindowsForWorkgroups(METHOD_MULTINET))
+                dwEnviron = ENV_WFW;
+            else dwEnviron = ENV_WIN3X;
+         }
+      }
+   }
+#endif
+
+*lpdwEnviron = dwEnviron;
+*lpdwVersion = dwVersion;
+
+   return TRUE;
+} // WVersion
+
+typedef WORD (WINAPI*NETCAPFUNC)(int);
+/**-----------------------------------------------------**/
+BOOL IsWindowsForWorkgroups(unsigned short usMethod)
+{
+    HINSTANCE hLib = NULL;
+    NETCAPFUNC lpWNetGetCaps = NULL;
+    WORD wNetType;
+    DWORD dwVerSize, dwVerHandle;
+    HANDLE hMem;
+    VS_VERSION FAR * lpVerInfo;
+    BOOL bWfW = FALSE;  // assume failure
+
+    // use the method that checks for a multinet driver
+    if (usMethod == METHOD_MULTINET)
+    {
+       hLib = LoadLibrary((LPSTR)"user.exe");
+       assert(hLib >= HINSTANCE_ERROR);
+       lpWNetGetCaps = (NETCAPFUNC)GetProcAddress(hLib, (LPSTR)"WNetGetCaps");
+       if (lpWNetGetCaps != NULL)
+       {
+          wNetType = (*lpWNetGetCaps)(WNNC_NET_TYPE);
+          if (wNetType & WNNC_NET_MULTINET)
+             if (LOBYTE(wNetType) & WNNC_SUBNET_WINWORKGROUP)
+                 bWfW = TRUE;
+       }
+       if (hLib) FreeLibrary(hLib);
+    }
+
+    // use method that checks the file version of user.exe
+    else
+    {
+        // allocate memory for the file info struct
+        dwVerSize = GetFileVersionInfoSize((LPSTR)"user.exe",
+             &dwVerHandle);
+        hMem = GlobalAlloc(GMEM_MOVEABLE, dwVerSize);
+        assert(hMem != NULL);
+        lpVerInfo = (VS_VERSION FAR *)GlobalLock(hMem);
+
+        // Get the file version
+        // for Win32, the dwVerHandle is zero, ignored
+        if (GetFileVersionInfo((LPSTR)"user.exe",
+                         dwVerHandle, dwVerSize, lpVerInfo))
+            if ((HIWORD(lpVerInfo->
+                vffInfo.dwProductVersionMS) == 3) &&
+                (LOWORD(lpVerInfo->
+                vffInfo.dwProductVersionMS) == 11))
+                bWfW = TRUE;
+        GlobalUnlock(hMem);
+        GlobalFree(hMem);
+    }
+    return bWfW;
+
+} // IsWindowsForWorkgroups
+
+
+
+
+
+
+

@@ -1,0 +1,129 @@
+      include 'mt.fi'
+      include 'flib.fi'
+
+*** Driver program to do the Matrix Multiplication. Input matrices are ***
+*** initialized to random values here. Maximum number of threads to be ***
+*** spawned is also identified here. ***
+      Program Driver
+      include 'flib.fd'
+      real*4 ranval
+      integer*4 i, j, k, inThreadCount
+      integer*4 A_Rows, A_Columns, B_Columns
+      real*4 A[Allocatable](:,:), B[Allocatable](:,:), C[Allocatable](:,:)
+
+      A_Rows = 50          ! size of A array
+      A_Columns = 100      ! size of B array
+      B_Columns = 100      ! size of C array
+      inThreadCount = 8    ! number of threads to be spawned
+
+      Allocate (A(A_Rows, A_Columns), B(A_Columns, B_Columns),
+     +    C(A_Rows, B_Columns) )
+      Do  i = 1, A_Columns
+          Do j = 1, A_Rows
+             Call Random (ranval)
+             A (j, i) = ranval
+          End Do
+          Do k = 1, B_Columns
+             Call Random (ranval)
+             B(i, k) = ranval
+          End Do
+      End Do
+      Call Compute (A, B, C, A_Rows, A_Columns, B_Columns, inThreadCount)
+      End
+*** Initiate transfers data from the arguments into the common block. ***
+      Subroutine Initiate(In_A, In_B, In_A_Rows, In_A_Columns,
+     +                    In_B_Columns, In_Thread_count)
+      real*4 In_A(In_A_Rows, In_A_Columns)
+      real*4 In_B(In_A_Columns, In_B_Columns)
+      integer*4 In_A_Rows, In_A_Columns, In_B_Columns
+      integer*4 In_Thread_count, i, j, k
+      include 'common.inc'
+      MaxThreadCount = In_Thread_count
+      A_Rows = In_A_Rows
+      A_Columns = In_A_Columns
+      B_Columns = In_B_Columns
+      Do  i = 1, A_Columns
+         Do j = 1, A_Rows
+           A (j, i) = In_A(j, i)
+         End Do
+         Do k = 1, B_Columns
+           B(i, k) = In_B(i, k)
+         End Do
+      End Do
+      End ! Initiate
+*** MatMult is where the actual calculation of a row times a column is ***
+*** performed. This is the thread procedure. ***
+      Subroutine MatMult (CurrentThread)
+      include 'common.inc'
+      integer*4 CurrentThread
+      automatic
+      integer*4 i, j, k
+
+C The loop variable i ranges from the current thread number to the
+C maximum number of rows in A in steps of the maximum number of threads
+      Do i = CurrentThread, A_Rows,  MaxThreadCount
+         Do j = 1, B_Columns
+            Do k = 1, A_Columns
+               C(i, j)  =  C(i, j) + A(i, k) * B(k, j)
+            End Do
+         End Do
+      End Do
+      End ! MatMult
+*** Compute does the actual computation by spawning threads. ***
+      Subroutine Compute
+     +                  (In_A, In_B, In_C, In_A_Rows, In_A_Columns,
+     +                   In_B_Columns, In_Thread_count)
+      real In_A(In_A_Rows, In_A_Columns)
+      real In_B(In_A_Columns, In_B_Columns)
+      real In_C(In_A_Rows, In_B_Columns)
+      integer In_A_Rows, In_A_Columns, In_B_Columns
+      integer In_Thread_count
+      include 'common.inc'
+      external MatMult
+      integer*4 ThreadHandle [Allocatable](:), threadId
+      integer*4 CurrentThread[Allocatable](:), count
+      integer*4 waitResult
+      integer*4 i, j
+      Call Initiate (In_A, In_B, In_A_Rows, In_A_Columns,
+     +      In_B_Columns, In_Thread_count)
+      Allocate (ThreadHandle(MaxThreadCount),
+     +      CurrentThread(MaxThreadCount) )
+      Do count = 1, MaxThreadCount
+        CurrentThread(count) = count
+        ThreadHandle(count) = CreateThread( 0, 0, MatMult,
+     +           CurrentThread(count), 0, threadId)
+      End Do
+C Can't wait on more than 64 threads
+      waitResult = WaitForMultipleObjects(MaxThreadCount,
+     +      ThreadHandle, .TRUE.,  WAIT_INFINITE)
+C Transfer result from common back into return argument.
+      Do i = 1, A_Rows
+        Do j = 1, B_Columns
+            In_C(i,j) = C(i,j)
+            C(i, j) = 0.0
+        End Do
+      End Do
+      Deallocate ( ThreadHandle, CurrentThread )
+      End ! Compute
+
+######################################################################
+C File Name: common.inc
+      include 'mt.fd'      ! Data declarations for Multithreading API
+      include 'flib.fd'    ! Data declarations for runtime library
+      real*4 A, B, C    ! Input Matrices A & B and Output Matrix C
+      integer*4 A_Rows, A_Columns, B_Columns  ! Matrix Dimensions
+      integer*4 MaxThreadCount  ! Maximum numner of Threads
+      common  MaxThreadCount,        ! common block
+     +        A_Rows,                ! Rows in A = Rows in C
+     +        A_Columns,             ! Columns in A  = Rows in B
+     +        B_Columns,             ! Columns in B = Columns in C
+     +        A(1000, 1000),
+     +        B(1000, 1000),
+     +        C(1000, 1000)          ! Maximum Array size is 1000 X 1000
+
+
+
+
+
+
+

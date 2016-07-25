@@ -1,0 +1,11 @@
+; SIMPLVDD.DEF - Module definition file for SIMPLVDD.DLL
+LIBRARY SIMPLVDD
+DESCRIPTION 'Simple VDD for use with SIMPLDRV'
+
+EXPORTS
+   VDDDispatch
+   VDDTerminateVDM
+   VDDInit
+
+; end of file
+

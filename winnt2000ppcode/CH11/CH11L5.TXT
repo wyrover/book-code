@@ -1,0 +1,28 @@
+while (1) {
+   ReadConsoleInput(StdIn, &Input, sizeof(Input), &n);
+   if (Input.EventType == KEY_EVENT) {
+       if (!Input.Event.KeyEvent.bKeyDown)
+           continue;
+       switch (Input.Event.KeyEvent.uChar) {
+           case 'h':
+               SetCursor(row, --col);
+               break;
+           case 'j':
+               SetCursor(--row, col);
+               break;
+           }...
+   } else if (Input.EventType == MOUSE_EVENT) {
+       if (~Input.Event.MouseEvent.dwEventFlags & DOUBLE_CLICK)
+           continue;
+       row = Input.Event.MouseEvent.dwMousePosition.Y;
+       col = Input.Event.MouseEvent.dwMousePosition.X;
+       SetCursor(row, col);
+   }
+}
+
+
+
+
+
+
+

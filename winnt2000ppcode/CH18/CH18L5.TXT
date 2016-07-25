@@ -1,0 +1,105 @@
+VERSION 2.00
+Begin Form Form1
+   Caption         =   "Form1"
+   ClientHeight    =   6045
+   ClientLeft      =   1095
+   ClientTop       =   1485
+   ClientWidth     =   9180
+   Height          =   6450
+   Left            =   1035
+   LinkTopic       =   "Form1"
+   ScaleHeight     =   6045
+   ScaleWidth      =   9180
+   Top             =   1140
+   Width           =   9300
+   Begin CommandButton Compute
+      Caption         =   "Compute"
+      Height          =   375
+      Left            =   1200
+      TabIndex        =   1
+      Top             =   5040
+      Width           =   1575
+   End
+   Begin Grid grdC
+      Height          =   4335
+      Left            =   1200
+      TabIndex        =   0
+      Top             =   480
+      Width           =   6495
+   End
+End
+
+' These declarations set up the two core functions to access the CALL32 DLL:
+' Declare32 and CALL32. These are the only two functions you need to use to
+' get access to any 32-bit DLL. The Option Base is used to start arrays at
+' index 1 just as in Fortran
+Option Base 1
+Declare Function Declare32 Lib "call32.dll" (ByVal Func As String, ByVal
+Library As String, ByVal Args As String) As Long
+Declare Sub Compute Lib "call32.dll" Alias "Call32" (A As Single, B As
+Single, C As Single, A_ROWS As Long, A_COLUMNS As Long, B_COLUMNS As
+Long, MaxThreadCount As Long, DO_CONSOLE As Long, ByVal id As Long)
+Const A_ROWS% = 30
+Const A_COLUMNS% = 200
+Const B_COLUMNS% = 30
+Const DO_CONSOLE% = 3
+Dim A(A_ROWS, A_COLUMNS) As Single
+Dim B(A_COLUMNS, B_COLUMNS) As Single
+Dim C(A_ROWS, B_COLUMNS) As Single
+Dim MaxThreadCount As Long
+Dim idCompute As LongDim i As Long
+Dim j As Long
+Sub Compute_Click ()
+' This code simply initializes the two input arrays and then calls the
+' 32-bit DLL to multiply them.  It then puts the result in the grid.
+  MaxThreadCount = 8
+  Randomize
+  For i = 1 To A_COLUMNS
+    For j = 1 To A_ROWS
+         A(j, i) = Rnd
+    Next j
+    For k = 1 To B_COLUMNS
+         B(i, k) = Rnd
+    Next k
+  Next i
+  Call Compute(A(1, 1), B(1, 1), C(1, 1), A_ROWS, A_COLUMNS, B_COLUMNS,
+                                        MaxThreadCount, DO_CONSOLE,
+idCompute)
+  For i = 1 To A_ROWS
+    grdC.Row = i
+    For j = 1 To B_COLUMNS
+      grdC.Col = j
+      grdC.Text = Str$(C(i, j))
+    Next j
+  Next i
+End Sub
+
+Sub Form_Load ()
+' This code sets up the call to the CALL32 DLL by first using the Declare32
+' function to get an id number. At this point CALL32 creates a function
+' pointer to that 32-bit DLL subroutine and all access to the routine will be
+' through that function pointer. The code also initializes the row and column
+' number and sets the size of the grid fields.
+  idCompute = Declare32("COMPUTE", "compute", "pppppppp")
+  grdC.Rows = A_ROWS + 1
+  grdC.Cols = B_COLUMNS + 1
+  grdC.Row = 0
+  For i = 1 To B_COLUMNS
+    grdC.Col = i
+    grdC.Text = Str$(i)
+    grdC.ColWidth(i) = TextWidth("123.1234567")
+  Next i
+  grdC.Col = 0
+  For i = 1 To A_ROWS
+    grdC.Row = i
+    grdC.Text = Str$(i)
+    grdC.RowHeight(i) = TextHeight("1") + 10
+  Next i
+End Sub
+
+
+
+
+
+
+

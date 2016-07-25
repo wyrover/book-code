@@ -1,0 +1,158 @@
+/*-------------------------------------------------
+  LOAD NAME STRINGS
+  Read in the block of object name strings.
+  Return a valid pointer to the block of
+  MULTI_SZ strings or NULL if an error occurs.
+  -------------------------------------------------*/
+PTSTR LoadNameStrings ( PTSTR szComputerName )
+{
+  HKEY hNamesKey;
+  LONG lResult;
+  DWORD dwDataType;
+  DWORD dwDataSize;
+  PTSTR pstrNameBlock; /* points to block of name strings */
+  HKEY hMachineKey = HKEY_LOCAL_MACHINE;
+
+  /* attempt a remote connection if caller requests it */
+  if (szComputerName)
+  {
+    lResult = RegConnectRegistry( szComputerName,
+                                  HKEY_LOCAL_MACHINE, &hMachineKey );
+    if (lResult != ERROR_SUCCESS)
+      return( NULL );
+  }
+
+  /* open the key where the block of names is kept */
+  lResult = RegOpenKeyEx( hMachineKey, NAME_BLOCK_SUBKEY,
+                          RESERVED, KEY_QUERY_VALUE, &hNamesKey );
+  if (lResult != ERROR_SUCCESS)
+    return( NULL );
+
+  /* find out how big the data block is */
+  lResult = RegQueryValueEx( hNamesKey, TEXT("Counters"), RESERVED,
+                             &dwDataType, NULL, &dwDataSize );
+  if (lResult != ERROR_SUCCESS)
+    return( NULL );
+
+  /* allocate room for all the names */
+  pstrNameBlock = (PTSTR) GlobalAlloc( GMEM_ZEROINIT, dwDataSize );
+  if (!pstrNameBlock)
+    return( NULL );
+
+  /* load all the names into the buffer */
+  lResult = RegQueryValueEx( hNamesKey, TEXT("Counters"), RESERVED,
+                             &dwDataType, (PBYTE)pstrNameBlock, &dwDataSize );
+  if (lResult != ERROR_SUCCESS)
+    return( NULL );
+
+  /* close the key that holds the names */
+  RegCloseKey( hNamesKey );
+  RegCloseKey( hMachineKey );
+  return( pstrNameBlock );
+}
+
+/*---------------------------------------------------
+  GET TITLE INDEX VALUE
+  Search through the name block for the given string
+  pTitle. If convert the corresponding index string
+  (e.g. "230") to an unsigned integer. Return the
+  integer, or if not found, return GET_INDEX_FAILURE.
+  ---------------------------------------------------*/
+
+UINT GetTitleIndexValue ( PTSTR pstrNameBlock, PTSTR pTitle )
+{
+  PTSTR pIndexString;
+  UINT uValue = GET_INDEX_FAILURE;
+
+  if ((!pstrNameBlock) || (!pTitle))
+    return( GET_INDEX_FAILURE );
+
+  pIndexString = GetTitleIndexString( pstrNameBlock, pTitle );
+
+  if (pIndexString) {
+    uValue = tstr_to_uint( pIndexString );
+    LocalFree( pIndexString );
+  }
+
+  return( uValue );
+}
+
+/*---------------------------------------------------
+  GET TITLE INDEX STRING
+  Search through the name block for the given string
+  pTitle. If found, copy and return the corresponding
+  index string (e.g. "230"). Caller must free the
+  string.  NULL return for errors.
+  ---------------------------------------------------*/
+PTSTR GetTitleIndexString ( PTSTR pstrNameBlock, PTSTR pTitle )
+{  BOOL bEndOfData = FALSE;
+  PTSTR pThisIndex, pThisTitle;
+  PTSTR pReturn = NULL;
+
+  if ((!pstrNameBlock) || (!pTitle))
+    return( NULL );
+
+  /* point to first two strings in the name block */
+  pThisIndex = pstrNameBlock;
+  pThisTitle = NextString( pstrNameBlock );
+
+  /* search through the name block for a match */
+  while (!bEndOfData &&
+         (lstrcmp(pTitle, pThisTitle) != 0)) {
+
+    pThisIndex = NextString( pThisTitle );
+    if (*pThisIndex != NULL_CHAR)
+      pThisTitle = NextString( pThisIndex );
+    if (*pThisTitle == NULL_CHAR)
+      bEndOfData = TRUE;
+  }
+
+  /* if a match was found, copy and return the string *//* */
+  if (!bEndOfData) {
+    pReturn = LocalAlloc( LPTR, lstrlen(pThisIndex)+1 );
+    if (pReturn)
+      lstrcpy( pReturn, pThisIndex );
+  }
+  return( pReturn );
+}
+
+/*-------------------------------------------------
+  NEXT STRING
+  Return a pointer to the subsequent string in
+  a data block of MULTI_SZ strings.
+  -------------------------------------------------*/
+PTSTR NextString ( PTSTR pstr )
+{
+  if (pstr == NULL)
+    return( NULL );
+
+  while (*pstr != NULL_CHAR)
+    pstr++;
+
+  return( ++pstr );
+}
+
+/*-------------------------------------------------
+  TSTR TO UINT
+  Convert the given string (e.g. "230") from
+  a TCHAR string to an unsigned integer.
+  -------------------------------------------------*/
+UINT tstr_to_uint ( PTSTR pNumString )
+{
+  UINT uValue = 0;
+
+  while (isdigit( *pNumString )) {
+    uValue *= 10;
+    uValue += (BYTE)*pNumString - TEXT('0');
+    pNumString++;
+  }
+
+  return( uValue );
+}
+
+
+
+
+
+
+

@@ -1,0 +1,20 @@
+====================== Listing 5 ======================
+void multiply(const int *u, const int *v, int *w,
+      int n, int m); // multiply prototype
+
+/* multiplication : lint3 = lint1 * lint2;
+   --------------------------------------- */
+LargeInt LargeInt::operator*(const LargeInt& lint)
+      const {
+   if (sign == 0  || lint.sign == 0)
+      return zero;
+   LargeInt result(len + lint.len, 0);
+   if (sign == lint.sign)
+      result.sign = 1;
+   else
+      result.sign = -1;
+   multiply(adr, lint.adr, result.adr, len, lint.len);
+   if (*result.adr == 0)
+      result.normalize();
+   return result;
+}

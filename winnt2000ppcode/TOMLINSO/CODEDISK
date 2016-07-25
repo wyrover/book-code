@@ -1,0 +1,705 @@
+REM bldver.bat - Build wtest.c.
+REM    ***this file only for 16-bit environment***
+REM ----------------------------------------------
+@set CCFILES=wtest.c wversion.c
+@if NOT "%cc%"=="bcc" goto NOTBCC
+rc -r wtest.rc
+bcc -DSTRICT -WSE -vi %CCFILES%
+brc wtest.res wtest.exe
+@goto END
+:NOTBCC
+@if NOT "%cc%"=="msc" goto NOTMSC
+rc -r wtest.rc
+cl /c /DSTRICT /nologo /W3 /Zp /GAs /GEsme %CCFILES%
+link /nologo /NOE /align:16 /NOD /MAP:FULL /LINE wtest+wversion,,wtest,slibcew+libw+ver.lib,wtest;
+rc wtest.res wtest.exe
+@goto END
+:NOTMSC
+@if NOT "%cc%"=="wcc"  goto NOTWC
+wrc -r wtest.rc
+wcl -dSTRICT -w3 -zw -bt=windows -ms %CCFILES% ver.lib
+wrc wtest.res wtest.exe
+@goto END
+:NOTWC
+@if NOT "%cc%"=="sc"  goto NOTSC
+rc -r wtest.rc
+sc -DSTRICT -a1 -ms -W3 %CCFILES% ver.lib
+rem Note: due to bug in Symantec 10.0 rtl, this rc produces error message
+rc wtest.res wtest.exe
+@goto END
+:NOTSC
+@echo To use this batch file, set your CC environment variable to:
+@echo   bcc     - if you are using Borland C++ v4.5
+@echo   msc     - if you are using Microsoft Visual C++ v1.5
+@echo   wcc     - if you are using Watcom C++ v10.0
+@echo   sc      - if you are using Symantec C++ v6.10
+:END
+@set CCFILES=
+
+// dostest.c - DOS-based platform detection program 
+
+#include "stdio.h"
+#include "stdlib.h"
+#include "string.h"
+
+typedef unsigned char UCHAR;
+
+#define LOBYTE(w) ((UCHAR)(w))
+#define HIBYTE(w) ((UCHAR)(((unsigned int)(w)>>8)&0xFF))
+
+void main(void)
+{
+    unsigned short usVersion=0, usWinVer=0;
+    char *szEnvOS;
+
+    // This method only returns emulated DOS version
+    _asm  mov ah, 30h
+    _asm  int 21h
+    _asm  mov usVersion, ax
+    printf("Real/Emulated DOS Version is %d.%d\n",
+        LOBYTE(usVersion), HIBYTE(usVersion));
+
+    // alternate DOS version, can be used to decide if its NT
+    _asm  mov ax, 3306h
+    _asm  int 21h
+    _asm  mov usVersion, bx
+    printf("Alternate DOS Version is %d.%d\n",
+        LOBYTE(usVersion), HIBYTE(usVersion));
+
+    // Is it Windows NT/NT Advanced Server?
+    szEnvOS = getenv("OS");
+    if (szEnvOS != NULL) {
+        if (stricmp(szEnvOS, "Windows_NT") == 0) {
+            printf("Running on a VDM under Windows NT/NTAS\n");
+            return;
+        }
+    }
+
+    // Is a form of Enhanced mode Windows running?
+    _asm  mov ax, 1600h
+    _asm  int 2fh
+    _asm  mov usWinVer, ax
+    if ((LOBYTE(usWinVer)!=0) && (LOBYTE(usWinVer)!=0x80)) {
+        // is it Windows 95?
+        if (LOBYTE(usWinVer) >= 4)
+            printf("Windows 95, version %d.%d\n",
+                LOBYTE(usWinVer), HIBYTE(usWinVer));
+        // must be Windows 3.x then
+        else
+            printf("enhanced-mode Windows version %d.%d\n",
+                LOBYTE(usWinVer), HIBYTE(usWinVer));
+        return;
+    }
+
+    // finally, by process of elimination, assume a pure DOS
+    printf("Running under a pure DOS environment\n");
+
+} // main
+# Microsoft Visual C++ generated build script - Do not modify
+
+PROJ = DOSTEST
+DEBUG = 1
+PROGTYPE = 6
+CALLER = 
+ARGS = 
+DLLS = 
+D_RCDEFINES = -d_DEBUG
+R_RCDEFINES = -dNDEBUG
+ORIGIN = MSVC
+ORIGIN_VER = 1.00
+PROJPATH = C:\ARTICLE\WVERSION\DOSSRC\
+USEMFC = 1
+CC = cl
+CPP = cl
+CXX = cl
+CCREATEPCHFLAG = 
+CPPCREATEPCHFLAG = 
+CUSEPCHFLAG = 
+CPPUSEPCHFLAG = 
+FIRSTC =             
+FIRSTCPP =             
+RC = rc
+CFLAGS_D_DEXE = /nologo /W3 /FR /G2 /Zi /D_DEBUG /Od /AM /D_DOS /Fd"DOSTEST.PDB"
+CFLAGS_R_DEXE = /nologo /W3 /FR /G2 /DNDEBUG /Gs /Ox /AM /D_DOS
+LFLAGS_D_DEXE = /NOLOGO /ONERROR:NOEXE /NOI /CO /STACK:5120
+LFLAGS_R_DEXE = /NOLOGO /ONERROR:NOEXE /NOI /STACK:5120
+LIBS_D_DEXE = mafxcrd oldnames mlibce
+LIBS_R_DEXE = mafxcr oldnames mlibce
+RCFLAGS = /nologo
+RESFLAGS = /nologo
+RUNFLAGS = 
+OBJS_EXT = 
+LIBS_EXT = 
+!if "$(DEBUG)" == "1"
+CFLAGS = $(CFLAGS_D_DEXE)
+LFLAGS = $(LFLAGS_D_DEXE)
+LIBS = $(LIBS_D_DEXE)
+MAPFILE = nul
+RCDEFINES = $(D_RCDEFINES)
+!else
+CFLAGS = $(CFLAGS_R_DEXE)
+LFLAGS = $(LFLAGS_R_DEXE)
+LIBS = $(LIBS_R_DEXE)
+MAPFILE = nul
+RCDEFINES = $(R_RCDEFINES)
+!endif
+!if [if exist MSVC.BND del MSVC.BND]
+!endif
+SBRS = DOSTEST.SBR
+
+
+DOSTEST_DEP = 
+
+all:	$(PROJ).EXE $(PROJ).BSC
+
+DOSTEST.OBJ:	DOSTEST.C $(DOSTEST_DEP)
+	$(CC) $(CFLAGS) $(CUSEPCHFLAG) /c DOSTEST.C
+
+$(PROJ).EXE::	DOSTEST.OBJ $(OBJS_EXT) $(DEFFILE)
+	echo >NUL @<<$(PROJ).CRF
+DOSTEST.OBJ +
+$(OBJS_EXT)
+$(PROJ).EXE
+$(MAPFILE)
+c:\dev\msvc\lib\+
+c:\dev\msvc\mfc\lib\+
+c:\dev\ddk\lib\+
+c:\hendrix\lib\+
+$(LIBS)
+$(DEFFILE);
+<<
+	link $(LFLAGS) @$(PROJ).CRF
+
+run: $(PROJ).EXE
+	$(PROJ) $(RUNFLAGS)
+
+
+$(PROJ).BSC: $(SBRS)
+	bscmake @<<
+/o$@ $(SBRS)
+<<
+// WTEST.C - Sample program to exerise the WVerion routine
+
+#include "windows.h"
+#include "ver.h"
+#include "wtest.h"
+#include "wversion.h"
+
+int PASCAL WinMain(HINSTANCE, HINSTANCE, LPSTR, int);
+long CALLBACK MainWndProc(HWND, UINT, WPARAM, LPARAM);
+
+HINSTANCE hInst;
+
+/**------------------------------------------------**/
+#ifdef __BORLANDC__
+    #pragma argsused
+#endif
+
+int PASCAL WinMain(HINSTANCE hInstance, HINSTANCE hPrevInst,
+   LPSTR lpCmdLine, int nCmdShow)
+{
+   WNDCLASS wc;
+   MSG      msg;
+   HWND     hWnd;
+
+   hInst = hInstance;
+
+   wc.style = 0;
+   wc.lpfnWndProc = MainWndProc;
+   wc.cbClsExtra = 0;   
+   wc.cbWndExtra = 0;  
+   wc.hInstance = hInst;    
+   wc.hIcon = LoadIcon(NULL, IDI_APPLICATION);
+   wc.hCursor = LoadCursor(NULL, IDC_ARROW);
+   wc.hbrBackground = GetStockObject(WHITE_BRUSH);
+   wc.lpszMenuName =  "WTEST_Menu";   
+   wc.lpszClassName = "WTEST_Class"; 
+
+   if (!RegisterClass(&wc)) return FALSE;
+
+   if ((hWnd = CreateWindow("WTEST_Class", 
+      "WVersion Test App", WS_OVERLAPPEDWINDOW, 
+      CW_USEDEFAULT, CW_USEDEFAULT, CW_USEDEFAULT, 
+      CW_USEDEFAULT, NULL, NULL, hInst, NULL)) == NULL)
+         return FALSE;
+
+   ShowWindow(hWnd, nCmdShow);  
+   UpdateWindow(hWnd); 
+
+   while (GetMessage(&msg, NULL, 0, 0)) {
+      TranslateMessage(&msg);
+      DispatchMessage(&msg);
+   }
+   return msg.wParam;
+} // WinMain
+
+
+/**------------------------------------------------**/
+long CALLBACK MainWndProc(HWND hWnd, UINT msg, 
+   WPARAM wParam, LPARAM lParam)
+{
+   WORD msgID;
+   DWORD dwEnviron, dwVersion;
+   char szString[128], szEnviron[128];
+
+   #if defined WIN32 || defined _WIN32
+      msgID = LOWORD(wParam);
+   #else
+      msgID = wParam;
+   #endif
+   
+   switch (msg) {
+      case WM_COMMAND:
+         switch (msgID) {
+            case IDM_VERSION:
+               WVersion(&dwEnviron, &dwVersion);
+               LoadString(hInst, (UINT)dwEnviron, 
+                  szEnviron, 128);
+               wsprintf((LPSTR)szString, 
+                  (LPSTR)"%s, Version %d.%d", 
+                  (LPSTR)szEnviron, 
+                  LOBYTE(LOWORD(dwVersion)),
+                  HIBYTE(LOWORD(dwVersion)));   
+               MessageBox(hWnd, (LPSTR)szString, 
+                  (LPSTR)"WVersion", MB_OK);
+               break;
+
+            default:
+               return DefWindowProc(hWnd, msg, 
+                  wParam, lParam);
+          }
+          break;
+
+      case WM_DESTROY:
+         PostQuitMessage(0);
+         break;
+
+      default:
+         return DefWindowProc(hWnd, msg, wParam, lParam);
+    }
+    return 0;
+} // MainWndProc
+NAME         WTest
+DESCRIPTION  'Sample Test Application'
+EXETYPE      WINDOWS
+STUB         'WINSTUB.EXE'
+
+CODE  PRELOAD MOVEABLE DISCARDABLE
+DATA  PRELOAD MOVEABLE MULTIPLE
+
+HEAPSIZE     1024
+STACKSIZE    16384
+
+EXPORTS
+	MainWndProc  @1
+// WTEST.H - definitions for WTEST.C
+
+#define IDM_VERSION    1000
+#include "wtest.h"
+#include "wversion.h"
+
+WTEST_MENU MENU DISCARDABLE 
+BEGIN
+   POPUP "&Test"
+   BEGIN
+      MENUITEM "&Get Windows Version", IDM_VERSION
+   END
+END
+
+STRINGTABLE
+BEGIN
+    ENV_UNKNOWN,    "Unknown environment"
+    ENV_WIN3X,      "Windows 3.x"
+    ENV_WFW,        "Windows for Workgroups"
+    ENV_WIN32S,     "Win32s"
+    ENV_WIN32C,     "Windows 95"
+    ENV_WINNT,      "Windows NT"
+    ENV_WINNTAS,    "Windows NT Advanced Server"
+END
+# Microsoft Visual C++ generated build script - Do not modify
+
+PROJ = WTEST16
+DEBUG = 1
+PROGTYPE = 0
+CALLER = 
+ARGS = 
+DLLS = 
+D_RCDEFINES = -d_DEBUG
+R_RCDEFINES = -dNDEBUG
+ORIGIN = MSVC
+ORIGIN_VER = 1.00
+PROJPATH = C:\ARTICLE\WVERSION\SRC\
+USEMFC = 1
+CC = cl
+CPP = cl
+CXX = cl
+CCREATEPCHFLAG = 
+CPPCREATEPCHFLAG = 
+CUSEPCHFLAG = 
+CPPUSEPCHFLAG = 
+FIRSTC = WTEST.C     
+FIRSTCPP =             
+RC = rc
+CFLAGS_D_WEXE = /nologo /W3 /FR /G2 /Zi /D_DEBUG /Od /AM /GA /Fd"WTEST16.PDB"
+CFLAGS_R_WEXE = /nologo /W3 /FR /O1 /DNDEBUG /AM /GA
+LFLAGS_D_WEXE = /NOLOGO /NOD /PACKC:61440 /STACK:10240 /ALIGN:16 /ONERROR:NOEXE /CO  
+LFLAGS_R_WEXE = /NOLOGO /NOD /PACKC:61440 /STACK:10240 /ALIGN:16 /ONERROR:NOEXE  
+LIBS_D_WEXE = mafxcwd oldnames libw mlibcew commdlg.lib olecli.lib olesvr.lib shell.lib ver.lib 
+LIBS_R_WEXE = mafxcw oldnames libw mlibcew commdlg.lib olecli.lib olesvr.lib shell.lib 
+RCFLAGS = /nologo
+RESFLAGS = /nologo
+RUNFLAGS = 
+DEFFILE = WTEST.DEF
+OBJS_EXT = 
+LIBS_EXT = 
+!if "$(DEBUG)" == "1"
+CFLAGS = $(CFLAGS_D_WEXE)
+LFLAGS = $(LFLAGS_D_WEXE)
+LIBS = $(LIBS_D_WEXE)
+MAPFILE = nul
+RCDEFINES = $(D_RCDEFINES)
+!else
+CFLAGS = $(CFLAGS_R_WEXE)
+LFLAGS = $(LFLAGS_R_WEXE)
+LIBS = $(LIBS_R_WEXE)
+MAPFILE = nul
+RCDEFINES = $(R_RCDEFINES)
+!endif
+!if [if exist MSVC.BND del MSVC.BND]
+!endif
+SBRS = WTEST.SBR \
+		WVERSION.SBR
+
+
+WTEST_DEP = c:\article\wversion\src\wtest.h \
+	c:\article\wversion\src\wversion.h
+
+
+WTEST_RCDEP = c:\article\wversion\src\wtest.h \
+	c:\article\wversion\src\wversion.h
+
+
+WVERSION_DEP = c:\article\wversion\src\wversion.h
+
+
+all:	$(PROJ).EXE $(PROJ).BSC
+
+WTEST.OBJ:	WTEST.C $(WTEST_DEP)
+	$(CC) $(CFLAGS) $(CCREATEPCHFLAG) /c WTEST.C
+
+WTEST.RES:	WTEST.RC $(WTEST_RCDEP)
+	$(RC) $(RCFLAGS) $(RCDEFINES) -r WTEST.RC
+
+WVERSION.OBJ:	WVERSION.C $(WVERSION_DEP)
+	$(CC) $(CFLAGS) $(CUSEPCHFLAG) /c WVERSION.C
+
+
+$(PROJ).EXE::	WTEST.RES
+
+$(PROJ).EXE::	WTEST.OBJ WVERSION.OBJ $(OBJS_EXT) $(DEFFILE)
+	echo >NUL @<<$(PROJ).CRF
+WTEST.OBJ +
+WVERSION.OBJ +
+$(OBJS_EXT)
+$(PROJ).EXE
+$(MAPFILE)
+c:\dev\msvc\lib\+
+c:\dev\msvc\mfc\lib\+
+c:\dev\ddk\lib\+
+c:\hendrix\lib\+
+$(LIBS)
+$(DEFFILE);
+<<
+	link $(LFLAGS) @$(PROJ).CRF
+	$(RC) $(RESFLAGS) WTEST.RES $@
+	@copy $(PROJ).CRF MSVC.BND
+
+$(PROJ).EXE::	WTEST.RES
+	if not exist MSVC.BND 	$(RC) $(RESFLAGS) WTEST.RES $@
+
+run: $(PROJ).EXE
+	$(PROJ) $(RUNFLAGS)
+
+
+$(PROJ).BSC: $(SBRS)
+	bscmake @<<
+/o$@ $(SBRS)
+<<
+# Microsoft Visual C++ generated build script - Do not modify
+
+PROJ = WTEST32
+DEBUG = 1
+PROGTYPE = 0
+CALLER = 
+ARGS = 
+DLLS = 
+ORIGIN = MSVCNT
+ORIGIN_VER = 1.00
+PROJPATH = D:\ARTICLE\WVERSION\ 
+USEMFC = 0
+CC = cl
+CPP = cl
+CXX = cl
+CCREATEPCHFLAG = 
+CPPCREATEPCHFLAG = 
+CUSEPCHFLAG = 
+CPPUSEPCHFLAG = 
+FIRSTC = 
+FIRSTCPP = 
+RC = rc
+CFLAGS_D_WEXE32 = /nologo /D_X86_ /W3 /FR /YX /D_DEBUG /Zi /D_WINDOWS /Fd"WTEST32.PDB" /Fp"WTEST32.PCH"
+CFLAGS_R_WEXE32 = /nologo /D_X86_ /W3 /FR /YX /O2 /DNDEBUG /D_WINDOWS /Fp"WTEST32.PCH"
+LFLAGS_D_WEXE32 = /NOLOGO /DEBUG /DEBUGTYPE:cv /SUBSYSTEM:windows user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib olecli32.lib olesvr32.lib shell32.lib
+LFLAGS_R_WEXE32 = /NOLOGO /SUBSYSTEM:windows user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib olecli32.lib olesvr32.lib shell32.lib
+LFLAGS_D_LIB32 = /NOLOGO
+LFLAGS_R_LIB32 = /NOLOGO
+LIBS_D_WEXE32 = 
+LIBS_R_WEXE32 = 
+RCFLAGS32 = 
+D_RCDEFINES32 = -d_DEBUG
+R_RCDEFINES32 = -dNDEBUG
+DEFFILE = WTEST.DEF
+OBJS_EXT = 
+LIBS_EXT = 
+!if "$(DEBUG)" == "1"
+CFLAGS = $(CFLAGS_D_WEXE32)
+LFLAGS = $(LFLAGS_D_WEXE32)
+LIBS = $(LIBS_D_WEXE32)
+LFLAGS_LIB=$(LFLAGS_D_LIB32)
+MAPFILE_OPTION = 
+DEFFILE_OPTION = -def:$(DEFFILE)
+RCDEFINES = $(D_RCDEFINES32)
+!else
+CFLAGS = $(CFLAGS_R_WEXE32)
+LFLAGS = $(LFLAGS_R_WEXE32)
+LIBS = $(LIBS_R_WEXE32)
+MAPFILE_OPTION = 
+DEFFILE_OPTION = 
+LFLAGS_LIB=$(LFLAGS_R_LIB32)
+RCDEFINES = $(R_RCDEFINES32)
+!endif
+SBRS = WTEST.SBR \
+		WVERSION.SBR
+
+
+WTEST_DEP =  \
+	d:\article\wversion\wtest.h
+
+
+WTEST_RCDEP =  \
+	d:\article\wversion\wtest.h
+
+
+WVERSION_DEP =  \
+	d:\article\wversion\wversion.h
+
+
+all:	$(PROJ).EXE $(PROJ).BSC
+
+WTEST.OBJ:	WTEST.C $(WTEST_DEP)
+	$(CC) $(CFLAGS) $(CUSEPCHFLAG) /c WTEST.C
+
+WTEST.RES:	WTEST.RC $(WTEST_RCDEP)
+	$(RC) $(RCFLAGS32) $(RCDEFINES) -r WTEST.RC
+
+WVERSION.OBJ:	WVERSION.C $(WVERSION_DEP)
+	$(CC) $(CFLAGS) $(CUSEPCHFLAG) /c WVERSION.C
+
+
+$(PROJ).EXE:	WTEST.RES
+
+$(PROJ).EXE:	WTEST.OBJ WVERSION.OBJ $(OBJS_EXT) $(LIBS_EXT) $(DEFFILE) WTEST.RES
+	echo >NUL @<<$(PROJ).CRF
+WTEST.OBJ 
+WVERSION.OBJ 
+$(OBJS_EXT)
+-OUT:$(PROJ).EXE
+$(MAPFILE_OPTION)
+WTEST.RES
+$(LIBS)
+$(LIBS_EXT)
+$(DEFFILE_OPTION) -implib:$(PROJ).lib
+<<
+	link $(LFLAGS) @$(PROJ).CRF
+
+run: $(PROJ).EXE
+	$(PROJ) $(RUNFLAGS)
+
+
+$(PROJ).BSC: $(SBRS)
+	bscmake @<<
+/o$@ $(SBRS)
+<<
+// WVERSION.C - plafform determination routines
+
+#include "assert.h"
+#include "windows.h"
+#include "ver.h"
+#include "wversion.h"
+
+BOOL IsWindowsForWorkgroups(unsigned short);
+
+/**-----------------------------------------------------**/
+BOOL FAR PASCAL WVersion(LPDWORD lpdwEnviron, 
+   LPDWORD lpdwVersion)
+{  
+   DWORD dwEnviron = ENV_UNKNOWN;
+   DWORD dwVersion = GetVersion();
+
+   //-------------------------------------------------
+   // 32-bit code gets version info this way
+   //-------------------------------------------------
+
+   #if defined _WIN32 || defined WIN32
+   {
+      // if the highbit returned from GetVersion is 1, then
+      // it's either Win32s or Win32c.
+
+      if (dwVersion & 0x80000000) 
+      {
+         // check major version number to distinguish
+         // Win32s from Win32c (in the LOBYTE of the LOWORD)
+         if (LOBYTE(LOWORD(dwVersion)) == 3) 
+            dwEnviron = ENV_WIN32S;
+         else dwEnviron = ENV_WIN32C;      
+      }
+
+      // if the highbit returned from GetVersion is 0, then
+      // it's either Win NT or Win NT Advanced Server.
+
+      else 
+      {
+         // Check registry to distinguish NT from NTAS
+         HKEY hKey;
+         BYTE szValue[128];
+         DWORD dwSize = 128;
+         
+         RegOpenKeyEx(HKEY_LOCAL_MACHINE, 
+            "SYSTEM\\CurrentControlSet\\Control"
+            "\\ProductOptions", 0, KEY_READ, &hKey);
+         RegQueryValueEx(hKey, "ProductType", 0, NULL,
+                                          szValue, &dwSize);
+         RegCloseKey(hKey);
+
+         if (stricmp(szValue, "Winnt") == 0)
+            dwEnviron = ENV_WINNT;
+         else
+            dwEnviron = ENV_WINNTAS;        
+      }
+   }
+
+   // 16-bit code gets version info this way
+#  else
+   {
+      // For 16-bit code, use GetWinFlags to tell if 
+      // running on the WOW layer of NT/NTAS
+
+      if (GetWinFlags() & 0x4000) 
+        dwEnviron = ENV_WINNT;
+      else 
+      {
+         // check major version number to distinguish
+         // Win 3.x from Win32c (in the LOBYTE of the LOWORD)
+         if ((LOBYTE(LOWORD(dwVersion)) > 3) ||
+            (HIBYTE(LOWORD(dwVersion)) > 50))
+               dwEnviron = ENV_WIN32C;
+         else
+         {
+            // finally, determine if Win 3.x or WFW
+            if (IsWindowsForWorkgroups(METHOD_FILEVERSION))
+               dwEnviron = ENV_WFW;
+            else if (IsWindowsForWorkgroups(METHOD_MULTINET))
+               dwEnviron = ENV_WFW;
+            else dwEnviron = ENV_WIN3X;
+         }
+      }
+   }
+#  endif
+
+   *lpdwEnviron = dwEnviron;
+   *lpdwVersion = dwVersion;
+
+   return TRUE;
+} // WVersion
+
+typedef WORD (WINAPI*NETCAPFUNC)(int);
+/**-----------------------------------------------------**/
+BOOL IsWindowsForWorkgroups(unsigned short usMethod)
+{
+    HINSTANCE hLib = NULL;
+    NETCAPFUNC lpWNetGetCaps = NULL;
+    WORD wNetType;
+    DWORD dwVerSize, dwVerHandle;
+    HANDLE hMem;
+    VS_VERSION FAR * lpVerInfo;
+    BOOL bWfW = FALSE;  // assume failure
+
+    // use the method that checks for a multinet driver
+    if (usMethod == METHOD_MULTINET)
+    {
+       hLib = LoadLibrary((LPSTR)"user.exe");
+       assert(hLib >= HINSTANCE_ERROR);
+       lpWNetGetCaps = (NETCAPFUNC)GetProcAddress(hLib,
+                                      (LPSTR)"WNetGetCaps");
+       if (lpWNetGetCaps != NULL)
+       {
+          wNetType = (*lpWNetGetCaps)(WNNC_NET_TYPE);
+          if (wNetType & WNNC_NET_MULTINET)
+             if (LOBYTE(wNetType) & WNNC_SUBNET_WINWORKGROUP)
+                bWfW = TRUE;
+       }
+       if (hLib) FreeLibrary(hLib); 
+    }
+
+    // use method that checks the file version of user.exe
+    else
+    {
+        // allocate memory for the file info struct
+        dwVerSize = GetFileVersionInfoSize((LPSTR)"user.exe",
+            &dwVerHandle);
+        hMem = GlobalAlloc(GMEM_MOVEABLE, dwVerSize);
+        assert(hMem != NULL);
+        lpVerInfo = (VS_VERSION FAR *)GlobalLock(hMem);
+
+        // Get the file version
+        // for Win32, the dwVerHandle is zero, ignored 
+        if (GetFileVersionInfo((LPSTR)"user.exe",
+                         dwVerHandle, dwVerSize, lpVerInfo))
+            if ((HIWORD(lpVerInfo->vffInfo
+                               .dwProductVersionMS) == 3) &&
+                (LOWORD(lpVerInfo->vffInfo
+                                .dwProductVersionMS) == 11))
+                bWfW = TRUE;
+        GlobalUnlock(hMem);
+        GlobalFree(hMem);
+    }
+    return bWfW;
+
+} // IsWindowsForWorkgroups
+// WVERSION.H - version flags and defines
+
+BOOL FAR PASCAL WVersion(LPDWORD, LPDWORD);
+
+#define ENV_UNKNOWN     0x00000000
+#define ENV_WIN3X       0x00000001
+#define ENV_WFW         0x00000004
+#define ENV_WIN32S      0x00000008
+#define ENV_WIN32C      0x00000010
+#define ENV_WINNT       0x00000020
+#define ENV_WINNTAS     0x00000040
+
+#define METHOD_MULTINET      0x01
+#define METHOD_FILEVERSION   0x02
+
+#define WNNC_NET_MULTINET         0x8000
+#define WNNC_SUBNET_WINWORKGROUP  0x0004
+#define WNNC_NET_TYPE             0x0002
+
+typedef struct tagVS_VERSION
+{
+    WORD wTotLen;
+    WORD wValLen;
+    char szSig[16];
+    VS_FIXEDFILEINFO vffInfo;
+} VS_VERSION;
+

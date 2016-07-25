@@ -1,0 +1,135 @@
+#include <stdio.h>
+#include <string.h>
+
+#include "cwdlg.h"
+#include "cwdialgs.h"
+#include "dlgids.h"
+#include "tssetlst.h"
+
+int init_item = 1;
+
+setup_record g_setup;
+tlist_box_data g_list_data;
+
+LRESULT CALLBACK _export WndProc(HWND hWnd,
+    UINT message,WPARAM wParam, LPARAM lParam);
+
+int WINAPI WinMain(HINSTANCE hInstance,
+    HINSTANCE hPrevInstance, LPSTR,int nCmdShow){
+       char AppName[]="DataListDlg";
+       char MenuName[] = "DialogTestMenu";
+       // Get full screen size dimensions:
+       int i,xScreen = GetSystemMetrics(SM_CXSCREEN),
+             yScreen = GetSystemMetrics(SM_CYSCREEN);
+
+    HWND hWnd;
+    MSG msg;
+    gdlg_instance = hInstance; //used by uwdialgs.cpp
+    WNDCLASS wndclass;
+
+    if (!hPrevInstance) {
+       wndclass.style         = CS_HREDRAW|CS_VREDRAW;
+       wndclass.lpfnWndProc   = WndProc;
+       wndclass.cbClsExtra    = 0;
+       wndclass.cbWndExtra    = 0;
+       wndclass.hInstance     = hInstance ;
+       wndclass.hIcon         = LoadIcon (NULL,IDI_APPLICATION) ;
+       wndclass.hCursor       = LoadCursor (NULL, IDC_ARROW) ;
+       wndclass.hbrBackground = (HBRUSH)GetStockObject(WHITE_BRUSH);
+       wndclass.lpszMenuName  = MenuName;
+       wndclass.lpszClassName = AppName;
+       if (!RegisterClass(&wndclass)) return FALSE;
+       }
+    hWnd = CreateWindow(AppName,
+       "Data Object List Dialog Test",
+       WS_OVERLAPPEDWINDOW,0,0,xScreen,yScreen, NULL,NULL,hInstance,NULL);
+    if (!hWnd) return FALSE;
+
+    init_setup (&g_setup);
+    g_list_data.item_collection = new object_list(MAX_ITEMS);
+    g_list_data.selected_item = 1;
+    setup_to_collection (&g_setup, g_list_data.item_collection);
+
+    ShowWindow(hWnd, nCmdShow);
+    UpdateWindow(hWnd);
+
+    while (GetMessage(&msg, NULL, 0, 0))
+    {  TranslateMessage(&msg);
+       DispatchMessage(&msg);
+    }
+
+    // Clean up class allocations
+    for (i=1;i<=g_list_data.item_collection-> get_count();i++)
+    delete g_list_data.item_collection->at(i);
+    delete g_list_data.item_collection;
+
+    return msg.wParam;
+}
+
+LRESULT CALLBACK _export WndProc(HWND hWnd,
+    UINT message,WPARAM wParam, LPARAM lParam){
+   HDC hdc;
+   PAINTSTRUCT ps;
+   RECT rect;
+   HBRUSH hbr;
+   tdata_list_dialog *the_dialog;
+   // used for device-independent line spacing:
+   SIZE text_extent;
+   int x_start,y_start,rect_y_start,line_spacing;
+   int i;
+
+   switch (message)
+   {
+   case WM_DESTROY:
+      PostQuitMessage(0); break;
+   case WM_COMMAND:
+      switch (wParam) {
+      case IDM_DIALOG:
+         the_dialog = new tdata_list_dialog
+              (hWnd,"Test Data List Dialog",
+              "Select Item:",&g_list_data,init_item);
+         the_dialog->exec_dialog ();
+         delete the_dialog;
+         InvalidateRect(hWnd,NULL,TRUE);
+         UpdateWindow(hWnd);
+         break;
+      case IDM_EXIT:           // Exit the program
+         SendMessage (hWnd, WM_CLOSE, 0, 0L) ;
+         break ;
+      }  // end switch
+      break;
+
+   case WM_PAINT:
+      hdc = BeginPaint(hWnd,&ps);
+      GetTextExtentPoint (hdc,"X",strlen("X"), &text_extent);
+      line_spacing = 1.5*text_extent.cy;
+      y_start = line_spacing;
+      rect_y_start = y_start;
+      x_start = 5 * text_extent.cx;
+      for (i=1;i<=g_list_data.item_collection-> get_count();i++) {
+         TextOut(hdc,x_start,y_start + line_spacing*(i-1),
+            ((ttyped_data_obj *) (g_list_data.item_collection->
+            at(i))) ->get_display_str(), strlen ( ((ttyped_data_obj *)
+            (g_list_data.item_collection->at(i))) ->get_display_str()));
+      rect_y_start += line_spacing;
+      }
+      rect.left = x_start;
+      rect.right = rect.left + 10*text_extent.cx;
+      rect.top = rect_y_start + line_spacing;
+      rect.bottom = rect.top + 2*line_spacing;
+      hbr = CreateSolidBrush(g_setup.rect_color);
+      FillRect (hdc,&rect,hbr);
+      DeleteObject (hbr);
+      EndPaint(hWnd,&ps);
+      break;
+   default:
+   return DefWindowProc(hWnd,message,wParam,lParam);
+   }
+   return 0L;}
+
+
+
+
+
+
+

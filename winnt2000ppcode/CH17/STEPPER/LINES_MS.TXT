@@ -1,0 +1,18 @@
+Microsoft (R) COFF Binary File Dumper Version 4.20.6164
+Copyright (C) Microsoft Corp 1992-1996. All rights reserved.
+
+
+Dump of file foo.exe
+
+File Type: EXECUTABLE IMAGE
+
+LINENUMBERS #1
+    1000    5      1009    7      1022    8      1038    9      103D    A  
+
+     Summary
+
+        3000 .data
+        1000 .idata
+        1000 .rdata
+        1000 .reloc
+        5000 .text

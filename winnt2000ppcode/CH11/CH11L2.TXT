@@ -1,0 +1,18 @@
+#include <windows.h>
+
+main()
+{
+   int n;
+
+   AllocConsole();
+
+   WriteFile(GetStdHandle(STD_OUTPUT_HANDLE), "Hello, world!\n",
+             strlen("Hello, world!\n"), &n, NULL);
+}
+
+
+
+
+
+
+

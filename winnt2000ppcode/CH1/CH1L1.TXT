@@ -1,0 +1,10 @@
+(a)
+#pragma NTPORT("warning, pointer stored in globally shared memory")
+       gpszGlobalString = szLocalString;
+
+(b)
+#ifdef _WINNT_   /* if compiling for Windows NT, generate a compiler warning */
+#define NTPORT(msg)  message(__FILE__  " NTPORT: " msg)
+#else            /* we are compiling for Win16, so do nothing */
+#define NTPORT(msg)
+#endif

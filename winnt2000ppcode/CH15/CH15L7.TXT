@@ -1,0 +1,43 @@
+!include <NTWIN32.MAK>
+cflags = $(cflags:G3=Gz)
+
+.c.obj:
+   $(cc) $(cflags) $(cvarsmt) $<
+
+all : client server
+
+client : client.exe
+client.exe : client.obj prime_c.obj directio.obj
+    $(link) $(conflags) -out:client.exe \
+      client.obj prime_c.obj directio.obj \
+      rpcrt4.lib rpcndr.lib rpcns4.lib $(conlibsmt)
+
+client.obj : client.c prime.h
+
+directio.obj : directio.c directio.h
+   $(cc) $(cflags) $(cvarsmt) directio.c
+
+prime_c.obj : prime_c.c prime.h
+   $(cc) $(cflags) $(cvarsmt) prime_c.c
+
+server : server.exe
+server.exe : server.obj remote.obj prime_s.obj directio.obj
+    $(link) $(conflags) -out:server.exe \
+      server.obj prime_s.obj remote.obj directio.obj \
+      rpcrt4.lib rpcndr.lib rpcns4.lib $(conlibsmt)
+
+server.obj : server.c prime.h
+
+remote.obj : remote.c prime.h
+
+prime_s.obj : prime_s.c prime.h
+   $(cc) $(cflags) $(cvarsmt) prime_s.c
+prime.h prime_c.c prime_s.c : prime.idl
+   midl -cpp_cmd $(cc) -cpp_opt "-E"  prime.idl
+
+
+
+
+
+
+

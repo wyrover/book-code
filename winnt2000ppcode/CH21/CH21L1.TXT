@@ -1,0 +1,194 @@
+HexWeb HTML
+
+//  For  interesting  results,  you  must  compile  with
+//  optimization  off:
+//  cl  /Zi  /MT  -DWIN32  <file>
+//  bcc32  <file>
+
+#include  <windows.h>
+#include  <stdio.h>
+
+/*  Borland  v4.5  needs  a  fix  */
+#if  defined(__BORLANDC__)  &&  (__BORLANDC__  <=  0x0460)
+typedef  struct  FOO_LARGE_INTEGER  {
+        DWORD  LowPart;
+        LONG    HighPart;
+}  FOO_LARGE_INTEGER;
+
+#define  LARGE_INTEGER      FOO_LARGE_INTEGER
+#endif
+
+HANDLE  event;
+HANDLE  recevent,  ackevent;
+LARGE_INTEGER          freq;
+
+void  receive(void)
+{
+      LARGE_INTEGER    start;
+      LARGE_INTEGER    end;
+      int              i;
+      double           tks;
+
+      SetEvent(event);
+      QueryPerformanceCounter(&start);
+      for  (i  =  0;  i  <  10000;  i++)  {
+            WaitForSingleObject(recevent,  INFINITE);
+            SetEvent(ackevent);
+            WaitForSingleObject(recevent,  INFINITE);
+            SetEvent(ackevent);
+            WaitForSingleObject(recevent,  INFINITE);
+            SetEvent(ackevent);
+      }
+      QueryPerformanceCounter(&end);
+      tks  =  ((end.LowPart  -  start.LowPart)  /  3.0)/  10000.0;
+      fprintf(stderr,  "Receiver:  Average  #  of  microseconds  "
+             "context  switch  with  threads  =  %f\n",
+             (tks  /  (double)  freq.LowPart)*1000000.0);
+      SetEvent(event);
+}
+
+void  f(void)  {}
+
+#ifdef  __BORLANDC__
+#      pragma  argsused
+#endif
+
+int  main(int  argc,  char  **argv)
+{
+      HANDLE  sem1,  sem2,  sem3;
+      HANDLE  mu1,  mu2,  mu3;
+      LARGE_INTEGER      start;
+      LARGE_INTEGER      end;
+      int                i;
+      double             tks;
+      DWORD              foo;
+
+      //  Figure  out  performance  counter  frequency
+      QueryPerformanceFrequency(&freq);
+      fprintf(stderr,  "Performance  counter  frequency  =  low:  "
+             "%d  high:  %d\n",  freq.LowPart,  freq.HighPart);
+
+      //  create  main  syncrhonization  event
+      event  =  CreateEvent(0,  FALSE,  FALSE,  "Start");
+
+      //  now  do  context  switch  using  events
+      recevent  =  CreateEvent(0,  FALSE,  FALSE,  "RecSync");
+      ackevent  =  CreateEvent(0,  FALSE,  FALSE,  "AckSync");
+      WaitForSingleObject(event,  INFINITE);
+
+      QueryPerformanceCounter(&start);
+      for  (i  =  0;  i  <  10000;  i++)  {
+            SetEvent(recevent);
+            WaitForSingleObject(ackevent,  INFINITE);
+            SetEvent(recevent);
+            WaitForSingleObject(ackevent,  INFINITE);
+            SetEvent(recevent);
+            WaitForSingleObject(ackevent,  INFINITE);
+      }
+      QueryPerformanceCounter(&end);
+      tks  =  ((end.LowPart  -  start.LowPart)  /  3.0)/  10000.0;
+      fprintf(stderr,  "Average  #  of  microseconds  context  "
+             "switch  using  events  =  %f\n",
+             (tks  /  (double)  freq.LowPart)*1000000.0);
+
+      //  now  for  semaphores
+      sem1  =  CreateSemaphore(0,  0,  1,  "Sem1");
+      sem2  =  CreateSemaphore(0,  0,  1,  "Sem2");
+      sem3  =  CreateSemaphore(0,  0,  1,  "Sem3");
+      SetEvent(event);
+      ReleaseSemaphore(sem2,  1,  0);
+      WaitForSingleObject(event,  INFINITE);
+
+      QueryPerformanceCounter(&start);
+      for  (i  =  0;  i  <  10000;  i++)  {
+            ReleaseSemaphore(sem1,  1,  0);
+            WaitForSingleObject(sem2,  INFINITE);
+            ReleaseSemaphore(sem3,  1,  0);
+            WaitForSingleObject(sem1,  INFINITE);
+            ReleaseSemaphore(sem2,  1,  0);
+            WaitForSingleObject(sem3,  INFINITE);
+      }
+      QueryPerformanceCounter(&end);
+      tks  =  ((end.LowPart  -  start.LowPart)  /  3.0)/  10000.0;
+      QueryPerformanceFrequency(&freq);
+      fprintf(stderr,  "Average  #  of  microseconds  context  "
+             "switch  using  semaphores  =  %f\n",
+             (tks  /  (double)  freq.LowPart)*1000000.0);
+
+      //  mutexes
+      mu1  =  CreateMutex(0,  TRUE,  "Mutex1");
+      mu2  =  CreateMutex(0,  TRUE,  "Mutex2");
+      mu3  =  CreateMutex(0,  TRUE,  "Mutex3");
+      SetEvent(event);
+      ReleaseMutex(mu2);
+      WaitForSingleObject(event,  INFINITE);
+
+      QueryPerformanceCounter(&start);
+      for  (i  =  0;  i  <  10000;  i++)  {
+            ReleaseMutex(mu1);
+            WaitForSingleObject(mu2,  INFINITE);
+            ReleaseMutex(mu3);
+            WaitForSingleObject(mu1,  INFINITE);
+            ReleaseMutex(mu2);
+            WaitForSingleObject(mu3,  INFINITE);
+      }
+      QueryPerformanceCounter(&end);
+      tks  =  ((end.LowPart  -  start.LowPart)  /  3.0)/  10000.0;
+      QueryPerformanceFrequency(&freq);
+      fprintf(stderr,  "Average  #  of  microseconds  context  "
+             "switch  using  mutexes  =  %f\n",
+             (tks  /  (double)  freq.LowPart)*1000000.0);
+
+      //  the  "catch"  program  will  now  terminate  ---
+      //  we'll  continue  and  investigate
+      //  inter-thread  context  switching
+      CreateThread(0,  0,  (LPTHREAD_START_ROUTINE)  receive,
+                   0,  0,  &foo);
+      WaitForSingleObject(event,  INFINITE)  ;
+
+      QueryPerformanceCounter(&start);
+      for  (i  =  0;  i  <  10000;  i++)  {
+            SetEvent(recevent);
+            WaitForSingleObject(ackevent,  INFINITE);
+            SetEvent(recevent);
+            WaitForSingleObject(ackevent,  INFINITE);
+            SetEvent(recevent);
+            WaitForSingleObject(ackevent,  INFINITE);
+      }
+      QueryPerformanceCounter(&end);
+      WaitForSingleObject(event,  INFINITE);
+      tks  =  ((end.LowPart  -  start.LowPart)  /  3.0)/  10000.0;
+      fprintf(stderr,  "Sender:  Average  #  of  microseconds  "
+             "context  switch  with  threads  =  %f\n",
+             (tks  /  (double)  freq.LowPart)*1000000.0);
+
+      //  check  out  system  call  performance
+      QueryPerformanceCounter(&start);
+      for  (i  =  0;  i  <  10000;  i++)  {
+            GetTickCount();
+            GetTickCount();
+            GetTickCount();
+      }
+      QueryPerformanceCounter(&end);
+      tks  =  ((end.LowPart  -  start.LowPart)  /  3.0)/  10000.0;
+      fprintf(stderr,  "Average  #  of  microseconds  system  "
+             "call  =  %f\n",
+             (tks  /  (double)  freq.LowPart)*1000000.0);
+
+      //  null  function  call  performance
+      QueryPerformanceCounter(&start);
+      for  (i  =  0;  i  <  10000;  i++)  {
+            f();            f();            f();
+      }
+      QueryPerformanceCounter(&end);
+      tks  =  ((end.LowPart  -  start.LowPart)  /  3.0)/  10000.0;
+      fprintf(stderr,  "Average  #  of  microseconds  =  %f\n",
+             (tks  /  (double)  freq.LowPart)*1000000.0);
+}
+
+
+
+
+
+
+

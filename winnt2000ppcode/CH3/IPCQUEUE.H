@@ -1,0 +1,78 @@
+// ****************************************************************************
+//
+// Module:  ipcqueue.h
+// Author:  Dick Lam
+//
+// Purpose: C++ class header file for ipcMessageQueue
+//
+// Notes:  This is a base class.  It is the interface class for
+//         creating and accessing a message queue that handles messages
+//         between processes.
+//
+// ****************************************************************************
+
+#ifndef MODULE_ipcMessageQueueh
+#define MODULE_ipcMessageQueueh
+
+#include "ipcos.h"
+
+// forward declaration
+class osMessageQueue;
+
+// class declaration
+class EXPORT ipcMessageQueue {
+
+friend class osMessageQueue;
+
+public:
+
+   // constructor and destructor
+   ipcMessageQueue(const char *name);           // unique name to create queue
+   ipcMessageQueue(const char *name,            // name of queue to open
+                   unsigned long powner);       // process id of queue owner
+   virtual ~ipcMessageQueue();
+
+   // methods for accessing the queue and queue parameters [name, queue id,
+   // queue owner process id, and whether this is the owner (creator)]
+   char *Name() const;
+   unsigned long ID() const;
+   unsigned long Pid() const;
+   int Owner() const;
+
+   // read/write methods for the queue (only a queue owner may read from
+   // the queue, and only queue clients may write to a queue)
+   virtual int Read(void *data, long datasize, int wait = 0);
+   virtual int Write(void *data, long datasize);
+
+   // methods to examine and remove messages from the queue (owner only)
+   virtual unsigned long Peek();
+   virtual int Purge();
+
+   // class version and object state data types
+   enum version { MajorVersion = 1, MinorVersion = 0 };
+   enum state { good = 0, bad = 1, badname = 2, notfound = 3, notowner = 4,
+                notclient = 5, readerror = 6, writeerror = 7, badargument = 8 };
+
+   // methods to get the object state
+   inline int rdstate() const { return myState; }
+   inline int operator!() const { return(myState != good); }
+
+protected:
+
+   osMessageQueue *myImpl; // implementation
+   state myState;          // (object state (good, bad, etc.)
+
+private:
+
+   // private copy constructor and operator= (define these and make them
+   // public to enable copy and assignment of the class)
+   ipcMessageQueue(const ipcMessageQueue&);
+   ipcMessageQueue& operator=(const ipcMessageQueue&);
+
+};
+
+#endif
+
+// ****************************************************************************
+
+// end of ipcqueue.h

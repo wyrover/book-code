@@ -1,0 +1,38 @@
+#
+#  Builds the SECTIONS DLL and its TEST client 
+#  using Borland's MAKE and command line tools
+#
+
+!if !$d(BCROOT)
+BCROOT = $(MAKEDIR)\..
+!endif
+
+CFLAGS = -c -D_MT
+LFLAGS = -L$(BCROOT)\lib
+LIBS   = cw32mt import32
+
+!if $d(NODEBUG)
+CFLAGS = $(CFLAGS) -O2
+!else
+CFLAGS = $(CFLAGS) -Od -v
+LFLAGS = $(LFLAGS) -v
+!endif
+
+all: sections.dll test.exe
+
+test.obj: test.c sections.h
+  bcc32 $(CFLAGS) -W $*.c               # Windows .EXE
+
+global.obj: global.c sections.h
+  bcc32 $(CFLAGS) -WD $*.c		# DLL
+
+sections.obj: sections.c sections.h
+  bcc32 $(CFLAGS) -WD $*.c		# DLL
+
+sections.dll: global.obj sections.obj sections.def
+  tlink32 $(LFLAGS) -Tpd c0d32 $* global, $*.dll,, $(LIBS), $*.def,
+  implib $*.lib $<
+
+test.exe: test.obj 
+  tlink32 $(LFLAGS) -Tpe c0x32 $*, $*.exe, , $(LIBS) sections,
+

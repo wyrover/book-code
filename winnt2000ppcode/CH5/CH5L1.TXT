@@ -1,0 +1,31 @@
+BOOL FAR PASCAL WVersion(LPDWORD, LPDWORD);
+
+#define ENV_UNKNOWN     0x00000000
+#define ENV_WIN3X       0x00000001
+#define ENV_WFW         0x00000004
+#define ENV_WIN32S      0x00000008
+#define ENV_WIN32C      0x00000010
+#define ENV_WINNT       0x00000020
+#define ENV_WINNTAS     0x00000040
+
+#define METHOD_MULTINET      0x01
+#define METHOD_FILEVERSION   0x02
+
+#define WNNC_NET_MULTINET         0x8000
+#define WNNC_SUBNET_WINWORKGROUP  0x0004
+#define WNNC_NET_TYPE             0x0002
+
+typedef struct tagVS_VERSION
+{
+    WORD wTotLen;
+    WORD wValLen;
+    char szSig[16];
+    VS_FIXEDFILEINFO vffInfo;
+} VS_VERSION;
+
+
+
+
+
+
+

@@ -1,0 +1,24 @@
+#ifndef CWDIALGS_H
+#define CWDIALGS_H
+
+#define STRICT
+#include <windows.h>
+
+extern HINSTANCE gdlg_instance;
+// This must be set to current instance before using these dialogs.
+
+int string_dialog (HWND Parent,LPCSTR dlg_title,
+      LPCSTR descr,int maxlen,void *the_string);
+
+int get_file_name_dlg (HWND hWnd,const char *pfilter,
+      const char *ptitle_str, char *file_name, int max_len);
+
+BOOL get_rgb_color (HWND hWnd,COLORREF *init_color);
+#endif
+
+
+
+
+
+
+

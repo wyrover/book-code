@@ -1,0 +1,136 @@
+#include <stdio.h>
+#include <string.h>
+
+#include "cwdlg.h"
+#include "dlgids.h"
+
+HINSTANCE gdlg_instance = 0;
+// This must be set to current instance before
+// using any dialogs.
+
+int check_gdlg_instance () {
+    if (!gdlg_instance) {
+       MessageBox (NULL,"gdlg_instance not set.",
+        "UWDLG.CPP",MB_ICONEXCLAMATION | MB_OK);
+       return 0; }
+    return 1; }
+
+tdialog *this_dialog = 0;
+
+BOOL CALLBACK _export tdialog_proc(HWND hdlg,
+    UINT message,WPARAM wParam, LPARAM lParam) {
+    return this_dialog->handle_message(hdlg,message, wParam,lParam); }
+
+tdialog::tdialog (HWND Parent,LPCSTR resource_name, LPCSTR caption_name) {
+    hwndParent = Parent;
+    rc_title = resource_name;
+    caption_title = caption_name; }
+
+void tdialog::center_dialog () {
+     RECT dlg_rect;
+     int x_screen = GetSystemMetrics(SM_CXSCREEN),
+         y_screen = GetSystemMetrics(SM_CYSCREEN);
+     GetWindowRect (hdialog,&dlg_rect);
+     int dlg_width = dlg_rect.right - dlg_rect.left,
+         dlg_ht = dlg_rect.bottom - dlg_rect.top;
+     int x_pos = (x_screen - dlg_width)/2,
+         y_pos = (y_screen - dlg_ht)/2;
+     SetWindowPos (hdialog,NULL,x_pos,y_pos,0,0, SWP_NOSIZE|SWP_NOZORDER);}
+
+BOOL tdialog::respond_wm_initdialog () {
+     center_dialog();
+     return 1;}
+
+BOOL tdialog::respond_wm_command (WPARAM wParam,LPARAM) {
+    switch (LOWORD(wParam)) {
+    case IDOK:
+         dlg_return_value = 1;
+         EndDialog(hdialog, TRUE);
+         return 1;
+    case IDCANCEL:
+         dlg_return_value = 0;
+         EndDialog(hdialog,FALSE);
+         return 0;
+    }  // end switch
+    return 0; }
+
+BOOL tdialog::handle_message (HWND hwnd,UINT message,
+    WPARAM wParam,LPARAM lParam) {
+    hdialog = hwnd; // hdialog must be set before any
+         // handling any messages
+    switch (message) {
+    case WM_INITDIALOG:
+         return respond_wm_initdialog ();
+    case WM_COMMAND:
+         return respond_wm_command (wParam,lParam);
+    }  //  end switch
+    return FALSE; }
+
+BOOL tdialog::exec_dialog () {
+    if (!check_gdlg_instance()) return 0;
+    tdialog *old_tdialog = this_dialog;
+    this_dialog = this;
+    lpDialogProc =
+        (DLGPROC)MakeProcInstance((FARPROC)tdialog_proc, gdlg_instance);
+        DialogBox(gdlg_instance,rc_title, hwndParent, lpDialogProc);
+    FreeProcInstance((FARPROC)lpDialogProc);
+    this_dialog = old_tdialog;
+    return dlg_return_value; }
+
+tdialog::~tdialog() { }
+
+tinput_dialog *this_input_dialog = 0;
+
+BOOL CALLBACK _export tinput_dialog_proc(HWND hdlg,
+       UINT message,WPARAM wParam, LPARAM lParam) {
+       return this_input_dialog->handle_message(hdlg,
+           message,wParam,lParam); }
+
+tinput_dialog::tinput_dialog (HWND Parent,
+       LPCSTR caption_name,LPCSTR input_name,
+       LPCSTR init_text):tdialog(Parent, "INPUT_DIALOG",caption_name){
+    input_id = ID_DLG_INPUT;
+    input_caption_id = ID_DLG_INPUT_CAPTION;
+    input_caption = input_name;
+    strncpy (input_text,init_text,MAX_INPUT_LENGTH);    input_text[MAX_INPUT_LENGTH] = '\0'; };
+
+BOOL tinput_dialog::respond_wm_initdialog () {
+    SetWindowText (hdialog,caption_title);
+    SetWindowText (GetDlgItem(hdialog, input_caption_id),input_caption);
+    SetWindowText(GetDlgItem(hdialog,input_id), input_text);
+    SetFocus(GetDlgItem(hdialog,input_id));
+    return tdialog::respond_wm_initdialog();}
+
+BOOL tinput_dialog::respond_wm_command (WPARAM wParam, LPARAM) {
+    switch (LOWORD(wParam)) {
+    case IDOK:
+         GetDlgItemText(hdialog,input_id,input_text, MAX_INPUT_LENGTH);
+         dlg_return_value = 1;
+         EndDialog(hdialog, TRUE);
+         return 1;
+    case IDCANCEL:
+         dlg_return_value = 0;
+         EndDialog(hdialog,FALSE);
+         return 0;
+    }  // end switch
+    return 0; }
+
+BOOL tinput_dialog::exec_dialog () {
+    if (!check_gdlg_instance()) return 0;
+    tinput_dialog *old_tinput_dialog = this_input_dialog;
+    this_input_dialog = this;
+    lpDialogProc = (DLGPROC)MakeProcInstance(
+        (FARPROC)tinput_dialog_proc,gdlg_instance);
+    DialogBox(gdlg_instance,rc_title, hwndParent, lpDialogProc);
+    FreeProcInstance((FARPROC)lpDialogProc);
+    this_input_dialog = old_tinput_dialog;
+    return dlg_return_value; }
+
+tinput_dialog::~tinput_dialog() { }
+
+
+
+
+
+
+

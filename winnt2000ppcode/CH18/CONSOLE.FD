@@ -1,0 +1,233 @@
+C File: CONSOLE.FD
+C Provides data declarations for the Win32 Console API
+
+      logical*4 AllocConsole
+      integer*4 CreateConsoleScreenBuffer
+      logical*4 FillConsoleOutputAttribute
+      logical*4 FillConsoleOutputCharacter
+      logical*4 FlushConsoleInputBuffer
+      logical*4 FreeConsole
+      logical*4 GenerateConsoleCtrlEvent
+      integer*4 GetConsoleCP
+      logical*4 GetConsoleCursorInfo
+      logical*4 GetConsoleMode
+c
+      integer*4 GetConsoleOutputCP
+      logical*4 GetConsoleScreenBufferInfo
+      integer*4 GetConsoleTitle
+      logical*4 GetNumberOfConsoleInputEvents
+      logical*4 GetNumberOfConsoleMouseButtons
+      integer*4 GetStdHandle
+      logical*4 HandlerRoutine
+      logical*4 PeekConsoleInput
+      logical*4 ReadConsole
+c
+      logical*4 ReadConsoleInput
+      logical*4 ReadConsoleOutputAttribute
+      logical*4 ReadConsoleOutputCharacter
+      logical*4 ScrollConsoleScreenBuffer
+      logical*4 SetConsoleActiveScreenBuffer
+      logical*4 SetConsoleCP
+      logical*4 SetConsoleCtrlHandler
+      logical*4 SetConsoleCursorInfo
+      logical*4 SetConsoleCursorPosition
+      logical*4 SetConsoleMode
+c
+      logical*4 SetConsoleOutputCP
+      logical*4 SetConsoleScreenBufferSize
+      logical*4 SetConsoleTextAttribute
+      logical*4 SetConsoleTitle
+      logical*4 SetConsoleWindowInfo
+      logical*4 SetStdHandle
+      logical*4 WriteConsole
+      logical*4 WriteConsoleInput
+      logical*4 WriteConsoleOutput
+      logical*4 WriteConsoleOutputAttribute
+      logical*4 WriteConsoleOutputCharacter
+
+      integer*4 CreateFile
+      integer*4 open_osfhandle
+      integer*4 dup2
+c **********************************************************************
+      structure /COORD/
+        integer*2 x
+        integer*2 y
+      end structure ! COORD
+
+      structure /CONSOLE_CURSOR_INFO/
+        integer*4  dwSize
+        logical*4  bVisible
+      end structure ! CONSOLE_CURSOR_INFO
+
+      structure /SMALL_RECT/
+        integer*2 Left
+        integer*2 Top
+        integer*2 Right
+        integer*2 Bottom
+      end structure ! SMALL_RECT
+
+      structure/CONSOLE_SCREEN_BUFFER_INFO/
+        record /coord/ dwSize
+        record /coord/ dwCursorPosition
+        integer*2 wAttributes
+        record /SMALL_RECT/ srWindow
+        record /COORD/ dwMaximumWindowSize
+      end structure ! CONSOLE_SCREEN_BUFFER_INFO
+
+      structure /KEY_EVENT_RECORD/
+        logical*4 bKeyDown
+        integer*2 wRepeatCount
+        integer*2 wVirtualKeyCode
+        integer*2 wVirtualScanCode
+        union
+          map
+            integer*2 UnicodeChar
+          end map
+          map
+            integer*1 AsciiChar
+          end map
+        end union
+        integer*4 dwControlKeyState
+      end structure ! KEY_EVENT_RECORD
+
+      structure /MOUSE_EVENT_RECORD/
+        record /COORD/ dwMousePosition
+        integer*4 dwButtonState
+        integer*4 dwControlKeyState
+        integer*4 dwEventFlags
+      end structure ! MOUSE_EVENT_RECORD
+
+      structure /WINDOW_BUFFER_SIZE_RECORD/
+        record /COORD/ dwSize
+      end structure ! WINDOW_BUFFER_SIZE_RECORD
+
+      structure /MENU_EVENT_RECORD/
+        integer*4 dwCommandId
+      end structure ! MENU_EVENT_RECORD
+
+      structure /FOCUS_EVENT_RECORD/
+        logical*4 bSetFocus
+      end structure ! FOCUS_EVENT_RECORD
+      structure /EVENTS/ 
+        union
+          map
+             record /KEY_EVENT_RECORD/ KeyEvent
+          end map
+          map
+            record /MOUSE_EVENT_RECORD/ MouseEvent
+          end map
+          map
+            record /WINDOW_BUFFER_SIZE_RECORD/ WindowBufferSizeEvent
+          end map
+          map
+            record /MENU_EVENT_RECORD/ MenuEvent
+          end map
+          map
+            record /FOCUS_EVENT_RECORD/ FocusEvent
+          end map
+        end union
+      end structure ! EVENTS
+
+      structure /INPUT_RECORD/
+        integer*2 EventType
+        record /EVENTS/ Event
+      end structure ! INPUT_RECORD
+
+      structure /CHAR_INFOU/
+      union
+        map
+          integer*2 UnicodeChar
+        end map
+        map
+          integer*1 AsciiChar
+        end map
+      end union
+      end structure ! CHAR_INFOU
+
+      structure /CHAR_INFO/
+        record /CHAR_INFOU/ Char
+        integer*2 Attributes
+      end structure ! CHAR_INFO
+
+c **********************************************************************
+      integer*4 FOREGROUND_BLUE
+      integer*4 FOREGROUND_GREEN
+      integer*4 FOREGROUND_CYAN
+      integer*4 FOREGROUND_RED
+      integer*4 FOREGROUND_MAGENTA
+      integer*4 FOREGROUND_BROWN
+      integer*4 FOREGROUND_WHITE
+      integer*4 FOREGROUND_INTENSITY
+      integer*4 BACKGROUND_BLUE
+      integer*4 BACKGROUND_GREEN
+      integer*4 BACKGROUND_RED
+      integer*4 BACKGROUND_INTENSITY
+
+      parameter(FOREGROUND_BLUE           = #01)
+      parameter(FOREGROUND_GREEN          = #02)
+      parameter(FOREGROUND_CYAN           = #03)
+      parameter(FOREGROUND_RED            = #04)
+      parameter(FOREGROUND_MAGENTA        = #05)
+      parameter(FOREGROUND_BROWN          = #06)
+      parameter(FOREGROUND_WHITE          = #07)
+      parameter(FOREGROUND_INTENSITY      = #08)
+      parameter(BACKGROUND_BLUE           = #10)
+      parameter(BACKGROUND_GREEN          = #20)
+      parameter(BACKGROUND_RED            = #40)
+      parameter(BACKGROUND_INTENSITY      = #80)
+
+      integer*4 FILE_SHARE_READ
+      integer*4 FILE_SHARE_WRITE
+
+      parameter(FILE_SHARE_READ  = #01)
+      parameter(FILE_SHARE_WRITE = #02)
+
+c **********************************************************************      
+      external AllocConsole
+      external CreateConsoleScreenBuffer
+      external FillConsoleOutputAttribute
+      external FillConsoleOutputCharacter
+      external FlushConsoleInputBuffer
+      external FreeConsole
+      external GenerateConsoleCtrlEvent
+      external GetConsoleCP
+      external GetConsoleCursorInfo
+      external GetConsoleMode
+c
+      external GetConsoleOutputCP
+      external GetConsoleScreenBufferInfo
+      external GetConsoleTitle
+      external GetNumberOfConsoleInputEvents
+      external GetNumberOfConsoleMouseButtons
+      external GetStdHandle
+      external HandlerRoutine
+      external PeekConsoleInput
+      external ReadConsole
+c
+      external ReadConsoleInput
+      external ReadConsoleOutputAttribute
+      external ReadConsoleOutputCharacter
+      external ScrollConsoleScreenBuffer
+      external SetConsoleActiveScreenBuffer
+      external SetConsoleCP
+      external SetConsoleCtrlHandler
+      external SetConsoleCursorInfo
+      external SetConsoleCursorPosition
+      external SetConsoleMode
+c
+      external SetConsoleOutputCP
+      external SetConsoleScreenBufferSize
+      external SetConsoleTextAttribute
+      external SetConsoleTitle
+      external SetConsoleWindowInfo
+      external SetFileApisToOEM
+      external SetStdHandle
+      external WriteConsole
+      external WriteConsoleInput
+      external WriteConsoleOutput
+      external WriteConsoleOutputAttribute
+      external WriteConsoleOutputCharacter
+
+      external CreateFile
+      external open_osfhandle
+      external dup2

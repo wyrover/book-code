@@ -1,0 +1,113 @@
+//  CPRINT.CPP    Windows NT, MS Visual C/C++ (32-bit) 1.1
+#include <windows.h>
+#include "cprint.h"
+
+LRESULT CALLBACK AbortDlg(HWND, UINT, WPARAM, LPARAM);
+BOOL CALLBACK AbortProc(HDC, int);
+char lpDocTitle[128];
+BOOL bAbort = FALSE;
+HWND hDlgAbort = 0;
+
+/**------------------------------------------------------**/
+CPrint::CPrint(HWND hWindow, LPTSTR lpDocName) {
+   hdcPr = NULL;
+   lastError = NULL;
+   szDriver[0] = szDevice[0] = szOutput[0] = '\0';
+   lstrcpy(lpDocTitle, lpDocName);
+   docInfo.cbSize = sizeof(DOCINFO);
+   docInfo.lpszDocName = lpDocTitle;
+   docInfo.lpszOutput = 0;
+   memset((void *)&printDlg, 0, sizeof(PRINTDLG));
+   printDlg.lStructSize = sizeof(PRINTDLG);
+   printDlg.hwndOwner = hWnd = hWindow;
+} // CPrint
+
+/**------------------------------------------------------**/
+CPrint::~CPrint() { if (hdcPr) DeleteDC(hdcPr); } // ~CPrint
+
+/**------------------------------------------------------**/
+HDC CPrint::PrintDialog(void) {
+   LPDEVNAMES pNames;
+   printDlg.Flags = PD_RETURNDC;
+   if (PrintDlg(&printDlg)) {      hdcPr = printDlg.hDC;
+      pNames = (LPDEVNAMES)GlobalLock(printDlg.hDevNames);
+      lstrcpy(szDriver, (LPSTR)pNames + pNames->wDriverOffset);
+      lstrcpy(szDevice, (LPSTR)pNames + pNames->wDeviceOffset);
+      lstrcpy(szOutput, (LPSTR)pNames + pNames->wOutputOffset);
+      GlobalUnlock(printDlg.hDevNames);
+   } else hdcPr = FALSE;
+   lastError = CommDlgExtendedError();
+   if (printDlg.hDevMode != NULL) GlobalFree(printDlg.hDevMode);
+   if (printDlg.hDevNames != NULL) GlobalFree(printDlg.hDevNames);
+   return hdcPr;
+} // CPrint::PrintDialog
+
+/**------------------------------------------------------**/
+DWORD CPrint::PrinterSetupDialog(void) {
+   DWORD dwStatus = TRUE;
+   printDlg.Flags = PD_PRINTSETUP;
+   if (PrintDlg(&printDlg)) dwStatus = TRUE;
+   else dwStatus = FALSE;
+   lastError = CommDlgExtendedError();
+   if (printDlg.hDevMode) GlobalFree(printDlg.hDevMode);
+   if (printDlg.hDevNames) GlobalFree(printDlg.hDevNames);
+   return dwStatus;
+} // CPrint::PrinterSetupDialog
+
+/**------------------------------------------------------**/
+DWORD CPrint::DocumentStart(HINSTANCE hInst) {
+   if (hdcPr == NULL) hdcPr = PrintDialog();
+   bAbort = FALSE;
+   hDlgAbort = CreateDialog(hInst, (LPSTR)"DlgAbort", hWnd,
+      (DLGPROC)AbortDlg);
+   SetAbortProc(hdcPr, (ABORTPROC)AbortProc);
+   return StartDoc(hdcPr, &docInfo);
+} // CPrint::DocumentStart
+
+/**------------------------------------------------------**/
+DWORD CPrint::PageStart(void) { return StartPage(hdcPr); }
+
+/**------------------------------------------------------**/
+DWORD CPrint::PageEnd(void) { return EndPage(hdcPr); }
+
+/**------------------------------------------------------**/
+DWORD CPrint::DocumentAbort(void) { return AbortDoc(hdcPr); }
+
+/**------------------------------------------------------**/
+DWORD CPrint::DocumentEnd(void) {
+   if (!bAbort) DestroyWindow(hDlgAbort);
+   return EndDoc(hdcPr);
+} // CPrint::DocumentEnd
+
+/**------------------------------------------------------**/
+LRESULT CALLBACK AbortDlg(HWND hDlg, UINT msg, WPARAM wParam,
+      LPARAM lParam) {
+   switch(msg) {
+      case WM_INITDIALOG:
+         SetDlgItemText(hDlg, IDC_DOCTITLE, lpDocTitle);
+         return TRUE;
+      case WM_COMMAND:
+         bAbort = TRUE;
+         DestroyWindow(hDlg);
+         hDlgAbort = 0;
+         return TRUE;
+   } return 0;
+} // AbortDlg
+
+/**------------------------------------------------------**/
+BOOL CALLBACK AbortProc(HDC hDC, int iCode) {
+   MSG msg;
+   while (!bAbort && PeekMessage(&msg,NULL,0,0,PM_REMOVE)) {
+      if (!hDlgAbort || !IsDialogMessage(hDlgAbort, &msg)) {
+         TranslateMessage(&msg);
+         DispatchMessage(&msg);
+      }
+   } return !bAbort;
+} // AbortProc
+
+
+
+
+
+
+

@@ -1,0 +1,30 @@
+DH_NAME db 'DRV16   '       ;char device name
+...
+VDD_DllName      db  "SIMPLVDD.DLL", 0
+VDD_InitFunc     db  "VDDInit", 0
+VDD_DispFunc     db  "VDDDispatch", 0
+...
+
+BOOTUP:
+    ...
+    mov  si,offset VDD_DllName  ;load regs for VDD
+    mov  bx,offset VDD_DispFunc
+    mov  di,offset VDD_InitFunc
+    mov  ax,ds
+    mov  es,ax          ;just to be save
+    RegisterModule      ;calls the VDD
+    jnc  save_hVDD      ;if NC then success
+    mov  di,STAT_GF     ;set failure status
+    jmp  EXIT           ;return via common exit
+
+save_hVDD:
+    mov  [VDD_hVDD],ax  ;save handle in ax
+    mov  di,STAT_OK     ;load OK status
+    jmp  EXIT           ;return via common exit
+
+
+
+
+
+
+

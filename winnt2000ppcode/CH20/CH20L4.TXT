@@ -1,0 +1,73 @@
+      include 'mt.fi'
+
+The thread function begins here
+
+      subroutine ThreadFunc (param)
+      include 'mt.fd'
+      integer*4 param, waitResult, WaitForSingleObject
+      integer*4 ThreadCounter
+      integer*4 result, hMutex, hSemaphore, PreviousCount
+      logical*4 release, ReleaseMutex, ReleaseSemaphore
+      common result, hMutex, hSemaphore, ThreadCounter
+
+Mutual Exclusion region begins here
+
+      waitResult = WaitForSingleObject(hMutex, WAIT_INFINITE)
+
+Modifying the global variables
+
+          result = param + result
+          ThreadCounter = ThreadCounter + 1
+
+Release the sempahore if this is the last thread
+
+          if (ThreadCounter .EQ. MAX_THREADS)
+     +         release = ReleaseSemaphore(hSemaphore, 1,
+                                          PreviousCount)
+
+Mutual Exclusion region ends here
+
+      release = ReleaseMutex(hMutex)
+      return
+      end
+
+Main program begins here
+
+      program test
+      include 'mt.fd'
+      external ThreadFunc
+      integer*4 ThreadHandle, threadId
+      integer*4 CreateSemaphore, CreateThread, CreateMutex
+      integer*4 waitResult, WaitForSingleObject
+      integer*4 loop
+      integer*4 result, hMutex, hSemaphore, ThreadCounter
+      integer*4 inarray
+      dimension inarray(MAX_THREADS)
+      common result, hMutex, hSemaphore, ThreadCounter
+
+Initializing the global variables
+
+      ThreadCounter = 0
+      result = 0
+      hMutex = CreateMutex(0, .FALSE. , 0)
+      hSemaphore = CreateSemaphore(0, 0, 1, 0)
+
+      do loop = 1, MAX_THREADS
+         inarray(loop)= loop
+         write(*,*) "Generating Thread #", loop
+         ThreadHandle = CreateThread( 0, 0, ThreadFunc,
+     +         inarray(loop), 0, threadId)
+      end do
+
+      write(*,*) 'Waiting for the semaphore release...'
+      waitResult = WaitForSingleObject(hSemaphore, WAIT_INFINITE)
+      write(*, '(1x, A, I4, A, I8)')
+     +    'The sum of the first ', MAX_THREADS,' #s is', result
+      end
+
+
+
+
+
+
+

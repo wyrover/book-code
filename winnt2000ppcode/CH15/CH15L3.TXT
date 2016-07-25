@@ -1,0 +1,310 @@
+#include "directio.h"
+
+#define MAX_THREADS      9
+#define REMOTE_TRY  100000
+
+extern void thread_local(void), thread_remote(int), thread_client(void);
+extern void Usage(void);
+extern char ServerStatus(char);
+
+PCONTEXT_HANDLE_TYPE phContext[MAX_THREADS];
+HANDLE hthread_client, hthread_remote[MAX_THREADS];
+CRITICAL_SECTION GlobalCriticalSection;
+UCHAR  pszRName[MAX_THREADS][STRING_LENGTH], IsPrime(ULONG TestNumber);
+ULONG IDThrdClient, StartNumber = 1, Notry[MAX_THREADS];
+ULONG PrimeSHandle[MAX_THREADS], NoPrimeRemote[MAX_THREADS];
+ULONG NextNumber = 1, StartTime, CurrTime, NoPrimeLocal, NoPrimeRemoteT;
+WORD Color[TEST_X2-TEST_X1-3], Normal[TEST_X2-TEST_X1-3];
+SMALL_RECT pRectTest = { TEST_X1+1, TEST_Y1+2, TEST_X2-1, TEST_Y2-1 };
+SMALL_RECT pRectPrime = { PRIME_X1+1, PRIME_Y1+2, PRIME_X2-1, PRIME_Y2-1 };
+COORD coordTest = { TEST_X1+1, TEST_Y1+1 };
+COORD coordPrime = { PRIME_X1+1, PRIME_Y1+1 };
+CHAR_INFO pchiFill = { (char)32, WHITE_ON_BLUE };
+COORD ComputTestCoord = { TEST_X2-7, TEST_Y2-1 };
+COORD ComputPrimeCoord = { PRIME_X2-7, PRIME_Y2-1 };
+DWORD dummy;
+int ipszNetAdd = 0, NumThreads, count, i;
+char IsActiveServer[MAX_THREADS], comp_name[STRING_LENGTH];
+handle_t BindHandle[MAX_THREADS];
+
+void _CRTAPI1 main(int argc, char **argv) {
+   RPC_STATUS status;
+   UCHAR *pUuid = NULL, *pProtocolS = "ncacn_np";
+   UCHAR *pOpts = NULL, *pSBind[MAX_THREADS] = { NULL };
+   UCHAR *pNetworkA[MAX_THREADS] = { NULL };
+   UCHAR pEndp[MAX_THREADS][STRING_LENGTH];
+   DWORD Max_CompName_Length = STRING_LENGTH, IDThrd[MAX_THREADS];
+   char tokensep[] = " \t,;", *token;
+   int loop;
+   for(loop = 0; loop < TEST_X2-TEST_X1-3; loop++) {
+      Color[loop]  = RED_ON_BLUE;
+      Normal[loop] = WHITE_ON_BLUE;
+      }
+   for(count = 0; count < MAX_THREADS; count++)
+      strcpy(pEndp[count], "\\pipe\\prime");
+   for(count = 1; count < argc; count++) {
+      if((*argv[count] == '-') || (*argv[count] == '/')) {
+         switch(tolower(*(argv[count]+1))) {
+            case 'p': /* protocol sequence */
+               pProtocolS = argv[++count];
+               break;
+            case 'n': /* network address */
+               token = strtok(argv[++count], tokensep);
+               while(token != NULL) {
+                  pNetworkA[ipszNetAdd] = token;
+                  token = strtok(NULL, tokensep);
+                  strcpy(pszRName[ipszNetAdd],
+                     strupr(&pNetworkA[ipszNetAdd][2]));
+                  pszRName[ipszNetAdd][C_N_LENGTH] = 0;
+                  printf("   (%d) -  %s\n", ipszNetAdd + 1,
+                     pNetworkA[ipszNetAdd]);
+                  ipszNetAdd++;
+                  }
+               printf("\n   Please wait.\n");
+               break;
+            case 'e': /* endpoint */
+               token = strtok(argv[++count], tokensep);
+               while(token != NULL) {
+                  strcpy(pEndp[ipszNetAdd], token);
+                  token = strtok(NULL, tokensep);
+                  printf("%d %s\n", ipszNetAdd, pEndp[ipszNetAdd]);
+                  ipszNetAdd++;
+                  }
+               break;
+            case 'f': /* first number */
+               NextNumber = StartNumber = atol(argv[++count]);
+               break;
+
+            default:
+               Usage();
+            }
+         }
+      else
+         Usage();
+      }
+   if(pNetworkA[0]) {
+      for(i = 0; i < ipszNetAdd; i++) {
+         status = RpcStringBindingCompose(pUuid, pProtocolS, pNetworkA[i],
+            pEndp[i], pOpts, &pSBind[i]);
+         CheckStatus(RpcStringBindingCompose);
+         }
+      /* Set the binding handle that will be used to bind to the server */
+      for(i = 0; i < ipszNetAdd; i++) {
+         status = RpcBindingFromStringBinding(pSBind[i], &BindHandle[i]);
+         CheckStatus(RpcBindingFromStringBinding);
+         }
+      }
+   else {
+      printf("\n\n\tCOMPUTING LOCALLY ONLY!\n\n\tFor Server Specify:\n"); 
+      printf("\t -n network_address (client -n \\\\server1;\\\\server2;..)\n");
+      get_character(WAIT);
+      }
+
+   GetComputerName(comp_name, &Max_CompName_Length);
+   InitializeCriticalSection(&GlobalCriticalSection);
+      for(i = 0; i < ipszNetAdd; i++)
+         ServerStatus((char)i);
+   for(count = 1; count <= ipszNetAdd ; count++)
+      hthread_remote[count-1] = CreateThread(NULL, 0,
+         (LPTHREAD_START_ROUTINE)thread_remote, count, 0, &IDThrd[count-1]);
+   set_vid_mem();
+   clearscreen(BACKGROUND_CYAN);
+   StartTime = GetTickCount();
+   box(0, 0, 79, 24, DOUBLE);
+   mxyputs(37, 0, " CLIENT ", WHITE_ON_CYAN);
+   mxyputs(TEST_X1, 2, "Testing...", WHITE_ON_CYAN);
+   box(TEST_X1, TEST_Y1, TEST_X2, TEST_Y2, SINGLE);
+   mxyputs(PRIME_X1, 2, "Prime!", WHITE_ON_CYAN);
+   box(PRIME_X1, PRIME_Y1, PRIME_X2, PRIME_Y2, SINGLE);
+   mxyputs(32, 23, "Press Esc to exit", WHITE_ON_CYAN);
+   hthread_client = CreateThread(NULL, 0,
+      (LPTHREAD_START_ROUTINE)thread_client, NULL,CREATE_SUSPENDED,
+      &IDThrdClient);
+   SetThreadPriority(hthread_client, THREAD_PRIORITY_NORMAL);
+   ResumeThread(hthread_client);
+   thread_local();
+   DeleteCriticalSection(&GlobalCriticalSection);
+   if(pNetworkA[0])
+      for(count = 0; count < ipszNetAdd; count++)
+         if(RpcStringFree(&pSBind[count]))
+            exit(ERROR_EXIT);
+   exit(SUCCESS_EXIT);
+   }
+
+void thread_local(void) {
+   ULONG temp;
+   char Buffer[STRING_LENGTH];
+   while(1) {
+      EnterCriticalSection(&GlobalCriticalSection);
+      if((temp = ++NextNumber) >= ULONG_MAX)
+         break;
+      ScrollConsoleScreenBuffer(hStdOut, &pRectTest, NULL, coordTest,
+         &pchiFill);
+      PutString(TEST_X1+2, TEST_Y2-1, WHITE_ON_BLUE, "%d", temp-1, "");
+      WriteConsoleOutputAttribute(hStdOut, Normal, 7, ComputTestCoord,
+         &dummy);
+      mxyputs((UCHAR)(TEST_X2-7), (UCHAR)TEST_Y2-1, "LOCAL ", WHITE_ON_BLUE);
+      LeaveCriticalSection(&GlobalCriticalSection);
+      if(IsPrime(temp - 1) != 0) {
+         EnterCriticalSection(&GlobalCriticalSection);
+         ScrollConsoleScreenBuffer(hStdOut, &pRectPrime, NULL, coordPrime,
+            &pchiFill);
+         PutString(PRIME_X1+2, PRIME_Y2-1, WHITE_ON_BLUE, "%-17d", temp-1, "");
+         WriteConsoleOutputAttribute(hStdOut, Normal, 7, ComputPrimeCoord,
+            &dummy);
+         mxyputs((UCHAR)(PRIME_X2-7), (UCHAR)PRIME_Y2-1, "LOCAL ",
+            WHITE_ON_BLUE);
+         LeaveCriticalSection(&GlobalCriticalSection);
+         NoPrimeLocal++;
+         }
+      }
+   }
+
+void thread_remote(int count) {
+   ULONG temp;
+   char Buffer[STRING_LENGTH];
+   while(1) {
+      if(!IsActiveServer[count-1]) {
+         if(Notry[count-1]++ > REMOTE_TRY) {
+            mxyputs((UCHAR)10, (UCHAR)21,
+               "Attempting to connect to Prime Server:", WHITE_ON_CYAN);
+            mxyputs((UCHAR)49, (UCHAR)21,pszRName[count-1], WHITE_ON_CYAN);
+            Notry[count - 1] = 0;
+            EnterCriticalSection(&GlobalCriticalSection);
+            ServerStatus((char)(count - 1));
+            LeaveCriticalSection(&GlobalCriticalSection);
+            mxyputc(10, (UCHAR)(21), (char)32, 48, CYAN_ON_CYAN);
+            }
+         else
+            continue;
+         }
+
+      if(!IsActiveServer[count-1])
+         continue;
+      EnterCriticalSection(&GlobalCriticalSection);
+      if((temp = ++NextNumber) >= ULONG_MAX)
+         break;
+      ScrollConsoleScreenBuffer(hStdOut, &pRectTest, NULL, coordTest,
+         &pchiFill);
+      PutString(TEST_X1+1, TEST_Y2-1, RED_ON_BLUE," %-17d", temp-1, "");
+      WriteConsoleOutputAttribute(hStdOut, Color, 7, ComputTestCoord,
+         &dummy);
+      mxyputs((UCHAR)(TEST_X2-7), (UCHAR)TEST_Y2-1, pszRName[count-1],
+         RED_ON_BLUE);
+      LeaveCriticalSection(&GlobalCriticalSection);
+      RpcTryExcept {
+         if(RemoteIsPrime(BindHandle[count-1], PrimeSHandle[count-1],
+               temp - 1) != 0) {
+            EnterCriticalSection(&GlobalCriticalSection);
+            ScrollConsoleScreenBuffer(hStdOut, &pRectPrime, NULL,
+               coordPrime, &pchiFill);
+            PutString(PRIME_X1+1, PRIME_Y2-1, RED_ON_BLUE, " %-17d", temp-1, "");
+            WriteConsoleOutputAttribute(hStdOut, Color, 7, ComputPrimeCoord,
+               &dummy);
+            mxyputs((UCHAR)(PRIME_X2-7), (UCHAR)PRIME_Y2-1,
+               pszRName[count-1], RED_ON_BLUE);
+            LeaveCriticalSection(&GlobalCriticalSection);
+            NoPrimeRemote[count-1]++;
+            NoPrimeRemoteT++;
+            }
+         }
+      RpcExcept(1) {
+         EnterCriticalSection(&GlobalCriticalSection);
+         ServerStatus((char)(count - 1));
+         LeaveCriticalSection(&GlobalCriticalSection);
+         }
+      RpcEndExcept
+      }
+   }
+
+UCHAR IsPrime(ULONG TestNumber) {
+   ULONG count, HalfNumber = TestNumber / 2 + 1;
+   for(count = 2; count < HalfNumber; count++)
+      if(TestNumber % count == 0)
+         return NOT_PRIME;
+   return PRIME;
+   }
+
+void Usage(void) {
+   printf("Usage: CLIENT\n");
+   printf(" -p protocol_sequence\n");
+   printf(" -n network_address (\\\\server1;\\\\server2;...\n");
+   printf(" -e endpoint\n");
+   printf(" -f first number\n");
+   exit(1);
+   }
+
+char ServerStatus(char iserver) {
+   char value = FALSE;
+   RpcTryExcept {
+      PrimeSHandle[iserver] = InitPServer(BindHandle[iserver],
+         &phContext[iserver], comp_name);
+      IsActiveServer[iserver] = TRUE;
+      }
+   RpcExcept(1) {
+      value = TRUE;
+      IsActiveServer[iserver] = FALSE;
+      }
+   RpcEndExcept
+   return value;
+   }
+
+void thread_client(void) {
+   UCHAR no_active = 0;
+   while(1) {
+      char Buffer[STRING_LENGTH];
+      int i;
+      if(VK_ESCAPE == get_character(NO_WAIT)) {
+         EnterCriticalSection(&GlobalCriticalSection);
+         Sleep(WAIT);
+         for(i = 0; i < ipszNetAdd; i++) {
+            RpcTryExcept {
+               TerminatePServer(BindHandle[i], PrimeSHandle[i]);
+               }
+            RpcExcept(1) {
+               clearscreen(0);
+               exit(0);
+               }
+            RpcEndExcept
+            }
+         clearscreen(0);
+         exit(0);
+         LeaveCriticalSection(&GlobalCriticalSection);
+         }
+      mxyputs(58, 2, "Number of Primes", WHITE_ON_CYAN);
+      PutString(60, 4, WHITE_ON_CYAN, "%s:%5d", "LOCAL  ", NoPrimeLocal);
+      EnterCriticalSection(&GlobalCriticalSection);
+      for(no_active = i = 0; i < ipszNetAdd; i++)
+         if(IsActiveServer[i])
+               PutString(59, 5+no_active++, RED_ON_CYAN, " %7s:%5d ",
+                           pszRName[i], NoPrimeRemote[i]);
+      box(58, 3, 74, (UCHAR)(5+no_active), SINGLE);
+      mxyputc(58, (UCHAR)(6+no_active), (char)32, 17, CYAN_ON_CYAN);
+      for(no_active = i = 0; i < ipszNetAdd; i++)
+         if(!IsActiveServer[i])
+               PutString(59, 19+no_active++, RED_ON_CYAN," %7s:%5d ",
+                            pszRName[i], NoPrimeRemote[i]);
+      if(no_active) {
+         mxyputs(58, (UCHAR)(17), "Inactive Servers", WHITE_ON_CYAN);
+         box(58, (UCHAR)(18), 74, (UCHAR)(19+no_active), SINGLE);
+         mxyputc(58, (UCHAR)(20 + no_active), (char)32, 17, CYAN_ON_CYAN);
+         }
+      else
+         for(i = 0; i < 5; i++)
+            mxyputc(58, (UCHAR)(17+no_active+i), (char)32, 17, CYAN_ON_CYAN);
+      LeaveCriticalSection(&GlobalCriticalSection);
+      CurrTime = (GetTickCount() - StartTime) / 1000;
+      PutString(58, 7+ipszNetAdd, WHITE_ON_CYAN, "Primes =  %d",
+         NoPrimeLocal+NoPrimeRemoteT, "");
+      PutString(58, 8+ipszNetAdd, WHITE_ON_CYAN, "Time = %d.%02d min.",
+         CurrTime/60, CurrTime%60);
+      PutString(58, 9+ipszNetAdd, WHITE_ON_CYAN, "First = %d", StartNumber, "");
+      }
+   }
+
+
+
+
+
+
+

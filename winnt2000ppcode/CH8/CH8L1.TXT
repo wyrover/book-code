@@ -1,0 +1,74 @@
+#ifndef CWOBJ_H
+#define CWOBJ_H
+
+#define STRICT
+#include <windows.h>
+
+typedef void *p_void;
+
+#define MAX_PATH 80
+typedef char path_str[MAX_PATH + 1];
+
+class object_list {
+   public:
+   p_void *the_list;
+   int item_count;
+   int max_count;
+   object_list (int max_items);
+   virtual int add_item (void *item_addr);
+   virtual int insert_item (int index,void *item_addr);
+   virtual void *at(int index);
+   virtual int get_count ();
+   virtual void delete_item (int index);
+   virtual ~object_list (); };
+typedef struct {
+   object_list *item_collection;
+   int selected_item;
+   } tlist_box_data;
+
+#define MAX_DISPLAY_LEN 80
+
+enum tdata_type {STR_DATA,PATH_DATA,COLOR_DATA};
+
+class tdata_obj {
+   public:
+   void * value_addr;
+   char * descr_addr;
+   int item_no;
+   tdata_obj (char * the_descr,void * value_ptr, int the_item_no)
+     {descr_addr = the_descr;
+     value_addr = value_ptr;
+     item_no = the_item_no; } };
+
+void build_display_str (tdata_type data_type,void
+       *descr_addr,void *value_addr,int display_len,
+       int maxlen,char *the_string);
+
+class ttyped_data_obj: public tdata_obj {
+   public:
+   char display_str[MAX_DISPLAY_LEN + 1];
+   tdata_type data_type;
+   unsigned short display_len;
+   char * wild_str;
+   ttyped_data_obj (char * the_descr, void * value_ptr,
+      tdata_type the_type, unsigned short the_len, char * the_wild_str,
+      int the_item_no) : tdata_obj (the_descr, value_ptr,the_item_no) {
+    data_type = the_type;
+    display_len = the_len;
+    if (display_len > MAX_DISPLAY_LEN)
+        display_len = MAX_DISPLAY_LEN;
+    wild_str = the_wild_str;
+    build_display_str (the_type,the_descr, value_ptr,the_len,
+     MAX_DISPLAY_LEN,display_str); }
+   virtual char *get_display_str
+    (int maxlen = MAX_DISPLAY_LEN);
+   virtual void get_new_value (HWND parent,
+      int max_display_len = MAX_DISPLAY_LEN); };
+#endif
+
+
+
+
+
+
+

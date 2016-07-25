@@ -1,0 +1,32 @@
+#
+#   Borland Make file
+#
+
+all: test.exe
+
+!if !$d(BCROOT)
+ BCROOT = $(MAKEDIR)\..
+!endif
+
+LIBS   = cw32 import32
+LIBDIR = $(BCROOT)\lib
+INCDIR = $(BCROOT)\include
+
+!ifndef NODEBUG
+CFLAGS = -c -H -v -WC -I$(INCDIR)
+LFLAGS = -Tpe -ap -v -s -L$(LIBDIR)
+!else
+CFLAGS = -c -H -WC -I$(INCDIR)
+LFLAGS = -Tpe -ap -L$(LIBDIR)
+!endif
+
+.obj.exe:
+    tlink32 $(LFLAGS) c0x32 $&,\
+        $&,\
+        ,\
+        $(LIBS),\
+        ,\
+
+.c.obj:
+    bcc32 $(CFLAGS) $&.c
+

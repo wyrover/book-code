@@ -1,0 +1,21 @@
+/******  TEST32.RC - resource file for TEST32.EXE *****/
+
+#include <windows.h>
+#include "test32.h"
+
+DISPLAY_DLG DIALOG 40, 40, 140, 64
+STYLE WS_POPUP | DS_MODALFRAME | WS_VISIBLE | WS_CAPTION
+CAPTION "HP Scanner Test32"
+BEGIN
+   CONTROL "Device Type:", IDNULL, "static", 
+       SS_LEFT | WS_CHILD, 20, 12, 70, 8
+   CONTROL "", ID_SCSIINQ, "static", 
+       SS_LEFT | WS_CHILD, 92, 12, 40, 8
+   CONTROL "HP Scanner Model #:", IDNULL, "static", 
+      SS_LEFT | WS_CHILD, 20, 24, 70, 8
+   CONTROL "", ID_MODELNUM, "static", 
+      SS_LEFT | WS_CHILD, 92, 24, 40, 8
+   CONTROL "&OK", IDOK, "button", BS_DEFPUSHBUTTON | 
+      WS_TABSTOP | WS_CHILD, 50, 42, 40, 14
+END
+

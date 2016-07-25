@@ -1,0 +1,49 @@
+// ****************************************************************************
+//
+// Module:  ipcevent.h
+// Author:  Dick Lam
+//
+// Purpose: C++ class header file for ipcEventSemaphore
+//
+// Notes:  This class is derived from ipcSemaphore.  It is an interface class
+//         for event semaphores that can be used to signal events across
+//         processes or threads.
+//
+// ****************************************************************************
+
+#ifndef MODULE_ipcEventSemaphoreh
+#define MODULE_ipcEventSemaphoreh
+
+#include "ipcsem.h"
+
+// class declaration
+class EXPORT ipcEventSemaphore : public ipcSemaphore {
+
+public:
+
+   // constructor and destructor
+   ipcEventSemaphore(const char *name, ipcSemaphoreOp operation = semcreate);
+   virtual ~ipcEventSemaphore();
+
+   // query method for number of requests made
+   virtual unsigned long Query();
+
+   // post, reset and wait methods
+   virtual void Post();
+   virtual void Reset();
+   virtual void Wait();
+
+private:
+
+   // private copy constructor and operator= (define these and make them
+   // public to enable copy and assignment of the class)
+   ipcEventSemaphore(const ipcEventSemaphore&);
+   ipcEventSemaphore& operator=(const ipcEventSemaphore&);
+
+};
+
+#endif
+
+// ****************************************************************************
+
+// end of ipcevent.h

@@ -1,0 +1,181 @@
+//  NTPRINT.CPP    Windows NT, MS Visual C/C++ (32-bit) 1.1
+#include <windows.h>
+#include "ntprint.h"
+#include "cprint.h"
+#include "cform.h"
+
+HINSTANCE hInst;                       // app instance
+char szAppName[] = "NTPrintSample";    // app name
+char lpName[] = "Index Card";          // new form name
+char lpString[128], lpStr1[128];       // temp strings
+CPrinterForm form;                     // form object
+
+/**------------------------------------------------------**/
+int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE
+      hPrevInstance, LPSTR lpCmdLine, int nCmdShow) {
+   MSG msg;
+   lpCmdLine;  // just to avoid an unused formal parameter
+   if (!InitApplication(hInstance, nCmdShow)) return FALSE;
+   while (GetMessage(&msg, NULL, 0, 0)) {
+      TranslateMessage(&msg);
+      DispatchMessage(&msg);
+   } return msg.wParam;
+} // WinMain
+
+/**------------------------------------------------------**/
+BOOL InitApplication(HINSTANCE hInstance, int nCmdShow) {
+   HWND hWnd;
+   WNDCLASS  wc;
+   wc.style = CS_HREDRAW | CS_VREDRAW;
+   wc.lpfnWndProc = (WNDPROC)WndProc;
+   wc.cbClsExtra = wc.cbWndExtra = 0;
+   wc.hInstance = hInstance;
+   wc.hIcon = LoadIcon(NULL, IDI_APPLICATION);
+   wc.hCursor = LoadCursor(NULL, IDC_ARROW);
+   wc.hbrBackground = (HBRUSH)(COLOR_WINDOW+1);
+   wc.lpszMenuName = wc.lpszClassName = szAppName;
+   if (!RegisterClass(&wc)) return FALSE;
+   hInst = hInstance;
+   if (!(hWnd = CreateWindow(szAppName,
+      "Sample NT Printing Application", WS_OVERLAPPEDWINDOW,
+      CW_USEDEFAULT, 0, CW_USEDEFAULT, 0, NULL, NULL,
+      hInstance, NULL))) return FALSE;
+   ShowWindow(hWnd, nCmdShow);
+   UpdateWindow(hWnd);
+   return TRUE;
+} // InitApplication
+
+/**------------------------------------------------------**/
+LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM uParam,
+      LPARAM lParam) {
+   switch (msg) {
+      case WM_COMMAND:
+         switch (LOWORD(uParam)) {
+            case IDM_PRINT:
+               DWORD dwThreadID;
+               CloseHandle(CreateThread(NULL, 0,
+                  (LPTHREAD_START_ROUTINE)PrintingThread,
+                  (LPVOID)hWnd, 0, &dwThreadID));
+               break;
+            case IDM_PRINTSETUP: {
+               CPrint print(hWnd, "Document.plt");
+               print.PrinterSetupDialog();
+               } break;
+            case IDM_ENUMFORMS:
+               DialogBox(hInst, "DlgForms", hWnd,
+                  (DLGPROC)EnumDlgProc);
+               break;
+            case IDM_ADDFORM:
+               form.Add(lpName,76200,127000,0,0,76200,127000);
+               break;
+
+            case IDM_CHANGEFORM:
+               form.Set(lpName,127000,177800,0,0,127000,177800);
+               break;
+            case IDM_DELETEFORM:
+               form.Delete(lpName);
+               break;
+            case IDM_EXIT:
+               DestroyWindow (hWnd);
+               break;
+            default:
+               return DefWindowProc(hWnd, msg, uParam, lParam);
+         } break;
+      case WM_PAINT: {
+         PAINTSTRUCT ps;
+         HDC hDC = BeginPaint(hWnd, &ps);
+         DrawOnSurface(hDC, hWnd, (float)1, (float)1);
+         EndPaint(hWnd, &ps);
+         } break;
+      case WM_DESTROY:
+         PostQuitMessage(0);
+         break;
+      default:
+         return DefWindowProc(hWnd, msg, uParam, lParam);
+   } return 0;
+} // WndProc
+
+/**------------------------------------------------------**/
+void DrawOnSurface(HDC hDC, HWND hWnd, float sx, float sy) {
+   BITMAP bm;
+   COLORADJUSTMENT ca;
+   HDC hdc = GetDC(hWnd);
+   HANDLE hMemDC = CreateCompatibleDC(hdc);
+   ReleaseDC(hWnd, hdc);
+   HANDLE hBmp = LoadBitmap(hInst, MAKEINTRESOURCE(IDB_WINLOGO));
+   SelectObject(hMemDC, hBmp);
+   GetObject(hBmp, sizeof(BITMAP), (LPSTR)&bm);
+   HPALETTE hPal = CreateHalftonePalette(hDC);
+   SelectPalette(hDC, hPal, TRUE);
+   RealizePalette(hDC);
+   GetColorAdjustment(hDC, (LPCOLORADJUSTMENT)&ca);
+   ca.caBrightness = 50;
+   SetColorAdjustment(hDC, (LPCOLORADJUSTMENT)&ca);
+   StretchBlt(hDC, 0, 0, (int)((float)bm.bmWidth * sx),
+      (int)((float)bm.bmHeight * sy), hMemDC, 0,0, bm.bmWidth,
+      bm.bmHeight, SRCCOPY);
+   DeleteDC(hMemDC);
+   DeleteObject(hBmp);
+} // DrawOnSurface
+
+/**------------------------------------------------------**/
+void PrintingThread(LPVOID hWnd) {
+   CPrint print(hWnd, "Document.plt");
+   HDC hPDC, hDC;
+   float fx1, fx2, fy1, fy2, fsx, fsy;
+   if (!(hPDC = print.PrintDialog())) return;
+   if (!(GetDeviceCaps(hPDC, RASTERCAPS) & RC_BITBLT)) return;
+   hDC = GetDC(hWnd);
+   fx1 = (float)GetDeviceCaps(hDC, LOGPIXELSX);
+   fy1 = (float)GetDeviceCaps(hDC, LOGPIXELSY);
+   fx2 = (float)GetDeviceCaps(hPDC, LOGPIXELSX);
+   fy2 = (float)GetDeviceCaps(hPDC, LOGPIXELSX);
+   if (fx1 > fx2) fsx = (fx1/fx2);
+   else fsx = (fx2/fx1);
+   if (fy1 > fy2) fsy = (fy1/fy2);
+   else fsy = (fy2/fy1);
+   ReleaseDC(hWnd, hDC);
+   print.DocumentStart(hInst);
+   print.PageStart();
+   DrawOnSurface(hPDC, hWnd, fsx, fsy);
+   print.PageEnd();
+   print.DocumentEnd();
+} // PrintingThread
+
+/**------------------------------------------------------**/
+LRESULT CALLBACK EnumDlgProc(HWND hDlg, UINT msg,
+      WPARAM wParam, LPARAM lParam) {
+   long i, dx, dy, lf, tp, rt, bt;
+   switch (msg) {
+      case WM_INITDIALOG:
+         for (i = 0; (DWORD)i < form.dwForms; i++) {
+            form.Enumerate((DWORD)i, lpString);
+            SendDlgItemMessage(hDlg, IDC_FORMS, LB_ADDSTRING,
+               0, (int)(LPSTR)lpString);
+         } return TRUE;
+      case WM_COMMAND:
+         switch (LOWORD(wParam)) {
+            case IDC_FORMS:
+               if (HIWORD(wParam) == LBN_DBLCLK) {
+                  i = SendDlgItemMessage(hDlg, IDC_FORMS,
+                     LB_GETCURSEL, 0, 0);
+                  SendDlgItemMessage(hDlg, IDC_FORMS,
+                     LB_GETTEXT, i, (int)(LPSTR)lpString);
+               form.Get(lpString, &dx, &dy, &lf, &tp, &rt, &bt);
+               wsprintf(lpStr1, "Form: %s\nWd: %ld\nHt: %ld",
+                  lpString, dx, dy);
+               MessageBox(hDlg, lpStr1, "Get Form Info", MB_OK);
+             } return TRUE;
+          case IDOK:
+             EndDialog (hDlg, TRUE);
+             return TRUE;
+      } break;
+  } return FALSE;
+}  // EnumDlgProc
+
+
+
+
+
+
+

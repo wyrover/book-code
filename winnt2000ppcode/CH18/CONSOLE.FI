@@ -1,0 +1,627 @@
+C File: CONSOLE.FI
+C Provides interface statements for the Win32 Console API
+
+      interface to logical*4 function AllocConsole
+     +    [stdcall, alias:'_AllocConsole@']
+      end
+
+      interface to integer*4 function CreateConsoleScreenBuffer
+     +    [stdcall, alias:'_CreateConsoleScreenBuffer@']
+     +    (fdwAccess, fdwShareMode, lpsa, fdwType, pvReserved)
+      integer*4 fdwAccess[value]
+      integer*4 fdwShareMode[value]
+      integer*4 lpsa[value]  ! Need to use LOC
+      integer*4 fdwType[value]
+      integer*4 pvReserved[value]
+      end
+
+      interface to logical*4 function FillConsoleOutputAttribute
+     +    [stdcall, alias:'_FillConsoleOutputAttribute@']
+     +    (hConsole, wAttribute, cCharCells, coordAttr, lpcWritten)
+      integer*4 hConsole[value]
+      integer*2 wAttribute[value]
+      integer*4 cCharCells[value]
+      structure /COORD/
+        integer*2 x
+        integer*2 y
+      end structure
+      record /COORD/ coordAttr[value]
+      integer*4 lpcWritten[reference]
+      end
+
+      interface to logical*4 function FillConsoleOutputCharacter
+     +    [stdcall, alias:'_FillConsoleOutputCharacterA@']
+     +    (hConsole, chFillChar,cCharCells,coordChar,lpcWritten)
+      integer*4 hConsole[value]
+      integer*1 chFillChar[value]
+      integer*4 cCharCells[value]
+      structure /COORD/
+        integer*2 x
+        integer*2 y
+      end structure
+      record /COORD/ coordChar[value]
+      integer*4 lpcWritten[reference]
+      end
+
+      interface to logical*4 function FlushConsoleInputBuffer
+     +    [stdcall, alias:'_FlushConsoleInputBuffer@']
+     +    (hConsoleInput)
+      integer*4 hConsoleInput[value]
+      end
+
+      interface to logical*4 function FreeConsole
+     +    [stdcall, alias:'_FreeConsole@']
+      end
+
+      interface to logical*4 function GenerateConsoleCtrlEvent
+     +    [stdcall, alias:'_GenerateConsoleCtrlEvent@']
+     +    (fdwEvent, IDProcessGroup)
+      integer*4 fdwEvent[value]
+      integer*4 IDProcessGroup[value]
+      end
+
+      interface to integer*4 function GetConsoleCP
+     +    [stdcall, alias:'_GetConsoleCP']
+      end
+
+      interface to logical*4 function GetConsoleCursorInfo
+     +    [stdcall, alias:'_GetConsoleCursorInfo@']
+     +    (hConsoleOutput, pcci)
+      integer*4 hConsoleOutput[value]
+      structure /CONSOLE_CURSOR_INFO/
+        integer*4  dwSize
+        logical*4  bVisible
+      end structure
+      record /CONSOLE_CURSOR_INFO/ pcci[reference]
+      end
+
+      interface to logical*4 function GetConsoleMode
+     +    [stdcall, alias:'_GetConsoleMode@']
+     +    (hConsole, lpfdwMode)
+      integer*4 hConsole[value]
+      integer*4 lpfdwMode[reference]
+      end
+
+      interface to integer*4 function GetConsoleOutputCP
+     +    [stdcall, alias:'_GetConsoleOutputCP@']
+      end
+
+      interface to logical*4 function GetConsoleScreenBufferInfo
+     +    [stdcall, alias:'_GetConsoleScreenBufferInfo@']
+     +    (hConsoleOutput, pcsbi)
+      integer*4 hConsoleOutput[value]
+      structure /COORD/
+        integer*2 x
+        integer*2 y
+      end structure
+      structure /SMALL_RECT/
+        integer*2 Left
+        integer*2 Top
+        integer*2 Right
+        integer*2 Bottom
+      end structure ! SMALL_RECT
+      structure/CONSOLE_SCREEN_BUFFER_INFO/
+        record /COORD/ dwSize
+        record /COORD/ dwCursorPosition
+        integer*2 wAttributes
+        record /SMALL_RECT/ srWindow
+        record /COORD/ dwMaximumWindowSize
+      end structure ! CONSOLE_SCREEN_BUFFER_INFO
+      record /CONSOLE_SCREEN_BUFFER_INFO/ pcsbi[reference]
+      end
+
+
+      interface to integer*4 function GetConsoleTitle
+     +    [stdcall, alias:'_GetConsoleTitleA@']
+     +    (lpszTitle, cchTitle)
+      character*(*) lpszTitle[reference]
+      integer*4     cchTitle[value]
+      end
+
+      interface to logical*4 function GetNumberOfConsoleInputEvents
+     +    [stdcall, alias:'_GetNumberOfConsoleInputEvents@'] 
+     +    (hConsoleInput, lpcNumberOfEvents)
+      integer*4 hConsoleInput[value]
+      integer*4 lpcNumberOfEvents[reference]
+      end
+
+      interface to logical*4 function GetNumberOfConsoleMouseButtons
+     +    [stdcall, alias:'_GetNumberOfConsoleMouseButtons@']      
+     +    (lpcMouseButtons)
+      integer*4 lpcMouseButtons[reference]
+      end
+
+      interface to integer*4 function GetStdHandle
+     +    [stdcall, alias:'_GetStdHandle@4']
+     +    (fdwDevice)
+      integer*4 fdwDevice[value]                       
+      end
+      
+      interface to logical*4 function HandlerRoutine
+     +    [stdcall, alias:'_HandlerRoutine@']
+     +    (dwCtrlType)
+      integer*4 dwCtrlType[value]
+      end
+
+      interface to logical*4 function PeekConsoleInput
+     +    [stdcall, alias:'_PeekConsoleInput@']
+     +    (hConsoleInput, pirBuffer, cInRecords, lpcRead)
+      integer*4 hConsoleInput[value]
+      structure /COORD/
+        integer*2 x
+        integer*2 y
+      end structure
+      structure /KEY_EVENT_RECORD/
+        logical*4 bKeyDown
+        integer*2 wRepeatCount
+        integer*2 wVirtualKeyCode
+        integer*2 wVirtualScanCode
+        union
+          map
+            integer*2 UnicodeChar
+          end map
+          map
+            integer*1 AsciiChar
+          end map
+        end union
+        integer*4 dwControlKeyState
+      end structure ! KEY_EVENT_RECORD
+      structure /MOUSE_EVENT_RECORD/
+        record /COORD/ dwMousePosition
+        integer*4 dwButtonState
+        integer*4 dwControlKeyState
+        integer*4 dwEventFlags
+      end structure ! MOUSE_EVENT_RECORD
+      structure /WINDOW_BUFFER_SIZE_RECORD/
+        record /COORD/ dwSize
+      end structure ! WINDOW_BUFFER_SIZE_RECORD
+      structure /MENU_EVENT_RECORD/
+        integer*4 dwCommandId
+      end structure ! MENU_EVENT_RECORD
+      structure /FOCUS_EVENT_RECORD/
+        logical*4 bSetFocus
+      end structure ! FOCUS_EVENT_RECORD
+      structure /EVENTS/ 
+        union
+          map
+             record /KEY_EVENT_RECORD/ KeyEvent
+          end map
+          map
+            record /MOUSE_EVENT_RECORD/ MouseEvent
+          end map
+          map
+            record /WINDOW_BUFFER_SIZE_RECORD/ WindowBufferSizeEvent
+          end map
+          map
+            record /MENU_EVENT_RECORD/ MenuEvent
+          end map
+          map
+            record /FOCUS_EVENT_RECORD/ FocusEvent
+          end map
+        end union
+      end structure ! EVENTS
+      structure /INPUT_RECORD/
+        integer*2 EventType
+        record /EVENTS/ Event
+      end structure ! INPUT_RECORD
+      record /INPUT_RECORD/ pirBuffer[reference]
+      integer*4 cInRecords[value]
+      integer*4 lpcRead[reference]
+      end
+
+      interface to logical*4 function ReadConsole
+     +    [stdcall, alias:'_ReadConsoleA@'] 
+     +    (hConsoleInput, lpvBuffer, cchToRead, lpcchRead, lpvReserved)
+      integer*4 hConsoleInput[value]
+      integer*4 lpvBuffer[value]  ! Need LOC
+      integer*4 cchToRead[value]
+      integer*4 lpcchRead[reference]
+      integer*4 lpvReserved[value]    ! Must be NULL
+      end
+
+      interface to logical*4 function ReadConsoleInput
+     +    [stdcall, alias:'_ReadConsoleInputA@'] 
+     +    (hConsoleInput, pirBuffer, cInRecords, lpcRead)
+      integer*4 hConsoleInput[value]
+      structure /COORD/
+        integer*2 x
+        integer*2 y
+      end structure
+      structure /KEY_EVENT_RECORD/
+        logical*4 bKeyDown
+        integer*2 wRepeatCount
+        integer*2 wVirtualKeyCode
+        integer*2 wVirtualScanCode
+        union
+          map
+            integer*2 UnicodeChar
+          end map
+          map
+            integer*1 AsciiChar
+          end map
+        end union
+        integer*4 dwControlKeyState
+      end structure ! KEY_EVENT_RECORD
+      structure /MOUSE_EVENT_RECORD/
+        record /COORD/ dwMousePosition
+        integer*4 dwButtonState
+        integer*4 dwControlKeyState
+        integer*4 dwEventFlags
+      end structure ! MOUSE_EVENT_RECORD
+      structure /WINDOW_BUFFER_SIZE_RECORD/
+        record /COORD/ dwSize
+      end structure ! WINDOW_BUFFER_SIZE_RECORD
+      structure /MENU_EVENT_RECORD/
+        integer*4 dwCommandId
+      end structure ! MENU_EVENT_RECORD
+      structure /FOCUS_EVENT_RECORD/
+        logical*4 bSetFocus
+      end structure ! FOCUS_EVENT_RECORD
+      structure /EVENTS/ 
+        union
+          map
+             record /KEY_EVENT_RECORD/ KeyEvent
+          end map
+          map
+            record /MOUSE_EVENT_RECORD/ MouseEvent
+          end map
+          map
+            record /WINDOW_BUFFER_SIZE_RECORD/ WindowBufferSizeEvent
+          end map
+          map
+            record /MENU_EVENT_RECORD/ MenuEvent
+          end map
+          map
+            record /FOCUS_EVENT_RECORD/ FocusEvent
+          end map
+        end union
+      end structure ! EVENTS
+      structure /INPUT_RECORD/
+        integer*2 EventType
+        record /EVENTS/ Event
+      end structure ! INPUT_RECORD
+      record /INPUT_RECORD/ pirBuffer[reference]
+      integer*4 cInRecords[value]
+      integer*4 lpcRead[reference]
+      end
+
+      interface to logical*4 function ReadConsoleOutputAttribute
+     +    [stdcall, alias:'_ReadConsoleOutputAttribute@'] 
+     +    (hConsoleOutput, lpwAttribute, 
+     +     cReadCells, coordReadCoord, lpcNumberRead)
+      integer*4 hConsoleOutput[value]
+      integer*2 lpwAttribute[reference](1) ! Array
+      integer*4 cReadCells[value]
+      structure /COORD/
+        integer*2 x
+        integer*2 y
+      end structure
+      record /COORD/ coordReadCoord[value]
+      integer*4 lpcNumberRead[reference] 
+      end
+
+      interface to logical*4 function ReadConsoleOutputCharacter
+     +    [stdcall, alias:'_ReadConsoleOutputCharacterA@'] 
+     +    (hConsoleOutput, lpReadBuffer, cchRead, 
+     +     coordReadCoord, lpcNumberRead)
+      integer*4 hConsoleOutput[value]
+      character*(*) lpReadBuffer[reference] 
+      integer*4 cchRead[value]
+      structure /COORD/
+        integer*2 x
+        integer*2 y
+      end structure
+      record /COORD/ coordReadCoord[value]
+      integer*4 lpcNumberRead[reference]
+      end
+
+      interface to logical*4 function ScrollConsoleScreenBuffer
+     +    [stdcall, alias:'_ScrollConsoleScreenBuffer@'] 
+     +    (hConsoleOutput, psrctSourceRect, 
+     +     psrctClipRect, coordDestOrigin, pchiFill)
+      integer*4 hConsoleOutput[value]
+      structure /SMALL_RECT/
+        integer*2 Left
+        integer*2 Top
+        integer*2 Right
+        integer*2 Bottom
+      end structure
+      record /SMALL_RECT/ psrctSourceRect[reference]
+      record /SMALL_RECT/ psrctClipRect[reference]
+      structure /COORD/
+        integer*2 x
+        integer*2 y
+      end structure
+      record /COORD/ coordDestOrigin[value]
+      structure /CHAR_INFOU/
+      union
+        map
+          integer*2 UnicodeChar
+        end map
+        map
+          integer*1 AsciiChar
+        end map
+      end union
+      end structure ! CHAR_INFOU
+      structure /CHAR_INFO/
+        record /CHAR_INFOU/ Char
+        integer*2 Attributes
+      end structure ! CHAR_INFO
+      record /CHAR_INFO/ pchiFill[reference]
+      end
+
+      interface to logical*4 function SetConsoleActiveScreenBuffer
+     +    [stdcall, alias:'_SetConsoleActiveScreenBuffer@'] 
+     +    (hConsoleOutput)
+      integer*4 hConsoleOutput[value]
+      end
+
+      interface to logical*4 function SetConsoleCP
+     +    [stdcall, alias:'_SetConsoleCP@']
+     +    (IDCodePage)
+      integer*4 IDCodePage[value]
+      end
+
+      interface to logical*4 function SetConsoleCtrlHandler
+     +    [stdcall, alias:'_SetConsoleCtrlHandler@']
+     +    (pHandlerRoutine, fAdd)
+      external pHandlerRoutine
+      logical*4 fAdd[value]
+      end
+
+      interface to logical*4 function SetConsoleCursorInfo
+     +    [stdcall, alias:'_SetConsoleCursorInfo@']
+     +    (hConsoleOutput, pcci)
+      integer*4 hConsoleOutput[value]
+      structure /CONSOLE_CURSOR_INFO/
+        integer*4  dwSize
+        logical*4  bVisible
+      end structure
+      record /CONSOLE_CURSOR_INFO/ pcci[reference]
+      end
+
+      interface to logical*4 function SetConsoleCursorPosition
+     +    [stdcall, alias:'_SetConsoleCursorPosition@'] 
+     +    (hConsoleOutput, coordCursor)
+      integer*4 hConsoleOutput[value]
+      structure /COORD/
+        integer*2 x
+        integer*2 y
+      end structure
+      record /COORD/ coordCursor[value]
+      end
+
+      interface to logical*4 function SetConsoleMode
+     +    [stdcall, alias:'_SetConsoleMode@']
+     +    (hConsole, fdwMode)
+      integer*4 hConsole[value]
+      integer*4 fdwMode[value]
+      end
+c third group of 10 stops here
+
+      interface to logical*4 function SetConsoleOutputCP
+     +    [stdcall, alias:'_SetConsoleOutputCP@']
+     +    (IDCodePage)
+      integer*4 IDCodePage[value]
+      end
+
+      interface to logical*4 function SetConsoleScreenBufferSize
+     +    [stdcall, alias:'_SetConsoleScreenBufferSize@']
+     +    (hConsoleOutput, coordSize)
+      integer*4 hConsoleOutput[value]
+      structure /COORD/
+        integer*2 x
+        integer*2 y
+      end structure
+      record /COORD/ coordSize[value]
+      end
+
+      interface to logical*4 function SetConsoleTextAttribute
+     +    [stdcall, alias:'_SetConsoleTextAttribute@']
+     +    (hConsoleOutput, wAttr)
+      integer*4 hConsoleOutput[value]
+      integer*2 wAttr[value]
+      end
+
+      interface to logical*4 function SetConsoleTitle
+     +    [stdcall, alias:'_SetConsoleTitleA@']
+     +    (lpszTitle)
+      character*(*) lpszTitle[reference]
+      end
+
+      interface to logical*4 function SetConsoleWindowInfo
+     +    [stdcall, alias:'_SetConsoleWindowInfo@'] 
+     +    (hConsoleOutput, fAbsolute, psrctWindowRect)
+      integer*4 hConsoleOutput[value]
+      logical*4 fAbsolute[value]
+      structure /SMALL_RECT/
+        integer*2 Left
+        integer*2 Top
+        integer*2 Right
+        integer*2 Bottom
+      end structure ! SMALL_RECT
+      record /SMALL_RECT/ psrctWindowRect[reference]
+      end
+
+      interface to subroutine SetFileApisToOEM
+     +    [stdcall, alias:'_SetFileApisToOEM@']
+      end
+
+      interface to logical*4 function SetStdHandle
+     +    [stdcall, alias:'_SetStdHandle@']
+     +    (IDStdHandle, hHandle)
+      integer*4 IDStdHandle[value]
+      integer*4 hHandle[value]
+      end
+
+      interface to logical*4 function WriteConsole
+     +    [stdcall, alias:'_WriteConsoleA@'] 
+     +    (hConsoleOutput, lpvBuffer, 
+     +     cchToWrite, lpcchWritten, lpvReserved)
+      integer*4 hConsoleOutput[value]
+      integer*4 lpvBuffer[value]  ! Need LOC
+      integer*4 cchToWrite[value]
+      integer*4 lpcchWritten[reference] 
+      integer*4 lpvReserved[value]  ! Must be null
+      end
+
+      interface to logical*4 function WriteConsoleInput
+     +    [stdcall, alias:'_WriteConsoleInput@']
+     +    (hConsoleInput, pirBuffer, cInRecords, lpcWritten)
+      integer*4 hConsoleInput[value]
+      structure /COORD/
+        integer*2 x
+        integer*2 y
+      end structure
+      structure /KEY_EVENT_RECORD/
+        logical*4 bKeyDown
+        integer*2 wRepeatCount
+        integer*2 wVirtualKeyCode
+        integer*2 wVirtualScanCode
+        union
+          map
+            integer*2 UnicodeChar
+          end map
+          map
+            integer*1 AsciiChar
+          end map
+        end union
+        integer*4 dwControlKeyState
+      end structure ! KEY_EVENT_RECORD
+      structure /MOUSE_EVENT_RECORD/
+        record /COORD/ dwMousePosition
+        integer*4 dwButtonState
+        integer*4 dwControlKeyState
+        integer*4 dwEventFlags
+      end structure ! MOUSE_EVENT_RECORD
+      structure /WINDOW_BUFFER_SIZE_RECORD/
+        record /COORD/ dwSize
+      end structure ! WINDOW_BUFFER_SIZE_RECORD
+      structure /MENU_EVENT_RECORD/
+        integer*4 dwCommandId
+      end structure ! MENU_EVENT_RECORD
+      structure /FOCUS_EVENT_RECORD/
+        logical*4 bSetFocus
+      end structure ! FOCUS_EVENT_RECORD
+      structure /EVENTS/ 
+        union
+          map
+             record /KEY_EVENT_RECORD/ KeyEvent
+          end map
+          map
+            record /MOUSE_EVENT_RECORD/ MouseEvent
+          end map
+          map
+            record /WINDOW_BUFFER_SIZE_RECORD/ WindowBufferSizeEvent
+          end map
+          map
+            record /MENU_EVENT_RECORD/ MenuEvent
+          end map
+          map
+            record /FOCUS_EVENT_RECORD/ FocusEvent
+          end map
+        end union
+      end structure ! EVENTS
+      structure /INPUT_RECORD/
+        integer*2 EventType
+        record /EVENTS/ Event
+      end structure ! INPUT_RECORD
+      record /INPUT_RECORD/ pirBuffer[reference]
+      integer*4 cInRecords[value]
+      integer*4 lpcWritten[reference] 
+      end
+
+      interface to logical*4 function WriteConsoleOutput
+     +    [stdcall, alias:'_WriteConsoleOutputA@']
+     +    (hConsoleOutput, pchiSrcBuffer, coordSrcBufferSize, 
+     +     coordSrcBufferCoord, psrctDestRect)
+      integer*4 hConsoleOutput[value]
+      structure /CHAR_INFOU/
+      union
+        map
+          integer*2 UnicodeChar
+        end map
+        map
+          integer*1 AsciiChar
+        end map
+      end union
+      end structure ! CHAR_INFOU
+      structure /CHAR_INFO/
+        record /CHAR_INFOU/ Char
+        integer*2 Attributes
+      end structure ! CHAR_INFO
+      record /CHAR_INFO/ pchiSrcBuffer[reference]
+      structure /COORD/
+        integer*2 x
+        integer*2 y
+      end structure
+      record /COORD/ coordSrcBufferSize[value]
+      record /COORD/ coordSrcBufferCoord[value]
+      structure /SMALL_RECT/
+        integer*2 Left
+        integer*2 Top
+        integer*2 Right
+        integer*2 Bottom
+      end structure ! SMALL_RECT
+      record /SMALL_RECT/ psrctDestRect[reference]
+      end
+
+      interface to logical*4 function WriteConsoleOutputAttribute
+     +    [stdcall, alias:'_WriteConsoleOutputAttribute@']
+     +    (hConsoleOutput, lpwAttribute, cWriteCells, 
+     +     coordWrite, lpcWritten)
+      integer*4 hConsoleOutput[value]
+      integer*2 lpwAttribute[reference](1) ! Array
+      integer*4 cWriteCells[value]
+      structure /COORD/
+        integer*2 x
+        integer*2 y
+      end structure
+      record /COORD/ coordWrite[value]
+      integer*4 lpcWritten[reference]
+      end
+
+      interface to logical*4 function WriteConsoleOutputCharacter
+     +    [stdcall, alias:'_WriteConsoleOutputCharacterA@'] 
+     +    (hConsoleOutput, lpWriteBuffer, cchWrite, 
+     +     coordWriteCoord, lpcWritten)
+      integer*4 hConsoleOutput[value]
+      character*(*) lpWriteBuffer[reference]
+      integer*4 cchWrite[value]
+      structure /COORD/
+        integer*2 x
+        integer*2 y
+      end structure
+      record /COORD/ coordWriteCoord[value]
+      integer*4 lpcWritten[reference] 
+      end
+
+      interface to integer*4 function CreateFile
+     +    [stdcall, alias:'_CreateFileA@']
+     +    (lpszName, fdwAccess, fdwShareMode, lpsa, fdwCreate, 
+     +     fdwAttrsAndFlags, hTemplateFile)
+      character*(*) lpszName[reference]
+      integer*4 fdwAccess[value]
+      integer*4 fdwShareMode[value]
+      integer*4 lpsa[value]
+      integer*4 fdwCreate[value]
+      integer*4 fdwAttrsAndFlags[value]
+      integer*4 hTemplateFile[value]
+      end
+
+c C file functions to associate stdin and stdout with console
+
+      interface to integer*4 function open_osfhandle
+     +    [c, alias:'__open_osfhandle']
+     +    (osfhandle, flags)
+      integer*4 osfhandle[value]
+      integer*4 flags[value]
+      end
+         
+      interface to integer*4 function dup2
+     +    [c,alias:'__dup2']
+     +    (handle1, handle2)
+      integer*4 handle1[value]
+      integer*4 handle2[value]
+      end
+  

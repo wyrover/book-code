@@ -1,0 +1,18 @@
+/*  File dlgtest.rc  */
+#define STRICT
+#include <windows.h>
+
+#include "dlgids.h"
+
+DialogTestMenu MENU
+     {
+     POPUP "&File"
+          {
+	  MENUITEM "E&xit",    IDM_EXIT
+	  }
+     POPUP "&Dialog"
+	  {
+	  MENUITEM "&Dialog",  IDM_DIALOG
+          }
+     }
+#include "dlg.rc"

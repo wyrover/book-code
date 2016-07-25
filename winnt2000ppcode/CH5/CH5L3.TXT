@@ -1,0 +1,65 @@
+#include "stdio.h"
+#include "stdlib.h"
+#include "string.h"
+
+typedef unsigned char UCHAR;
+
+#define LOBYTE(w) ((UCHAR)(w))
+#define HIBYTE(w) ((UCHAR)(((unsigned int)(w)>>8)&0xFF))
+
+void main(void)
+{
+    unsigned short usVersion=0, usWinVer=0;
+    char *szEnvOS;
+
+    // This method only returns emulated DOS version
+    _asm  mov ah, 30h
+    _asm  int 21h
+    _asm  mov usVersion, ax
+    printf("Real/Emulated DOS Version is %d.%d\n",
+        LOBYTE(usVersion), HIBYTE(usVersion));
+
+    // alternate DOS version, can be used to decide if its NT
+    _asm  mov ax, 3306h
+    _asm  int 21h
+    _asm  mov usVersion, bx
+    printf("Alternate DOS Version is %d.%d\n",
+        LOBYTE(usVersion), HIBYTE(usVersion));
+
+    // Is it Windows NT/NT Advanced Server?
+    szEnvOS = getenv("OS");
+    if (szEnvOS != NULL) {
+        if (stricmp(szEnvOS, "Windows_NT") == 0) {
+            printf("Running on a VDM under Windows NT/NTAS\n");
+            return;
+        }
+    }
+
+    // Is a form of Enhanced mode Windows running?
+    _asm  mov ax, 1600h
+    _asm  int 2fh
+    _asm  mov usWinVer, ax
+    if ((LOBYTE(usWinVer)!=0) && (LOBYTE(usWinVer)!=0x80)) {
+        // is it Windows 95?
+        if (LOBYTE(usWinVer) >= 4)
+            printf("Windows 95, version %d.%d\n",
+                LOBYTE(usWinVer), HIBYTE(usWinVer));
+        // must be Windows 3.x then
+        else
+            printf("enhanced-mode Windows version %d.%d\n",
+                LOBYTE(usWinVer), HIBYTE(usWinVer));
+        return;
+    }
+
+    // finally, by process of elimination,
+    // assume a pure DOS
+    printf("Running under a pure DOS environment\n");
+
+} // main
+
+
+
+
+
+
+

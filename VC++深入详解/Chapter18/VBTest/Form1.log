@@ -1,0 +1,5 @@
+Line 21: Class CLOCKLib.Clock of control Clock1 was not a loaded control class.
+Line 27: The property name _Version in Clock1 is invalid.
+Line 28: The property name _ExtentX in Clock1 is invalid.
+Line 29: The property name _ExtentY in Clock1 is invalid.
+Line 30: The property name _StockProps in Clock1 is invalid.

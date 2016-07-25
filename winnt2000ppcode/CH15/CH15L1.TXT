@@ -1,0 +1,75 @@
+#include "directio.h"
+
+HANDLE hStdOut;
+CONSOLE_SCREEN_BUFFER_INFO csbi;
+
+void set_vid_mem(void) {
+   hStdOut = GetStdHandle(STD_OUTPUT_HANDLE);
+   GetConsoleScreenBufferInfo(hStdOut, &csbi);
+   }
+
+DWORD dummy;
+void mxyputs(UCHAR x, UCHAR y, char *str, unsigned  attr) {
+   COORD Coord = { x , y };
+   WORD Color[MAX_STR];
+   unsigned count;
+   WriteConsoleOutputCharacter(hStdOut, str, strlen(str), Coord, &dummy);
+   for(count = 0; count < strlen(str); count++)
+      Color[count] = attr;
+   WriteConsoleOutputAttribute(hStdOut, Color, strlen(str), Coord, &dummy);
+   }
+
+void mxyputc(UCHAR x, UCHAR y, char ch, UCHAR num, UCHAR attr) {
+   COORD Coord = { x, y };
+   ConsOutChar(ch, num, attr);
+   }
+
+void box(UCHAR x1, UCHAR y1, UCHAR x2, UCHAR y2, char S_D) {
+   COORD Coord;
+   UCHAR count;
+   for(count = y1 + 1; count < y2; count++) {
+      PutStruct(x1, count, (char)(S_D ? 186 : 179), 1, WHITE_ON_CYAN);
+      PutStruct(x2, count, (char)(S_D ? 186 : 179), 1, WHITE_ON_CYAN);
+      }
+   count = x2 - x1 - 1;
+   PutStruct(x1+1 ,y1, (char)(S_D ? 205 : 196), count, WHITE_ON_CYAN);
+   PutStruct(x1+1 ,y2, (char)(S_D ? 205 : 196), count, WHITE_ON_CYAN);
+   PutStruct(x1, y1, (char)(S_D ? 201 : 218), 1, WHITE_ON_CYAN);
+   PutStruct(x1, y2, (char)(S_D ? 200 : 192), 1, WHITE_ON_CYAN);
+   PutStruct(x2, y1, (char)(S_D ? 187 : 191), 1, WHITE_ON_CYAN);
+   PutStruct(x2, y2, (char)(S_D ? 188 : 217), 1, WHITE_ON_CYAN);
+   }
+
+void clearscreen(WORD attr) {
+   COORD Coord = { 0, 0 };
+   ConsOutChar((char)32, 2000, attr);
+   }
+
+char get_character(int wait) {
+   HANDLE hStdIn;
+   DWORD dwInputMode, dwRead;
+   INPUT_RECORD aInputBuffer;
+   char chBuf;
+   hStdIn = GetStdHandle(STD_INPUT_HANDLE);
+   GetConsoleMode(hStdIn, &dwInputMode);
+   SetConsoleMode(hStdIn, dwInputMode&~ENABLE_LINE_INPUT&~ENABLE_ECHO_INPUT);
+   if(wait) {
+      ReadFile(hStdIn, &chBuf, sizeof(chBuf), &dwRead, NULL);
+      SetConsoleMode(hStdIn, dwInputMode);
+      return chBuf;
+      }
+   else {
+      PeekConsoleInput(hStdIn, &aInputBuffer, 1, &dummy);
+      SetConsoleMode(hStdIn, dwInputMode);
+      FlushConsoleInputBuffer(hStdIn);
+      if(aInputBuffer.EventType == KEY_EVENT)
+         return (char)(aInputBuffer.Event.KeyEvent.wVirtualKeyCode);
+      }
+   }
+
+
+
+
+
+
+

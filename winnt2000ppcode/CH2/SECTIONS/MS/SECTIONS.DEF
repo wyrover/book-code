@@ -1,0 +1,9 @@
+;  SECTIONS.DEF
+;  module definition file for the Sections DLL
+
+LIBRARY
+
+SECTIONS
+   .Global READ WRITE SHARED
+   .Local  READ WRITE
+

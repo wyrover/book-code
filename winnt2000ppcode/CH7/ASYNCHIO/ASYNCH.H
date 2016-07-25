@@ -1,0 +1,42 @@
+/**-----------------------------------------------------------
+**  ASYNCH.H :    Simple Win32 File I/O Class Definition.
+**  Environment:  Windows NT, MS Visual C/C++ (32-bit)
+**---------------------------------------------------------**/
+#ifndef _ASYNCH_H_
+#define _ASYNCH_H_
+#include <stdio.h>
+
+class CFileIO
+{
+    public:
+        CFileIO(char *pFilename, 
+            DWORD dwAccess = GENERIC_READ | GENERIC_WRITE,
+            DWORD dwCreate = OPEN_ALWAYS,
+            DWORD dwAttribute = FILE_ATTRIBUTE_NORMAL,
+            DWORD *dwStatus = NULL);
+        virtual ~CFileIO();
+        DWORD Read(BYTE *pBuffer, DWORD dwSize);
+        DWORD Write(BYTE *pBuffer, DWORD dwSize);
+        DWORD ReadWithAbandon(BYTE *pBuffer, DWORD dwSize);
+        DWORD WriteWithAbandon(BYTE *pBuffer, DWORD dwSize);
+        BOOL Close(void);
+        BOOL Reopen(void);
+        DWORD Seek(LONG lOffset, DWORD dwMethod = FILE_CURRENT);
+        HANDLE GetHandle(void);
+        BOOL IOComplete(BOOL bWait = FALSE, DWORD *dwBytes = NULL);
+
+    private:
+        // copying/assignment not supported, so declare but
+        // do not define
+        CFileIO(const CFileIO&);
+        const CFileIO& operator=(const CFileIO&);
+
+        HANDLE hFile;
+        BOOL bAsynch;
+        OVERLAPPED olFile;
+        char reopenName[MAX_PATH * 2];
+        DWORD reopenAccess, reopenCreate, reopenAttrib;
+        DWORD dwPend;        // place holder
+};
+#endif
+/* End of File */ 

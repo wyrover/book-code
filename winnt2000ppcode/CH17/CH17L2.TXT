@@ -1,0 +1,229 @@
+/*----------------------------------------------------
+        STEPPER.H (excerpts)
+  ----------------------------------------------------*/
+
+typedef struct bpnode{
+  UINT uLine;       /* source line of bp */
+  PBYTE pAddress;   /* code address of bp */
+  BYTE Opcode;      /* displaced instruction */
+  BOOL bOnceOnly;   /* TRUE for soft break */
+  struct bpnode *pNext; /* next node in list */
+} BPNODE;
+typedef BPNODE *PBPNODE;
+
+enum EVENTS {
+  EVENT_RUNNING, EVENT_RESUME, EVENT_KILL
+};
+#define NUM_COMMAND_EVENTS  3
+
+/* flags for SetLinePrefix() */
+enum PREFIX_MARK {
+  PREFIX_BREAK_LINE, PREFIX_BREAKPOINT, PREFIX_CURRENT_LINE
+};
+
+#define ERROR_MSG(h) ShowErrorMsg((h), __FILE__, __LINE__)
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+/*----------------------------------------------------
+    DEBUG.C
+    Routines for the debugging thread of the
+    STEPPER program.
+  ----------------------------------------------------*/
+#define STRICT
+#include <windows.h>
+#include <windowsx.h>
+#include <stdlib.h>     /* _MAX_PATH */
+#include "stepper.h"
+
+/*----------------------------------------------------
+    TYPES AND DEFINITIONS
+  ----------------------------------------------------*/
+#define BP_OPCODE 0xCC  /* INT 3 instruction */
+#define TF_BIT 0x100    /* single-step register bit */
+
+typedef struct tagDEBUGGEE {
+  PBYTE pStartAddress;  /* address of main() */
+  HANDLE hProcess;      /* process under scrutiny */
+  HANDLE hThread;       /* primary thread */
+  DWORD dwProcessId;
+  DWORD dwThreadId;
+  BOOL bBreakSeen;  /* FALSE until first bp occurs */
+} DEBUGGEE;
+typedef DEBUGGEE *PDEBUGGEE;
+
+/*----------------------------------------------------
+    GLOBAL VARIABLES (all modules)
+  ----------------------------------------------------*/
+extern HWND ghMainWnd;
+extern TCHAR gszAppTitle[];
+extern BOOL gbAttached;
+extern BOOL gbPaused;
+extern HANDLE ghCommandEvent[NUM_COMMAND_EVENTS];
+
+/*----------------------------------------------------
+    STATIC VARIABLES (this module only)
+  ----------------------------------------------------*/
+DEBUGGEE Debuggee;
+PBPNODE pbpPending = NULL;
+
+/* FOO.EXE line information (assumes */
+/* Foo was compiled with Borland tools) */
+
+int LineAddress[] = {0x4F, 0x53, 0x57, 0x66, 0x6C, 0x71, 0x73};
+int BreakLines[] = {4, 7, 8, 7, 9, 10, 0};
+int iBreakLineCount = 7;
+
+/*----------------------------------------------------
+    DEBUGGING THREAD
+  ----------------------------------------------------*/
+LRESULT DebuggingThread( LPCTSTR pszFilePath )
+{
+  PROCESS_INFORMATION pi;
+  TCHAR szMsg[_MAX_PATH + 25];
+  int iCmdEvent;
+
+  /* create the debuggee process */
+  if (!LaunchDebuggee(pszFilePath, &pi)) {
+    wsprintf( szMsg, TEXT("Cannot launch %s"),
+      (PSTR)pszFilePath);
+    MessageBox( ghMainWnd, szMsg, gszAppTitle,
+       MB_OK | MB_ICONEXCLAMATION );
+    gbAttached = FALSE;
+  } else {
+    gbAttached = TRUE;   /* creation succeeded */
+    SetEvent(ghCommandEvent[EVENT_RUNNING]);
+  }
+  SetWindowTitle();
+
+  __try {
+    __try {
+      while (gbAttached) {
+        /* proceed only when a command event permits it */
+        iCmdEvent = WaitForMultipleObjects(
+          NUM_COMMAND_EVENTS,  (PHANDLE)&ghCommandEvent,
+          FALSE, INFINITE);
+
+        switch (iCmdEvent) {
+   
+          case EVENT_RUNNING:
+            CheckForDebugEvent(pi.hProcess);
+            break;
+         
+          case EVENT_RESUME:
+            SetEvent(ghCommandEvent[EVENT_RUNNING]);
+            gbPaused = FALSE;
+            SetWindowTitle();
+            ContinueDebugEvent(Debuggee.dwProcessId,
+              Debuggee.dwThreadId, DBG_CONTINUE);
+            break;
+
+          case EVENT_KILL:
+            /* the termination handler cleans up */
+            TerminateProcess(pi.hProcess, 0);
+            gbAttached = FALSE;
+            break;
+
+        } /* end switch (iCmdEvent) */
+
+      } /* end while (bAttached) */
+
+    } __finally {
+      /* clean up */
+      ResetEvent(ghCommandEvent[EVENT_RUNNING]);
+      gbAttached = FALSE;
+      SetWindowTitle();
+      DestroyList();
+      CloseHandle(pi.hProcess);
+      CloseHandle(pi.hThread);
+    }
+
+  }__except (EXCEPTION_EXECUTE_HANDLER) {
+    MessageBox(ghMainWnd, "An unexpected error occurred.",
+      gszAppTitle, MB_OK | MB_ICONSTOP);
+  }
+  return(0L);
+}
+
+/*----------------------------------------------------
+    LAUNCH DEBUGGEE
+  ----------------------------------------------------*/
+BOOL LaunchDebuggee( LPCTSTR pszFilePath, PPROCESS_INFORMATION ppi )
+{
+  STARTUPINFO sui;
+  BOOL bSuccess;
+
+  /* fill in the process's startup information */
+  ZeroMemory(&sui, sizeof(STARTUPINFO));
+  sui.cb = sizeof(STARTUPINFO);
+  sui.wShowWindow = SW_SHOWDEFAULT;
+  sui.dwFlags = STARTF_USESHOWWINDOW;
+  ppi->hProcess = NULL;
+
+  /* create the debuggee process */
+  bSuccess = CreateProcess(NULL, pszFilePath,
+    NULL, NULL, FALSE, DEBUG_PROCESS |
+    DEBUG_ONLY_THIS_PROCESS, NULL, NULL, &sui, ppi);
+  if (!bSuccess) ERROR_MSG(ghMainWnd);
+
+  return(bSuccess);
+}
+
+/*----------------------------------------------------
+    CHECK FOR DEBUG EVENT
+  ----------------------------------------------------*/
+void CheckForDebugEvent(HANDLE hDebuggee)
+{
+  DEBUG_EVENT DebugEvent;
+  BOOL bContinue = TRUE;
+
+  /* wait up to 100 ms for a debug event to occur */
+  if (WaitForDebugEvent(&DebugEvent, 100)) {
+
+    /* determine what event occurred */
+    switch (DebugEvent.dwDebugEventCode) {
+
+      case EXCEPTION_DEBUG_EVENT:
+        bContinue = DoExceptionEvent(&DebugEvent, hDebuggee);
+        break;
+
+      case CREATE_PROCESS_DEBUG_EVENT:
+        gbAttached = TRUE;
+        Debuggee.pStartAddress =
+          (PBYTE)DebugEvent.u.CreateProcessInfo.lpStartAddress;
+        Debuggee.hProcess = hDebuggee;
+        Debuggee.dwProcessId = DebugEvent.dwProcessId;
+        Debuggee.hThread = DebugEvent.u.CreateProcessInfo.hThread;
+        Debuggee.dwThreadId = DebugEvent.dwThreadId;
+        Debuggee.bBreakSeen = FALSE;
+        break;
+
+      case EXIT_PROCESS_DEBUG_EVENT:
+        gbAttached = FALSE;
+        SetWindowTitle();
+        MessageBox(ghMainWnd, "The program ended.",
+          gszAppTitle, MB_OK | MB_ICONINFORMATION);
+        break;
+
+    } /* end switch (EventCode) */
+
+    /* Unless the debuggee is paused at a */
+    /* breakpoint, resume execution of debuggee */
+    if (bContinue)
+      ContinueDebugEvent(DebugEvent.dwProcessId,
+        DebugEvent.dwThreadId, DBG_CONTINUE);
+    else {
+      gbPaused = TRUE;
+      SetWindowTitle();
+      ResetEvent(ghCommandEvent[EVENT_RUNNING]);
+    }
+  }
+}
+
+
+
+
+
+
+

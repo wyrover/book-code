@@ -1,0 +1,28 @@
+VOID MyFunction ( LPTSTR pszXparent, int cchMaxBuf )
+{
+    char * pszMbyte;
+    /* convert transparent parameter to ASCII if necessary */
+#ifdef UNICODE
+    /* allocate a buffer for the ASCII conversion of pszXparent */
+    pszMbyte = malloc ( cchMaxBuf * sizeof (TCHAR) );
+    _wcstombs (pszXparent, psAscii, cchMaxBuf * sizeof (TCHAR) );
+#else
+    /* string is already ASCII/ANSI so just use it directly */
+    pszMbyte = pszXparent;
+#endif
+    /* perform ASCII-specific operations.... */
+        . . .
+    /* then convert the result back to a tranparent string... */
+#ifdef UNICODE
+    mbstowcs ( pszMbyte, pszXparent, cchMaxBuf );
+    free ( pszMbyte );
+#endif
+    return;
+}
+
+
+
+
+
+
+

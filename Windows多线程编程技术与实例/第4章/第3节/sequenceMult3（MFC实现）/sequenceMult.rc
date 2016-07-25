@@ -1,0 +1,199 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\sequenceMult.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.chs\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\sequenceMult.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_SEQUENCEMULT_DIALOG DIALOGEX 0, 0, 401, 215
+STYLE DS_MODALFRAME | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | 
+    WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "sequenceMulti"
+FONT 9, "宋体"
+BEGIN
+    CONTROL         "MultiThread",IDC_RADIO_MULTI,"Button",
+                    BS_AUTORADIOBUTTON,7,64,60,10
+    CONTROL         "SingleThread",IDC_RADIO_SINGLE,"Button",
+                    BS_AUTORADIOBUTTON,7,77,64,10
+    DEFPUSHBUTTON   "排序",IDC_BUTTON_SORT,93,68,50,14
+    EDITTEXT        IDC_EDIT_TIME,331,68,63,12,ES_AUTOHSCROLL
+    LTEXT           "BubbleSort:",IDC_STATIC,7,100,45,8
+    LTEXT           "HeapSort:",IDC_STATIC,91,100,37,8
+    LTEXT           "InsertSort:",IDC_STATIC,170,100,45,8
+    LTEXT           "QuickSort:",IDC_STATIC,254,99,41,8
+    LTEXT           "SelectSort:",IDC_STATIC,337,100,45,8
+    LTEXT           "排序所花总时间(毫秒):",IDC_STATIC,240,70,85,8
+    CONTROL         "List6",IDC_LIST_HEAP,"SysListView32",WS_BORDER | 
+                    WS_TABSTOP,89,118,69,90
+    CONTROL         "List6",IDC_LIST_INSERT,"SysListView32",WS_BORDER | 
+                    WS_TABSTOP,169,118,69,90
+    CONTROL         "List6",IDC_LIST_QUICK,"SysListView32",WS_BORDER | 
+                    WS_TABSTOP,251,118,69,90
+    CONTROL         "List6",IDC_LIST_BUBBLE,"SysListView32",WS_BORDER | 
+                    WS_TABSTOP,7,118,69,90
+    CONTROL         "List6",IDC_LIST_SELECT,"SysListView32",WS_BORDER | 
+                    WS_TABSTOP,325,118,69,90
+    PUSHBUTTON      "清除",IDC_BUTTON_CLEAR,168,66,50,14
+    EDITTEXT        IDC_EDIT_DATA,7,27,387,24,ES_AUTOHSCROLL
+    LTEXT           "请输入排序数(输入格式：12,23,34 )：",IDC_STATIC,7,18,
+                    141,8
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "sequenceMult Microsoft 基础类应用程序\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "sequenceMult\0"
+            VALUE "LegalCopyright", "版权所有 (C) 2003\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "sequenceMult.EXE\0"
+            VALUE "ProductName", "sequenceMult 应用程序\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_SEQUENCEMULT_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 394
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 208
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE 4, 2
+#pragma code_page(936)
+#endif //_WIN32
+#include "res\sequenceMult.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.chs\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

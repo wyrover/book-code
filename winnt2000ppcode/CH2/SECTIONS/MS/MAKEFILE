@@ -1,0 +1,45 @@
+#
+#  Builds the SECTIONS DLL and its TEST client 
+#  using Microsoft's NMAKE and command line tools
+#
+all: test.exe sections.dll
+test.exe: test.obj sections.lib 
+sections.lib: sections.obj sections.def sections.h
+sections.dll: sections.obj sections.exp
+
+# the environment variable CPU is not defined under WIN95
+!ifndef CPU
+CPU = i386
+!endif
+
+CFLAGS = -c -W3 -MD -DWIN32 -D_MT -D_DLL -D_X86_ -DWINVER=0x0400
+LFLAGS = -incremental:no -pdb:none -nodefaultlib
+SUBSYS = -subsystem:console,4
+LIBS   = msvcrt.lib kernel32.lib oldnames.lib  # used in both targets
+IMPLIB = sections.lib                          # used in building the EXE
+
+!ifdef NODEBUG
+CFLAGS = $(CFLAGS) -Ox
+LFLAGS = $(LFLAGS) -release
+!else
+CFLAGS = $(CFLAGS) -Od -Z7
+LFLAGS = $(LFLAGS) -debug:full -debugtype:cv
+!endif
+
+# to make header declare dllexport, define __DLL__
+sections.obj: sections.c sections.h
+   cl $(CFLAGS) -D__DLL__ $*.c	     	
+
+test.obj: test.c sections.h
+   cl $(CFLAGS) $*.c 			
+
+.obj.lib:
+   lib -machine:$(CPU) $*.obj -out:$*.lib -def:$*.def
+
+.obj.exe:
+   link $(LFLAGS) $(SUBSYS) -out:$*.exe $*.obj \
+   $(LIBS) $(IMPLIB)
+
+.obj.dll:
+   link $(LFLAGS) -DLL -entry:_DllMainCRTStartup@12 \
+      -out:$*.dll $*.obj $*.exp $(LIBS)

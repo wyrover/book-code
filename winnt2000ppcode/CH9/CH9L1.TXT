@@ -1,0 +1,33 @@
+//  CPRINT.H     Windows NT, MS Visual C/C++ (32-bit) 1.1
+#include <windows.h>
+#define IDC_DOCTITLE      9000
+
+class CPrint {
+public:
+   CPrint(HWND hWindow, LPTSTR lpDocName = "(Untitled)");
+   virtual ~CPrint();
+   HDC PrintDialog(void);
+   DWORD PrinterSetupDialog(void);
+   DWORD DocumentStart(HINSTANCE hInst);
+   DWORD PageStart(void);
+   DWORD PageEnd(void);
+   DWORD DocumentAbort(void);
+   DWORD DocumentEnd(void);
+   char szDriver[32], szDevice[32], szOutput[32];
+   DWORD lastError;
+
+private:
+      // prevent copy by declaring without defining
+   CPrint(const CPrint&);   const CPrint& operator=(const CPrint&);
+   HDC hdcPr;
+   HWND hWnd;
+   DOCINFO docInfo;
+   PRINTDLG printDlg;
+};  // CPrint
+
+
+
+
+
+
+

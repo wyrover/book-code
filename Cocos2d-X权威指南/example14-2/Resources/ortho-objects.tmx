@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="32" height="32" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="tiles" tilewidth="32" tileheight="32" spacing="2" margin="2">
+  <image source="fixed-ortho-test2.png" width="640" height="400"/>
+  <tile id="4">
+   <properties>
+    <property name="collion" value="1"/>
+   </properties>
+  </tile>
+  <tile id="7">
+   <properties>
+    <property name="collion" value="1"/>
+   </properties>
+  </tile>
+  <tile id="61">
+   <properties>
+    <property name="collion" value="2"/>
+   </properties>
+  </tile>
+  <tile id="79">
+   <properties>
+    <property name="collion" value="2"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="logic" width="32" height="32">
+  <data encoding="base64" compression="zlib">
+   eJzt0jsKACAMREEbwVPl/seysRIbZZMYeAtbD/lYy4ut4uPj4+Pj4+PjnzO2RvvqVPCV+37xPfOjr/7xWz8yFfz9HsqbVJjf2+/JnTUKECU=
+  </data>
+ </layer>
+ <layer name="大图素" width="32" height="32">
+  <data encoding="base64" compression="zlib">
+   eJztzTENADAMBLHwJ5U2yBoU/cWWbr4qAAAA+OtuE/z3doL/hAepjQMD
+  </data>
+ </layer>
+</map>

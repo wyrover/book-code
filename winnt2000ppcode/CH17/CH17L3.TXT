@@ -1,0 +1,156 @@
+/*----------------------------------------------------
+    DO EXCEPTION EVENT
+    Respond to EXCEPTION_DEBUG_EVENTS, particularly
+    breakpoints.  Return TRUE if the debug loop
+    may continue immediately to the next event, FALSE
+    if it should wait for the user to resume.
+  ----------------------------------------------------*/
+BOOL DoExceptionEvent(
+  LPDEBUG_EVENT pde, HANDLE hDebuggee )
+{
+  BOOL bContinue;
+  UINT uXCode =
+    pde->u.Exception.ExceptionRecord.ExceptionCode;
+  PBYTE pXAddress =
+    pde->u.Exception.ExceptionRecord.ExceptionAddress;
+
+  switch (uXCode) {
+
+    case EXCEPTION_BREAKPOINT:
+      pbpPending = OnBreakpointException(pXAddress);
+      bContinue = FALSE;
+      break;
+
+    case EXCEPTION_SINGLE_STEP:
+      /* end single-step mode */
+      SetStepFlag(Debuggee.hThread, FALSE);
+      /* restore the breakpoint we just stepped over */
+      if (pbpPending)
+        SetBreakpoint(hDebuggee, pbpPending);
+      pbpPending = NULL;
+      bContinue = TRUE;
+      break;
+  }
+  return(bContinue);
+}
+
+/*----------------------------------------------------
+    ON BREAKPOINT EXCEPTION
+  ----------------------------------------------------*/
+PBPNODE OnBreakpointException( PBYTE pXAddress )
+{
+  PBPNODE pBP;
+  PBPNODE pbpPassed = NULL;
+
+  /* The first breakpoint is supplied by */
+  /* NT when the program loads */
+  if (!Debuggee.bBreakSeen) {
+    Debuggee.bBreakSeen = TRUE;
+    return(NULL);
+  }
+
+  /* is this a known breakpoint? */
+  pBP = FindBPbyAddress(pXAddress);
+
+  /* has the debuggee stopped on a known breakpoint? */
+  if (pBP) {
+    SetLinePrefix(pBP->uLine, PREFIX_CURRENT_LINE);
+
+    /* get the INT3 opcode out of there */
+    RemoveBreakpoint(Debuggee.hProcess, pBP);
+
+    if (!pBP->bOnceOnly) {      /* For a hard break, turn on single-stepping */
+      /* to restore the INT 3 opcode later */
+      SetStepFlag(Debuggee.hThread, TRUE);
+      pbpPassed = pBP;
+    } else
+      /* for a soft break, remove all traces */
+      DeleteNode(pBP);
+
+      /* Reset the IP to execute the instruction */
+      /* displaced by the INT 3 opcode */
+      DecrementIP(Debuggee.hThread);
+
+  } else { /* unknown breakpoint */
+    SetLinePrefix(0, PREFIX_CURRENT_LINE);
+  }
+
+  /* Return pointer to the breakpoint if it must */
+  /* be restored after the next single-step exception */
+  return(pbpPassed);
+}
+
+/*****************************************************
+      THE FOLLOWING ROUTINES ASSUME AN INTEL CPU
+******************************************************/
+
+/*----------------------------------------------------
+    SET STEP FLAG
+    Turn the TF (trap flag) off or on to enable or
+    disable single-stepping mode.
+  ----------------------------------------------------*/
+BOOL SetStepFlag( HANDLE hThread, BOOL bOn )
+{
+  CONTEXT Context;
+  BOOL bSuccess;
+
+  Context.ContextFlags = CONTEXT_CONTROL;
+
+  __try {
+    bSuccess = GetThreadContext(hThread, &Context);
+    if (bSuccess) {
+      if (bOn)
+        Context.EFlags |= TF_BIT;
+      else
+        Context.EFlags &= ~TF_BIT;
+        bSuccess = SetThreadContext(hThread, &Context);
+    }
+  } __except (EXCEPTION_EXECUTE_HANDLER) {
+    bSuccess = FALSE;
+  }
+  return(bSuccess);
+}
+
+/*----------------------------------------------------
+    GET IP ADDRESS
+    Return the current value of the instruction
+    pointer from the context of a given thread.
+  ----------------------------------------------------*/
+PBYTE GetIPAddress( HANDLE hThread )
+{
+  CONTEXT Context;
+
+  __try {
+    Context.ContextFlags = CONTEXT_CONTROL;
+    GetThreadContext(hThread, &Context);
+
+  } __except (EXCEPTION_EXECUTE_HANDLER) {
+    Context.Eip = 0L;
+  }
+  return((PBYTE)Context.Eip);
+}
+
+/*----------------------------------------------------
+      DECREMENT IP
+      Set the instruction pointer back one byte.
+  ----------------------------------------------------*/
+BOOL DecrementIP( HANDLE hThread )
+{
+  CONTEXT Context;
+  BOOL bSuccess;
+
+  Context.ContextFlags = CONTEXT_CONTROL;
+  bSuccess = GetThreadContext(hThread, &Context);
+  if (bSuccess) {
+    Context.Eip--;
+    bSuccess = SetThreadContext(hThread, &Context);
+  }
+  return(bSuccess);
+}
+
+
+
+
+
+
+

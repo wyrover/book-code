@@ -1,0 +1,166 @@
+C File Name: Driver.for
+C Include contents of Program Driver from Listing 18.2 here
+C Then modify all occurrences of InThreadCount to InProcCount
+
+######################################################################
+C File Name: Compute.for
+      include 'mt.fi'
+      include 'flib.fi'
+
+C Include contents of Subroutine Initiate from Listing 18.2 here
+C Then modify all occurrences of InThreadCount to InProcCount
+
+C Compute does the actual computation by spawning processes
+     
+      Subroutine Compute(In_A, In_B, In_C, In_A_Rows, In_A_Columns,
+     +      In_B_Columns, In_Proc_Count)
+      real*4 In_A(In_A_Rows, In_A_Columns)
+      real*4 In_B(In_A_Columns, In_B_Columns)
+      real*4 In_C(In_A_Rows, In_B_Columns)
+      integer*4 In_A_Rows, In_A_Columns, In_B_Columns
+      integer*4 In_Proc_Count
+      include 'mt.fd'
+      include 'flib.fd'
+      include 'common.inc'
+      logical*4 ProcHandle                     ! Process Handle
+      integer*4 x, y, count
+      character*32 inbuffer [Allocatable] (:)
+      record /PROCESS_INFORMATION/ pi          ! Process Information
+      record /STARTUPINFO/ si                  ! Startup Information
+
+      si.cb = 68                               ! Size of Startup Info
+      si.lpReserved = 0
+      si.lpDeskTop = 0
+      si.lpTitle = 0
+      si.dwFlags = 0
+      si.cbReserved2 = 0
+      si.lpReserved2 = 0
+      si.hStdInput = 0
+      si.hStdOutput = 0
+      si.hStdError = 0
+
+      Call Initiate (In_A, In_B, In_A_Rows, In_A_Columns, In_B_Columns,
+     +     In_Proc_Count)
+
+      Allocate (inbuffer(MaxProcCount) )
+
+      Do count = 1, MaxProcCount
+         write(inbuffer(count),"(A7, 1X, I4)") 'process', count
+         ProcHandle = CreateProcess( 0, loc(inbuffer(count)),
+     +               0, 0, .TRUE. , 0, 0, 0, loc(si), loc(pi))
+         print"('+',a,i5)", "Generating Process # " , count
+      End Do
+
+      write(*,*)
+      write(*,*)
+
+      Call sleepqq(10000)     ! Sleep for 10000 milliseconds
+
+      Do x = 1, A_Rows
+        Do y = 1, B_Columns
+            In_C(x,y) = C(x,y)
+            C(x,y) = 0.0
+        End Do
+      End Do
+
+      End  ! Compute
+
+######################################################################
+C File Name: Process.for
+C MatMult is the Process that  multiplies the
+C appropriate Row of A with the appropriate column of B
+
+      Program MatMult 
+      include 'common.inc'
+      automatic
+      integer*4 CurrentProc, i, j, k, jj
+      character*32 buffer
+      integer*2 status
+
+C Obtaining the command line arguments
+
+      Call GetArg (1, buffer, status)
+      read (buffer(1:status), '(i4)') CurrentProc
+
+      Do i = CurrentProc, A_Rows,  MaxProcCount
+         Do j = (CurrentProc-1)*MaxProcCount,
+     +           B_Columns + (CurrentProc-1)*MaxProcCount - 1
+            jj =  1 + mod(j, B_Columns)
+            Do k = 1, A_Columns
+               C(i, jj)  =  C(i, jj) + A(i, k) * B(k, jj)
+            End Do
+         End Do
+      End Do
+      End
+
+######################################################################
+C File Name: Bridge.for
+C
+C The common block for shared data must have one data item initialized
+C in a DATA statement or it will not be stored in a section that can be
+C modified. The LINK /EDIT command is used to rename the .data section
+C and set the new sections attributes as read, write, shared. The source
+C file should contain only the common declaration and the DATA
+C statement.  If there are any runtime statements then renaming the
+C .data section will cause the code to fail.
+
+      Subroutine dllsub[dllexport]
+      real*4 A, B, C
+      integer*4 A_Rows, A_Columns, B_Columns
+      integer*4 MaxProcCount     ! Maximum number of processes
+      common /bridge[dllexport]/ MaxProcCount,
+     +                           A_Rows,
+     +                           A_Columns,
+     +                           B_Columns
+     +                           A(100, 100),
+     +                           B(100, 100),
+     +                           C(100, 100)
+      data MaxProcCount /0/
+      End
+
+######################################################################
+C File Name: Common.inc
+C Common Block contents
+      real*4 A, B, C
+      integer*4 A_ROWS, A_COLUMNS, B_COLUMNS
+      integer*4 MaxProcCount
+      common /bridge[dllimport]/ MaxProcCount,
+     +                           A_ROWS, 
+     +                           A_COLUMNS,
+     +                           B_COLUMNS,
+     +                           A(1000, 1000),
+     +                           B(1000, 1000),
+     +                           C(1000, 1000)
+######################################################################
+# File Name: Makefile
+
+all: bridge.dll process.exe driver.exe
+
+bridge.dll: bridge.obj
+  link /edit bridge.obj /section:.data=.bridge,srw
+  fl32 /LD bridge.obj
+
+bridge.obj: bridge.for
+  fl32 /LD /c bridge.for
+
+process.exe: process.obj bridge.lib
+  fl32 /MD process.obj bridge.lib
+
+process.obj: process.for common.inc
+  fl32 /MD /c process.for
+
+driver.exe: driver.obj compute.obj bridge.lib
+  fl32 /MD driver.obj compute.obj bridge.lib
+
+driver.obj: driver.for common.inc
+  fl32 /MD /c driver.for
+
+compute.obj: compute.for common.inc
+  fl32 /MD /c compute.for
+
+
+
+
+
+
+

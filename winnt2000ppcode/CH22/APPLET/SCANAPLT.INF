@@ -1,0 +1,5 @@
+[CPL_Scanner]
+Scanners=3
+Scanner1=Hewlett-Packard ScanJet IIc,HPSCANAP.DLL,HPSCANIIC,7
+Scanner2=Hewlett-Packard ScanJet IIp,HPSCANAP.DLL,HPSCANIIP,7
+Scanner3=ACME Scanner,ACMESCAN.DLL,ACME,5

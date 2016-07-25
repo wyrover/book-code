@@ -1,0 +1,21 @@
+[ uuid (62387AFE-C34B-1ABE-B235-98765233AFEA),
+  version(1.0),
+  pointer_default(unique)]
+interface prime
+   {
+   typedef [context_handle] void *PCONTEXT_HANDLE_TYPE;
+   typedef [ref] PCONTEXT_HANDLE_TYPE *PPCONTEXT_HANDLE_TYPE;
+   char RemoteIsPrime([in] handle_t h1, [in] unsigned long PrimeSHandle,
+      [in] unsigned long TestNumber);
+   unsigned long InitPServer([in] handle_t h1,
+      [out] PPCONTEXT_HANDLE_TYPE pphContext,
+      [in, string] unsigned char *CompName);
+   void TerminatePServer([in] handle_t h1, [in] unsigned long PrimeSHandle);
+   }
+
+
+
+
+
+
+

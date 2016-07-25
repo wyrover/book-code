@@ -1,0 +1,17 @@
+x = Input.Event.MouseEvent.dwMousePosition.X;
+y = Input.Event.MouseEvent.dwMousePosition.Y;
+for ( ; y < row; y++ )
+    PushKeyOnStack(CURSOR_UP);
+for ( ; y > row; y-- )
+    PushKeyOnStack(CURSOR_DOWN);
+for ( ; X < col; y++ )
+    PushKeyOnStack(CURSOR_RIGHT);
+for ( ; x > col; y-- )
+    PushKeyOnStack(CURSOR_LEFT);
+
+
+
+
+
+
+

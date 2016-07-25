@@ -1,0 +1,63 @@
+#include <stdio.h>
+#include <string.h>
+
+#include "cwobj.h"
+#include "cwdialgs.h"
+
+void value_str(tdata_type data_type, void *the_value_addr,int display_len,
+     char *the_string) {
+    switch (data_type) {
+    case STR_DATA:
+    case PATH_DATA:
+      strncpy (the_string,(char *)the_value_addr, display_len);
+      the_string[display_len-1] = '\0';
+      break;
+
+    case COLOR_DATA:
+      sprintf (the_string,"RGB(%hu,%hu,%hu)",
+         GetRValue(*(DWORD *)the_value_addr),
+         GetGValue(*(DWORD *)the_value_addr),
+         GetBValue(*(DWORD *)the_value_addr));
+      break;
+    default:
+      strcpy (the_string,"");  }  //End switch
+      }  //End function
+
+void build_display_str (tdata_type data_type,
+      void *descr_addr,void *value_addr,
+      int display_len,int maxlen, char *the_string) {
+    char astring[256],the_value_str[MAX_DISPLAY_LEN];
+    strcpy (astring,(char *)descr_addr);
+    strcat (astring,": ");
+    value_str (data_type,value_addr,display_len, the_value_str);
+    strcat (astring,the_value_str);
+    strncpy (the_string,astring,maxlen-2);
+    the_string[maxlen-1] = '\0'; }
+
+char *ttyped_data_obj::get_display_str (int maxlen){
+     // Build display_str in case value has changed.
+     build_display_str(data_type,descr_addr,value_addr,
+        display_len,maxlen,display_str);
+     return display_str; }
+
+void ttyped_data_obj::get_new_value (HWND parent, int maxlen) {
+    switch (data_type) {
+    case STR_DATA:
+      string_dialog (parent,descr_addr,descr_addr, display_len,value_addr);
+      break;
+    case PATH_DATA:
+      get_file_name_dlg(parent,wild_str,
+          descr_addr,(char *)value_addr,MAX_PATH);
+      break;
+   case COLOR_DATA:
+      get_rgb_color (parent,(COLORREF *)value_addr);
+      break;
+      }  //end switch
+   get_display_str(maxlen);  }
+
+
+
+
+
+
+

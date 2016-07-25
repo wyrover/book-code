@@ -1,0 +1,32 @@
+BOOL WINAPI DllMain (
+   HINSTANCE hinstDLL,           /* the DLL module */
+   DWORD dwReason,               /* event code */
+   LPVOID lpReserved)            /* not used */
+{
+   switch (dwReason)
+   {
+      case DLL_PROCESS_ATTACH:
+         /* a process is loading the DLL */
+         break;
+
+      case DLL_THREAD_ATTACH:
+         /* a process created a new thread */
+         break;
+
+      case DLL_THREAD_DETACH:
+         /* a thread ended */
+         break;
+
+      case DLL_PROCESS_DETACH:
+         /* a process is freeing the DLL */
+         break;
+   }
+   return(TRUE);
+}
+
+
+
+
+
+
+

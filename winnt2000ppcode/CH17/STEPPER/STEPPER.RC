@@ -1,0 +1,38 @@
+/*----------------------------------------------------
+        STEPPER.RC
+  ----------------------------------------------------*/
+#include <windows.h>
+#include "rsrc.h"
+
+IDI_APPICON ICON  stepper.ico
+
+IDM_APPMENU MENU 
+BEGIN
+  POPUP "&File"
+  BEGIN
+    MENUITEM "E&xit\tAlt+F4",     CMD_QUIT
+    MENUITEM "A&bout...",         CMD_ABOUT 
+  END
+  POPUP "&Process"
+  BEGIN
+    MENUITEM "&Kill\tCtrl+K",     CMD_KILL
+    MENUITEM "&Restart\tCtrl+F2", CMD_RESTART 
+  END
+  POPUP "&Run"
+  BEGIN
+    MENUITEM "Set &breakpoint\tF2",   CMD_SETBREAK
+    MENUITEM "Set &all breakpoints",  CMD_SETALLBREAKS
+    MENUITEM "&Delete breakpoints",   CMD_CLEARALLBREAKS
+    MENUITEM "Run to &cursor\tF4",    CMD_RUNTOCURSOR
+    MENUITEM "&Run\tF9",              CMD_RUN
+  END
+END
+
+IDA_ACCELERATORS ACCELERATORS
+BEGIN
+  "^K", CMD_KILL
+  VK_F2, CMD_RESTART, VIRTKEY, CONTROL
+  VK_F2, CMD_SETBREAK, VIRTKEY
+  VK_F4, CMD_RUNTOCURSOR, VIRTKEY
+  VK_F9, CMD_RUN, VIRTKEY
+END

@@ -1,0 +1,50 @@
+// Global variables
+REGVDD_INFO regInfo;
+REGVDD_INFO far *p = &regInfo;
+int iSize = sizeof(REGVDD_INFO);
+WORD VDDHandle;
+char szVDDName[128] = "REGVDD.DLL";
+char szVDDInit[128] = "RegVDDRegisterInit";
+char szVDDDisp[128] = "RegVDDDispatch";
+BOOL bWinNT;
+char szNotNT[] = "Sorry, only available on Windows NT!";
+char szCap[] = "WTEST16";
+
+//... in MainWndProc
+
+case WM_CREATE:
+   // initialize REGVDD_INFO structure, etc.
+   regInfo.dwCmd = REGVDD_CMD_CREATESUBKEY;
+   regInfo.dwRootKey = 0x80000001;   //current user
+   regInfo.dwVolatility = 0x00000001;
+   regInfo.dwAccess = 0x000f003f;   //all access|write
+   lstrcpy(regInfo.szSubkey, (LPSTR)"Software\\Microsoft\\RegVDD");
+   regInfo.dwValueType = 1;         //REG_SZ;
+   lstrcpy(regInfo.szValueName, (LPSTR)"DefaultSetting");
+   lstrcpy(regInfo.szValueData, (LPSTR)"Stuff");
+   regInfo.dwValueDataSize =       lstrlen(regInfo.szValueData);
+   regInfo.dwStatus = 0;
+
+   if (bWinNT) {
+      _asm  mov si, offset szVDDName
+      _asm  mov di, offset szVDDInit
+      _asm  mov bx, offset szVDDDisp
+      _asm  RegisterModule
+      _asm  mov VDDHandle, ax
+   }
+   break;
+
+case WM_DESTROY:
+   if (bWinNT) {
+      _asm  mov ax, VDDHandle
+      _asm  UnregisterModule
+   }
+   PostQuitMessage(0);
+   break;
+
+
+
+
+
+
+

@@ -1,0 +1,22 @@
+#include "wtest.h"
+#include "wversion.h"
+
+WTEST_MENU MENU DISCARDABLE 
+BEGIN
+   POPUP "&Test"
+   BEGIN
+      MENUITEM "&Get Windows Version", IDM_VERSION
+   END
+END
+
+STRINGTABLE
+BEGIN
+    ENV_UNKNOWN,    "Unknown environment"
+    ENV_WIN3X,      "Windows 3.x"
+    ENV_WFW,        "Windows for Workgroups"
+    ENV_WIN32S,     "Win32s"
+    ENV_WIN32C,     "Windows 95"
+    ENV_WINNT,      "Windows NT"
+    ENV_WINNTAS,    "Windows NT Advanced Server"
+END
+

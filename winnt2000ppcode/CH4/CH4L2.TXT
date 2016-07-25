@@ -1,0 +1,278 @@
+/*=================================================
+    CFileMap class source file.
+    Written by: Mark Szamrej
+    Date: November-1994
+    Address: CompuServe 74261,1263
+
+    Description: See Filemap.h for more details.
+=================================================*/
+
+#include "windows.h"
+#include "filemap.h"
+
+//==========================================
+// Standard constructor. Initialize all of 
+// the member variables to safe values.
+//==========================================
+CFileMap::CFileMap()
+{
+m_hFile = INVALID_HANDLE_VALUE; // File handle
+m_hMapping = NULL;              // File mapping handle
+m_lpBaseAddress = NULL;         // Not mapped to a address
+m_hMutex = NULL;                // No Mutex to sync withm_dwAccess = 0;                 // No access 
+rights
+m_dwOpen = 0;                   // Lock count is zero
+m_dwFileLen = 0;                // File length is zero
+}
+
+//==========================================
+// The destructor simply calls UnMapFile()
+// to remove any existing mapping.
+//==========================================
+CFileMap::~CFileMap()
+{
+    CFileMap::UnMapFile();    // Remove any mapping before exit
+}
+
+//==========================================
+// Unmap any current file mapping we have.
+// Note that this is done in the reverse
+// order in which the view is mapped.
+//==========================================
+void CFileMap::UnMapFile()
+{
+    while(Close());    // Remove all locks we have
+
+    // Unmap any mapped views we have open
+    if(m_lpBaseAddress != NULL)
+    {
+    FlushViewOfFile(m_lpBaseAddress, 0); // Flush to disk
+    UnmapViewOfFile(m_lpBaseAddress);    // Unmap the view
+    m_lpBaseAddress = NULL;              // Can't use this
+    }
+
+    // Close the file mapping object
+    if(m_hMapping != NULL)
+    {
+        CloseHandle(m_hMapping);   // Close the mapping
+        m_hMapping = NULL;         // Can't use this
+    }
+
+    // Close the file if open
+    if(m_hFile != INVALID_HANDLE_VALUE)
+    {
+        CloseHandle(m_hFile);           // Close the file
+        m_hFile = INVALID_HANDLE_VALUE; // Can't use this
+    }
+
+    if(m_hMutex != NULL)
+    {
+        CloseHandle(m_hMutex);     // Close the mutex
+        m_hMutex = NULL;           // Can't use this
+    }
+
+    m_dwAccess = 0;                // No access
+    m_dwFileLen = 0;               // No length
+}
+
+//=============================================================
+// Maps memory for sharing. The name of the memory is ‘pszName’
+// and it has a length of dwBytes. Returns TRUE if successful.
+//=============================================================
+BOOL CFileMap::MapMemory(const char* pszName,DWORD dwBytes)
+{
+    UnMapFile();                   // Unmap current mapping
+
+    m_dwFileLen = dwBytes;         // Set the file length
+    m_dwAccess = READ |  WRITE;    // Full R/W access
+
+    if(! MapHandle(pszName, (HANDLE)0xFFFFFFFF))
+    {
+        UnMapFile();               // Unmap if we failed
+        return FALSE;              // Return failure
+    }
+
+return TRUE;                       // Return success
+}
+
+//=========================================================
+// Maps a file into memory for access  or sharing. The file
+// name is pszFileName and dwAccess indicates Read/Write
+// access. Return is TRUE if function is successful.
+// FALSE is returned if the file does not exist if the
+// system is unable to map the file for any reason.
+//=========================================================
+BOOL CFileMap::MapFile(const char* pszFileName, DWORD dwAccess /* READ + WRITE */)
+{
+    UnMapFile();            // Remove any existing mapping
+    m_dwAccess = dwAccess;  // Access type (Read/Write)
+
+    // First set the flags for the function call
+    DWORD dwFlags = 0;
+    if(m_dwAccess & READ)
+        dwFlags |= GENERIC_READ;
+    if(m_dwAccess & WRITE)
+        dwFlags |= GENERIC_WRITE;
+
+    // Step #1 - Call CreateFile() to open the file
+    m_hFile = CreateFile(pszFileName,
+        dwFlags,                   // Access flags
+        FILE_SHARE_READ | FILE_SHARE_WRITE,
+        NULL,                      // Security attributes
+        OPEN_EXISTING,             // Open existing file
+        FILE_ATTRIBUTE_NORMAL,     // File Attributes
+        NULL);                     // Template file to use
+
+    if(m_hFile == INVALID_HANDLE_VALUE)
+    {
+        UnMapFile();               // Unmap if we failed
+        return FALSE;              // Return failure
+    }
+
+    // Get the size of the file that we have
+    BY_HANDLE_FILE_INFORMATION bhInfo;
+    if(GetFileInformationByHandle(m_hFile, &bhInfo))
+        m_dwFileLen = bhInfo.nFileSizeLow;
+
+
+    // File has been created!
+    // Step #2 - Map the handle to memory
+    if(! MapHandle(pszFileName, m_hFile))
+    {
+        UnMapFile();               // Unmap if we failed
+        return FALSE;              // Return failure
+    }
+return TRUE;                       // Return success
+}
+
+//=========================================================
+// Does the work to map a file handle (hFile) to memory.
+// For real files (disk files) hFile is a file handle and
+// for memory hFile is 0xFFFFFFFF. The code does the bulk
+// of the work for the MapFile() and MapMemory() functions.
+//=========================================================
+BOOL CFileMap::MapHandle(const char* pszName, HANDLE hFile)
+{
+const int iLen = strlen(pszName);  // Get length of string
+
+    // Create the mapping name.
+    // The mapping name cannot contain any
+    // '\' backslash charecters so we will
+    // replace them with underscores ('_').
+    char* pszMapName = new char[iLen+1];
+    strcpy(pszMapName, pszName);   // Copy the base name
+    strupr(pszMapName);            // Make it uppercase
+    while(strchr(pszMapName, '\\'))// Replace '\' with '_'
+        *(strchr(pszMapName, '\\')) = (char)'_';
+
+    // Determine the flags to use for the function call
+    DWORD dwFlags;
+    if(m_dwAccess & WRITE)
+        dwFlags = PAGE_READWRITE;
+    else
+        dwFlags = PAGE_READONLY;
+
+    // Create a file mapping object
+    m_hMapping = CreateFileMapping(hFile,
+                    NULL,          // Security attributes
+                    dwFlags,       // Data protection
+                    0,             // High 32-bits of size
+                    m_dwFileLen,   // Low 32-bits of size
+                    pszMapName);   // Map name of object
+
+    if(m_hMapping == NULL)         // Create mapping failed
+    {
+        delete[] pszMapName;       // Delete our buffer
+        UnMapFile();               // Remove any mapping
+        return FALSE;              // Return failure
+    }
+
+    // Determine the flags to use for the function call
+    if(m_dwAccess & WRITE)
+        dwFlags = FILE_MAP_WRITE;
+    else
+        dwFlags = FILE_MAP_READ;
+
+    // Have the file mapping!
+    // Map the file into an address space
+    m_lpBaseAddress = MapViewOfFile(m_hMapping,
+            dwFlags,               // Read or write flags
+            0, 0,                  // Offset (0=beginning)
+            0);                    // Bytes to map (0=ALL)
+
+    if(m_lpBaseAddress == NULL)    // Unable to map a view
+    {
+    delete[] pszMapName;           // Delete our buffer
+    UnMapFile();                   // Remove any mapping
+    return NULL;                   // Return failure
+    }
+
+    //----------------------------------------------------
+    // Create the mutex. We have to use a diffent name than
+    // the file mapping object since they both share the
+    // same global name space and the call will fail.
+    //----------------------------------------------------
+    const char* pSuffix = "Mutex"; // Suffix to use
+    char* pszMutexName = new char[iLen+strlen(pSuffix)+1];
+    strcpy(pszMutexName, pszMapName); // Copy existing name
+    strcat(pszMutexName, pSuffix); // Append the suffix
+    strupr(pszMutexName);          // Make it uppercase
+
+    m_hMutex = CreateMutex(NULL,   // Security attributes
+            FALSE,                 // Don't want to own it
+            pszMutexName);         // Name for our mutex
+
+    delete[] pszMutexName;         // Delete the strings.
+    delete[] pszMapName;           // We won't need them.
+
+return TRUE;                       // Return success
+}
+
+//=====================================================
+// Open - Does not actually do anything with the file
+// mapping. It simply controls access to the data
+// to prevent multiple threads from stomping over
+// the data at the same time.
+//=====================================================
+LPVOID CFileMap::Open(DWORD dwTimeOut /* = INFINITE */)
+{
+    // If we are not mapped then our base address will
+    // be NULL. Comply with the request and return NULL.
+    if(m_lpBaseAddress == NULL)
+        return NULL;
+
+    // Wait for the mutex to be released or a timeout.
+    DWORD dwResult=WaitForSingleObject(m_hMutex,dwTimeOut);
+
+    if(dwResult == WAIT_OBJECT_0)
+    {                              // We got the file
+        m_dwOpen++;                // Increment lock count
+        return m_lpBaseAddress;    // Return memory pointer
+    }
+
+return NULL;                       // Couldn't get the file
+}
+
+//=====================================================
+// Close - Does not actually do anything with the file
+// mapping. Like Open(), it is used exclusively to 
+// control access to the data. Decrements the usage
+// count and releases the mutex to waiting threads.
+//=====================================================
+BOOL CFileMap::Close()
+{
+    if(m_dwOpen == 0)              // Return FALSE if file
+        return FALSE;              // was not already open
+
+    m_dwOpen--;                    // Decrement lock count
+    ReleaseMutex(m_hMutex);        // Now release the mutex
+
+return TRUE;                       // Return success
+}
+
+
+
+
+
+
+

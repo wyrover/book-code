@@ -1,0 +1,6 @@
+; command file for LIB
+; use this file to build largeint library
+; invoke with the following command LIB @LARGEINT
+/list:largeint.lst
+largeint.obj addsub.obj   divide.obj   divrem.obj
+lintfun.obj  misc.obj     multiply.obj

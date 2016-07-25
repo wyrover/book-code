@@ -1,0 +1,34 @@
+// EVENTLOG.H - Include file for EVENTLOG.CPP
+#ifndef _EVENTLOG_H_
+#define _EVENTLOG_H_
+
+class EventLog
+{
+   public:
+      EventLog(char *szSourceName, char *szMessageDLL,
+         BOOL bClearOnExit = FALSE, DWORD *dwStatus = NULL);
+      virtual ~EventLog();
+      DWORD Backup(LPTSTR szBackup);
+      DWORD Clear(LPTSTR szBackup);
+      DWORD Query(DWORD *dwNumRecords, DWORD *dwOldestRecord);
+      DWORD Read(DWORD dwRec, EVENTLOGRECORD *pData, DWORD dwSize);
+      DWORD Write(DWORD dwEventID, WORD wEventType, WORD wStrings,
+         LPCTSTR *pszStrings, DWORD dwData, LPBYTE lpData);
+      DWORD WriteCustom(LPTSTR szString, WORD wEventType);
+
+   private:
+      char szSource[MAX_PATH];
+      char szRegKey[MAX_PATH];
+      BOOL bClearReg;
+         // prevent copy by declaring without defining
+      EventLog(const EventLog&);
+      const EventLog& operator=(const EventLog&);
+};
+#endif
+
+
+
+
+
+
+

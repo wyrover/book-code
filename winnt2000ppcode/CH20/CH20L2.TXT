@@ -1,0 +1,65 @@
+      PARAMETER (MAX_THREADS = 50)
+      PARAMETER (WAIT_INFINITE = -1)
+      PARAMETER (STANDARD_RIGHTS_REQUIRED = #F0000)
+      PARAMETER (SYNCHRONIZE = #100000)
+
+      STRUCTURE /PROCESS_INFORMATION/
+      integer*4 hProcess
+      integer*4 hThread
+      integer*4 dwProcessId
+      integer*4 dwThreadId
+      END STRUCTURE
+
+      STRUCTURE /RTL_CRITICAL_SECTION_DEBUG/
+      integer*4 Type
+      integer*4 CreatorBackTraceIndex
+      integer*4 Address
+      integer*4 ProcessLocksList
+      integer*4 EntryCount
+      integer*4 ContentionCount
+      integer*4 Depth
+      integer*4 OwnerBackTrace(5)
+      END STRUCTURE
+
+      STRUCTURE /RTL_CRITICAL_SECTION/
+      integer*4 Address
+      integer*4 LockCount
+      integer*4 RecursionCount
+      integer*4 OwningThread
+      integer*4 LockSemaphore
+      integer*4 Reserved
+      END STRUCTURE
+
+      STRUCTURE /SECURITY_ATTRIBUTES/
+      integer*4 nLength
+      integer*4 lpSecurityDescriptor
+      logical*4 bInheritHandle
+      END STRUCTURE
+
+      STRUCTURE /STARTUPINFO/
+      integer*4 cb
+      integer*4 lpReserved
+      integer*4 lpDesktop
+      integer*4 lpTitle
+      integer*4 dwX
+      integer*4 dwY
+      integer*4 dwXSize
+      integer*4 dwYSize
+      integer*4 dwXCountChars
+      integer*4 dwYCountChars
+      integer*4 dwFillAttribute
+      integer*4 dwFlags
+      integer*2 wShowWindow
+      integer*2 cbReserved2
+      integer*4 lpReserved2
+      integer*4 hStdInput
+      integer*4 hStdOutput
+      integer*4 hStdError
+      END STRUCTURE
+
+
+
+
+
+
+

@@ -1,0 +1,61 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <stdarg.h>
+#include <limits.h>
+#include <ctype.h>
+#include <windows.h>
+#include <rpc.h>
+#include "prime.h"
+
+#define BACKGROUND_CYAN (WORD)0x0030
+#define WHITE_ON_BLUE   (WORD)0x0007|(WORD)0x0008|(WORD)0x0010
+#define WHITE_ON_CYAN   (WORD)0x0007|(WORD)0x0008|(WORD)0x0030
+#define RED_ON_BLUE     (WORD)0x0004|(WORD)0x0008|(WORD)0x0010
+#define RED_ON_CYAN     (WORD)0x0004|(WORD)0x0008|(WORD)0x0030
+#define CYAN_ON_CYAN    (WORD)0x0003|(WORD)0x0030
+#define SINGLE           0
+#define DOUBLE           1
+#define MAX_STR        100
+#define PRIME            1
+#define NOT_PRIME        0
+#define MAX_CALLS       10
+#define ERROR_EXIT       2
+#define SUCCESS_EXIT     0
+#define STRING_LENGTH  256
+#define WAIT           350
+#define WAIT_DISPLAY  2000
+#define C_N_LENGTH       7
+#define NO_WAIT          0
+#define TEST_X1          3
+#define TEST_Y1          3
+#define TEST_X2         23
+#define TEST_Y2         18
+#define PRIME_X1        30
+#define PRIME_Y1         3
+#define PRIME_X2        50
+#define PRIME_Y2        18
+
+#define ConsOutChar(l, c, z) FillConsoleOutputCharacter(hStdOut, l, c,\
+        Coord, &dummy); FillConsoleOutputAttribute(hStdOut, z, c, Coord,\
+        &dummy)
+#define CoordStruct(x, y) Coord.X = x, Coord.Y = y
+#define PutString(x, y, clr, frmt, var1, var2) { sprintf(Buffer, frmt, var1,\
+        var2); mxyputs((UCHAR)(x), (UCHAR)(y), Buffer, clr); }
+#define PutStruct(x, y, l, c, z) CoordStruct(x, y); ConsOutChar(l, c, z);
+#define CheckStatus(comment) if(status) { printf("comment %d\n");\
+        exit(status); }
+
+extern HANDLE hStdOut;
+extern CONSOLE_SCREEN_BUFFER_INFO csbi;
+extern void clearscreen(WORD), box(UCHAR, UCHAR, UCHAR, UCHAR, char);
+extern void mxyputs(UCHAR, UCHAR, char *, unsigned);
+extern void mxyputc(UCHAR, UCHAR, char, UCHAR, UCHAR), set_vid_mem(void);
+extern char get_character(int);
+
+
+
+
+
+
+

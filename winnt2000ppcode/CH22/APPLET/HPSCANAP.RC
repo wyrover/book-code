@@ -1,0 +1,37 @@
+/**-------------------------------------------------------**
+** HPSCANAP.RC:	Resources information for HPSCANAP.DLL
+** Environment: Windows NT.
+** (C) Hewlett-Packard Company 1993.  PLT.
+**-------------------------------------------------------**/
+
+/**------------------ Include Files ---------------------**/
+#include <windows.h>
+#include "scanaplt.h"
+#include "hpscanap.h"
+
+/**------- add the standard version resource info -------**/
+
+/**------------------ CONFIGURE_DLG ---------------------**/
+CONFIGURE_DLG DIALOG 20, 20, 144, 120
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION
+CAPTION "Configure"
+FONT 8, "MS Sans Serif"
+BEGIN
+   CONTROL "Configuration options for the:", IDNULL, "static",
+      SS_LEFT | WS_CHILD, 12, 10, 120, 8
+   CONTROL "", ID_CONFIG_SCANNER, "static", 
+      SS_LEFT | WS_CHILD, 20, 20, 120, 8
+   CONTROL "&Driver Configuration", ID_CONFIG_DRV, "button",
+      BS_PUSHBUTTON | WS_TABSTOP | WS_CHILD, 33, 38, 78, 14
+   CONTROL "Scanner &Test", ID_CONFIG_TEST, "button", 
+      BS_PUSHBUTTON | WS_TABSTOP | WS_CHILD, 33, 54, 78, 14
+   CONTROL "Color &Calibration", ID_CONFIG_CAL, "button", 
+      BS_PUSHBUTTON | WS_TABSTOP | WS_CHILD, 33, 70, 78, 14
+   CONTROL "OK", IDOK, "button", 
+      BS_DEFPUSHBUTTON | WS_TABSTOP | WS_CHILD, 54, 96, 38, 14
+   CONTROL "&Help", ID_CONFIG_HELP, "button", 
+      BS_PUSHBUTTON | WS_TABSTOP | WS_CHILD, 94, 96, 38, 14
+END
+
+

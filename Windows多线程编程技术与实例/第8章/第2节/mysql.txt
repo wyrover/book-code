@@ -1,0 +1,94 @@
+USE master
+GO
+
+IF EXISTS (SELECT name FROM master.dbo.sysdatabases WHERE name = N'TEST')
+	DROP DATABASE [ASC]
+GO
+
+CREATE DATABASE [ASC]
+ON PRIMARY
+( NAME = ASC_Main_dat,
+   FILENAME = 'C:\ASC_Main.mdf',
+   SIZE = 10,
+   FILEGROWTH = 15% ),
+FILEGROUP ASC_MailCode
+( NAME = ASC_MailCode_dat,
+   FILENAME = 'C:\ASC_MailCode.ndf',
+   SIZE = 50,
+   FILEGROWTH = 5 ),
+FILEGROUP ASC_Mail
+( NAME = ASC_Mail_dat,
+   FILENAME = 'C:\ASC_Mail.ndf',
+   SIZE = 50,
+   FILEGROWTH = 5 )
+LOG ON
+( NAME = 'ASC_log',
+   FILENAME = 'C:\ASC.ldf',
+   SIZE = 5MB,
+   FILEGROWTH = 5MB )
+ COLLATE Chinese_PRC_CI_AS
+GO
+
+USE [ASC]
+GO
+
+
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[MailSample]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [dbo].[MailSample]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[DataLog]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [dbo].[DataLog]
+GO
+
+CREATE TABLE [dbo].[MailSample] (
+	[emlID] [int] IDENTITY (1, 1) NOT NULL ,
+	[emlPathNm] [varchar] (80) COLLATE Chinese_PRC_CI_AS NOT NULL ,
+	[emlContent] [image] NOT NULL ,
+	[emlCMT] [varchar] (200) COLLATE Chinese_PRC_CI_AS NULL 
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[DataLog] (
+	[Log_ID] [int] IDENTITY (1, 1) NOT NULL ,
+	[LogFileNm] [char] (25) COLLATE Chinese_PRC_CI_AS NOT NULL ,
+	[TimeStamp] [datetime] NOT NULL ,
+	[Rule_ID] [varchar] (22) COLLATE Chinese_PRC_CI_AS NOT NULL ,
+	[Category_ID] [numeric](8, 0) NOT NULL ,
+	[Client_IP] [varchar] (15) COLLATE Chinese_PRC_CI_AS NOT NULL ,
+	[IP_Zone] [numeric](10, 0) NULL ,
+	[Size] [numeric](16, 0) NOT NULL ,
+	[Body_Size] [numeric](16, 0) NOT NULL ,
+	[Mail_File] [varchar] (80) COLLATE Chinese_PRC_CI_AS NOT NULL ,
+	[Condition] [varchar] (256) COLLATE Chinese_PRC_CI_AS NULL ,
+	[Action] [numeric](2, 0) NOT NULL ,
+	[Sender] [varchar] (256) COLLATE Chinese_PRC_CI_AS NOT NULL ,
+	[Subject] [varchar] (256) COLLATE Chinese_PRC_CI_AS NOT NULL ,
+	[Receiver] [varchar] (1000) COLLATE Chinese_PRC_CI_AS NOT NULL ,
+	[CC] [varchar] (1000) COLLATE Chinese_PRC_CI_AS NULL ,
+	[BCC] [varchar] (1000) COLLATE Chinese_PRC_CI_AS NULL ,
+	[Log_CMT] [varchar] (200) COLLATE Chinese_PRC_CI_AS NULL 
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[MailSample] WITH NOCHECK ADD 
+	CONSTRAINT [PK_MAILSAMPLE] PRIMARY KEY  CLUSTERED 
+	(
+		[emlPathNm]
+	)  ON [PRIMARY] 
+GO
+
+
+ALTER TABLE [dbo].[DataLog] WITH NOCHECK ADD 
+	CONSTRAINT [PK_DATALOG] PRIMARY KEY  CLUSTERED 
+	(
+		[LogFileNm]
+	)  ON [PRIMARY] 
+GO
+
+
+
+

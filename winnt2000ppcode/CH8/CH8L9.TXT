@@ -1,0 +1,42 @@
+#include <string.h>
+#include "tssetlst.h"
+
+void init_setup (setup_record *the_setup) {
+   strcpy (the_setup->input_file_name,"filename.dat");
+   strcpy (the_setup->str_data,"Rectangle");
+   the_setup->rect_color = RGB (255,0,0);  // Red
+   return; }
+
+void setup_to_collection (setup_record *the_setup,
+      object_list *the_collection) {
+   void *value_ptr = NULL;
+   tdata_type the_type;
+   unsigned short len;
+   int item_no = 0;
+
+   value_ptr = &the_setup->input_file_name;
+   the_type = PATH_DATA;
+   len = MAX_PATH;
+   item_no++;
+   the_collection->add_item (new ttyped_data_obj (
+      "Input File Name",value_ptr,the_type,len, "*.DAT",item_no));
+   value_ptr = &the_setup->str_data;
+   the_type = STR_DATA;
+   len = STR_DATA_LEN;
+   item_no++;
+   the_collection->add_item (new ttyped_data_obj (
+      "String Data",value_ptr,the_type,len, "",item_no));
+   value_ptr = &the_setup->rect_color;
+   the_type = COLOR_DATA;
+   len = 17;
+   item_no++;
+   the_collection->add_item (new ttyped_data_obj (
+      "Rect Color",value_ptr,the_type,len, "",item_no));
+   return; }
+
+
+
+
+
+
+

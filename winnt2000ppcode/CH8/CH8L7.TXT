@@ -1,0 +1,135 @@
+#include "cwdlg.h"
+#include "dlgids.h"
+
+tlist_dialog *this_list_dialog = 0;
+
+BOOL CALLBACK _export tlist_dialog_proc(HWND hdlg,
+        UINT message,WPARAM wParam, LPARAM lParam) {
+    return this_list_dialog->handle_message(hdlg, message,wParam,lParam); }
+
+tlist_dialog::tlist_dialog (HWND Parent,
+      LPCSTR caption_name,LPCSTR descr_name,
+      tlist_box_data *the_data_rec,int init_selected):
+      tdialog (Parent,"LIST_DIALOG",caption_name) {
+    list_box_descr = descr_name;
+    selected = init_selected;    list_box_data = the_data_rec; }
+
+BOOL tlist_dialog::respond_wm_initdialog () {
+    SetWindowText (hdialog,caption_title);
+    SetWindowText (GetDlgItem(hdialog,ID_LSTDIALG_DESCR), list_box_descr);
+    set_data (list_box_data);
+    SetFocus(GetDlgItem(hdialog,ID_LSTDIALG_LSTBOX));
+    return tdialog::respond_wm_initdialog () ; }
+
+BOOL tlist_dialog::respond_wm_command (WPARAM wParam, LPARAM lParam) {
+    switch (LOWORD(wParam)) {
+    case IDOK:
+       selected = (int)SendDlgItemMessage(hdialog,
+       ID_LSTDIALG_LSTBOX,LB_GETCURSEL,0,0L) + 1;
+       dlg_return_value = 1;
+       EndDialog(hdialog, TRUE);
+       return 1;
+    case IDCANCEL:
+       dlg_return_value = 0;
+       EndDialog(hdialog,FALSE);
+    case ID_LSTDIALG_LSTBOX:
+          switch (GET_WM_COMMAND_CMD(wParam,lParam)) {
+          case LBN_DBLCLK:
+          selected = (int)SendDlgItemMessage(hdialog,
+          ID_LSTDIALG_LSTBOX,LB_GETCURSEL,0,0L) + 1;
+          dlg_return_value = 1;
+          EndDialog(hdialog, TRUE);
+          return 1;
+       }  // end switch
+    }  // end switch
+    return 0; }
+
+void tlist_dialog::set_data (tlist_box_data *data_rec){
+    int i;
+    data_rec->selected_item = selected;
+    clear_list_box();
+    for (i=1;i<=(data_rec->item_collection)-> get_count();i++)
+    SendDlgItemMessage(hdialog,ID_LSTDIALG_LSTBOX,
+       LB_ADDSTRING,0,(LRESULT)get_item_string(i));
+    set_selected(selected); }
+void tlist_dialog::get_data (tlist_box_data *data_rec){
+    // All we care about is getting the selected item
+    // index. The object list updates itself.
+    data_rec->selected_item = selected; }
+
+LPSTR tlist_dialog::get_item_string (int item) {
+    // Assumes item_collection in list_box_data is an
+    // array of strings. Override this for list boxes
+    // with more complex items.
+    return (LPSTR)((list_box_data->
+       item_collection)->at(item)); }
+
+void tlist_dialog::set_selected (int sel) {
+    SendDlgItemMessage(hdialog,ID_LSTDIALG_LSTBOX, LB_SETCURSEL,sel-1, 0); }
+
+void tlist_dialog::clear_list_box () {
+    SendDlgItemMessage(hdialog,ID_LSTDIALG_LSTBOX, LB_RESETCONTENT,0, 0); }
+
+BOOL tlist_dialog::exec_dialog () {
+    if (!check_gdlg_instance()) return 0;
+    tlist_dialog *old_tlist_dialog = this_list_dialog;
+    this_list_dialog = this;
+    lpDialogProc = (DLGPROC)MakeProcInstance(
+       (FARPROC)tlist_dialog_proc,gdlg_instance);
+    DialogBox(gdlg_instance,rc_title, hwndParent, lpDialogProc);
+    FreeProcInstance((FARPROC)lpDialogProc);
+    this_list_dialog = old_tlist_dialog;
+    return dlg_return_value; }
+
+tlist_dialog::~tlist_dialog () {
+     clear_list_box(); }
+
+tdata_list_dialog *this_data_list_dialog = 0;
+
+BOOL CALLBACK _export tdata_list_dialog_proc(HWND hdlg,
+     UINT message,WPARAM wParam, LPARAM lParam){
+     return this_data_list_dialog->handle_message(hdlg,
+        message,wParam,lParam); }
+
+LPSTR tdata_list_dialog::get_item_string (int item) {
+    return (LPSTR)
+       (((ttyped_data_obj *)((list_box_data-> item_collection)->at(item)))->
+       get_display_str()); }
+
+BOOL tdata_list_dialog::respond_wm_command (WPARAM wParam,LPARAM lParam) {
+    int list_selected;
+
+    switch (LOWORD(wParam)) {
+    case ID_LSTDIALG_LSTBOX:
+       switch (GET_WM_COMMAND_CMD(wParam,lParam)) {
+       case LBN_DBLCLK:
+       list_selected = (int)SendDlgItemMessage(
+          hdialog,ID_LSTDIALG_LSTBOX,LB_GETCURSEL,0,0L) + 1;
+       ((ttyped_data_obj *)((list_box_data->
+         item_collection)->at(list_selected)))->
+         get_new_value(hdialog,MAX_DISPLAY_LEN);
+       list_box_data->selected_item = list_selected;
+       set_data (list_box_data);
+       SetFocus(GetDlgItem(hdialog, ID_LSTDIALG_LSTBOX));
+       return 1;
+       }  // end switch
+    }  /* end switch  */
+    return tlist_dialog::respond_wm_command(wParam,lParam); }
+
+BOOL tdata_list_dialog::exec_dialog () {
+    if (!check_gdlg_instance()) return 0;
+    tdata_list_dialog *old_data_list_dialog = this_data_list_dialog;
+    this_data_list_dialog = this;
+    lpDialogProc = (DLGPROC)MakeProcInstance(
+       (FARPROC)tdata_list_dialog_proc,gdlg_instance);
+    DialogBox(gdlg_instance,rc_title, hwndParent, lpDialogProc);
+    FreeProcInstance((FARPROC)lpDialogProc);
+    this_data_list_dialog = old_data_list_dialog;
+    return dlg_return_value; }
+
+
+
+
+
+
+

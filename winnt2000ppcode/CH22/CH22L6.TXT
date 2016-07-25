@@ -1,0 +1,131 @@
+/**-------------------------------------------------------**
+** HPSCANAP.C: Entry-points for the HP scanners.
+** Environment: Windows NT.
+** (C) Hewlett-Packard Company 1993.  PLT.
+**-------------------------------------------------------**/
+
+/**------------------ Include Files ---------------------**/
+#include <windows.h>
+#include "scanaplt.h"
+#include "hpscanap.h"
+
+/**------------------- Global Data ----------------------**/
+HINSTANCE hInst;
+char lpTitle[64];
+
+/***********************************************************
+** Routine:  LibMain
+**    Called by Windows when a DLL is loaded. Perform your
+**    process or thread specific initialization tasks here.
+** Return:  Return 1 if initialization successful.
+***********************************************************/
+
+INT APIENTRY LibMain(HINSTANCE hModule, ULONG ulReason,
+   LPVOID lpReserved)
+{
+   hInst = hModule;
+   return 1;
+} /* LibMain */
+
+/***********************************************************
+** Routine:  CPL_ScannerConfigure
+**    Entry-point for vendor-specific configuration options.
+**    Called when "Configure..." selected for an HP scanner.
+** Return:  Return TRUE if successful, else return FALSE.
+***********************************************************/
+ULONG APIENTRY CPL_ScannerConfigure(HWND hWndApplet,
+   ULONG ulData, LPTSTR lpScannerTitle)
+{
+   strcpy(lpTitle, lpScannerTitle);
+   DialogBox(hInst, MAKEINTRESOURCE(CONFIGURE_DLG),
+     hWndApplet, (DLGPROC)ConfigureDlgProc);
+   return TRUE;
+} /* CPL_ScannerConfigure */
+
+/***********************************************************
+** Routine:  CPL_ScannerInstall
+**    Scanner Applet will call if user adds an HP scanner
+**    (and capabilities indicate that install is supported).
+** Return:  Return TRUE if successful, else return FALSE.
+***********************************************************/
+ULONG APIENTRY CPL_ScannerInstall(HWND hWndApplet,
+   ULONG ulData, LPTSTR lpScannerTitle)
+{
+   /* copy/create files, add custom entries to registry */
+   return TRUE;
+} /* CPL_ScannerInstall */
+
+/***********************************************************
+** Routine:  CPL_ScannerUninstall
+**    Scanner Applet will call if user removes an HP scanner
+**    (and capabilities indicate uninstall is supported).
+** Return:  Return TRUE if successful, else return FALSE.
+***********************************************************/
+ULONG APIENTRY CPL_ScannerUninstall(HWND hWndApplet,
+   ULONG ulData, LPTSTR lpScannerTitle)
+{
+   /* delete files, remove custom entries from registry */
+   return TRUE;
+} /* CPL_ScannerUninstall */
+
+/***********************************************************
+** Routine:  ConfigureDlgProc
+**    Dialog box procedure for CONFIGURE_DLG
+***********************************************************/
+BOOL APIENTRY ConfigureDlgProc(HWND hDlg, UINT msg,
+   WPARAM wParam, LPARAM lParam)
+{
+   switch (msg)
+   {
+      case WM_INITDIALOG:
+         SetDlgItemText(hDlg, ID_CONFIG_SCANNER, lpTitle);
+         if (strstr(lpTitle, "IIc") == NULL)
+            EnableWindow(GetDlgItem(hDlg, ID_CONFIG_CAL),
+               FALSE);
+         return TRUE;
+
+      case WM_COMMAND:
+         switch(wParam)
+         {
+            case ID_CONFIG_DRV:
+               /* add code for configuring the drivers! */
+               MessageBox(hDlg, (LPTSTR)"Configured!",
+                 (LPTSTR)"HP Scanner Configuration", MB_OK);
+               return TRUE;
+
+            case ID_CONFIG_TEST:
+               /* add code for testing the scanner */
+               MessageBox(hDlg, (LPTSTR)"Tested!",
+                 (LPTSTR)"HP Scanner Configuration", MB_OK);
+               return TRUE;
+
+            case ID_CONFIG_CAL:
+               /* add code for doing color calibration */
+               MessageBox(hDlg, (LPTSTR)"Calibrated!",
+                 (LPTSTR)"HP Scanner Configuration", MB_OK);
+               return TRUE;
+
+            case ID_CONFIG_HELP:
+               /* call WinHelp with HLP file and topic */
+               MessageBox(hDlg, (LPTSTR)"You're doing fine!",
+                 (LPTSTR)"HP Scanner Configuration", MB_OK);
+               return TRUE;
+
+            case IDOK:
+               EndDialog(hDlg, TRUE);
+               return TRUE;
+
+            default:  return TRUE;
+         } /* switch on wParam */
+         break;
+
+   } /* switch on msg */
+   return FALSE;
+} /* OptionsDlgProc */
+
+
+
+
+
+
+

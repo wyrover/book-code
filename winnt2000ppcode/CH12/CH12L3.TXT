@@ -1,0 +1,63 @@
+// ****************************************************************************
+// Module:  ipcsem.C   --  Author:  Dick Lam
+// Purpose: C++ class source file for ipcSemaphore
+// Notes:   This is an abstract base class.  It is the interface class for
+//          semaphores used in signalling between processes and threads.
+// ****************************************************************************
+#include "ipcsem.h"
+#include "ossem.h"
+// ****************************************************************************
+// ipcSemaphore - constructor
+ipcSemaphore::ipcSemaphore(const char *name, ipcSemaphoreType type,
+                           ipcSemaphoreOp operation)
+{
+   // init instance variables
+   myState = good;
+   myImpl = new osSemaphore(this, name, type, operation);
+   if (!myImpl)
+      myState = bad;
+}
+// ----------------------------------------------------------------------------
+// ~ipcSemaphore - destructor
+ipcSemaphore::~ipcSemaphore()
+{
+   delete myImpl;
+}
+// ----------------------------------------------------------------------------
+// Name - returns the name of the semaphore
+char *ipcSemaphore::Name() const
+{
+   if (!myImpl)
+     return 0;
+   return myImpl->Name();
+}
+// ----------------------------------------------------------------------------
+// ID - returns the semaphore id
+unsigned long ipcSemaphore::ID() const{
+   if (!myImpl)
+      return 0L;
+   return myImpl->ID();
+}
+// ----------------------------------------------------------------------------
+// Type - returns the type of semaphore
+ipcSemaphoreType ipcSemaphore::Type() const
+{
+   if (!myImpl)
+    return unknown;
+   return myImpl->Type();
+}
+// ----------------------------------------------------------------------------
+// Owner - returns 1 if this is the owner (creator), and 0 otherwise
+int ipcSemaphore::Owner() const
+{
+   if (!myImpl)
+     return 0;
+   return myImpl->Owner();
+}
+
+
+
+
+
+
+

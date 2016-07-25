@@ -1,0 +1,62 @@
+/*===============================================================
+    CFileMap class header file.
+    Written by: Mark Szamrej
+    Date: November-1994
+    Address: CompuServe 74261,1263
+
+    Description: C++ class to facilitate the use of memory mapped
+    files. Works with both disk files and shared memory. Class is
+    safe in multithreaded and multitasking environments. Class
+    cleanup will always be performed in the destructor.
+=================================================================*/
+
+#ifndef __FILE_MAP_H__
+#define __FILE_MAP_H__
+
+class CFileMap
+{
+//------------------ Member Functions ------------------
+public:
+    CFileMap();                    // Standard constructor
+    virtual    ~CFileMap();        // Destructor
+
+    // ----- Map file to memory -----
+    virtual BOOL    MapFile(const char*, DWORD dwAccess= READ | WRITE);
+
+    // ----- Map shared memory -----
+    virtual BOOL    MapMemory(const char*, DWORD dwBytes);	
+    // ----- Once mapped, use the following -----
+    virtual LPVOID  Open(DWORD dwTimeOut= INFINITE);
+    virtual BOOL    Close();
+    virtual DWORD   GetLength(){return m_dwFileLen;}
+    virtual void    UnMapFile();
+
+protected:
+    virtual BOOL    MapHandle(const char*, HANDLE);
+
+//------------------ Member Variables ------------------
+public:
+    enum{READ = 0x0001,            // READ access
+         WRITE = 0x0002,           // WRITE access
+        };
+
+protected:
+    DWORD  m_dwAccess;             // Access type (R/W)
+    DWORD  m_dwFileLen;            // Length of mapped item
+
+    LPVOID m_lpBaseAddress;        // Mapped file address
+    HANDLE m_hMapping;             // File mapping handle
+    HANDLE m_hFile;                // File handle
+    HANDLE m_hMutex;               // File access mutex
+
+    DWORD  m_dwOpen;               // Access count
+};
+
+#endif        // __FILE_MAP_H__
+
+
+
+
+
+
+

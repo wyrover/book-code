@@ -1,0 +1,92 @@
+/*----------------------------------------------------
+    DO LAUNCH
+  ----------------------------------------------------*/
+void DoLaunch( HWND hWnd )
+{
+  TCHAR szName[_MAX_FNAME*sizeof(TCHAR)] = TEXT("");
+  TCHAR szPath[_MAX_PATH*sizeof(TCHAR)] = TEXT("");
+  BOOL bSuccess;
+  HANDLE hThread;           /* debugging thread */
+  DWORD dwThreadID;
+
+  /* ask user for name of file to open */
+  bSuccess = GetFileName(hWnd, szPath, szName);
+  if (!bSuccess)
+    return;
+
+  /* create a thread to wait for debugging events */
+  gbContinueDebug = TRUE;
+  hThread = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)DebuggingThread,
+    (LPTSTR)szPath, 0, &dwThreadID);
+  if (!hThread) {
+    ShowErrorMsg(__LINE__);
+    gbContinueDebug = FALSE;
+    return;
+  }
+  CloseHandle(hThread);
+}
+
+/*----------------------------------------------------
+    DEBUGGING THREAD
+  ----------------------------------------------------*/
+LRESULT DebuggingThread( LPCTSTR lpszFilePath )
+{
+  STARTUPINFO sui;
+  PROCESS_INFORMATION pi;
+  BOOL bSuccess;
+  DEBUG_EVENT DebugEvent;
+
+  /* fill in the process's startup information */
+  ZeroMemory( &sui, sizeof(STARTUPINFO) );
+  sui.cb = sizeof(STARTUPINFO);
+  sui.wShowWindow = SW_SHOWDEFAULT;
+
+  pi.hProcess = NULL;
+
+  /* create the debuggee process */
+  bSuccess = CreateProcess(NULL, lpszFilePath, NULL, NULL, TRUE,
+    DEBUG_PROCESS | DEBUG_ONLY_THIS_PROCESS, NULL, NULL, &sui, &pi);
+  if (!bSuccess) {
+    ShowErrorMsg(__LINE__);
+    gbContinueDebug = FALSE;
+    ExitThread( 1 );
+  }
+  CloseHandle( pi.hProcess );
+  CloseHandle( pi.hThread );
+
+  while (gbContinueDebug) {
+    DWORD dwBytesRead;
+    TCHAR szDebugString[256];
+
+    /* block until a debugging event occurs */
+    WaitForDebugEvent(&DebugEvent, INFINITE);
+
+    switch (DebugEvent.dwDebugEventCode) {
+
+      case OUTPUT_DEBUG_STRING_EVENT:
+        bSuccess = ReadProcessMemory(pi.hProcess,
+          DebugEvent.u.DebugString.lpDebugStringData, szDebugString,
+          DebugEvent.u.DebugString.nDebugStringLength, &dwBytesRead);
+        if (!bSuccess)
+          ShowErrorMsg(__LINE__);
+        Edit_Append(ghEditBox, szDebugString);
+        break;
+
+      case EXIT_PROCESS_DEBUG_EVENT:
+        Edit_Append(ghEditBox, "DETACHING" );
+        gbContinueDebug = FALSE;
+        break;
+    }
+    /* allow debuggee to resume execution */
+    ContinueDebugEvent(DebugEvent.dwProcessId,
+      DebugEvent.dwThreadId, DBG_CONTINUE);
+  }
+  return(0L);
+}
+
+
+
+
+
+
+

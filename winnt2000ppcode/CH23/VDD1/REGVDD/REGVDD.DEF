@@ -1,0 +1,11 @@
+; REGVDD.DEF - Module definition file for REGVDD.DLL
+LIBRARY VDD
+DESCRIPTION 'Sample VDD - provides Win32 API to 16-bit apps'
+
+EXPORTS
+   RegVDDDispatch
+   RegVDDTerminateVDM
+   RegVDDRegisterInit
+
+; end of file
+

@@ -1,0 +1,8 @@
+         --==*** Visual C++编程专业站点 ***==--
+
+      VC大本营 - http://www.pcvc.net
+
+           C/C++，Windows，SDK，ASM，API，MFC
+        丰富的开发文档、大量源代码，编程例子详解
+
+--==*** 随时欢迎光临 - http://www.pcvc.net ***==--

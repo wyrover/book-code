@@ -1,0 +1,105 @@
+//  run  this  after  running  send.exe
+
+#include  <windows.h>
+#include  <stdio.h>
+
+/*  Borland  v4.5  needs  a  fix  */
+#if  defined(__BORLANDC__)  &&  (__BORLANDC__  <=  0x0460)
+typedef  struct  FOO_LARGE_INTEGER  {
+        DWORD  LowPart;
+        LONG    HighPart;
+}  FOO_LARGE_INTEGER;
+
+#define  LARGE_INTEGER      FOO_LARGE_INTEGER
+
+#endif
+#ifdef  __BORLANDC__
+#      pragma  argsused
+#endif
+int  main(int  argc,  char  **argv)
+{
+      HANDLE  event;
+      HANDLE  recevent,  ackevent;
+      HANDLE  sem1,  sem2,  sem3;
+      HANDLE  mu1,  mu2,  mu3;
+      LARGE_INTEGER    start;
+      LARGE_INTEGER    end;
+      LARGE_INTEGER    freq;
+      int    i;
+      double  tks;
+
+      QueryPerformanceFrequency(&freq);
+
+      //  open  syncrhonization  event
+      event  =  OpenEvent(EVENT_ALL_ACCESS,  FALSE,  "Start");
+
+      //  now  for  event-based  context  switching
+      recevent  =  OpenEvent(EVENT_ALL_ACCESS,  FALSE,  "RecSync");
+      ackevent  =  OpenEvent(EVENT_ALL_ACCESS,  FALSE,  "AckSync");
+      SetEvent(event);
+      QueryPerformanceCounter(&start);
+      for  (i  =  0;  i  <  10000;  i++)  {
+            WaitForSingleObject(recevent,  INFINITE);
+            SetEvent(ackevent);
+            WaitForSingleObject(recevent,  INFINITE);
+            SetEvent(ackevent);
+            WaitForSingleObject(recevent,  INFINITE);
+            SetEvent(ackevent);
+      }
+      QueryPerformanceCounter(&end);
+      tks  =  ((end.LowPart  -  start.LowPart)  /  3.0)/  10000.0;
+      fprintf(stderr,  "Average  #  of  microseconds  context  "
+             "switch  using  events  =  %f\n",
+             (tks  /  (double)  freq.LowPart)*1000000.0);
+
+      //  semaphore  based  context  switching
+      WaitForSingleObject(event,  INFINITE);
+      sem1  =  OpenSemaphore(SEMAPHORE_ALL_ACCESS,  FALSE,  "Sem1");
+      sem2  =  OpenSemaphore(SEMAPHORE_ALL_ACCESS,  FALSE,  "Sem2");
+      sem3  =  OpenSemaphore(SEMAPHORE_ALL_ACCESS,  FALSE,  "Sem3");
+      SetEvent(event);
+      WaitForSingleObject(sem2,  INFINITE);
+      QueryPerformanceCounter(&start);
+      for  (i  =  0;  i  <  10000;  i++)  {
+            WaitForSingleObject(sem1,  INFINITE);
+            ReleaseSemaphore(sem2,  1,  0);
+            WaitForSingleObject(sem3,  INFINITE);
+            ReleaseSemaphore(sem1,  1,  0);
+            WaitForSingleObject(sem2,  INFINITE);
+            ReleaseSemaphore(sem3,  1,  0);
+      }
+      QueryPerformanceCounter(&end);
+      tks  =  ((end.LowPart  -  start.LowPart)  /  3.0)/  10000.0;
+      fprintf(stderr,  "Average  #  of  microseconds  context  "
+             "switch  using  semaphores  =  %f\n",
+             (tks  /  (double)  freq.LowPart)*1000000.0);
+
+      //  mutex  oriented  context  switching
+      WaitForSingleObject(event,  INFINITE);
+      mu1  =  OpenMutex(MUTEX_ALL_ACCESS,  FALSE,  "Mutex1");
+      mu2  =  OpenMutex(MUTEX_ALL_ACCESS,  FALSE,  "Mutex2");
+      mu3  =  OpenMutex(MUTEX_ALL_ACCESS,  FALSE,  "Mutex3");
+      WaitForSingleObject(mu2,  INFINITE);
+      SetEvent(event);
+      QueryPerformanceCounter(&start);
+      for  (i  =  0;  i  <  10000;  i++)  {
+            WaitForSingleObject(mu1,  INFINITE);
+            ReleaseMutex(mu2);
+            WaitForSingleObject(mu3,  INFINITE);
+            ReleaseMutex(mu1);
+            WaitForSingleObject(mu2,  INFINITE);
+            ReleaseMutex(mu3);
+      }
+      QueryPerformanceCounter(&end);
+      tks  =  ((end.LowPart  -  start.LowPart)  /  3.0)/  10000.0;
+      fprintf(stderr,  "Average  #  of  microseconds  context  "
+             "switch  using  mutexes  =  %f\n",
+             (tks  /  (double)  freq.LowPart)*1000000.0);
+}
+
+
+
+
+
+
+

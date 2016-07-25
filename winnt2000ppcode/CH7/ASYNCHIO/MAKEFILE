@@ -1,0 +1,17 @@
+
+# Nmake macros for building Windows 32-Bit apps
+!include <win32.mak>
+
+PROJ = TESTMAIN
+
+all: $(PROJ).exe
+
+
+.cpp.obj:
+  $(cc) $(cdebug) $(cflags) $(cvars) $*.cpp
+
+$(PROJ).EXE: $*.obj asynch.obj
+    $(link) $(linkdebug) $(conlflags) \
+    $*.obj asynch.obj $(conlibs) version.lib \
+    -out:$(PROJ).exe $(MAPFILE)
+

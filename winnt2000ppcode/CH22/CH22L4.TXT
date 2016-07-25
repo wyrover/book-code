@@ -1,0 +1,18 @@
+;SCANAPLT.DEF - module definition file for SCANAPLT.CPL
+
+LIBRARY   ScanAplt
+
+CODE      PRELOAD MOVEABLE DISCARDABLE
+DATA      PRELOAD SINGLE
+
+EXPORTS
+   CPlApplet           @2
+   ScannerDlgProc      @10
+   AddDlgProc          @11
+
+
+
+
+
+
+

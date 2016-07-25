@@ -1,0 +1,22 @@
+#include <windows.h>     /* normal include for all windows applications   */
+#include <windowsx.h>    /* include macro definitions for NT only          */
+#include <move2nt.h>     /* include macro definitions for Win16            */
+/* The following window procedure declaration IS portable to Windows NT!   */
+LRESULT CALLBACK MyWinProc (HWND hwnd, UINT wMsg, WPARAM 
+wParam, LPARAM wParam)
+{
+     switch ( wMsg )
+     {
+         case WM_COMMAND:
+         /* Portable reference to control ID in message params   */
+         switch ( GET_WM_COMMAND_ID (wParam, lParam) )
+         {
+         /* processing for WM_COMMAND based on control ID goes here */
+         /* using GET_WM_COMMAND_xxx macros for portability...    */
+         }
+         case WM_SOMEMESSAGE:
+         /*  Portable method to send WM_COMMAND message to parent */
+             SendMessage ( GetParent (hwnd), WM_COMMAND,
+                           GET_WM_COMMAND_MPS (wMyID,  hwnd, wNotifyCode));
+     }
+}

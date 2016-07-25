@@ -1,0 +1,116 @@
+/*----------------------------------------------------
+    SET BREAKPOINT
+    Write a breakpoint instruction into the debuggee's
+    code.  Save the original instruction first.
+  ----------------------------------------------------*/
+BOOL SetBreakpoint( HANDLE hProcess, PBPNODE pBP )
+{
+  BOOL bSuccess;
+  BYTE byOpcode = BP_OPCODE;
+  char szMsg[256];
+
+  __try {
+    bSuccess = ReadOpcode(hProcess, pBP->pAddress,
+      &pBP->Opcode);
+    if (bSuccess)
+      bSuccess = WriteOpcode(hProcess, pBP->pAddress,
+        &byOpcode);
+
+  } __except (EXCEPTION_EXECUTE_HANDLER) {
+    bSuccess = FALSE;
+  }
+
+  return(bSuccess);
+}
+
+/*----------------------------------------------------
+    REMOVE BREAKPOINT
+    Remove a breakpoint instruction from the
+    debuggee code.  (Does not remove the BPNODE
+    structure from the list of breakpoints.)
+  ----------------------------------------------------*/
+BOOL RemoveBreakpoint( HANDLE hProcess, PBPNODE pBP )
+{
+  BOOL bSuccess;
+  __try {
+   bSuccess = WriteOpcode(hProcess, pBP->pAddress,
+        &pBP->Opcode);
+
+  } __except (EXCEPTION_EXECUTE_HANDLER) {
+    bSuccess = FALSE;
+  }
+  return(bSuccess);
+}
+
+/*----------------------------------------------------
+    WRITE OPCODE
+    Write a byte into the address space of the given
+    process.  (Call this to insert breakpoints.)
+  ----------------------------------------------------*/
+BOOL WriteOpcode(
+  HANDLE hProcess, PBYTE pAddress, PBYTE pOpcode )
+{
+  BOOL bSuccess;
+  DWORD dwBytes;
+  DWORD dwNewFlags, dwOldFlags;
+
+  /* change mem protection in debuggee for writing */
+  bSuccess = VirtualProtectEx(hProcess, pAddress,
+    1L, PAGE_READWRITE, &dwOldFlags);
+  if (!bSuccess) {
+    ERROR_MSG(ghMainWnd);
+    return(FALSE);
+  }
+
+  __try {
+    __try {
+      /* write new byte to memory */
+      bSuccess = WriteProcessMemory(hProcess,
+        pAddress, pOpcode, 1L, &dwBytes);
+
+    } __except (EXCEPTION_EXECUTE_HANDLER) {
+      bSuccess = FALSE;
+    }
+
+  } __finally {
+    /* restore original protection */
+    dwNewFlags = dwOldFlags;
+    VirtualProtectEx(hProcess, pAddress, 1L,
+      dwNewFlags, &dwOldFlags);
+  }
+
+  if (!bSuccess || (dwBytes != 1))
+    ERROR_MSG(ghMainWnd);
+  return(bSuccess);
+}
+
+/*----------------------------------------------------
+    READ OPCODE
+    Read one byte from the address space of the given
+    process.  (Call this to save an instruction
+    before over-writing it.)
+  ----------------------------------------------------*/
+BOOL ReadOpcode(
+  HANDLE hProcess, PBYTE pAddress, PBYTE pOpCode )
+{
+  BOOL bSuccess = FALSE;
+  DWORD dwBytes;
+
+  __try {
+    bSuccess = ReadProcessMemory(hProcess,
+      pAddress, pOpCode, 1L, &dwBytes);
+  } __except (EXCEPTION_EXECUTE_HANDLER) {
+    bSuccess = FALSE;
+  }
+
+  if (!bSuccess || (dwBytes != 1))
+    ERROR_MSG(ghMainWnd);
+  return(bSuccess);
+}
+
+
+
+
+
+
+

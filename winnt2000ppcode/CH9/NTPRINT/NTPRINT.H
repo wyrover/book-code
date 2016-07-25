@@ -1,0 +1,22 @@
+
+/*  NTPRINT.H    Windows NT, MS Visual C/C++ (32-bit) 1.1 */
+#define IDM_EXIT          3000
+#define IDM_PRINT         3001
+#define IDM_PRINTSETUP    3002
+#define IDM_ENUMFORMS     3003
+#define IDM_ADDFORM       3004
+#define IDM_CHANGEFORM    3005
+#define IDM_DELETEFORM    3006
+#define IDNULL            -1
+#define IDC_FORMS         4000
+#define IDB_WINLOGO       5000
+                                    
+BOOL InitApplication(HANDLE, int);
+LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
+void DrawOnSurface(HDC, HWND hWnd, float, float);
+void PrintingThread(LPVOID);
+LRESULT CALLBACK EnumDlgProc(HWND, UINT, WPARAM, LPARAM);
+
+/* end of file */
+
+

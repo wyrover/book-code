@@ -1,0 +1,15 @@
+#include <StdioNT.h>
+
+main()
+{
+   StdioInit();
+   StdioPutStr("Hello, world!\n");
+   StdioGetch();
+}
+
+
+
+
+
+
+
