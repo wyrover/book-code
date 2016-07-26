@@ -1,0 +1,108 @@
+﻿<!--要阅读此帮助文件，请在解决方案资源管理器窗格中右击文件名，
+    然后选择"在浏览器中查看"。-->
+<html>
+<head>
+    <title>SetPaneSize 示例：设置停靠窗格大小应用程序</title>
+</head>
+<body>
+    <h1>
+        SetPaneSize 示例：设置停靠窗格大小应用程序</h1>
+    <div id="mainSection">
+        <div id="mainBody">
+            <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()">
+                <font color="DarkGray"></font>
+                <p />
+            </div>
+            <div class="introduction">
+                <p>
+                    SetPaneSize 示例演示如何以编程方式设置停靠窗格大小。 您可以输入名为<span class="ui">“DialogBar”</span>的停靠窗格的所需大小（以像素或百分比表示），然后按<span class="ui">“Set”（设置）</span>按钮。 <span class="ui">“DialogBar”</span>的大小将进行相应的调整。</p>
+                <div class="alert">
+                    <table width="100%" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <th align="left">
+                                <b>安全说明：</b></th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>
+                                    提供此代码示例是为了阐释一个概念，它并不代表最安全的编码实践，因此不应在应用程序或网站中使用此代码示例。 对于超出本示例代码的预期用途以外的使用所造成的偶然或继发性损失，Microsoft 不承担任何责任。</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <p>
+                    获取示例和安装示例的说明：</p>
+                <ul>
+                    <li>
+                        <p>
+                            在 Visual Studio<span class="ui">“帮助”</span>菜单上单击<span class="ui">“示例”</span>。</p>
+                        <p>
+                            有关更多信息，请参见<mshelp:link keywords="e121a9c2-b35b-4b3f-8cba-30edd84c835f" tabindex="0" xmlns:mshelp="http://msdn.microsoft.com/mshelp">定位示例文件</mshelp:link>。</p>
+                    </li>
+                    <li>
+                        <p>
+                            示例的最新版本和完整列表可以从 <a href="http://go.microsoft.com/fwlink/?LinkID=85559">Visual Studio 2008 Samples</a>（Visual Studio 2008 示例）网页获取。</p>
+                    </li>
+                    <li>
+                        <p>
+                            还可以在计算机的硬盘上查找示例。 默认情况下，会将示例和自述文件复制到 \Program Files\Visual Studio 10.0\Samples\ 下的文件夹中。 对于 Visual Studio 学习版而言，所有示例都在网上提供。</p>
+                    </li>
+                </ul>
+            </div>
+            <h1 class="heading">
+                <span onclick="ExpandCollapse(sectionToggle0)" style="cursor: default;" onkeypress="ExpandCollapse_CheckKey(sectionToggle0, event)"
+                    tabindex="0">生成并运行示例</span></h1>
+            <div id="sectionSection0" class="section" name="collapseableSection" style="">
+                <div class="caption">
+                </div>
+                <div class="tableSection">
+                    <table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+                        <tr>
+                            <td>
+                                <p>
+                                    生成并运行 SetPaneSize 示例</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <ol>
+                                    <li>
+                                        <p>
+                                            打开解决方案 SetPaneSize.sln。
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            在<span class="ui">“生成”</span>菜单中单击<span class="ui">“生成”</span>。
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            在“调试”<b></b>菜单上单击<span class="ui">“开始执行(不调试)”</span>。
+                                        </p>
+                                    </li>
+                                </ol>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <h1 class="heading">
+                <span onclick="ExpandCollapse(sectionToggle1)" style="cursor: default;" onkeypress="ExpandCollapse_CheckKey(sectionToggle1, event)"                    tabindex="0">关键字</span></h1>
+            <div id="sectionSection1" class="section" name="collapseableSection" style="">
+                <p>
+                    SetPaneSize 示例演示以下关键字：</p>
+                <p>
+                    CDockablePane; CFrameWndEx; CMFCMenuBar; CMFCPopupMenu; CMFCStatusBar; CMFCToolBar; CMFCToolBarsCustomizeDialog; CMFCVisualManager; CMultiPaneFrameWnd; CPaneContainer; CPaneContainerManager; CPaneDialog; CPaneDivider; CWinAppEx;
+                </p>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="footerLine">
+            </div>
+            <span id="feedbackarea">请将有关此主题的<a href="javascript:SubmitFeedback('DevDocs@Microsoft.com','','','','8.0.07338.10000','%0\dThe%20developer%20writing%20teams%20use%20your%20feedback%20to%20improve%20documentation.%20We%20do%20not%20use%20your%20email%20address%20for%20any%20other%20purpose%20and%20we%20dispose%20of%20your%20email%20address%20after%20the%20issue%20you%20report%20is%20resolved.%20While%20we%20are%20working%20to%20resolve%20the%20issue%20you%20report,%20we%20may%20send%20email%20to%20you%20to%20get%20further%20details%20or%20clarification%20on%20the%20feedback%20you%20send%20to%20us.%20After%20the%20issue%20you%20report%20has%20been%20addressed,%20we%20may%20send%20email%20to%20you%20to%20let%20you%20know%20that%20your%20feedback%20has%20been%20addressed.%0\AFor%20further%20information%20about%20Microsoft\'s%20privacy%20policies,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d');">反馈</a>发送给 Microsoft。 </span>
+        </div>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,212 @@
+//Microsoft Developer Studio 生成的资源脚本。
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// 从 TEXTINCLUDE 2 资源生成。
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+#include "resource.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 日语资源
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_JPN)
+#ifdef _WIN32
+LANGUAGE LANG_JAPANESE, SUBLANG_DEFAULT
+#pragma code_page(932)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// 图标
+//
+
+// ID 值最低的图标放在最前面，以确保应用程序图标
+// 在所有系统中保持一致。
+IDI_MAIN                ICON                    "Main.ico"
+IDI_SMALL               ICON                    "small.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// 菜单
+//
+
+IDC_MAIN MENU 
+BEGIN
+    POPUP "僼傽僀儖(&F)"
+    BEGIN
+        MENUITEM "尵岅偺慖戰(&C)...",           ID_FILE_CHOOSELANGUAGE
+        MENUITEM "廔椆(&E)",                    IDM_EXIT
+    END
+    POPUP "僿儖僾(&H)"
+    BEGIN
+        MENUITEM "僶乕僕儑儞忣曬(&A)...",       IDM_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// 快捷键
+//
+
+IDC_MAIN ACCELERATORS 
+BEGIN
+    "?",            IDM_ABOUT,              ASCII,  ALT
+    "/",            IDM_ABOUT,              ASCII,  ALT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// 对话框
+//
+
+IDD_ABOUTBOX DIALOGEX 22, 17, 230, 75
+STYLE DS_MODALFRAME | WS_CAPTION | WS_SYSMENU
+CAPTION "僶乕僕儑儞忣曬"
+FONT 9, "MS UI Gothic"
+BEGIN
+    ICON            IDI_MAIN,IDC_MYICON,14,9,18,21
+    LTEXT           "Main Version 1.0",IDC_STATIC,49,10,119,8,SS_NOPREFIX
+    LTEXT           L"\251 2005 Microsoft Corporation.  All rights reserved.",IDC_STATIC,49,
+                    23,157,8
+    DEFPUSHBUTTON   "OK",IDOK,195,6,30,11,WS_GROUP
+    LTEXT           "嶌惉幰 : Achim Ruopp, Microsoft Corporation",IDC_STATIC,
+                    49,36,147,9
+END
+
+IDD_DIALOG DIALOGEX 22, 17, 301, 47
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "尵岅偺慖戰僟僀傾儘僌"
+FONT 9, "MS UI Gothic"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,244,3,50,14
+    LTEXT           "尵岅偺慖戰 :",IDC_LANGLABEL,7,3,200,9
+    COMBOBOX        IDC_LANGUAGE,7,14,228,55,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "僉儍儞僙儖",IDCANCEL,244,20,50,14
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+2 TEXTINCLUDE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""resource.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 294
+        TOPMARGIN, 3
+        BOTTOMMARGIN, 44
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// 版本
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x17L
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "僼傽僀儖 僶乕僕儑儞", "1, 0, 0, 1\0"
+            VALUE "僼傽僀儖偺愢柧", "儊僀儞 傾僾儕働乕僔儑儞\0"
+            VALUE "惓幃僼傽僀儖柤", "Main.rc\0"
+            VALUE "惢昳僶乕僕儑儞", "1, 0, 0, 1\0"
+            VALUE "惢昳柤", " 儊僀儞 傾僾儕働乕僔儑儞\0"
+            VALUE "挊嶌尃", L"\251 Microsoft Corporation.  All rights reserved."
+            VALUE "撪晹柤", "Main\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// 字符串表
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_APP_TITLE           "儊僀儞"
+    IDS_HELLO               "僴儘乕 儚乕儖僪!"
+    IDC_MAIN                "MAIN"
+END
+
+#endif    // 日语资源
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// 从 TEXTINCLUDE 3 资源生成。
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // 不是 APSTUDIO_INVOKED
+
