@@ -1,0 +1,75 @@
+// iostream standard header for Microsoft
+#pragma once
+#ifndef _IOSTREAM_
+#define _IOSTREAM_
+#ifndef RC_INVOKED
+#include <istream>
+
+#ifdef  _MSC_VER
+#pragma pack(push,_CRT_PACKING)
+#pragma warning(push,3)
+#endif  /* _MSC_VER */
+_STD_BEGIN
+
+		// OBJECTS
+#if !defined(_M_CEE_PURE)
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2 istream *_Ptr_cin;
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2 ostream *_Ptr_cout;
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2 ostream *_Ptr_cerr;
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2 ostream *_Ptr_clog;
+#endif // !defined(_M_CEE_PURE)
+
+#if !defined(_M_CEE_PURE)
+		// CLASS _Winit
+class _CRTIMP2_PURE _Winit {
+public:
+	__thiscall _Winit();
+	__thiscall ~_Winit();
+private:
+	__PURE_APPDOMAIN_GLOBAL static int _Init_cnt;
+	};
+#endif
+
+		// WIDE OBJECTS
+#if !defined(_M_CEE_PURE)
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2 wistream *_Ptr_wcin;
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2 wostream *_Ptr_wcout;
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2 wostream *_Ptr_wcerr;
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2 wostream *_Ptr_wclog;
+#endif // !defined(_M_CEE_PURE)
+
+#ifdef _M_CEE_PURE
+extern istream &cin;
+extern ostream &cout;
+extern ostream &cerr;
+extern ostream &clog;
+
+extern wistream &wcin;
+extern wostream &wcout;
+extern wostream &wcerr;
+extern wostream &wclog;
+#else
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2 istream cin;
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2 ostream cout;
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2 ostream cerr;
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2 ostream clog;
+
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2 wistream wcin;
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2 wostream wcout;
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2 wostream wcerr;
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2 wostream wclog;
+#endif
+_STD_END
+
+#ifdef  _MSC_VER
+#pragma warning(pop)
+#pragma pack(pop)
+#endif  /* _MSC_VER */
+
+#endif /* RC_INVOKED */
+#endif /* _IOSTREAM_ */
+
+/*
+ * Copyright (c) 1992-2005 by P.J. Plauger.  ALL RIGHTS RESERVED.
+ * Consult your license regarding permissions and restrictions.
+ V4.05:0009 */

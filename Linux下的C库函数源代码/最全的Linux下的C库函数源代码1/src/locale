@@ -1,0 +1,272 @@
+// locale standard header
+#pragma once
+#ifndef _LOCALE_
+#define _LOCALE_
+#ifndef RC_INVOKED
+#include <string>
+#include <xlocmes>
+#include <xlocmon>
+#include <xlocnum>
+#include <xloctime>
+
+#ifdef  _MSC_VER
+#pragma pack(push,_CRT_PACKING)
+#pragma warning(push,3)
+#endif  /* _MSC_VER */
+
+_STD_BEGIN
+
+		// TEMPLATE CLASS collate
+template<class _Elem>
+	class collate
+		: public locale::facet
+	{	// facet for ordering sequences of elements
+public:
+	typedef _Elem char_type;
+	typedef basic_string<_Elem, char_traits<_Elem>,
+		allocator<_Elem> > string_type;
+
+	int __CLR_OR_THIS_CALL compare(const _Elem *_First1, const _Elem *_Last1,
+		const _Elem *_First2, const _Elem *_Last2) const
+		{	// compare [_First1, _Last1) to [_First2, _Last2)
+		return (do_compare(_First1, _Last1, _First2, _Last2));
+		}
+
+	string_type __CLR_OR_THIS_CALL transform(const _Elem *_First, const _Elem *_Last) const
+		{	// transform [_First, _Last) to key string
+		return (do_transform(_First, _Last));
+		}
+
+	long __CLR_OR_THIS_CALL hash(const _Elem *_First, const _Elem *_Last) const
+		{	// compute hash code for [_First, _Last)
+		return (do_hash(_First, _Last));
+		}
+
+	__PURE_APPDOMAIN_GLOBAL static locale::id id;	// unique facet id
+
+	explicit __CLR_OR_THIS_CALL collate(size_t _Refs = 0)
+		: locale::facet(_Refs)
+		{	// construct from current locale
+		_BEGIN_LOCINFO(_Lobj)
+			_Init(_Lobj);
+		_END_LOCINFO()
+		}
+
+	__CLR_OR_THIS_CALL collate(const _Locinfo& _Lobj, size_t _Refs = 0)
+		: locale::facet(_Refs)
+		{	// construct from specified locale
+		_Init(_Lobj);
+		}
+
+	static size_t __CLRCALL_OR_CDECL _Getcat(const locale::facet **_Ppf = 0)
+		{	// return locale category mask and construct standard facet
+		if (_Ppf != 0 && *_Ppf == 0)
+			*_Ppf = _NEW_CRT collate<_Elem>;
+		return (_X_COLLATE);
+		}
+
+_PROTECTED:
+	__CLR_OR_THIS_CALL ~collate()
+		{	// destroy the object
+		}
+
+protected:
+	__CLR_OR_THIS_CALL collate(const char *_Locname, size_t _Refs = 0)
+		: locale::facet(_Refs)
+		{	// construct from specified locale
+		_BEGIN_LOCINFO(_Lobj(_Locname))
+			_Init(_Lobj);
+		_END_LOCINFO()
+		}
+
+	void __CLR_OR_THIS_CALL _Init(const _Locinfo& _Lobj)
+		{	// initialize from _Lobj
+		_Coll = _Lobj._Getcoll();
+		}
+
+	virtual int __CLR_OR_THIS_CALL do_compare(const _Elem *_First1, const _Elem *_Last1,
+		const _Elem *_First2, const _Elem *_Last2) const
+		{	// compare [_First1, _Last1) to [_First2, _Last2)
+		_DEBUG_RANGE(_First1, _Last1);
+		_DEBUG_RANGE(_First2, _Last2);
+		return (_LStrcoll(_First1, _Last1, _First2, _Last2, &_Coll));
+		}
+
+	virtual string_type __CLR_OR_THIS_CALL do_transform(const _Elem *_First,
+		const _Elem *_Last) const
+		{	// transform [_First, _Last) to key string
+		_DEBUG_RANGE(_First, _Last);
+		size_t _Count;
+		string_type _Str;
+
+		for (_Count = _Last - _First; 0 < _Count; )
+			{	// grow string if locale-specific strxfrm fails
+			_Str.resize(_Count);
+			if ((_Count = _LStrxfrm(&*_Str.begin(),
+				&*_Str.begin() + _Str.size(),
+					_First, _Last, &_Coll)) <= _Str.size())
+				break;
+			}
+		_Str.resize(_Count);
+		return (_Str);
+		}
+
+	virtual long __CLR_OR_THIS_CALL do_hash(const _Elem *_First,
+		const _Elem *_Last) const
+		{	// compute hash code for [_First, _Last)
+		_DEBUG_RANGE(_First, _Last);
+		unsigned long _Val = 0;
+		for (; _First != _Last; ++_First)
+			_Val = (_Val << 8 | _Val >> 24) + *_First;
+		return ((long)_Val);
+		}
+
+private:
+	_Locinfo::_Collvec _Coll;	// used by _LStrcoll and _XStrxfrm
+	};
+
+		// STATIC collate::id OBJECT
+template<class _Elem>
+	__PURE_APPDOMAIN_GLOBAL locale::id collate<_Elem>::id;
+
+ #if defined(_DLL_CPPLIB) && !defined(_M_CEE_PURE)
+  #ifdef __FORCE_INSTANCE
+template class _CRTIMP2_PURE collate<char>;
+template class _CRTIMP2_PURE collate<wchar_t>;
+
+  #ifdef _CRTBLD_NATIVE_WCHAR_T
+template class _CRTIMP2_PURE collate<unsigned short>;
+  #endif /* _CRTBLD_NATIVE_WCHAR_T */
+
+  #endif /* __FORCE_INSTANCE */
+
+ #endif /* _DLL_CPPLIB */
+
+		// TEMPLATE CLASS collate_byname
+template<class _Elem>
+	class collate_byname
+		: public collate<_Elem>
+	{	// collate for named locale
+public:
+	explicit __CLR_OR_THIS_CALL collate_byname(const char *_Locname, size_t _Refs = 0)
+		: collate<_Elem>(_Locname, _Refs)
+		{	// construct for named locale
+		}
+
+_PROTECTED:
+	virtual __CLR_OR_THIS_CALL ~collate_byname()
+		{	// destroy the object
+		}
+	};
+
+		// locale SUPPORT TEMPLATES
+
+  #define _HAS(loc, fac)	has_facet<fac>(loc)
+
+template<class _Facet> inline
+	bool __CLRCALL_OR_CDECL has_facet(const locale& _Loc) _THROW0()
+	{	// test if facet is in locale
+	_BEGIN_LOCK(_LOCK_LOCALE)	// the thread lock, make get atomic
+		size_t _Id = _Facet::id;
+		return (_Loc._Getfacet(_Id) != 0 || _Facet::_Getcat() != (size_t)(-1));
+	_END_LOCK()
+	}
+
+template<class _Facet> inline _DEPRECATED
+	bool __CLRCALL_OR_CDECL has_facet(const locale& _Loc, const _Facet *) _THROW0()
+	{	// test if facet is in locale -- retained, two arg version
+	return (has_facet<_Facet>(_Loc));
+	}
+
+		// ctype TEMPLATE FUNCTIONS
+template<class _Elem> inline
+	bool (__CLRCALL_OR_CDECL isalnum)(_Elem _Ch, const locale& _Loc)
+	{	// test if character is alphanumeric, locale specific
+	return (_USE(_Loc, ctype<_Elem>).is(ctype_base::alnum, _Ch));
+	}
+
+template<class _Elem> inline
+	bool (__CLRCALL_OR_CDECL isalpha)(_Elem _Ch, const locale& _Loc)
+	{	// test if character is alphabetic, locale specific
+	return (_USE(_Loc, ctype<_Elem>).is(ctype_base::alpha, _Ch));
+	}
+
+template<class _Elem> inline
+	bool (__CLRCALL_OR_CDECL iscntrl)(_Elem _Ch, const locale& _Loc)
+	{	// test if character is control, locale specific
+	return (_USE(_Loc, ctype<_Elem>).is(ctype_base::cntrl, _Ch));
+	}
+
+template<class _Elem> inline
+	bool (__CLRCALL_OR_CDECL isdigit)(_Elem _Ch, const locale& _Loc)
+	{	// test if character is digit, locale specific
+	return (_USE(_Loc, ctype<_Elem>).is(ctype_base::digit, _Ch));
+	}
+
+template<class _Elem> inline
+	bool (__CLRCALL_OR_CDECL isgraph)(_Elem _Ch, const locale& _Loc)
+	{	// test if character is graphic, locale specific
+	return (_USE(_Loc, ctype<_Elem>).is(ctype_base::graph, _Ch));
+	}
+
+template<class _Elem> inline
+	bool (__CLRCALL_OR_CDECL islower)(_Elem _Ch, const locale& _Loc)
+	{	// test if character is lower case, locale specific
+	return (_USE(_Loc, ctype<_Elem>).is(ctype_base::lower, _Ch));
+	}
+
+template<class _Elem> inline
+	bool (__CLRCALL_OR_CDECL isprint)(_Elem _Ch, const locale& _Loc)
+	{	// test if character is printing, locale specific
+	return (_USE(_Loc, ctype<_Elem>).is(ctype_base::print, _Ch));
+	}
+
+template<class _Elem> inline
+	bool (__CLRCALL_OR_CDECL ispunct)(_Elem _Ch, const locale& _Loc)
+	{	// test if character is punctuation, locale specific
+	return (_USE(_Loc, ctype<_Elem>).is(ctype_base::punct, _Ch));
+	}
+
+template<class _Elem> inline
+	bool (__CLRCALL_OR_CDECL isspace)(_Elem _Ch, const locale& _Loc)
+	{	// test if character is whitespace, locale specific
+	return (_USE(_Loc, ctype<_Elem>).is(ctype_base::space, _Ch));
+	}
+
+template<class _Elem> inline
+	bool (__CLRCALL_OR_CDECL isupper)(_Elem _Ch, const locale& _Loc)
+	{	// test if character is upper case, locale specific
+	return (_USE(_Loc, ctype<_Elem>).is(ctype_base::upper, _Ch));
+	}
+
+template<class _Elem> inline
+	bool (__CLRCALL_OR_CDECL isxdigit)(_Elem _Ch, const locale& _Loc)
+	{	// test if character is hexadecimal digit, locale specific
+	return (_USE(_Loc, ctype<_Elem>).is(ctype_base::xdigit, _Ch));
+	}
+
+template<class _Elem> inline
+	_Elem (__CLRCALL_OR_CDECL tolower)(_Elem _Ch, const locale& _Loc)
+	{	// convert character to lower case, locale specific
+	return (_USE(_Loc, ctype<_Elem>).tolower(_Ch));
+	}
+
+template<class _Elem> inline
+	_Elem (__CLRCALL_OR_CDECL toupper)(_Elem _Ch, const locale& _Loc)
+	{	// convert character to upper case, locale specific
+	return (_USE(_Loc, ctype<_Elem>).toupper(_Ch));
+	}
+_STD_END
+
+#ifdef  _MSC_VER
+#pragma warning(pop)
+#pragma pack(pop)
+#endif  /* _MSC_VER */
+
+#endif /* RC_INVOKED */
+#endif /* _LOCALE_ */
+
+/*
+ * Copyright (c) 1992-2005 by P.J. Plauger.  ALL RIGHTS RESERVED.
+ * Consult your license regarding permissions and restrictions.
+ V4.05:0009 */

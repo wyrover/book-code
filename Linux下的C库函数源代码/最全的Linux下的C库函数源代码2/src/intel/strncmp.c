@@ -1,0 +1,90 @@
+/***
+*strncmp.c - compare first n characters of two strings
+*
+*   Copyright (c) Microsoft Corporation. All rights reserved.
+*
+*Purpose:
+*   defines strncmp() - compare first n characters of two strings
+*   for lexical order.
+*
+*******************************************************************************/
+
+#include <cruntime.h>
+#include <string.h>
+
+/***
+*int strncmp(first, last, count) - compare first count chars of strings
+*
+*Purpose:
+*   Compares two strings for lexical order.  The comparison stops
+*   after: (1) a difference between the strings is found, (2) the end
+*   of the strings is reached, or (3) count characters have been
+*   compared.
+*
+*Entry:
+*   char *first, *last - strings to compare
+*   unsigned count - maximum number of characters to compare
+*
+*Exit:
+*   returns <0 if first < last
+*   returns  0 if first == last
+*   returns >0 if first > last
+*
+*Exceptions:
+*
+*******************************************************************************/
+
+int __cdecl strncmp (
+    const char * first,
+    const char * last,
+    size_t count
+)
+{
+    size_t n = 0;
+
+    if (!count)
+        return(0);
+
+    if( count >= 4 )
+    {
+        /* unroll by four */
+        for (; n < count-4; n += 4)
+        {
+            first += 4;
+            last += 4;
+
+            if (*(first - 4) == 0 || *(first - 4) != *(last - 4))
+            {
+                return (*(unsigned char *)(first - 4) - *(unsigned char *)(last - 4));
+            }
+
+            if (*(first - 3) == 0 || *(first - 3) != *(last - 3))
+            {
+                return (*(unsigned char *)(first - 3) - *(unsigned char *)(last - 3));
+            }
+
+            if (*(first - 2) == 0 || *(first - 2) != *(last - 2))
+            {
+                return (*(unsigned char *)(first - 2) - *(unsigned char *)(last - 2));
+            }
+
+            if (*(first - 1) == 0 || *(first - 1) != *(last - 1))
+            {
+                return (*(unsigned char *)(first - 1) - *(unsigned char *)(last - 1));
+            }
+        }
+    }
+
+    /* residual loop */
+    for (; n < count; ++n)
+    {
+        if (*first == 0 || *first != *last)
+        {
+            return (*(unsigned char *)first - *(unsigned char *)last);
+        }
+        ++first;
+        ++last;
+    }
+
+    return 0;
+}

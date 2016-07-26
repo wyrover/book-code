@@ -1,0 +1,385 @@
+// exception standard header for Microsoft
+#pragma once
+#ifndef _EXCEPTION_
+#define _EXCEPTION_
+#ifndef RC_INVOKED
+
+#ifdef _CRT_EXCEPTION_NO_MALLOC
+#ifdef  _MSC_VER
+#pragma push_macro("malloc")
+#pragma push_macro("free")
+#endif  /* _MSC_VER */
+#undef malloc
+#undef free
+#endif
+
+#include <xstddef>
+
+#ifdef  _MSC_VER
+#pragma pack(push,_CRT_PACKING)
+#pragma warning(push,3)
+#endif  /* _MSC_VER */
+
+_STD_BEGIN
+
+  #define _USE_EX \
+	using ::set_terminate; using ::terminate_handler; using ::terminate; \
+	using ::set_unexpected; using ::unexpected_handler; using ::unexpected;
+
+
+ #if _HAS_EXCEPTIONS
+ _STD_END
+
+ #include <eh.h>
+ #include <malloc.h>
+
+ #if !defined(_WIN32)
+  #error ERROR: Only Win32 targets supported!
+ #endif /* !defined(_WIN32) */
+
+ #ifndef _CRTIMP
+
+  #ifdef	_DLL
+   #define _CRTIMP __declspec(dllimport)
+
+  #else	/* ndef _DLL */
+   #define _CRTIMP
+  #endif	/* _DLL */
+
+ #endif	/* _CRTIMP */
+
+#ifndef _MCRTIMP
+#if defined(CRTDLL) || defined(MRTDLL)
+#define _MCRTIMP __declspec(dllexport)
+#else   /* ndef CRTDLL */
+#ifdef  _DLL
+#define _MCRTIMP __declspec(dllimport)
+#else   /* ndef _DLL */
+#define _MCRTIMP
+#endif  /* _DLL */
+#endif  /* CRTDLL */
+#endif  /* _CRTIMP */
+
+#ifndef _CRTIMP_PURE
+ #if defined(_M_CEE_PURE) || defined(_STATIC_CPPLIB)
+  #define _CRTIMP_PURE
+ #elif defined(MRTDLL)
+  #define _CRTIMP_PURE
+ #else
+  #define _CRTIMP_PURE _CRTIMP
+ #endif
+#endif
+
+#ifndef _ERRCODE_DEFINED
+#define _ERRCODE_DEFINED
+/* errcode is deprecated in favor or errno_t, which is part of the standard proposal */
+_CRT_OBSOLETE(errno_t) typedef int errcode;
+typedef int errno_t;
+#endif
+
+
+typedef const char *__exString;
+extern "C" size_t __cdecl strlen(const char *);
+#if __STDC_WANT_SECURE_LIB__
+extern "C" _CRTIMP_ALTERNATIVE errno_t __cdecl strcpy_s(__out_ecount_z(_DstSize) char * _Dst, __in size_t _DstSize, __in_z const char * _Src);
+#define _CRT_SECURE_STRCPY(dest, destsize, source) ::strcpy_s((dest), (destsize), (source))
+#else
+extern "C" _CRTIMP char * __cdecl strcpy(__out_z char *_Dst, __in_z const char *_Src);
+#define _CRT_SECURE_STRCPY(dest, destsize, source) ::strcpy((dest), (source))
+#endif
+
+ _STD_BEGIN
+
+class _CRTIMP_PURE exception
+	{	// base of all library exceptions
+public:
+#ifdef _M_CEE_PURE
+	__CLR_OR_THIS_CALL exception()
+        : _m_what(NULL), _m_doFree(0)
+    { }
+	__CLR_OR_THIS_CALL exception(const char *const& _What)
+    {
+        if (_What != NULL)
+        {
+            size_t _Buf_size = strlen( _What ) + 1;
+#pragma warning(push)
+#pragma warning(disable:4996)
+            _m_what = static_cast< char * >( malloc( _Buf_size ) );
+#pragma warning(pop)
+            if ( _m_what != NULL )
+            {
+                _CRT_SECURE_STRCPY( const_cast<char *>(_m_what), _Buf_size, _What );
+            }
+        }
+        else
+        {
+            _m_what = NULL;
+        }
+        _m_doFree = 1;
+    }
+	__CLR_OR_THIS_CALL exception(const char *const& _What, int)
+    {
+        _m_what = _What;
+        _m_doFree = 0;
+    }
+	__CLR_OR_THIS_CALL exception(const exception& _That)
+    {
+        _m_doFree = _That._m_doFree;
+        if (_m_doFree)
+        {
+            if (_That._m_what != NULL)
+            {
+                size_t _Buf_size = strlen( _That._m_what ) + 1;
+#pragma warning(push)
+#pragma warning(disable:4996)
+                _m_what = static_cast< char * >( malloc( _Buf_size ) );
+#pragma warning(pop)
+                if (_m_what != NULL)                {
+                    _CRT_SECURE_STRCPY( const_cast<char *>(_m_what), _Buf_size, _That._m_what );
+                }
+            }
+            else
+            {
+                _m_what = NULL;
+            }
+        }
+        else
+           _m_what = _That._m_what;
+    }
+	exception& __CLR_OR_THIS_CALL operator=(const exception& _That)
+    {
+        if (this != &_That)
+        {
+            _m_doFree = _That._m_doFree;
+            if (_m_doFree)
+            {
+                if (_That._m_what != NULL)
+                {
+                    size_t _Buf_size = strlen( _That._m_what ) + 1;
+#pragma warning(push)
+#pragma warning(disable:4996)
+                    _m_what = static_cast< char * >( malloc( _Buf_size ) );
+#pragma warning(pop)
+                    if (_m_what != NULL)                {
+                        _CRT_SECURE_STRCPY( const_cast<char *>(_m_what), 
+                                  _Buf_size, _That._m_what );
+                    }
+                }
+                else
+                {
+                    _m_what = NULL;
+                }
+            }
+            else
+               _m_what = _That._m_what;
+        }
+        return *this;
+    }
+	virtual __CLR_OR_THIS_CALL ~exception()
+    {
+        if (_m_doFree)
+#pragma warning(push)
+#pragma warning(disable:4996)
+            free( const_cast< char * >( _m_what ) );
+#pragma warning(pop)
+    }
+	virtual const char* __CLR_OR_THIS_CALL what() const
+    {
+        if ( _m_what != NULL )
+            return _m_what;
+        else
+            return "Unknown exception";
+    }
+#else /* _M_CEE_PURE */
+    __CLR_OR_THIS_CALL exception();
+    __CLR_OR_THIS_CALL exception(const char *const&);
+    __CLR_OR_THIS_CALL exception(const char *const&, int);
+    __CLR_OR_THIS_CALL exception(const exception&);
+    exception& __CLR_OR_THIS_CALL operator=(const exception&);
+    virtual __CLR_OR_THIS_CALL ~exception();
+    virtual const char * __CLR_OR_THIS_CALL what() const;
+#endif /* _M_CEE_PURE */
+private:
+	const char *_m_what;
+	int _m_doFree;
+	};
+
+_USE_EX
+
+typedef void (__cdecl *_Prhand)(const exception&);
+
+#if defined(_M_CEE_PURE) || defined(MRTDLL)
+_MRTIMP bool __cdecl _uncaught_exception_m();
+inline bool __clrcall uncaught_exception() { return _uncaught_exception_m(); }
+#else
+_CRTIMP2 bool __cdecl uncaught_exception();
+#endif
+
+ #else /* _HAS_EXCEPTIONS */
+		// CLASS exception
+class exception;
+
+typedef void (__cdecl *_Prhand)(const exception&);
+extern _CRTIMP2 _Prhand _Raise_handler;	// pointer to raise handler
+
+_CRTIMP2_NCEEPURE void __CLRCALL_PURE_OR_CDECL _Throw(const exception&);	// throw the exception
+
+class _CRTIMP2 exception
+	{	// base of all library exceptions
+public:
+	static _Prhand _Set_raise_handler(_Prhand _Pnew)
+		{	// register a handler for _Raise calls
+		const _Prhand _Pold = _Raise_handler;
+		_Raise_handler = _Pnew;
+		return (_Pold);
+		}
+
+	// this constructor is necessary to compile 
+	// successfully header new for _HAS_EXCEPTIONS==0 scenario
+	explicit __CLR_OR_THIS_CALL exception(const char *_Message = _MESG("unknown"), int x=1)
+		_THROW0()
+		: _Ptr(_Message)
+		{	// construct from message string
+                (void)x;
+		}
+
+	__CLR_OR_THIS_CALL exception(const exception& _Right) _THROW0()
+		: _Ptr(_Right._Ptr)
+		{	// construct by copying _Right
+		}
+
+	exception& __CLR_OR_THIS_CALL operator=(const exception& _Right) _THROW0()
+		{	// assign _Right
+		_Ptr = _Right._Ptr;
+		return (*this);
+		}
+
+	virtual __CLR_OR_THIS_CALL ~exception()
+		{	// destroy the object
+		}
+
+	virtual const char * __CLR_OR_THIS_CALL what() const _THROW0()
+		{	// return pointer to message string
+		return (_Ptr);
+		}
+
+	void __CLR_OR_THIS_CALL _Raise() const
+		{	// raise the exception
+		if (_Raise_handler != 0)
+			(*_Raise_handler)(*this);	// call raise handler if present
+
+		_Doraise();	// call the protected virtual
+		_RAISE(*this);	// raise this exception
+		}
+
+protected:
+	virtual void __CLR_OR_THIS_CALL _Doraise() const
+		{	// perform class-specific exception handling
+		}
+
+protected:
+	const char *_Ptr;	// the message pointer
+	};
+
+		// TYPES
+typedef void (__cdecl *terminate_handler)();
+typedef void (__cdecl *unexpected_handler)();
+
+		// DUMMY FUNCTION DECLARATIONS
+inline terminate_handler __CRTDECL set_terminate(terminate_handler)
+	_THROW0()
+	{	// register a terminate handler
+	return 0;
+	}
+
+inline unexpected_handler __CRTDECL set_unexpected(unexpected_handler)
+	_THROW0()
+	{	// register an unexpected handler
+	return 0;
+	}
+
+inline void __CRTDECL terminate()
+	{	// handle exception termination
+	}
+
+inline void __CRTDECL unexpected()
+	{	// handle unexpected exception
+	}
+
+_CRTIMP2 bool __cdecl uncaught_exception();	// handle uncaught exception
+ #endif /* _HAS_EXCEPTIONS */
+
+		// CLASS bad_exception
+class bad_exception : public exception
+	{	// base of all bad exceptions
+public:
+	__CLR_OR_THIS_CALL bad_exception(const char *_Message = _MESG("bad exception"))
+		_THROW0()
+		: exception(_Message)
+		{	// construct from message string
+		}
+
+	virtual __CLR_OR_THIS_CALL ~bad_exception() _THROW0()
+		{	// destroy the object
+		}
+
+ #if !_HAS_EXCEPTIONS
+protected:
+	virtual void __CLR_OR_THIS_CALL _Doraise() const
+		{	// raise this exception
+		_RAISE(*this);
+		}
+ #endif /* _HAS_EXCEPTIONS */
+
+	};
+
+
+static const char * _bad_alloc_Message = _MESG("bad allocation");
+
+		// CLASS bad_alloc
+class bad_alloc : public exception
+	{	// base of all bad allocation exceptions
+public:
+	__CLR_OR_THIS_CALL bad_alloc(const char *_Message) _THROW0()
+		: exception(_Message)
+		{	// construct from message string
+		}
+
+	__CLR_OR_THIS_CALL bad_alloc() _THROW0()
+		: exception(_bad_alloc_Message, 1)
+		{	// construct from message string with no memory allocation
+		}
+
+	virtual __CLR_OR_THIS_CALL ~bad_alloc() _THROW0()
+		{	// destroy the object
+		}
+
+ #if !_HAS_EXCEPTIONS
+protected:
+	virtual void __CLR_OR_THIS_CALL _Doraise() const
+		{	// perform class-specific exception handling
+		_RAISE(*this);
+		}
+#endif  /* _HAS_EXCEPTIONS */
+
+	};
+
+_STD_END
+
+#ifdef  _MSC_VER
+#pragma warning(pop)
+#pragma pack(pop)
+
+#ifdef _CRT_EXCEPTION_NO_MALLOC
+#pragma pop_macro("malloc")
+#pragma pop_macro("free")
+#endif
+#endif  /* _MSC_VER */
+
+#endif /* RC_INVOKED */
+#endif /* _EXCEPTION_ */
+
+/*
+ * Copyright (c) 1992-2005 by P.J. Plauger.  ALL RIGHTS RESERVED.
+ * Consult your license regarding permissions and restrictions.
+ V4.05:0009 */

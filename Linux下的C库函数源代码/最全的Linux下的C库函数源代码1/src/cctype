@@ -1,0 +1,49 @@
+// cctype standard header
+#pragma once
+#ifndef _CCTYPE_
+#define _CCTYPE_
+#include <yvals.h>
+
+#ifdef _STD_USING
+ #undef _STD_USING
+  #include <ctype.h>
+ #define _STD_USING
+
+#else /* _STD_USING */
+ #include <ctype.h>
+
+#ifndef RC_INVOKED
+ #if _GLOBAL_USING
+_STD_BEGIN
+using ::isalnum; using ::isalpha; using ::iscntrl;
+using ::isdigit; using ::isgraph; using ::islower;
+using ::isprint; using ::ispunct; using ::isspace;
+using ::isupper; using ::isxdigit; using ::tolower;
+using ::toupper;
+_STD_END
+ #endif /* _GLOBAL_USING */
+#endif /* RC_INVOKED */
+
+#endif /* _STD_USING */
+
+	/* remove any (improper) macro overrides */
+#undef isalnum
+#undef isalpha
+#undef isblank
+#undef iscntrl
+#undef isdigit
+#undef isgraph
+#undef islower
+#undef isprint
+#undef ispunct
+#undef isspace
+#undef isupper
+#undef isxdigit
+#undef tolower
+#undef toupper
+#endif /* _CCTYPE_ */
+
+/*
+ * Copyright (c) 1992-2005 by P.J. Plauger.  ALL RIGHTS RESERVED.
+ * Consult your license regarding permissions and restrictions.
+ V4.05:0009 */

@@ -1,0 +1,112 @@
+// xstddef standard header
+#pragma once
+#ifndef _XSTDDEF_
+#define _XSTDDEF_
+#ifndef RC_INVOKED
+#ifndef _YVALS
+ #include <yvals.h>
+#endif /* _YVALS */
+
+#include <cstddef>
+
+#ifdef  _MSC_VER
+#pragma pack(push,_CRT_PACKING)
+#pragma warning(push,3)
+#endif  /* _MSC_VER */
+
+_STD_BEGIN
+
+		// EXCEPTION MACROS
+
+ #if _HAS_EXCEPTIONS
+ #define _TRY_BEGIN	try {
+ #define _CATCH(x)	} catch (x) {
+ #define _CATCH_ALL	} catch (...) {
+ #define _CATCH_END	}
+
+ #define _RAISE(x)	throw (x)
+ #define _RERAISE	throw
+
+ #define _THROW0()	throw ()
+ #define _THROW1(x)	throw (...)
+
+#if defined(MRTDLL) && defined(_M_CEE) && !defined(_M_CEE_PURE)
+// When compiling msvcm80.dll, we do not want to throw, because we would end up
+// throwing exceptions from a /clr module, which cannot be handled (by design) by
+// a /clr:pure module.
+// See VSW#476338 for details.
+ #define _THROW(x, y)	_should_not_throw()
+ #ifdef _DEBUG
+  #define _THROW_NCEE(x, y)	_invoke_watson(__STR2WSTR(#x), __FUNCTIONW__, __FILEW__, __LINE__, 0)
+ #else
+  #define _THROW_NCEE(x, y)	_invoke_watson(NULL, NULL, NULL, 0, 0)
+ #endif
+#else
+ #define _THROW(x, y)	throw x(y)
+ #define _THROW_NCEE(x, y)	_THROW(x, y)
+#endif
+
+ #else /* _HAS_EXCEPTIONS */
+ #define _TRY_BEGIN	{{
+ #define _CATCH(x)	} if (0) {
+ #define _CATCH_ALL	} if (0) {
+ #define _CATCH_END	}}
+
+  #define _RAISE(x)	::std:: _Throw(x)
+
+ #define _RERAISE
+
+ #define _THROW0()
+ #define _THROW1(x)
+ #define _THROW(x, y)	x(y)._Raise()
+ #define _THROW_NCEE(x, y)	_THROW(x, y)
+ #endif /* _HAS_EXCEPTIONS */
+
+ #define _EMPTY_ARGUMENT 
+
+		// BITMASK MACROS
+ #define _BITMASK(Enum, Ty)	typedef int Ty
+
+ #define _BITMASK_OPS(Ty)
+
+		// MISCELLANEOUS MACROS
+#define _DESTRUCTOR(ty, ptr)	(ptr)->~ty()
+#define _MESG(str)	str
+#define _PROTECTED	protected
+
+ #define _TDEF(x)		= x
+ #define _TDEF2(x, y)	= x, y
+
+ #define _STCONS(ty, name, val)	static const ty name = (ty)(val)
+ #if !defined(_MSC_EXTENSIONS) && !(defined(_DLL) && !defined(_STATIC_CPPLIB))
+  // Under /Ze, static const members are automatically defined, so provide a
+  // definition only under /Za, and only when __declspec(dllimport) not used.
+  #define _STCONSDEF(cls, ty, name)	__declspec(selectany) const ty cls::name;
+ #else
+  #define _STCONSDEF(cls, ty, name)
+ #endif
+
+ #ifndef _XSTD
+  #define _X_STD_BEGIN	_STD_BEGIN
+  #define _X_STD_END	_STD_END
+  #define _XSTD	std::/* LEAVE SPACE */
+ #endif /* _XSTD */
+
+		// TYPE DEFINITIONS
+enum _Uninitialized
+	{	// tag for suppressing initialization
+	_Noinit};
+_STD_END
+
+#ifdef  _MSC_VER
+#pragma warning(pop)
+#pragma pack(pop)
+#endif  /* _MSC_VER */
+
+#endif /* RC_INVOKED */
+#endif /* _XSTDDEF_ */
+
+/*
+ * Copyright (c) 1992-2005 by P.J. Plauger.  ALL RIGHTS RESERVED.
+ * Consult your license regarding permissions and restrictions.
+ V4.05:0009 */

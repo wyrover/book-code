@@ -1,0 +1,461 @@
+// streambuf standard header
+#pragma once
+#ifndef _STREAMBUF_
+#define _STREAMBUF_
+#ifndef RC_INVOKED
+#include <xiosbase>
+
+#ifdef  _MSC_VER
+#pragma pack(push,_CRT_PACKING)
+#pragma warning(push,3)
+#endif  /* _MSC_VER */
+
+_STD_BEGIN
+
+		// TEMPLATE CLASS basic_streambuf
+template<class _Elem,
+	class _Traits>
+	class basic_streambuf
+	{	// control read/write buffers
+
+	basic_streambuf(const basic_streambuf<_Elem, _Traits>&);	// not defined
+	basic_streambuf<_Elem, _Traits>&
+		operator=(const basic_streambuf<_Elem, _Traits>&);	// not defined
+
+
+protected:
+	basic_streambuf()
+		: _Plocale(_NEW_CRT(locale))
+		{	// construct with no buffers
+		_Init();
+		}
+
+	basic_streambuf(_Uninitialized)
+		{	// construct uninitialized
+		}
+
+public:
+	typedef basic_streambuf<_Elem, _Traits> _Myt;
+	typedef _Elem char_type;
+	typedef _Traits traits_type;
+
+	virtual __CLR_OR_THIS_CALL ~basic_streambuf()
+		{	// destroy the object
+		_DELETE_CRT(_Plocale);
+		}
+
+	typedef typename _Traits::int_type int_type;
+	typedef typename _Traits::pos_type pos_type;
+	typedef typename _Traits::off_type off_type;
+
+	pos_type pubseekoff(off_type _Off, ios_base::seekdir _Way,
+		ios_base::openmode _Mode = ios_base::in | ios_base::out)
+		{	// change position by _Off, according to _Way, _Mode
+		return (seekoff(_Off, _Way, _Mode));
+		}
+
+	pos_type pubseekoff(off_type _Off, ios_base::seek_dir _Way,
+		ios_base::open_mode _Mode)
+		{	// change position by _Off, according to _Way, _Mode (old style)
+		return (pubseekoff(_Off, (ios_base::seekdir)_Way,
+			(ios_base::openmode)_Mode));
+		}
+
+	pos_type pubseekpos(pos_type _Pos,
+		ios_base::openmode _Mode = ios_base::in | ios_base::out)
+		{	// change position to _Pos, according to _Mode
+		return (seekpos(_Pos, _Mode));
+		}
+
+	pos_type pubseekpos(pos_type _Pos, ios_base::open_mode _Mode)
+		{	// change position to _Pos, according to _Mode (old style)
+		return (seekpos(_Pos, (ios_base::openmode)_Mode));
+		}
+
+	_Myt *pubsetbuf(_Elem *_Buffer, streamsize _Count)
+		{	// offer _Buffer to external agent
+		return (setbuf(_Buffer, _Count));
+		}
+
+	locale pubimbue(const locale &_Newlocale)
+		{	// set locale to argument
+		locale _Oldlocale = *_Plocale;
+		imbue(_Newlocale);
+		*_Plocale = _Newlocale;
+		return (_Oldlocale);
+		}
+
+	locale getloc() const
+		{	// get locale
+		return (*_Plocale);
+		}
+
+	streamsize in_avail()
+		{	// return count of buffered input characters
+		streamsize _Res = _Gnavail();
+		return (0 < _Res ? _Res : showmanyc());
+		}
+
+	int pubsync()
+		{	// synchronize with external agent
+		return (sync());
+		}
+
+	int_type sbumpc()
+		{	// get a character and point past it
+		return (0 < _Gnavail()
+			? _Traits::to_int_type(*_Gninc()) : uflow());
+		}
+
+	int_type sgetc()
+		{	// get a character and don't point past it
+		return (0 < _Gnavail()
+			? _Traits::to_int_type(*gptr()) : underflow());
+		}
+
+	streamsize _Sgetn_s(_Elem *_Ptr, size_t _Ptr_size, streamsize _Count)
+		{	// get up to _Count characters into array beginning at _Ptr
+		return _Xsgetn_s(_Ptr, _Ptr_size, _Count);
+		}
+
+	_SCL_INSECURE_DEPRECATE
+	streamsize sgetn(_Elem *_Ptr, streamsize _Count)
+		{	// get up to _Count characters into array beginning at _Ptr
+#pragma warning(push)
+#pragma warning(disable:4996)
+		return xsgetn(_Ptr, _Count);
+#pragma warning(pop)
+		}
+
+	int_type snextc()
+		{	// point to next character and return it
+		return (1 < _Gnavail()
+			? _Traits::to_int_type(*_Gnpreinc())
+			: _Traits::eq_int_type(_Traits::eof(), sbumpc())
+				? _Traits::eof() : sgetc());
+		}
+
+	int_type sputbackc(_Elem _Ch)
+		{	// put back _Ch
+		return (gptr() != 0 && eback() < gptr()
+			&& _Traits::eq(_Ch, gptr()[-1])
+			? _Traits::to_int_type(*_Gndec())
+			: pbackfail(_Traits::to_int_type(_Ch)));
+		}
+
+	void stossc()
+		{	// point past a character
+		if (0 < _Gnavail())
+			_Gninc();
+		else
+			uflow();
+		}
+
+	int_type sungetc()
+		{	// back up one position
+		return (gptr() != 0 && eback() < gptr()
+			? _Traits::to_int_type(*_Gndec()) : pbackfail());
+		}
+
+	int_type sputc(_Elem _Ch)
+		{	// put a character
+		return (0 < _Pnavail()
+			? _Traits::to_int_type(*_Pninc() = _Ch)
+			: overflow(_Traits::to_int_type(_Ch)));
+		}
+
+	streamsize sputn(const _Elem *_Ptr, streamsize _Count)
+		{	// put _Count characters from array beginning at _Ptr
+		return (xsputn(_Ptr, _Count));
+		}
+
+	void _Lock()
+		{	// set the thread lock
+		_Mylock._Lock();
+		}
+
+	void _Unlock()
+		{	// clear the thread lock
+		_Mylock._Unlock();
+		}
+
+
+protected:
+	_Elem *eback() const
+		{	// return beginning of read buffer
+		return (*_IGfirst);
+		}
+
+	_Elem *gptr() const
+		{	// return current position in read buffer
+		return (*_IGnext);
+		}
+
+	_Elem *pbase() const
+		{	// return beginning of write buffer
+		return (*_IPfirst);
+		}
+
+	_Elem *pptr() const
+		{	// return current position in write buffer
+		return (*_IPnext);
+		}
+
+	_Elem *egptr() const
+		{	// return end of read buffer
+		return (*_IGnext + *_IGcount);
+		}
+
+	void gbump(int _Off)
+		{	// alter current position in read buffer by _Off
+		*_IGcount -= _Off;
+		*_IGnext += _Off;
+		}
+
+	void setg(_Elem *_First, _Elem *_Next, _Elem *_Last)
+		{	// set pointers for read buffer
+		*_IGfirst = _First;
+		*_IGnext = _Next;
+		*_IGcount = (int)(_Last - _Next);
+		}
+
+	_Elem *epptr() const
+		{	// return end of write buffer
+		return (*_IPnext + *_IPcount);
+		}
+
+	_Elem *_Gndec()
+		{	// decrement current position in read buffer
+		++*_IGcount;
+		return (--*_IGnext);
+		}
+
+	_Elem *_Gninc()
+		{	// increment current position in read buffer
+		--*_IGcount;
+		return ((*_IGnext)++);
+		}
+
+	_Elem *_Gnpreinc()
+		{	// preincrement current position in read buffer
+		--*_IGcount;
+		return (++(*_IGnext));
+		}
+
+	streamsize _Gnavail() const
+		{	// count number of available elements in read buffer
+		return (*_IGnext != 0 ? *_IGcount : 0);
+		}
+
+	void pbump(int _Off)
+		{	// alter current position in write buffer by _Off
+		*_IPcount -= _Off;
+		*_IPnext += _Off;
+		}
+
+	void setp(_Elem *_First, _Elem *_Last)
+		{	// set pointers for write buffer
+		*_IPfirst = _First;
+		*_IPnext = _First;
+		*_IPcount = (int)(_Last - _First);
+		}
+
+	void setp(_Elem *_First, _Elem *_Next, _Elem *_Last)
+		{	// set pointers for write buffer, extended version
+		*_IPfirst = _First;
+		*_IPnext = _Next;
+		*_IPcount = (int)(_Last - _Next);
+		}
+
+	_Elem *_Pninc()
+		{	// increment current position in write buffer
+		--*_IPcount;
+		return ((*_IPnext)++);
+		}
+
+	streamsize _Pnavail() const
+		{	// count number of available positions in write buffer
+		return (*_IPnext != 0 ? *_IPcount : 0);
+		}
+
+	void _Init()
+		{	// initialize buffer parameters for no buffers
+		_IGfirst = &_Gfirst, _IPfirst = &_Pfirst;
+		_IGnext = &_Gnext, _IPnext = &_Pnext;
+		_IGcount = &_Gcount, _IPcount = &_Pcount;
+		setp(0, 0), setg(0, 0, 0);
+		}
+
+	void _Init(_Elem **_Gf, _Elem **_Gn, int *_Gc,
+		_Elem **_Pf, _Elem **_Pn, int *_Pc)
+		{	// initialize buffer parameters as specified
+		_IGfirst = _Gf, _IPfirst = _Pf;
+		_IGnext = _Gn, _IPnext = _Pn;
+		_IGcount = _Gc, _IPcount = _Pc;
+		}
+
+	virtual int_type __CLR_OR_THIS_CALL overflow(int_type = _Traits::eof())
+		{	// put a character to stream (always fail)
+		return (_Traits::eof());
+		}
+
+	virtual int_type __CLR_OR_THIS_CALL pbackfail(int_type = _Traits::eof())
+		{	// put a character back to stream (always fail)
+		return (_Traits::eof());
+		}
+
+	virtual streamsize __CLR_OR_THIS_CALL showmanyc()
+		{	// return count of input characters
+		return (0);
+		}
+
+	virtual int_type __CLR_OR_THIS_CALL underflow()
+		{	// get a character from stream, but don't point past it
+		return (_Traits::eof());
+		}
+
+	virtual int_type __CLR_OR_THIS_CALL uflow()
+		{	// get a character from stream, point past it
+		return (_Traits::eq_int_type(_Traits::eof(), underflow())
+			? _Traits::eof() : _Traits::to_int_type(*_Gninc()));
+		}
+
+	_SCL_INSECURE_DEPRECATE
+	virtual streamsize __CLR_OR_THIS_CALL xsgetn(_Elem * _Ptr,
+		streamsize _Count)
+		{	// get _Count characters from stream
+		// assume the destination buffer is large enough
+		return _Xsgetn_s(_Ptr, (size_t)-1, _Count);
+		}
+
+	virtual streamsize __CLR_OR_THIS_CALL _Xsgetn_s(_Elem * _Ptr,
+		size_t _Ptr_size, streamsize _Count)
+		{	// get _Count characters from stream
+		int_type _Meta;
+		streamsize _Stream_size, _Size, _Copied;
+
+		for (_Copied = 0; 0 < _Count; )
+			if (0 < (_Stream_size = _Gnavail()))
+				{	// copy from read buffer
+				_Size = _Stream_size;
+				if (_Count < _Size)
+					_Size = _Count;
+				_Traits_helper::copy_s<_Traits>(_Ptr, _Ptr_size, gptr(), _Size);
+				_Ptr += _Size;
+				_Copied += _Size;
+				_Count -= _Size;
+				gbump((int)_Size);
+				}
+			else if (_Traits::eq_int_type(_Traits::eof(), _Meta = uflow()))
+				break;	// end of file, quit
+			else
+				{	// get a single character
+				*_Ptr++ = _Traits::to_char_type(_Meta);
+				++_Copied;
+				--_Count;
+				}
+
+		return (_Copied);
+		}
+
+	virtual streamsize __CLR_OR_THIS_CALL xsputn(const _Elem *_Ptr,
+		streamsize _Count)
+		{	// put _Count characters to stream
+		streamsize _Stream_size, _Size, _Copied;
+
+		for (_Copied = 0; 0 < _Count; )
+			if (0 < (_Stream_size = _Pnavail()))
+				{	// copy to write buffer
+				_Size = _Stream_size;
+				if (_Count < _Size)
+					_Size = _Count;
+				_Traits_helper::copy_s<_Traits>(pptr(), _Stream_size, _Ptr, _Size);
+				_Ptr += _Size;
+				_Copied += _Size;
+				_Count -= _Size;
+				pbump((int)_Size);
+				}
+			else if (_Traits::eq_int_type(_Traits::eof(),
+				overflow(_Traits::to_int_type(*_Ptr))))
+				break;	// single character put failed, quit
+			else
+				{	// count character successfully put
+				++_Ptr;
+				++_Copied;
+				--_Count;
+				}
+
+		return (_Copied);
+		}
+
+	virtual pos_type __CLR_OR_THIS_CALL seekoff(off_type, ios_base::seekdir,
+		ios_base::openmode = ios_base::in | ios_base::out)
+		{	// change position by offset, according to way and mode
+		return (streampos(_BADOFF));
+		}
+
+	virtual pos_type __CLR_OR_THIS_CALL seekpos(pos_type,
+		ios_base::openmode = ios_base::in | ios_base::out)
+		{	// change to specified position, according to mode
+		return (streampos(_BADOFF));
+		}
+
+	virtual _Myt *__CLR_OR_THIS_CALL setbuf(_Elem *, streamsize)
+		{	// offer buffer to external agent (do nothing)
+		return (this);
+		}
+
+	virtual int __CLR_OR_THIS_CALL sync()
+		{	// synchronize with external agent (do nothing)
+		return (0);
+		}
+
+	virtual void __CLR_OR_THIS_CALL imbue(const locale&)
+		{	// set locale to argument (do nothing)
+		}
+
+private:
+	_Mutex _Mylock;	// thread lock
+	_Elem *_Gfirst;	// beginning of read buffer
+	_Elem *_Pfirst;	// beginning of write buffer
+	_Elem **_IGfirst;	// pointer to beginning of read buffer
+	_Elem **_IPfirst;	// pointer to beginning of write buffer
+	_Elem *_Gnext;	// current position in read buffer
+	_Elem *_Pnext;	// current position in write buffer
+	_Elem **_IGnext;	// pointer to current position in read buffer
+	_Elem **_IPnext;	// pointer to current position in write buffer
+	int _Gcount;	// length of read buffer
+	int _Pcount;	// length of write buffer
+	int *_IGcount;	// pointer to length of read buffer
+	int *_IPcount;	// pointer to length of write buffer
+	locale *_Plocale;	// pointer to imbued locale object
+	};
+
+ #if defined(_DLL_CPPLIB) && !defined(_M_CEE_PURE)
+
+  #ifdef __FORCE_INSTANCE
+template class _CRTIMP2 basic_streambuf<char, char_traits<char> >;
+template class _CRTIMP2 basic_streambuf<wchar_t, char_traits<wchar_t> >;
+
+   #ifdef _CRTBLD_NATIVE_WCHAR_T
+template class _CRTIMP2 basic_streambuf<unsigned short,
+	char_traits<unsigned short> >;
+   #endif /* _CRTBLD_NATIVE_WCHAR_T */
+
+  #endif /* __FORCE_INSTANCE */
+
+ #endif /* _DLL_CPPLIB */
+_STD_END
+
+#ifdef  _MSC_VER
+#pragma warning(pop)
+#pragma pack(pop)
+#endif  /* _MSC_VER */
+
+#endif /* RC_INVOKED */
+#endif /* _STREAMBUF_ */
+
+/*
+ * Copyright (c) 1992-2005 by P.J. Plauger.  ALL RIGHTS RESERVED.
+ * Consult your license regarding permissions and restrictions.
+ V4.05:0009 */

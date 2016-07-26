@@ -1,0 +1,308 @@
+/***
+*mbstowcs.c - Convert multibyte char string to wide char string.
+*
+*       Copyright (c) Microsoft Corporation. All rights reserved.
+*
+*Purpose:
+*       Convert a multibyte char string into the equivalent wide char string.
+*
+*******************************************************************************/
+
+
+#include <internal.h>
+#include <internal_securecrt.h>
+#include <locale.h>
+#include <errno.h>
+#include <cruntime.h>
+#include <stdlib.h>
+#include <string.h>
+#include <dbgint.h>
+#include <stdio.h>
+#include <mtdll.h>
+#include <setlocal.h>
+
+/***
+*size_t mbstowcs() - Convert multibyte char string to wide char string.
+*
+*Purpose:
+*       Convert a multi-byte char string into the equivalent wide char string,
+*       according to the LC_CTYPE category of the current locale.
+*       [ANSI].
+*
+*Entry:
+*       wchar_t *pwcs = pointer to destination wide character string buffer
+*       const char *s = pointer to source multibyte character string
+*       size_t      n = maximum number of wide characters to store
+*
+*Exit:
+*       If pwcs != NULL returns the number of words modified (<=n): note that
+*       if the return value == n, then no destination string is not 0 terminated.
+*       If pwcs == NULL returns the length (not size) needed for the destination buffer.
+*
+*Exceptions:
+*       Returns (size_t)-1 if s is NULL or invalid mbcs character encountered
+*       and errno is set to EILSEQ.
+*
+*******************************************************************************/
+
+/* Helper shared by secure and non-secure functions */
+
+extern "C" size_t __cdecl _mbstowcs_l_helper (
+        wchar_t  *pwcs,
+        const char *s,
+        size_t n,
+        _locale_t plocinfo
+        )
+{
+    size_t count = 0;
+
+    if (pwcs && n == 0)
+        /* dest string exists, but 0 bytes converted */
+        return (size_t) 0;
+
+    if (pwcs && n > 0)
+    {
+        *pwcs = '\0';
+    }
+
+    /* validation section */
+    _VALIDATE_RETURN(s != NULL, EINVAL, (size_t)-1);
+    /* n must fit into an int for MultiByteToWideChar */
+    _VALIDATE_RETURN(n <= INT_MAX, EINVAL, (size_t)-1);
+
+
+    _LocaleUpdate _loc_update(plocinfo);
+    /* if destination string exists, fill it in */
+    if (pwcs)
+    {
+        if (_loc_update.GetLocaleT()->locinfo->lc_handle[LC_CTYPE] == _CLOCALEHANDLE)
+        {
+            /* C locale: easy and fast */
+            while (count < n)
+            {
+                *pwcs = (wchar_t) ((unsigned char)s[count]);
+                if (!s[count])
+                    return count;
+                count++;
+                pwcs++;
+            }
+            return count;
+
+        } else {
+            int bytecnt, charcnt;
+            unsigned char *p;
+
+            /* Assume that the buffer is large enough */
+            if ( (count = MultiByteToWideChar( _loc_update.GetLocaleT()->locinfo->lc_codepage,
+                                               MB_PRECOMPOSED |
+                                                MB_ERR_INVALID_CHARS,
+                                               s,
+                                               -1,
+                                               pwcs,
+                                               (int)n )) != 0 )
+                return count - 1; /* don't count NUL */
+
+            if (GetLastError() != ERROR_INSUFFICIENT_BUFFER)
+            {
+                errno = EILSEQ;
+                *pwcs = '\0';
+                return (size_t)-1;
+            }
+
+            /* User-supplied buffer not large enough. */
+
+            /* How many bytes are in n characters of the string? */
+            charcnt = (int)n;
+            for (p = (unsigned char *)s; (charcnt-- && *p); p++)
+            {
+                if (
+                    _isleadbyte_l(*p, _loc_update.GetLocaleT())
+                    )
+                {
+                    if(p[1]=='\0')
+                    {
+                        /*  this is a leadbyte followed by EOS -- a dud MBCS string
+                            We choose not to assert here because this
+                            function is defined to deal with dud strings on
+                            input and return a known value
+                        */
+                        errno = EILSEQ;
+                        *pwcs = '\0';
+                        return (size_t)-1;
+                    }
+                    else
+                    {
+                        p++;
+                    }
+                }
+            }
+            bytecnt = ((int) ((char *)p - (char *)s));
+
+            if ( (count = MultiByteToWideChar( _loc_update.GetLocaleT()->locinfo->lc_codepage,
+                                               MB_PRECOMPOSED,
+                                               s,
+                                               bytecnt,
+                                               pwcs,
+                                               (int)n )) == 0 )
+            {
+                errno = EILSEQ;
+                *pwcs = '\0';
+                return (size_t)-1;
+            }
+
+            return count; /* no NUL in string */
+        }
+    }
+    else { /* pwcs == NULL, get size only, s must be NUL-terminated */
+        if (_loc_update.GetLocaleT()->locinfo->lc_handle[LC_CTYPE] == _CLOCALEHANDLE) {
+            return strlen(s);
+        } else if ( (count = MultiByteToWideChar( _loc_update.GetLocaleT()->locinfo->lc_codepage,
+                                                  MB_PRECOMPOSED | MB_ERR_INVALID_CHARS,
+                                                  s,
+                                                  -1,
+                                                  NULL,
+                                                  0 )) == 0 ) {
+            errno = EILSEQ;
+            return (size_t)-1;
+        } else {
+            return count - 1;
+        }
+    }
+
+}
+
+extern "C" size_t __cdecl _mbstowcs_l (
+        wchar_t  *pwcs,
+        const char *s,
+        size_t n,
+        _locale_t plocinfo
+        )
+{
+    /* Call a non-deprecated helper to do the work. */
+
+    return _mbstowcs_l_helper(pwcs, s, n, plocinfo);
+}
+
+extern "C" size_t __cdecl mbstowcs
+(
+        wchar_t  *pwcs,
+        const char *s,
+        size_t n
+        )
+{
+    _BEGIN_SECURE_CRT_DEPRECATION_DISABLE
+    if (__locale_changed == 0)
+    {
+        return _mbstowcs_l(pwcs, s, n, &__initiallocalestructinfo);
+    }
+    else
+    {
+        return _mbstowcs_l(pwcs, s, n, NULL);
+    }
+    _END_SECURE_CRT_DEPRECATION_DISABLE
+}
+
+/***
+*errno_t mbstowcs_s() - Convert multibyte char string to wide char string.
+*
+*Purpose:
+*       Convert a multi-byte char string into the equivalent wide char string,
+*       according to the LC_CTYPE category of the current locale.
+*       Same as mbstowcs(), but the destination is ensured to be null terminated.
+*       If there's not enough space, we return EINVAL.
+*
+*Entry:
+*       size_t *pConvertedChars = Number of bytes modified including the terminating NULL
+*                                 This pointer can be NULL.
+*       wchar_t *pwcs = pointer to destination wide character string buffer
+*       size_t sizeInWords = size of the destination buffer
+*       const char *s = pointer to source multibyte character string
+*       size_t n = maximum number of wide characters to store (not including the terminating NULL)
+*
+*Exit:
+*       The error code.
+*
+*Exceptions:
+*       Input parameters are validated. Refer to the validation section of the function.
+*
+*******************************************************************************/
+
+extern "C" errno_t __cdecl _mbstowcs_s_l (
+        size_t *pConvertedChars,
+        wchar_t  *pwcs,
+        size_t sizeInWords,
+        const char *s,
+        size_t n,
+        _locale_t plocinfo
+        )
+{
+    size_t retsize;
+    errno_t retvalue = 0;
+
+    /* validation section */
+    _VALIDATE_RETURN_ERRCODE((pwcs == NULL && sizeInWords == 0) || (pwcs != NULL && sizeInWords > 0), EINVAL);
+
+    if (pwcs != NULL)
+    {
+        _RESET_STRING(pwcs, sizeInWords);
+    }
+
+    if (pConvertedChars != NULL)
+    {
+        *pConvertedChars = 0;
+    }
+
+    _LocaleUpdate _loc_update(plocinfo);
+
+    /* Call a non-deprecated helper to do the work. */
+
+    retsize = _mbstowcs_l_helper(pwcs, s, (n > sizeInWords ? sizeInWords : n), _loc_update.GetLocaleT());
+
+    if (retsize == (size_t)-1)
+    {
+        if (pwcs != NULL)
+        {
+            _RESET_STRING(pwcs, sizeInWords);
+        }
+        return errno;
+    }
+
+    /* count the null terminator */
+    retsize++;
+
+    if (pwcs != NULL)
+    {
+        /* return error if the string does not fit, unless n == _TRUNCATE */
+        if (retsize > sizeInWords)
+        {
+            if (n != _TRUNCATE)
+            {
+                _RESET_STRING(pwcs, sizeInWords);
+                _VALIDATE_RETURN_ERRCODE(retsize <= sizeInWords, ERANGE);
+            }
+            retsize = sizeInWords;
+            retvalue = STRUNCATE;
+        }
+
+        /* ensure the string is null terminated */
+        pwcs[retsize - 1] = '\0';
+    }
+
+    if (pConvertedChars != NULL)
+    {
+        *pConvertedChars = retsize;
+    }
+
+    return retvalue;
+}
+
+extern "C" errno_t __cdecl mbstowcs_s (
+        size_t *pConvertedChars,
+        wchar_t  *pwcs,
+        size_t sizeInWords,
+        const char *s,
+        size_t n
+)
+{
+    return _mbstowcs_s_l(pConvertedChars, pwcs, sizeInWords, s, n, NULL);
+}

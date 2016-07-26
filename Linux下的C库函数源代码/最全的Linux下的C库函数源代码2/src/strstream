@@ -1,0 +1,517 @@
+// strstream standard header
+#pragma once
+#ifndef _STRSTREAM_
+#define _STRSTREAM_
+#ifndef RC_INVOKED
+#include <istream>
+
+#ifdef  _MSC_VER
+#pragma pack(push,_CRT_PACKING)
+#pragma warning(push,3)
+#endif  /* _MSC_VER */
+
+extern "C" size_t  __cdecl strlen(const char *); 
+_STD_BEGIN
+
+		// CLASS strstreambuf
+class _CRTIMP2_PURE strstreambuf
+	: public streambuf
+	{	// stream buffer associated with static or allocated character array
+public:
+	enum
+		{	// constants for bits in stream state
+		_Allocated = 1,	// set if character array storage has been allocated
+		_Constant = 2,	// set if character array nonmutable
+		_Dynamic = 4,	// set if character array length grows on demand
+		_Frozen = 8};	// set if character array ownership given away
+	typedef int _Strstate;
+
+	explicit __CLR_OR_THIS_CALL strstreambuf(streamsize _Count = 0)
+		{	// construct with empty character array, suggested initial size
+		_Init(_Count);
+		}
+
+	__CLR_OR_THIS_CALL strstreambuf(void *(__CLRCALL_OR_CDECL *_Allocfunc)(size_t),
+		void (__CLRCALL_OR_CDECL *_Freefunc)(void *))
+		{	// construct with empty character array, allocation functions
+		_Init();
+		_Palloc = _Allocfunc;
+		_Pfree = _Freefunc;
+		}
+
+	__CLR_OR_THIS_CALL strstreambuf(__in_z_opt char *_Getptr, streamsize _Count, 
+		__in_z_opt char *_Putptr = 0)
+		{	// construct with [_Getptr, _Getptr + _Count), possibly mutable
+		_Init(_Count, _Getptr, _Putptr);
+		}
+
+#pragma warning(push)
+#pragma warning(disable: 6054)
+	__CLR_OR_THIS_CALL strstreambuf(__in_z_opt unsigned char *_Getptr, streamsize _Count,
+		__in_z_opt unsigned char *_Putptr = 0)
+        {	// construct with [_Getptr, _Getptr + _Count), possibly mutable
+		_Init(_Count, (char *)_Getptr, (char *)_Putptr);
+		}
+#pragma warning(pop)
+
+	__CLR_OR_THIS_CALL strstreambuf(__in_z const char *_Getptr, streamsize _Count)
+		{	// construct with [_Getptr, _Getptr + _Count), nonmutable
+		_Init(_Count, (char *)_Getptr, 0, _Constant);
+		}
+
+#pragma warning(push)
+#pragma warning(disable: 6054)
+	__CLR_OR_THIS_CALL strstreambuf(__in_z const unsigned char *_Getptr, streamsize _Count)
+		{	// construct with [_Getptr, _Getptr + _Count), nonmutable
+		_Init(_Count, (char *)_Getptr, 0, _Constant);
+		}
+#pragma warning(pop)
+
+	virtual __CLR_OR_THIS_CALL ~strstreambuf()
+        {	// destroy a strstreambuf
+        _Tidy();
+        }
+
+	void __CLR_OR_THIS_CALL freeze(bool _Freezeit= true)
+        {	// freeze or unfreeze writing
+        if (_Freezeit && !(_Strmode & _Frozen))
+            {	// disable writing
+            _Strmode |= _Frozen;
+            _Pendsave = epptr();
+            setp(pbase(), pptr(), eback());
+            }
+        else if (!_Freezeit && _Strmode & _Frozen)
+            {	// re-enable writing
+            _Strmode &= ~_Frozen;
+            setp(pbase(), pptr(), _Pendsave);
+            }
+        }
+
+	char *__CLR_OR_THIS_CALL str()
+		{	// freeze and return pointer to character array
+		freeze();
+		return (gptr());
+		}
+
+	streamsize __CLR_OR_THIS_CALL pcount() const
+		{	// return size of writable character array
+		return (pptr() == 0 ? 0 : (streamsize)(pptr() - pbase()));
+		}
+
+	__CLR_OR_THIS_CALL strstreambuf(__in_z_opt signed char *_Getptr, streamsize _Count,
+		__in_z_opt signed char *_Putptr = 0)
+		{	// construct with [_Getptr, _Getptr + _Count), possibly mutable
+		_Init(_Count, (char *)_Getptr, (char *)_Putptr);
+		}
+
+	__CLR_OR_THIS_CALL strstreambuf(const signed char *_Getptr, streamsize _Count)
+		{	// construct with [_Getptr, _Getptr + _Count), nonmutable
+		_Init(_Count, (char *)_Getptr, 0, _Constant);
+		}
+
+protected:
+	virtual int __CLR_OR_THIS_CALL overflow(int _Meta= EOF)
+        {	// try to extend write area
+        if (_Meta == EOF)
+            return (0);	// nothing to write
+        else if (pptr() != 0 && pptr() < epptr())
+            return ((unsigned char)(*_Pninc() = (char_type)_Meta));	// room in buffer
+        else if (!(_Strmode & _Dynamic)
+            || _Strmode & (_Constant | _Frozen))
+            return (EOF);	// can't extend
+        else
+            {	// okay to extend
+            int _Oldsize = static_cast<int>(gptr() == 0 ? 0 : epptr() - eback());
+            int _Newsize = _Oldsize;
+
+            // grow by 50 per cent if possible
+            int _Inc = static_cast<int>(_Newsize / 2 < _Minsize ?
+                                        _Minsize : _Newsize / 2);
+            _Minsize = _MINSIZE;	// back to default for future growth
+            char *_Ptr = 0;
+
+            while (0 < _Inc && INT_MAX - _Inc < _Newsize)
+                _Inc /= 2;	// reduce growth increment if too big
+            if (0 < _Inc)
+                {	// room to grow, increase size
+                _Newsize += _Inc;
+                _Ptr = _Palloc != 0 ? (char *)(*_Palloc)(_Newsize)
+                    : _NEW_CRT char[_Newsize];
+                }
+            if (_Ptr == 0)
+                return (EOF);	// couldn't grow, return failure
+
+            if (0 < _Oldsize)
+                _CRT_SECURE_MEMCPY(_Ptr, _Newsize, eback(), _Oldsize);	// copy existing buffer
+            if (!(_Strmode & _Allocated))
+                ;	// no buffer to free
+            else if (_Pfree != 0)
+                (*_Pfree)(eback());	// free with function call
+            else
+                _DELETE_CRT_VEC(eback());	// free by deleting array
+
+            _Strmode |= _Allocated;
+            if (_Oldsize == 0)
+                {	// set up new buffer
+                _Seekhigh = _Ptr;
+                setp(_Ptr, _Ptr + _Newsize);
+                setg(_Ptr, _Ptr, _Ptr);
+                }
+            else
+                {	// revise old pointers
+                _Seekhigh = _Seekhigh - eback() + _Ptr;
+                setp(pbase() - eback() + _Ptr, pptr() - eback() + _Ptr,
+                    _Ptr + _Newsize);
+                setg(_Ptr, gptr() - eback() + _Ptr, pptr() + 1);
+                }
+
+            return ((unsigned char)(*_Pninc() = (char_type)_Meta));
+            }
+        }
+
+	virtual int __CLR_OR_THIS_CALL pbackfail(int _Meta= EOF)
+        {	// try to putback a character
+        if (gptr() == 0 || gptr() <= eback() || _Meta != EOF
+                && (unsigned char)_Meta != (unsigned char)gptr()[-1]
+                && _Strmode & _Constant)
+            return (EOF);	// can't put it back
+        else
+            {	// safe to back up
+            gbump(-1);
+            return (_Meta == EOF ? 0 : (unsigned char)(*gptr() = (char_type)_Meta));
+            }
+        }
+
+	virtual int __CLR_OR_THIS_CALL underflow()
+        {	// read if read position available
+        if (gptr() == 0)
+            return (EOF);	// no read buffer
+        else if (gptr() < egptr())
+            return ((unsigned char)*gptr());	// char in buffer, read it
+        else if (pptr() == 0 || pptr() <= gptr() && _Seekhigh <= gptr())
+            return (EOF);	// no write buffer to read
+        else
+            {	// update _Seekhigh and expand read region
+            if (_Seekhigh < pptr())
+                _Seekhigh = pptr();
+            setg(eback(), gptr(), _Seekhigh);
+            return ((unsigned char)*gptr());
+            }
+        }
+
+	virtual streampos __CLR_OR_THIS_CALL seekoff(streamoff _Off,
+	    ios_base::seekdir _Way,
+	    ios_base::openmode _Which=
+	    	ios_base::in | ios_base::out)
+        {	// seek by specified offset
+        if (pptr() != 0 && _Seekhigh < pptr())
+            _Seekhigh = pptr();	// update high water mark
+
+        if (_Which & ios_base::in && gptr() != 0)
+            {	// set input (and maybe output) pointer
+            if (_Way == ios_base::end)
+                _Off += static_cast<streamoff>(_Seekhigh - eback());	// seek from end
+            else if (_Way == ios_base::cur
+                && !(_Which & ios_base::out))
+                _Off += static_cast<streamoff>(gptr() - eback());	// seek from current position
+            else if (_Way != ios_base::beg || _Off == _BADOFF)
+                _Off = _BADOFF;	// invalid seek
+            if (0 <= _Off && _Off <= _Seekhigh - eback())
+                {	// seek from beginning, set one or two pointers
+                gbump(static_cast<int>(eback() - gptr() + _Off));
+                if (_Which & ios_base::out && pptr() != 0)
+                    setp(pbase(), gptr(), epptr());
+                }
+            else
+                _Off = _BADOFF;	// invalid seek from beginning
+            }
+        else if (_Which & ios_base::out && pptr() != 0)
+            {	// set only output pointer
+            if (_Way == ios_base::end)
+                _Off += static_cast<streamoff>(_Seekhigh - eback());	// seek from end
+            else if (_Way == ios_base::cur)
+                _Off += static_cast<streamoff>(pptr() - eback());	// seek from current position
+            else if (_Way != ios_base::beg || _Off == _BADOFF)
+                _Off = _BADOFF;	// invalid seek
+            if (0 <= _Off && _Off <= _Seekhigh - eback())
+                pbump(static_cast<int>(eback() - pptr() + _Off));	// seek from beginning
+            else
+                _Off = _BADOFF;	// invalid seek from beginning
+            }
+        else	// nothing to set
+            _Off = _BADOFF;
+        return (streampos(_Off));
+        }
+
+	virtual streampos __CLR_OR_THIS_CALL seekpos(streampos _Sp,
+	    ios_base::openmode _Which=
+	    	ios_base::in | ios_base::out)
+        {	// seek to memorized position
+        streamoff _Off = (streamoff)_Sp;
+        if (pptr() != 0 && _Seekhigh < pptr())
+            _Seekhigh = pptr();	// update high water mark
+
+        if (_Off == _BADOFF)
+            ;	// invalid seek
+        else if (_Which & ios_base::in && gptr() != 0)
+            {	// set input (and maybe output) pointer
+            if (0 <= _Off && _Off <= _Seekhigh - eback())
+                {	// set valid offset
+                gbump(static_cast<int>(eback() - gptr() + _Off));
+                if (_Which & ios_base::out && pptr() != 0)
+                    setp(pbase(), gptr(), epptr());
+                }
+            else
+                _Off = _BADOFF;	// offset invalid, don't seek
+            }
+        else if (_Which & ios_base::out && pptr() != 0)
+            {	// set output pointer
+            if (0 <= _Off && _Off <= _Seekhigh - eback())
+                pbump(static_cast<int>(eback() - pptr() + _Off));
+            else
+                _Off = _BADOFF;	// offset invalid, don't seek
+            }
+        else	// nothing to set
+            _Off = _BADOFF;
+        return (streampos(_Off));
+        }
+
+	void __CLR_OR_THIS_CALL _Init(streamsize _Count = 0, __in_z_opt char *_Gp = 0, 
+	    __in_z_opt char *_Pp = 0,
+	    _Strstate _Mode = (_Strstate)0) 	// initialize with possibly static buffer
+        {	// initialize with possibly static buffer
+        streambuf::_Init();
+        _Minsize = _MINSIZE;
+        _Pendsave = 0;
+        _Seekhigh = 0;
+        _Palloc = 0;
+        _Pfree = 0;
+        _Strmode = _Mode;
+
+        if (_Gp == 0)
+            {	// make dynamic
+            _Strmode |= _Dynamic;
+            if (_Minsize < _Count)
+                _Minsize = _Count;
+            }
+        else
+            {	// make static
+            int _Size = static_cast<int>(_Count < 0 ? INT_MAX : _Count == 0 ? (int)strlen(_Gp) : _Count);
+            _Seekhigh = _Gp + _Size;
+
+            if (_Pp == 0)
+                setg(_Gp, _Gp, _Gp + _Size);	// set read pointers only
+            else
+                {	// make writable too
+                if (_Pp < _Gp)
+                    _Pp = _Gp;
+                else if (_Gp + _Size < _Pp)
+                    _Pp = _Gp + _Size;
+                setp(_Pp, _Gp + _Size);
+                setg(_Gp, _Gp, _Pp);
+                }
+            }
+        }
+
+	void __CLR_OR_THIS_CALL _Tidy()	// free any allocated storage
+        {	// free any allocated storage
+        if ((_Strmode & (_Allocated | _Frozen)) != _Allocated)
+            ;	// no buffer to free
+        else if (_Pfree != 0)
+            (*_Pfree)(eback());	// free with function call
+        else
+            _DELETE_CRT_VEC(eback());	// free by deleting array
+
+        _Seekhigh = 0;
+        _Strmode &= ~(_Allocated | _Frozen);
+        }
+
+private:
+    //_MRTIMP2 static void __cdecl _Strstreambuf_dtor(strstreambuf *);
+    //_MRTIMP2 static void __cdecl _Strstreambuf_freeze(strstreambuf *, bool);
+    //_MRTIMP2 static void __cdecl _Strstreambuf_overflow(strstreambuf *, int);
+    //_MRTIMP2 static void __cdecl _Strstreambuf_pbackfail(strstreambuf *, int);
+    //_MRTIMP2 static void __cdecl _Strstreambuf_underflow(strstreambuf *);
+    //_MRTIMP2 static void __cdecl _Strstreambuf_seekoff(strstreambuf *,
+    //        streamoff,
+    //        ios_base::seekdir,
+    //        ios_base::openmode);
+    //_MRTIMP2 static void __cdecl _Strstreambuf_seekpos(strstreambuf *,
+    //        streamoff,
+    //        ios_base::seekdir,
+    //        ios_base::openmode);
+    //_MRTIMP2 static void __cdecl _Strstreambuf_Init(strstreambuf *, 
+    //        streamsize,
+    //        char *,
+    //        char *,
+    //        _Strstate);
+    //_MRTIMP2 static void __cdecl _Strstreambuf_Tidy(strstreambuf *);
+
+	enum
+		{	// constant for default minimum buffer size
+		_MINSIZE = 32};
+
+	streamsize _Minsize;	// the minimum buffer size
+	char *_Pendsave;	// the saved end pointer during freeze
+	char *_Seekhigh;	// the high-water pointer in character array
+	_Strstate _Strmode;	// the stream state
+	void *(__CLRCALL_OR_CDECL *_Palloc)(size_t);	// the pointer to allocator function
+	void (__CLRCALL_OR_CDECL *_Pfree)(void *);	// the pointer to free function
+	};
+
+		// CLASS istrstream
+class istrstream
+	: public istream
+	{	// input stream associated with a character array
+public:
+
+	explicit __CLR_OR_THIS_CALL istrstream(const char *_Ptr)
+		: istream(&_Mysb), _Mysb(_Ptr, 0)
+		{	// construct with NTBS
+		}
+
+	__CLR_OR_THIS_CALL istrstream(const char *_Ptr, streamsize _Count)
+		: istream(&_Mysb), _Mysb(_Ptr, _Count)
+		{	// construct with [_Ptr, _Ptr + _Count)
+		}
+
+	explicit __CLR_OR_THIS_CALL istrstream(__in_z char *_Ptr)
+		: istream(&_Mysb), _Mysb((const char *)_Ptr, 0)
+		{	// construct with NTBS
+		}
+
+	__CLR_OR_THIS_CALL istrstream(__in_z char *_Ptr, int _Count)
+		: istream(&_Mysb), _Mysb((const char *)_Ptr, _Count)
+		{	// construct with [_Ptr, _Ptr + _Count)
+		}
+
+	virtual __CLR_OR_THIS_CALL ~istrstream()
+	{	// destroy an istrstream
+	}
+
+	strstreambuf *__CLR_OR_THIS_CALL rdbuf() const
+		{	// return pointer to character array buffer
+		return ((strstreambuf *)&_Mysb);
+		}
+
+	char *__CLR_OR_THIS_CALL str()
+		{	// freeze and return pointer to character array
+		return (_Mysb.str());
+		}
+
+private:
+	strstreambuf _Mysb;	// the string buffer
+	};
+
+		// CLASS ostrstream
+class ostrstream
+	: public ostream
+	{	// output stream associated with a character array
+public:
+	__CLR_OR_THIS_CALL ostrstream()
+		: ostream(&_Mysb), _Mysb()
+		{	// construct with empty character array
+		}
+
+	__CLR_OR_THIS_CALL ostrstream(__in_z_opt char *_Ptr, streamsize _Count,
+            ios_base::openmode _Mode=
+                ios_base::in | ios_base::out)	// construct with static array
+        : ostream(&_Mysb),
+        _Mysb(_Ptr, _Count, (_Ptr == 0 || (_Mode & ios_base::app) == 0 
+            ? _Ptr : _Ptr + strlen(_Ptr)))
+        {	// construct with [ptr, ptr + count)
+        }
+
+	virtual __CLR_OR_THIS_CALL ~ostrstream()
+        {	// destroy an ostrstream
+        }
+
+	strstreambuf *__CLR_OR_THIS_CALL rdbuf() const
+		{	// return pointer to character array buffer
+		return ((strstreambuf *)&_Mysb);
+		}
+
+	void __CLR_OR_THIS_CALL freeze(bool _Freezeit = true)
+		{	// freeze or unfreeze writing
+		_Mysb.freeze(_Freezeit);
+		}
+
+	char *__CLR_OR_THIS_CALL str()
+		{	// freeze and return pointer to character array
+		return (_Mysb.str());
+		}
+
+	streamsize __CLR_OR_THIS_CALL pcount() const
+		{	// return size of writable character array
+		return (_Mysb.pcount());
+		}
+
+private:
+	strstreambuf _Mysb;	// the character array buffer
+	};
+
+		// CLASS strstream
+class strstream
+	: public iostream
+	{	// input/output stream associated with character array buffer
+public:
+	typedef char char_type;
+	typedef int int_type;
+	typedef streampos pos_type;
+	typedef streamoff off_type;
+
+	__CLR_OR_THIS_CALL strstream()
+		: iostream(&_Mysb), _Mysb()
+		{	// construct with empty character array
+		}
+
+	__CLR_OR_THIS_CALL strstream(__in_z_opt char *_Ptr, streamsize _Count,
+		ios_base::openmode _Mode=
+			ios_base::in | ios_base::out)	// construct with static array
+        : iostream(&_Mysb),
+        _Mysb(_Ptr, _Count, _Ptr == 0 || (_Mode & ios_base::app) == 0 ?
+            _Ptr : _Ptr + strlen(_Ptr))
+        {	// construct with [ptr, ptr + count)
+        }
+
+	virtual __CLR_OR_THIS_CALL ~strstream()
+        {	// destroy a strstream
+        }
+
+	strstreambuf *__CLR_OR_THIS_CALL rdbuf() const
+		{	// return pointer to character array buffer
+		return ((strstreambuf *)&_Mysb);
+		}
+
+	void __CLR_OR_THIS_CALL freeze(bool _Freezeit = true)
+		{	// freeze or unfreeze writing
+		_Mysb.freeze(_Freezeit);
+		}
+
+	char *__CLR_OR_THIS_CALL str()
+		{	// freeze and return pointer to character array
+		return (_Mysb.str());
+		}
+
+	streamsize __CLR_OR_THIS_CALL pcount() const
+		{	// return size of writable character array
+		return (_Mysb.pcount());
+		}
+
+private:
+	strstreambuf _Mysb;	// the character array buffer
+	};
+_STD_END
+
+#ifdef  _MSC_VER
+#pragma warning(pop)
+#pragma pack(pop)
+#endif  /* _MSC_VER */
+
+#endif /* RC_INVOKED */
+#endif /* _STRSTREAM_ */
+
+/*
+ * Copyright (c) 1992-2005 by P.J. Plauger.  ALL RIGHTS RESERVED.
+ * Consult your license regarding permissions and restrictions.
+ V4.05:0009 */

@@ -1,0 +1,161 @@
+// xlocmes internal header (from <locale>)
+#pragma once
+#ifndef _XLOCMES_
+#define _XLOCMES_
+#ifndef RC_INVOKED
+#include <xiosbase>
+
+#ifdef  _MSC_VER
+#pragma pack(push,_CRT_PACKING)
+#pragma warning(push,3)
+#endif  /* _MSC_VER */
+
+_STD_BEGIN
+
+		// STRUCT messages_base
+struct _CRTIMP2_PURE messages_base
+	: public locale::facet
+	{	// base class for messages
+	typedef int catalog;
+
+	explicit __CLR_OR_THIS_CALL messages_base(size_t _Refs = 0)
+		: locale::facet(_Refs)
+		{	// default constructor
+		}
+
+    __CLR_OR_THIS_CALL ~messages_base()
+        { 
+        }
+	};
+
+		// TEMPLATE CLASS messages
+template<class _Elem>
+	class messages
+		: public messages_base
+	{	// facet for obtaining messages from a catalog
+public:
+	typedef _Elem char_type;
+	typedef basic_string<_Elem, char_traits<_Elem>, allocator<_Elem> >
+		string_type;
+
+	catalog __CLR_OR_THIS_CALL open(const string& _Catname, const locale& _Loc) const
+		{	// open catalog
+		return (do_open(_Catname, _Loc));
+		}
+
+	string_type __CLR_OR_THIS_CALL get(catalog _Catval, int _Set, int _Message,
+		const string_type& _Dflt) const
+		{	// get message from set in catalog
+		return (do_get(_Catval, _Set, _Message, _Dflt));
+		}
+
+	void __CLR_OR_THIS_CALL close(catalog _Catval) const
+		{	// close catalog
+		do_close(_Catval);
+		}
+
+	__PURE_APPDOMAIN_GLOBAL static locale::id id;	// unique facet id
+
+	explicit __CLR_OR_THIS_CALL messages(size_t _Refs = 0)
+		: messages_base(_Refs)
+		{	// construct from current locale
+		_BEGIN_LOCINFO(_Lobj)
+			_Init(_Lobj);
+		_END_LOCINFO()
+		}
+
+	__CLR_OR_THIS_CALL messages(const _Locinfo& _Lobj, size_t _Refs = 0)
+		: messages_base(_Refs)
+		{	// construct from specified locale
+		_Init(_Lobj);
+		}
+
+	static size_t __CLRCALL_OR_CDECL _Getcat(const locale::facet **_Ppf = 0)
+		{	// return locale category mask and construct standard facet
+		if (_Ppf != 0 && *_Ppf == 0)
+			*_Ppf = _NEW_CRT messages<_Elem>;
+		return (_X_MESSAGES);
+		}
+
+_PROTECTED:
+	__CLR_OR_THIS_CALL messages(const char *_Locname, size_t _Refs = 0)
+		: messages_base(_Refs)
+		{	// construct from specified locale
+		_BEGIN_LOCINFO(_Lobj(_Locname))
+			_Init(_Lobj);
+		_END_LOCINFO()
+		}
+
+	virtual __CLR_OR_THIS_CALL ~messages()
+		{	// destroy the object
+		}
+
+protected:
+	void __CLR_OR_THIS_CALL _Init(const _Locinfo&)
+		{	// initialize from _Locinfo object (do nothing)
+		}
+
+	virtual catalog __CLR_OR_THIS_CALL do_open(const string&, const locale&) const
+		{	// open catalog (do nothing)
+		return (-1);
+		}
+
+	virtual string_type __CLR_OR_THIS_CALL do_get(catalog, int, int,
+		const string_type& _Dflt) const
+		{	// get message from set in catalog (return default)
+		return (_Dflt);
+		}
+
+	virtual void __CLR_OR_THIS_CALL do_close(catalog) const
+		{	// close catalog (do nothing)
+		}
+	};
+
+		// STATIC messages::id OBJECT
+template<class _Elem>
+	__PURE_APPDOMAIN_GLOBAL locale::id messages<_Elem>::id;
+
+		// TEMPLATE CLASS messages_byname
+template<class _Elem>
+	class messages_byname
+		: public messages<_Elem>
+	{	// messages for named locale
+public:
+	explicit messages_byname(const char *_Locname, size_t _Refs = 0)
+		: messages<_Elem>(_Locname, _Refs)
+		{	// construct for named locale
+		}
+
+_PROTECTED:
+	virtual __CLR_OR_THIS_CALL ~messages_byname()
+		{	// destroy the object
+		}
+	};
+
+ #if defined(_DLL_CPPLIB) && !defined(_M_CEE_PURE)
+
+  #ifdef __FORCE_INSTANCE
+template class _CRTIMP2_PURE messages<char>;
+template class _CRTIMP2_PURE messages<wchar_t>;
+
+   #ifdef _CRTBLD_NATIVE_WCHAR_T
+template class _CRTIMP2_PURE messages<unsigned short>;
+   #endif /* _CRTBLD_NATIVE_WCHAR_T */
+
+  #endif /* __FORCE_INSTANCE */
+
+ #endif /* _DLL_CPPLIB */
+_STD_END
+
+#ifdef  _MSC_VER
+#pragma warning(pop)
+#pragma pack(pop)
+#endif  /* _MSC_VER */
+
+#endif /* RC_INVOKED */
+#endif /* _XLOCMES_ */
+
+/*
+ * Copyright (c) 1992-2005 by P.J. Plauger.  ALL RIGHTS RESERVED.
+ * Consult your license regarding permissions and restrictions.
+ V4.05:0009 */

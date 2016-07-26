@@ -1,0 +1,292 @@
+#   Copyright (c) Microsoft Corporation. All rights reserved.
+#
+# Purpose:
+#   This makefile builds the C++ runtimes for Multi-thread, Single-Thread
+#   and DLL.
+#
+#   This is a general-purpose makefile.  It is !INCLUDEd by the makefile
+#   in each subdirectory (hence the .SUB extension).  All subdirectory-
+#   specific make information should be embedded in the SOURCES file in
+#   that subdirectory, not in this file.
+#
+#   Change to the appropriate subdirectory and type NMAKE DEPEND to
+#   rebuild the dependencies.  These are stored in DEPEND.DEF in each
+#   subdirectory.
+#
+#
+###############################################################################
+
+# Change this to BLD_ASM=1 if you have MASM 6.11a or later and wish
+# to re-build the assembler sources provided in this release.
+
+BLD_ASM=0
+
+#
+# Macro definitions:
+#
+###############################################################################
+
+#
+# Add .S and .I suffixes for assembler files on platforms other than x86
+#
+
+.SUFFIXES:
+.SUFFIXES: .exe .obj .asm .s .i .c .cpp .cxx .res .rc
+
+!if "$(PRE_BLD)"=="1"
+DBFLAGS = -Z7
+!else
+DBFLAGS = -Zi
+!endif
+!if "$(BLD_DLL)" == "1"
+DBFLAGS = -Z7
+!ifndef DISABLE_MP_BUILD
+!ifdef NUMBER_OF_PROCESSORS
+!if $(NUMBER_OF_PROCESSORS) > 1
+CFLAGS = $(CFLAGS) -MP$(NUMBER_OF_PROCESSORS)
+!endif
+!endif
+!endif
+!endif
+
+# Secure CRT deprecation in on by default
+
+
+# Disable the manifest directives when building CRT
+CFLAGS=-D_CRT_NOFORCE_MANIFEST -D_STL_NOFORCE_MANIFEST $(CFLAGS)
+
+!if "$(BLD_DBG)" == "1"
+CFLAGS=$(CFLAGS) $(DBFLAGS) -D_DEBUG -Od
+!if "$(TARGET_CPU)"=="IA64"
+AFLAGS=$(AFLAGS) -d debug
+!else
+AFLAGS=$(AFLAGS) -Zi -D_DEBUG
+!endif
+!else
+!if "$(TARGET_CPU)"=="AMD64"
+CFLAGS=$(CFLAGS) -Ox 
+!else
+CFLAGS=$(CFLAGS) -O1
+!endif
+!if "$(BLD_REL_NO_DBINFO)" != "1"
+CFLAGS=$(CFLAGS) $(DBFLAGS)
+!if "$(TARGET_CPU)"=="IA64"
+AFLAGS=$(AFLAGS) -d debug
+!else
+AFLAGS=$(AFLAGS) -Zi
+!endif
+!endif
+!endif
+
+#Static obj part of msvcm*.lib should contain manifest directives
+#to automatically pull in a reference to the CRT assembly.
+PURE_CFLAGS=$(CFLAGS:-D_CRT_NOFORCE_MANIFEST=)
+CLR_CFLAGS=$(CFLAGS:-D_CRT_NOFORCE_MANIFEST=)
+!if "$(BLD_BROWSE)" == "1"
+CFLAGS=-FR$(OBJDIR)\ $(CFLAGS)
+PURE_CFLAGS=-FR$(PURE_OBJDIR)\ $(PURE_CFLAGS)
+CLR_CFLAGS=-FR$(CLR_OBJDIR)\ $(CLR_CFLAGS)
+!if "$(TARGET_CPU)"!="IA64"
+AFLAGS=-FR$(OBJDIR)\ $(AFLAGS)
+!endif
+!endif
+
+PURE_CFLAGS=/clr:pure /D_PURE_MSIL_CRT_BUILD /wd4272 $(PURE_CFLAGS) /TP 
+CLR_CFLAGS=/clr /D_PURE_MSIL_CRT_BUILD /Z7 /wd4272 /wd4382 $(CLR_CFLAGS) /TP 
+# Tool definitions:
+!if "$(LIBPATH)" != "" 
+PURE_CFLAGS=$(PURE_CFLAGS) -d1clr:nostdlib 
+CLR_CFLAGS=$(CLR_CFLAGS) -d1clr:nostdlib 
+!endif
+
+CC=cl
+LIB=link -lib -nologo
+!if "$(TARGET_CPU)"=="i386"
+AS=ml
+CFLAGS=$(CFLAGS) -Wp64 -D_X86_
+AFLAGS=$(AFLAGS) -safeseh -safeseh
+!elseif "$(TARGET_CPU)"=="IA64"
+AS=ias
+ACFLAGS= -D__assembler
+CFLAGS=$(CFLAGS) -Wp64 -D_IA64_
+AFLAGS=$(AFLAGS) -N so -X explicit
+!elseif "$(TARGET_CPU)"=="AMD64"
+AS=ml64
+AFLAGS=$(AFLAGS) -c
+CFLAGS=$(CFLAGS) -Wp64 -D_AMD64_
+!else
+AS=cl
+!endif
+
+
+#
+# Source file definitions:
+#
+###############################################################################
+
+A_INCLUDES=-I.
+C_INCLUDES=-I.
+
+#
+# Inference rules:
+#
+# (Due to the kind of dependencies used below, we must explicitly define
+# inference rules to effect construction of the object files.)
+#
+###############################################################################
+
+CXXFLAGS=$(CFLAGS) -d1Binl -EHsc -GR
+PURE_CXXFLAGS=$(PURE_CFLAGS) -d1Binl -EHa -GR
+CLR_CXXFLAGS=$(CLR_CFLAGS) -d1Binl -EHa -GR
+
+!if "$(POST_BLD)"!="1"
+!if ("$(TARGET_CPU)"=="IA64" || "$(TARGET_CPU)"=="AMD64") && "$(BLD_SYSCRT)" == "1"
+CXXFLAGS=$(CXXFLAGS) -Istdhpp64
+PURE_CXXFLAGS=$(PURE_CXXFLAGS) -Istdhpp64
+CLR_CXXFLAGS=$(CLR_CXXFLAGS) -Istdhpp64
+!else
+CXXFLAGS=$(CXXFLAGS) -Istdhpp
+PURE_CXXFLAGS=$(PURE_CXXFLAGS) -Istdhpp
+CLR_CXXFLAGS=$(CLR_CXXFLAGS) -Istdhpp
+!endif
+!else
+CXXFLAGS=$(CXXFLAGS) -Istdhpp
+PURE_CXXFLAGS=$(PURE_CXXFLAGS) -Istdhpp
+CLR_CXXFLAGS=$(CLR_CXXFLAGS) -Istdhpp
+!endif
+
+
+#
+# Rules for end-user source build
+#
+#
+# LSOURCES will override A_INCLUDES and C_INCLUDES for conv/ and tran/ subdirs.
+#
+###############################################################################
+
+!if "$(POST_BLD)"=="1"
+!INCLUDE makefile.inc
+!else
+!INCLUDE lsources.
+!endif
+
+.c{$(OBJDIR)}.obj::
+    $(CC) $(CFLAGS) $(C_INCLUDES) -Fo$(OBJDIR)\ $<
+
+.c{$(PURE_OBJDIR)}.obj::
+	$(CC) $(PURE_CXXFLAGS) $(C_INCLUDES) /Fo$(PURE_OBJDIR)\ $<
+
+.c{$(CLR_OBJDIR)}.obj::
+	$(CC) $(CLR_CXXFLAGS) $(C_INCLUDES) /Fo$(CLR_OBJDIR)\ $<
+
+!if "$(TARGET_CPU)"=="i386"
+
+{intel}.c{$(OBJDIR)}.obj::
+    $(CC) $(CFLAGS) $(C_INCLUDES) -Fo$(OBJDIR)\ $<
+
+{intel}.c{$(PURE_OBJDIR)}.obj::
+	$(CC) $(PURE_CXXFLAGS) $(C_INCLUDES) /Fo$(PURE_OBJDIR)\ $<
+
+{intel}.c{$(CLR_OBJDIR)}.obj::
+	$(CC) $(CLR_CXXFLAGS) $(C_INCLUDES) /Fo$(CLR_OBJDIR)\ $<
+
+!elseif "$(TARGET_CPU)"=="IA64"
+
+{ia64}.c{$(OBJDIR)}.obj::
+    $(CC) $(CFLAGS) $(C_INCLUDES) -Fo$(OBJDIR)\ $<
+
+{ia64}.c{$(PURE_OBJDIR)}.obj::
+	$(CC) $(PURE_CXXFLAGS) $(C_INCLUDES) /Fo$(PURE_OBJDIR)\ $<
+
+{ia64}.c{$(CLR_OBJDIR)}.obj:
+	$(CC) $(CLR_CXXFLAGS) $(C_INCLUDES) /Fo$(CLR_OBJDIR)\ $<
+
+!elseif "$(TARGET_CPU)"=="AMD64"
+
+{amd64}.c{$(OBJDIR)}.obj::
+    $(CC) $(CFLAGS) $(C_INCLUDES) -Fo$(OBJDIR)\ $<
+
+{amd64}.c{$(PURE_OBJDIR)}.obj::
+	$(CC) $(PURE_CXXFLAGS) $(C_INCLUDES) /Fo$(PURE_OBJDIR)\ $<
+
+{amd64}.c{$(CLR_OBJDIR)}.obj::
+	$(CC) $(CLR_CXXFLAGS) $(C_INCLUDES) /Fo$(CLR_OBJDIR)\ $<
+
+!endif
+
+.cpp{$(OBJDIR)}.obj::
+    $(CC) $(CXXFLAGS) $(C_INCLUDES) -Fo$(OBJDIR)\ $<
+
+.c{$(CPP_OBJDIR)}.obj::
+    $(CC) $(CXXFLAGS) $(C_INCLUDES) -Fo$(CPP_OBJDIR)\ /TP $<
+
+.cpp{$(PURE_OBJDIR)}.obj::
+	$(CC) $(PURE_CXXFLAGS) $(C_INCLUDES) /Fo$(PURE_OBJDIR)\ $<
+
+.cpp{$(CLR_OBJDIR)}.obj::
+	$(CC) $(CLR_CXXFLAGS) $(C_INCLUDES) /Fo$(CLR_OBJDIR)\ $<
+
+!if "$(TARGET_CPU)"=="i386"
+
+{intel}.cpp{$(OBJDIR)}.obj::
+    $(CC) $(CXXFLAGS) $(C_INCLUDES) -Fo$(OBJDIR)\ $<
+
+{intel}.cpp{$(PURE_OBJDIR)}.obj::
+	$(CC) $(PURE_CXXFLAGS) $(C_INCLUDES) /Fo$(PURE_OBJDIR)\ $<
+
+{intel}.cpp{$(CLR_OBJDIR)}.obj::
+	$(CC) $(CLR_CXXFLAGS) $(C_INCLUDES) /Fo$(CLR_OBJDIR)\ $<
+
+!IF $(BLD_ASM)==1
+
+{intel}.asm{$(OBJDIR)}.obj:
+    $(AS) $(AFLAGS) $(A_INCLUDES) -Fo$(OBJDIR)\ $< 
+
+!ENDIF
+
+!elseif "$(TARGET_CPU)"=="AMD64"
+
+{AMD64}.cpp{$(OBJDIR)}.obj::
+    $(CC) $(CXXFLAGS) $(C_INCLUDES) -Fo$(OBJDIR)\ $<
+
+{AMD64}.cpp{$(PURE_OBJDIR)}.obj::
+	$(CC) $(PURE_CXXFLAGS) $(C_INCLUDES) /Fo$(PURE_OBJDIR)\ $<
+
+{AMD64}.cpp{$(CLR_OBJDIR)}.obj::
+	$(CC) $(CLR_CXXFLAGS) $(C_INCLUDES) /Fo$(CLR_OBJDIR)\ $<
+
+!IF $(BLD_ASM)==1
+
+{AMD64}.asm{$(OBJDIR)}.obj:
+    $(AS) $(AFLAGS) $(A_INCLUDES) -Fo$(OBJDIR)\ $< 
+
+!ENDIF
+
+!elseif "$(TARGET_CPU)"=="IA64"
+
+{ia64}.cpp{$(OBJDIR)}.obj:
+	$(CC) $(CXXFLAGS) $(C_INCLUDES) /Fo$(OBJDIR)\ $<
+
+{ia64}.cpp{$(PURE_OBJDIR)}.obj::
+	$(CC) $(PURE_CXXFLAGS) $(C_INCLUDES) /Fo$(PURE_OBJDIR)\ $<
+
+{ia64}.cpp{$(CLR_OBJDIR)}.obj::
+	$(CC) $(CLR_CXXFLAGS) $(C_INCLUDES) /Fo$(CLR_OBJDIR)\ $<
+
+{ia64}.s{$(OBJDIR)}.obj:
+    $(CC) -E $(CFLAGS:-FIddbanned.h=) $(ACFLAGS) $(A_INCLUDES) $< > $*.i
+    $(AS) $(AFLAGS) -o$(OBJDIR)\$(@F) $*.i
+    del $*.i
+
+!endif
+
+
+!IF EXIST(special.mak)
+!    INCLUDE special.mak    # Include special makefile additions, if any
+!ENDIF
+
+!IF EXIST(depend.def)
+!    INCLUDE depend.def     # Include dependencies on .h files
+!ENDIF
+
+#<eof>

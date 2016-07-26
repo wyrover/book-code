@@ -1,0 +1,9 @@
+;************************************************************************
+;
+; Copyright (c) Microsoft Corporation. All rights reserved.
+; This is the .DEF file for the Microsoft Visual C++ Run-Time Library DLL
+; The release version is SAMPLE_M.dll and the debug version SAMPLD_M.dll.
+;
+;************************************************************************
+LIBRARY SAMPLD_M
+EXPORTS
