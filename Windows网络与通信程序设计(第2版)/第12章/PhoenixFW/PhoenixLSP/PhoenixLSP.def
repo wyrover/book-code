@@ -1,0 +1,11 @@
+
+
+DESCRIPTION		" Implements a layered service provider for TCP/IP"
+
+SECTIONS	
+				.initdata	READ WRITE SHARED
+				.uinitdata	READ WRITE SHARED
+
+EXPORTS   
+				WSPStartup
+				PLSPIoControl

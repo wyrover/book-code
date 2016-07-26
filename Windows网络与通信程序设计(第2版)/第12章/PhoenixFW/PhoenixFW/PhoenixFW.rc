@@ -1,0 +1,396 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\PhoenixFW.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.chs\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\PhoenixFW.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于 PhoenixFW"
+FONT 9, "宋体"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "PhoenixFW 1.0 版",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "版权所有 (C) 2005",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "确定",IDOK,178,7,50,14,WS_GROUP
+END
+
+IDD_PHOENIXFW_DIALOG DIALOGEX 0, 0, 372, 215
+STYLE DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "金羽（Phoenix）个人防火墙"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,202,193,50,14
+    PUSHBUTTON      "取消",IDC_ANNUL,260,193,50,14
+    PUSHBUTTON      "应用",IDC_APPLY,314,193,50,14
+END
+
+IDD_SYSSET DIALOG DISCARDABLE  0, 0, 274, 143
+STYLE WS_CHILD | WS_CAPTION
+CAPTION "系统设置"
+FONT 9, "宋体"
+BEGIN
+    PUSHBUTTON      "安装",IDC_INSTALL,26,23,50,14
+    PUSHBUTTON      "卸载",IDC_REMOVE,98,23,50,14
+    CONTROL         "设置开机自动启动",IDC_AUTOSTART,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,26,48,83,10
+    CONTROL         "放行所有",IDC_PASS_ALL,"Button",BS_AUTORADIOBUTTON,26,
+                    84,48,10
+    CONTROL         "询问",IDC_QUERY_ALL,"Button",BS_AUTORADIOBUTTON,98,84,
+                    32,10
+    CONTROL         "拒绝所有",IDC_DENY_ALL,"Button",BS_AUTORADIOBUTTON,162,
+                    84,48,10
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDFRAME,12,77,236,2
+    LTEXT           "用户层工作模式设置：",IDC_STATIC,16,67,81,8
+    LTEXT           "核心层工作模式设置：",IDC_STATIC,14,103,81,8
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDFRAME,12,114,236,2
+    CONTROL         "放行所有",IDC_KERPASS_ALL,"Button",BS_AUTORADIOBUTTON,
+                    26,119,48,10
+    CONTROL         "开启过滤",IDC_KERSTART_FILTER,"Button",
+                    BS_AUTORADIOBUTTON,98,119,48,10
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDFRAME,12,17,236,2
+    LTEXT           "公共设置：",IDC_STATIC,15,7,41,8
+END
+
+IDD_RULE_CONTROL DIALOGEX 0, 0, 357, 161
+STYLE WS_CHILD | WS_CAPTION
+CAPTION "应用层过滤规则"
+FONT 9, "宋体", 0, 0, 0x1
+BEGIN
+    CONTROL         "List1",IDC_RULES,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | 
+                    WS_TABSTOP,0,25,357,136,WS_EX_CLIENTEDGE
+    PUSHBUTTON      "添加",IDC_ADD,191,10,50,14
+    PUSHBUTTON      "删除",IDC_DEL,301,10,50,14
+    PUSHBUTTON      "编辑",IDC_EDIT,246,10,50,14
+    LTEXT           "应用程序权限规则：",IDC_STATIC,9,12,74,8
+END
+
+IDD_MONITOR DIALOG DISCARDABLE  0, 0, 357, 161
+STYLE WS_CHILD | WS_CAPTION
+CAPTION "网络访问监视"
+FONT 9, "宋体"
+BEGIN
+    LTEXT           "状态列表：",IDC_STATIC,11,13,41,8
+    CONTROL         "Tree1",IDC_TREEMONITOR,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_LINESATROOT | WS_BORDER | WS_TABSTOP,
+                    0,29,357,132
+END
+
+IDD_RULE DIALOG DISCARDABLE  0, 0, 256, 209
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "添加应用层规则"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,143,190,50,14
+    PUSHBUTTON      "取消",IDCANCEL,199,190,50,14
+    LTEXT           "应用程序：",IDC_STATIC,11,45,41,8
+    COMBOBOX        IDC__APPLICATION,59,41,159,65,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "...",IDC_BROWSER,224,42,22,12
+    LTEXT           "实施动作：",IDC_STATIC,11,74,41,8
+    COMBOBOX        IDC_ACTION,59,70,159,51,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "进出方向：",IDC_STATIC,11,59,41,8
+    COMBOBOX        IDC_DIRECTION,59,55,159,65,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "服务类型：",IDC_STATIC,13,124,43,10
+    COMBOBOX        IDC_TYPE,59,121,160,97,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "服务端口：",IDC_STATIC,13,139,41,9
+    EDITTEXT        IDC_PORT,59,136,159,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MEMO,59,151,159,15,ES_AUTOHSCROLL
+    LTEXT           "备注：",IDC_STATIC,14,155,38,10
+    LTEXT           "基本设置",IDC_RULE_TITLE,13,12,242,16
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDFRAME,9,31,236,2
+    LTEXT           "高级设置",IDC_STATIC,15,97,44,9
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDFRAME,9,112,236,2
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDFRAME,11,184,236,2
+END
+
+IDD_KERRULE_CONTROL DIALOGEX 0, 0, 357, 161
+STYLE WS_CHILD | WS_CAPTION
+CAPTION "核心层过滤规则"
+FONT 9, "宋体"
+BEGIN
+    CONTROL         "List1",IDC_KERRULES,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | 
+                    WS_TABSTOP,0,28,357,133,WS_EX_CLIENTEDGE
+    LTEXT           "过滤规则设置：",IDC_STATIC,10,14,74,8
+    PUSHBUTTON      "添加",IDC_KERADD,191,10,50,14
+    PUSHBUTTON      "删除",IDC_KERDEL,301,10,50,14
+    PUSHBUTTON      "编辑",IDC_KEREDIT,246,10,50,14
+END
+
+IDD_KERRULE DIALOG DISCARDABLE  0, 0, 222, 237
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "添加核心层规则"
+FONT 9, "宋体"
+BEGIN
+    LTEXT           "IP地址值 :",IDC_STATIC,21,90,41,8
+    GROUPBOX        "基本设置",IDC_STATIC,7,7,207,48
+    LTEXT           "协议类型 :",IDC_STATIC,21,23,41,8
+    LTEXT           "实施动作 :",IDC_STATIC,21,37,41,8
+    COMBOBOX        IDC_RULE_PROTOCOL,95,19,103,136,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_RULE_ACTION,95,33,103,86,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "网络设置",IDC_STATIC,7,61,206,144
+    GROUPBOX        "源端网络范围",IDC_STATIC,16,75,191,60
+    LTEXT           "IP掩位码 :",IDC_STATIC,21,103,41,8
+    LTEXT           "端口号码 :",IDC_STATIC,21,116,41,8
+    CONTROL         "IPAddress1",IDC_SOURCE_IP,"SysIPAddress32",WS_TABSTOP,
+                    95,86,103,12
+    CONTROL         "IPAddress2",IDC_SOURCE_MASK,"SysIPAddress32",WS_TABSTOP,
+                    95,99,103,12
+    EDITTEXT        IDC_SOURCE_PORT,95,112,103,12,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "IP地址值 :",IDC_STATIC,21,155,41,8
+    GROUPBOX        "目的端网络范围",IDC_STATIC,15,140,191,60
+    LTEXT           "IP掩位码 :",IDC_STATIC,21,168,41,8
+    LTEXT           "端口号码 :",IDC_STATIC,21,181,41,8
+    CONTROL         "IPAddress1",IDC_DEST_IP,"SysIPAddress32",WS_TABSTOP,95,
+                    151,103,12
+    CONTROL         "IPAddress2",IDC_DEST_MASK,"SysIPAddress32",WS_TABSTOP,
+                    95,164,103,12
+    EDITTEXT        IDC_DEST_PORT,95,177,103,12,ES_AUTOHSCROLL | ES_NUMBER
+    DEFPUSHBUTTON   "确定",IDOK,109,218,50,14
+    PUSHBUTTON      "取消",IDCANCEL,165,218,50,14
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2,0,0,1
+ PRODUCTVERSION 2,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "PhoenixFW Microsoft 基础类应用程序\0"
+            VALUE "FileVersion", "2, 0, 0, 1\0"
+            VALUE "InternalName", "PhoenixFW\0"
+            VALUE "LegalCopyright", "版权所有 (C) 2005\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "PhoenixFW.EXE\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "PhoenixFW 应用程序\0"
+            VALUE "ProductVersion", "2, 0, 0, 1\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_PHOENIXFW_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 365
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 208
+    END
+
+    IDD_SYSSET, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 267
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 136
+    END
+
+    IDD_RULE_CONTROL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 350
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 154
+    END
+
+    IDD_MONITOR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 350
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 154
+    END
+
+    IDD_RULE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 249
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 202
+    END
+
+    IDD_KERRULE_CONTROL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 350
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 154
+    END
+
+    IDD_KERRULE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 218
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 230
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_ADAPTER_BITMAP      BITMAP  DISCARDABLE     "res\\bitmap1.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "关于 PhoenixFW(&A)..."
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE 4, 2
+#pragma code_page(936)
+#endif //_WIN32
+#include "res\PhoenixFW.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.chs\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

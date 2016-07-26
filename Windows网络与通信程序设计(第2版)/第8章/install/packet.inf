@@ -1,0 +1,89 @@
+;-------------------------------------------------------------------------
+; PACKET.INF -- Sample Protocol Driver
+;
+; Copyright (c) 1993-1999, Microsoft Corporation
+;-------------------------------------------------------------------------
+[version]
+Signature   = "$Windows NT$"
+Class       = NetTrans
+ClassGUID   = {4d36e975-e325-11ce-bfc1-08002be10318}
+Provider    = %Msft%
+DriverVer   = 06/16/2004,5.00.2064
+
+[Manufacturer]
+%Msft%=MSFT
+
+[MSFT]
+%PACKET_Desc%=Install, MS_PACKET
+
+;-------------------------------------------------------------------------
+; Installation Section
+;-------------------------------------------------------------------------
+[Install]
+AddReg=Inst_Ndi
+Characteristics=0 ; Has no characterstic
+CopyFiles=CpyFiles_Sys
+
+;-------------------------------------------------------------------------
+; Ndi installation support
+;-------------------------------------------------------------------------
+[Inst_Ndi]
+HKR,Ndi,Service,,"Packet"     
+HKR,Ndi,HelpText,,%PACKET_HelpText%
+HKR, Ndi\Interfaces, UpperRange,, noupper
+HKR,"Ndi\Interfaces","LowerRange",,"ndis5,ndis4"
+
+;-------------------------------------------------------------------------
+; Service installation support
+;-------------------------------------------------------------------------
+[Install.Services]
+AddService=slNdisProt,,PACKET_Service_Inst  ; <<===这里
+
+[Packet_Service_Inst]
+DisplayName     = %PACKET_Desc%
+ServiceType     = 1 ;SERVICE_KERNEL_DRIVER
+StartType       = 3 ;SERVICE_DEMAND_START  ;  <<===这里
+ErrorControl    = 1 ;SERVICE_ERROR_NORMAL
+ServiceBinary   = %12%\ProtoDrv.sys        ;  <<===这里
+LoadOrderGroup  = "PNP_TDI"
+AddReg          = AddReg_PACKET_Service_Inst
+Description     = %PACKET_Desc%
+
+[AddReg_PACKET_Service_Inst]
+HKLM,"System\CurrentControlSet\Services\slNdisProt","TextModeFlags",%REG_DWORD%,0x0001   ; <<===这里
+HKR,"Parameters","Test",,"Hello"
+
+;-------------------------------------------------------------------------
+; Support for removal of static registry settings
+;-------------------------------------------------------------------------
+[Install.Remove]
+DelReg=Del_Static_Reg
+
+[Install.Remove.Services]
+DelService = slNdisProt                 ; <<===这里
+
+[Del_Static_Reg]
+HKLM,"System\CurrentControlSet\Services\slNdisProt","TextModeFlags"                        ; <<===这里
+
+;-------------------------------------------------------------------------
+; Declare Destination Directories for file copy/deletion
+;-------------------------------------------------------------------------
+[DestinationDirs]
+CpyFiles_Sys    = 12    ; DIRID_DRIVERS
+
+
+;-------------------------------------------------------------------------
+; Files to Copy/Delete - Referenced by Install and Remove sections above
+;-------------------------------------------------------------------------
+[CpyFiles_Sys]
+ProtoDrv.sys,,,2                        ;  <<===这里
+
+[Strings]
+Msft = "Microsoft"
+PACKET_Desc = "DDK PACKET Protocol"
+PACKET_HelpText = "A non-routable protocol designed for use in small LANs."
+REG_DWORD = 0x10001
+
+
+
+

@@ -1,0 +1,68 @@
+BUILD: Examining e:\network\passthru\driver directory for files to compile.
+Compiling (NoSync) e:\network\passthru\driver directory ********************
+'nmake.exe /nologo BUILDMSG=Stop. -i NTTEST= UMTEST= NOLINK=1 386=1'
+cl -nologo -Ii386\ -I. -ID:\WINDDK\3790~1.121\inc\mfc42 -Iobjfre_wnet_x86\i386 -ID:\WINDDK\3790~1.121\inc\wnet -ID:\WINDDK\3790~1.121\inc\wnet -ID:\WINDDK\3790~1.121\inc\ddk\wnet -ID:\WINDDK\3790~1.121\inc\ddk\wdm\wnet -ID:\WINDDK\3790~1.121\inc\crt -D_X86_=1 -Di386=1  -DSTD_CALL -DCONDITION_HANDLING=1   -DNT_INST=0 -DWIN32=100 -D_NT1X_=100 -DWINNT=1 -D_WIN32_WINNT=0x0502 /DWINVER=0x0502 -D_WIN32_IE=0x0603    -DWIN32_LEAN_AND_MEAN=1 -DDEVL=1 -D__BUILDMACHINE__=WinDDK -DFPO=0  -DNDEBUG -D_DLL=1  -DNDIS_MINIPORT_DRIVER -DNDIS_WDM=1 -DNDIS51_MINIPORT=1 -DNDIS51=1     /c /Zl /Zp8 /Gy /Gm- -cbstring /W3 /WX /Gz  /GX-  /GR- /GF /GS /G6 /Ze /Gi- /QIfdiv- /hotpatch -Z7 /Oxs  /Oy-   -FID:\WINDDK\3790~1.121\inc\wnet\warning.h  /Yuprecomp.h /Fpobjfre_wnet_x86\i386\precomp.pch /Ylpassthru /Ycprecomp.h /Fpobjfre_wnet_x86\i386\precomp.pch  /Fo"e:\network\passthru\driver\objfre_wnet_x86\i386\precomp.obj"  /Tc
+
+#include "precomp.h"
+
+pch_hdr.src
+    rc -l 409 -DSXS_ASSEMBLY_NAME=""""""  -DSXS_ASSEMBLY_LANGUAGE=""""""  -DSXS_PROCESSOR_ARCHITECTURE="""x86"""  -DSXS_TARGET="""passthru.sys"""   -DSYSTEM_COMPATIBLE_ASSEMBLY_NAME="""Microsoft.Windows.SystemCompatible"""  -DLSYSTEM_COMPATIBLE_ASSEMBLY_NAME=L"""Microsoft.Windows.SystemCompatible"""   -DSXS_ASSEMBLY_VERSION="""""" -z "MS Sans Serif,Helv/MS Shell Dlg"  -r -fo objfre_wnet_x86\i386\passthru.res -D_X86_=1 -Di386=1  -DSTD_CALL -DCONDITION_HANDLING=1   -DNT_INST=0 -DWIN32=100 -D_NT1X_=100 -DWINNT=1 -D_WIN32_WINNT=0x0502 /DWINVER=0x0502 -D_WIN32_IE=0x0603    -DWIN32_LEAN_AND_MEAN=1 -DDEVL=1 -D__BUILDMACHINE__=WinDDK -DFPO=0  -DNDEBUG -D_DLL=1  -DNDIS_MINIPORT_DRIVER -DNDIS_WDM=1 -DNDIS51_MINIPORT=1 -DNDIS51=1   -ID:\WINDDK\3790~1.121\inc\mfc42 -Iobjfre_wnet_x86\i386 -ID:\WINDDK\3790~1.121\inc\wnet -ID:\WINDDK\3790~1.121\inc\wnet -ID:\WINDDK\3790~1.121\inc\ddk\wnet -ID:\WINDDK\3790~1.121\inc\ddk\wdm\wnet -ID:\WINDDK\3790~1.121\inc\crt .\passthru.rc
+cl -nologo -Ii386\ -I. -ID:\WINDDK\3790~1.121\inc\mfc42 -Iobjfre_wnet_x86\i386 -ID:\WINDDK\3790~1.121\inc\wnet -ID:\WINDDK\3790~1.121\inc\wnet -ID:\WINDDK\3790~1.121\inc\ddk\wnet -ID:\WINDDK\3790~1.121\inc\ddk\wdm\wnet -ID:\WINDDK\3790~1.121\inc\crt -D_X86_=1 -Di386=1  -DSTD_CALL -DCONDITION_HANDLING=1   -DNT_INST=0 -DWIN32=100 -D_NT1X_=100 -DWINNT=1 -D_WIN32_WINNT=0x0502 /DWINVER=0x0502 -D_WIN32_IE=0x0603    -DWIN32_LEAN_AND_MEAN=1 -DDEVL=1 -D__BUILDMACHINE__=WinDDK -DFPO=0  -DNDEBUG -D_DLL=1  -DNDIS_MINIPORT_DRIVER -DNDIS_WDM=1 -DNDIS51_MINIPORT=1 -DNDIS51=1     /c /Zl /Zp8 /Gy /Gm- -cbstring /W3 /WX /Gz  /GX-  /GR- /GF /GS /G6 /Ze /Gi- /QIfdiv- /hotpatch -Z7 /Oxs  /Oy-   -FID:\WINDDK\3790~1.121\inc\wnet\warning.h  /Yuprecomp.h /Fpobjfre_wnet_x86\i386\precomp.pch .\miniport.c .\passthru.c .\protocol.c 
+miniport.c
+passthru.c
+protocol.c
+Generating Code...
+
+Stop.
+Linking e:\network\passthru\driver directory ********************
+'nmake.exe /nologo BUILDMSG=Stop. -i LINKONLY=1 NOPASS0=1 NTTEST= UMTEST= 386=1'
+	link -out:objfre_wnet_x86\i386\passthru.sys -machine:ix86 @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\nm2962.tmp
+Microsoft (R) Incremental Linker Version 7.10.4035
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+-MERGE:_PAGE=PAGE 
+-MERGE:_TEXT=.text 
+-SECTION:INIT,d 
+-OPT:REF 
+-OPT:ICF 
+-IGNORE:4198,4010,4037,4039,4065,4070,4078,4087,4089,4221 
+-INCREMENTAL:NO 
+-FULLBUILD 
+/release 
+-NODEFAULTLIB 
+/WX 
+-debug 
+-debugtype:cv 
+-version:5.2 
+-osversion:5.2 
+/functionpadmin:5 
+/pdbcompress 
+-STACK:0x40000,0x1000 
+-driver 
+-base:0x10000 
+-subsystem:native,5.02 
+-entry:GsDriverEntry@8 
+-out:objfre_wnet_x86\i386\passthru.sys 
+objfre_wnet_x86\i386\precomp.obj 
+objfre_wnet_x86\i386\passthru.res 
+objfre_wnet_x86\i386\miniport.obj 
+objfre_wnet_x86\i386\passthru.obj 
+objfre_wnet_x86\i386\protocol.obj 
+D:\WINDDK\3790~1.121\lib\wnet\i386\BufferOverflowK.lib 
+D:\WINDDK\3790~1.121\lib\wnet\i386\ntoskrnl.lib 
+D:\WINDDK\3790~1.121\lib\wnet\i386\ntoskrnl.lib 
+D:\WINDDK\3790~1.121\lib\wnet\i386\hal.lib 
+D:\WINDDK\3790~1.121\lib\wnet\i386\wmilib.lib 
+D:\WINDDK\3790~1.121\lib\wnet\i386\ndis.lib 
+miniport.obj : error LNK2019: unresolved external symbol _PtDerefAdapter@4 referenced in function _MPHalt@4
+protocol.obj : error LNK2001: unresolved external symbol _PtDerefAdapter@4
+passthru.obj : error LNK2019: unresolved external symbol _DevIoControl@8 referenced in function _PtRegisterDevice@0
+passthru.obj : error LNK2019: unresolved external symbol _DevClose@8 referenced in function _PtRegisterDevice@0
+passthru.obj : error LNK2019: unresolved external symbol _DevOpen@8 referenced in function _PtRegisterDevice@0
+protocol.obj : error LNK2019: unresolved external symbol _PtRefAdapter@4 referenced in function _PtBindAdapter@20
+protocol.obj : error LNK2019: unresolved external symbol _DevRequestComplete@12 referenced in function _PtRequestComplete@12
+objfre_wnet_x86\i386\passthru.sys : fatal error LNK1120: 6 unresolved externals
+	echo Skip Binplace:
+Skip Binplace:
+
+Stop.

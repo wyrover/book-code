@@ -1,0 +1,276 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (中国) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\SmtpPop.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.chs\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\SmtpPop.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于 SmtpPop"
+FONT 9, "宋体"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "SmtpPop 1.0 版",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "版权所有 (C) 2008",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "确定",IDOK,178,7,50,14,WS_GROUP
+END
+
+IDD_SMTPPOP_DIALOG DIALOGEX 0, 0, 320, 200
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "SmtpPop"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,65,152,50,14
+    PUSHBUTTON      "取消",IDCANCEL,197,154,50,14
+    PUSHBUTTON      "发送邮件",IDC_SMTP,37,66,90,23
+    PUSHBUTTON      "接受邮件",IDC_POP3,157,66,90,23
+    LTEXT           "邮件发送系统",IDC_STATIC,107,30,55,21
+END
+
+IDD_SMTP_DLG DIALOG DISCARDABLE  0, 0, 282, 190
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "发送邮件"
+FONT 10, "System"
+BEGIN
+    PUSHBUTTON      "取消",IDCANCEL,154,169,50,14
+    PUSHBUTTON      "发送",IDC_SEND,61,167,49,16
+    GROUPBOX        "配置",IDC_STATIC,7,14,261,55
+    GROUPBOX        "邮件",IDC_STATIC,15,70,189,92
+    LTEXT           "服务器名：",IDC_STATIC,91,23,41,8
+    LTEXT           "用户名：",IDC_STATIC,30,42,33,8
+    LTEXT           "FROM:",IDC_STATIC,31,53,23,8
+    EDITTEXT        IDC_EDIT1,135,21,60,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT2,65,38,84,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT4,64,52,86,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT3,183,38,81,13,ES_PASSWORD | ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT5,183,53,81,13,ES_AUTOHSCROLL
+    LTEXT           "密码：",IDC_STATIC,154,42,25,9
+    LTEXT           "TO:",IDC_STATIC,157,56,14,9
+    LTEXT           "邮件标题：",IDC_STATIC,24,89,47,10
+    EDITTEXT        IDC_EDIT6,74,86,96,13,ES_AUTOHSCROLL
+    LTEXT           "邮件内容：",IDC_STATIC,23,104,46,13
+    EDITTEXT        IDC_EDIT7,74,108,122,49,ES_AUTOHSCROLL
+    GROUPBOX        "状态",IDC_STATIC,216,77,53,100
+END
+
+IDD_POP_DLG DIALOG DISCARDABLE  0, 0, 294, 247
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "接受邮件"
+FONT 10, "System"
+BEGIN
+    LTEXT           "服务器名:",IDC_STATIC,87,19,34,14
+    EDITTEXT        IDC_EDIT1,136,18,76,15,ES_AUTOHSCROLL
+    GROUPBOX        "配置",IDC_STATIC,7,7,280,82
+    LTEXT           "用户名:",IDC_STATIC,31,47,35,10
+    EDITTEXT        IDC_EDIT2,68,42,84,15,ES_AUTOHSCROLL
+    LTEXT           "密码:",IDC_STATIC,161,45,24,12
+    EDITTEXT        IDC_EDIT3,189,42,67,15,ES_PASSWORD | ES_AUTOHSCROLL
+    GROUPBOX        "邮件信息",IDC_STATIC,7,93,280,105
+    LTEXT           "主题:",IDC_STATIC,25,104,24,11
+    EDITTEXT        IDC_EDIT4,62,101,154,14,ES_AUTOHSCROLL
+    LTEXT           "内容:",IDC_STATIC,26,121,22,11
+    EDITTEXT        IDC_EDIT5,53,124,181,64,ES_AUTOHSCROLL
+    PUSHBUTTON      "接收",IDC_REC,38,207,60,15
+    PUSHBUTTON      "取消",IDC_CANCAL,146,207,60,15
+    EDITTEXT        IDC_EDIT6,249,122,27,13,ES_AUTOHSCROLL
+    LTEXT           "编号:",IDC_STATIC,242,102,30,11
+    LTEXT           "来自:",IDC_STATIC,24,69,22,12
+    EDITTEXT        IDC_EDIT7,53,68,86,13,ES_AUTOHSCROLL
+    LTEXT           "到:",IDC_STATIC,154,69,18,12
+    EDITTEXT        IDC_EDIT8,182,68,87,13,ES_AUTOHSCROLL
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "SmtpPop Microsoft 基础类应用程序\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "SmtpPop\0"
+            VALUE "LegalCopyright", "版权所有 (C) 2008\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "SmtpPop.EXE\0"
+            VALUE "ProductName", "SmtpPop 应用程序\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_SMTPPOP_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 313
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 193
+    END
+
+    IDD_SMTP_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 275
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 183
+    END
+
+    IDD_POP_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 287
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 240
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "关于 SmtpPop(&A)..."
+END
+
+#endif    // Chinese (中国) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE 4, 2
+#pragma code_page(936)
+#endif //_WIN32
+#include "res\SmtpPop.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.chs\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
