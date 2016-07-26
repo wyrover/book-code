@@ -22,3 +22,15 @@ book code
 -  [线程池](https://github.com/shanfeng0004/test-online/blob/d797704e36feea3db7684935b0640d47182c389e/ocs_rate/ThreadPool.h)
 -  [线程池](https://github.com/qiubinren/exercise/blob/2dddef72ebbff186dc83713674ba436e639d3b7a/cpp/144ThreadPool/CThreadPool.h)
 -  [线程池](https://github.com/dengbzh/CThreadPool/blob/77bc37c4c2a893611b41394663e6e0f83820e6fa/src/CThreadPool.h)
+-  [线程池](https://github.com/metopa/HTTP_Server/blob/master/src/main.cpp)
+-  [ipc-win](https://github.com/OpenSharp/ipc-win)
+-  [test-code-backup](https://github.com/CriDos/test-code-backup)
+-  [hf-2011](https://github.com/wjcsharp/hf-2011)
+-  [命名管道服务器](https://github.com/sachindeshpande/TRapperProject/blob/efe19ddeac91a057bff48d6cb0914652c47655cd/Source/TapRapperApplication/WiimoteCpp/CppNamedPipeServer/CppNamedPipeServer.h)
+-  https://github.com/sovprene/named-pipe-examples
+-  https://github.com/rwang82/HMNWC
+-  https://github.com/guyuzhilian/Network
+-  https://github.com/YingyuWu/RealTimeNewsVisualization/blob/5ecc73df6de7a5441e96169d5c7b39b92c2e546d/STVS/src/websocket/websocketserver.h
+-  https://github.com/tujiaw/pipe
+-  https://github.com/awakecoding/xrdp-ng/blob/bbc04f19df0544cfaeb83eebe3263cc38d99a132/session-manager/common/pbRPC/RpcEngine.cpp
+-  https://github.com/sim0629/tightvnc/blob/af064f5fa430d8a75ad256216328e37e04b49dc1/win-system/PipeServer.h
