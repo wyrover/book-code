@@ -1,0 +1,351 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ICON1               ICON    DISCARDABLE     "afadfadf.ico"
+110                     ICON    FIXED IMPURE    "ico110.ico"
+
+108                     ICON    FIXED IMPURE    "ico108.ico"
+
+107                     ICON    FIXED IMPURE    "ico107.ico"
+
+106                     ICON    FIXED IMPURE    "ico106.ico"
+
+111                     ICON    FIXED IMPURE    "ico111.ico"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU1 MENU DISCARDABLE 
+BEGIN
+    POPUP "파일"
+    BEGIN
+        MENUITEM "AAAA",                        ID_FILE_AAAA
+        MENUITEM "BBB",                         ID_FILE_BBB
+    END
+    POPUP "테스트"
+    BEGIN
+        MENUITEM "CCC",                         ID_TEST_CCC
+        MENUITEM "DDD",                         ID_TEST_DDD
+    END
+END
+
+104 MENU FIXED IMPURE 
+BEGIN
+    POPUP "_Context"
+    BEGIN
+        MENUITEM "펜(&P)",                      40003
+        MENUITEM "선(&L)",                      40004
+        MENUITEM "사각형(&R)",                  40005
+        MENUITEM "원(&C)",                      40006
+        MENUITEM SEPARATOR
+        POPUP "색상(&C)"
+        BEGIN
+            MENUITEM "빨간색(&R)",                  40007
+            MENUITEM "녹색(&G)",                    40008
+            MENUITEM "파란색(&B)",                  40009
+            MENUITEM SEPARATOR
+            MENUITEM "검정색(&K)",                  40010
+        END
+        MENUITEM SEPARATOR
+        POPUP "두께(&W)"
+        BEGIN
+            MENUITEM "가늘게(&1)",                  40011
+            MENUITEM "보통(&3)",                    40012
+            MENUITEM "두껍게(&5)",                  40013
+        END
+    END
+END
+
+102 MENU FIXED IMPURE 
+BEGIN
+    POPUP "화일(&F)"
+    BEGIN
+        MENUITEM "새파일(&N)",                  40001
+        MENUITEM SEPARATOR
+        MENUITEM "종료(&X)",                    40002
+    END
+    POPUP "도형(&S)"
+    BEGIN
+        MENUITEM "펜(&P)",                      40003
+        MENUITEM "선(&L)",                      40004
+        MENUITEM "사각형(&R)",                  40005
+        MENUITEM "원(&C)",                      40006
+    END
+    POPUP "편집(&E)"
+    BEGIN
+        MENUITEM "실행 취소(&U)",               40016
+    END
+    POPUP "보기(&V)"
+    BEGIN
+        MENUITEM "Grid 보기",                   40017
+        MENUITEM "좌표 보기",                   40020
+        MENUITEM SEPARATOR
+        MENUITEM "전체 보기",                   40018
+    END
+    POPUP "색상(&C)"
+    BEGIN
+        MENUITEM "빨간색(&R)",                  40007
+        MENUITEM "녹색(&G)",                    40008
+        MENUITEM "파란색(&B)",                  40009
+        MENUITEM SEPARATOR
+        MENUITEM "검정색(&K)",                  40010
+    END
+    POPUP "두께(&W)"
+    BEGIN
+        MENUITEM "가늘게(&1)",                  40011
+        MENUITEM "보통(&3)",                    40012
+        MENUITEM "두껍게(&5)",                  40013
+    END
+    POPUP "도움말(&H)"
+    BEGIN
+        MENUITEM "과제 정보(&A)...",            40014
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+105                     CURSOR  FIXED IMPURE    "cur105.cur"
+
+104                     CURSOR  FIXED IMPURE    "cur104.cur"
+
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+9                       BITMAP  FIXED IMPURE    "bmp9.bmp"
+
+8                       BITMAP  FIXED IMPURE    "bmp8.bmp"
+
+7                       BITMAP  FIXED IMPURE    "bmp7.bmp"
+
+684                     BITMAP  FIXED IMPURE    "bmp684.bmp"
+
+683                     BITMAP  FIXED IMPURE    "bmp683.bmp"
+
+682                     BITMAP  FIXED IMPURE    "bmp682.bmp"
+
+681                     BITMAP  FIXED IMPURE    "bmp681.bmp"
+
+680                     BITMAP  FIXED IMPURE    "bmp680.bmp"
+
+68                      BITMAP  FIXED IMPURE    "bmp68.bmp"
+
+679                     BITMAP  FIXED IMPURE    "bmp679.bmp"
+
+678                     BITMAP  FIXED IMPURE    "bmp678.bmp"
+
+67                      BITMAP  FIXED IMPURE    "bmp67.bmp"
+
+65                      BITMAP  FIXED IMPURE    "bmp65.bmp"
+
+64                      BITMAP  FIXED IMPURE    "bmp64.bmp"
+
+63                      BITMAP  FIXED IMPURE    "bmp63.bmp"
+
+62                      BITMAP  FIXED IMPURE    "bmp62.bmp"
+
+61                      BITMAP  FIXED IMPURE    "bmp61.bmp"
+
+60                      BITMAP  FIXED IMPURE    "bmp60.bmp"
+
+6                       BITMAP  FIXED IMPURE    "bmp6.bmp"
+
+59                      BITMAP  FIXED IMPURE    "bmp59.bmp"
+
+58                      BITMAP  FIXED IMPURE    "bmp58.bmp"
+
+57                      BITMAP  FIXED IMPURE    "bmp57.bmp"
+
+56                      BITMAP  FIXED IMPURE    "bmp56.bmp"
+
+55                      BITMAP  FIXED IMPURE    "bmp55.bmp"
+
+54                      BITMAP  FIXED IMPURE    "bmp54.bmp"
+
+53                      BITMAP  FIXED IMPURE    "bmp53.bmp"
+
+52                      BITMAP  FIXED IMPURE    "bmp52.bmp"
+
+51                      BITMAP  FIXED IMPURE    "bmp51.bmp"
+
+50                      BITMAP  FIXED IMPURE    "bmp50.bmp"
+
+5                       BITMAP  FIXED IMPURE    "bmp5.bmp"
+
+49                      BITMAP  FIXED IMPURE    "bmp49.bmp"
+
+48                      BITMAP  FIXED IMPURE    "bmp48.bmp"
+
+47                      BITMAP  FIXED IMPURE    "bmp47.bmp"
+
+46                      BITMAP  FIXED IMPURE    "bmp46.bmp"
+
+45                      BITMAP  FIXED IMPURE    "bmp45.bmp"
+
+44                      BITMAP  FIXED IMPURE    "bmp44.bmp"
+
+43                      BITMAP  FIXED IMPURE    "bmp43.bmp"
+
+42                      BITMAP  FIXED IMPURE    "bmp42.bmp"
+
+41                      BITMAP  FIXED IMPURE    "bmp41.bmp"
+
+40                      BITMAP  FIXED IMPURE    "bmp40.bmp"
+
+4                       BITMAP  FIXED IMPURE    "bmp4.bmp"
+
+39                      BITMAP  FIXED IMPURE    "bmp39.bmp"
+
+38                      BITMAP  FIXED IMPURE    "bmp38.bmp"
+
+37                      BITMAP  FIXED IMPURE    "bmp37.bmp"
+
+36                      BITMAP  FIXED IMPURE    "bmp36.bmp"
+
+35                      BITMAP  FIXED IMPURE    "bmp35.bmp"
+
+34                      BITMAP  FIXED IMPURE    "bmp34.bmp"
+
+33                      BITMAP  FIXED IMPURE    "bmp33.bmp"
+
+32                      BITMAP  FIXED IMPURE    "bmp32.bmp"
+
+31                      BITMAP  FIXED IMPURE    "bmp31.bmp"
+
+30                      BITMAP  FIXED IMPURE    "bmp30.bmp"
+
+3                       BITMAP  FIXED IMPURE    "bmp3.bmp"
+
+29                      BITMAP  FIXED IMPURE    "bmp29.bmp"
+
+28                      BITMAP  FIXED IMPURE    "bmp28.bmp"
+
+27                      BITMAP  FIXED IMPURE    "bmp27.bmp"
+
+26                      BITMAP  FIXED IMPURE    "bmp26.bmp"
+
+25                      BITMAP  FIXED IMPURE    "bmp25.bmp"
+
+24                      BITMAP  FIXED IMPURE    "bmp24.bmp"
+
+23                      BITMAP  FIXED IMPURE    "bmp23.bmp"
+
+22                      BITMAP  FIXED IMPURE    "bmp22.bmp"
+
+21                      BITMAP  FIXED IMPURE    "bmp21.bmp"
+
+20                      BITMAP  FIXED IMPURE    "bmp20.bmp"
+
+2                       BITMAP  FIXED IMPURE    "bmp2.bmp"
+
+19                      BITMAP  FIXED IMPURE    "bmp19.bmp"
+
+18                      BITMAP  FIXED IMPURE    "bmp18.bmp"
+
+17                      BITMAP  FIXED IMPURE    "bmp17.bmp"
+
+16                      BITMAP  FIXED IMPURE    "bmp16.bmp"
+
+15                      BITMAP  FIXED IMPURE    "bmp15.bmp"
+
+14                      BITMAP  FIXED IMPURE    "bmp14.bmp"
+
+13                      BITMAP  FIXED IMPURE    "bmp13.bmp"
+
+12                      BITMAP  FIXED IMPURE    "bmp12.bmp"
+
+11                      BITMAP  FIXED IMPURE    "bmp11.bmp"
+
+10                      BITMAP  FIXED IMPURE    "bmp10.bmp"
+
+1                       BITMAP  FIXED IMPURE    "bmp1.bmp"
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

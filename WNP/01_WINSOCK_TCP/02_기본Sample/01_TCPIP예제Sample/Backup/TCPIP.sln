@@ -1,0 +1,12 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{059D6162-CD51-11D0-AE1F-00A0C90FFFC3}") = "Client", "Client\Client.dsp", "{DEA62225-BD26-4896-8D72-B400146AACBE}"
+EndProject
+Project("{059D6162-CD51-11D0-AE1F-00A0C90FFFC3}") = "TCPIP", "TCPIP.dsp", "{5B72E1F5-EDD3-4DDB-A832-1415D28156DD}"
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

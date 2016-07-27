@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MemStatConfig", "MemStatConfig\MemStatConfig.vcxproj", "{A3EAAABE-2ECB-4BEA-837A-9FEA0A28F042}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MemStatControl", "MemStatControl\MemStatControl.vcxproj", "{5A07E666-AF5E-491A-AF3C-9D3FEE871F68}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MemStatService", "MemStatService\MemStatService.vcxproj", "{9210D8BB-D5D8-46A4-8FA1-0C9BA19CC8CB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+		Template|Win32 = Template|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A3EAAABE-2ECB-4BEA-837A-9FEA0A28F042}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A3EAAABE-2ECB-4BEA-837A-9FEA0A28F042}.Debug|Win32.Build.0 = Debug|Win32
+		{A3EAAABE-2ECB-4BEA-837A-9FEA0A28F042}.Release|Win32.ActiveCfg = Release|Win32
+		{A3EAAABE-2ECB-4BEA-837A-9FEA0A28F042}.Release|Win32.Build.0 = Release|Win32
+		{A3EAAABE-2ECB-4BEA-837A-9FEA0A28F042}.Template|Win32.ActiveCfg = Release|Win32
+		{A3EAAABE-2ECB-4BEA-837A-9FEA0A28F042}.Template|Win32.Build.0 = Release|Win32
+		{5A07E666-AF5E-491A-AF3C-9D3FEE871F68}.Debug|Win32.ActiveCfg = Debug|Win32
+		{5A07E666-AF5E-491A-AF3C-9D3FEE871F68}.Debug|Win32.Build.0 = Debug|Win32
+		{5A07E666-AF5E-491A-AF3C-9D3FEE871F68}.Release|Win32.ActiveCfg = Release|Win32
+		{5A07E666-AF5E-491A-AF3C-9D3FEE871F68}.Release|Win32.Build.0 = Release|Win32
+		{5A07E666-AF5E-491A-AF3C-9D3FEE871F68}.Template|Win32.ActiveCfg = Template|Win32
+		{5A07E666-AF5E-491A-AF3C-9D3FEE871F68}.Template|Win32.Build.0 = Template|Win32
+		{9210D8BB-D5D8-46A4-8FA1-0C9BA19CC8CB}.Debug|Win32.ActiveCfg = Debug|Win32
+		{9210D8BB-D5D8-46A4-8FA1-0C9BA19CC8CB}.Debug|Win32.Build.0 = Debug|Win32
+		{9210D8BB-D5D8-46A4-8FA1-0C9BA19CC8CB}.Release|Win32.ActiveCfg = Release|Win32
+		{9210D8BB-D5D8-46A4-8FA1-0C9BA19CC8CB}.Release|Win32.Build.0 = Release|Win32
+		{9210D8BB-D5D8-46A4-8FA1-0C9BA19CC8CB}.Template|Win32.ActiveCfg = Template|Win32
+		{9210D8BB-D5D8-46A4-8FA1-0C9BA19CC8CB}.Template|Win32.Build.0 = Template|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

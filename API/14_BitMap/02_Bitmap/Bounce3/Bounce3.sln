@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Bounce3", "Bounce3.vcproj", "{9F0393CE-0B39-484F-A1E2-7206F87A8A2F}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{9F0393CE-0B39-484F-A1E2-7206F87A8A2F}.Debug.ActiveCfg = Debug|Win32
+		{9F0393CE-0B39-484F-A1E2-7206F87A8A2F}.Debug.Build.0 = Debug|Win32
+		{9F0393CE-0B39-484F-A1E2-7206F87A8A2F}.Release.ActiveCfg = Release|Win32
+		{9F0393CE-0B39-484F-A1E2-7206F87A8A2F}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

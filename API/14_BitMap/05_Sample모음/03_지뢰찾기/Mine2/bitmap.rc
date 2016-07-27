@@ -1,0 +1,113 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BITMAP1             BITMAP  DISCARDABLE     "410.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU1 MENU DISCARDABLE 
+BEGIN
+    POPUP "게임(&G)"
+    BEGIN
+        MENUITEM "새 게임(N)           F2",     ID_GAME_NEW
+        MENUITEM SEPARATOR
+        MENUITEM "초급(&B)",                    ID_GAME_BEGIN
+        MENUITEM "중급(&I)",                    ID_GAME_INTER
+        MENUITEM "고급(&E)",                    ID_GAME_HIGH
+        MENUITEM "사용자 정의(&C)...",          ID_GAME_USERDEFINE
+        MENUITEM SEPARATOR
+        MENUITEM "? 표시(&M)",                  ID_MENUITEM40007
+        MENUITEM "컬러로 표시(L)",              ID_MENUITEM40008
+        MENUITEM "소리(S)",                     ID_MENUITEM40009
+        MENUITEM SEPARATOR
+        MENUITEM "최고 기록(&T)...",            ID_MENUITEM40010
+        MENUITEM "끝내기(&X)",                  ID_GAME_QUIT
+    END
+    POPUP "도움말(&H)"
+    BEGIN
+        MENUITEM "목차(C)                F1",   ID_MENUITEM40012
+        MENUITEM "도움말 검색(&S)",             ID_MENUITEM40013
+        MENUITEM "도움말 사용(&H)",             ID_MENUITEM40014
+        MENUITEM SEPARATOR
+        MENUITEM "지뢰 찾기 정보(&A)...",       ID_MENUITEM40015
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ICON1               ICON    DISCARDABLE     "100.ico"
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

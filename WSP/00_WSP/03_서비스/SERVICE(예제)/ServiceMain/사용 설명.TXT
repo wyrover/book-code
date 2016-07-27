@@ -1,0 +1,19 @@
+[ 서비스 샘플 사용 방법]
+
+1. 서비스 명을 입력한다.
+	data.h -> #define SERVICE_NAME	"MemStat"
+
+2. 서비스 기능의 초기화 코드를 작성
+	myservice.cpp -> void myservice_init()
+
+3. 실제 동작하고자 하는 서비스 코드를 작성
+	myservice.cpp -> void myservice_run()
+
+4. 필요시 사용자 정의 이벤트 핸들러를 추가한다.
+	servicehandler.cpp ->
+
+	// 사용자 정의 신호 ========================================
+	case SERVICE_CONTROL_NEWFILE:		myservice_OnNewFile();
+										MySetStatus(g_NowState);
+										break;
+	//==========================================================

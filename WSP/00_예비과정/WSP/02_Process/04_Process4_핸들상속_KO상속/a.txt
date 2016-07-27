@@ -1,0 +1,10 @@
+
+Pinging www.imbc.com [211.233.27.200] with 32 bytes of data:
+
+Request timed out.
+Request timed out.
+Request timed out.
+Request timed out.
+
+Ping statistics for 211.233.27.200:
+    Packets: Sent = 4, Received = 0, Lost = 4 (100% loss),

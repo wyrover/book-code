@@ -1,0 +1,20 @@
+WinForm(DialogBase)
+       ListBox 컨트롤 
+          - 현재 생성되어 있는 프로세스의 목록 출력
+
+       Button Control
+          - Refresh기능(트리 컨트롤에 프로세스 목록 갱신 출력)
+
+       Button Control 
+         - 프로세스 죽이기 
+            ListBox 선택 후 버튼 클릭시 해당 프로세스를 죽인다.
+        
+       Menu(작업 관리자 참조)
+         - 파일 > 새작업
+         - 파일 > 작업관리자 끝내기 
+
+       Button Control
+         - 프로세스 감시 기능 
+ 
+
+

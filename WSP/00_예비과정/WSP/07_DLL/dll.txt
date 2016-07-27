@@ -1,0 +1,153 @@
+printf, scanf, fopen : C 표준함수... => LIBC.lib
+
+
+
+library 파일을 가져다 쓸 때 클라이언트...
+
+Static Library...
+
+1. 해더 include
+2. .lib 정보  => linker
+
+장 점 
+  .lib 를  가져다 쓰는 Client의 실행파일에 포함되어 컴파일 생성되므로 
+  .exe만 배포하면 가능
+
+단 점
+ .lib를 가져다 쓰는 클라이언트가 여러개일 경우 각각의 실행 파일이 
+실행될 때마다 같은 코드를 메모리에 로드하게 된다..
+메모리 낭비...
+
+
+=> .dll ( Dynamic L L )
+
+abc.h : 선언
+
+abc.lib 
+
+abc.dll : 구현 
+-----------
+   foo ()
+-----------
+
+
+DLL
+
+장 점 : 메모리 절약 , 실행 파일 독립적. 
+         .dll을 업데이트 할 때 다시 컴파일 할 필요가 없다.
+
+
+단 점 : 이름을 통해서 로딩이 이루어짐  => 충돌 가능성...
+
+DLL에서 함수 노출하기 위해 
+
+extern "C" __declspec(dllexport)
+
+extern "C" : C방식으로 컴파일 하라.
+                 당연히 C++ 함수 오버로딩 안됨...
+
+//-----------------------------
+extern "C" void foo()
+extern "C" void foo(i	nt a)	// error
+//---------------------------
+
+
+----------- DLL 가져다 쓰기 ---------------
+
+1. 헤더 include
+2. lib 추가 
+
+.dll은 현재 디렉토리 및 system dirctory에 존재하여야 함
+
+모든 API는 DLL 안에 있다. 
+
+DLL 사용법 2가지
+
+1. 암시적 연결( Implict Linking)
+    - 실행 파일의 헤더에 DLL의 이름 기록
+    - 실행 파일과 동시에 DLL이 Process 주소공간에 Load
+
+2. 묵시적 연결( Explicit Linking)
+    - 필요시 마다 LoadLibrary 함수로 DLL 로드
+    - GetProcAddress() 함수를 가지고 찾고 싶은 함수의 주소를 알아냄
+    - 얻어온 함수 주소를 포인터로 리턴받아 사용
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+

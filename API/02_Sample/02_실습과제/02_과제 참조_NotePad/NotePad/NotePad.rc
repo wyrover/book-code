@@ -1,0 +1,98 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU1 MENU DISCARDABLE 
+BEGIN
+    POPUP "파일(&F)"
+    BEGIN
+        MENUITEM "새로 만들기(&N)",             IDM_FILE_NEW
+        MENUITEM "열기(&O)...",                 IDM_FILE_OPEN
+        MENUITEM "저장(&S)",                    IDM_FILE_SAVE
+        MENUITEM "다른 이름으로 저장",          IDM_FILE_SAVEAS
+        MENUITEM SEPARATOR
+        MENUITEM "종료(&X)",                    IDM_FILE_EXIT
+    END
+    POPUP "편집(&E)"
+    BEGIN
+        MENUITEM "실행취소(&U)",                IDM_EDIT_UNDO
+        MENUITEM SEPARATOR
+        MENUITEM "잘라내기(&T)",                IDM_EDIT_CUT
+        MENUITEM "복사(&C)",                    IDM_EDIT_COPY
+        MENUITEM "붙여넣기(&P)",                IDM_EDIT_PASTE
+        MENUITEM "삭제(&D)",                    IDM_EDIT_DEL
+        MENUITEM SEPARATOR
+        MENUITEM "모두 선택(&A)",               IDM_EDIT_SELECTALL
+    END
+    POPUP "서식(&O)"
+    BEGIN
+        MENUITEM "글꼴(&F)...",                 IDM_FONT_CHANGE
+        MENUITEM "전체보기(&V)",                IDM_VIEW_FULL
+    END
+END
+
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

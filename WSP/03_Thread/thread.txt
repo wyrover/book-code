@@ -1,0 +1,139 @@
+[ Thread ]
+
+1. 프로그램 실행 경로
+   - 프로그램 실행시 최초 Entry Point 는 main 또는 WinMain이 아니라 
+      main CRT startup() 이다.
+ 
+      이 함수를 통해 primary thread 가 실행되고 thread에서 main 함수가 
+      호출된다.
+
+2. thread 생성
+    - 4G 의 process 공간에 실행 흐름을 구동하는 Main Thread가 있는데 
+      이를 최상위 thread(primary thread)라 한다.
+
+    - 하나의 프로세스 공간에 추가적으로 thread를 더 만들 수 있다.
+       처음에 프로세스 공간이 생기면 OS는 별도의 공간에 Thread Kernel Object
+       를 하나 만든다.
+ 
+    - 새로 thread를 만들면 또 하나의 Thread Kernel Object를 만든다..
+       이 TKO 에는 레지스터가 각각 보관되어 있다.
+
+3. 레지스터를 통해 실행 내용 저장
+    - CPU 레지스터에는
+       EIP   : instruction pointer( 작업 명령 보관) 
+       ESP  : instruction stack pointer( 작업할 stack 메모리 공간 )
+
+    - Multi Thread 는 Thread 하나가 실행 될 때마다 CPU에서 아주 짧은 시간만
+      실행한 후 (퀀텀)  자신의 TKO에 있는 레지스터에 해당 작업 명령 및 작업
+       공간을 보관한 후 그 다음 Thread가 실행되면 자신의 TKO에 있는 레지스트
+       리에 보관되어 있는 EIP와 ESP를 가져와 명령을 이어서 실행한다.
+
+       여기서 TKO 에 있는 Thread 작업 명령인 레지스터 보관 내용을 Context라
+       한다.
+       이런 Thread 작업 명령을 교환해가며 CPU가 실행되는 작업을 
+       Context Switch( 문맥 교환)이라 한다.
+
+4. thread 추가 생성
+   - 하나의 주 thread는 항상 프로세스마다 하나 존재하지만 
+      시간이 오래 걸리는 반복 작업일 경우 thread는 그 반복 작업을 수행하기
+      이전 에는 다른 일을 할 수 없다.
+     이런 경우 thread를 하나 더 만들어서 처리할 수 있다.
+     CreaetThread() 를 사용하여 생성한다.
+
+5. Thread Kernel Object
+    - 보안속성
+    - Suspend Count ; 0일때 실행        > 0 일때 Sleep
+    -SuspendThread()와 ResumeThread() 함수를 사용하여 제어한다.
+
+6. thread 재우기
+    - 다른 스레드 재우기 : SuspendThread() 사용
+    - 스스로 재우기 : Sleep() 사용
+       Context Switching 발생시켜 아무일도 하지 않고 다른 스레드에게 
+       CPU 사용권을 넘긴다.
+       SwitchToThread() 가 동일한 일을 한다..
+
+
+7. Thread 생성 함수 사용시 주의점
+   -  C런타임 함수 사용시 : C런타임함수중에는 전역변수를 사용하는
+       함수들이 존재
+       strtok()...
+
+       기본적으로   C/ C++ 컴파일러는 S TM로 동작...
+       
+    - M T M 
+      방법 1) 메뉴 설정 변경
+                 - Project setting -> C/C++탭 --> Code generation
+                    Use Runtime Library 콤보박스에서 MultiThread로 변경..
+
+      방법 2) 메크로 사용
+	// Multi Thread용 C Library를 사용하게 됨..
+                 #define MT  
+
+8. Thread 변수
+   - 전역 변수 및 static 변수는 모든 스레드 공유
+   - 지역 변수는 스레드별 공유하지 않음
+
+   - 만약 전역, static 변수를 스레드가 공유하게 되면 동기화 필요 
+      CriticalSection,  Mutex,  Semaphore,  Event
+
+9. thread 생성 함수 
+   - CreateThread()  / ExitThread()
+      내부적으로 Win32 API 만을 사용할 경우 권장
+
+   - _beginThread(), _beginThreadex()  / _endThread(), _endThreadex()
+      C런타임 라이브러리를 사용할 경우 권장
+
+   - AfxBeginThread() / AfxBeginThreadEx()  / AfxEndThread()
+      MFC 로 코딩할 경우 내부적으로 win32 API C 런타임 함수 모두 사용
+      가능
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

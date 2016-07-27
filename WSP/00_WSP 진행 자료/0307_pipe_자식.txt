@@ -1,0 +1,64 @@
+#include <stdio.h>
+#include <windows.h>
+
+// 익명의 Pipe : 단방향의 이름없는 pipe.(Named Pipe 는 양방향, 단방향 모두 가능)
+
+void main()
+{
+	//1) 두개의 파이프 생성
+	HANDLE hRead, hWrite;
+	CreatePipe( &hRead, &hWrite, 0, 4096);
+
+	//2) 전달핸들값 2개를 상속 가능하게 변경
+	SetHandleInformation( hRead, HANDLE_FLAG_INHERIT, HANDLE_FLAG_INHERIT);
+
+	//3) 명령행 인자 생성 : 프로세스 명 + 전달핸들값 + 전달핸들값 
+	char cmd[256];
+	wsprintf( cmd, "child.exe %d", hRead); // 명령형 전달인자 사용
+
+	//4) 프로세스 생성 
+	PROCESS_INFORMATION pi;
+	STARTUPINFO si = { sizeof(si)};
+	BOOL b = CreateProcess( 0, cmd, 0, 0, TRUE, CREATE_NEW_CONSOLE,		
+		0,0,&si, &pi);
+	
+	if ( b )
+	{
+		CloseHandle( pi.hProcess);
+		CloseHandle( pi.hThread);
+		CloseHandle( hRead );
+	}
+
+	//5) 수신 스레드 생성 
+	
+
+	//6) 전송 테스트 
+	//--------------------------------------------
+	char buf[4096];
+	while ( 1 )
+	{
+		printf("전달할 메세지를 입력하세요 >> ");
+		gets( buf );
+
+		DWORD len;
+		WriteFile( hWrite, buf, strlen(buf)+1, &len, 0);
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

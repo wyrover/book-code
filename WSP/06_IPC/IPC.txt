@@ -1,0 +1,19 @@
+IPC ( InterProcess Communication)
+
+두 프로그램이 상호 통신하여 정보를 교환하는 방법
+
+응용 프로그램간의 작업 분담을 위해 사용
+
+1. 사용자 정의 메시지
+2. WM_COPYDATA
+3. Shared Memory
+4. Memory-mapped File
+5. ClipBoard
+6. Mail Slot
+7. Pipe
+8. Socket
+
+=> 2,3,4, 방법이 많이 사용됨
+    1번은 메시지 전달 차원에서 사용
+
+

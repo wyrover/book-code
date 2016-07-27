@@ -1,0 +1,13 @@
+[ 서비스 sample 사용 방법 ]
+
+1.서비스 명을 입력한다.
+	data.h
+
+2.서비스 기능의 초기화 코드를 작성
+	myservice.cpp
+
+3.실제 동작하고자 하는 서비스 코드를 작성
+	myservice .cpp
+
+4.필요시 사용자 정의 신호 핸들러 추가
+	servicehandler.cpp

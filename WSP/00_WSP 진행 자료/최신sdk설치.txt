@@ -1,0 +1,16 @@
+VC++ 6.0 에 있는 windows.h 에 RegisterServiceCtrlHandlerEx 에 대한 선언이 없으므로 
+서비스 관련 코드의 컴파일 시에 선언되지 않는 함수라는 에러가 발생한다.
+
+따라서 최신 헤더 및 라이브러리 사용을 위해서는 Microsoft Platform SDK 를 깔아야 한다.
+XP 계열에서는 다음이 가장 최신 SDK 인 것으로 보인다.
+
+Microsoft Platform SDK 다운로드(Windows Server 2003 SP1 Platform SDK):
+1) SDK 설치 
+    http://www.microsoft.com/en-us/download/details.aspx?id=6510
+
+2) SDK 설치 후, VC++ 6.0 에서 해당 SDK를 사용할 수 있도록 설정
+    - Tools > Options 선택
+    - Directories 탭의 Show directories for 에서
+    - indclude files --> SDK 설치 디렉토리의 include 디렉토리 경로 추가 후 위치를 최상단으로 이동
+    - Library files --> SDK 설치 디렉토리의 lib 디렉토리 경로 추가 후 위치를 최상단으로 이동
+

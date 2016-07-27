@@ -1,0 +1,42 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MemStatConfig", "MemStatConfig\MemStatConfig.vcproj", "{46B5FE24-0B84-4542-80AE-A513A2D8B00A}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+	ProjectSection(SolutionConfiguration) = postProject
+		Release.ActiveCfg = Release|Win32
+		Release.Build.0 = Release|Win32
+		Debug.ActiveCfg = Debug|Win32
+		Debug.Build.0 = Debug|Win32
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MemStatControl", "MemStatControl\MemStatControl.vcproj", "{FB599E25-1197-4EBF-9BC4-CDE1756DD830}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+	ProjectSection(SolutionConfiguration) = postProject
+		Release.ActiveCfg = Release|Win32
+		Release.Build.0 = Release|Win32
+		Debug.ActiveCfg = Debug|Win32
+		Debug.Build.0 = Debug|Win32
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MemStatService", "MemStatService\MemStatService.vcproj", "{7DCE7585-9D30-4592-98FC-528096851EAC}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+	ProjectSection(SolutionConfiguration) = postProject
+		Release.ActiveCfg = Release|Win32
+		Release.Build.0 = Release|Win32
+		Debug.ActiveCfg = Debug|Win32
+		Debug.Build.0 = Debug|Win32
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Release
+		ConfigName.1 = Debug
+		DoSign = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

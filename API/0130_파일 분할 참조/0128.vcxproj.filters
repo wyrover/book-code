@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{a626d3c0-2959-4348-8974-f11932d4c13c}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{f78fb702-5950-4427-87bf-bb48b9149469}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{daceaad2-0284-4d21-ab50-5145862d1fa5}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="0128.rc">
+      <Filter>Source Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="command.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="handler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="shape.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ui.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="command.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="hander.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shape.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="std.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="afadfadf.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="bmp1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="bmp10.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="bmp11.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="bmp12.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="bmp14.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="bmp15.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="bmp16.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="bmp18.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="bmp19.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="bmp27.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="bmp28.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="bmp45.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="bmp6.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="ico106.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="ico107.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="ico108.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="ico110.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="ico111.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="cur104.cur">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="cur105.cur">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

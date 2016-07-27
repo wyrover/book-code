@@ -1,0 +1,181 @@
+[ Process ] 
+
+// 1. 핸들의 특징.
+
+// 2. 커널 Object핸들 Table 개념, 상대적 핸들 이란?
+
+// 3. DuplicateHandle 개념
+
+// 4. 프로세스 생성, 자식의 핸들을 닫는 이유(참조개수를 줄이려고)
+
+// 5. 종료 콛, 얻는 함수
+
+// 6. TermanateProcess(), 비동기 함수 개념.
+
+// 7. PKO는 죽을떄 signal된다. WaitForSingleObject()
+
+
+1. Process 
+   - 실행파일 A.exe 실행 파일의 이미지 ==> 4G 가상주소공간을 프로세스라 함
+  
+      Process를 구동하는 실행 흐름을 thread라 함..
+
+   - OS는 Process를 관리하기 위한 구조체를 만드는 데 이를 
+     Process Kernel Object(EPROCESS)라 한다...
+     => 680KB 정도의 크기 
+
+    구조체 내에는 보안속성, SIgnal, 참조카운트, 종료코드를 가지고 있다..
+
+2. Process를 실행하는 함수 
+    - Win16 API 함수  : LoadModule(),  WinExec()
+    - Win32 API 함수 : ShellExcute(), CreateProcess() : 보안속성 적용
+
+3. Process실행
+   - Process 가 실행되면 Process당 현재 디렉토레에 대한 정보를 1개 가지고 
+     있다.
+     GetCurrentDirectory()
+   - 환경블록이라는 것을 가지고 있으며 메모리 공간으로 전역변수와 비슷
+     GetEnvironmentVariable()
+
+
+4. Process 생성 및 사용
+    1) CreateProcess()
+    ...
+    2) CloseHandle(handle)   // Process의 핸들이 필요없다면 반드시 닫는다.
+		           // 메모리 낭비를 막기 위해.
+
+5. Process 종료 코드 얻기
+   1) GetExitCodeProcess() 함수 사용
+   2) TerminateProcess()    강제 종료 함수 
+      이 함수는 비동기 함수 
+      이 함수 호출시 곧바로 종료를 시키는 것이 아니라, 곧바로 리턴하고 
+         그 다음 명령을 실행함
+      OS에서는 이 프로세스를 죽이지 않고 종료를 위한 여러 가지 작업을 함
+
+    => Process에서 Signal 값은 살아있을때 0, 죽었을 때 1(Signal상태)의 값을
+         가짐...
+        
+
+6. Process 죽이는 방법
+   - 자살
+      1) main() 함수 리턴
+      2) ExitProcess() 호출 : 아주 안좋은 방법
+         C++ 객체의 소멸자를 호출하지 않음 , 심각한 에러일 경우 사용
+
+   - 타살
+     1) TerminateProcess()
+         => 윈도우 핸들을 가지고 일차적으로 WM_CLOSE 를 보내도 안죽을 때
+             사용하는 방법
+             최악의 경우 사용 ... 강제 종료..
+
+
+7. process가 죽을 때 발생하는 일
+   1) 모든 GDI 객체와 User 객체 파괴
+   2) process의 kernel Object Handle table의 모든 항목이 CloseHandle된다.
+   3) PKO 종료 코드가 STILL_ACTIVE => Main의 리턴값으로 바뀐다.
+   4) Process Kernel Object가 Signal된다.
+
+8. Process ID
+   - Process ID는 시스템 전역적으로 Unique 하다. ID 보관시 주위..
+   - Process ID 얻기 
+      1)  윈도우 Handle 얻기 FindWindow() 등의 함수 사용
+      2)  윈도우 Handle로부터 Process ID를 얻는다.
+           GetWindowThreadProcessID() 
+      3) ProcessID를 Process Handle로 바꾼다.
+           OpenProcess()
+      4) 이제 Process 핸들을 가지고 Process 제어가 가능하다.
+   
+          A.exe를 실행하면 Process의 주소공간에서 HINSTANCE는 단 
+           하나의 실행 파일 주소이다.
+         윈도우 Handle 역시 Process의 주소 공간안에 하나 이상 존재하거나 
+           없을 수 있다.
+         Process Handle은 OS 관리 구조체에 단 하나 존재함
+         따라서 Process 제어를 위해서는 Process Handle을 사용해야 함
+         그러므로 P.H은 함부로 사용할 수 없도록 Kernel Object로서 
+           보안속성을 갖는다.
+
+9. Process 열거 
+   1) PSAPI
+       EnumProcess() NT와 2000에서만 사용 가능
+   2) ToolHelp API
+       프로세스, 스레드, 모듈, 힙등의 열거 가능
+      모듈이란 실행파일의 이미지와 dll의 이미지...
+      즉, dll과 exe의 프로세스 주소공간에 로드된 이미지를 말한다...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
