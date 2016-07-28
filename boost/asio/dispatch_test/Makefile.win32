@@ -1,0 +1,11 @@
+APPNAME = dispatch_test
+CFLAGS  = /c /EHsc /Zc:wchar_t /fp:precise /D_WIN32_WINNT=0x0501 /D_DLL /MD /I"$(BOOST_DIR)"
+LDFLAGS = /LIBPATH:"$(BOOST_DIR)/stage/lib"
+
+all:
+	cl $(CFLAGS) $(APPNAME).cpp
+	link /OUT:$(APPNAME).exe $(LDFLAGS) $(APPNAME).obj
+	move /Y $(APPNAME).exe ddd.exe
+
+clean:
+	del *.obj *.exe

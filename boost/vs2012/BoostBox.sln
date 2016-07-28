@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Flyweight_01_basic", "Flyweight\Flyweight_01_basic.vcxproj", "{2E219CC5-30D8-4384-A579-ED1C953A4988}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Flyweight", "Flyweight", "{4850BDC1-BE96-4B9E-A659-5CA45AFF4587}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Flyweight_02_keyvalue", "Flyweight\Flyweight_02_keyvalue.vcxproj", "{6A43B889-FC1E-42A9-9640-7FB8ABCC0646}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Interprocess", "Interprocess", "{30858056-E721-44F9-A982-30B462EAFB01}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Interprocess_01_HelloSharedmem", "Interprocess\Interprocess_01_HelloSharedmem.vcxproj", "{7B57B249-BAFC-4114-B47B-7A37E7A5D873}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Interprocess_02_NamedSharedmem", "Interprocess\Interprocess_02_NamedSharedmem.vcxproj", "{E22372E6-D08B-4BBA-A5CC-1E465D979160}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Interprocess_03_STLSharedMem", "Interprocess\Interprocess_03_STLSharedMem.vcxproj", "{A624E5C4-E450-4D7E-8774-222743AAE46D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2E219CC5-30D8-4384-A579-ED1C953A4988}.Debug|Win32.ActiveCfg = Debug|Win32
+		{2E219CC5-30D8-4384-A579-ED1C953A4988}.Debug|Win32.Build.0 = Debug|Win32
+		{2E219CC5-30D8-4384-A579-ED1C953A4988}.Release|Win32.ActiveCfg = Release|Win32
+		{2E219CC5-30D8-4384-A579-ED1C953A4988}.Release|Win32.Build.0 = Release|Win32
+		{6A43B889-FC1E-42A9-9640-7FB8ABCC0646}.Debug|Win32.ActiveCfg = Debug|Win32
+		{6A43B889-FC1E-42A9-9640-7FB8ABCC0646}.Debug|Win32.Build.0 = Debug|Win32
+		{6A43B889-FC1E-42A9-9640-7FB8ABCC0646}.Release|Win32.ActiveCfg = Release|Win32
+		{6A43B889-FC1E-42A9-9640-7FB8ABCC0646}.Release|Win32.Build.0 = Release|Win32
+		{7B57B249-BAFC-4114-B47B-7A37E7A5D873}.Debug|Win32.ActiveCfg = Debug|Win32
+		{7B57B249-BAFC-4114-B47B-7A37E7A5D873}.Debug|Win32.Build.0 = Debug|Win32
+		{7B57B249-BAFC-4114-B47B-7A37E7A5D873}.Release|Win32.ActiveCfg = Release|Win32
+		{7B57B249-BAFC-4114-B47B-7A37E7A5D873}.Release|Win32.Build.0 = Release|Win32
+		{E22372E6-D08B-4BBA-A5CC-1E465D979160}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E22372E6-D08B-4BBA-A5CC-1E465D979160}.Debug|Win32.Build.0 = Debug|Win32
+		{E22372E6-D08B-4BBA-A5CC-1E465D979160}.Release|Win32.ActiveCfg = Release|Win32
+		{E22372E6-D08B-4BBA-A5CC-1E465D979160}.Release|Win32.Build.0 = Release|Win32
+		{A624E5C4-E450-4D7E-8774-222743AAE46D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A624E5C4-E450-4D7E-8774-222743AAE46D}.Debug|Win32.Build.0 = Debug|Win32
+		{A624E5C4-E450-4D7E-8774-222743AAE46D}.Release|Win32.ActiveCfg = Release|Win32
+		{A624E5C4-E450-4D7E-8774-222743AAE46D}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2E219CC5-30D8-4384-A579-ED1C953A4988} = {4850BDC1-BE96-4B9E-A659-5CA45AFF4587}
+		{6A43B889-FC1E-42A9-9640-7FB8ABCC0646} = {4850BDC1-BE96-4B9E-A659-5CA45AFF4587}
+		{7B57B249-BAFC-4114-B47B-7A37E7A5D873} = {30858056-E721-44F9-A982-30B462EAFB01}
+		{E22372E6-D08B-4BBA-A5CC-1E465D979160} = {30858056-E721-44F9-A982-30B462EAFB01}
+		{A624E5C4-E450-4D7E-8774-222743AAE46D} = {30858056-E721-44F9-A982-30B462EAFB01}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,11 @@
+CFLAGS = /c /EHsc /Zc:wchar_t /fp:precise /D_WIN32_WINNT=0x0501 /D_DLL /MD /I"$(BOOST_DIR)"
+LDFLAGS = /LIBPATH:"$(BOOST_DIR)/stage/lib"
+
+all:
+	cl $(CFLAGS) client.cpp
+	link /OUT:client.exe $(LDFLAGS) client.obj
+	cl $(CFLAGS) server.cpp
+	link /OUT:server.exe $(LDFLAGS) server.obj
+
+clean:
+	del *.obj *.exe
