@@ -1,0 +1,16 @@
+Austria    353  20.21
+Belgium    452  20.97
+Denmark    956  30.42
+Croatia     89  13.12
+Finland    114  15.63
+Germany    969  29.81
+Greece     424  17.67
+Hungary     37  12.02
+Ireland    483  24.07
+Italy      453  24.46
+Netherland 234  18.21
+Poland     100  14.21
+Portuga1   517  21.75
+Spain      596  22.52
+Sweden     561  19.67
+UK         257  19.18

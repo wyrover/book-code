@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+<OACRDEFECTCOUNT>1</OACRDEFECTCOUNT>
+<OACRERRORCOUNT>0</OACRERRORCOUNT>
+<DEFECT _seq="1"><SFA><LINE>86</LINE><COLUMN>8</COLUMN><FILENAME>main.c</FILENAME><FILEPATH>o:\0_template\code\11\kernel\source\</FILEPATH></SFA><DEFECTCODE>28155</DEFECTCODE><DESCRIPTION>The function being assigned or passed should be a KDEFERRED_ROUTINE function:  Add the declaration 'KDEFERRED_ROUTINE TimerDpc;' before the current first declaration of TimerDpc.</DESCRIPTION><FUNCTION>DriverEntry</FUNCTION><FUNCLINE>30</FUNCLINE><PATH/></DEFECT>
+</DEFECTS>

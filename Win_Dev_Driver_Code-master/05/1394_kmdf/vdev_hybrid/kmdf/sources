@@ -1,0 +1,43 @@
+
+#
+# Define the values of VERSION_MAJOR
+#
+
+UMDF_VERSION_MAJOR = 1
+KMDF_VERSION_MAJOR = 1
+
+
+
+
+TARGETNAME=kmdf1394vdev
+TARGETTYPE=DRIVER
+
+#
+# Set the warning level high
+#
+
+MSC_WARNING_LEVEL=/W4 /WX
+
+#
+# -DWDF_DEVICE_NO_WDMSEC_H required if the Driver type is set to WDM
+# WDMSEC.H header is not available under DDK\INC\WDM directory.
+#
+C_DEFINES= $(C_DEFINES)  -D_KMDF1394VDEV_DRIVER_=1 -DDRIVER -DWDF_DEVICE_NO_WDMSEC_H=1
+
+INCLUDES=$(INCLUDES); \
+                    ..\inc; 
+
+SOURCES = kmdf_vdev.rc \
+                    kmdf_vdev.c \
+                    kmdf_vdev_ioctl.c \
+                    kmdf_vdev_pnp.c \
+                    kmdf_vdev_utils.c\
+                    kmdf_vdev_api.c \
+                    kmdf_vdev_isoch.c \
+                    kmdf_vdev_async.c
+
+NTTARGETFILE0=$(OBJ_PATH)\$(O)\wdf1394vdev.inf
+
+
+MISCFILES=$(NTTARGETFILE0)
+

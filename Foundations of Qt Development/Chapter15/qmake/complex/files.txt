@@ -1,0 +1,19 @@
+///++ all
+|   complex.pro
+|   
++---bin
++---lib
+|
++---app
+|   |   app.pro
+|   |   appwindow.cpp
+|   |   appwindow.h
+|   |   main.cpp
+|
++---include
+|       base.h
+|       
+\---src
+    |   base.cpp
+    |   src.pro
+///-- all

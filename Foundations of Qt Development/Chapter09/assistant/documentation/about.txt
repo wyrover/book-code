@@ -1,0 +1,4 @@
+The Qt Book Example
+
+This is an example of how to modify 
+the appearance of Qt Assistant's about box.

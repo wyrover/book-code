@@ -1,0 +1,5 @@
+<foo name="FooName" >
+ <bar>
+  <baz count="1" />
+ </bar>
+Some text</foo>

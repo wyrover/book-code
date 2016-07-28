@@ -1,0 +1,3 @@
+
+# Declare test targets
+run-test hello : hello_ext hello.py ;

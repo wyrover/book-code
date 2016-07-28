@@ -1,0 +1,13 @@
+TARGETNAME=CY001
+TARGETTYPE=DRIVER
+
+MSC_WARNING_LEVEL=/W0
+NO_BINPLACE=1
+KMDF_VERSION=1
+
+TARGETLIBS = $(DDK_LIB_PATH)\usbd.lib
+INCLUDES = ..\common
+
+SOURCES=Main.cpp\
+    DrvClass.cpp\
+    class.cpp

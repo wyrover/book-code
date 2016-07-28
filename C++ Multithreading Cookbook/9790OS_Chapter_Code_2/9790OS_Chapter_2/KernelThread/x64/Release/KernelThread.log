@@ -1,0 +1,12 @@
+﻿Build started 07.07.2014 22:25:16.
+     1>Project "D:\Program Files\Microsoft Visual Studio\9790OS_Chapter_2\KernelThread\KernelThread.vcxproj" on node 3 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /Zi /nologo /W3 /WX- /sdl /O2 /Oi /GL /D WIN32 /D NDEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Release\\" /Fd"x64\Release\vc120.pdb" /Gd /TP /errorReport:prompt DriverApp.cpp ThreadApp.cpp
+         DriverApp.cpp
+     1>d:\program files\microsoft visual studio\9790os_chapter_2\kernelthread\DriverApp.h(1): fatal error C1083: Cannot open include file: 'ntddk.h': No such file or directory
+         ThreadApp.cpp
+     1>Done Building Project "D:\Program Files\Microsoft Visual Studio\9790OS_Chapter_2\KernelThread\KernelThread.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:01.02

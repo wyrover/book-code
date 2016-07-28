@@ -1,0 +1,11 @@
+Fra Wikipedia, den frie encyklopedi
+Gå til: navigasjon, søk
+
+C++ er et populært høynivå programmeringsspråk som er en utvidelse av språket C.
+C++ ble opprinnelig kalt «C with Classes» og ble utviklet og implementert av
+dansken Bjarne Stroustrup omkring 1983-85, som da jobbet for AT&T Bell Labs.
+
+C++ er et multiparadigmespråk, med støtte for funksjonell programmering,
+objektorientert programmering (OOP), dataabstraksjon og generisk programmering.
+Populariteten skyldes både at det bygger på C og at det er implementert for de
+fleste operativsystem.

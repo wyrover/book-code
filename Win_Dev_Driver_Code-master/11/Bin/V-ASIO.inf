@@ -1,0 +1,75 @@
+; 文件：V-ASIO.inf
+; 描述：V-ASIO驱动安装/卸载文件
+; Copyright (c) 《竹林蹊径》 张佩 
+;
+; 联系：zhang.mibox@gmail.com
+;
+; Last modified: 10/26/2010
+
+[Version]
+Signature=$Windows NT$
+Provider=ZhuLinXiJin
+DriverVer=10/26/2010,1.0.0.0
+
+[SourceDisksNames]
+1=%Disk%,,,i386
+
+[SourceDisksFiles]
+V-ASIO.sys = 1
+V-ASIODrv.dll=1
+
+[DestinationDirs]
+Files.KrnlSys=12
+Files.UserDll=11
+
+[Files.KrnlSys]
+V-ASIO.sys
+
+[Files.UserDll]
+V-ASIODrv.dll
+
+;=============================================
+[DefaultInstall]
+Copyfiles= Files.KrnlSys, Files.UserDll
+AddReg = V-ASIO.Reg
+
+[DefaultInstall.Services]
+AddService = V-ASIO, 0x800, V-ASIO.Service
+
+[DefaultUninstall]
+DelFiles= Files.UserDll, Files.KrnlSys
+DelReg = V-ASIO.DelReg
+
+[DefaultUninstall.Services]
+;AddService = NULL_service
+DelService = V-ASIO
+
+[V-ASIO.DelReg]
+HKLM, Software\ASIO\Virtual ASIO Driver,,0x2000,
+HKCR, CLSID\%V-ASIO.CLSID%,,0x2000,
+
+[V-ASIO.Reg]
+HKLM, Software\ASIO,,0x10,
+HKLM, Software\ASIO\Virtual ASIO Driver,,0x10,
+HKLM, Software\ASIO\Virtual ASIO Driver,CLSID,0x0,%V-ASIO.CLSID%
+HKLM, Software\ASIO\Virtual ASIO Driver,Description,0x0,%V-ASIO.Name%
+
+HKCR, CLSID\%V-ASIO.CLSID%,,0x10,
+HKCR, CLSID\%V-ASIO.CLSID%,,0x0, %V-ASIO.Name%
+HKCR, CLSID\%V-ASIO.CLSID%\InprocServer32,,0x10,
+HKCR, CLSID\%V-ASIO.CLSID%\InprocServer32,,0x20000, %10%\system32\V-ASIODrv.dll
+
+;[NULL_service]
+
+[V-ASIO.Service]
+DisplayName="Virtual ASIO Kernal Driver"
+ServiceType = 1
+StartType=2
+ErrorControl = 1
+ServiceBinary = %10%\system32\drivers\V-ASIO.sys
+;StartName = V-ASIOKrnl
+
+[Strings]
+Disk = "V-ASIO Disk"
+V-ASIO.CLSID = "{188135E1-D565-11D2-8634-00A0C99F5D19}"
+V-ASIO.Name = "V-ASIO"

@@ -1,0 +1,53 @@
+TARGETNAME=AppSrv
+TARGETPATH=obj
+TARGETTYPE=PROGRAM
+
+PRECOMPILED_CXX = 1
+PRECOMPILED_INCLUDE = stdafx.h
+PRECOMPILED_SOURCEFILE = stdafx.cpp
+
+USE_STATIC_MFC=1
+USE_MFCUNICODE=1
+USE_MFC=1
+
+MSC_OPTIMIZATIONS=/Od
+
+INCLUDES=$(MFC_INCLUDES);$(MSTOOLS)\include;..\inc
+
+C_DEFINES=$(C_DEFINES) -DUNICODE=1
+
+MFC_LIBS=d:\MVS\VC98\MFC\LIB\mfcs42u.lib \
+    d:\MVS\VC98\MFC\LIB\UAFXCW.LIB \
+    d:\MVS\VC98\MFC\LIB\MFC42u.LIB \
+    d:\MVS\VC98\LIB\advapi32.lib\
+    d:\MVS\VC98\LIB\comctl32.lib\
+    d:\MVS\VC98\LIB\gdi32.lib   \
+    d:\MVS\VC98\LIB\kernel32.lib\
+    d:\MVS\VC98\LIB\mstask.lib  \
+    d:\MVS\VC98\LIB\ole32.lib   \
+    d:\MVS\VC98\LIB\oleaut32.lib\
+    d:\MVS\VC98\LIB\setupapi.lib\
+    d:\MVS\VC98\LIB\shell32.lib \
+    d:\MVS\VC98\LIB\user32.lib  \
+    d:\MVS\VC98\LIB\uuid.lib \
+    d:\MVS\VC98\LIB\ws2_32.lib \
+    d:\MVS\VC98\LIB\winspool.lib \
+    d:\MVS\VC98\LIB\comdlg32.lib \
+    d:\MVS\VC98\LIB\oledlg.lib \
+    d:\MVS\VC98\LIB\ctl3d32.lib
+
+
+SOURCES=ntservmsg.mc \
+        appsrv.rc \
+		appsrv.cpp \
+		reflectorservice.cpp \
+		ntservice.cpp
+
+
+
+UMTYPE=windows
+UMENTRY=wmain
+
+TARGETLIBS= $(SDK_LIB_PATH)\ole32.lib \
+            $(SDK_LIB_PATH)\oleaut32.lib \
+            $(SDK_LIB_PATH)\comctl32.lib

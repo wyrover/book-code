@@ -1,0 +1,10 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource prefix="/file">
+  <file>images/new.png</file>
+</qresource>
+<qresource prefix="/edit">
+  <file>images/cut.png</file>
+  <file>images/copy.png</file>
+  <file>images/paste.png</file>
+</qresource>
+</RCC>

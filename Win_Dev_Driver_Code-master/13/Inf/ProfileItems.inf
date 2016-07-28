@@ -1,0 +1,41 @@
+; 文件：ProfileItems.inf
+; 归属：《竹林蹊径》 张佩
+; 联系：Zhang.Mibox@gmail.com
+; 版本：04/01/2010  1.0.0000.00000
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=InfTest
+ClassGuid={78A1C341-4539-11d3-B88D-00C04FAD5172}
+Provider=ChinaHearing
+DriverVer=04/01/2010, 1.0.0000.00000
+
+[DefaultInstall]
+ProfileItems = NewDir, NewItem
+
+; Start\Program下新建目录NewDir 
+[NewDir]
+Name = "NewDir", 4
+CmdLine = 11,,,
+
+; NewItem子目录下新建快捷方式
+[NewItem]
+; 首先是名称。
+; 在没有其他参数的情况下是新建；
+; 删除需要设置参数2：Name = "计算器", 2
+Name = "计算器.lnk"
+
+; 执行命令，打开System32目录下的计算器程序
+CmdLine = 11,, calc.exe
+
+; 快捷方式的创建位置 
+SubDir = "NewDir"
+
+; cmd程序运行时的起始位置。
+WorkingDir = 11
+
+; Tooltip信息
+InfoTip = "@%11%\shell32.dll,-22531"
+
+; 显示的名称；如果不设置，将显示Name所设置名称。
+DisplayResource="%11%\shell32.dll",22019

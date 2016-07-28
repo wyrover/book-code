@@ -1,0 +1,19 @@
+; 文件：ini.inf
+; 归属：《竹林蹊径》 张佩
+; 联系：Zhang.Mibox@gmail.com
+; 版本：04/01/2010  1.0.0000.00000
+
+[Version]
+Signature="$WINDOWS NT$"
+Provider=ChinaHearing
+DriverVer=04/01/2010, 1.0.0000.00000
+
+[DestinationDirs]
+DefaultDestDir=30
+
+[DefaultInstall]
+UpdateInis=myINI
+ 
+[myINI]
+Test.ini, Sec1, Entry1, Entry1_1
+Test.ini, Sec1, Entry2, Entry2_2

@@ -1,0 +1,6 @@
+TARGETNAME = HelloWorld
+TARGETTYPE = DRIVER
+TARGETPATH = OBJ
+
+SOURCES = HelloWorld.c
+

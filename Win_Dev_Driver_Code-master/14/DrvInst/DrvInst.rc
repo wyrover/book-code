@@ -1,0 +1,309 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#ifndef APSTUDIO_INVOKED
+#include "targetver.h"
+#endif
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#ifndef APSTUDIO_INVOKED\r\n"
+    "#include ""targetver.h""\r\n"
+    "#endif\r\n"
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#include ""res\\DrvInst.rc2""  // 非 Microsoft Visual C++ 编辑的资源\r\n"
+    "#include ""l.CHS\\afxres.rc""      // 标准组件\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ICON                ICON                    "res\\ICON.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DRVINST_DIALOG DIALOGEX 0, 0, 257, 127
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "DrvInst"
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,145,105,50,14
+    PUSHBUTTON      "取消",IDCANCEL,207,105,50,14
+    CONTROL         "",IDC_RICHEDIT21,"RichEdit20A",ES_MULTILINE | ES_AUTOVSCROLL | ES_READONLY | ES_WANTRETURN | WS_BORDER | WS_VSCROLL | WS_TABSTOP,23,26,230,73
+    LTEXT           "选择要安装的一个或多个设备：",IDC_STATIC,23,11,96,8
+END
+
+IDD_STARTPAGE DIALOGEX 0, 0, 327, 121
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "DrvInst 驱动安装小助手"
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    LTEXT           "软件：DrvInst",IDC_STATIC,36,7,54,8
+    LTEXT           "邮箱：ChinaHearing@gmail.com",IDSTA_MAIL,108,19,132,8
+    LTEXT           "版权说明：此软件免费，任何人可下载、使用、传播。",IDC_STATIC,36,42,204,8
+    LTEXT           "作者：张佩",IDC_STATIC,36,19,54,8
+    LTEXT           "版本：02/26/2010, 1.1.0",IDC_STATIC,108,7,123,8
+    CONTROL         "驱动安装(&I)",IDRD_INSTALL,"Button",BS_AUTORADIOBUTTON | WS_GROUP,36,90,56,10
+    CONTROL         "设备删除(&D)",IDRA_DELETE,"Button",BS_AUTORADIOBUTTON,36,108,58,10
+    LTEXT           "最有价值USB开发套件CY001，驱网介绍-->",IDSTA_CY001,36,55,149,8
+    LTEXT           "淘宝购买-->",IDSTA_TAOBAO,192,55,44,8
+END
+
+IDD_DRVINSTPAGE DIALOGEX 0, 0, 320, 126
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "安装INF文件"
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    EDITTEXT        IDC_EDIT1,58,7,208,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "选择(S)",IDBTN_SEL_DIR,277,7,36,14
+    LTEXT           "搜索路径：",IDC_STATIC,8,11,41,8
+    LTEXT           "选择文件：",IDC_STATIC,7,31,48,8
+    CONTROL         "",IDLST_INF_FILE,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,57,30,256,89
+END
+
+IDD_HIDPAGE DIALOGEX 0, 0, 320, 121
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "设备更新"
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    LTEXT           "安装结果：",IDC_STATIC,4,6,26,18
+    CONTROL         "",IDLST_INF_FILE,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,30,6,210,41
+    LTEXT           "设备更新：",IDS_INFO2,3,66,27,18
+    CONTROL         "",IDLST_INF_FILE2,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,30,60,210,54
+    PUSHBUTTON      "更新(U)",IDBTN_UPDATE,246,102,50,14,NOT WS_VISIBLE
+    LTEXT           "系统相同：相同INF文件已安装过。\n成功：INF文件安装成功。\n失败：安装失败。",IDC_STATIC,246,6,73,48
+    LTEXT           "设备更新：将已安装设备的驱动文件更新为当前驱动。",IDS_INFO,246,60,72,30
+END
+
+IDD_DRVDELETEPAGE DIALOGEX 0, 0, 322, 126
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "删除"
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    CONTROL         "",IDC_LIST1,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,54,30,204,90
+    EDITTEXT        IDC_EDIT1,54,6,204,14,ES_AUTOHSCROLL
+    LTEXT           "设备ID：",IDC_STATIC,18,9,32,8
+    PUSHBUTTON      "删除(D)",IDBTN_DELETE,264,30,50,14
+    LTEXT           "设备列表：",IDC_STATIC,12,30,42,8
+    PUSHBUTTON      "确定(&O)",IDBTN_OK,264,6,50,14
+END
+
+IDD_FINISHPAGE DIALOGEX 0, 0, 322, 145
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "完成"
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    LTEXT           "所有操作已完成！",IDC_STATIC,120,34,65,8
+    LTEXT           "“上一步”继续其他操作；“完成”退出。",IDC_STATIC,132,52,168,8
+    LTEXT           "DrvInst：驱动安装小助手",IDC_STATIC,120,84,126,8
+    LTEXT           "使用过程中发现问题或有好的建议，请让作者知道。",IDC_STATIC,120,108,185,8
+    LTEXT           "目前1.1版，期待2.0和更多实用功能。",IDC_STATIC,120,96,162,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080403a8"
+        BEGIN
+            VALUE "CompanyName", "TODO: <公司名>"
+            VALUE "FileDescription", "TODO: <文件说明>"
+            VALUE "FileVersion", "1.0.0.1"
+            VALUE "InternalName", "DrvInst.exe"
+            VALUE "LegalCopyright", "TODO: (C) <公司名>。保留所有权利。"
+            VALUE "OriginalFilename", "DrvInst.exe"
+            VALUE "ProductName", "TODO: <产品名>"
+            VALUE "ProductVersion", "1.0.0.1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 936
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_DRVINST_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 250
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 120
+    END
+
+    IDD_STARTPAGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 320
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 114
+    END
+
+    IDD_DRVINSTPAGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 313
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 119
+    END
+
+    IDD_HIDPAGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 313
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 114
+    END
+
+    IDD_DRVDELETEPAGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 315
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 119
+    END
+
+    IDD_FINISHPAGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 315
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 138
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_HEAD                BITMAP                  "res\\header.bmp"
+IDB_BACK                BITMAP                  "res\\background.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_START_T             "欢迎"
+    IDS_START_ST            "使用DrvIns，驱动开发更轻松。"
+    IDS_INF_T               "INF文件"
+    IDS_INF_ST              "定位到驱动目录，选择并安装指定的Inf文件。默认为当前路径。"
+    IDS_HID_T               "设备更新"
+    IDS_HID_ST              "驱动安装已完成。在“设备更新”栏中选择设备更新为当前驱动，默认所有设备全选。点击“上一步”，安装其他驱动。"
+    IDS_DEL_T               "设备删除"
+    IDS_DEL_ST              "输入要删除设备的设备ID，根据在系统中搜索到的所有设备的列表，选择被删除设备。默认全选。"
+    IDS_FINISH_T            "完成"
+    IDS_FINISH_ST           "任务已完成"
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE 4, 2
+#pragma code_page(936)
+#include "res\DrvInst.rc2"  // 非 Microsoft Visual C++ 编辑的资源
+#include "l.CHS\afxres.rc"      // 标准组件
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

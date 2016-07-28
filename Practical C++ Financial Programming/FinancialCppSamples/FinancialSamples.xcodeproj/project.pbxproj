@@ -1,0 +1,699 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		730E713F19D8E351003A57E1 /* Cxx1xExamples.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 730E713D19D8E351003A57E1 /* Cxx1xExamples.cpp */; };
+		730E714A19E58873003A57E1 /* EulersMethod.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 730E714819E58873003A57E1 /* EulersMethod.cpp */; };
+		730E714D19E5888B003A57E1 /* RungeKuttaODEMethod.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 730E714B19E5888B003A57E1 /* RungeKuttaODEMethod.cpp */; };
+		7325B5831897F53200E5D67F /* FundamentalsCalc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7325B5811897F53200E5D67F /* FundamentalsCalc.cpp */; };
+		7325B586189FE1A700E5D67F /* VolatilityCalculator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7325B584189FE1A700E5D67F /* VolatilityCalculator.cpp */; };
+		7325B58918A3D1C500E5D67F /* CommonStock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7325B58718A3D1C500E5D67F /* CommonStock.cpp */; };
+		73280B3418E7CE1D00F97D95 /* FinancialStatement.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73280B3218E7CE1D00F97D95 /* FinancialStatement.cpp */; };
+		73280B4018F820DF00F97D95 /* InvestmentInstrument.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73280B3E18F820DF00F97D95 /* InvestmentInstrument.cpp */; };
+		73280B4318F8220600F97D95 /* IntRateEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73280B4118F8220600F97D95 /* IntRateEngine.cpp */; };
+		7356AE241A05A14100C216D5 /* RExtension.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7356AE221A05A14100C216D5 /* RExtension.cpp */; };
+		735C9C7C18749C9A00807DA0 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 735C9C7B18749C9A00807DA0 /* main.cpp */; };
+		735C9C7E18749C9A00807DA0 /* FinancialSamples.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 735C9C7D18749C9A00807DA0 /* FinancialSamples.1 */; };
+		735C9C861874B55000807DA0 /* IntRateCalculator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 735C9C841874B55000807DA0 /* IntRateCalculator.cpp */; };
+		735C9C891876777800807DA0 /* CompoundIntRateCalculator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 735C9C871876777800807DA0 /* CompoundIntRateCalculator.cpp */; };
+		735C9C8C187A5FE600807DA0 /* CashFlowCalculator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 735C9C8A187A5FE600807DA0 /* CashFlowCalculator.cpp */; };
+		735C9C8F187AE7D200807DA0 /* BondCalculator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 735C9C8D187AE7D200807DA0 /* BondCalculator.cpp */; };
+		735C9C92188479AB00807DA0 /* MACalculator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 735C9C90188479AB00807DA0 /* MACalculator.cpp */; };
+		735FE56318FC183A005ED4C9 /* TransactionHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 735FE56118FC183A005ED4C9 /* TransactionHandler.cpp */; };
+		73A39C5119F551BC0032A8AD /* BlackScholesForwardMethod.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73A39C4F19F551BC0032A8AD /* BlackScholesForwardMethod.cpp */; };
+		73BB1AA619225D990040C2F0 /* Recommendation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73BB1AA419225D990040C2F0 /* Recommendation.cpp */; };
+		73BB1AA91923AAF70040C2F0 /* RecommendationsProcessor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73BB1AA71923AAF70040C2F0 /* RecommendationsProcessor.cpp */; };
+		73BB725619492D2B00A01D9B /* Date.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73BB725419492D2B00A01D9B /* Date.cpp */; };
+		73BB725919493E9F00A01D9B /* FileManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73BB725719493E9F00A01D9B /* FileManager.cpp */; };
+		73BB725B1949430C00A01D9B /* libboost_filesystem-mt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 73BB725A1949430C00A01D9B /* libboost_filesystem-mt.a */; };
+		73BB725D1949433800A01D9B /* libboost_system-mt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 73BB725C1949433800A01D9B /* libboost_system-mt.a */; };
+		73BB7260194955C800A01D9B /* TimeSeriesTransformations.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73BB725E194955C800A01D9B /* TimeSeriesTransformations.cpp */; };
+		73BB72631951C52100A01D9B /* Matrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73BB72611951C52100A01D9B /* Matrix.cpp */; };
+		73BB72661956865F00A01D9B /* FactorialTemplate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73BB72641956865F00A01D9B /* FactorialTemplate.cpp */; };
+		73BB726C195D139D00A01D9B /* CalmarRatio.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73BB726A195D139D00A01D9B /* CalmarRatio.cpp */; };
+		73BB726F195D13AF00A01D9B /* DistributionData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73BB726D195D13AF00A01D9B /* DistributionData.cpp */; };
+		73BB72721960598F00A01D9B /* GnuplotPlotter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73BB72701960598F00A01D9B /* GnuplotPlotter.cpp */; };
+		73C478B919C3E611008CF0F4 /* Option.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73C478B719C3E611008CF0F4 /* Option.cpp */; };
+		73C478BC19C5D9D6008CF0F4 /* ParallelOptionsProbabilities.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73C478BA19C5D9D6008CF0F4 /* ParallelOptionsProbabilities.cpp */; };
+		73D6C08118915A0D00CE45BE /* TimeSeries.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73D6C07F18915A0D00CE45BE /* TimeSeries.cpp */; };
+		73D6C08418915D4900CE45BE /* CorrelationCalculator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73D6C08218915D4900CE45BE /* CorrelationCalculator.cpp */; };
+		73D99C2219CCCEAE00B1A5D4 /* Thread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73D99C2019CCCEAE00B1A5D4 /* Thread.cpp */; };
+		73D99C2519CE3C5500B1A5D4 /* Mutex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73D99C2319CE3C5500B1A5D4 /* Mutex.cpp */; };
+		73D99C2819CF327900B1A5D4 /* OpenMpTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73D99C2619CF327900B1A5D4 /* OpenMpTest.cpp */; };
+		73E09A6819AB7D130093F4D9 /* ModifiedCAP.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73E09A6619AB7D130093F4D9 /* ModifiedCAP.cpp */; };
+		73E09A6E19ABD6070093F4D9 /* OptionsProbabilities.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73E09A6C19ABD6070093F4D9 /* OptionsProbabilities.cpp */; };
+		73E09A7419B266340093F4D9 /* CreditRisk.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73E09A7219B266340093F4D9 /* CreditRisk.cpp */; };
+		73E09A7719B2663F0093F4D9 /* LinearInterpolation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73E09A7519B2663F0093F4D9 /* LinearInterpolation.cpp */; };
+		73E09A7A19B2664B0093F4D9 /* MonteCarloIntegration.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73E09A7819B2664B0093F4D9 /* MonteCarloIntegration.cpp */; };
+		73E09A7D19B266660093F4D9 /* NumVector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73E09A7B19B266660093F4D9 /* NumVector.cpp */; };
+		73E09A8019B266840093F4D9 /* RandonWalk.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73E09A7E19B266840093F4D9 /* RandonWalk.cpp */; };
+		73E09A8519B266900093F4D9 /* ResourceAlloc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73E09A8119B266900093F4D9 /* ResourceAlloc.cpp */; };
+		73E09A8619B266900093F4D9 /* RiskCalculator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73E09A8319B266900093F4D9 /* RiskCalculator.cpp */; };
+		73E09A8919B2669E0093F4D9 /* TrapezoidIntegration.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73E09A8719B2669E0093F4D9 /* TrapezoidIntegration.cpp */; };
+		73E09A8B19B28E8E0093F4D9 /* Python in Frameworks */ = {isa = PBXBuildFile; fileRef = 73E09A8A19B28E8E0093F4D9 /* Python */; };
+		73E09A8D19B28FB70093F4D9 /* libboost_python-mt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 73E09A8C19B28FB70093F4D9 /* libboost_python-mt.a */; };
+		73E09A9019B4E6E10093F4D9 /* Matrix_Py.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73E09A8E19B4E6E10093F4D9 /* Matrix_Py.cpp */; };
+		73E09A9319B773110093F4D9 /* Stock_Py.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73E09A9119B773110093F4D9 /* Stock_Py.cpp */; };
+		73E09A9619B775B40093F4D9 /* Stock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73E09A9419B775B40093F4D9 /* Stock.cpp */; };
+		73E09A9919BCEE250093F4D9 /* LuaMain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73E09A9719BCEE250093F4D9 /* LuaMain.cpp */; };
+		73E09AA719BF401A0093F4D9 /* liblua.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 73E09AA619BF401A0093F4D9 /* liblua.a */; };
+		73E09AAD19BF43CE0093F4D9 /* LuaWrap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73E09AAB19BF43CE0093F4D9 /* LuaWrap.cpp */; };
+		73E09AB319C005140093F4D9 /* LuaOption.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73E09AB119C005140093F4D9 /* LuaOption.cpp */; };
+		73E75042196652C7006B886B /* QtCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73E75040196652C7006B886B /* QtCore.framework */; };
+		73E75043196652C7006B886B /* QtGui.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73E75041196652C7006B886B /* QtGui.framework */; };
+		73E7504919665305006B886B /* QtPlotter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73E7504719665305006B886B /* QtPlotter.cpp */; };
+		73F13CF51971BBD400A0F0C6 /* VectorOperations.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73F13CF31971BBD400A0F0C6 /* VectorOperations.cpp */; };
+		73F13CF8197207F700A0F0C6 /* PlotViewer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73F13CF6197207F600A0F0C6 /* PlotViewer.cpp */; };
+		73F13CFB1978D4B500A0F0C6 /* MatrixOperations.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73F13CF91978D4B500A0F0C6 /* MatrixOperations.cpp */; };
+		73F13D01198683B800A0F0C6 /* PolymonialInterpolation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73F13CFF198683B800A0F0C6 /* PolymonialInterpolation.cpp */; };
+		73F13D041995D60D00A0F0C6 /* BisectionMethod.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73F13D021995D60D00A0F0C6 /* BisectionMethod.cpp */; };
+		73F13D0B1995D62700A0F0C6 /* MathFunction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73F13D051995D62700A0F0C6 /* MathFunction.cpp */; };
+		73F13D0C1995D62700A0F0C6 /* NewtonMethod.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73F13D071995D62700A0F0C6 /* NewtonMethod.cpp */; };
+		73F13D0D1995D62700A0F0C6 /* SecantMethod.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73F13D091995D62700A0F0C6 /* SecantMethod.cpp */; };
+		73F13D101997B2EC00A0F0C6 /* MidpointIntegration.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73F13D0E1997B2EC00A0F0C6 /* MidpointIntegration.cpp */; };
+		73F13D161998557F00A0F0C6 /* SimpsonsIntegration.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73F13D141998557F00A0F0C6 /* SimpsonsIntegration.cpp */; };
+		73F13D19199B95AF00A0F0C6 /* LPSolver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73F13D17199B95AF00A0F0C6 /* LPSolver.cpp */; };
+		73F13D1B199BA73900A0F0C6 /* libglpk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 73F13D1A199BA73900A0F0C6 /* libglpk.a */; };
+		73F13D2319A5233300A0F0C6 /* TwoDimensionalLPSolver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73F13D2119A5233300A0F0C6 /* TwoDimensionalLPSolver.cpp */; };
+		73F13D2619A67B3700A0F0C6 /* MIPSolver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73F13D2419A67B3700A0F0C6 /* MIPSolver.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		735C9C7618749C9A00807DA0 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				735C9C7E18749C9A00807DA0 /* FinancialSamples.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		730E713D19D8E351003A57E1 /* Cxx1xExamples.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Cxx1xExamples.cpp; sourceTree = "<group>"; };
+		730E713E19D8E351003A57E1 /* Cxx1xExamples.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cxx1xExamples.h; sourceTree = "<group>"; };
+		730E714819E58873003A57E1 /* EulersMethod.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EulersMethod.cpp; sourceTree = "<group>"; };
+		730E714919E58873003A57E1 /* EulersMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EulersMethod.h; sourceTree = "<group>"; };
+		730E714B19E5888B003A57E1 /* RungeKuttaODEMethod.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RungeKuttaODEMethod.cpp; sourceTree = "<group>"; };
+		730E714C19E5888B003A57E1 /* RungeKuttaODEMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RungeKuttaODEMethod.h; sourceTree = "<group>"; };
+		7325B5811897F53200E5D67F /* FundamentalsCalc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FundamentalsCalc.cpp; sourceTree = "<group>"; };
+		7325B5821897F53200E5D67F /* FundamentalsCalc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FundamentalsCalc.h; sourceTree = "<group>"; };
+		7325B584189FE1A700E5D67F /* VolatilityCalculator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VolatilityCalculator.cpp; sourceTree = "<group>"; };
+		7325B585189FE1A700E5D67F /* VolatilityCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VolatilityCalculator.h; sourceTree = "<group>"; };
+		7325B58718A3D1C500E5D67F /* CommonStock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CommonStock.cpp; sourceTree = "<group>"; };
+		7325B58818A3D1C500E5D67F /* CommonStock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonStock.h; sourceTree = "<group>"; };
+		73280B3218E7CE1D00F97D95 /* FinancialStatement.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FinancialStatement.cpp; sourceTree = "<group>"; };
+		73280B3318E7CE1D00F97D95 /* FinancialStatement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinancialStatement.h; sourceTree = "<group>"; };
+		73280B3E18F820DF00F97D95 /* InvestmentInstrument.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InvestmentInstrument.cpp; sourceTree = "<group>"; };
+		73280B3F18F820DF00F97D95 /* InvestmentInstrument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InvestmentInstrument.h; sourceTree = "<group>"; };
+		73280B4118F8220600F97D95 /* IntRateEngine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IntRateEngine.cpp; sourceTree = "<group>"; };
+		73280B4218F8220600F97D95 /* IntRateEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntRateEngine.h; sourceTree = "<group>"; };
+		7356AE221A05A14100C216D5 /* RExtension.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RExtension.cpp; sourceTree = "<group>"; };
+		7356AE231A05A14100C216D5 /* RExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RExtension.h; sourceTree = "<group>"; };
+		735C9C7818749C9A00807DA0 /* FinancialSamples */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = FinancialSamples; sourceTree = BUILT_PRODUCTS_DIR; };
+		735C9C7B18749C9A00807DA0 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		735C9C7D18749C9A00807DA0 /* FinancialSamples.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = FinancialSamples.1; sourceTree = "<group>"; };
+		735C9C841874B55000807DA0 /* IntRateCalculator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IntRateCalculator.cpp; sourceTree = "<group>"; };
+		735C9C851874B55000807DA0 /* IntRateCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntRateCalculator.h; sourceTree = "<group>"; };
+		735C9C871876777800807DA0 /* CompoundIntRateCalculator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CompoundIntRateCalculator.cpp; sourceTree = "<group>"; };
+		735C9C881876777800807DA0 /* CompoundIntRateCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompoundIntRateCalculator.h; sourceTree = "<group>"; };
+		735C9C8A187A5FE600807DA0 /* CashFlowCalculator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CashFlowCalculator.cpp; sourceTree = "<group>"; };
+		735C9C8B187A5FE600807DA0 /* CashFlowCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CashFlowCalculator.h; sourceTree = "<group>"; };
+		735C9C8D187AE7D200807DA0 /* BondCalculator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BondCalculator.cpp; sourceTree = "<group>"; };
+		735C9C8E187AE7D200807DA0 /* BondCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BondCalculator.h; sourceTree = "<group>"; };
+		735C9C90188479AB00807DA0 /* MACalculator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MACalculator.cpp; sourceTree = "<group>"; };
+		735C9C91188479AB00807DA0 /* MACalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MACalculator.h; sourceTree = "<group>"; };
+		735FE56118FC183A005ED4C9 /* TransactionHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TransactionHandler.cpp; sourceTree = "<group>"; };
+		735FE56218FC183A005ED4C9 /* TransactionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransactionHandler.h; sourceTree = "<group>"; };
+		73A39C4F19F551BC0032A8AD /* BlackScholesForwardMethod.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BlackScholesForwardMethod.cpp; sourceTree = "<group>"; };
+		73A39C5019F551BC0032A8AD /* BlackScholesForwardMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlackScholesForwardMethod.h; sourceTree = "<group>"; };
+		73BB1AA419225D990040C2F0 /* Recommendation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Recommendation.cpp; sourceTree = "<group>"; };
+		73BB1AA519225D990040C2F0 /* Recommendation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Recommendation.h; sourceTree = "<group>"; };
+		73BB1AA71923AAF70040C2F0 /* RecommendationsProcessor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RecommendationsProcessor.cpp; sourceTree = "<group>"; };
+		73BB1AA81923AAF70040C2F0 /* RecommendationsProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendationsProcessor.h; sourceTree = "<group>"; };
+		73BB725419492D2B00A01D9B /* Date.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Date.cpp; sourceTree = "<group>"; };
+		73BB725519492D2B00A01D9B /* Date.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Date.h; sourceTree = "<group>"; };
+		73BB725719493E9F00A01D9B /* FileManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FileManager.cpp; sourceTree = "<group>"; };
+		73BB725819493E9F00A01D9B /* FileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileManager.h; sourceTree = "<group>"; };
+		73BB725A1949430C00A01D9B /* libboost_filesystem-mt.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libboost_filesystem-mt.a"; path = "/opt/local/lib/libboost_filesystem-mt.a"; sourceTree = "<absolute>"; };
+		73BB725C1949433800A01D9B /* libboost_system-mt.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libboost_system-mt.a"; path = "/opt/local/lib/libboost_system-mt.a"; sourceTree = "<absolute>"; };
+		73BB725E194955C800A01D9B /* TimeSeriesTransformations.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TimeSeriesTransformations.cpp; sourceTree = "<group>"; };
+		73BB725F194955C800A01D9B /* TimeSeriesTransformations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeSeriesTransformations.h; sourceTree = "<group>"; };
+		73BB72611951C52100A01D9B /* Matrix.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Matrix.cpp; sourceTree = "<group>"; };
+		73BB72621951C52100A01D9B /* Matrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Matrix.h; sourceTree = "<group>"; };
+		73BB72641956865F00A01D9B /* FactorialTemplate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FactorialTemplate.cpp; sourceTree = "<group>"; };
+		73BB72651956865F00A01D9B /* FactorialTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FactorialTemplate.h; sourceTree = "<group>"; };
+		73BB726A195D139D00A01D9B /* CalmarRatio.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CalmarRatio.cpp; sourceTree = "<group>"; };
+		73BB726B195D139D00A01D9B /* CalmarRatio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalmarRatio.h; sourceTree = "<group>"; };
+		73BB726D195D13AF00A01D9B /* DistributionData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DistributionData.cpp; sourceTree = "<group>"; };
+		73BB726E195D13AF00A01D9B /* DistributionData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DistributionData.h; sourceTree = "<group>"; };
+		73BB72701960598F00A01D9B /* GnuplotPlotter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GnuplotPlotter.cpp; sourceTree = "<group>"; };
+		73BB72711960598F00A01D9B /* GnuplotPlotter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GnuplotPlotter.h; sourceTree = "<group>"; };
+		73C478B719C3E611008CF0F4 /* Option.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Option.cpp; sourceTree = "<group>"; };
+		73C478B819C3E611008CF0F4 /* Option.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Option.h; sourceTree = "<group>"; };
+		73C478BA19C5D9D6008CF0F4 /* ParallelOptionsProbabilities.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ParallelOptionsProbabilities.cpp; sourceTree = "<group>"; };
+		73C478BB19C5D9D6008CF0F4 /* ParallelOptionsProbabilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParallelOptionsProbabilities.h; sourceTree = "<group>"; };
+		73D6C07F18915A0D00CE45BE /* TimeSeries.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TimeSeries.cpp; sourceTree = "<group>"; };
+		73D6C08018915A0D00CE45BE /* TimeSeries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeSeries.h; sourceTree = "<group>"; };
+		73D6C08218915D4900CE45BE /* CorrelationCalculator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CorrelationCalculator.cpp; sourceTree = "<group>"; };
+		73D6C08318915D4900CE45BE /* CorrelationCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CorrelationCalculator.h; sourceTree = "<group>"; };
+		73D99C2019CCCEAE00B1A5D4 /* Thread.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Thread.cpp; sourceTree = "<group>"; };
+		73D99C2119CCCEAE00B1A5D4 /* Thread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Thread.h; sourceTree = "<group>"; };
+		73D99C2319CE3C5500B1A5D4 /* Mutex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Mutex.cpp; sourceTree = "<group>"; };
+		73D99C2419CE3C5500B1A5D4 /* Mutex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mutex.h; sourceTree = "<group>"; };
+		73D99C2619CF327900B1A5D4 /* OpenMpTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OpenMpTest.cpp; sourceTree = "<group>"; };
+		73D99C2719CF327900B1A5D4 /* OpenMpTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenMpTest.h; sourceTree = "<group>"; };
+		73E09A6619AB7D130093F4D9 /* ModifiedCAP.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ModifiedCAP.cpp; sourceTree = "<group>"; };
+		73E09A6719AB7D130093F4D9 /* ModifiedCAP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModifiedCAP.h; sourceTree = "<group>"; };
+		73E09A6C19ABD6070093F4D9 /* OptionsProbabilities.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OptionsProbabilities.cpp; sourceTree = "<group>"; };
+		73E09A6D19ABD6070093F4D9 /* OptionsProbabilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsProbabilities.h; sourceTree = "<group>"; };
+		73E09A7219B266340093F4D9 /* CreditRisk.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CreditRisk.cpp; sourceTree = "<group>"; };
+		73E09A7319B266340093F4D9 /* CreditRisk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditRisk.h; sourceTree = "<group>"; };
+		73E09A7519B2663F0093F4D9 /* LinearInterpolation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LinearInterpolation.cpp; sourceTree = "<group>"; };
+		73E09A7619B2663F0093F4D9 /* LinearInterpolation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinearInterpolation.h; sourceTree = "<group>"; };
+		73E09A7819B2664B0093F4D9 /* MonteCarloIntegration.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MonteCarloIntegration.cpp; sourceTree = "<group>"; };
+		73E09A7919B2664B0093F4D9 /* MonteCarloIntegration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonteCarloIntegration.h; sourceTree = "<group>"; };
+		73E09A7B19B266660093F4D9 /* NumVector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NumVector.cpp; sourceTree = "<group>"; };
+		73E09A7C19B266660093F4D9 /* NumVector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumVector.h; sourceTree = "<group>"; };
+		73E09A7E19B266840093F4D9 /* RandonWalk.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RandonWalk.cpp; sourceTree = "<group>"; };
+		73E09A7F19B266840093F4D9 /* RandonWalk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandonWalk.h; sourceTree = "<group>"; };
+		73E09A8119B266900093F4D9 /* ResourceAlloc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ResourceAlloc.cpp; sourceTree = "<group>"; };
+		73E09A8219B266900093F4D9 /* ResourceAlloc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResourceAlloc.h; sourceTree = "<group>"; };
+		73E09A8319B266900093F4D9 /* RiskCalculator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RiskCalculator.cpp; sourceTree = "<group>"; };
+		73E09A8419B266900093F4D9 /* RiskCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RiskCalculator.h; sourceTree = "<group>"; };
+		73E09A8719B2669E0093F4D9 /* TrapezoidIntegration.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TrapezoidIntegration.cpp; sourceTree = "<group>"; };
+		73E09A8819B2669E0093F4D9 /* TrapezoidIntegration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrapezoidIntegration.h; sourceTree = "<group>"; };
+		73E09A8A19B28E8E0093F4D9 /* Python */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = Python; path = ../../../../System/Library/Frameworks/Python.framework/Versions/2.7/Python; sourceTree = "<group>"; };
+		73E09A8C19B28FB70093F4D9 /* libboost_python-mt.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libboost_python-mt.a"; path = "../../../../opt/local/lib/libboost_python-mt.a"; sourceTree = "<group>"; };
+		73E09A8E19B4E6E10093F4D9 /* Matrix_Py.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Matrix_Py.cpp; sourceTree = "<group>"; };
+		73E09A8F19B4E6E10093F4D9 /* Matrix_Py.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Matrix_Py.h; sourceTree = "<group>"; };
+		73E09A9119B773110093F4D9 /* Stock_Py.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Stock_Py.cpp; sourceTree = "<group>"; };
+		73E09A9219B773110093F4D9 /* Stock_Py.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stock_Py.h; sourceTree = "<group>"; };
+		73E09A9419B775B40093F4D9 /* Stock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Stock.cpp; sourceTree = "<group>"; };
+		73E09A9519B775B40093F4D9 /* Stock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stock.h; sourceTree = "<group>"; };
+		73E09A9719BCEE250093F4D9 /* LuaMain.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LuaMain.cpp; sourceTree = "<group>"; };
+		73E09A9819BCEE250093F4D9 /* LuaMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuaMain.h; sourceTree = "<group>"; };
+		73E09AA419BD401E0093F4D9 /* liblua.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = liblua.a; path = ../../../../opt/local/lib/liblua.a; sourceTree = "<group>"; };
+		73E09AA619BF401A0093F4D9 /* liblua.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = liblua.a; path = "../lua-5.2.3/src/liblua.a"; sourceTree = "<group>"; };
+		73E09AAB19BF43CE0093F4D9 /* LuaWrap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LuaWrap.cpp; sourceTree = "<group>"; };
+		73E09AAC19BF43CE0093F4D9 /* LuaWrap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuaWrap.h; sourceTree = "<group>"; };
+		73E09AB119C005140093F4D9 /* LuaOption.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LuaOption.cpp; sourceTree = "<group>"; };
+		73E09AB219C005140093F4D9 /* LuaOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuaOption.h; sourceTree = "<group>"; };
+		73E75040196652C7006B886B /* QtCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QtCore.framework; path = ../../../../opt/local/Library/Frameworks/QtCore.framework; sourceTree = "<group>"; };
+		73E75041196652C7006B886B /* QtGui.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QtGui.framework; path = ../../../../opt/local/Library/Frameworks/QtGui.framework; sourceTree = "<group>"; };
+		73E7504719665305006B886B /* QtPlotter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QtPlotter.cpp; sourceTree = "<group>"; };
+		73E7504819665305006B886B /* QtPlotter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QtPlotter.h; sourceTree = "<group>"; };
+		73F13CF31971BBD400A0F0C6 /* VectorOperations.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VectorOperations.cpp; sourceTree = "<group>"; };
+		73F13CF41971BBD400A0F0C6 /* VectorOperations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VectorOperations.h; sourceTree = "<group>"; };
+		73F13CF6197207F600A0F0C6 /* PlotViewer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PlotViewer.cpp; sourceTree = "<group>"; };
+		73F13CF7197207F700A0F0C6 /* PlotViewer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlotViewer.h; sourceTree = "<group>"; };
+		73F13CF91978D4B500A0F0C6 /* MatrixOperations.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MatrixOperations.cpp; sourceTree = "<group>"; };
+		73F13CFA1978D4B500A0F0C6 /* MatrixOperations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatrixOperations.h; sourceTree = "<group>"; };
+		73F13CFF198683B800A0F0C6 /* PolymonialInterpolation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PolymonialInterpolation.cpp; sourceTree = "<group>"; };
+		73F13D00198683B800A0F0C6 /* PolymonialInterpolation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PolymonialInterpolation.h; sourceTree = "<group>"; };
+		73F13D021995D60D00A0F0C6 /* BisectionMethod.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BisectionMethod.cpp; sourceTree = "<group>"; };
+		73F13D031995D60D00A0F0C6 /* BisectionMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BisectionMethod.h; sourceTree = "<group>"; };
+		73F13D051995D62700A0F0C6 /* MathFunction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MathFunction.cpp; sourceTree = "<group>"; };
+		73F13D061995D62700A0F0C6 /* MathFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathFunction.h; sourceTree = "<group>"; };
+		73F13D071995D62700A0F0C6 /* NewtonMethod.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NewtonMethod.cpp; sourceTree = "<group>"; };
+		73F13D081995D62700A0F0C6 /* NewtonMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewtonMethod.h; sourceTree = "<group>"; };
+		73F13D091995D62700A0F0C6 /* SecantMethod.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SecantMethod.cpp; sourceTree = "<group>"; };
+		73F13D0A1995D62700A0F0C6 /* SecantMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecantMethod.h; sourceTree = "<group>"; };
+		73F13D0E1997B2EC00A0F0C6 /* MidpointIntegration.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MidpointIntegration.cpp; sourceTree = "<group>"; };
+		73F13D0F1997B2EC00A0F0C6 /* MidpointIntegration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MidpointIntegration.h; sourceTree = "<group>"; };
+		73F13D141998557F00A0F0C6 /* SimpsonsIntegration.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SimpsonsIntegration.cpp; sourceTree = "<group>"; };
+		73F13D151998557F00A0F0C6 /* SimpsonsIntegration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpsonsIntegration.h; sourceTree = "<group>"; };
+		73F13D17199B95AF00A0F0C6 /* LPSolver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LPSolver.cpp; sourceTree = "<group>"; };
+		73F13D18199B95AF00A0F0C6 /* LPSolver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPSolver.h; sourceTree = "<group>"; };
+		73F13D1A199BA73900A0F0C6 /* libglpk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglpk.a; path = "../glpk-4.54/src/.libs/libglpk.a"; sourceTree = "<group>"; };
+		73F13D2119A5233300A0F0C6 /* TwoDimensionalLPSolver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TwoDimensionalLPSolver.cpp; sourceTree = "<group>"; };
+		73F13D2219A5233300A0F0C6 /* TwoDimensionalLPSolver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwoDimensionalLPSolver.h; sourceTree = "<group>"; };
+		73F13D2419A67B3700A0F0C6 /* MIPSolver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MIPSolver.cpp; sourceTree = "<group>"; };
+		73F13D2519A67B3700A0F0C6 /* MIPSolver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIPSolver.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		735C9C7518749C9A00807DA0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73E09AA719BF401A0093F4D9 /* liblua.a in Frameworks */,
+				73E09A8D19B28FB70093F4D9 /* libboost_python-mt.a in Frameworks */,
+				73E09A8B19B28E8E0093F4D9 /* Python in Frameworks */,
+				73F13D1B199BA73900A0F0C6 /* libglpk.a in Frameworks */,
+				73E75042196652C7006B886B /* QtCore.framework in Frameworks */,
+				73E75043196652C7006B886B /* QtGui.framework in Frameworks */,
+				73BB725D1949433800A01D9B /* libboost_system-mt.a in Frameworks */,
+				73BB725B1949430C00A01D9B /* libboost_filesystem-mt.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		735C9C6F18749C9A00807DA0 = {
+			isa = PBXGroup;
+			children = (
+				73E09AA619BF401A0093F4D9 /* liblua.a */,
+				73E09AA419BD401E0093F4D9 /* liblua.a */,
+				73E09A8C19B28FB70093F4D9 /* libboost_python-mt.a */,
+				73E09A8A19B28E8E0093F4D9 /* Python */,
+				73F13D1A199BA73900A0F0C6 /* libglpk.a */,
+				73E75040196652C7006B886B /* QtCore.framework */,
+				73E75041196652C7006B886B /* QtGui.framework */,
+				735C9C7A18749C9A00807DA0 /* FinancialSamples */,
+				735C9C7918749C9A00807DA0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		735C9C7918749C9A00807DA0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				735C9C7818749C9A00807DA0 /* FinancialSamples */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		735C9C7A18749C9A00807DA0 /* FinancialSamples */ = {
+			isa = PBXGroup;
+			children = (
+				73A39C4F19F551BC0032A8AD /* BlackScholesForwardMethod.cpp */,
+				7356AE221A05A14100C216D5 /* RExtension.cpp */,
+				7356AE231A05A14100C216D5 /* RExtension.h */,
+				73A39C5019F551BC0032A8AD /* BlackScholesForwardMethod.h */,
+				730E714B19E5888B003A57E1 /* RungeKuttaODEMethod.cpp */,
+				730E714C19E5888B003A57E1 /* RungeKuttaODEMethod.h */,
+				730E714819E58873003A57E1 /* EulersMethod.cpp */,
+				730E714919E58873003A57E1 /* EulersMethod.h */,
+				73C478B719C3E611008CF0F4 /* Option.cpp */,
+				73C478B819C3E611008CF0F4 /* Option.h */,
+				73E09AB119C005140093F4D9 /* LuaOption.cpp */,
+				73C478BA19C5D9D6008CF0F4 /* ParallelOptionsProbabilities.cpp */,
+				73C478BB19C5D9D6008CF0F4 /* ParallelOptionsProbabilities.h */,
+				73D99C2619CF327900B1A5D4 /* OpenMpTest.cpp */,
+				73D99C2719CF327900B1A5D4 /* OpenMpTest.h */,
+				73D99C2319CE3C5500B1A5D4 /* Mutex.cpp */,
+				73D99C2419CE3C5500B1A5D4 /* Mutex.h */,
+				73D99C2019CCCEAE00B1A5D4 /* Thread.cpp */,
+				73D99C2119CCCEAE00B1A5D4 /* Thread.h */,
+				73E09AB219C005140093F4D9 /* LuaOption.h */,
+				73E09AAB19BF43CE0093F4D9 /* LuaWrap.cpp */,
+				73E09AAC19BF43CE0093F4D9 /* LuaWrap.h */,
+				73E09A8719B2669E0093F4D9 /* TrapezoidIntegration.cpp */,
+				730E713D19D8E351003A57E1 /* Cxx1xExamples.cpp */,
+				730E713E19D8E351003A57E1 /* Cxx1xExamples.h */,
+				73E09A8819B2669E0093F4D9 /* TrapezoidIntegration.h */,
+				73E09A8119B266900093F4D9 /* ResourceAlloc.cpp */,
+				73E09A8219B266900093F4D9 /* ResourceAlloc.h */,
+				73E09A8319B266900093F4D9 /* RiskCalculator.cpp */,
+				73E09A8419B266900093F4D9 /* RiskCalculator.h */,
+				73E09A7E19B266840093F4D9 /* RandonWalk.cpp */,
+				73E09A7F19B266840093F4D9 /* RandonWalk.h */,
+				73E09A7B19B266660093F4D9 /* NumVector.cpp */,
+				73E09A7C19B266660093F4D9 /* NumVector.h */,
+				73E09A7819B2664B0093F4D9 /* MonteCarloIntegration.cpp */,
+				73E09A8E19B4E6E10093F4D9 /* Matrix_Py.cpp */,
+				73E09A8F19B4E6E10093F4D9 /* Matrix_Py.h */,
+				73E09A9119B773110093F4D9 /* Stock_Py.cpp */,
+				73E09A9219B773110093F4D9 /* Stock_Py.h */,
+				73E09A9419B775B40093F4D9 /* Stock.cpp */,
+				73E09A9519B775B40093F4D9 /* Stock.h */,
+				73E09A7919B2664B0093F4D9 /* MonteCarloIntegration.h */,
+				73E09A7519B2663F0093F4D9 /* LinearInterpolation.cpp */,
+				73E09A7619B2663F0093F4D9 /* LinearInterpolation.h */,
+				73E09A7219B266340093F4D9 /* CreditRisk.cpp */,
+				73E09A7319B266340093F4D9 /* CreditRisk.h */,
+				73E09A9719BCEE250093F4D9 /* LuaMain.cpp */,
+				73E09A9819BCEE250093F4D9 /* LuaMain.h */,
+				73E09A6C19ABD6070093F4D9 /* OptionsProbabilities.cpp */,
+				73E09A6D19ABD6070093F4D9 /* OptionsProbabilities.h */,
+				73F13D2419A67B3700A0F0C6 /* MIPSolver.cpp */,
+				73F13D2519A67B3700A0F0C6 /* MIPSolver.h */,
+				73E09A6619AB7D130093F4D9 /* ModifiedCAP.cpp */,
+				73E09A6719AB7D130093F4D9 /* ModifiedCAP.h */,
+				73F13D2119A5233300A0F0C6 /* TwoDimensionalLPSolver.cpp */,
+				73F13D2219A5233300A0F0C6 /* TwoDimensionalLPSolver.h */,
+				73F13D17199B95AF00A0F0C6 /* LPSolver.cpp */,
+				73F13D18199B95AF00A0F0C6 /* LPSolver.h */,
+				73F13D051995D62700A0F0C6 /* MathFunction.cpp */,
+				73F13D061995D62700A0F0C6 /* MathFunction.h */,
+				73F13D071995D62700A0F0C6 /* NewtonMethod.cpp */,
+				73F13D081995D62700A0F0C6 /* NewtonMethod.h */,
+				73F13D141998557F00A0F0C6 /* SimpsonsIntegration.cpp */,
+				73F13D151998557F00A0F0C6 /* SimpsonsIntegration.h */,
+				73F13D0F1997B2EC00A0F0C6 /* MidpointIntegration.h */,
+				73F13D0E1997B2EC00A0F0C6 /* MidpointIntegration.cpp */,
+				73F13D0A1995D62700A0F0C6 /* SecantMethod.h */,
+				73F13D091995D62700A0F0C6 /* SecantMethod.cpp */,
+				73F13D021995D60D00A0F0C6 /* BisectionMethod.cpp */,
+				73F13D031995D60D00A0F0C6 /* BisectionMethod.h */,
+				73F13CFF198683B800A0F0C6 /* PolymonialInterpolation.cpp */,
+				73F13D00198683B800A0F0C6 /* PolymonialInterpolation.h */,
+				73BB726D195D13AF00A01D9B /* DistributionData.cpp */,
+				73BB72701960598F00A01D9B /* GnuplotPlotter.cpp */,
+				73BB72711960598F00A01D9B /* GnuplotPlotter.h */,
+				73F13CF31971BBD400A0F0C6 /* VectorOperations.cpp */,
+				73F13CF91978D4B500A0F0C6 /* MatrixOperations.cpp */,
+				73F13CFA1978D4B500A0F0C6 /* MatrixOperations.h */,
+				73F13CF6197207F600A0F0C6 /* PlotViewer.cpp */,
+				73F13CF7197207F700A0F0C6 /* PlotViewer.h */,
+				73F13CF41971BBD400A0F0C6 /* VectorOperations.h */,
+				73BB726E195D13AF00A01D9B /* DistributionData.h */,
+				73BB726A195D139D00A01D9B /* CalmarRatio.cpp */,
+				73BB726B195D139D00A01D9B /* CalmarRatio.h */,
+				73BB725C1949433800A01D9B /* libboost_system-mt.a */,
+				73BB725A1949430C00A01D9B /* libboost_filesystem-mt.a */,
+				73BB725E194955C800A01D9B /* TimeSeriesTransformations.cpp */,
+				73BB725F194955C800A01D9B /* TimeSeriesTransformations.h */,
+				73BB725519492D2B00A01D9B /* Date.h */,
+				73BB725419492D2B00A01D9B /* Date.cpp */,
+				73BB1AA71923AAF70040C2F0 /* RecommendationsProcessor.cpp */,
+				73BB1AA81923AAF70040C2F0 /* RecommendationsProcessor.h */,
+				73BB725719493E9F00A01D9B /* FileManager.cpp */,
+				73BB725819493E9F00A01D9B /* FileManager.h */,
+				73BB72611951C52100A01D9B /* Matrix.cpp */,
+				73BB72621951C52100A01D9B /* Matrix.h */,
+				73BB72641956865F00A01D9B /* FactorialTemplate.cpp */,
+				73BB72651956865F00A01D9B /* FactorialTemplate.h */,
+				735C9C7B18749C9A00807DA0 /* main.cpp */,
+				73BB1AA419225D990040C2F0 /* Recommendation.cpp */,
+				73BB1AA519225D990040C2F0 /* Recommendation.h */,
+				735FE56118FC183A005ED4C9 /* TransactionHandler.cpp */,
+				735FE56218FC183A005ED4C9 /* TransactionHandler.h */,
+				7325B58718A3D1C500E5D67F /* CommonStock.cpp */,
+				7325B58818A3D1C500E5D67F /* CommonStock.h */,
+				7325B5811897F53200E5D67F /* FundamentalsCalc.cpp */,
+				7325B5821897F53200E5D67F /* FundamentalsCalc.h */,
+				73280B3218E7CE1D00F97D95 /* FinancialStatement.cpp */,
+				73280B3318E7CE1D00F97D95 /* FinancialStatement.h */,
+				7325B584189FE1A700E5D67F /* VolatilityCalculator.cpp */,
+				7325B585189FE1A700E5D67F /* VolatilityCalculator.h */,
+				73D6C07F18915A0D00CE45BE /* TimeSeries.cpp */,
+				73D6C08018915A0D00CE45BE /* TimeSeries.h */,
+				73D6C08218915D4900CE45BE /* CorrelationCalculator.cpp */,
+				73D6C08318915D4900CE45BE /* CorrelationCalculator.h */,
+				735C9C90188479AB00807DA0 /* MACalculator.cpp */,
+				735C9C91188479AB00807DA0 /* MACalculator.h */,
+				735C9C8D187AE7D200807DA0 /* BondCalculator.cpp */,
+				735C9C8E187AE7D200807DA0 /* BondCalculator.h */,
+				735C9C841874B55000807DA0 /* IntRateCalculator.cpp */,
+				735C9C871876777800807DA0 /* CompoundIntRateCalculator.cpp */,
+				735C9C881876777800807DA0 /* CompoundIntRateCalculator.h */,
+				735C9C8A187A5FE600807DA0 /* CashFlowCalculator.cpp */,
+				735C9C8B187A5FE600807DA0 /* CashFlowCalculator.h */,
+				73280B3E18F820DF00F97D95 /* InvestmentInstrument.cpp */,
+				73280B3F18F820DF00F97D95 /* InvestmentInstrument.h */,
+				73280B4118F8220600F97D95 /* IntRateEngine.cpp */,
+				735C9C851874B55000807DA0 /* IntRateCalculator.h */,
+				73280B4218F8220600F97D95 /* IntRateEngine.h */,
+				735C9C7D18749C9A00807DA0 /* FinancialSamples.1 */,
+				73E7504719665305006B886B /* QtPlotter.cpp */,
+				73E7504819665305006B886B /* QtPlotter.h */,
+			);
+			path = FinancialSamples;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		735C9C7718749C9A00807DA0 /* FinancialSamples */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 735C9C8118749C9A00807DA0 /* Build configuration list for PBXNativeTarget "FinancialSamples" */;
+			buildPhases = (
+				735C9C7418749C9A00807DA0 /* Sources */,
+				735C9C7518749C9A00807DA0 /* Frameworks */,
+				735C9C7618749C9A00807DA0 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FinancialSamples;
+			productName = FinancialSamples;
+			productReference = 735C9C7818749C9A00807DA0 /* FinancialSamples */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		735C9C7018749C9A00807DA0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Carlos Oliveira";
+			};
+			buildConfigurationList = 735C9C7318749C9A00807DA0 /* Build configuration list for PBXProject "FinancialSamples" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 735C9C6F18749C9A00807DA0;
+			productRefGroup = 735C9C7918749C9A00807DA0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				735C9C7718749C9A00807DA0 /* FinancialSamples */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		735C9C7418749C9A00807DA0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73F13CF51971BBD400A0F0C6 /* VectorOperations.cpp in Sources */,
+				73BB72631951C52100A01D9B /* Matrix.cpp in Sources */,
+				73E09A9319B773110093F4D9 /* Stock_Py.cpp in Sources */,
+				73280B4318F8220600F97D95 /* IntRateEngine.cpp in Sources */,
+				73E09A7D19B266660093F4D9 /* NumVector.cpp in Sources */,
+				73D99C2219CCCEAE00B1A5D4 /* Thread.cpp in Sources */,
+				73BB72721960598F00A01D9B /* GnuplotPlotter.cpp in Sources */,
+				73BB1AA91923AAF70040C2F0 /* RecommendationsProcessor.cpp in Sources */,
+				73BB72661956865F00A01D9B /* FactorialTemplate.cpp in Sources */,
+				73BB1AA619225D990040C2F0 /* Recommendation.cpp in Sources */,
+				73E7504919665305006B886B /* QtPlotter.cpp in Sources */,
+				73F13D0B1995D62700A0F0C6 /* MathFunction.cpp in Sources */,
+				73F13D041995D60D00A0F0C6 /* BisectionMethod.cpp in Sources */,
+				73E09A8919B2669E0093F4D9 /* TrapezoidIntegration.cpp in Sources */,
+				735C9C8C187A5FE600807DA0 /* CashFlowCalculator.cpp in Sources */,
+				735C9C92188479AB00807DA0 /* MACalculator.cpp in Sources */,
+				73E09A8019B266840093F4D9 /* RandonWalk.cpp in Sources */,
+				7325B5831897F53200E5D67F /* FundamentalsCalc.cpp in Sources */,
+				73D99C2819CF327900B1A5D4 /* OpenMpTest.cpp in Sources */,
+				730E713F19D8E351003A57E1 /* Cxx1xExamples.cpp in Sources */,
+				73F13D0D1995D62700A0F0C6 /* SecantMethod.cpp in Sources */,
+				73D6C08118915A0D00CE45BE /* TimeSeries.cpp in Sources */,
+				73BB726F195D13AF00A01D9B /* DistributionData.cpp in Sources */,
+				73E09A7419B266340093F4D9 /* CreditRisk.cpp in Sources */,
+				73BB725919493E9F00A01D9B /* FileManager.cpp in Sources */,
+				735C9C8F187AE7D200807DA0 /* BondCalculator.cpp in Sources */,
+				73E09A8519B266900093F4D9 /* ResourceAlloc.cpp in Sources */,
+				73D99C2519CE3C5500B1A5D4 /* Mutex.cpp in Sources */,
+				735C9C891876777800807DA0 /* CompoundIntRateCalculator.cpp in Sources */,
+				73F13D19199B95AF00A0F0C6 /* LPSolver.cpp in Sources */,
+				73E09A8619B266900093F4D9 /* RiskCalculator.cpp in Sources */,
+				73BB726C195D139D00A01D9B /* CalmarRatio.cpp in Sources */,
+				73C478B919C3E611008CF0F4 /* Option.cpp in Sources */,
+				73E09AAD19BF43CE0093F4D9 /* LuaWrap.cpp in Sources */,
+				7325B586189FE1A700E5D67F /* VolatilityCalculator.cpp in Sources */,
+				73F13D2619A67B3700A0F0C6 /* MIPSolver.cpp in Sources */,
+				7356AE241A05A14100C216D5 /* RExtension.cpp in Sources */,
+				735C9C7C18749C9A00807DA0 /* main.cpp in Sources */,
+				73F13D2319A5233300A0F0C6 /* TwoDimensionalLPSolver.cpp in Sources */,
+				73E09AB319C005140093F4D9 /* LuaOption.cpp in Sources */,
+				735FE56318FC183A005ED4C9 /* TransactionHandler.cpp in Sources */,
+				73F13D161998557F00A0F0C6 /* SimpsonsIntegration.cpp in Sources */,
+				73E09A9619B775B40093F4D9 /* Stock.cpp in Sources */,
+				73BB7260194955C800A01D9B /* TimeSeriesTransformations.cpp in Sources */,
+				7325B58918A3D1C500E5D67F /* CommonStock.cpp in Sources */,
+				730E714A19E58873003A57E1 /* EulersMethod.cpp in Sources */,
+				73E09A7A19B2664B0093F4D9 /* MonteCarloIntegration.cpp in Sources */,
+				73E09A6819AB7D130093F4D9 /* ModifiedCAP.cpp in Sources */,
+				73E09A9019B4E6E10093F4D9 /* Matrix_Py.cpp in Sources */,
+				73C478BC19C5D9D6008CF0F4 /* ParallelOptionsProbabilities.cpp in Sources */,
+				73E09A9919BCEE250093F4D9 /* LuaMain.cpp in Sources */,
+				73280B3418E7CE1D00F97D95 /* FinancialStatement.cpp in Sources */,
+				73F13D101997B2EC00A0F0C6 /* MidpointIntegration.cpp in Sources */,
+				73F13D0C1995D62700A0F0C6 /* NewtonMethod.cpp in Sources */,
+				73D6C08418915D4900CE45BE /* CorrelationCalculator.cpp in Sources */,
+				735C9C861874B55000807DA0 /* IntRateCalculator.cpp in Sources */,
+				73BB725619492D2B00A01D9B /* Date.cpp in Sources */,
+				73F13D01198683B800A0F0C6 /* PolymonialInterpolation.cpp in Sources */,
+				73E09A7719B2663F0093F4D9 /* LinearInterpolation.cpp in Sources */,
+				73280B4018F820DF00F97D95 /* InvestmentInstrument.cpp in Sources */,
+				73F13CFB1978D4B500A0F0C6 /* MatrixOperations.cpp in Sources */,
+				730E714D19E5888B003A57E1 /* RungeKuttaODEMethod.cpp in Sources */,
+				73E09A6E19ABD6070093F4D9 /* OptionsProbabilities.cpp in Sources */,
+				73F13CF8197207F700A0F0C6 /* PlotViewer.cpp in Sources */,
+				73A39C5119F551BC0032A8AD /* BlackScholesForwardMethod.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		735C9C7F18749C9A00807DA0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		735C9C8018749C9A00807DA0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		735C9C8218749C9A00807DA0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/local/Library/Frameworks,
+				);
+				HEADER_SEARCH_PATHS = (
+					"/Users/carlosoliveira/code/lua-5.2.3/src/",
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/opt/local/include/,
+					"/Users/carlosoliveira/code/glpk-4.54/src",
+					/usr/include/python2.7,
+					"/Library/Frameworks/R.framework/Versions/3.0//Resources",
+				);
+				LD_RUNPATH_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = (
+					"/Users/carlosoliveira/code/lua-5.2.3/src/",
+					"$(inherited)",
+					/opt/local/lib,
+					"/Users/carlosoliveira/code/glpk-4.54/src/.libs",
+					"$(SYSTEM_LIBRARY_DIR)/Frameworks/Python.framework/Versions/2.7",
+					"/Users/carlosoliveira/code/lua-5.2.3/src",
+					/Library/Frameworks/R.framework/Versions/3.0/PrivateHeaders,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		735C9C8318749C9A00807DA0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/local/Library/Frameworks,
+				);
+				HEADER_SEARCH_PATHS = (
+					"/Users/carlosoliveira/code/lua-5.2.3/src/",
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/opt/local/include/,
+					"/Users/carlosoliveira/code/glpk-4.54/src",
+					/usr/include/python2.7,
+					"/Library/Frameworks/R.framework/Versions/3.0//Resources",
+				);
+				LD_RUNPATH_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = (
+					"/Users/carlosoliveira/code/lua-5.2.3/src/",
+					"$(inherited)",
+					/opt/local/lib,
+					"/Users/carlosoliveira/code/glpk-4.54/src/.libs",
+					"$(SYSTEM_LIBRARY_DIR)/Frameworks/Python.framework/Versions/2.7",
+					"/Users/carlosoliveira/code/lua-5.2.3/src",
+					/Library/Frameworks/R.framework/Versions/3.0/PrivateHeaders,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		735C9C7318749C9A00807DA0 /* Build configuration list for PBXProject "FinancialSamples" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				735C9C7F18749C9A00807DA0 /* Debug */,
+				735C9C8018749C9A00807DA0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		735C9C8118749C9A00807DA0 /* Build configuration list for PBXNativeTarget "FinancialSamples" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				735C9C8218749C9A00807DA0 /* Debug */,
+				735C9C8318749C9A00807DA0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 735C9C7018749C9A00807DA0 /* Project object */;
+}

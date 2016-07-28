@@ -1,0 +1,156 @@
+;
+;版权：ChinaHearing技术团队，版权保留
+;
+;名称：CY001.INF
+;阐述：CY001是一款USB驱动开发板，此文件为驱动安装文件
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=CY001 Sample		; 自定义的安装类，即下面的类GUID值。
+ClassGuid={78A1C341-4539-11d3-B88D-00C04FAD5172}
+Provider=ChinaHearing
+DriverVer=09/14/2009,6.0.6001.18000
+;CatalogFile=CY001.cat ;签名指令
+
+; =================类安装域====================
+
+[ClassInstall32]
+Addreg=ClssInst.Reg
+CopyFiles=ClssInst.Files
+
+[ClssInst.Reg]
+HKR,,,0,%ClassName%		; 类友好名称（Friendly Name），此名称将在设备管理器中显示，可含中文。
+HKR,,Icon,,-5			; 图标，在设备管理器中显示。负值表示用系统图标，包括：0、2、3、5、6、8-10、14、15-18
+HKR,,Installer32,,"CY001_ClsInst.dll,CY001ClassInstaller"
+
+[ClssInst.Files]
+CY001_ClsInst.dll
+
+[ControlFlags]
+; 如果加上下面的语句，CY001 Sample将不会在Add Hardware中出现
+;ExcludeFromSelect = *
+
+;==================文件相关域==================
+[SourceDisksNames]
+1=%Disk_Description%,,,
+
+[SourceDisksFiles.x86]
+CY001.sys = 1, i386
+WdfCoInstaller01009.dll=1, i386; 此驱动编译使用1.9版本的WDF
+CY001_ClsInst.dll = 1, i386
+
+[SourceDisksFiles.amd64]
+CY001.sys = 1, AMD64
+WdfCoInstaller01009.dll=1, AMD64; 此驱动编译使用1.9版本的WDF
+CY001_ClsInst.dll = 1, AMD64
+
+[DestinationDirs]
+DefaultDestDir = 12		  ; 12被称作dirid，代表：system32\drivers
+CoInstaller.Files = 11
+ClssInst.Files = 11
+
+[CY001.Files]
+CY001.sys
+
+[CoInstaller.Files]
+WdfCoInstaller01009.dll
+
+; ================= 设备安装域=====================
+
+[Manufacturer]
+; NTX86和NtAMD64是平台后缀，表明此安装文件，可以在X86和X64平台上使用。
+;2k以后系统支持。
+%MfgName%=CY001, NTX86, NtAMD64
+
+; 2K以前平台，实际上，我们的驱动并未在Win 9x系统上测试过。
+; 但如果没有[CY001.NTx86]域，那么[CY001]将作为默认安装域。
+[CY001]
+"USB\VID_04B4&PID_8613"=CY001.Dev, USB\VID_04B4&PID_8613
+"USB\VID_04B4&PID_1109"=CY001.Dev, USB\VID_04B4&PID_1109
+"USB\VID_04B4&PID_1109_00"=CY001.Dev, USB\VID_04B4&PID_1109&MI_00
+"USB\VID_04B4&PID_1000_00(4 EndPoints)"=CY001.Dev, USB\VID_04B4&PID_1009&MI_00
+"USB\VID_04B4&PID_1009_01(0 Endpoints)"=CY001.Dev, USB\VID_04B4&PID_1009&MI_01
+
+; 2K、XP及以后系统
+[CY001.NTx86]
+"USB\VID_04B4&PID_8613"=CY001.Dev, USB\VID_04B4&PID_8613
+"USB\VID_04B4&PID_1109"=CY001.Dev, USB\VID_04B4&PID_1109
+"USB\VID_04B4&PID_1109_00"=CY001.Dev, USB\VID_04B4&PID_1109&MI_00
+"USB\VID_04B4&PID_1009_00(4 EndPoints)"=CY001.Dev, USB\VID_04B4&PID_1009&MI_00
+"USB\VID_04B4&PID_1009_01(0 Endpoints)"=CY001.Dev, USB\VID_04B4&PID_1009&MI_01
+
+[CY001.NTAMD64]
+"USB\VID_04B4&PID_8613"=CY001.Dev, USB\VID_04B4&PID_8613
+"USB\VID_04B4&PID_1109"=CY001.Dev, USB\VID_04B4&PID_1109
+"USB\VID_04B4&PID_1109_00"=CY001.Dev, USB\VID_04B4&PID_1109&MI_00
+"USB\VID_04B4&PID_1009_00(4 EndPoints)"=CY001.Dev, USB\VID_04B4&PID_1009&MI_00
+"USB\VID_04B4&PID_1009_01(0 Endpoints)"=CY001.Dev, USB\VID_04B4&PID_1009&MI_01
+
+[CY001.Dev.NTx86]
+CopyFiles=CY001.Files
+
+[CY001.Dev.NTx86.Services]
+Addservice = CY001, 0x00000002, CY001.AddService
+
+[CY001.AddService]
+DisplayName    = %CY001.SvcDesc%
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 1                  ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %10%\System32\Drivers\CY001.sys
+AddReg         = CY001.AddReg
+LoadOrderGroup = Base
+
+[CY001.Dev.NTAMD64]
+CopyFiles=CY001.Files
+
+[CY001.Dev.NTAMD64.Services]
+Addservice = CY001_64, 0x00000002, CY001_64.AddService
+
+[CY001_64.AddService]
+DisplayName    = %CY001_64.SvcDesc%
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 1                  ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %10%\System32\Drivers\CY001_64.sys
+AddReg         = CY001.AddReg
+LoadOrderGroup = Base
+
+[CY001.AddReg]
+HKR, Parameters\Wdf, VerboseOn,       0x00010001, 1
+HKR, Parameters\Wdf, VerifierOn,      0x00010001, 1
+HKR, Parameters\Wdf, DbgBreakOnError, 0x00010001, 1
+
+;================= WDF协安装器域==================
+
+[CY001.Dev.NTAMD64.CoInstallers]
+AddReg=CoInstaller_AddReg
+CopyFiles=CoInstaller.Files
+
+[CY001.Dev.NTx86.CoInstallers]
+AddReg=CoInstaller_AddReg
+CopyFiles=CoInstaller.Files
+
+[CoInstaller_AddReg]
+; WDF协安装器，名字格式：WdfCoInstaller<主><次>.dll
+; 读者在1.9或更高版本上编译驱动代码时，要相应地更改这里的协安装器名称。
+HKR,,CoInstallers32,0x00010000, "WdfCoInstaller01009.dll,WdfCoInstaller"
+
+; 下面是WDF服务域，是一定要有的。目的很简单，就是为了告知你的驱动程序使用的WDF版本。
+[CY001.Dev.NTAMD64.Wdf]
+KmdfService = CY001_64, CY001_wdfsect
+
+[CY001.Dev.NTx86.Wdf]
+KmdfService = CY001, CY001_wdfsect
+
+[CY001_wdfsect]
+KmdfLibraryVersion = 1.9; WDF是1.9版本的
+
+;================= 字符串 ==================
+
+[Strings]
+MfgName="ChinaHearing"
+Disk_Description = "CY001 Installation Disk"
+CY001_64.SvcDesc = "CY001 Service 64Bit"
+CY001.SvcDesc = "CY001 Service 64Bit"
+ClassName = "CY001：USB驱动开发板设备"

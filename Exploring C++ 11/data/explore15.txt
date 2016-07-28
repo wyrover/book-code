@@ -1,0 +1,18 @@
+The Map Data Structure
+
+Now that you understand the basics, it’s time to move on to more exciting
+challenges. Let’s write a real program—something nontrivial but still simple
+enough to master this early in the book. Your task is to write a program that
+reads words and counts the frequency of each unique word. For the sake of
+simplicity, a word is a string of non-space characters separated by white
+space. Be aware, however, that by this definition, words end up including
+punctuation characters, but we’ll worry about fixing that problem later.
+
+This is a complicated program, touching on everything you’ve learned about C++
+so far. If you want to exercise your new understanding of file I/O, read from
+a named file. If you prefer the simplicity, read from the standard
+input. Before jumping in and trying to write a program, take a moment to think
+about the problem and the tools you need to solve it. Write pseudo-code for
+the program. Try to write C++ code where you can, and make up whatever else
+you need to tackle the problem. Keep it simple—and don’t dwell on trying to
+get syntax details correct.

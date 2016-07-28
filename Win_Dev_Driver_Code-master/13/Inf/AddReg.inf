@@ -1,0 +1,26 @@
+; 文件：AddReg.inf
+; 归属：《竹林蹊径》 张佩
+; 联系：Zhang.Mibox@gmail.com
+; 版本：04/01/2010  1.0.0000.00000
+
+[Version]
+Signature="$WINDOWS NT$"
+Provider=ChinaHearing
+DriverVer=04/01/2010, 1.0.0000.00000
+
+[DefaultInstall]
+; 演示了字符串令牌的使用
+AddReg =  %A% %B% %C% %D%
+ 
+[我 是 谁 ？]
+HKLM, SOFTWARE\AddRegTest, , 0x00000010, 							; 添加一个子键
+HKLM, SOFTWARE\AddRegTest, REG_SZ, 0, "字符串"						; 添加字符串型键值
+HKLM, SOFTWARE\AddRegTest, REG_BINARY, 1, 1,2,3,4
+HKLM, SOFTWARE\AddRegTest, REG_MULTI_SZ, 0x10000, Multi，字符串
+HKLM, SOFTWARE\AddRegTest, REG_DWORD, 0x10001, 125
+
+[Strings]
+A = "我"
+B = "是"
+C = "谁"
+D = "？"

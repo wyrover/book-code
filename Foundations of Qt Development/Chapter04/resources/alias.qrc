@@ -1,0 +1,6 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource>
+  <file alias="other-new.png">images/new.png</file>
+  <file alias="new.png">images/new.png</file>
+</qresource>
+</RCC>
