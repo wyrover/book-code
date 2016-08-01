@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="objc2j" default="all">
+
+
+    <property file="objc2j.properties"/>
+    <!-- Uncomment the following property if no tests compilation is needed -->
+    <!--
+   <property name="skip.tests" value="true"/>
+    -->
+
+    <!-- Compiler options -->
+
+    <property name="compiler.debug" value="on"/>
+    <property name="compiler.generate.no.warnings" value="off"/>
+    <property name="compiler.args" value="-verbose"/>
+    <property name="compiler.max.memory" value="128m"/>
+    <patternset id="ignored.files">
+        <exclude name="**/CVS/**"/>
+        <exclude name="**/SCCS/**"/>
+        <exclude name="**/RCS/**"/>
+        <exclude name="**/.DS_Store/**"/>
+        <exclude name="**/.svn/**"/>
+        <exclude name="**/.pyc/**"/>
+        <exclude name="**/.pyo/**"/>
+        <exclude name="**/*.pyc/**"/>
+        <exclude name="**/*.pyo/**"/>
+        <exclude name="**/.git/**"/>
+        <exclude name="**/*.hprof/**"/>
+        <exclude name="**/_svn/**"/>
+        <exclude name="**/.hg/**"/>
+        <exclude name="**/*.lib/**"/>
+        <exclude name="**/*~/**"/>
+        <exclude name="**/__pycache__/**"/>
+        <exclude name="**/.bundle/**"/>
+        <exclude name="**/*.rbc/**"/>
+    </patternset>
+    <patternset id="library.patterns">
+        <include name="*.war"/>
+        <include name="*.ear"/>
+        <include name="*.apk"/>
+        <include name="*.zip"/>
+        <include name="*.swc"/>
+        <include name="*.egg"/>
+        <include name="*.jar"/>
+    </patternset>
+    <patternset id="compiler.resources">
+        <include name="**/?*.properties"/>
+        <include name="**/?*.xml"/>
+        <include name="**/?*.gif"/>
+        <include name="**/?*.png"/>
+        <include name="**/?*.jpeg"/>
+        <include name="**/?*.jpg"/>
+        <include name="**/?*.html"/>
+        <include name="**/?*.dtd"/>
+        <include name="**/?*.tld"/>
+        <include name="**/?*.ftl"/>
+    </patternset>
+
+    <!-- JDK definitions -->
+
+    <property name="jdk.bin.1.7" value="${jdk.home.1.7}/bin"/>
+    <path id="jdk.classpath.1.7">
+        <fileset dir="${jdk.home.1.7}">
+            <include name="jre/lib/alt-rt.jar"/>
+            <include name="jre/lib/charsets.jar"/>
+            <include name="jre/lib/deploy.jar"/>
+            <include name="jre/lib/javaws.jar"/>
+            <include name="jre/lib/jce.jar"/>
+            <include name="jre/lib/jsse.jar"/>
+            <include name="jre/lib/management-agent.jar"/>
+            <include name="jre/lib/plugin.jar"/>
+            <include name="jre/lib/resources.jar"/>
+            <include name="jre/lib/rt.jar"/>
+            <include name="jre/lib/ext/dnsns.jar"/>
+            <include name="jre/lib/ext/localedata.jar"/>
+            <include name="jre/lib/ext/sunec.jar"/>
+            <include name="jre/lib/ext/sunjce_provider.jar"/>
+            <include name="jre/lib/ext/sunmscapi.jar"/>
+            <include name="jre/lib/ext/zipfs.jar"/>
+        </fileset>
+    </path>
+
+    <property name="project.jdk.home" value="${jdk.home.1.7}"/>
+    <property name="project.jdk.bin" value="${jdk.bin.1.7}"/>
+    <property name="project.jdk.classpath" value="jdk.classpath.1.7"/>
+
+
+    <!-- Application Server Libraries -->
+
+    <!-- Modules -->
+
+
+    <!-- Module ObjC2J -->
+
+    <dirname property="module.objc2j.basedir" file="${ant.file}"/>
+
+
+    <property name="module.jdk.home.objc2j" value="${project.jdk.home}"/>
+    <property name="module.jdk.bin.objc2j" value="${project.jdk.bin}"/>
+    <property name="module.jdk.classpath.objc2j" value="${project.jdk.classpath}"/>
+
+    <property name="compiler.args.objc2j" value="${compiler.args}"/>
+
+    <property name="objc2j.output.dir" value="${module.objc2j.basedir}/out/production/ObjC2J"/>
+    <property name="objc2j.testoutput.dir" value="${module.objc2j.basedir}/out/test/ObjC2J"/>
+
+    <path id="objc2j.module.bootclasspath">
+        <!-- Paths to be included in compilation bootclasspath -->
+    </path>
+
+    <path id="objc2j.module.production.classpath">
+        <path refid="${module.jdk.classpath.objc2j}"/>
+        <pathelement location="${basedir}/../libs/commons-io-2.0.1.jar"/>
+        <pathelement location="${basedir}/../libs/antlr-3.4-complete.jar"/>
+        <pathelement location="${basedir}/../libs/ant.jar"/>
+    </path>
+
+    <path id="objc2j.runtime.production.module.classpath">
+        <pathelement location="${objc2j.output.dir}"/>
+        <pathelement location="${basedir}/../libs/commons-io-2.0.1.jar"/>
+        <pathelement location="${basedir}/../libs/antlr-3.4-complete.jar"/>
+        <pathelement location="${basedir}/../libs/ant.jar"/>
+    </path>
+
+    <path id="objc2j.module.classpath">
+        <path refid="${module.jdk.classpath.objc2j}"/>
+        <pathelement location="${objc2j.output.dir}"/>
+        <pathelement location="${basedir}/../libs/commons-io-2.0.1.jar"/>
+        <pathelement location="${basedir}/../libs/antlr-3.4-complete.jar"/>
+        <pathelement location="${basedir}/../libs/ant.jar"/>
+    </path>
+
+    <path id="objc2j.runtime.module.classpath">
+        <pathelement location="${objc2j.testoutput.dir}"/>
+        <pathelement location="${objc2j.output.dir}"/>
+        <pathelement location="${basedir}/../libs/commons-io-2.0.1.jar"/>
+        <pathelement location="${basedir}/../libs/antlr-3.4-complete.jar"/>
+        <pathelement location="${basedir}/../libs/ant.jar"/>
+    </path>
+
+
+    <patternset id="excluded.from.module.objc2j">
+        <patternset refid="ignored.files"/>
+    </patternset>
+
+    <patternset id="excluded.from.compilation.objc2j">
+        <patternset refid="excluded.from.module.objc2j"/>
+    </patternset>
+
+    <path id="objc2j.module.sourcepath">
+        <dirset dir="${module.objc2j.basedir}">
+            <include name="src"/>
+        </dirset>
+    </path>
+
+    <path id="objc2j.module.test.sourcepath">
+        <dirset dir="${module.objc2j.basedir}">
+            <include name="tests"/>
+        </dirset>
+    </path>
+
+
+    <target name="compile.module.objc2j"
+            depends="compile.module.objc2j.production,compile.module.objc2j.tests"
+            description="Compile module ObjC2J"/>
+
+    <target name="compile.module.objc2j.production"
+            description="Compile module ObjC2J; production classes">
+        <mkdir dir="${objc2j.output.dir}"/>
+        <javac destdir="${objc2j.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}"
+               memorymaximumsize="${compiler.max.memory}" fork="true"
+               executable="${module.jdk.bin.objc2j}/javac">
+            <compilerarg line="${compiler.args.objc2j}"/>
+            <bootclasspath refid="objc2j.module.bootclasspath"/>
+            <classpath refid="objc2j.module.production.classpath"/>
+            <src refid="objc2j.module.sourcepath"/>
+            <patternset refid="excluded.from.compilation.objc2j"/>
+        </javac>
+
+        <copy todir="${objc2j.output.dir}">
+            <fileset dir="${module.objc2j.basedir}/src">
+                <patternset refid="compiler.resources"/>
+                <type type="file"/>
+            </fileset>
+        </copy>
+    </target>
+
+    <target name="compile.module.objc2j.tests" depends="compile.module.objc2j.production"
+            description="compile module ObjC2J; test classes" unless="skip.tests">
+        <mkdir dir="${objc2j.testoutput.dir}"/>
+        <javac destdir="${objc2j.testoutput.dir}" debug="${compiler.debug}"
+               nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true"
+               executable="${module.jdk.bin.objc2j}/javac">
+            <compilerarg line="${compiler.args.objc2j}"/>
+            <bootclasspath refid="objc2j.module.bootclasspath"/>
+            <classpath refid="objc2j.module.classpath"/>
+            <src refid="objc2j.module.test.sourcepath"/>
+            <patternset refid="excluded.from.compilation.objc2j"/>
+        </javac>
+
+        <copy todir="${objc2j.testoutput.dir}">
+            <fileset dir="${module.objc2j.basedir}/tests">
+                <patternset refid="compiler.resources"/>
+                <type type="file"/>
+            </fileset>
+        </copy>
+    </target>
+
+    <target name="clean.module.objc2j" description="cleanup module">
+        <delete dir="${objc2j.output.dir}"/>
+        <delete dir="${objc2j.testoutput.dir}"/>
+    </target>
+
+    <taskdef name="Antlr3PostProcess" classname="ru.andremoniy.objctojavacnv.antlr.output.Antlr3PostProcess" classpathref="objc2j.runtime.module.classpath"/>
+
+    <target name="init" description="Build initialization">
+
+        <replace file="src/ru/andremoniy/objctojavacnv/antlr/output/ObjcmParser.java"
+                 token="public static final String[] tokenNames" value="public final String[] tokenNames"/>
+        <replace file="src/ru/andremoniy/objctojavacnv/antlr/output/ObjcmParser.java" token="ObjcmParser.tokenNames"
+                 value="tokenNames"/>
+        <Antlr3PostProcess oldTarget="src/ru/andremoniy/objctojavacnv/antlr/output/ObjcmParser.java"
+                           pkg="ru.andremoniy.objctojavacnv.antlr.output">
+        </Antlr3PostProcess>
+    </target>
+
+    <target name="clean" depends="clean.module.objc2j" description="cleanup all"/>
+
+    <target name="build.modules" depends="init, clean, compile.module.objc2j" description="build all modules"/>
+
+    <target name="all" depends="build.modules" description="build all"/>
+</project>

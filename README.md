@@ -2,6 +2,8 @@
 book code
 
 -  https://github.com/Paolo-Maffei/OpenNT
+-  https://github.com/Microsoft/Windows-classic-samples
+-  https://github.com/uri247/Win81Desktop
 
 
 ## Windows 基础编程技术

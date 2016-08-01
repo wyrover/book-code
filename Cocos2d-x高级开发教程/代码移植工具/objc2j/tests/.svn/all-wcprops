@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/!svn/ver/41/trunk/objc2j/tests
+END
+TestNumberConvertion.java
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/25/trunk/objc2j/tests/TestNumberConvertion.java
+END
+TestSwitch.java
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/3/trunk/objc2j/tests/TestSwitch.java
+END
+TestPreprocessor.java
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/17/trunk/objc2j/tests/TestPreprocessor.java
+END
+TestEnums.java
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/3/trunk/objc2j/tests/TestEnums.java
+END
+TestConverter.java
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/41/trunk/objc2j/tests/TestConverter.java
+END
+TestTokenizer.java
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/3/trunk/objc2j/tests/TestTokenizer.java
+END
+TestClassCreation.java
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/16/trunk/objc2j/tests/TestClassCreation.java
+END

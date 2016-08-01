@@ -1,0 +1,6 @@
+Objective-C to C++ Converter Plugin for Sublime
+Author: ankstoo [https://bitbucket.org/ankstoo]
+
+This is a plugin for Sublim Text 2. It can convert Objective-C code into C++.
+
+Webpage: https://bitbucket.org/ankstoo/sublime-objc2cpp/src

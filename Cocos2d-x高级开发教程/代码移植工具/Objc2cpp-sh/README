@@ -1,0 +1,20 @@
+Objective-C to C++ Converter
+
+Author: stevetranby [https://gist.github.com/stevetranby]
+
+
+Description:
+
+-remember to chmod +x each script
+-scripts were tested using OSX terminal
+
+objc2cpp.sh - does a find/replace on a single file passed in as argument
+objc2all.sh - loops through the files in the current directory, then passes each to the objc2cpp.sh script
+
+Usage: objc2cpp.sh [filename]
+
+objc2all.sh - is a wrapper to call objc2cpp.sh for each file in the current directory
+
+
+Webpage: https://gist.github.com/2489248
+

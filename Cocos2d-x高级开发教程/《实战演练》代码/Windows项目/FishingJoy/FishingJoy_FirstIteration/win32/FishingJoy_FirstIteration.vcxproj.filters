@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Classes">
+      <UniqueIdentifier>{f00692b1-8746-4cf8-8282-13497cfd1082}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="win32">
+      <UniqueIdentifier>{f2a478b7-974d-497e-b2ae-076a69095342}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Classes\AppDelegate.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\BackgroundLayer.cpp" />
+    <ClCompile Include="..\Bullet.cpp" />
+    <ClCompile Include="..\Cannon.cpp" />
+    <ClCompile Include="..\CannonLayer.cpp" />
+    <ClCompile Include="..\Fish.cpp" />
+    <ClCompile Include="..\FishingJoyData.cpp" />
+    <ClCompile Include="..\FishingNet.cpp" />
+    <ClCompile Include="..\FishLayer.cpp" />
+    <ClCompile Include="..\GameScene.cpp" />
+    <ClCompile Include="..\MenuLayer.cpp" />
+    <ClCompile Include="..\PanelLayer.cpp" />
+    <ClCompile Include="..\StaticData.cpp" />
+    <ClCompile Include="..\Weapon.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Classes\AppDelegate.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="main.h">
+      <Filter>win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\BackgroundLayer.h" />
+    <ClInclude Include="..\Bullet.h" />
+    <ClInclude Include="..\Cannon.h" />
+    <ClInclude Include="..\CannonLayer.h" />
+    <ClInclude Include="..\Fish.h" />
+    <ClInclude Include="..\FishingJoyData.h" />
+    <ClInclude Include="..\FishingNet.h" />
+    <ClInclude Include="..\FishLayer.h" />
+    <ClInclude Include="..\GameScene.h" />
+    <ClInclude Include="..\MenuLayer.h" />
+    <ClInclude Include="..\PanelLayer.h" />
+    <ClInclude Include="..\StaticData.h" />
+    <ClInclude Include="..\Weapon.h" />
+  </ItemGroup>
+</Project>

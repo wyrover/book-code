@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="win32">
+      <UniqueIdentifier>{642b31ae-7f09-4dbb-b48a-d8024e6e56dc}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\BackgroundLayer.cpp" />
+    <ClCompile Include="..\Bullet.cpp" />
+    <ClCompile Include="..\Cannon.cpp" />
+    <ClCompile Include="..\CannonLayer.cpp" />
+    <ClCompile Include="..\Fish.cpp" />
+    <ClCompile Include="..\FishingJoyData.cpp" />
+    <ClCompile Include="..\FishingNet.cpp" />
+    <ClCompile Include="..\FishLayer.cpp" />
+    <ClCompile Include="..\GameScene.cpp" />
+    <ClCompile Include="..\MenuLayer.cpp" />
+    <ClCompile Include="..\PanelLayer.cpp" />
+    <ClCompile Include="..\StaticData.cpp" />
+    <ClCompile Include="..\TouchLayer.cpp" />
+    <ClCompile Include="..\Weapon.cpp" />
+    <ClCompile Include="main.cpp">
+      <Filter>win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\AppDelegate.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\BackgroundLayer.h" />
+    <ClInclude Include="..\Bullet.h" />
+    <ClInclude Include="..\Cannon.h" />
+    <ClInclude Include="..\CannonLayer.h" />
+    <ClInclude Include="..\Fish.h" />
+    <ClInclude Include="..\FishingJoyData.h" />
+    <ClInclude Include="..\FishingNet.h" />
+    <ClInclude Include="..\FishLayer.h" />
+    <ClInclude Include="..\GameScene.h" />
+    <ClInclude Include="..\MenuLayer.h" />
+    <ClInclude Include="..\PanelLayer.h" />
+    <ClInclude Include="..\StaticData.h" />
+    <ClInclude Include="..\TouchLayer.h" />
+    <ClInclude Include="..\Weapon.h" />
+    <ClInclude Include="main.h">
+      <Filter>win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AppDelegate.h" />
+  </ItemGroup>
+</Project>

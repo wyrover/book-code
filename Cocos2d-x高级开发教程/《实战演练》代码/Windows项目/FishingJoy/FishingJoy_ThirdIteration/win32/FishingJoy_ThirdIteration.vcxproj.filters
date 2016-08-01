@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\BackgroundLayer.cpp" />
+    <ClCompile Include="..\Bullet.cpp" />
+    <ClCompile Include="..\Cannon.cpp" />
+    <ClCompile Include="..\CannonLayer.cpp" />
+    <ClCompile Include="..\Counter.cpp" />
+    <ClCompile Include="..\Fish.cpp" />
+    <ClCompile Include="..\FishingJoyData.cpp" />
+    <ClCompile Include="..\FishingNet.cpp" />
+    <ClCompile Include="..\FishLayer.cpp" />
+    <ClCompile Include="..\GameScene.cpp" />
+    <ClCompile Include="..\GoldCounterLayer.cpp" />
+    <ClCompile Include="..\MenuLayer.cpp" />
+    <ClCompile Include="..\PanelLayer.cpp" />
+    <ClCompile Include="..\PersonalAudioEngine.cpp" />
+    <ClCompile Include="..\ScheduleCountDown.cpp" />
+    <ClCompile Include="..\StaticData.cpp" />
+    <ClCompile Include="..\TouchLayer.cpp" />
+    <ClCompile Include="..\Weapon.cpp" />
+    <ClCompile Include="..\Classes\AppDelegate.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="main.h">
+      <Filter>win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\BackgroundLayer.h" />
+    <ClInclude Include="..\Bullet.h" />
+    <ClInclude Include="..\Cannon.h" />
+    <ClInclude Include="..\CannonLayer.h" />
+    <ClInclude Include="..\Counter.h" />
+    <ClInclude Include="..\Fish.h" />
+    <ClInclude Include="..\FishingJoyData.h" />
+    <ClInclude Include="..\FishingNet.h" />
+    <ClInclude Include="..\FishLayer.h" />
+    <ClInclude Include="..\GameScene.h" />
+    <ClInclude Include="..\GoldCounterLayer.h" />
+    <ClInclude Include="..\MenuLayer.h" />
+    <ClInclude Include="..\PanelLayer.h" />
+    <ClInclude Include="..\PersonalAudioEngine.h" />
+    <ClInclude Include="..\ScheduleCountDown.h" />
+    <ClInclude Include="..\ScheduleCounterProtocol.h" />
+    <ClInclude Include="..\StaticData.h" />
+    <ClInclude Include="..\TouchLayer.h" />
+    <ClInclude Include="..\Weapon.h" />
+    <ClInclude Include="..\Classes\AppDelegate.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="win32">
+      <UniqueIdentifier>{50db7831-4478-41eb-aa1f-76ae355562c8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
