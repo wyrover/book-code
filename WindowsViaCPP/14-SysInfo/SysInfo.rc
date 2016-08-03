@@ -1,0 +1,120 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "Resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "Windows.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "Resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""Windows.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_SYSINFO DIALOGEX 18, 18, 210, 97
+STYLE DS_SETFONT | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Sys Info"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    RTEXT           "Processor Architecture:",IDC_STATIC,8,4,88,8,SS_NOPREFIX
+    RTEXT           "ID_PROCARCH",IDC_PROCARCH,111,4,84,8,SS_NOPREFIX
+    RTEXT           "Processor level:",IDC_STATIC,8,14,88,8,SS_NOPREFIX
+    RTEXT           "ID_PROCLEVEL",IDC_PROCLEVEL,111,14,84,8,SS_NOPREFIX
+    RTEXT           "Processor revision:",IDC_STATIC,8,24,88,8,SS_NOPREFIX
+    RTEXT           "ID_PROCREV",IDC_PROCREV,111,24,84,8,SS_NOPREFIX
+    RTEXT           "Number of processors:",IDC_STATIC,8,34,88,8,SS_NOPREFIX
+    RTEXT           "ID_NUMOFPROCS",IDC_NUMOFPROCS,111,34,84,8,SS_NOPREFIX
+    RTEXT           "Active processor mask:",IDC_STATIC,8,44,88,8,SS_NOPREFIX
+    RTEXT           "ID_ACTIVEPROCMASK",IDC_ACTIVEPROCMASK,111,44,84,8,SS_NOPREFIX
+    RTEXT           "Allocation granularity:",IDC_STATIC,8,54,88,8,SS_NOPREFIX
+    RTEXT           "ID_ALLOCGRAN",IDC_ALLOCGRAN,111,54,84,8,SS_NOPREFIX
+    RTEXT           "Page size:",IDC_STATIC,8,64,88,8,SS_NOPREFIX
+    RTEXT           "ID_PAGESIZE",IDC_PAGESIZE,111,64,84,8,SS_NOPREFIX
+    RTEXT           "Minimum app. address:",IDC_STATIC,8,74,88,8,SS_NOPREFIX
+    RTEXT           "ID_MINAPPADDR",IDC_MINAPPADDR,111,74,84,8,SS_NOPREFIX
+    RTEXT           "Maximum app. address:",IDC_STATIC,8,84,88,8,SS_NOPREFIX
+    RTEXT           "ID_MAXAPPADDR",IDC_MAXAPPADDR,111,84,84,8,SS_NOPREFIX
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_SYSINFO             ICON                    "SysInfo.Ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_SYSINFO, DIALOG
+    BEGIN
+        RIGHTMARGIN, 194
+        BOTTOMMARGIN, 77
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

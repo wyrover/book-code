@@ -1,0 +1,100 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "Resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "Windows.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "Resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""Windows.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_SPREADSHEET DIALOG DISCARDABLE  18, 18, 164, 165
+STYLE DS_CENTER | WS_MINIMIZEBOX | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Spreadsheet"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Cell size:\nRows:\nColumns:\nTotal size:",IDC_STATIC,4,
+                    4,36,36
+    LTEXT           "1024 bytes\n256\n1024\n256 MB (268,435,456 bytes)",
+                    IDC_STATIC,44,4,104,36
+    LTEXT           "R&ow (0-255):",IDC_STATIC,4,56,42,8
+    EDITTEXT        IDC_ROW,60,52,40,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "&Column (0-1023):",IDC_STATIC,4,76,54,8
+    EDITTEXT        IDC_COLUMN,60,72,40,14,ES_AUTOHSCROLL | ES_NUMBER
+    PUSHBUTTON      "&Read Cell",IDC_READCELL,108,72,50,14
+    LTEXT           "&Value:",IDC_STATIC,4,96,21,8
+    EDITTEXT        IDC_VALUE,60,92,40,14,ES_AUTOHSCROLL | ES_NUMBER
+    PUSHBUTTON      "&Write Cell",IDC_WRITECELL,108,92,50,14
+    LTEXT           "Execution lo&g:",IDC_STATIC,4,118,48,8
+    EDITTEXT        IDC_LOG,4,132,156,28,ES_MULTILINE | ES_AUTOHSCROLL | 
+                    ES_READONLY
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_SPREADSHEET         ICON    DISCARDABLE     "Spreadsheet.Ico"
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,100 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "Resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "Windows.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "Resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""Windows.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_VMALLOC DIALOG DISCARDABLE  15, 24, 224, 97
+STYLE WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Virtual Memory Allocator"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Page size:",IDC_STATIC,4,6,34,8
+    CONTROL         "16 KB",IDC_PAGESIZE,"Static",SS_LEFTNOWORDWRAP | 
+                    SS_NOPREFIX | WS_GROUP,50,6,20,8
+    DEFPUSHBUTTON   "&Reserve region (50, 2KB structures)",IDC_RESERVE,80,4,
+                    140,14,WS_GROUP
+    LTEXT           "&Index (0 - 49):",IDC_INDEXTEXT,4,26,45,8
+    EDITTEXT        IDC_INDEX,56,24,16,12
+    PUSHBUTTON      "&Use",IDC_USE,80,24,32,14
+    PUSHBUTTON      "&Clear",IDC_CLEAR,116,24,32,14
+    PUSHBUTTON      "&Garbage collect",IDC_GARBAGECOLLECT,160,24,60,14
+    GROUPBOX        "Memory map",IDC_STATIC,4,42,216,52
+    CONTROL         "",IDC_MEMMAP,"Static",SS_BLACKRECT,8,58,208,16
+    LTEXT           "White: Free",IDC_STATIC,8,80,39,8
+    CTEXT           "Grey: Reserved",IDC_STATIC,82,80,52,8
+    RTEXT           "Black: Committed",IDC_STATIC,155,80,58,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_VMALLOC             ICON    DISCARDABLE     "VMAlloc.Ico"
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

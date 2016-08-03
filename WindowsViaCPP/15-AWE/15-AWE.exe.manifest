@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0"> 
+  <!-- 
+    Set which privileges are required. 
+      level="requireAdministrator":
+        require elevation of privileges to Administrator level,
+        so prompt for Administrator credential if the logged in user
+        is not administrator.
+      level="highestAvailable"
+        run with the highest available privileges if elevation is accepted,
+        but don't prompt for Administrator credential if the logged in user
+        is not an Administrator.
+      level="asInvoker"
+        don't want to be elevated but UAC is expected,
+        so no virtualization to registry and file system.
+  -->
+  <v3:trustInfo xmlns:v3="urn:schemas-microsoft-com:asm.v3">
+    <v3:security>
+      <v3:requestedPrivileges>
+        <v3:requestedExecutionLevel level="highestAvailable" />
+      </v3:requestedPrivileges>
+    </v3:security>
+  </v3:trustInfo>
+</assembly>
