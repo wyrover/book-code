@@ -1,0 +1,137 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "Resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_LISLAB              ICON    DISCARDABLE     "LISLab.Ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_LISLAB DIALOG DISCARDABLE  12, 38, 286, 178
+STYLE WS_MINIMIZEBOX | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Local Input State Lab"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Windows",IDC_STATIC,4,0,192,56
+    LTEXT           "Focus:",IDC_STATIC,8,12,23,8
+    LTEXT           "Focus window info",IDC_WNDFOCUS,52,12,140,8
+    LTEXT           "Active:",IDC_STATIC,8,20,24,8
+    LTEXT           "Active window info",IDC_WNDACTIVE,52,20,140,8
+    LTEXT           "Foreground:",IDC_STATIC,8,28,40,8
+    LTEXT           "Foreground window info",IDC_WNDFOREGROUND,52,28,140,8
+    LTEXT           "Capture:",IDC_STATIC,8,36,29,8
+    LTEXT           "Capture window info",IDC_WNDCAPTURE,52,36,140,8
+    LTEXT           "Clip Cursor:",IDC_STATIC,8,44,39,8
+    LTEXT           "Cursor clipping info",IDC_CLIPCURSOR,52,44,140,8
+    LTEXT           "&Function:",IDC_STATIC,200,4,32,8
+    COMBOBOX        IDC_WNDFUNC,200,14,82,54,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "Dela&y:",IDC_FUNCSTART,200,30,26,12
+    EDITTEXT        IDC_DELAY,228,30,24,12,ES_AUTOHSCROLL
+    LTEXT           "Executed",IDC_EVENTPENDING,252,32,32,10
+    LTEXT           "PrevWnd:",IDC_STATIC,200,46,34,8
+    LTEXT           "Previous window info",IDC_PREVWND,208,54,76,18
+    LTEXT           "&Notepad windows and Self:",IDC_STATIC,4,62,90,8
+    LISTBOX         IDC_WNDS,4,72,192,32,WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "&Attach to Notepad",IDC_THREADATTACH,200,72,80,12
+    PUSHBUTTON      "&Detach from Notepad",IDC_THREADDETACH,200,88,80,12
+    LTEXT           "&Mouse messages received:",IDC_STATIC,4,102,89,8
+    LISTBOX         IDC_MOUSEMSGS,4,112,192,32,WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Click right mouse button to set capture.\n\nDouble-click right mouse button to release capture.",
+                    IDC_STATIC,200,110,80,40
+    LTEXT           "Clipping rect:",IDC_STATIC,4,148,44,8
+    PUSHBUTTON      "&Top, left",IDC_SETCLIPRECT,56,146,56,12
+    PUSHBUTTON      "&Remove",IDC_REMOVECLIPRECT,116,146,56,12
+    LTEXT           "Cursor visibility:",IDC_STATIC,4,164,47,8
+    PUSHBUTTON      "&Hide",IDC_HIDECURSOR,56,162,56,12
+    PUSHBUTTON      "&Show",IDC_SHOWCURSOR,116,162,56,12
+    PUSHBUTTON      "&Infinite loop",IDC_INFINITELOOP,200,162,80,12,WS_GROUP | 
+                    NOT WS_TABSTOP
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "Resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_LISLAB, DIALOG
+    BEGIN
+        RIGHTMARGIN, 283
+        BOTTOMMARGIN, 170
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

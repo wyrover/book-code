@@ -1,0 +1,11 @@
+[InstallShield Silent]
+Version=v5.00.000
+File=Log File
+
+[Application]
+Name=BooksOnline\Microsoft Running office SBE
+Version=1.00.000
+Company=Microsoft
+
+[ResponseResult]
+ResultCode=0

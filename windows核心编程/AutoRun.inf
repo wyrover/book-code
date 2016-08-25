@@ -1,0 +1,38 @@
+[AutoRun]
+Open=Setup\PressCDx86.exe exedir=Setup
+Icon=Setup\PressCDx86.exe
+
+Shell\SetupCode=Install &code and apps
+Shell\SetupCode\command=Setup\x86\Setup.exe
+
+Shell\SetupBook=Install &EBook
+Shell\SetupBook\command=Setup\EBook\x86\AutoRun.exe
+
+Shell\JeffWebSite=&Jeffrey Richter's Web Site
+Shell\JeffWebSite\command=Setup\PressCDx86.exe openit=http://www.JeffreyRichter.com/
+
+Shell\SolomonWebSite=Jeffrey Richter's &Seminars
+Shell\SolomonWebSite\command=Setup\PressCDx86.exe openit=http://www.SolSem.com/
+
+Shell\MSPressWebSite=&Microsoft Press Support
+Shell\MSPressWebSite\command=Setup\PressCDx86.exe openit=http://MSPress.Microsoft.com/Support/
+
+
+[AutoRun.Alpha]
+Open=Setup\PressCDalpha.exe exedir=Setup
+Icon=Setup\PressCDalpha.exe
+
+Shell\SetupCode=Install &code and apps
+Shell\SetupCode\command=Setup\Alpha32\Setup.exe
+
+Shell\SetupBook=&EBook
+Shell\SetupBook\command=Setup\EBook\Alpha32\EBook.htm
+
+Shell\JeffWebSite=&Jeffrey Richter's Web Site
+Shell\JeffWebSite\command=Setup\PressCDalpha.exe openit=http://www.JeffreyRichter.com/
+
+Shell\SolomonWebSite=Jeffrey Richter's &Seminars
+Shell\SolomonWebSite\command=Setup\PressCDalpha.exe openit=http://www.SolSem.com/
+
+Shell\MSPressWebSite=&Microsoft Press Support
+Shell\MSPressWebSite\command=Setup\PressCDalpha.exe openit=http://MSPress.Microsoft.com/Support/

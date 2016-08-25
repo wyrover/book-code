@@ -1,0 +1,3 @@
+Important Note
+===============
+Do not launch IE5SETUP.EXE from this directory. This is a customized version of Internet Explorer that may not install correctly unless launched through autorun.exe located in the directory one level above this one.

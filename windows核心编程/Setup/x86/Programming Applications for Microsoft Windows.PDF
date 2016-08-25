@@ -1,0 +1,250 @@
+[PDF]
+Version = 1.1
+
+
+[Package Definition]
+Product = Programming Applications for Microsoft Windows
+Version = 4.0.0.0000
+Comment = 
+SetupVariations = Setup
+
+
+[SetupVariations Setup]
+CommandName = Automated Minimum Installation
+CommandLine = msiexec /m Programming Applications for Microsoft Windows.mif /qn /I Programming Applications for Microsoft Windows.msi
+UserInputRequired = FALSE
+SynchronousSystemExitRequired = FALSE
+SupportedPlatforms = Windows, Windows NT (Intel)
+
+
+[Setp Package for Inventory]
+InventoryThisPackage = TRUE
+Detection Rule Part1 = File1
+Detection Rule Part2 = AND
+Detection Rule Part3 = File2
+Detection Rule Part4 = AND
+Detection Rule Part5 = File3
+Detection Rule Part6 = AND
+Detection Rule Part7 = File4
+Detection Rule Part8 = AND
+Detection Rule Part9 = File5
+Detection Rule Part10 = AND
+Detection Rule Part11 = File6
+Detection Rule Part12 = AND
+Detection Rule Part13 = File7
+Detection Rule Part14 = AND
+Detection Rule Part15 = File8
+Detection Rule Part16 = AND
+Detection Rule Part17 = File9
+Detection Rule Part18 = AND
+Detection Rule Part19 = File10
+Detection Rule Part20 = AND
+Detection Rule Part21 = File11
+Detection Rule Part22 = AND
+Detection Rule Part23 = File12
+Detection Rule Part24 = AND
+Detection Rule Part25 = File13
+Detection Rule Part26 = AND
+Detection Rule Part27 = File14
+Detection Rule Part28 = AND
+Detection Rule Part29 = File15
+Detection Rule Part30 = AND
+Detection Rule Part31 = File16
+Detection Rule Part32 = AND
+Detection Rule Part33 = File17
+Detection Rule Part34 = AND
+Detection Rule Part35 = File18
+Detection Rule Part36 = AND
+Detection Rule Part37 = File19
+Detection Rule Part38 = AND
+Detection Rule Part39 = File20
+Detection Rule Part40 = AND
+Detection Rule Part41 = File21
+Detection Rule Part42 = AND
+Detection Rule Part43 = File22
+Detection Rule Part44 = AND
+Detection Rule Part45 = File23
+Detection Rule Part46 = AND
+Detection Rule Part47 = File24
+Detection Rule Part48 = AND
+Detection Rule Part49 = File25
+Detection Rule Part50 = AND
+Detection Rule Part51 = File26
+Detection Rule Part52 = AND
+Detection Rule Part53 = File27
+Detection Rule Part54 = AND
+Detection Rule Part55 = File28
+Detection Rule Part56 = AND
+Detection Rule Part57 = File29
+Detection Rule Part58 = AND
+Detection Rule Part59 = File30
+Detection Rule Part60 = AND
+Detection Rule Part61 = File31
+Detection Rule Part62 = AND
+Detection Rule Part63 = File32
+Detection Rule Part64 = AND
+Detection Rule Part65 = File33
+Detection Rule Part66 = AND
+Detection Rule Part67 = File34
+Detection Rule Part68 = AND
+Detection Rule Part69 = File35
+Detection Rule Part70 = AND
+Detection Rule Part71 = File36
+Detection Rule Part72 = AND
+Detection Rule Part73 = File37
+Detection Rule Part74 = AND
+Detection Rule Part75 = File38
+
+
+[File1]
+Filename = Programming Applications.dsw
+
+
+[File2]
+Filename = 01 ErrorShow.dsp
+
+
+[File3]
+Filename = 04 ProcessInfo.dsp
+
+
+[File4]
+Filename = 05 JobLab.dsp
+
+
+[File5]
+Filename = 07 SchedLab.dsp
+
+
+[File6]
+Filename = 09 Handshake.dsp
+
+
+[File7]
+Filename = 09 Queue.dsp
+
+
+[File8]
+Filename = 10 InterlockedType.dsp
+
+
+[File9]
+Filename = 10 Optex.dsp
+
+
+[File10]
+Filename = 10 SWMRG.dsp
+
+
+[File11]
+Filename = 10 WaitForMultExp.dsp
+
+
+[File12]
+Filename = 11 TimedMsgBox.dsp
+
+
+[File13]
+Filename = 12 Counter.dsp
+
+
+[File14]
+Filename = 14 SysInfo.dsp
+
+
+[File15]
+Filename = 14 VMMap.dsp
+
+
+[File16]
+Filename = 14 VMStat.dsp
+
+
+[File17]
+Filename = 15 AWE.dsp
+
+
+[File18]
+Filename = 15 MemReset.dsp
+
+
+[File19]
+Filename = 15 VMAlloc.dsp
+
+
+[File20]
+Filename = 16 Summation.dsp
+
+
+[File21]
+Filename = 17 AppInst.dsp
+
+
+[File22]
+Filename = 17 FileRev.dsp
+
+
+[File23]
+Filename = 17 MMFShare.dsp
+
+
+[File24]
+Filename = 17 MMFSparse.dsp
+
+
+[File25]
+Filename = 20 DelayLoadApp.dsp
+
+
+[File26]
+Filename = 20 DelayLoadLib.dsp
+
+
+[File27]
+Filename = 22 DIPS.dsp
+
+
+[File28]
+Filename = 22 DIPSLib.dsp
+
+
+[File29]
+Filename = 22 ImgWalk.dsp
+
+
+[File30]
+Filename = 22 InjLib.dsp
+
+
+[File31]
+Filename = 22 LastMsgBoxInfo.dsp
+
+
+[File32]
+Filename = 22 LastMsgBoxInfoLib.dsp
+
+
+[File33]
+Filename = 23 SEHTerm.dsp
+
+
+[File34]
+Filename = 25 Spreadsheet.dsp
+
+
+[File35]
+Filename = 26 CopyData.dsp
+
+
+[File36]
+Filename = 27 LISLab.dsp
+
+
+[File37]
+Filename = 27 LISWatch.dsp
+
+
+[File38]
+Filename = License Agreement.rtf
+
+
