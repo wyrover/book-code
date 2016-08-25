@@ -1,0 +1,9 @@
+BUILD: Computing Include file dependencies:
+BUILD: Examining c:\winddk\6000\chapter18\sdio_driver directory for files to compile.
+before AssemblyIdentity_AfterReadAllSources
+after AssemblyIdentity_AfterReadAllSources
+skipping post pass 0 command
+Compiling and Linking c:\winddk\6000\chapter18\sdio_driver *************
+'nmake.exe /nologo BUILDMSG=Stop. -i BUILD_PASS=PASS2 LINKONLY=1 NOPASS0=1 MAKEDIR_RELATIVE_TO_BASEDIR=chapter18\sdio_driver MAKEDIR_LOWERCASE=c:\winddk\6000\chapter18\sdio_driver'
+c:\winddk\6000\chapter18\sdio_driver: TARGETPATH is OBJ
+BUILDMSG: _NT_TARGET_VERSION SET TO WINXP

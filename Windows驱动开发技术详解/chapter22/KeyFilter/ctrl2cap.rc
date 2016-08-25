@@ -1,0 +1,27 @@
+#include <windows.h>
+
+#define VER_DEBUG                   0
+#define VER_PRERELEASE              0
+#define VER_FILEFLAGSMASK           VS_FFI_FILEFLAGSMASK
+#define VER_FILEOS                  VOS_NT_WINDOWS32
+#define VER_FILEFLAGS               (VER_PRERELEASE|VER_DEBUG)
+
+#define VER_FILETYPE    VFT_DRV
+#define VER_FILESUBTYPE VFT2_DRV_SYSTEM
+
+#define VER_COMPANYNAME_STR         "Systems Internals"
+#define VER_PRODUCTNAME_STR         "Ctrl2cap"
+#define VER_LEGALCOPYRIGHT_YEARS    "1996-1999"
+#define VER_LEGALCOPYRIGHT_STR      "Copyright (C) M. Russinovich" VER_LEGALCOPYRIGHT_YEARS
+#define VER_LEGALTRADEMARKS_STR     "Copyright (C) 1996-1999 Mark Russinovich"
+
+#define VER_PRODUCTVERSION          2,00,00,00
+#define VER_PRODUCTVERSION_STR      "2.00"
+#define VER_PRODUCTVERSION_W        (0x02000)
+#define VER_PRODUCTVERSION_DW       (0x02000)
+#define VER_FILEDESCRIPTION_STR     "Windows NT Caps-lock Ctrl Swapper"
+#define VER_INTERNALNAME_STR        "ctrl2cap.sys"
+#define VER_ORIGINALFILENAME_STR    "ctrl2cap.Sys"
+
+#include "common.ver"
+

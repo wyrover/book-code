@@ -1,0 +1,137 @@
+BUILD: Computing Include file dependencies:
+BUILD: Examining c:\winddk\6000\sdio_client directory for files to compile.
+before AssemblyIdentity_AfterReadAllSources
+after AssemblyIdentity_AfterReadAllSources
+skipping post pass 0 command
+Compiling and Linking c:\winddk\6000\sdio_client *************
+'nmake.exe /nologo BUILDMSG=Stop. -i BUILD_PASS=PASS2 LINKONLY=1 NOPASS0=1 MAKEDIR_RELATIVE_TO_BASEDIR=sdio_client MAKEDIR_LOWERCASE=c:\winddk\6000\sdio_client'
+c:\winddk\6000\sdio_client: TARGETPATH is OBJ
+BUILDMSG: _NT_TARGET_VERSION SET TO WS03
+	cl.exe @c:\winddk\6000\sdio_client\objchk_wnet_x86\i386\cl.rsp
+Microsoft (R) 32-bit C/C++ Optimizing Compiler Version 14.00.50727.220 for 80x86
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+cl /Fo"c:\winddk\6000\sdio_client\objchk_wnet_x86\i386/"
+   /FC
+   
+   /Ii386
+   /I.
+   /Ic:\winddk\6000\inc\ddk\wnet
+   /Ic:\winddk\6000\sdio_client\objchk_wnet_x86\i386
+   /IC:\WinDDK\6000\inc\api
+   /IC:\WinDDK\6000\inc\api
+   /IC:\WinDDK\6000\inc\ddk
+   /IC:\WinDDK\6000\inc\crt
+   /D_X86_=1
+   /Di386=1
+   
+   /DSTD_CALL
+   /DCONDITION_HANDLING=1
+   
+   
+   /DNT_INST=0
+   /DWIN32=100
+   /D_NT1X_=100
+   /DWINNT=1
+   /D_WIN32_WINNT=0x0502
+   /DWINVER=0x0502
+   /D_WIN32_IE=0x0603
+   
+   
+   
+   /DWIN32_LEAN_AND_MEAN=1
+   /DDEVL=1
+   /DDBG=1
+   /D__BUILDMACHINE__=WinDDK
+   /DFPO=0
+   
+   
+   /D_DLL=1
+   /DNDEBUG
+   
+   /DDEPRECATE_DDK_FUNCTIONS=1
+   /DMSC_NOOPT
+   /DNTDDI_VERSION=0x05020100
+   
+   
+   
+   
+   /c
+   /Zc:wchar_t-
+   /Zl
+   /Zp8
+   /Gy
+   /Gm-
+   -cbstring
+   /W3
+   
+   /Gz
+   
+   
+   /hotpatch
+   /EHs-c-
+   
+   /GR-
+   /GF
+   /GS
+   /Zi
+   /Od
+   /Oi
+   
+   
+   /Oy-
+   /Zi
+   /Fdc:\winddk\6000\sdio_client\objchk_wnet_x86\i386\
+   
+   
+   -DKMDF_MAJOR_VERSION=01
+   -DKMDF_MINOR_VERSION=005
+   /FIC:\WinDDK\6000\inc\api\warning.h
+   
+   
+   
+   
+   
+   .\sdiousb.cpp 
+
+sdiousb.cpp
+c:\winddk\6000\sdio_client\sdiousb.cpp(197) : warning C4996: 'ExAllocatePool' was declared deprecated
+warnings in directory c:\winddk\6000\sdio_client
+c:\winddk\6000\sdio_client\sdiousb.cpp(197) : warning C4996: 'ExAllocatePool' was declared deprecated
+        c:\winddk\6000\inc\ddk\wdm.h(14244) : see declaration of 'ExAllocatePool'
+	link.exe /out:objchk_wnet_x86\i386\HelloWDM.sys /machine:ix86 @c:\winddk\6000\sdio_client\objchk_wnet_x86\i386\nm1E4.tmp
+Microsoft (R) Incremental Linker Version 8.00.50727.220
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+/MERGE:_PAGE=PAGE 
+/MERGE:_TEXT=.text 
+/SECTION:INIT,d 
+/OPT:REF 
+/OPT:ICF 
+/IGNORE:4198,4010,4037,4039,4065,4070,4078,4087,4089,4221 
+/INCREMENTAL:NO 
+/FULLBUILD 
+/release 
+/NODEFAULTLIB 
+/WX 
+/debug 
+/debugtype:cv 
+/version:6.0 
+/osversion:6.0 
+/functionpadmin:5 
+/safeseh 
+/debug 
+/debugtype:cv,fixup 
+/pdbcompress 
+/STACK:0x40000,0x1000 
+/driver /driver:wdm 
+/base:0x10000 
+/align:0x80 /stub:c:\winddk\6000\lib\wnet\stub512.com 
+/subsystem:native,1.10 
+/entry:GsDriverEntry@8 
+/out:objchk_wnet_x86\i386\HelloWDM.sys 
+objchk_wnet_x86\i386\sdiousb.obj 
+c:\winddk\6000\lib\wnet\i386\BufferOverflowK.lib 
+c:\winddk\6000\lib\wnet\i386\wdm.lib 
+c:\winddk\6000\lib\wnet\i386\sdbus.lib 
+c:\winddk\6000\lib\wnet\i386\sehupd.lib 

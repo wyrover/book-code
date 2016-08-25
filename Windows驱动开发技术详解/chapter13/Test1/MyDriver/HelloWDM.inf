@@ -1,0 +1,107 @@
+;--------- Version Section ---------------------------------------------------
+
+[Version]
+Signature="$CHICAGO$";
+Provider=Zhangfan_Device
+DriverVer=11/1/2007,3.0.0.3
+
+; If device fits one of the standard classes, use the name and GUID here,
+; otherwise create your own device class and GUID as this example shows.
+
+Class=ZhangfanDevice
+ClassGUID={EF2962F0-0D55-4bff-B8AA-2221EE8A79B0}
+
+
+;--------- SourceDiskNames and SourceDiskFiles Section -----------------------
+
+; These sections identify source disks and files for installation. They are
+; shown here as an example, but commented out.
+
+[SourceDisksNames]
+1 = "HelloWDM",Disk1,,
+
+[SourceDisksFiles]
+HelloWDM.sys = 1,MyDriver_Check,
+
+;--------- ClassInstall/ClassInstall32 Section -------------------------------
+
+; Not necessary if using a standard class
+
+; 9X Style
+[ClassInstall]
+Addreg=Class_AddReg
+
+; NT Style
+[ClassInstall32]
+Addreg=Class_AddReg
+
+[Class_AddReg]
+HKR,,,,%DeviceClassName%
+HKR,,Icon,,"-5"
+
+;--------- DestinationDirs Section -------------------------------------------
+
+[DestinationDirs]
+YouMark_Files_Driver = 10,System32\Drivers
+
+;--------- Manufacturer and Models Sections ----------------------------------
+
+[Manufacturer]
+%MfgName%=Mfg0
+
+[Mfg0]
+
+; PCI hardware Ids use the form
+; PCI\VEN_aaaa&DEV_bbbb&SUBSYS_cccccccc&REV_dd
+;改成你自己的ID
+%DeviceDesc%=YouMark_DDI, PCI\VEN_9999&DEV_9999
+
+;---------- DDInstall Sections -----------------------------------------------
+; --------- Windows 9X -----------------
+
+; Experimentation has shown that DDInstall root names greater than 19 characters
+; cause problems in Windows 98
+
+[YouMark_DDI]
+CopyFiles=YouMark_Files_Driver
+AddReg=YouMark_9X_AddReg
+
+[YouMark_9X_AddReg]
+HKR,,DevLoader,,*ntkern
+HKR,,NTMPDriver,,HelloWDM.sys
+HKR, "Parameters", "BreakOnEntry", 0x00010001, 0
+
+; --------- Windows NT -----------------
+
+[YouMark_DDI.NT]
+CopyFiles=YouMark_Files_Driver
+AddReg=YouMark_NT_AddReg
+
+[YouMark_DDI.NT.Services]
+Addservice = HelloWDM, 0x00000002, YouMark_AddService
+
+[YouMark_AddService]
+DisplayName = %SvcDesc%
+ServiceType = 1 ; SERVICE_KERNEL_DRIVER
+StartType = 3 ; SERVICE_DEMAND_START
+ErrorControl = 1 ; SERVICE_ERROR_NORMAL
+ServiceBinary = %10%\System32\Drivers\HelloWDM.sys
+
+[YouMark_NT_AddReg]
+HKLM, "System\CurrentControlSet\Services\HelloWDM\Parameters",\
+"BreakOnEntry", 0x00010001, 0
+
+
+; --------- Files (common) -------------
+
+[YouMark_Files_Driver]
+HelloWDM.sys
+
+;--------- Strings Section ---------------------------------------------------
+
+[Strings]
+ProviderName="Zhangfan."
+MfgName="Zhangfan Soft"
+DeviceDesc="Hello World WDM!"
+DeviceClassName="Zhangfan_Device"
+SvcDesc="Zhangfan"

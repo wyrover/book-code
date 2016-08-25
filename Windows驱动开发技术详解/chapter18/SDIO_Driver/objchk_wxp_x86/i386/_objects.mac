@@ -1,0 +1,14 @@
+MUI_386_OBJECTS=
+
+386_OBJECTS= \
+ $O\sdiousb.obj
+
+
+
+
+# lowercased
+BASEDIR=c:\winddk\6000
+OBJECT_ROOT=c:\winddk\6000
+MAKEDIR_LOWERCASE=c:\winddk\6000\chapter18\sdio_driver
+MAKEDIR_RELATIVE_TO_BASEDIR=chapter18\sdio_driver
+OBJ_PATH=c:\winddk\6000\chapter18\sdio_driver

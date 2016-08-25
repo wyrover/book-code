@@ -1,0 +1,41 @@
+[Version]
+Signature=$CHICAGO$
+Provider=%MFGNAME%
+
+[DestinationDirs]
+DefaultDestDir=10,system32\drivers
+FiltJectCopyFiles=11
+
+[SourceDisksFiles]
+MyFilter.sys=1
+
+[SourceDisksNames]
+1=%INSTDISK%,,,MyFilter_Check
+
+;------------------------------------------------------------------------------
+;  Windows 2000 Sections
+;------------------------------------------------------------------------------
+
+[DefaultInstall.ntx86]
+CopyFiles=DriverCopyFiles,FiltJectCopyFiles
+
+[DriverCopyFiles]
+MyFilter.sys,,,0x60		; replace newer, suppress dialog
+
+[DefaultInstall.ntx86.services]
+AddService=MyFilter,,FilterService
+
+[FilterService]
+ServiceType=1
+StartType=3
+ErrorControl=1
+ServiceBinary=%10%\system32\drivers\MyFilter.sys
+
+;------------------------------------------------------------------------------
+;  String Definitions
+;------------------------------------------------------------------------------
+
+[Strings]
+MFGNAME="Zhangfan Software"
+INSTDISK="Zhangfan Disc"
+DESCRIPTION="Sample File Filter Driver"
