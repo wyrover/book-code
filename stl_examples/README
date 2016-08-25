@@ -1,0 +1,55 @@
+The files in this directory are source files for all examples in
+D.R. Musser and Atul Saini, STL Tutorial and Reference Guide: C++
+Programming with the Standard Template Library Addison-Wesley,
+Reading, MA, 1996. (Available now.)
+
+
+String class
+
+The header file for the string class used in many of the example
+programs (donated by Modena Software Inc.), bstring.h, is included.
+This class satisfies most of the requirements for the string class
+specified by the ANSI/ISO Draft Standard for C++, but it is not
+completely up to date with more recent changes in the Standard.
+
+
+STL source code
+
+The October 31, 1995 final release of the Hewlett-Packard STL
+implementation is available at ftp://ftp.cs.rpi.edu/pub/stl/book.
+It has been modified slightly to compile well with several major
+compilers.
+
+
+STL-Compatible Compilers
+
+The book's examples, bstring.h, and STL source code (the modified
+version available at the RPI site) have all been
+tested successfully with the following compilers:
+
+  Apogee, version 3.0 (Unix)
+  Borland C++, Version 4.5 (DOS/Windows)
+  IBM xlC (AIX)
+  IBM CSet++ (OS/2), 
+  Microsoft Visual C++, version 4.0 (DOS/Windows)
+
+The examples and bstring.h have also been tested with the Free
+Software Foundation's compiler,
+
+  GNU C++, version 2.7.2,
+
+which is available on many platforms and comes with its own adaptation
+of HP STL. All of the example programs compile and execute properly
+with this version except Examples 5-9, 6-9, 13-1, 14-1, and 16-1. 
+
+Other compilers that have been reported to be able to compile STL
+include DEC C++ 5.0, EDG C++ front-end 2.29 (several compilers based
+on it), IBM VisualAge C++ 3.0, Kuck and Associates' Photon C++,
+Metrowerk's Codewarrior 7, Rational Apex C/C++ 2.0.6 , SGI C++ 4.0,
+Sun C++ 4.1, Symantec C++ 7.2, Watcom C++ 10.5. For further
+information on STL-compatibility of these and other compilers, see
+http://www.cyberport.com/~tangent/programming/stlres.html, a Web
+site maintained by Warren Young.
+
+
+

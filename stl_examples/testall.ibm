@@ -1,0 +1,650 @@
+#!/usr/bin/csh -f
+# Script for testing all examples with the IBM xlC compiler (AIX)
+# (Assuming all example files are renamed using extension .C instead of .cpp)
+# Script for testing all examples programs with the GNU C++ Compiler
+set Compile = "xlC -I/dept/cs/include/stl"
+
+echo " "
+echo "Testing ex01-01.C"
+$Compile  ex01-01.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex01-02.C"
+$Compile  ex01-02.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex01-03.C"
+$Compile  ex01-03.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex01-04.C"
+$Compile  ex01-04.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex02-01.C"
+$Compile  ex02-01.C
+if ($status == 0) then
+  a.out 
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex02-02.C"
+$Compile  ex02-02.C
+if ($status == 0) then
+  a.out  <ex02-02.inp
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex02-03.C"
+$Compile  ex02-03.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex02-04.C"
+$Compile  ex02-04.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex02-05.C"
+$Compile  ex02-05.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex02-06.C"
+$Compile  ex02-06.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex02-07.C"
+$Compile  ex02-07.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex02-08.C"
+$Compile  ex02-08.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex02-09.C"
+$Compile  ex02-09.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex02-10.C"
+$Compile  ex02-10.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex02-11.C"
+$Compile  ex02-11.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex02-12.C"
+$Compile  ex02-12.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex02-13.C"
+$Compile  ex02-13.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex04-01.C"
+$Compile  ex04-01.C
+if ($status == 0) then
+  a.out <ex04-01.inp
+  /usr/bin/rm a.out 
+endif
+
+echo " "
+echo "Testing ex05-01.C"
+$Compile  ex05-01.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex05-02.C"
+$Compile  ex05-02.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex05-03.C random.C"
+$Compile  ex05-03.C random.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex05-04.C"
+$Compile  ex05-04.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex05-05.C"
+$Compile  ex05-05.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex05-06.C"
+$Compile  ex05-06.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex05-07.C"
+$Compile  ex05-07.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex05-08.C"
+$Compile  ex05-08.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex05-09.C"
+$Compile  ex05-09.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex05-10.C"
+$Compile  ex05-10.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex05-11.C"
+$Compile  ex05-11.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex05-12.C"
+$Compile  ex05-12.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex05-13.C tempbuf.C"
+$Compile  ex05-13.C tempbuf.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex05-14.C random.C"
+$Compile  ex05-14.C random.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex05-15.C"
+$Compile  ex05-15.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex05-16.C"
+$Compile  ex05-16.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex05-17.C"
+$Compile  ex05-17.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex05-18.C"
+$Compile  ex05-18.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex05-19.C"
+$Compile  ex05-19.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex05-20.C"
+$Compile  ex05-20.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex05-21.C"
+$Compile  ex05-21.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex05-22.C tempbuf.C"
+$Compile  ex05-22.C tempbuf.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex05-23.C"
+$Compile  ex05-23.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex05-24.C"
+$Compile  ex05-24.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex05-25.C tempbuf.C"
+$Compile  ex05-25.C tempbuf.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex05-26.C"
+$Compile  ex05-26.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex05-27.C random.C"
+$Compile  ex05-27.C random.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex05-28.C random.C"
+$Compile  ex05-28.C random.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex05-29.C"
+$Compile  ex05-29.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex05-30.C"
+$Compile  ex05-30.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex05-31.C"
+$Compile  ex05-31.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex05-32.C"
+$Compile  ex05-32.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex05-33.C"
+$Compile  ex05-33.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex05-34.C"
+$Compile  ex05-34.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex06-01.C"
+$Compile  ex06-01.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex06-02.C"
+$Compile  ex06-02.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex06-03.C"
+$Compile  ex06-03.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex06-04.C"
+$Compile  ex06-04.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex06-05.C"
+$Compile  ex06-05.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex06-06.C"
+$Compile  ex06-06.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex06-07.C"
+$Compile  ex06-07.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex06-07a.C"
+$Compile  ex06-07a.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex06-08.C"
+$Compile  ex06-08.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex06-09.C"
+$Compile  ex06-09.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex06-10.C"
+$Compile  ex06-10.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex06-11.C"
+$Compile  ex06-11.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex06-12.C"
+$Compile  ex06-12.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex06-13.C"
+$Compile  ex06-13.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex07-01.C"
+$Compile  ex07-01.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex07-02.C"
+$Compile  ex07-02.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex07-03.C"
+$Compile  ex07-03.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex07-03a.C"
+$Compile  ex07-03a.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex07-04.C"
+$Compile  ex07-04.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex07-04a.C"
+$Compile  ex07-04a.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex07-05.C"
+$Compile  ex07-05.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex07-06.C"
+$Compile  ex07-06.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex12-01.C"
+$Compile  ex12-01.C
+if ($status == 0) then
+  a.out <dictname
+  /usr/bin/rm a.out 
+endif
+
+echo " "
+echo "Testing ex13-01.C"
+$Compile  ex13-01.C
+if ($status == 0) then
+  a.out <dictname
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex14-01.C"
+$Compile  ex14-01.C
+if ($status == 0) then
+  a.out  <dictname
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex15-01.C"
+$Compile  ex15-01.C
+if ($status == 0) then
+  a.out <dictname
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex16-01.C"
+$Compile  ex16-01.C
+if ($status == 0) then
+  a.out
+  /usr/bin/rm a.out
+endif
+
+echo " "
+echo "Testing ex17-01.C shape.o screen.o"
+$Compile  -c shape.C 
+$Compile  -c screen.C 
+$Compile  ex17-01.C shape.o screen.o
+if ($status == 0) then
+  a.out >ex17-01.out
+  /usr/bin/rm shape.o
+  /usr/bin/rm screen.o
+  /usr/bin/rm a.out
+endif
+
