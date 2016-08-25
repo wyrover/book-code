@@ -1,0 +1,24 @@
+----------
+ORC SOUNDS
+----------
+
+Email:		boogieman10@hotmail.com
+
+Author:		of this sound pack: BoogieMan
+		of the actual sounds: Blizzard Entertainment
+
+Description:	These are the sounds for the orc model.  They were
+		extracted from Warcraft II: Tides of Darkness.
+
+Installation:
+
+	Unzip all the files into a sundirectory called "orc" in your
+	players directory.  You can then select the orc in the player
+	setup menu in Quake 2 and the sounds will run with it.
+
+Comments:
+
+	If you have any comments, please send them to the email address
+	mentioned above.
+
+Have fun with the new sounds!

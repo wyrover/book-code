@@ -1,0 +1,3 @@
+// texturename   filter    wrapmode envmode
+chessboard chessboard.tga BEST REPEAT MODULATE
+wood wood.tga BEST REPEAT REPLACE

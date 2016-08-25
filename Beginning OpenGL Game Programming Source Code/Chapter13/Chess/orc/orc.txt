@@ -1,0 +1,33 @@
+------------
+ORCISH GRUNT
+------------
+
+Name:		Orcish Grunt
+Author:		Andy "Boogieman" Craft
+Email:		boogieman10@hotmail.com
+
+Time spent:	about 2-3 weeks all together
+Editor:		Quake2 Model Editor v0.83
+Description:	This is the grunt from Warcraft II: Tides of Darkness.
+		I have broken him down into many pieces so I can do
+		tricks(watch his face when he stands) with the model.
+
+Installation:
+
+	Unzip all the files into a sundirectory called "orc" in your
+	players directory.  You can then select the orc in the player
+	setup menu in Quake 2.
+
+Skins:
+
+	I'm still not very good at making skins, but these skins are
+	better than the ones with my last model.  If you make any
+	skins for this model, please send them to the email address
+	mentioned above.
+
+Comments:
+
+	If you have any comments, please send the to the email address
+	mentioned above.
+
+Have fun with the grunt!
