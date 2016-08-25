@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Feldman Family Circus Animals with Schema -->
+
+<animalList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+            xsi:noNamespaceSchemaLocation="animals.xsd">
+
+    <!-- same as <link linkend="cplusplusckbk-CHP-14-EX-1">Example 14-1</link> -->
+
+</animalList>

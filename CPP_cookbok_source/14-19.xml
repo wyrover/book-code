@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Stylesheet for Feldman Family Circus Animals -->
+
+<xsl:stylesheet version="1.1" 
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <xsl:output method="html"/>            
+    <xsl:template match="/">
+        <html>
+        <head>
+            <title>Feldman Family Circus Animals</title>
+        </head>
+        <body>
+            <h1>Feldman Family Circus Animals</h1>
+            <table cellpadding="3" border="1">
+                <tr>
+                    <th>Name</th>
+                    <th>Species</th>
+                    <th>Date of Birth</th>
+                    <th>Veterinarian</th>
+                    <th>Trainer</th>
+                </tr>
+                <xsl:apply-templates match="animal">
+                </xsl:apply-templates>
+            </table>
+        </body>          
+        </html>
+    </xsl:template>  
+    <xsl:template match="animal">
+        <tr>
+            <td><xsl:value-of select="name"/></td>
+            <td><xsl:value-of select="species"/></td>
+            <td><xsl:value-of select="dateOfBirth"/></td>
+            <xsl:apply-templates select="veterinarian"/>
+            <xsl:apply-templates select="trainer"/>
+        </tr>
+    </xsl:template>  
+    <xsl:template match="veterinarian|trainer">
+        <td>
+            <table>
+                <tr>
+                    <th>name:</th>
+                    <td><xsl:value-of select="attribute::name"/></td>
+                </tr>
+                <tr>
+                    <th>phone:</th>
+                    <td><xsl:value-of select="attribute::phone"/></td>
+                </tr>
+            </table>
+        </td>
+    </xsl:template>
+</xsl:stylesheet>

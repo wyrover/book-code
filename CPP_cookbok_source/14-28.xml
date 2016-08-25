@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE boost_serialization>
+<boost_serialization signature="serialization::archive" version="3">
+<animalList class_id="0" tracking_level="0" version="0">
+    <count>3</count>
+    <item class_id="1" tracking_level="0" version="0">
+        <name>Herby</name>
+        <species>elephant</species>
+        <dateOfBirth class_id="2" tracking_level="0" version="0">
+            <date>19920423</date>
+        </dateOfBirth>
+        <veterinarian class_id="3" tracking_level="0" version="0">
+            <name>Dr. Hal Brown</name>
+            <phone>(801)595-9627</phone>
+        </veterinarian>
+        <trainer>
+            <name>Bob Fisk</name>
+            <phone>(801)881-2260</phone>
+        </trainer>
+    </item>
+    <item>
+        <name>Sheldon</name>
+        <species>parrot</species>
+        <dateOfBirth>
+            <date>19980930</date>
+        </dateOfBirth>
+        <veterinarian>
+            <name>Dr. Kevin Wilson</name>
+            <phone>(801)466-6498</phone>
+        </veterinarian>
+        <trainer>
+            <name>Eli Wendel</name>
+            <phone>(801)929-2506</phone>
+        </trainer>
+    </item>
+    <item>
+        <name>Dippy</name>
+        <species>penguin</species>
+        <dateOfBirth>
+            <date>20010608</date>
+        </dateOfBirth>
+        <veterinarian>
+            <name>Dr. Barbara Swayne</name>
+            <phone>(801)459-7746</phone>
+        </veterinarian>
+        <trainer>
+            <name>Ben Waxman</name>
+            <phone>(801)882-3549</phone>
+        </trainer>
+    </item>
+</animalList>

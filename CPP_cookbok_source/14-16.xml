@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Schema for Feldman Family Circus Animals -->
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+<xsd:element name="animalList">
+    <xsd:complexType>
+        <xsd:sequence>
+            <xsd:element name="animal" minOccurs="0" maxOccurs="unbounded">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="name" type="xsd:string"/>
+                        <xsd:element name="species" type="xsd:string"/>
+                        <xsd:element name="dateOfBirth" type="xsd:date"/>
+                        <xsd:element name="veterinarian" type="contact"/>
+                        <xsd:element name="trainer" type="contact"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:element>
+
+<xsd:complexType name="contact">
+    <xsd:attribute name="name" type="xsd:string"/>
+    <xsd:attribute name="phone" type="phone"/>
+</xsd:complexType>
+
+<xsd:simpleType name="phone">
+    <xsd:restriction base="xsd:string">
+        <xsd:pattern value="\(\d{3}\)\d{3}-\d{4}"/>
+    </xsd:restriction>
+</xsd:simpleType>
+
+</xsd:schema>

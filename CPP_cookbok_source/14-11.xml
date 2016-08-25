@@ -1,0 +1,18 @@
+<!-- DTD for Feldman Family Circus Animals -->
+
+<!ELEMENT animalList (animal+)>
+<!ELEMENT animal ( name, species, dateOfBirth, 
+                   veterinarian, trainer ) >
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT species (#PCDATA)>
+<!ELEMENT dateOfBirth (#PCDATA)>
+<!ELEMENT veterinarian EMPTY>
+<!ELEMENT trainer EMPTY>
+<!ATTLIST veterinarian
+    name  CDATA #REQUIRED
+    phone CDATA #REQUIRED
+>
+<!ATTLIST trainer
+    name  CDATA #REQUIRED
+    phone CDATA #REQUIRED
+>

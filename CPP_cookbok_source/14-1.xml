@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Feldman Family Circus Animals -->
+
+<animalList>
+    <animal>
+        <name>Herby</name>
+        <species>elephant</species>
+        <dateOfBirth>1992-04-23</dateOfBirth>
+        <veterinarian name="Dr. Hal Brown" phone="(801)595-9627"/>
+        <trainer name="Bob Fisk" phone="(801)881-2260"/>
+    </animal>
+    <animal>
+        <name>Sheldon</name>
+        <species>parrot</species>
+        <dateOfBirth>1998-09-30</dateOfBirth>
+        <veterinarian name="Dr. Kevin Wilson" phone="(801)466-6498"/>
+        <trainer name="Eli Wendel" phone="(801)929-2506"/>
+    </animal>
+    <animal>
+        <name>Dippy</name>
+        <species>penguin</species>
+        <dateOfBirth>2001-06-08</dateOfBirth>
+        <veterinarian name="Dr. Barbara Swayne" phone="(801)459-7746"/>
+        <trainer name="Ben Waxman" phone="(801)882-3549"/>
+    </animal>
+</animalList>

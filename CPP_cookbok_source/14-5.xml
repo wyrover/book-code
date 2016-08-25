@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Feldman Family Circus Animals with Namespaces -->
+
+<ffc:animalList xmlns:ffc="http://www.feldman-family-circus.com">
+    <ffc:animal>
+        <ffc:name>Herby</ffc:name>
+        <ffc:species>elephant</ffc:species>
+        <ffc:dateOfBirth>1992-04-23</ffc:dateOfBirth>
+        <ffc:veterinarian name="Dr. Hal Brown" phone="(801)595-9627"/>
+        <ffc:trainer name="Bob Fisk" phone="(801)881-2260"/>
+    </ffc:animal>
+    
+    <!-- etc. -->
+
+</ffc:animalList>
