@@ -1,0 +1,5 @@
+LIBRARY Dll2
+
+EXPORTS
+add
+subtract
