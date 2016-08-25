@@ -1,0 +1,4 @@
+EXPORTS 
+	MD5Init
+	MD5Update
+	MD5Final

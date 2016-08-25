@@ -1,0 +1,600 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=gb2312">
+<meta name=Generator content="Microsoft Word 11 (filtered)">
+<title>常用算法——深度优先搜索</title>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:宋体;
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:黑体;
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:"\@宋体";
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:"\@黑体";
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.5pt;
+	font-family:"Times New Roman";}
+h1
+	{margin-right:0cm;
+	margin-left:0cm;
+	font-size:24.0pt;
+	font-family:宋体;
+	font-weight:bold;}
+p
+	{margin-right:0cm;
+	margin-left:0cm;
+	font-size:12.0pt;
+	font-family:宋体;}
+pre
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:黑体;}
+ /* Page Definitions */
+ @page Section1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	layout-grid:15.6pt;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+
+</head>
+
+<body lang=ZH-CN style='text-justify-trim:punctuation'>
+
+<div class=Section1 style='layout-grid:15.6pt'>
+
+<p align=center style='margin-top:3.2pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:0cm;margin-bottom:.0001pt;text-align:center'>常用算法<span lang=EN-US>——</span>深度优先搜索</p>
+
+<p style='margin-top:5.0pt;margin-right:6.45pt;margin-bottom:5.0pt;margin-left:
+6.45pt;line-height:150%'><span style='font-size:10.0pt;line-height:150%;
+color:black'>我们在对一些问题进行求解时，会发现有些问题很难找到规律，或者根本无规律可寻。对于这样的问题，可以利用计算机运算速度快的特点，先搜索查找所有可能出现的情况，再根据题目条件从所有可能的情况中，删除那些不符合条件的解。</span></p>
+
+<p style='margin-top:5.0pt;margin-right:6.45pt;margin-bottom:5.0pt;margin-left:
+6.45pt;line-height:150%'><span style='font-size:10.0pt;line-height:150%;
+color:black'>【例题<span lang=EN-US>1</span>】 有<span lang=EN-US>A</span>、<span
+lang=EN-US>B</span>、<span lang=EN-US>C</span>、<span lang=EN-US>D</span>、<span
+lang=EN-US>E 5</span>本书，要分给张、王、刘、赵、钱<span lang=EN-US>5</span>位同学，每人只能选<span
+lang=EN-US>1</span>本。每个人都将自己喜爱的书填写在下表中。请你设计一个程序，打印出让每个人都满意的所有分书方案。<span
+lang=EN-US> </span></span></p>
+
+<pre style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:
+6.45pt;margin-bottom:.0001pt;text-align:center;line-height:150%'><span
+style='color:black'>┌──┬───┬───┬───┬───┬───┐    <span lang=EN-US> </span></span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;text-align:center;line-height:150%'><span
+style='color:black'>││Ａ　│　Ｂ　│　Ｃ　│　Ｄ　│　Ｅ　│    <span lang=EN-US> </span></span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;text-align:center;line-height:150%'><span
+style='color:black'>├──┼───┼───┼───┼───┼───┤    <span lang=EN-US> </span></span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;text-align:center;line-height:150%'><span
+style='color:black'>│张│││√│√││<span lang=EN-US>0</span><span
+lang=EN-US>0</span><span lang=EN-US>1</span><span lang=EN-US>1</span><span
+lang=EN-US>0</span></span></pre><pre style='margin-top:0cm;margin-right:6.45pt;
+margin-bottom:0cm;margin-left:6.45pt;margin-bottom:.0001pt;text-align:center;
+line-height:150%'><span style='color:black'>├──┼───┼───┼───┼───┼───┤    <span
+lang=EN-US> </span></span></pre><pre style='margin-top:0cm;margin-right:6.45pt;
+margin-bottom:0cm;margin-left:6.45pt;margin-bottom:.0001pt;text-align:center;
+line-height:150%'><span style='color:black'>│王│√│√│││√│<span
+lang=EN-US>1</span><span lang=EN-US>1</span><span lang=EN-US>0</span><span
+lang=EN-US>0</span><span lang=EN-US>1</span></span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;text-align:center;line-height:150%'><span
+style='color:black'>├──┼───┼───┼───┼───┼───┤    <span lang=EN-US> </span></span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;text-align:center;line-height:150%'><span
+style='color:black'>│刘││√│√│││<span lang=EN-US>0</span><span
+lang=EN-US>1</span><span lang=EN-US>1</span><span lang=EN-US>0</span><span
+lang=EN-US>0</span></span></pre><pre style='margin-top:0cm;margin-right:6.45pt;
+margin-bottom:0cm;margin-left:6.45pt;margin-bottom:.0001pt;text-align:center;
+line-height:150%'><span style='color:black'>├──┼───┼───┼───┼───┼───┤    <span
+lang=EN-US> </span></span></pre><pre style='margin-top:0cm;margin-right:6.45pt;
+margin-bottom:0cm;margin-left:6.45pt;margin-bottom:.0001pt;text-align:center;
+line-height:150%'><span style='color:black'>│赵││││√││<span
+lang=EN-US>0</span><span lang=EN-US>0</span><span lang=EN-US>0</span><span
+lang=EN-US>1</span><span lang=EN-US>0</span></span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;text-align:center;line-height:150%'><span
+style='color:black'>├──┼───┼───┼───┼───┼───┤    <span lang=EN-US> </span></span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;text-align:center;line-height:150%'><span
+style='color:black'>│钱││√│││√│<span lang=EN-US>0</span><span
+lang=EN-US>1</span><span lang=EN-US>0</span><span lang=EN-US>0</span><span
+lang=EN-US>1</span></span></pre><pre style='margin-top:0cm;margin-right:6.45pt;
+margin-bottom:0cm;margin-left:6.45pt;margin-bottom:.0001pt;text-align:center;
+line-height:150%'><span style='color:black'>└──┴───┴───┴───┴───┴───┘    <span
+lang=EN-US> </span></span></pre>
+
+<p style='margin-top:5.0pt;margin-right:6.45pt;margin-bottom:5.0pt;margin-left:
+6.45pt;line-height:150%'><span lang=EN-US style='font-size:10.0pt;line-height:
+150%;color:black'>★</span><span style='font-size:10.0pt;line-height:150%;
+color:black'>问题分析<span lang=EN-US><br>
+&nbsp;&nbsp;&nbsp; </span>题目中每人喜爱哪本书是随意的，无规律可循，所以用穷举方法解较为合适。按穷举法的一般算法，可以暂不考虑一些条件，先求出满足部分条件的解，即可行解。然后，再加上尚未考虑的条件，从可行解中删除不符合这些条件的解，留下的就是问题的解。具体到本题中，我们可以先不考虑<span
+lang=EN-US>“</span>让每人都满意<span lang=EN-US>”</span>这个条件，这样，就只剩<span lang=EN-US>“</span>每人选一本且只能选一本<span
+lang=EN-US>”</span>这一个条件了。在这个条件下，可行解是<span lang=EN-US>5</span>本书的所有全排列，一共有<span
+lang=EN-US>5!=120</span>种情况。从这<span lang=EN-US>120</span>种可行解中删去不符合<span
+lang=EN-US>“</span>每人都满意<span lang=EN-US>”</span>这一条件的解，剩下的就是本题的解。<span
+lang=EN-US><br>
+&nbsp;&nbsp;&nbsp; </span>为编程方便，我们用<span lang=EN-US>1</span>、<span lang=EN-US>2</span>、<span
+lang=EN-US>3</span>、<span lang=EN-US>4</span>、<span lang=EN-US>5</span>分别表示这<span
+lang=EN-US>5</span>本书。这<span lang=EN-US>5</span>个数字的<span lang=EN-US>—</span>种全排列就是<span
+lang=EN-US>5</span>本书的一种分法。例如<span lang=EN-US>54321</span>就表示第五本书<span
+lang=EN-US>(</span>即<span lang=EN-US>E)</span>分给张，第四本书<span lang=EN-US>(</span>即<span
+lang=EN-US>D)</span>分给王<span lang=EN-US>……</span>，第<span lang=EN-US>—</span>本书<span
+lang=EN-US>(</span>即<span lang=EN-US>A)</span>分给钱。<span lang=EN-US><br>
+&nbsp;&nbsp;&nbsp; </span>每个人<span lang=EN-US>“</span>喜爱书表<span lang=EN-US>”</span>，在程序中我们用二维数组<span
+lang=EN-US>Like[i,j]</span>来表示，<span lang=EN-US>1</span>表示喜爱，<span lang=EN-US>0</span>表示不喜爱。排列的产生可以用穷举法，也可以用专门算法。<span
+lang=EN-US> </span></span></p>
+
+<p style='margin-top:5.0pt;margin-right:6.45pt;margin-bottom:5.0pt;margin-left:
+6.45pt;line-height:150%'><span lang=EN-US style='font-size:10.0pt;line-height:
+150%;color:black'>★</span><span style='font-size:10.0pt;line-height:150%;
+color:black'>算法设计：<span lang=EN-US><br>
+&nbsp;&nbsp;&nbsp; </span>第一步：产生<span lang=EN-US>5</span>个数字的一个全排列；<span
+lang=EN-US><br>
+&nbsp;&nbsp;&nbsp; </span>第二步：检查所产生的全排列是否符合<span lang=EN-US>“</span>喜爱书表<span
+lang=EN-US>”</span>，如果符合就输出；<span lang=EN-US><br>
+&nbsp;&nbsp;&nbsp; </span>第三步：检查是否所有排列都产生了，如果没有产生完，则返回第一步；<span lang=EN-US><br>
+&nbsp;&nbsp;&nbsp; </span>第四步：结束。<span lang=EN-US><br>
+&nbsp;&nbsp;&nbsp; </span>根据题目给出的条件，还可以对上面算法进行一些改进。例如产生一个全排列<span lang=EN-US>12345</span>时，第一个数<span
+lang=EN-US>1</span>表示将第一本书给小张。但从表中可以看出，这是不可能的，因为小张只喜欢第三、第四本书。也就是说，１<span
+lang=EN-US>X X X X</span>这一类分法是不符合条件的。由此使我们想到，如果选定第一本书后，就立即检查一下是否符合条件，当发现第一个数的选择不符合条件时，就不必再产生后面的<span
+lang=EN-US>4</span>个数了，这样做可以减少很多的运算量。换句话说，第一个数只在<span lang=EN-US>3</span>和<span
+lang=EN-US>4</span>中选择，这样就可以减少<span lang=EN-US>3</span>／<span lang=EN-US>5</span>的运算量。同理，在选定了第一个数后，其他<span
+lang=EN-US>4</span>个数字的选择也可以用类似的方法处理，即选择第二个数后，立即检查是否符合条件。例如，第一个数选<span
+lang=EN-US>3</span>，第二个数选<span lang=EN-US>4</span>后，立即进行检查，发现不符合条件，就另选第二个数。这样就又把<span
+lang=EN-US>34XXX</span>一类的分法删去了，从而又减少了一部分运算量。<span lang=EN-US><br>
+&nbsp;&nbsp;&nbsp; </span>综上所述，改进后本题算法应该是：在产生各种排列时，每增加一个数字，就检查一下该数的加入是否符合条件，如不符合，就立刻换一个；若符合条件，则再产生下一个数。因为从第<span
+lang=EN-US>i</span>本书到第<span lang=EN-US>i+1</span>本书的寻找过程是相同的，所以可以用递归方法编程。<span
+lang=EN-US> </span></span></p>
+
+<p style='margin-top:5.0pt;margin-right:6.45pt;margin-bottom:5.0pt;margin-left:
+6.45pt;line-height:150%'><span lang=EN-US style='font-size:10.0pt;line-height:
+150%;color:black'>★</span><span style='font-size:10.0pt;line-height:150%;
+color:black'>算法框图<span lang=EN-US> </span></span></p>
+
+<pre style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:
+6.45pt;margin-bottom:.0001pt;text-align:center;line-height:150%'><span
+lang=EN-US style='color:black'>PROCEDURE TRY(i)</span><span style='color:black'>；<span
+lang=EN-US>(</span>递归算法<span lang=EN-US>)</span></span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;text-align:center;line-height:150%'><span
+style='color:black'>┌─────────────────────┐</span></pre><pre style='margin-top:
+0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;margin-bottom:
+.0001pt;text-align:center;line-height:150%'><span style='color:black'>│<span
+lang=EN-US>For j:= 1 to 5 do </span>│</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;text-align:center;line-height:150%'><span
+style='color:black'>├─┬───────────────────┤</span></pre><pre style='margin-top:
+0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;margin-bottom:
+.0001pt;text-align:center;line-height:150%'><span style='color:black'>││<span
+lang=EN-US>T</span>＼第<span lang=EN-US>I</span>个学生喜爱第<span lang=EN-US>j</span>本书／<span
+lang=EN-US>F</span>│</span></pre><pre style='margin-top:0cm;margin-right:
+6.45pt;margin-bottom:0cm;margin-left:6.45pt;margin-bottom:.0001pt;text-align:
+center;line-height:150%'><span style='color:black'>│├────────────┬──────┤</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;text-align:center;line-height:150%'><span
+style='color:black'>││记录第<span lang=EN-US> i</span>个数││</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;text-align:center;line-height:150%'><span
+style='color:black'>│├────────────┤│</span></pre><pre style='margin-top:
+0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;margin-bottom:
+.0001pt;text-align:center;line-height:150%'><span style='color:black'>││＼<span
+lang=EN-US>i= 5</span>／││</span></pre><pre style='margin-top:0cm;
+margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;margin-bottom:.0001pt;
+text-align:center;line-height:150%'><span style='color:black'>││<span
+lang=EN-US>T</span>＼／<span lang=EN-US>&nbsp;&nbsp;&nbsp;&nbsp; F </span>││</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;text-align:center;line-height:150%'><span
+style='color:black'>│├─────┬──────┤│</span></pre><pre style='margin-top:
+0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;margin-bottom:
+.0001pt;text-align:center;line-height:150%'><span style='color:black'>││打印一个解│<span
+lang=EN-US>Try(i+1)</span>││</span></pre><pre style='margin-top:0cm;
+margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;margin-bottom:.0001pt;
+text-align:center;line-height:150%'><span style='color:black'>│├─────┴──────┤│</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;text-align:center;line-height:150%'><span
+style='color:black'>││删去第<span lang=EN-US>i </span>个数字││</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;text-align:center;line-height:150%'><span
+style='color:black'>└─┴────────────┴──────┘</span></pre>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:6.45pt;margin-bottom:
+0cm;margin-left:6.45pt;margin-bottom:.0001pt;line-height:150%'><span
+lang=EN-US style='font-size:10.0pt;line-height:150%;color:black'>&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:10.0pt;line-height:150%;font-family:宋体;
+color:black'>我们用二维数组</span><span lang=EN-US style='font-size:10.0pt;line-height:
+150%;color:black'>like</span><span style='font-size:10.0pt;line-height:150%;
+font-family:宋体;color:black'>存放</span><span lang=EN-US style='font-size:10.0pt;
+line-height:150%;color:black'>“</span><span style='font-size:10.0pt;line-height:
+150%;font-family:宋体;color:black'>喜爱书表</span><span lang=EN-US style='font-size:
+10.0pt;line-height:150%;color:black'>”</span><span style='font-size:10.0pt;
+line-height:150%;font-family:宋体;color:black'>，用集合</span><span lang=EN-US
+style='font-size:10.0pt;line-height:150%;color:black'>flag</span><span
+style='font-size:10.0pt;line-height:150%;font-family:宋体;color:black'>存放已分出书的编号，数组</span><span
+lang=EN-US style='font-size:10.0pt;line-height:150%;color:black'>book</span><span
+style='font-size:10.0pt;line-height:150%;font-family:宋体;color:black'>存储各人所分得书的编号，如</span><span
+lang=EN-US style='font-size:10.0pt;line-height:150%;color:black'>book[1]=3</span><span
+style='font-size:10.0pt;line-height:150%;font-family:宋体;color:black'>，则表示第一个同学</span><span
+lang=EN-US style='font-size:10.0pt;line-height:150%;color:black'>(</span><span
+style='font-size:10.0pt;line-height:150%;font-family:宋体;color:black'>小张</span><span
+lang=EN-US style='font-size:10.0pt;line-height:150%;color:black'>)</span><span
+style='font-size:10.0pt;line-height:150%;font-family:宋体;color:black'>分得编号为</span><span
+lang=EN-US style='font-size:10.0pt;line-height:150%;color:black'>3</span><span
+style='font-size:10.0pt;line-height:150%;font-family:宋体;color:black'>的书。</span><span
+lang=EN-US style='font-size:10.0pt;line-height:150%;color:black'><br>
+&nbsp;&nbsp;&nbsp; </span><span style='font-size:10.0pt;line-height:150%;
+font-family:宋体;color:black'>递归程序如下</span><span lang=EN-US style='font-size:
+10.0pt;line-height:150%;color:black'>(</span><span style='font-size:10.0pt;
+line-height:150%;font-family:宋体;color:black'>程序中将小张的喜欢的书改成了</span><span
+lang=EN-US style='font-size:10.0pt;line-height:150%;color:black'>ACD)</span><span
+style='font-size:10.0pt;line-height:150%;font-family:宋体;color:black'>：</span><span
+lang=EN-US style='font-size:10.0pt;line-height:150%;color:black'> </span></p>
+
+<pre style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:
+6.45pt;margin-bottom:.0001pt;line-height:150%'><span lang=EN-US
+style='color:black'>Program allot_book(output);</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp; type five=1..5;</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp; const like: array[five,five] of 0..1 =((1, 0, 1,1 ,0),</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1,1,0,0,1),(0,1,1,0,0),(0,0,0,1,0),(0,1,0,0,1));</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</span><span
+style='color:black'>个人对各种书的喜好情况<span lang=EN-US>}</span></span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp; name:array[five] of string[5] = </span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;('zhang', 'wang','liu', 'zhao', 'qian' );</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</span><span
+style='color:black'>数组<span lang=EN-US>name</span>存放学生姓名<span lang=EN-US>}</span></span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>var book: array[1..5] of 0..5;{</span><span
+style='color:black'>存放各人分配到的书的编号<span lang=EN-US>}</span></span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp;&nbsp;&nbsp; flag: set of five;</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp;&nbsp;&nbsp; c: integer;</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>procedure print;&nbsp;&nbsp; {</span><span
+style='color:black'>打印分配方案<span lang=EN-US>}</span></span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp;&nbsp; var i: integer;</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp;&nbsp; begin</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp;&nbsp;&nbsp;&nbsp; inc(c);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</span><span
+style='color:black'>计数，统计得到分配方案数<span lang=EN-US>}</span></span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp;&nbsp;&nbsp;&nbsp; writeln( 'answer', c,':');</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp;&nbsp;&nbsp;&nbsp; for i:=1 to&nbsp; 5 do</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; writeln(name[i]: 10,':', chr(64 + book[i] ) );</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>end;</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>procedure try(i: integer);&nbsp; {</span><span
+style='color:black'>判断第<span lang=EN-US> I </span>个学生分得书的编号<span lang=EN-US>}</span></span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp; var j: integer;</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp; begin</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp;&nbsp; for j:=1 to 5 do</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if not(j in flag) and (like[i,j]&gt;0) then</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp;&nbsp; begin&nbsp;&nbsp;&nbsp;&nbsp; {</span><span
+style='color:black'>第<span lang=EN-US>j</span>本书未选过，且第<span lang=EN-US>I</span>个学生喜爱第<span
+lang=EN-US>j</span>本书<span lang=EN-US>}</span></span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; flag:= flag + [j];&nbsp; {</span><span
+style='color:black'>修改已选书编号集合，加入第<span lang=EN-US>j</span>本书<span lang=EN-US>}</span></span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; book[i]:=j;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</span><span
+style='color:black'>记录第<span lang=EN-US> I </span>个学生分得书的编号<span lang=EN-US>}</span></span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp;&nbsp; if i= 5 then print &nbsp;&nbsp;{I = 5,5 </span><span
+style='color:black'>个学生都分到自己喜爱的书<span lang=EN-US>}</span></span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else try(i + 1);</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {i&lt;5,</span><span
+style='color:black'>继续搜索下一个学生可能分到书的情况<span lang=EN-US>}</span></span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp;&nbsp; flag:= flag - [j];&nbsp;&nbsp; {</span><span
+style='color:black'>后退一步，以便查找下一种分配方案<span lang=EN-US>}</span></span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp;&nbsp; book[i]:=0;</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp; end</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>end;</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>{&nbsp; main prg&nbsp; }</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>begin</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp; flag:= [];</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp; c:=0;</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp; try(1);</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp; readln</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>end.</span></pre>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:6.45pt;margin-bottom:
+0cm;margin-left:6.45pt;margin-bottom:.0001pt;line-height:150%'><span
+style='font-size:10.0pt;line-height:150%;font-family:宋体;color:black'>运行结果为</span><span
+lang=EN-US style='font-size:10.0pt;line-height:150%;color:black'>:<br>
+&nbsp; zhang: C<br>
+&nbsp; wang: A<br>
+&nbsp; liu:B<br>
+&nbsp; Zhao: D<br>
+&nbsp; qian: E<br>
+&nbsp;&nbsp;&nbsp; </span><span style='font-size:10.0pt;line-height:150%;
+font-family:宋体;color:black'>另外，此题也可以用非递归的算法解。非递归算法的基本思想是用栈来存放被选中书的编号。设</span><span
+lang=EN-US style='font-size:10.0pt;line-height:150%;color:black'>dep</span><span
+style='font-size:10.0pt;line-height:150%;font-family:宋体;color:black'>表示搜索深度，</span><span
+lang=EN-US style='font-size:10.0pt;line-height:150%;color:black'>r</span><span
+style='font-size:10.0pt;line-height:150%;font-family:宋体;color:black'>为待选书号，</span><span
+lang=EN-US style='font-size:10.0pt;line-height:150%;color:black'>p</span><span
+style='font-size:10.0pt;line-height:150%;font-family:宋体;color:black'>为搜索成功标志。算法表示如下（非递归算法）。</span><span
+lang=EN-US style='font-size:10.0pt;line-height:150%;color:black'> </span></p>
+
+<pre style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:
+6.45pt;margin-bottom:.0001pt;text-align:center;line-height:150%'><span
+lang=EN-US style='color:black'>PROCEDURE dfs</span><span style='color:black'>；<span
+lang=EN-US>(</span>非递归算法<span lang=EN-US>)</span></span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;text-align:center;line-height:150%'><span
+style='color:black'>┌────────────────────────────┐</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;text-align:center;line-height:150%'><span
+style='color:black'>│<span lang=EN-US>Dep:=0</span>│</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;text-align:center;line-height:150%'><span
+style='color:black'>├─┬──────────────────────────┤</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;text-align:center;line-height:150%'><span
+style='color:black'>││<span lang=EN-US>dep:=dep+1</span>│</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;text-align:center;line-height:150%'><span
+style='color:black'>│├──────────────────────────┤</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;text-align:center;line-height:150%'><span
+style='color:black'>││<span lang=EN-US>j:=0; p:=False</span>；│</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;text-align:center;line-height:150%'><span
+style='color:black'>│├─┬────────────────────────┤</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;text-align:center;line-height:150%'><span
+style='color:black'>│││<span lang=EN-US>j:=j+1</span>│</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;text-align:center;line-height:150%'><span
+style='color:black'>││├────────────────────────┤</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;text-align:center;line-height:150%'><span
+style='color:black'>│││<span lang=EN-US>T</span>＼子结点<span lang=EN-US>mr</span>符合统计／<span
+lang=EN-US>F</span>│</span></pre><pre style='margin-top:0cm;margin-right:
+6.45pt;margin-bottom:0cm;margin-left:6.45pt;margin-bottom:.0001pt;text-align:
+center;line-height:150%'><span style='color:black'>││├──────────────┬─────────┤</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;text-align:center;line-height:150%'><span
+style='color:black'>│││产生子结点，并记录│<span lang=EN-US>T</span>＼<span
+lang=EN-US>Mxar</span>／<span lang=EN-US>F</span>│</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;text-align:center;line-height:150%'><span
+style='color:black'>││├──────────────┼────┬────┤</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;text-align:center;line-height:150%'><span
+style='color:black'>│││<span lang=EN-US>T</span>＼子结点是目标／<span lang=EN-US>F</span>│回溯│<span
+lang=EN-US>P:=Fatse</span>│</span></pre><pre style='margin-top:0cm;margin-right:
+6.45pt;margin-bottom:0cm;margin-left:6.45pt;margin-bottom:.0001pt;text-align:
+center;line-height:150%'><span style='color:black'>││├──────┬───────┤││</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;text-align:center;line-height:150%'><span
+style='color:black'>│││输出并出栈│<span lang=EN-US>P:= true</span>│││</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;text-align:center;line-height:150%'><span
+style='color:black'>│├─┴──────┴───────┴────┴────┤</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;text-align:center;line-height:150%'><span
+style='color:black'>││<span lang=EN-US>UNTIL p=True</span>│</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;text-align:center;line-height:150%'><span
+style='color:black'>├─┴──────────────────────────┤</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;text-align:center;line-height:150%'><span
+style='color:black'>│<span lang=EN-US>UNTIL dep= 0</span>│</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;text-align:center;line-height:150%'><span
+style='color:black'>└────────────────────────────┘</span></pre>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:6.45pt;margin-bottom:
+0cm;margin-left:6.45pt;margin-bottom:.0001pt;line-height:150%'><span
+lang=EN-US style='font-size:10.0pt;line-height:150%;color:black'>&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:10.0pt;line-height:150%;font-family:宋体;
+color:black'>尽管深度优先基本算法类似，但在处理不同问题时，在具体处理方法、编程的技巧上，却不尽相同；有时甚至会有很大的差别。</span><span
+lang=EN-US style='font-size:10.0pt;line-height:150%;color:black'><br>
+&nbsp;&nbsp;&nbsp; </span><span style='font-size:10.0pt;line-height:150%;
+font-family:宋体;color:black'>比如，例</span><span lang=EN-US style='font-size:10.0pt;
+line-height:150%;color:black'>1</span><span style='font-size:10.0pt;line-height:
+150%;font-family:宋体;color:black'>的解法还可以这样来设计：从表中看出，赵同学只喜爱</span><span
+lang=EN-US style='font-size:10.0pt;line-height:150%;color:black'>D</span><span
+style='font-size:10.0pt;line-height:150%;font-family:宋体;color:black'>这一本书，无其它选择余地。因此，赵同学得到书的编号在搜索前就确定下来了。为了编程方便，可以把赵钱</span><span
+lang=EN-US style='font-size:10.0pt;line-height:150%;color:black'>2</span><span
+style='font-size:10.0pt;line-height:150%;font-family:宋体;color:black'>人位置交换，这样程序只需对张王刘钱</span><span
+lang=EN-US style='font-size:10.0pt;line-height:150%;color:black'>4</span><span
+style='font-size:10.0pt;line-height:150%;font-family:宋体;color:black'>人情况进行搜索测试。</span><span
+lang=EN-US style='font-size:10.0pt;line-height:150%;color:black'><br>
+&nbsp;&nbsp;&nbsp; </span><span style='font-size:10.0pt;line-height:150%;
+font-family:宋体;color:black'>另外，发现表示</span><span lang=EN-US style='font-size:
+10.0pt;line-height:150%;color:black'>“</span><span style='font-size:10.0pt;
+line-height:150%;font-family:宋体;color:black'>喜爱书表</span><span lang=EN-US
+style='font-size:10.0pt;line-height:150%;color:black'>”</span><span
+style='font-size:10.0pt;line-height:150%;font-family:宋体;color:black'>的数组有多个</span><span
+lang=EN-US style='font-size:10.0pt;line-height:150%;color:black'>0</span><span
+style='font-size:10.0pt;line-height:150%;font-family:宋体;color:black'>，为减少不必要的试探，我们改用链表来表示。例如第三位同学的链表是：</span><span
+lang=EN-US style='font-size:10.0pt;line-height:150%;color:black'>Like[3</span><span
+style='font-size:10.0pt;line-height:150%;font-family:宋体;color:black'>，</span><span
+lang=EN-US style='font-size:10.0pt;line-height:150%;color:black'>0]=2.Like[3</span><span
+style='font-size:10.0pt;line-height:150%;font-family:宋体;color:black'>，</span><span
+lang=EN-US style='font-size:10.0pt;line-height:150%;color:black'>2]=3.Like[3</span><span
+style='font-size:10.0pt;line-height:150%;font-family:宋体;color:black'>，</span><span
+lang=EN-US style='font-size:10.0pt;line-height:150%;color:black'>3]=0</span><span
+style='font-size:10.0pt;line-height:150%;font-family:宋体;color:black'>，其中，</span><span
+lang=EN-US style='font-size:10.0pt;line-height:150%;color:black'>Like[3</span><span
+style='font-size:10.0pt;line-height:150%;font-family:宋体;color:black'>，</span><span
+lang=EN-US style='font-size:10.0pt;line-height:150%;color:black'>0]=2</span><span
+style='font-size:10.0pt;line-height:150%;font-family:宋体;color:black'>表示他喜爱的第一本书编号是</span><span
+lang=EN-US style='font-size:10.0pt;line-height:150%;color:black'>2</span><span
+style='font-size:10.0pt;line-height:150%;font-family:宋体;color:black'>，</span><span
+lang=EN-US style='font-size:10.0pt;line-height:150%;color:black'>Like[3</span><span
+style='font-size:10.0pt;line-height:150%;font-family:宋体;color:black'>，</span><span
+lang=EN-US style='font-size:10.0pt;line-height:150%;color:black'>2]=3</span><span
+style='font-size:10.0pt;line-height:150%;font-family:宋体;color:black'>即表示喜爱的编号为</span><span
+lang=EN-US style='font-size:10.0pt;line-height:150%;color:black'>2</span><span
+style='font-size:10.0pt;line-height:150%;font-family:宋体;color:black'>的书后面是编号为</span><span
+lang=EN-US style='font-size:10.0pt;line-height:150%;color:black'>3</span><span
+style='font-size:10.0pt;line-height:150%;font-family:宋体;color:black'>的书，</span><span
+lang=EN-US style='font-size:10.0pt;line-height:150%;color:black'>Like[3</span><span
+style='font-size:10.0pt;line-height:150%;font-family:宋体;color:black'>，</span><span
+lang=EN-US style='font-size:10.0pt;line-height:150%;color:black'>3]=0</span><span
+style='font-size:10.0pt;line-height:150%;font-family:宋体;color:black'>，表示编号为</span><span
+lang=EN-US style='font-size:10.0pt;line-height:150%;color:black'>3</span><span
+style='font-size:10.0pt;line-height:150%;font-family:宋体;color:black'>的书是其最后</span><span
+lang=EN-US style='font-size:10.0pt;line-height:150%;color:black'>1</span><span
+style='font-size:10.0pt;line-height:150%;font-family:宋体;color:black'>本喜爱的书。</span><span
+lang=EN-US style='font-size:10.0pt;line-height:150%;color:black'><br>
+&nbsp;&nbsp;&nbsp; </span><span style='font-size:10.0pt;line-height:150%;
+font-family:宋体;color:black'>这样基本算法不变，但程序改进如下：</span><span lang=EN-US
+style='font-size:10.0pt;line-height:150%;color:black'> </span></p>
+
+<pre style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:
+6.45pt;margin-bottom:.0001pt;line-height:150%'><span lang=EN-US
+style='color:black'>Program allot_book(output);&nbsp; {linking List}</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp; type five=1..5;{</span><span
+style='color:black'>将小张的喜欢的书改成了<span lang=EN-US>ACD}</span></span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'> &nbsp;const&nbsp; Link: Array[ 1..5,0..5 ] of 0..5 = </span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp;&nbsp;&nbsp;&nbsp;((1,3,0,4,0,0),(1,2,5,0,0,0),(2,0,3,0,0,0),(4,0,0,0,0,0),(2,0,5,0,0,0));</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp;&nbsp;&nbsp; {</span><span
+style='color:black'>个人对各种书的喜好情况<span lang=EN-US>}</span></span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp; name:array[five] of string[5] = </span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp;&nbsp;&nbsp;&nbsp;('zhang', 'wang','liu', 'zhao', 'qian' );</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp;&nbsp;&nbsp; {</span><span
+style='color:black'>数组<span lang=EN-US>name</span>存放学生姓名<span lang=EN-US>}</span></span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>var book: array[1..5] of 0..5;{</span><span
+style='color:black'>存放各人分配到的书的编号<span lang=EN-US>}</span></span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp;&nbsp;&nbsp; flag: set of five;</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp;&nbsp;&nbsp; c: integer;</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>procedure print;&nbsp;&nbsp; {</span><span
+style='color:black'>打印分配方案<span lang=EN-US>}</span></span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp;&nbsp; var i: integer;</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp;&nbsp; begin</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp;&nbsp;&nbsp;&nbsp; inc(c);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</span><span
+style='color:black'>计数，统计得到分配方案数<span lang=EN-US>}</span></span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp;&nbsp;&nbsp;&nbsp; writeln( 'answer', c,':');</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp;&nbsp;&nbsp;&nbsp; for i:=1 to&nbsp; 5 do</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; writeln(name[i]: 10,':', chr(64 + book[i] ) );</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>end;</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>procedure try(i: integer);&nbsp; {</span><span
+style='color:black'>判断第<span lang=EN-US> I </span>个学生分得书的编号<span lang=EN-US>}</span></span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp; var j: integer;</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp; begin</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp;&nbsp; j:=0;</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp;&nbsp; repeat</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; j:=link[i,j];&nbsp;&nbsp;&nbsp;&nbsp; { </span><span
+style='color:black'>取链表中喜爱书编号<span lang=EN-US>j }</span></span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; If not(j in flag) and (j&gt;0) then</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Begin</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; flag:= flag+ [j];</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; book[i]:=j;</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if i=5 then&nbsp; print</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else&nbsp; try(i + 1);</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp;&nbsp; flag:= flag - [j];&nbsp;&nbsp; {</span><span
+style='color:black'>后退一步，以便查找下一种分配方案<span lang=EN-US>}</span></span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp;&nbsp; book[i]:=0;</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; End;</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp;&nbsp;&nbsp;&nbsp; until j = 0;</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>end;</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>{&nbsp;&nbsp;&nbsp; main prg&nbsp;&nbsp;&nbsp; }</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>begin</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp; flag:= [];</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp; c:=0;</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp; try(1);</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp; readln</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>end.</span></pre>
+
+<p class=MsoNormal><span lang=EN-US><script  src="../../../../lib/footer.js">
+</script>&nbsp;</span></p>
+
+</div>
+
+</body>
+
+</html>

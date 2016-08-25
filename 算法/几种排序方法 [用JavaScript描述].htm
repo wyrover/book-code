@@ -1,0 +1,440 @@
+<HEAD><TITLE>pubCMS - 几种排序方法 [用JavaScript描述]</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=gb2312">
+<META http-equiv=Generator content=pubCMS/V2.0>
+<META content=panliu888 name=author>
+<META content="sort, 排序, JavaScript" name=keywords>
+<META content="pubCMS. 灵活 简易 静态页面 内容管理系统." name=description>
+<META content=all name=robots>
+<SCRIPT language=javascript src="/demo/ad/ad.js" type=text/javascript></SCRIPT>
+
+<SCRIPT language=javascript>
+function runCode()  //定义一个运行代码的函数，
+{
+  var code=event.srcElement.parentElement.children[0].value;//即要运行的代码。
+  var newwin=window.open('','','');  //打开一个窗口并赋给变量newwin。
+  newwin.opener = null // 防止代码对论谈页面修改
+  newwin.document.write(code);  //向这个打开的窗口中写入代码code，这样就实现了运行代码功能。
+  newwin.document.close();
+}
+</SCRIPT>
+
+<STYLE>
+BODY {
+	FONT-SIZE: 12px; FONT-FAMILY: "Verdana","宋体"
+}
+TD {
+	FONT-SIZE: 12px; FONT-FAMILY: "Verdana","宋体"
+}
+P {
+	FONT-SIZE: 12px; FONT-FAMILY: "Verdana","宋体"
+}
+SPAN {
+	FONT-SIZE: 12px; FONT-FAMILY: "Verdana","宋体"
+}
+DIV {
+	FONT-SIZE: 12px; FONT-FAMILY: "Verdana","宋体"
+}
+INPUT {
+	FONT-SIZE: 12px; FONT-FAMILY: "Verdana","宋体"
+}
+TEXTAREA {
+	FONT-SIZE: 12px; FONT-FAMILY: "Verdana","宋体"
+}
+SELECT {
+	FONT-SIZE: 12px; FONT-FAMILY: "Verdana","宋体"
+}
+BODY {
+	COLOR: #333333; BACKGROUND-COLOR:#EDF7F3;
+}
+.mainbg{
+background-color:#FFFFFF;
+}
+.titlebg{background-color:#F1EAF5;}
+.showbg{background-color:#F8F8F1;}
+.nav1{background-color:#E7DDCB;}
+.nav2{background-color:#F0EAD0;}
+A {
+	TEXT-DECORATION: none
+}
+A:link {
+	COLOR: #663352;
+}
+A:visited {
+	COLOR: #663352;
+}
+A:hover {
+	COLOR: #FF0080;
+}
+A:active {
+	COLOR: #FF0080;
+}
+
+hr {
+	height: 1px; color: #000000;
+}
+textarea {
+	font-size: 12px;
+}
+.codetextarea {
+	font-family: "宋体";
+	font-size: 12px;
+	height: 310px;
+	width: 510px;
+	word-wrap:nowrap;
+}
+.pageSeparator {
+	background-color: #CCCCD4;
+}
+.pageLighter {
+	background-color: #FAFAFA;
+}
+.pageLight {
+	background-color: #F2F3F7;
+}
+.pageMedium {
+	background-color: #8C8EA3;
+}
+.pageMediumer {
+	background-color: #CCCCD4;
+}
+.pageDark {
+	background-color: #666688;
+}
+
+.listTitle {
+	background-color: #E2E2E7;
+}
+.listContent {
+	background-color: #F2F3F7;
+}
+.code {
+	font-family: "Courier New", "Courier", "mono";
+	font-size: 12px;
+	line-height: 18px;
+	color: #000000;
+	background-color: #DDEDFB;
+	margin: 5px;
+	padding: 5px;
+	width: 480px;
+	border: 1px solid #0099CC;
+}
+</STYLE>
+
+<META content="pubCMS 2.0" name=GENERATOR></head>
+<BODY leftMargin=0 topMargin=0 marginwidth="0" marginheight="0"><table border="0" width="100%" id="table1" style="border-collapse: collapse" bgcolor="#FFFFCC"><tr><td>由于程序的原因，本文件未被完整保存。</td></tr></table>
+<TABLE class=mainbg height=300 cellSpacing=0 cellPadding=0 width=778 align=center border=0>
+<TBODY>
+<TR>
+<TD vAlign=top>
+<TABLE cellSpacing=6 cellPadding=2 width="100%" align=center>
+<TBODY>
+<TR>
+<TD align=middle>
+<H3>几种排序方法 [用JavaScript描述]</H3></TD></TR>
+<TR>
+<TD class=showbg>作者: panliu888 时间: 2005-01-05 文档类型: 原创 来自: <BR>浏览统计: total: 1841 
+year: 1657 quarter: 388 month: 107 week: 40 today: 5 </TD></TR>
+<TR>
+<TD class=showbg colSpan=2></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=6 cellPadding=2 width="100%" align=center>
+<TBODY>
+<TR>
+<TD vAlign=top>
+<P>&nbsp;&nbsp;&nbsp; 
+所谓排序，就是要整理文件中的记录，使之按关键字递增(或递减)次序排列起来。其确切定义如下：<BR>　　输入：n个记录R<SUB>1</SUB>，R<SUB>2</SUB>，…，R<SUB>n</SUB>，其相应的关键字分别为K<SUB>1</SUB>，K<SUB>2</SUB>，…，K<SUB>n</SUB>。<BR>　　输出：R<SUB>il</SUB>，R<SUB>i2</SUB>，…，R<SUB>in</SUB>，使得K<SUB>i1</SUB>≤K<SUB>i2</SUB>≤…≤K<SUB>in</SUB>。(或K<SUB>i1</SUB>≥K<SUB>i2</SUB>≥…≥K<SUB>in</SUB>)。</P>
+<P>&nbsp;&nbsp;&nbsp; 
+这里，我们简单介绍几种排序方法，直接插入排序、希儿排序、冒泡排序、快速排序、直接选择排序，文中所提及的代码在IE6下测试通过。</P>
+<P><STRONG>直接插入排序基本思想</STRONG><BR>&nbsp;&nbsp;&nbsp; 
+假设待排序的记录存放在数组R[1..n]中。初始时，R[1]自成1个有序区，无序区为R[2..n]。从i=2起直至i=n为止，依次将R[i]插入当前的有序区R[1..i-1]中，生成含n个记录的有序区。</P>
+<P>&nbsp;&nbsp;&nbsp; 算法描述<BR><SPAN class=code>&nbsp;function InsertSort(arr) { 
+//插入排序-&gt;直接插入法排序<BR>&nbsp;&nbsp;var st = new Date();<BR>&nbsp;&nbsp;var temp, 
+j;<BR>&nbsp;&nbsp;for(var i=1; i&lt;arr.length; i++) 
+{<BR>&nbsp;&nbsp;&nbsp;if((arr[i]) &lt; (arr[i-1])) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;temp = arr[i];<BR>&nbsp;&nbsp;&nbsp;&nbsp;j = 
+i-1;<BR>&nbsp;&nbsp;&nbsp;&nbsp;do {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arr[j+1] = 
+arr[j];<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;j--;<BR>&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;while 
+(j&gt;-1 &amp;&amp; (temp) &lt; (arr[j]));<BR>&nbsp;&nbsp;&nbsp;&nbsp;arr[j+1] = 
+temp;<BR>&nbsp;&nbsp;&nbsp;}//endif<BR>&nbsp;&nbsp;}<BR>&nbsp;&nbsp;status = 
+(new Date() - st) + ' ms';<BR>&nbsp;&nbsp;return arr;<BR>&nbsp;}</SPAN></P>
+<P><STRONG>希尔排序基本思想<BR></STRONG>　&nbsp;&nbsp;先取一个小于n的整数d<SUB>1</SUB>作为第一个增量，把文件的全部记录分成d<SUB>1</SUB>个组。所有距离为d<SUB>l</SUB>的倍数的记录放在同一个组中。先在各组内进行直接插人排序；然后，取第二个增量d<SUB>2</SUB>&lt;d<SUB>1</SUB>重复上述的分组和排序，直至所取的增量d<SUB>t</SUB>=1(d<SUB>t</SUB>&lt;d<SUB>t-l</SUB>&lt;…&lt;d<SUB>2</SUB>&lt;d<SUB>1</SUB>)，即所有记录放在同一组中进行直接插入排序为止。<BR>&nbsp; 
+　该方法实质上是一种分组插入方法。</P>
+<P>&nbsp;&nbsp;&nbsp; 算法描述<BR><SPAN class=code>
+<P>&nbsp;function ShellSort(arr) { //插入排序-&gt;希儿排序<BR>&nbsp;&nbsp;var st = new 
+Date();<BR>&nbsp;&nbsp;var increment = arr.length;<BR>&nbsp;&nbsp;do 
+{<BR>&nbsp;&nbsp;&nbsp;increment = (increment/3|0) + 1;<BR>&nbsp;&nbsp;&nbsp;arr 
+= ShellPass(arr, increment);<BR>&nbsp;&nbsp;}<BR>&nbsp;&nbsp;while (increment 
+&gt; 1)</P>
+<P>&nbsp;&nbsp;status = (new Date() - st) + ' ms';<BR>&nbsp;&nbsp;return 
+arr;<BR>&nbsp;}<BR>&nbsp;function ShellPass(arr, d) { 
+//希儿排序分段执行函数<BR>&nbsp;&nbsp;var temp, j;<BR>&nbsp;&nbsp;for(var i=d; 
+i&lt;arr.length; i++) {<BR>&nbsp;&nbsp;&nbsp;if((arr[i]) &lt; (arr[i-d])) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;temp = arr[i]; j = 
+i-d;<BR>&nbsp;&nbsp;&nbsp;&nbsp;do {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arr[j+d] = 
+arr[j];<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;j = 
+j-d;<BR>&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;while (j&gt;-1 
+&amp;&amp; (temp) &lt; (arr[j]));<BR>&nbsp;&nbsp;&nbsp;&nbsp;arr[j+d] = 
+temp;<BR>&nbsp;&nbsp;&nbsp;}//endif<BR>&nbsp;&nbsp;}<BR>&nbsp;&nbsp;return 
+arr;<BR>&nbsp;}</P>
+<P></SPAN></P>
+<P><STRONG>冒泡排序基本思想<BR></STRONG>&nbsp;&nbsp;&nbsp; 
+将被排序的记录数组R[1..n]垂直排列，每个记录R[i]看作是重量为R[i].key的气泡。根据轻气泡不能在重气泡之下的原则，从下往上扫描数组R：凡扫描到违反本原则的轻气泡，就使其向上"飘浮"。如此反复进行，直到最后任何两个气泡都是轻者在上，重者在下为止。<BR>
+<P>&nbsp;&nbsp;&nbsp; 算法描述<BR><SPAN class=code>&nbsp;function BubbleSort(arr) { 
+//交换排序-&gt;冒泡排序<BR>&nbsp;&nbsp;var st = new Date();<BR>&nbsp;&nbsp;var 
+temp;<BR>&nbsp;&nbsp;var exchange;<BR>&nbsp;&nbsp;for(var i=0; i&lt;arr.length; 
+i++) {<BR>&nbsp;&nbsp;&nbsp;exchange = false;<BR>&nbsp;&nbsp;&nbsp;for(var 
+j=arr.length-2; j&gt;=i; j--) {<BR>&nbsp;&nbsp;&nbsp;&nbsp;if((arr[j+1]) &lt; 
+(arr[j]))&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;temp = 
+arr[j+1];<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arr[j+1] = 
+arr[j];<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arr[j] = 
+temp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exchange = 
+true;<BR>&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;if(!exchange)&nbsp;break;<BR>&nbsp;&nbsp;}<BR>&nbsp;&nbsp;status 
+= (new Date() - st) + ' ms';<BR>&nbsp;&nbsp;return arr;<BR>&nbsp;}</P>
+<P></SPAN></P>
+<P></P>
+<P><STRONG>快速排序基本思想<BR></STRONG>&nbsp;&nbsp;&nbsp; 
+将原问题分解为若干个规模更小但结构与原问题相似的子问题。递归地解这些子问题，然后将这些子问题的解组合为原问题的解。<BR>&nbsp;&nbsp;&nbsp; 
+在R[low..high]中任选一个记录作为基准(Pivot)，以此基准将当前无序区划分为左、右两个较小的子区间R[low..pivotpos-1)和R[pivotpos+1..high]，并使左边子区间中所有记录的关键字均小于等于基准记录(不妨记为pivot)的关键字pivot.key，右边的子区间中所有记录的关键字均大于等于pivot.key，而基准记录pivot则位于正确的位置(pivotpos)上，它无须参加后续的排序。</P>
+<P>&nbsp;&nbsp;&nbsp; 算法描述<BR><SPAN class=code>&nbsp;function QuickSort(arr) { 
+//交换排序-&gt;快速排序<BR>&nbsp;&nbsp;if (arguments.length&gt;1) 
+{<BR>&nbsp;&nbsp;&nbsp;var low = arguments[1];<BR>&nbsp;&nbsp;&nbsp;var high = 
+arguments[2];<BR>&nbsp;&nbsp;} else {<BR>&nbsp;&nbsp;&nbsp;var low = 
+0;<BR>&nbsp;&nbsp;&nbsp;var high = 
+arr.length-1;<BR>&nbsp;&nbsp;}<BR>&nbsp;&nbsp;if(low &lt; 
+high){<BR>&nbsp;&nbsp;&nbsp;// function Partition<BR>&nbsp;&nbsp;&nbsp;var i = 
+low;<BR>&nbsp;&nbsp;&nbsp;var j = high;<BR>&nbsp;&nbsp;&nbsp;var pivot = 
+arr[i];<BR>&nbsp;&nbsp;&nbsp;while(i&lt;j) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;while(i&lt;j &amp;&amp; 
+arr[j]&gt;=pivot)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;j--;<BR>&nbsp;&nbsp;&nbsp;&nbsp;if(i&lt;j)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arr[i++] 
+= arr[j];<BR>&nbsp;&nbsp;&nbsp;&nbsp;while(i&lt;j &amp;&amp; 
+arr[i]&lt;=pivot)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i++;<BR>&nbsp;&nbsp;&nbsp;&nbsp;if(i&lt;j)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arr[j--] 
+= arr[i];<BR>&nbsp;&nbsp;&nbsp;}//endwhile<BR>&nbsp;&nbsp;&nbsp;arr[i] = 
+pivot;<BR>&nbsp;&nbsp;&nbsp;// end function<BR>&nbsp;&nbsp;&nbsp;var pivotpos = 
+i; //Partition(arr，low，high);<BR>&nbsp;&nbsp;&nbsp;QuickSort(arr, low, 
+pivotpos-1);<BR>&nbsp;&nbsp;&nbsp;QuickSort(arr, pivotpos+1, 
+high);<BR>&nbsp;&nbsp;} 
+else<BR>&nbsp;&nbsp;&nbsp;return;<BR>&nbsp;&nbsp;&nbsp;return 
+arr;<BR>&nbsp;}</SPAN></P>
+<P><STRONG>直接选择排序基本思想<BR></STRONG>&nbsp;&nbsp;　n个记录的文件的直接选择排序可经过n-1趟直接选择排序得到有序结果：<BR>&nbsp;①初始状态：无序区为R[1..n]，有序区为空。<BR>&nbsp;②第1趟排序<BR>&nbsp;&nbsp;&nbsp; 
+在无序区R[1..n]中选出关键字最小的记录R[k]，将它与无序区的第1个记录R[1]交换，使R[1..1]和R[2..n]分别变为记录个数增加1个的新有序区和记录个数减少1个的新无序区。<BR>　　……<BR>&nbsp;③第i趟排序<BR>　　第i趟排序开始时，当前有序区和无序区分别为R[1..i-1]和R[i..n](1≤i≤n-1)。该趟排序从当前无序区中选出关键字最小的记录R[k]，将它与无序区的第1个记录R[i]交换，使R[1..i]和R[i+1..n]分别变为记录个数增加1个的新有序区和记录个数减少1个的新无序区。<BR>&nbsp;&nbsp;&nbsp; 
+这样，n个记录的文件的直接选择排序可经过n-1趟直接选择排序得到有序结果。</P>
+<P>&nbsp;&nbsp;&nbsp; 算法描述<BR><SPAN class=code>&nbsp;function SelectSort(arr) { 
+//选择排序-&gt;直接选择排序<BR>&nbsp;&nbsp;var st = new Date();<BR>&nbsp;&nbsp;var 
+temp;<BR>&nbsp;&nbsp;for(var i=0; i&lt;arr.length; i++) 
+{<BR>&nbsp;&nbsp;&nbsp;var k = i;<BR>&nbsp;&nbsp;&nbsp;for(var j=i+1; 
+j&lt;arr.length; j++) {<BR>&nbsp;&nbsp;&nbsp;&nbsp;if((arr[j]) &lt; 
+(arr[k]))<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;k = 
+j;<BR>&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;if (k != 
+i){<BR>&nbsp;&nbsp;&nbsp;&nbsp;temp = arr[i];<BR>&nbsp;&nbsp;&nbsp;&nbsp;arr[i] 
+= arr[k];<BR>&nbsp;&nbsp;&nbsp;&nbsp;arr[k] = 
+temp;<BR>&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;}<BR>&nbsp;&nbsp;status = (new 
+Date() - st) + ' ms';<BR>&nbsp;&nbsp;return arr;<BR>&nbsp;}</SPAN></P>
+<P>运行代码框<BR><SPAN><TEXTAREA class=codeTextarea>&lt;style&gt;
+fieldset {
+ font-size:12px;
+ padding:10px;
+ width:80%;
+ margin:auto;
+}
+input {
+ font-size:12px;
+ font-family:Tahoma;
+}
+&lt;/style&gt;
+&lt;title&gt;排序&lt;/title&gt;
+&lt;h3 align="center"&gt;排序&lt;/h3&gt;
+&lt;fieldset&gt;
+&lt;legend&gt;插入排序&lt;/legend&gt;
+
+&lt;p&gt;&lt;b&gt;直接插入排序&lt;/b&gt;
+请输入一段要排序的字符，用半角逗号隔开
+&lt;input name=insert type=text size=100 value="g,v,u,f,p,o,i,a,t,j,e,l,k"&gt;
+&lt;br&gt;&lt;input type=button value=" 排序 " onclick="alert(InsertSort(insert.value.split(',')));"&gt;
+
+&lt;p&gt;&lt;b&gt;希儿排序&lt;/b&gt;&lt;br&gt;
+  &lt;input name=Shell type=text size=100 value="g,v,u,f,p,o,i,a,t,j"&gt;
+&lt;br&gt;&lt;input type=button value=" 排序 " onclick="alert(ShellSort(Shell.value.split(',')));"&gt;
+
+&lt;/fieldset&gt;
+&lt;p&gt;
+&lt;fieldset&gt;
+&lt;legend&gt;交换排序&lt;/legend&gt;
+
+&lt;b&gt;冒泡排序&lt;/b&gt;&lt;br&gt;
+&lt;input name=bubble type=text size=100 value="g,v,u,f,p,o,i,a,t,j,e,l,k"&gt;
+&lt;br&gt;&lt;input type=button value=" 排序 " onclick="alert(BubbleSort(bubble.value.split(',')));"&gt;
+
+&lt;p&gt;&lt;b&gt;快速排序&lt;br&gt;
+&lt;/b&gt;
+  &lt;input name=quick type=text size=100 value="3,1,5,4,6"&gt;
+&lt;br&gt;&lt;input type=button value=" 排序 " onclick="alert(QuickSortDemo(quick.value.split(',')));"&gt;
+
+&lt;/fieldset&gt;
+&lt;p&gt;
+&lt;fieldset&gt;
+&lt;legend&gt;选择排序&lt;/legend&gt;
+
+&lt;b&gt;直接选择排序&lt;/b&gt;&lt;br&gt;
+&lt;input name=select1 type=text size=100 value="g,v,u,f,p,o,i,a,t,j,e,l,k"&gt;
+&lt;br&gt;&lt;input type=button value=" 排序 " onclick="alert(SelectSort(select1.value.split(',')));"&gt;
+
+&lt;p&gt;... ...
+
+&lt;/fieldset&gt;
+
+
+&lt;script&gt;
+ function InsertSort(arr) { //插入排序-&gt;直接插入法排序
+  var st = new Date();
+  var temp, j;
+  for(var i=1; i&lt;arr.length; i++) {
+   if((arr[i]) &lt; (arr[i-1])) {
+    temp = arr[i];
+    j = i-1;
+    do {
+     arr[j+1] = arr[j];
+     j--;
+    }
+    while (j&gt;-1 &amp;&amp; (temp) &lt; (arr[j]));
+    arr[j+1] = temp;
+   }//endif
+  }
+  status = (new Date() - st) + ' ms';
+  return arr;
+ }
+
+
+ function ShellSort(arr) { //插入排序-&gt;希儿排序
+  var st = new Date();
+  var increment = arr.length;
+  do {
+   increment = (increment/3|0) + 1;
+   arr = ShellPass(arr, increment);
+  }
+  while (increment &gt; 1)
+
+  status = (new Date() - st) + ' ms';
+  return arr;
+ }
+ function ShellPass(arr, d) { //希儿排序分段执行函数
+  var temp, j;
+  for(var i=d; i&lt;arr.length; i++) {
+   if((arr[i]) &lt; (arr[i-d])) {
+    temp = arr[i]; j = i-d;
+    do {
+     arr[j+d] = arr[j];
+     j = j-d;
+    }
+    while (j&gt;-1 &amp;&amp; (temp) &lt; (arr[j]));
+    arr[j+d] = temp;
+   }//endif
+  }
+  return arr;
+ }
+
+
+ function BubbleSort(arr) { //交换排序-&gt;冒泡排序
+  var st = new Date();
+  var temp;
+  var exchange;
+  for(var i=0; i&lt;arr.length; i++) {
+   exchange = false;
+   for(var j=arr.length-2; j&gt;=i; j--) {
+    if((arr[j+1]) &lt; (arr[j])) {
+     temp = arr[j+1];
+     arr[j+1] = arr[j];
+     arr[j] = temp;
+     exchange = true;
+    }
+   }
+   if(!exchange) break;
+  }
+  status = (new Date() - st) + ' ms';
+  return arr;
+ }
+
+ function QuickSortDemo(arr) {
+  var st = new Date();
+  var result = QuickSort(arr);
+  status = (new Date() - st) + ' ms';
+  return result;
+ } 
+
+ function QuickSort(arr) { //交换排序-&gt;快速排序
+  if (arguments.length&gt;1) {
+   var low = arguments[1];
+   var high = arguments[2];
+  } else {
+   var low = 0;
+   var high = arr.length-1;
+  }
+  if(low &lt; high){
+   // function Partition
+   var i = low;
+   var j = high;
+   var pivot = arr[i];
+   while(i&lt;j) {
+    while(i&lt;j &amp;&amp; arr[j]&gt;=pivot)
+     j--;
+    if(i&lt;j)
+     arr[i++] = arr[j];
+    while(i&lt;j &amp;&amp; arr[i]&lt;=pivot)
+     i++;
+    if(i&lt;j)
+     arr[j--] = arr[i];
+   }//endwhile
+   arr[i] = pivot;
+   // end function
+   var pivotpos = i; //Partition(arr，low，high);
+   QuickSort(arr, low, pivotpos-1);
+   QuickSort(arr, pivotpos+1, high);
+  } else
+   return;
+   return arr;
+ }
+ 
+ /*function Partition(arr, i, j) { //快速排序, 对待排序的数组进行划分
+  var pivot = arr[i];
+  while(i&lt;j) {
+   while(arr[j]&gt;=pivot)
+    j--;
+   if(i&lt;j)
+    arr[i++] = arr[j];
+   while(arr[i]&lt;=pivot)
+    i++;
+   if(i&lt;j)
+    arr[j--] = arr[i];
+  }
+  arr[i] = pivot;
+  return arr;
+ }*/
+
+ function SelectSort(arr) { //选择排序-&gt;直接选择排序
+  var st = new Date();
+  var temp;
+  for(var i=0; i&lt;arr.length; i++) {
+   var k = i;
+   for(var j=i+1; j&lt;arr.length; j++) {
+    if((arr[j]) &lt; (arr[k]))
+     k = j;
+   }
+   if (k != i){
+    temp = arr[i];
+    arr[i] = arr[k];
+    arr[k] = temp;
+   }
+  }
+  status = (new Date() - st) + ' ms';
+  return arr;
+ }
+ 
+
+ function unicode(str) {//求字符串的unicode码
+  var uni=0;
+  for(var i=0; i&lt;str.length; i++){
+   uni += str.charCodeAt(i)/6553.5 * Math.pow(10, str.length-i);
+  }
+  return uni;
+ }
+&lt;/script&gt;
+</TEXTAREA><BR><INPUT onclick=runCode() type=button value=运行代码> [Ctrl+A 全部选择 
+提示：你可先修改部分代码，再按运行]</SPAN></P></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></BODY>

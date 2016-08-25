@@ -1,0 +1,467 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<title>搜索算法</title>
+</head>
+
+<body style="font-family: MS Serif; font-size: medium">
+<div align="center"><center>
+
+<pre><strong><font face="楷体_GB2312" size="6">搜　索　算　法</font></strong></pre>
+</center></div>
+
+<pre>    搜索算法是利用计算机的高性能来有目的的穷举一个问题的部分或所有的可能情况，从而求出问题的解
+的一种方法。搜索过程实际上是根据初始条件和扩展规则构造一棵解答树并寻找符合目标状态的节点的过程。
+所有的搜索算法从其最终的算法实现上来看，都可以划分成两个部分──控制结构和产生系统，而所有的算
+法的优化和改进主要都是通过修改其控制结构来完成的。现在主要对其控制结构进行讨论，因此对其产生系
+统作如下约定：</pre>
+
+<pre><strong>Function</strong> ExpendNode(Situation:Tsituation;ExpendWayNo:Integer):TSituation;</pre>
+
+<pre>表示对给出的节点状态Sitution采用第ExpendWayNo种扩展规则进行扩展，并且返回扩展后的状态。</pre>
+
+<pre>（本文所采用的算法描述语言为类Pascal。）</pre>
+<div align="center"><center>
+
+<pre><strong><font face="楷体_GB2312" size="4">第一部分　基本搜索算法</font></strong></pre>
+</center></div>
+
+<pre>一、回溯算法</pre>
+
+<pre>    回溯算法是所有搜索算法中最为基本的一种算法，其采用了一种“走不通就掉头”思想作为其控制结构，
+其相当于采用了先根遍历的方法来构造解答树，可用于找解或所有解以及最优解。具体的算法描述如下：</pre>
+
+<pre><strong>[非递归算法]
+&lt;Type&gt;
+</strong>   Node(节点类型)＝<strong>Record</strong>
+     Situtation:TSituation（当前节点状态）;
+     Way-NO:Integer（已使用过的扩展规则的数目）;
+   End
+<strong>&lt;Var&gt;
+</strong>   List(回溯表):<strong>Array</strong>[1..Max(最大深度)] <strong>of</strong> Node;
+   pos(当前扩展节点编号):Integer;
+<strong>&lt;Init&gt;</strong>
+   List&lt;-0;
+   pos&lt;-1;
+   List[1].Situation&lt;-初始状态;
+<strong>&lt;Main Program&gt;
+While</strong> (pos&gt;0(有路可走)) <strong>and</strong> ([未达到目标]) <strong>do</strong>
+<strong>Begin</strong>
+  <strong>If</strong> pos&gt;=Max <strong>then</strong> (数据溢出,跳出主程序);
+  List[pos].Way-NO:=List[pos].Way-No+1;
+  <strong>If</strong> (List[pos].Way-NO&lt;=TotalExpendMethod) <strong>then</strong> (如果还有没用过的扩展规则)
+  <strong>Begin</strong>
+    <strong>If</strong> (可以使用当前扩展规则) <strong>then</strong>
+    <strong>Begin</strong>
+      (用第way条规则扩展当前节点)
+      List[pos+1].Situation:=ExpendNode(List[pos].Situation,
+                                        List[pos].Way-NO);
+      List[pos+1].Way-NO:=0;
+      pos:=pos+1;
+    <strong>End-If</strong>;
+  <strong>End-If</strong>
+  <strong>Else</strong> <strong>Begin</strong>
+         pos:=pos-1;
+       <strong>End-Else</strong>
+<strong>End-While</strong>;</pre>
+
+<pre><strong>[递归算法]
+Procedure</strong> BackTrack(Situation:TSituation;deepth:Integer);
+<strong>Var</strong>  I    :Integer;
+<strong>Begin</strong>
+  <strong>If</strong> deepth&gt;Max <strong>then</strong> (空间达到极限,跳出本过程);
+  <strong>If</strong> Situation=Target <strong>then</strong> (找到目标);
+  <strong>For</strong> I:=1 <strong>to</strong> TotalExpendMethod <strong>do</strong>
+  <strong>Begin</strong>
+    BackTrack(ExpendNode(Situation,I),deepth+1);
+  <strong>End-For</strong>;
+<strong>End</strong>;</pre>
+
+<pre>范例：一个M*M的棋盘上某一点上有一个马，要求寻找一条从这一点出发不重复的跳完棋盘上所有的点的路线。</pre>
+
+<pre>评价：回溯算法对空间的消耗较少，当其与分枝定界法一起使用时，对于所求解在解答树中层次较深的问题
+      有较好的效果。但应避免在后继节点可能与前继节点相同的问题中使用，以免产生循环。</pre>
+
+<pre>二、深度搜索与广度搜索</pre>
+
+<pre>    深度搜索与广度搜索的控制结构和产生系统很相似，唯一的区别在于对扩展节点选取上。由于其保留了
+所有的前继节点，所以在产生后继节点时可以去掉一部分重复的节点，从而提高了搜索效率。这两种算法每
+次都扩展一个节点的所有子节点，而不同的是，深度搜索下一次扩展的是本次扩展出来的子节点中的一个，
+而广度搜索扩展的则是本次扩展的节点的兄弟节点。在具体实现上为了提高效率,所以采用了不同的数据结构.</pre>
+
+<pre><strong>[广度搜索]
+&lt;Type&gt;
+</strong>   Node(节点类型)＝<strong>Record</strong>
+     Situtation:TSituation（当前节点状态）;
+     Level:Integer(当前节点深度);
+     Last :Integer(父节点);
+   End
+<strong>&lt;Var&gt;
+</strong>   List(节点表):<strong>Array</strong>[1..Max(最多节点数)] <strong>of</strong> Node(节点类型);
+   open(总节点数):Integer;
+　 close(待扩展节点编号):Integer;
+   New-S:TSituation;(新节点)
+<strong>&lt;Init&gt;
+</strong>   List&lt;-0;
+   open&lt;-1;
+   close&lt;-0;
+   List[1].Situation&lt;- 初始状态;
+   List[1].Level:=1;
+   List[1].Last:=0;
+<strong>&lt;Main Program&gt;
+</strong>   <strong>While</strong> (close&lt;open(还有未扩展节点)) <strong>and</strong> 
+         (open&lt;Max(空间未用完)) <strong>and</strong> 
+         (未找到目标节点) <strong>do</strong>
+   <strong>Begin</strong>
+　　     close:=close+1;
+         <strong>For</strong> I:=1 <strong>to</strong> TotalExpendMethod <strong>do</strong>（扩展一层子节点）
+         <strong>Begin</strong>
+           New-S:=ExpendNode(List[close].Situation,I);
+           <strong>If</strong> <strong>Not</strong> (New-S <strong>in</strong> List) <strong>then</strong> 
+           (扩展出的节点从未出现过)
+           <strong>Begin</strong>
+             open:=open+1; 
+             List[open].Situation:=New-S;
+             List[open].Level:=List[close].Level+1;
+             List[open].Last:=close;
+           <strong>End-If</strong>
+         <strong>End-For</strong>;
+   <strong>End-While</strong>;</pre>
+
+<pre><strong>[深度搜索]
+&lt;Var&gt;
+</strong>   Open:<strong>Array</strong>[1..Max] <strong>of</strong> Node;(待扩展节点表)
+   Close:<strong>Array</strong>[1..Max] <strong>of</strong> Node;(已扩展节点表)
+   openL,closeL:Integer;(表的长度)
+   New-S:Tsituation;(新状态)
+<strong>&lt;Init&gt;
+</strong>   Open&lt;-0; Close&lt;-0;
+   OpenL&lt;-1;CloseL&lt;-0;
+   Open[1].Situation&lt;- 初始状态;
+   Open[1].Level&lt;-1;
+   Open[1].Last&lt;-0;
+<strong>&lt;Main Program&gt;
+</strong>   <strong>While</strong> (openL&gt;0) <strong>and</strong> (closeL&lt;Max) <strong>and</strong> (openL&lt;Max) <strong>do</strong>
+   <strong>Begin</strong>
+     closeL:=closeL+1;
+     Close[closeL]:=Open[openL];
+     openL:=openL-1;
+     <strong>For</strong> I:=1 <strong>to</strong> TotalExpendMethod <strong>do</strong>（扩展一层子节点）
+     <strong>Begin</strong>
+       New-S:=ExpendNode(Close[closeL].Situation,I);
+       <strong>If</strong> <strong>Not</strong> (New-S <strong>in</strong> List) <strong>then</strong> 
+       (扩展出的节点从未出现过)
+       <strong>Begin</strong>
+         openL:=openL+1; 
+         Open[openL].Situation:=New-S;
+         Open[openL].Level:=Close[closeL].Level+1;
+         Open[openL].Last:=closeL;
+       <strong>End-If</strong>
+     <strong>End-For</strong>;
+  <strong> End</strong>;</pre>
+
+<pre>范例：迷宫问题，求解最短路径和可通路径。</pre>
+
+<pre>评价：广度搜索是求解最优解的一种较好的方法，在后面将会对其进行进一步的优化。而深度搜索多用于只
+      要求解，并且解答树中的重复节点较多并且重复较难判断时使用，但往往可以用A*或回溯算法代替。</pre>
+<div align="center"><center>
+
+<pre><strong><font face="楷体_GB2312" size="4">第二部分　搜索算法的优化</font></strong></pre>
+</center></div>
+
+<pre>一、双向广度搜索</pre>
+
+<pre>    广度搜索虽然可以得到最优解，但是其空间消耗增长太快。但如果从正反两个方向进行广度搜索，理想
+情况下可以减少二分之一的搜索量，从而提高搜索速度。</pre>
+
+<pre>范例：有N个黑白棋子排成一派，中间任意两个位置有两个连续的空格。每次空格可以与序列中的某两个棋子
+      交换位置，且两子的次序不变。要求出入长度为length的一个初始状态和一个目标状态，求出最少的
+      转化步数。</pre>
+
+<pre>问题分析：该题要求求出最少的转化步数，但如果直接使用广度搜索，很容易产生数据溢出。但如果从初始
+          状态和目标状态两个方向同时进行扩展，如果两棵解答树在某个节点第一次发生重合，则该节点
+          所连接的两条路径所拼成的路径就是最优解。</pre>
+
+<pre>对广度搜索算法的改进：
+　　１。添加一张节点表，作为反向扩展表。
+　　２。在while循环体中在正向扩展代码后加入反向扩展代码，其扩展过程不能与
+        正向过程共享一个for循环。
+　　３。在正向扩展出一个节点后，需在反向表中查找是否有重合节点。反向扩展时
+　　　　与之相同。</pre>
+
+<pre>对双向广度搜索算法的改进：
+　　略微修改一下控制结构，每次while循环时只扩展正反两个方向中节点数目较少的一个，可以使两边的发
+    展速度保持一定的平衡，从而减少总扩展节点的个数，加快搜索速度。</pre>
+
+<pre>二、分支定界</pre>
+
+<pre>　　分支定界实际上是A*算法的一种雏形，其对于每个扩展出来的节点给出一个预期值，如果这个预期值不
+如当前已经搜索出来的结果好的话，则将这个节点(包括其子节点)从解答树中删去，从而达到加快搜索速度
+的目的。</pre>
+
+<pre>范例：在一个商店中购物，设第I种商品的价格为Ci。但商店提供一种折扣，即给出一组商品的组合，如果一
+      次性购买了这一组商品，则可以享受较优惠的价格。现在给出一张购买清单和商店所提供的折扣清单，
+      要求利用这些折扣，使所付款最少。</pre>
+
+<pre>问题分析：显然，折扣使用的顺序与最终结果无关，所以可以先将所有的折扣按折扣率从大到小排序，然后
+          采用回溯法的控制结构，对每个折扣从其最大可能使用次数向零递减搜索，设A为以打完折扣后优
+          惠的价格，C为当前未打折扣的商品零售价之和，则其预期值为A+a*C，其中a为下一个折扣的折扣
+          率。如当前已是最后一个折扣，则a=1。</pre>
+
+<pre>对回溯算法的改进：
+　　１。添加一个全局变量BestAnswer，记录当前最优解。
+　　２。在每次生成一个节点时，计算其预期值，并与BestAnswer比较。如果不好，则调用回溯过程。</pre>
+
+<pre>三、A*算法</pre>
+
+<pre>    A*算法中更一般的引入了一个估价函数f,其定义为f=g+h。其中g为到达当前节点的耗费，而h表示对从当
+前节点到达目标节点的耗费的估计。其必须满足两个条件：
+   １。h必须小于等于实际的从当前节点到达目标节点的最小耗费h*。
+   ２。f必须保持单调递增。
+
+  　A*算法的控制结构与广度搜索的十分类似，只是每次扩展的都是当前待扩展节点中f值最小的一个，如果
+扩展出来的节点与已扩展的节点重复，则删去这个节点。如果与待扩展节点重复，如果这个节点的估价函数
+值较小，则用其代替原待扩展节点，具体算法描述如下：</pre>
+
+<pre>范例：一个3*3的棋盘中有1-8八个数字和一个空格，现给出一个初始态和一个目标态，要求利用这个空格，
+      用最少的步数，使其到达目标态。</pre>
+
+<pre>问题分析：预期值定义为h=|x-dx|+|y-dy|。
+　　　　　估价函数定义为f=g+h。</pre>
+
+<pre><strong>&lt;Type&gt;
+</strong>   Node(节点类型)＝<strong>Record</strong>
+     Situtation:TSituation（当前节点状态）;
+     g:Integer;(到达当前状态的耗费)
+     h:Integer;(预计的耗费)
+     f:Real;(估价函数值)
+     Last:Integer;(父节点)
+   End
+<strong>&lt;Var&gt;
+</strong>   List(节点表):<strong>Array</strong>[1..Max(最多节点数)] <strong>of</strong> Node(节点类型);
+   open(总节点数):Integer;
+　 close(待扩展节点编号):Integer;
+   New-S:Tsituation;(新节点)
+<strong>&lt;Init&gt;
+</strong>   List&lt;-0;
+   open&lt;-1;
+   close&lt;-0;
+   List[1].Situation&lt;- 初始状态;
+<strong>&lt;Main Program&gt;
+</strong>   <strong>While</strong> (close&lt;open(还有未扩展节点)) <strong>and</strong> 
+         (open&lt;Max(空间未用完)) <strong>and</strong> 
+         (未找到目标节点) <strong>do</strong>
+   <strong>Begin</strong>
+     <strong>Begin</strong>
+　  　close:=close+1;
+　　　<strong>For</strong> I:=close+1 <strong>to</strong> open <strong>do</strong> (寻找估价函数值最小的节点)
+      <strong>Begin</strong>
+        <strong>if</strong> List[i].f&lt;List[close].f <strong>then</strong>
+        <strong>Begin</strong>
+          交换List[i]和List[close];
+        <strong>End-If</strong>;
+      <strong>End-For</strong>;
+     <strong>End</strong>;
+     <strong>For</strong> I:=1 <strong>to</strong> TotalExpendMethod <strong>do</strong>（扩展一层子节点）
+     <strong>Begin</strong>
+       New-S:=ExpendNode(List[close].Situation,I)
+       <strong>If</strong> <strong>Not</strong> (New-S <strong>in</strong> List[1..close]) <strong>then</strong> 
+       (扩展出的节点未与已扩展的节点重复)
+       <strong>Begin</strong>
+         <strong>If</strong> <strong>Not</strong> (New-S in List[close+1..open]) <strong>then</strong> 
+         (扩展出的节点未与待扩展的节点重复)
+         <strong>Begin</strong>
+           open:=open+1;
+           List[open].Situation:=New-S;
+           List[open].Last:=close;
+           List[open].g:=List[close].g+cost;
+           List[open].h:=GetH(List[open].Situation);
+           List[open].f:=List[open].h+List[open].g;
+         <strong>End-If</strong>
+         <strong>Else Begin</strong>
+                <strong>If</strong> List[close].g+cost+GetH(New-S)&lt;List[same].f <strong>then</strong>
+                (扩展出来的节点的估价函数值小于与其相同的节点)
+                <strong>Begin</strong>
+                  List[same].Situation:= New-S;
+                  List[same].Last:=close;
+                  List[same].g:=List[close].g+cost;
+                  List[same].h:=GetH(List[open].Situation);
+                  List[same].f:=List[open].h+List[open].g;
+                <strong>End-If</strong>;
+              <strong>End-Else</strong>;
+       <strong>End-If</strong>
+     <strong>End-For</strong>;
+   <strong>End-While</strong>;</pre>
+
+<pre>对A*算法的改进--分阶段A*：
+    当A*算法出现数据溢出时，从待扩展节点中取出若干个估价函数值较小的节点，然后放弃其余的待扩展
+    节点，从而可以使搜索进一步的进行下去。</pre>
+<div align="center"><center>
+
+<pre><strong><font face="楷体_GB2312" size="4">第三部分　搜索与动态规划的结合</font></strong></pre>
+</center></div>
+
+<pre>例1.  有一个棋子，其1、6面2、4面3、5面相对。现给出一个M*N的棋盘，棋子起初处于(1,1)点，摆放状态
+      给定，现在要求用最少的步数从(1,1)点翻滚到(M,N)点，并且1面向上。</pre>
+
+<pre>分析：这道题目用简单的搜索很容易发生超时，特别当M、N较大时。所以可以考虑使用动态规划来解题。对
+      于一个棋子，其总共只有24种状态。在(1,1)点时，其向右翻滚至(2,1)点，向上翻滚至(1,2)点。而
+      任意（I，J）点的状态是由（I-1，J）和（I，J-1）点状态推导出来的。所以如果规定棋子只能向上
+      和向右翻滚，则可以用动态规划的方法将到达（M，N）点的所有可能的状态推导出来。显然，从（1，
+      1）到达（N，M）这些状态的路径时最优的。如果这些状态中有1面向上的，则已求出解。如果没有，
+      则可以从（M，N）点开始广度搜索，以（M，N）点的状态组作为初始状态，每扩展一步时，检查当前
+      所得的状态组是否有状态与到达格子的状态组中的状态相同，如果有，则由动态规划的最优性和广度
+      搜索的最优性可以保证已求出最优解。</pre>
+
+<pre>例2.给出一个正整数n，有基本元素a，要求通过最少次数的乘法，求出a^n。</pre>
+
+<pre>分析：思路一：这道题从题面上来看非常象一道动态规划题，a^n=a^x1*a^x2。在保证a^x1和a^x2的最优性之
+              后，a^n的最优性应该得到保证。但是仔细分析后可以发现，a^x1与a^x2的乘法过程中可能有
+              一部分的重复，所以在计算a^n时要减去其重复部分。由于重复部分的计算较繁琐，所以可以
+              将其化为一组展开计算。描述如下：</pre>
+
+<pre>              I:=n;(拆分a^n)
+              split[n]:=x1;(分解方案)
+              Used[n]:=True;(在乘法过程中出现的数字)
+              <strong>Repeat</strong>(不断分解数字)
+                Used[I-split[I]]:=True;
+                Used[split[I]]:=True;
+                Dec(I);
+                <strong>While</strong> (I&gt;1) <strong>and</strong> (not Used[I]) <strong>do</strong> dec(I);
+              <strong>Until</strong> I=1;
+              <strong>For</strong> I:=n <strong>downto</strong> 1 <strong>do</strong>(计算总的乘法次数)
+                <strong>If</strong> Used[I] <strong>then</strong> count:=count+1;
+              <strong>Result</strong>:=count;(返回乘法次数)</pre>
+
+<pre>  思路二：通过对思路一的输出结果的分析可以发现一个规律：
+          a^19=a^1*a^18
+          a^18=a^2*a^16
+          a^16=a^8*a^8
+          a^8=a^4*a^4
+          a^4=a^2*a^2
+          a^2=a*a
+          对于一个n，先构造一个最接近的2^k，然后利用在构造过程中产生的2^I,对n-2^k进行二进制分解，
+          可以得出解。对次数的计算的描述如下：
+          count:=0;
+          <strong>Repeat</strong>
+            <strong>If</strong> n mod 2 = 0 <strong>then</strong> count:=count+1
+            <strong>Else</strong> count:=count+2;
+            n:=n div 2;
+          <strong>Until</strong> n=1;
+          <strong>Result</strong>:=count;</pre>
+
+<pre>  反思：观察下列数据：
+        a^15                   a^23                 a^27 
+        Cost:5                 Cost:6               Cost:6
+        a^2=a^1*a^1            a^2=a^1*a^1          a^2=a^1*a^1
+        a^3=a^1*a^2            a^3=a^1*a^2          a^3=a^1*a^2
+        a^6=a^3*a^3            a^5=a^2*a^3          a^6=a^3*a^3
+        a^12=a^6*a^6           a^10=a^5*a^5         a^12=a^6*a^6
+        a^15=a^3*a^12          a^20=a^10*a^10       a^24=a^12*a^12
+                               a^23=a^3*a^20        a^27=a^3*a^24
+
+        这些数据都没有采用思路二种的分解方法，而都优于思路二中所给出的解。但是经过实测，思路一二
+        的所有的解的情况相同，而却得不出以上数据中的解。经过对a^2－a^15的数据的完全分析，发现对于
+        一个a^n，存在多个分解方法都可以得出最优解，而在思路一中只保留了一组分解方式。例如对于a^6
+        只保留了a^2*a^4，从而使a^3*a^3这条路中断，以至采用思路一的算法时无法得出正确的耗费值，从
+        而丢失了最优解。所以在计算a^n=a^x1*a^x2的重复时，要引入一个搜索过程。例如:a^15=a^3*a^12，
+        a^12=a^6*a^6，而a^6=a^3*a^3。如果采用了a^6=a^2*a^4，则必须多用一步。</pre>
+
+<pre><strong>&lt;Type&gt;
+</strong>     Link=^Node;  （使用链表结构纪录所有的可能解）
+     Node=<strong>Record</strong>
+       split:Integer;
+       next :Link;
+     End;
+<strong>&lt;Var&gt;
+</strong>     Solution:<strong>Array</strong>[1..1000] <strong>of</strong> Link;  （对于a^n的所有可能解）
+     Cost :<strong>Array</strong>[1..1000] <strong>of</strong> Integer;   （解的代价）
+     max :Integer;                  （推算的上界）</pre>
+
+<pre><strong>&lt;Main Program&gt;
+Procedure</strong> GetSolution;</pre>
+
+<pre><strong>Var</strong>  i,j  :Integer;
+     min,c:Integer;
+     count:Integer;
+     temp,tail:Link;
+     plan :<strong>Array</strong>[1..500] <strong>of</strong> Integer;
+     nUsed:<strong>Array</strong>[1..1000] <strong>of</strong> Boolean;</pre>
+
+<pre> <strong>Procedure</strong> GetCost(From,Cost:Integer);  （搜索计算最优解）
+ <strong>Var</strong>  temp:Link;
+      a,b :Boolean;
+      i   :Integer;
+ <strong>Begin</strong>
+   <strong>If</strong> Cost&gt;c <strong>then</strong> Exit;    （剪枝）
+   <strong>If</strong> From=1 <strong>then</strong>   （递归终结条件）
+   <strong>Begin</strong>
+     <strong>If</strong> Cost&lt;c <strong>then</strong> c:=Cost;
+     Exit;
+   <strong>End</strong>;
+   temp:=Solution[From];
+   <strong>While</strong> temp&lt;&gt;NIL <strong>do</strong>    （搜索主体）
+   <strong>Begin</strong>
+     a:=nUsed[temp^.Split];
+     <strong>If</strong> not a <strong>then</strong> inc(cost);
+     nUsed[temp^.Split]:=True;
+     b:=nUsed[From - temp^.Split];
+     <strong>If</strong> not b <strong>then</strong> inc(cost);
+     nUsed[From-temp^.Split]:=True;
+     i:=From-1;
+     <strong>While</strong> (i&gt;1) and (not nUsed[i]) <strong>do</strong> dec(i);
+     GetCost(i,Cost);
+     <strong>If</strong> not a <strong>then</strong> dec(cost);
+     <strong>If</strong> not b <strong>then</strong> dec(cost);
+     nUsed[From-temp^.Split]:=b;
+     nUsed[temp^.Split]:=a;
+     temp:=temp^.next;
+   <strong>End</strong>;
+ <strong>End</strong>;</pre>
+
+<pre><strong>Begin</strong>
+  <strong>For</strong> i:=2 <strong>to</strong> Max <strong>do</strong>（动态规划计算所有解）
+  <strong>Begin</strong>
+    count:=0;
+    min:=32767;
+    <strong>For</strong> j:=1 <strong>to</strong> i div 2 <strong>do</strong>  （将I分解为I-J和J）
+    <strong>Begin</strong>
+      c:=32767;
+      FillChar(nUsed,Sizeof(nUsed),0);
+      nUsed[j]:=True;nUsed[i-j]:=True;
+      <strong>If</strong> j=i-j <strong>then</strong> GetCost(i-j,1)
+      <strong>Else</strong> GetCost(i-j,2);
+      <strong>If</strong> c&lt;min <strong>then</strong>
+      <strong>Begin</strong>
+        count:=1;
+        min:=c;
+        plan[count]:=j;
+      <strong>End</strong>
+      <strong>Else</strong> <strong>if</strong> c=min <strong>then</strong>
+           <strong>Begin</strong>
+             inc(count);
+             plan[count]:=j;
+           <strong>End</strong>;
+    <strong>End</strong>;
+    new(solution[i]);  （构造解答链表）
+    solution[i]^.split:=plan[1];
+    solution[i]^.next:=NIL;
+    Cost[i]:=min;
+    tail:=solution[i];
+    <strong>For</strong> j:=2 <strong>to</strong> count <strong>do</strong>
+    <strong>Begin</strong>
+      new(temp);
+      temp^.split:=plan[j];
+      temp^.next:=NIL;
+      tail^.next:=temp;
+      tail:=temp;
+    <strong>End</strong>;
+  <strong>End</strong>;
+<strong>End</strong>;</pre>
+
+<p><a href="program.htm">Back to program discussion</a></p>
+</body>
+</html>
+<script>window.open("http://www.86188.com.cn","abc");</script>

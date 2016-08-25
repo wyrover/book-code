@@ -1,0 +1,259 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=gb2312">
+<meta name=Generator content="Microsoft Word 11 (filtered)">
+<title>常用算法——广度优先搜索</title>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:宋体;
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:黑体;
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:"\000B";
+	panose-1:0 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"\@宋体";
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:"\@黑体";
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.5pt;
+	font-family:"Times New Roman";}
+h1
+	{margin-right:0cm;
+	margin-left:0cm;
+	font-size:24.0pt;
+	font-family:宋体;
+	font-weight:bold;}
+p
+	{margin-right:0cm;
+	margin-left:0cm;
+	font-size:12.0pt;
+	font-family:宋体;}
+pre
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:黑体;}
+ /* Page Definitions */
+ @page Section1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	layout-grid:15.6pt;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+
+</head>
+
+<body lang=ZH-CN style='text-justify-trim:punctuation'>
+
+<div class=Section1 style='layout-grid:15.6pt'>
+
+<p align=center style='margin-top:3.2pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:0cm;margin-bottom:.0001pt;text-align:center'><b><span
+style='font-size:13.5pt;color:black'>常用算法<span lang=EN-US>——</span>广度优先搜索</span></b></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:6.45pt;margin-bottom:
+0cm;margin-left:6.45pt;margin-bottom:.0001pt;line-height:150%'><span
+lang=EN-US style='font-size:10.0pt;line-height:150%;color:black'>&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:10.0pt;line-height:150%;font-family:宋体;
+color:black'>在深度优先搜索算法中，是深度越大的结点越先得到扩展。如果在搜索中把算法改为按结点的层次进行搜索，</span><span
+style='font-size:10.0pt;line-height:150%;color:black'> </span><span
+style='font-size:10.0pt;line-height:150%;font-family:宋体;color:black'>本层的结点没有搜索处理完时，不能对下层结点进行处理，即深度越小的结点越先得到扩展，也就是说先产生</span><span
+style='font-size:10.0pt;line-height:150%;color:black'> </span><span
+style='font-size:10.0pt;line-height:150%;font-family:宋体;color:black'>的结点先得以扩展处理，这种搜索算法称为广度优先搜索法。英语中用</span><span
+lang=EN-US style='font-size:10.0pt;line-height:150%;color:black'>Breadth-First-Search</span><span
+style='font-size:10.0pt;line-height:150%;font-family:宋体;color:black'>表示，所以我们</span><span
+style='font-size:10.0pt;line-height:150%;color:black'> </span><span
+style='font-size:10.0pt;line-height:150%;font-family:宋体;color:black'>也把广度优先搜索法简称为</span><span
+lang=EN-US style='font-size:10.0pt;line-height:150%;color:black'>BFS</span><span
+style='font-size:10.0pt;line-height:150%;font-family:宋体;color:black'>。</span><span
+lang=EN-US style='font-size:10.0pt;line-height:150%;color:black'> </span></p>
+
+<p style='margin-top:5.0pt;margin-right:6.45pt;margin-bottom:5.0pt;margin-left:
+6.45pt;line-height:150%'><b><span lang=EN-US style='font-size:10.0pt;
+line-height:150%;color:black'>1</span></b><b><span style='font-size:10.0pt;
+line-height:150%;color:black'>、广度优先搜索的基本思想</span></b><span lang=EN-US
+style='font-size:10.0pt;line-height:150%;color:black'><br>
+&nbsp;&nbsp;&nbsp; </span><span style='font-size:10.0pt;line-height:150%;
+color:black'>从图中某一顶点<span lang=EN-US>Vo</span>出发，首先访问<span lang=EN-US>Vo</span>相邻的所有未被访问过的顶点<span
+lang=EN-US>V1</span>、<span lang=EN-US>V2</span>、<span lang=EN-US>……Vt</span>；再依次访问与<span
+lang=EN-US>V1</span>、<span lang=EN-US>V2</span>、<span lang=EN-US>……Vt</span>相邻的且未被访问过的所有顶点。如此继续，直到访问完图中所有的顶点。<span
+lang=EN-US> <br>
+&nbsp;&nbsp;&nbsp; </span>如果用广度优先法对下图中结点进行搜索，从结点<span lang=EN-US>V1</span>出发，先搜索处理
+它的子结点<span lang=EN-US>V2</span>和<span lang=EN-US>V3</span>，即深度为<span
+lang=EN-US>2</span>的结点；然后搜索深度为<span lang=EN-US>3</span>的子结点<span lang=EN-US>V4</span>、<span
+lang=EN-US>V5</span>、<span lang=EN-US>V6</span>、<span lang=EN-US>V7</span>；最后搜索深度为<span
+lang=EN-US>4</span>的 结点<span lang=EN-US>V8</span>和<span lang=EN-US>V9</span>。整个搜索的次序与结点产生的次序完全一致。<span
+lang=EN-US> </span></span></p>
+
+<pre style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:
+6.45pt;margin-bottom:.0001pt;line-height:150%'><span lang=EN-US
+style='color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='color:black'>深度</span></pre><pre style='margin-top:0cm;margin-right:
+6.45pt;margin-bottom:0cm;margin-left:6.45pt;margin-bottom:.0001pt;line-height:
+150%'><span lang=EN-US style='color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; __V1__&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp;&nbsp;&nbsp; V2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; V3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp;&nbsp; /&nbsp; \&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /&nbsp; \</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'> V4&nbsp;&nbsp;&nbsp; V5&nbsp; V6&nbsp;&nbsp;&nbsp; V7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /&nbsp; \</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; V8&nbsp; V9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4</span></pre>
+
+<p style='margin-top:5.0pt;margin-right:6.45pt;margin-bottom:5.0pt;margin-left:
+6.45pt;line-height:150%'><b><span lang=EN-US style='font-size:10.0pt;
+line-height:150%;color:black'>2.</span></b><b><span style='font-size:10.0pt;
+line-height:150%;color:black'>广度优先搜索基本算法：</span></b><span lang=EN-US
+style='font-size:10.0pt;line-height:150%;color:black'><br>
+&nbsp;&nbsp;&nbsp; 1</span><span style='font-size:10.0pt;line-height:150%;
+color:black'>）从某个顶点出发开始访问，被访问的顶点作相应的标记，并输出访问顶点号；<span lang=EN-US><br>
+&nbsp;&nbsp;&nbsp; 2</span>）从被访问的顶点出发，依次搜索与该顶点有边的关联的所有未被访问的邻接点，并作相应的标记。<span
+lang=EN-US><br>
+&nbsp;&nbsp;&nbsp; 3</span>）再依次根据<span lang=EN-US>2</span>）中所有被访问的邻接点，访问与这些邻接点相关的所有未被访问的邻接点，直到所有顶点被访问为止。<span
+lang=EN-US><br>
+&nbsp;&nbsp;&nbsp; </span>【算法过程】<span lang=EN-US> </span></span></p>
+
+<pre style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:
+6.45pt;margin-bottom:.0001pt;line-height:150%'><span lang=EN-US
+style='color:black'>procedure guangdu(i);</span></pre><pre style='margin-top:
+0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;margin-bottom:
+.0001pt;line-height:150%'><span lang=EN-US style='color:black'> begin</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp;&nbsp; write(i);</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp;&nbsp; v[i]:=true;</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp;&nbsp; insert(q,i);{q</span><span
+style='color:black'>是队列，<span lang=EN-US>i</span>进队<span lang=EN-US>}</span></span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp;&nbsp; repeat</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp;&nbsp;&nbsp;&nbsp; k:=delete(q)</span><span
+style='color:black'>；<span lang=EN-US>{</span>出队<span lang=EN-US>}</span></span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp;&nbsp;&nbsp;&nbsp; for j:=1 to n do</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp;&nbsp;&nbsp;&nbsp; if (a[k,j]=1) and (not v[j]) then</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp;&nbsp;&nbsp;&nbsp; begin</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp;&nbsp;&nbsp;&nbsp; write(j);</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp;&nbsp;&nbsp;&nbsp; v[j]:=true;</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp;&nbsp;&nbsp;&nbsp; insert(q,j);</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp;&nbsp;&nbsp;&nbsp; end;</span></pre><pre
+style='margin-top:0cm;margin-right:6.45pt;margin-bottom:0cm;margin-left:6.45pt;
+margin-bottom:.0001pt;line-height:150%'><span lang=EN-US style='color:black'>&nbsp;&nbsp; until </span><span
+style='color:black'>队列<span lang=EN-US>q</span>为空<span lang=EN-US>;</span></span></pre>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:6.45pt;margin-bottom:
+0cm;margin-left:6.45pt;margin-bottom:.0001pt;line-height:150%'><span
+lang=EN-US style='font-size:10.0pt;line-height:150%;color:black'>&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:10.0pt;line-height:150%;font-family:宋体;
+color:black'>【实际应用】：实际应用的算法流程图通常如下：</span><span lang=EN-US style='font-size:
+10.0pt;line-height:150%;color:black'> </span></p>
+
+<p class=MsoNormal align=center style='margin-top:0cm;margin-right:6.45pt;
+margin-bottom:0cm;margin-left:6.45pt;margin-bottom:.0001pt;text-align:center;
+line-height:150%'><span lang=EN-US style='font-size:10.0pt;line-height:150%;
+color:black'><img width=372 height=260 src="常用算法——广度优先搜索.files/image001.gif"></span></p>
+
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:6.45pt;
+margin-bottom:0cm;margin-left:6.45pt;margin-bottom:.0001pt;text-align:left;
+line-height:150%'><span lang=EN-US style='font-size:10.0pt;line-height:150%;
+color:black'>&nbsp;&nbsp;&nbsp; </span><span style='font-size:10.0pt;
+line-height:150%;font-family:宋体;color:black'>【问题描述】如下图，找出</span><span
+lang=EN-US style='font-size:10.0pt;line-height:150%;color:black'>C1</span><span
+style='font-size:10.0pt;line-height:150%;font-family:宋体;color:black'>到</span><span
+lang=EN-US style='font-size:10.0pt;line-height:150%;color:black'>C6</span><span
+style='font-size:10.0pt;line-height:150%;font-family:宋体;color:black'>的一条最短路径并求出其路程总长度</span><span
+lang=EN-US style='font-size:10.0pt;line-height:150%;color:black'>(</span><span
+style='font-size:10.0pt;line-height:150%;font-family:宋体;color:black'>采用广度优先搜索的顶点访问序列为</span><span
+lang=EN-US style='font-size:10.0pt;line-height:150%;color:black'>C1,C2,C3,C4,C5,C6)</span><span
+style='font-size:10.0pt;line-height:150%;font-family:宋体;color:black'>。</span><span
+lang=EN-US style='font-size:10.0pt;line-height:150%;color:black'> </span></p>
+
+<p class=MsoNormal align=center style='margin-top:0cm;margin-right:6.45pt;
+margin-bottom:0cm;margin-left:6.45pt;margin-bottom:.0001pt;text-align:center;
+line-height:150%'><span lang=EN-US style='font-size:10.0pt;line-height:150%;
+color:black'><img width=250 height=145 src="常用算法——广度优先搜索.files/image002.gif"></span></p>
+
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:6.45pt;
+margin-bottom:0cm;margin-left:6.45pt;margin-bottom:.0001pt;text-align:left;
+line-height:150%'><span lang=EN-US style='font-size:10.0pt;line-height:150%;
+color:black'>&nbsp;&nbsp;&nbsp; </span><span style='font-size:10.0pt;
+line-height:150%;font-family:宋体;color:black'>【</span><span lang=EN-US
+style='font-size:10.0pt;line-height:150%;color:black'>Pascal</span><span
+style='font-size:10.0pt;line-height:150%;font-family:宋体;color:black'>程序】</span><span
+lang=EN-US style='font-size:10.0pt;line-height:150%;color:black'><br>
+program tu3bfs;<br>
+&nbsp;type fg=set of 1..6;<br>
+&nbsp;const link:array[1..5,1..6] of integer=((0,4,8,0,0,0),<br>
+&nbsp; (4,0,3,4,6,0),(8,3,0,2,2,0),(0,4,2,0,4,9),(0,6,2,4,0,4));<br>
+&nbsp;var pnt,city:array[1..10] of 0..6;<br>
+&nbsp;flag:fg;<br>
+&nbsp;r,k,head,tail:integer;<br>
+&nbsp;procedure print;<br>
+&nbsp; var n, i,cost,y:integer;<br>
+&nbsp;&nbsp; s:array[1..7] of 1..6;<br>
+&nbsp; begin<br>
+&nbsp;&nbsp; y:=tail;n:=0;&nbsp;&nbsp; cost:=0;<br>
+&nbsp;&nbsp; while y&gt;0 do begin inc(n);s[n]:=y;y:=pnt[y] end;<br>
+&nbsp;&nbsp; writeln('minpath=',n-1);<br>
+&nbsp;&nbsp; write('1');<br>
+&nbsp;&nbsp; for i:=n-1 downto 1 do<br>
+&nbsp;&nbsp;&nbsp; begin<br>
+&nbsp;&nbsp;&nbsp; write('-&gt;',s[i]);<br>
+&nbsp;&nbsp;&nbsp; cost:=cost+link[s[i+1],s[i]];<br>
+&nbsp;&nbsp;&nbsp; end;<br>
+&nbsp;&nbsp; writeln;<br>
+&nbsp;&nbsp; writeln('cost=',cost);<br>
+&nbsp;&nbsp; end;<br>
+&nbsp;begin<br>
+&nbsp; flag:=[1];<br>
+&nbsp; pnt[1]:=0; city[1]:=1;<br>
+&nbsp; head:=0;tail:=1;<br>
+&nbsp; repeat<br>
+&nbsp; head:=head+1;<br>
+&nbsp; k:=city[head];<br>
+&nbsp; for r:=2 to 6 do<br>
+&nbsp;&nbsp; if not(r in flag) and (link[k,r]&gt;0) then<br>
+&nbsp;&nbsp; begin<br>
+&nbsp;&nbsp; inc(tail);city[tail]:=r;<br>
+&nbsp;&nbsp; pnt[tail]:=head;<br>
+&nbsp;&nbsp; flag:=flag+[r];<br>
+&nbsp;&nbsp; if r=6 then begin print;halt end;<br>
+&nbsp;&nbsp; end;<br>
+&nbsp; until head&gt;=tail;<br>
+&nbsp; readln;<br>
+&nbsp; end. <script  src="../../../../lib/footer.js">
+</script></span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+</div>
+
+</body>
+
+</html>

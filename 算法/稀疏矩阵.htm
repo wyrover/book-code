@@ -1,0 +1,173 @@
+<HTML>
+<HEAD>
+<META NAME="GENERATOR" Content="Microsoft Visual Studio 6.0">
+<TITLE></TITLE>
+</HEAD>
+<BODY background="BG2.jpg" tppabs="http://home.educities.edu.tw/peterhuang1/pictrue/BG2.jpg"><FONT color=darkblue size=6 
+>
+<P align=center><FONT face=新細明體>稀疏陣列</FONT></P>
+<BLOCKQUOTE style="MARGIN-RIGHT: 0px"><FONT color=black>
+<P align=left><FONT face=新細明體 
+  size=2>一個陣列中如果有很多位置沒有被使用,造成記憶體的浪費.</FONT></P>
+<P align=left><FONT face=新細明體 
+  size=2>我們可以將其轉變成另一個小的陣列,減少記憶體使用.</FONT></P>
+<P align=left><FONT face=新細明體 
+size=2>比方說一個陣列如下:</FONT></P>
+<DIV align=left></FONT></FONT>
+<DIV align=left>
+<P align=left>
+  <TABLE border=1 cellPadding=1 cellSpacing=1 width="75%">
+    
+    <TR>
+      <TD>
+        <P align=center><FONT face=新細明體 size=2>索引</FONT></P></TD>
+      <TD>
+        <P align=center><FONT face=新細明體 size=2>0</FONT></P></TD>
+      <TD>
+        <P align=center><FONT face=新細明體 size=2>1</FONT></P></TD>
+      <TD>
+        <P align=center><FONT face=新細明體 size=2>2</FONT></P></TD>
+      <TD>
+        <P align=center><FONT face=新細明體 size=2>3</FONT></P></TD></TR>
+    <TR>
+      <TD>
+        <P align=center><FONT face=新細明體 size=2>0</FONT></P></TD>
+      <TD>
+        <P align=center><FONT face=新細明體 size=2>0</FONT></P></TD>
+      <TD>
+        <P align=center><FONT face=新細明體 size=2>0</FONT></P></TD>
+      <TD>
+        <P align=center><FONT face=新細明體 size=2>0</FONT></P></TD>
+      <TD>
+        <P align=center><FONT face=新細明體 size=2>7</FONT></P></TD></TR>
+    <TR>
+      <TD>
+        <P align=center><FONT face=新細明體 size=2>1</FONT></P></TD>
+      <TD>
+        <P align=center><FONT face=新細明體 size=2>0</FONT></P></TD>
+      <TD>
+        <P align=center><FONT face=新細明體 size=2>4</FONT></P></TD>
+      <TD>
+        <P align=center><FONT face=新細明體 size=2>0</FONT></P></TD>
+      <TD>
+        <P align=center><FONT face=新細明體 size=2>0</FONT></P></TD></TR>
+    <TR>
+      <TD>
+        <P align=center><FONT face=新細明體 size=2>2</FONT></P></TD>
+      <TD>
+        <P align=center><FONT face=新細明體 size=2>0</FONT></P></TD>
+      <TD>
+        <P align=center>0</P></TD>
+      <TD>
+        <P align=center><FONT face=新細明體 size=2>0</FONT></P></TD>
+      <TD>
+        <P align=center><FONT face=新細明體 size=2>1</FONT></P></TD></TR>
+    <TR>
+      <TD>
+        <P align=center><FONT face=新細明體 size=2>3</FONT></P></TD>
+      <TD>
+        <P align=center><FONT face=新細明體 size=2>5</FONT></P></TD>
+      <TD>
+        <P align=center><FONT face=新細明體 size=2>0</FONT></P></TD>
+      <TD>
+        <P align=center><FONT face=新細明體 size=2>0</FONT></P></TD>
+      <TD>
+        <P align=center><FONT face=新細明體 size=2>0</FONT></P></TD></TR>
+    <TR>
+      <TD>
+        <P align=center><FONT face=新細明體 size=2>4</FONT></P></TD>
+      <TD>
+        <P align=center><FONT face=新細明體 size=2>0</FONT></P></TD>
+      <TD>
+        <P align=center><FONT face=新細明體 size=2>0</FONT></P></TD>
+      <TD>
+        <P align=center><FONT face=新細明體 size=2>0</FONT></P></TD>
+      <TD>
+        <P align=center><FONT face=新細明體 
+  size=2>0</FONT></P></TD></TR></TABLE></P></DIV></DIV>
+<P align=left><FONT face=新細明體 
+  size=2>可以轉成一個新的陣列如下:</FONT></P>
+<DIV align=left>
+<DIV align=left>
+<P align=left>
+  <TABLE border=1 cellPadding=1 cellSpacing=1 width="75%">
+    
+    <TR>
+      <TD>
+        <P align=center><FONT face=新細明體 size=2>索引</FONT></P></TD>
+      <TD>
+        <P align=center><FONT face=新細明體 size=2>0</FONT></P></TD>
+      <TD>
+        <P align=center><FONT face=新細明體 size=2>1</FONT></P></TD>
+      <TD>
+        <P align=center><FONT face=新細明體 size=2>2</FONT></P></TD>
+      <TD>
+        <P align=center><FONT face=新細明體 size=2>註</FONT></P></TD></TR>
+    <TR>
+      <TD>
+        <P align=center><FONT face=新細明體 size=2>0</FONT></P></TD>
+      <TD>
+        <P align=center><FONT face=新細明體 size=2>5</FONT></P></TD>
+      <TD>
+        <P align=center><FONT face=新細明體 size=2>4</FONT></P></TD>
+      <TD>
+        <P align=center><FONT face=新細明體 size=2>4</FONT></P></TD>
+      <TD>
+        <P align=center><FONT face=新細明體 size=2>原陣列有5行4列4個值</FONT></P></TD></TR>
+    <TR>
+      <TD>
+        <P align=center><FONT face=新細明體 size=2>1</FONT></P></TD>
+      <TD>
+        <P align=center><FONT face=新細明體 size=2>0</FONT></P></TD>
+      <TD>
+        <P align=center><FONT face=新細明體 size=2>3</FONT></P></TD>
+      <TD>
+        <P align=center><FONT face=新細明體 size=2>7</FONT></P></TD>
+      <TD>
+        <P align=center><FONT face=新細明體 size=2>第0行第3列是7</FONT></P></TD></TR>
+    <TR>
+      <TD>
+        <P align=center><FONT face=新細明體 size=2>2</FONT></P></TD>
+      <TD>
+        <P align=center><FONT face=新細明體 size=2>1</FONT></P></TD>
+      <TD>
+        <P align=center><FONT face=新細明體 size=2>1</FONT></P></TD>
+      <TD>
+        <P align=center><FONT face=新細明體 size=2>4</FONT></P></TD>
+      <TD>
+        <P align=center><FONT face=新細明體 size=2>第1行第1列是4</FONT></P></TD></TR>
+    <TR>
+      <TD>
+        <P align=center><FONT face=新細明體 size=2>3</FONT></P></TD>
+      <TD>
+        <P align=center><FONT face=新細明體 size=2>2</FONT></P></TD>
+      <TD>
+        <P align=center><FONT face=新細明體 size=2>3</FONT></P></TD>
+      <TD>
+        <P align=center><FONT face=新細明體 size=2>1</FONT></P></TD>
+      <TD>
+        <P align=center><FONT face=新細明體 size=2>第2行第3列是1</FONT></P></TD></TR>
+    <TR>
+      <TD>
+        <P align=center><FONT face=新細明體 size=2>4</FONT></P></TD>
+      <TD>
+        <P align=center><FONT face=新細明體 size=2>3</FONT></P></TD>
+      <TD>
+        <P align=center><FONT face=新細明體 size=2>0</FONT></P></TD>
+      <TD>
+        <P align=center><FONT face=新細明體 size=2>5</FONT></P></TD>
+      <TD>
+        <P align=center><FONT face=新細明體 
+  size=2>第3行第0列是5</FONT></P></TD></TR></TABLE></P></DIV>
+<P align=left><FONT face=新細明體 
+  size=2>原本的陣列是int型態,總共用去5(行)*4(列)*2(int型態是2byte) = 40</FONT></P>
+<P align=left><FONT face=新細明體 
+  size=2>新的的元素是int型態,總共用去5(行)*3(列)*2(int型態是2byte) = 30</FONT></P>
+<P align=left><FONT face=新細明體 size=2>40byte -30byte = 
+  10byte.減少了10byte空間.</FONT></P></DIV></BLOCKQUOTE>
+<P align=center><A 
+href="DataPreface.htm" tppabs="http://home.educities.edu.tw/peterhuang1/DataStruct/DataPreface.htm"><FONT 
+face=新細明體>return</FONT></A></P>
+
+</BODY>
+</HTML>

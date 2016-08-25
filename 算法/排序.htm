@@ -1,0 +1,115 @@
+<HTML>
+<HEAD>
+<META NAME="GENERATOR" Content="Microsoft FrontPage 5.0">
+<TITLE></TITLE>
+</HEAD>
+<BODY background="BG2.jpg" tppabs="http://home.educities.edu.tw/peterhuang1/pictrue/BG2.jpg"><FONT color=darkblue size=6 
+>
+<P align=center><font face="新細明體">排序</font></FONT></P>
+<blockquote>
+<P><font size="2">排序是指將一組資料由小到大或是由大到小進行排列:</font></P>
+
+<P><font size="2">以下是一些排序法:</font></P>
+
+  <table border="1"  width="78%" id="AutoNumber1">
+    <tr>
+      <td width="16%" align="center"><font size="2">排序法</font></td>
+      <td width="16%" align="center"><font size="2">英文</font></td>
+      <td width="16%" align="center"><font size="2">平均時間</font></td>
+      <td width="17%" align="center"><font size="2">最差狀況</font></td>
+      <td width="17%" align="center"><font size="2">穩定度</font></td>
+      <td width="17%" align="center"><font size="2">類別</font></td>
+    </tr>
+    <tr>
+      <td width="16%" align="center"><font size="2">氣泡</font></td>
+      <td width="16%" align="center"><font size="2">Bubble</font></td>
+      <td width="16%" align="center"><font size="2">O(n<sup>2</sup>)</font></td>
+      <td width="17%" align="center"><font size="2">O(n<sup>2</sup>)</font></td>
+      <td width="17%" align="center"><font size="2">不穩定</font></td>
+      <td width="17%" align="center"><font size="2">內部</font></td>
+    </tr>
+    <tr>
+      <td width="16%" align="center"><font size="2">插入</font></td>
+      <td width="16%" align="center"><font size="2">Insertion</font></td>
+      <td width="16%" align="center"><font size="2">O(n<sup>2</sup>)</font></td>
+      <td width="17%" align="center"><font size="2">O(n<sup>2</sup>)</font></td>
+      <td width="17%" align="center"><font size="2">穩定</font></td>
+      <td width="17%" align="center"><font size="2">內部</font></td>
+    </tr>
+    <tr>
+      <td width="16%" align="center"><font size="2">選擇</font></td>
+      <td width="16%" align="center"><font size="2">Selection</font></td>
+      <td width="16%" align="center"><font size="2">O(n<sup>2</sup>)</font></td>
+      <td width="17%" align="center"><font size="2">O(n<sup>2</sup>)</font></td>
+      <td width="17%" align="center"><font size="2">穩定</font></td>
+      <td width="17%" align="center"><font size="2">內部</font></td>
+    </tr>
+    <tr>
+      <td width="16%" align="center"><font size="2">薛爾</font></td>
+      <td width="16%" align="center"><font size="2">Shell</font></td>
+      <td width="16%" align="center"><font size="2">O(nlogn)</font></td>
+      <td width="17%" align="center"><font size="2">O(n<sup>s</sup>)</font><p>
+      <font size="2">1&lt;S&lt;2</font></td>
+      <td width="17%" align="center"><font size="2">不穩定</font></td>
+      <td width="17%" align="center"><font size="2">內部</font></td>
+    </tr>
+    <tr>
+      <td width="16%" align="center"><font size="2">快速</font></td>
+      <td width="16%" align="center"><font size="2">Quick</font></td>
+      <td width="16%" align="center"><font size="2">O(nlogn)</font></td>
+      <td width="17%" align="center"><font size="2">O(n<sup>2</sup>)</font></td>
+      <td width="17%" align="center"><font size="2">不穩定</font></td>
+      <td width="17%" align="center"><font size="2">內部</font></td>
+    </tr>
+    <tr>
+      <td width="16%" align="center"><font size="2">壘堆</font></td>
+      <td width="16%" align="center"><font size="2">Heap</font></td>
+      <td width="16%" align="center"><font size="2">O(nlogn)</font></td>
+      <td width="17%" align="center"><font size="2">O(nlogn)</font></td>
+      <td width="17%" align="center"><font size="2">不穩定</font></td>
+      <td width="17%" align="center"><font size="2">內部</font></td>
+    </tr>
+    <tr>
+      <td width="16%" align="center"><font size="2">二元</font></td>
+      <td width="16%" align="center"><font size="2">Binary tree</font></td>
+      <td width="16%" align="center"><font size="2">O(nlogn)</font></td>
+      <td width="17%" align="center"><font size="2">O(n<sup>2</sup>)</font></td>
+      <td width="17%" align="center"><font size="2">不一定</font></td>
+      <td width="17%" align="center"><font size="2">內部</font></td>
+    </tr>
+    <tr>
+      <td width="16%" align="center"><font size="2">合併</font></td>
+      <td width="16%" align="center"><font size="2">Merge</font></td>
+      <td width="16%" align="center"><font size="2">O(nlogn)</font></td>
+      <td width="17%" align="center"><font size="2">O(nlogn)</font></td>
+      <td width="17%" align="center"><font size="2">穩定</font></td>
+      <td width="17%" align="center"><font size="2">外部</font></td>
+      </tr>
+    </table>
+<P align=left><font size="2">平均時間:程式平均執行次數.</font></P>
+
+<P align=left><font size="2">最差狀況:程式最差執行次數.</font></P>
+
+<P align=left><font size="2">穩定度:相同的數值排序後順序是否和排序前順序相同.若'是'稱為穩定,若'不是'稱為不穩定.</font></P>
+
+<P align=left><font size="2">類別:分為2類</font></P>
+
+  <blockquote>
+    <ul>
+      <li>
+<P align=left><font size="2">一類為內部排序,適合於所有資料可以寫入記憶體中.</font></P>
+
+      </li>
+      <li>
+<P align=left><font size="2">一類為外部排序,適合於所有資料無法全部寫入記憶體中,需使用輔助記憶體.</font></P>
+
+      </li>
+    </ul>
+  </blockquote>
+</blockquote>
+<P align=center><A 
+href="DataPreface.htm" tppabs="http://home.educities.edu.tw/peterhuang1/DataStruct/DataPreface.htm"><FONT 
+face=新細明體>return</FONT></A></P>
+
+</BODY>
+</HTML>

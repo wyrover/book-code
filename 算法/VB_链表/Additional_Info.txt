@@ -1,0 +1,88 @@
+Here is some test code I originally wrote, you might find it useful:
+
+Private Sub Form_Load()
+  Dim i As Long
+
+  ' Create a new linked list
+  Set list = New cLinkedList
+
+  list.Add 42    ' Insert Head Node
+  list.Add 43    ' Prepend Node
+  list.Add 44, 1 ' Insert Node
+  list.Add 45, 3 ' Append Node
+
+  ' Display the items in the list by index
+  Debug.Print "Slow Iteration"
+  IterateListSlow list
+
+  ' Display the items in the list with an iterator
+  Debug.Print "Fast Iteration"
+  IterateListFast list
+
+  list.Clear
+
+  ' Create a Reverse list:
+  ' Fastest insertion, as items are inserted before the head node
+  For i = 1 To 10
+    list.Add i
+  Next i
+
+  Debug.Print "Reverse list"
+  IterateListFast list
+  list.Clear
+
+  ' Create a Forward list
+  ' Tail insertion - Slow
+  For i = 1 To 10
+    list.Add i, i - 1
+  Next i
+
+'  A faster forward list would be:
+'  For i = 10 To 1 Step -1
+'    list.Add i
+'  Next i
+
+  Debug.Print "Forward list"
+  IterateListFast list
+
+  Set list = Nothing
+End Sub
+
+' Iterate quickly through the linked list by using raw pointers
+
+' Note that this is similar to a For/Each loop on a VB collection.
+Private Sub IterateListFast(ByVal list As cLinkedList)
+  Dim i As Long
+  Dim lPtr As Long    ' Pointer to the next list item
+  Dim lValue As Long  ' Variable passed ByRef to retrieve the value
+  
+  lPtr = list.HeadPtr ' Get the pointer to the first item in the list
+  
+  ' Iterate through the list
+  For i = 0 To list.Count - 1
+    lPtr = list.Iterate(lPtr, lValue) ' Pass the current pointer and get the next
+    Debug.Print lValue & " ";
+  Next i
+  
+  Debug.Print vbCrLf
+End Sub
+
+' Indexed list iteration is slow due to how a list is constructed.
+' Without any external knowledge of where an item is, you must _
+' loop through the entire list each time to get an item.
+' As you might suspect, retriving items farther into the _
+' list gets progressively slower.
+
+' Note that this is the same as getting an item from a VB collection _
+' with an index (not a string key).  Read: S L O W
+Private Sub IterateListSlow(ByVal list As cLinkedList)
+  Dim i As Long
+  
+  For i = 0 To list.Count - 1
+    Debug.Print list.Item(i) & " ";
+  Next i
+  
+  Debug.Print vbCrLf
+End Sub
+
+

@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CombinationEssentials", "CombinationEssentials.csproj", "{B4E209E4-DBAE-42B5-9A15-8BF2152FFE0F}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CombinationsLib", "..\CombinationsLib\CombinationsLib.csproj", "{BB9787D7-F2C8-4940-8E1E-3EA3B25028DB}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{B4E209E4-DBAE-42B5-9A15-8BF2152FFE0F}.Debug.ActiveCfg = Debug|.NET
+		{B4E209E4-DBAE-42B5-9A15-8BF2152FFE0F}.Debug.Build.0 = Debug|.NET
+		{B4E209E4-DBAE-42B5-9A15-8BF2152FFE0F}.Release.ActiveCfg = Release|.NET
+		{B4E209E4-DBAE-42B5-9A15-8BF2152FFE0F}.Release.Build.0 = Release|.NET
+		{BB9787D7-F2C8-4940-8E1E-3EA3B25028DB}.Debug.ActiveCfg = Debug|.NET
+		{BB9787D7-F2C8-4940-8E1E-3EA3B25028DB}.Debug.Build.0 = Debug|.NET
+		{BB9787D7-F2C8-4940-8E1E-3EA3B25028DB}.Release.ActiveCfg = Release|.NET
+		{BB9787D7-F2C8-4940-8E1E-3EA3B25028DB}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal
