@@ -1,0 +1,2 @@
+CODE_USE_DDX,0,Use WTL CWinDataExchange<> base
+CODE_USE_RESIZE,0,Use WTL CDialogResize<> base

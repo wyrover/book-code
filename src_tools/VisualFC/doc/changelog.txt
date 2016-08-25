@@ -1,0 +1,99 @@
+VisualFC
+
+version 0.82 (2010-6-1)
+*) VFCTools.exe support for VS2010/VCExpress
+*) WTLAppWizard  add .vcxproj (VS2010 project)
+
+version 0.80 RC2 (2009-5-18)
+*) Compatible Vista and Window7 + VS2008
+
+version 0.80 RC1 (2009-3-22)
+*) add VFCTools for VS2005/VS2008/VCExpress
+
+version 0.80.0603
+*) fix load active_file/active_class nocase
+
+version 0.80.0601 (2008-6-1)
+*) fix template<typename T = TBase> unable parser error(Code::Blocks error)
+   now visualfc can parser all wtl80 library
+*) WTL Event add ATL Message crack (no use atlcrack.h)
+*) change vfc_core modeless to modal view
+*) change FreeCode to VFCAddin
+*) change FreeCodeNET to VFCAddinNET
+*) add addin for vs2003
+*) make VFCAddinSetup.msi to auto install for VS60/VS2003/VS2005/VS2008
+
+version 0.80 beta1 (2008-4-22)
+*) wtl event kind/list styte
+*) AppWizard for WTL/WinxGui can make VS60/VS2003/VS2005/VS2008 Application
+*) CodeWizard for WTL
+
+version 0.75b (2007-12-12)
+*)new page style : change tab page manager to tree tab manager
+*)fix vs2005 and vs2008 addin sometimes not load bug
+
+version 0.72b (2007-12-03)
+-----------------------------
+*)add addin for vs2008
+*)fix END_MSG_MAP(); to END_MSG_MAP()
+
+vesion 0.71b (2007-11-15)
+-------------------------------
+*)http://code.google.com/p/visualfc
+*)change name VisualFC
+*)WTL Message
+*)WTL DataExchange
+*)Winx DataExchange
+*)WTL UpdateUI
+*)Winx UpdateUI
+
+version  0.51b  (2007-10-31)
+----------------------------------------
+*)offer WTL ClassWizard / Winx ClassWizard
+*)WTL command notify
+*)WTL dlg font
+
+version 0.5.0  (2007-10-24)
+---------------------------------------
+*)WTL DialogResize 
+
+*)fix addinf for vs2005
+
+
+version 0.3.10 2007-10-5
+---------------------------------------
+*) update evnet_page £¬Winx Event new Kind/List style
+
+*) marge fox1996 FreeCode For VS2005 addin (write for fox1996)
+
+*) add new tag_token
+
+*) update CODE::BLOCKS parser£¬support WTL IDD enum { IDD = IDD_ABOUT }
+
+
+version 0.3.0516 (2007-05-16)
+---------------------------------------
+*) winx dlgresize
+
+*) winx dlgfont
+
+*) update codeparser 
+
+*) add new codeupdate
+
+*) fix WINX_NOTIFY BUG
+
+*) easy add message 
+;NT5.1 CONTROL
+<Link>
+res=SysLink
+NM_CLICK
+NM_RETURN
+NM_THEMECHANGED
+</Link>
+
+version 0.3.0501(2007-05-01)
+--------------------------------------
+*) VS60 install
+*) winx event
+*) winx message

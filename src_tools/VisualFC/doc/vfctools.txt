@@ -1,0 +1,16 @@
+VisualFC Tools 0.82
+
+1.System
+VS2003/VS2005/VS2008/VS2010 or VCExpress
+
+2.Install for VS External Tools
+
+VS2005 Tools -> external tools ->
+
+Caption = VFCTools
+Command = c:\visualfc\bin\vfctools.exe
+Arguments= $(ProjectDir)$(ProjectFileName)
+
+3. Run the Tools
+Open VS2005 and Load WTL Projects
+Clicked VFC2005->Tools->VFCTools

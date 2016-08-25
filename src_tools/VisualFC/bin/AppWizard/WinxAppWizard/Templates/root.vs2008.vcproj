@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="[!output PROJECT_ENCODE]"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="9.00"
+	Name="[!output PROJECT_NAME]"
+	ProjectGUID="[!output PROJECT_GUID]"
+	>
+	<Platforms>
+		<Platform
+			Name="Win32"
+		/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration
+			Name="Debug|Win32"
+			OutputDirectory="Debug"
+			IntermediateDirectory="Debug"
+			ConfigurationType="1"
+			ATLMinimizesCRunTimeLibraryUsage="false"
+[!if WINX_USE_UNICODE]
+			CharacterSet="1"
+[!else]
+			CharacterSet="2"
+[!endif]
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+				PreprocessorDefinitions="_DEBUG"
+				MkTypLibCompatible="false"
+				TargetEnvironment="1"
+				GenerateStublessProxies="true"
+				TypeLibraryName="$(IntDir)/[!output PROJECT_NAME].tlb"
+				HeaderFileName="[!output PROJECT_NAME].h"
+				DLLDataFileName=""
+				InterfaceIdentifierFileName="[!output PROJECT_NAME]_i.c"
+				ProxyFileName="[!output PROJECT_NAME]_p.c"
+			/>
+			<Tool
+				Name="VCCLCompilerTool"
+				Optimization="0"
+				PreprocessorDefinitions="WIN32;_WINDOWS;STRICT;_DEBUG"
+				MinimalRebuild="true"
+				BasicRuntimeChecks="3"
+				RuntimeLibrary="1"
+				UsePrecompiledHeader="2"
+				WarningLevel="3"
+				DebugInformationFormat="4"
+			/>
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="_DEBUG"
+				Culture="1033"
+				AdditionalIncludeDirectories="$(IntDir)"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCLinkerTool"
+				LinkIncremental="2"
+				GenerateDebugInformation="true"
+				SubSystem="2"
+				TargetMachine="1"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCManifestTool"
+				EmbedManifest="false"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCWebDeploymentTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+[!if WTL_COM_SERVER]
+				Description="Performing registration..."
+				CommandLine="&quot;$(TargetPath)&quot; /RegServer"
+[!endif]
+			/>
+		</Configuration>
+		<Configuration
+			Name="Release|Win32"
+			OutputDirectory="Release"
+			IntermediateDirectory="Release"
+			ConfigurationType="1"
+			ATLMinimizesCRunTimeLibraryUsage="false"
+[!if WINX_USE_UNICODE]
+			CharacterSet="1"
+[!else]
+			CharacterSet="2"
+[!endif]
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+				PreprocessorDefinitions="NDEBUG"
+				MkTypLibCompatible="false"
+				TargetEnvironment="1"
+				GenerateStublessProxies="true"
+				TypeLibraryName="$(IntDir)/[!output PROJECT_NAME].tlb"
+				HeaderFileName="[!output PROJECT_NAME].h"
+				DLLDataFileName=""
+				InterfaceIdentifierFileName="[!output PROJECT_NAME]_i.c"
+				ProxyFileName="[!output PROJECT_NAME]_p.c"
+			/>
+			<Tool
+				Name="VCCLCompilerTool"
+				PreprocessorDefinitions="WIN32;_WINDOWS;STRICT;NDEBUG"
+				ExceptionHandling="1"
+				RuntimeLibrary="0"
+				UsePrecompiledHeader="2"
+				WarningLevel="3"
+				DebugInformationFormat="0"
+			/>
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="NDEBUG"
+				Culture="1033"
+				AdditionalIncludeDirectories="$(IntDir)"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCLinkerTool"
+				LinkIncremental="1"
+				SubSystem="2"
+				TargetMachine="1"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCManifestTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCWebDeploymentTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+[!if WTL_COM_SERVER]
+				Description="Performing registration..."
+				CommandLine="&quot;$(TargetPath)&quot; /RegServer"
+[!endif]
+			/>
+		</Configuration>
+	</Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter
+			Name="Source Files"
+			Filter="cpp;c;cxx;def;odl;idl;hpj;bat;asm"
+			>
+			<File
+				RelativePath=".\[!output PROJECT_NAME].cpp"
+				>
+			</File>
+[!if WINX_USE_CPPFILES]
+[!if WINX_USE_VIEW]
+			<File
+				RelativePath=".\[!output PROJECT_NAME]View.cpp"
+				>
+			</File>
+[!endif]
+[!if WINX_APPTYPE_DLG || WINX_APPTYPE_DLG_MODAL]
+			<File
+				RelativePath=".\MainDlg.cpp"
+				>
+			</File>
+[!endif]
+[!endif]
+[!if WTL_COM_SERVER]
+			<File
+				RelativePath=".\[!output PROJECT_NAME].idl"
+				>
+			</File>
+[!endif]
+			<File
+				RelativePath=".\stdafx.cpp"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="1"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="1"
+					/>
+				</FileConfiguration>
+			</File>
+		</Filter>
+		<Filter
+			Name="Header Files"
+			Filter="h;hpp;hxx;hm;inl;inc"
+			>
+[!if !WINX_APPTYPE_DLG_MODAL]
+			<File
+				RelativePath=".\AboutDlg.h"
+				>
+			</File>
+[!endif]
+[!if WINX_USE_VIEW]
+			<File
+				RelativePath=".\[!output PROJECT_NAME]View.h"
+				>
+			</File>
+[!endif]
+[!if WINX_APPTYPE_DLG || WINX_APPTYPE_DLG_MODAL]
+			<File
+				RelativePath=".\MainDlg.h"
+				>
+			</File>
+[!endif]
+			<File
+				RelativePath=".\resource.h"
+				>
+			</File>
+			<File
+				RelativePath=".\stdafx.h"
+				>
+			</File>
+		</Filter>
+		<Filter
+			Name="Resource Files"
+			Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;jpg;jpeg;jpe;manifest"
+			>
+			<File
+				RelativePath=".\res\[!output PROJECT_NAME].ico"
+				>
+			</File>
+			<File
+				RelativePath=".\[!output PROJECT_NAME].rc"
+				>
+			</File>
+[!if WTL_COM_SERVER]
+			<File
+				RelativePath=".\[!output PROJECT_NAME].rgs"
+				>
+			</File>
+[!endif]
+[!if WTL_APPTYPE_DLG_FRAME]
+			<File
+				RelativePath=".\res\toolbar.bmp"
+				>
+			</File>
+[!endif]
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

@@ -1,0 +1,5 @@
+CODE_USE_RESIZE, 0, Use WTL CDialogResize<>
+CODE_USE_DDX,0,Use WTL CWinDataExchange<>
+CODE_USE_UPUI,0,Use WTL CUpdateUI<>
+CODE_USE_MSGFILTER,0,Use WTL CMessageFilter
+CODE_USE_IDLE,0 , Use WTL CIdleHandler
