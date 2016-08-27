@@ -1,6 +1,6 @@
 // stdafx.cpp : source file that includes just the standard includes
-//	receiveProcess.pch will be the pre-compiled header
-//	stdafx.obj will contain the pre-compiled type information
+//  receiveProcess.pch will be the pre-compiled header
+//  stdafx.obj will contain the pre-compiled type information
 
 #include "stdafx.h"
 

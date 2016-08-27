@@ -6,12 +6,12 @@
 #define AFX_DIRDIALOG_H__B4104ACE_CC6B_453F_992D_BFAFC06F0833__INCLUDED_
 
 #if _MSC_VER > 1000
-#pragma once
+    #pragma once
 #endif // _MSC_VER > 1000
 
 class CDirDialog
 {
-  public:
+public:
     CDirDialog();
     virtual ~CDirDialog();
     int DoBrowse(CWnd *pwndParent);

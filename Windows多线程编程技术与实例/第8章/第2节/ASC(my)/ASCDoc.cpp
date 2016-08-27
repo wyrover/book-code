@@ -7,9 +7,9 @@
 #include "ASCDoc.h"
 
 #ifdef _DEBUG
-#define new DEBUG_NEW
-#undef THIS_FILE
-static char THIS_FILE[] = __FILE__;
+    #define new DEBUG_NEW
+    #undef THIS_FILE
+    static char THIS_FILE[] = __FILE__;
 #endif
 
 /////////////////////////////////////////////////////////////////////////////
@@ -18,10 +18,10 @@ static char THIS_FILE[] = __FILE__;
 IMPLEMENT_DYNCREATE(CASCDoc, CDocument)
 
 BEGIN_MESSAGE_MAP(CASCDoc, CDocument)
-	//{{AFX_MSG_MAP(CASCDoc)
-		// NOTE - the ClassWizard will add and remove mapping macros here.
-		//    DO NOT EDIT what you see in these blocks of generated code!
-	//}}AFX_MSG_MAP
+    //{{AFX_MSG_MAP(CASCDoc)
+    // NOTE - the ClassWizard will add and remove mapping macros here.
+    //    DO NOT EDIT what you see in these blocks of generated code!
+    //}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -29,8 +29,7 @@ END_MESSAGE_MAP()
 
 CASCDoc::CASCDoc()
 {
-	// TODO: add one-time construction code here
-
+    // TODO: add one-time construction code here
 }
 
 CASCDoc::~CASCDoc()
@@ -39,13 +38,12 @@ CASCDoc::~CASCDoc()
 
 BOOL CASCDoc::OnNewDocument()
 {
-	if (!CDocument::OnNewDocument())
-		return FALSE;
+    if (!CDocument::OnNewDocument())
+        return FALSE;
 
-	// TODO: add reinitialization code here
-	// (SDI documents will reuse this document)
-
-	return TRUE;
+    // TODO: add reinitialization code here
+    // (SDI documents will reuse this document)
+    return TRUE;
 }
 
 
@@ -55,14 +53,11 @@ BOOL CASCDoc::OnNewDocument()
 
 void CASCDoc::Serialize(CArchive& ar)
 {
-	if (ar.IsStoring())
-	{
-		// TODO: add storing code here
-	}
-	else
-	{
-		// TODO: add loading code here
-	}
+    if (ar.IsStoring()) {
+        // TODO: add storing code here
+    } else {
+        // TODO: add loading code here
+    }
 }
 
 /////////////////////////////////////////////////////////////////////////////
@@ -71,12 +66,12 @@ void CASCDoc::Serialize(CArchive& ar)
 #ifdef _DEBUG
 void CASCDoc::AssertValid() const
 {
-	CDocument::AssertValid();
+    CDocument::AssertValid();
 }
 
 void CASCDoc::Dump(CDumpContext& dc) const
 {
-	CDocument::Dump(dc);
+    CDocument::Dump(dc);
 }
 #endif //_DEBUG
 
