@@ -54,6 +54,10 @@ workspace "test"
         flags { "Symbols" }
         optimize "Speed"  
         buildoptions { "/Od" } 
+        includedirs
+        {            
+            "3rdparty"    
+        }  
         links { "tracetool.lib" }         
 
     filter "configurations:TRACE_MT"
@@ -61,6 +65,10 @@ workspace "test"
         flags { "Symbols" }
         optimize "On"  
         buildoptions { "/Od" }  
+        includedirs
+        {            
+            "3rdparty"    
+        }    
         links { "tracetool_mt.lib" }        
 
     configuration "vs*"
