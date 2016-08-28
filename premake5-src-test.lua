@@ -15,9 +15,10 @@ workspace "test"
     filter { "kind:SharedLib", "platforms:x64" }
         implibdir "lib/x64" 
     filter { "kind:ConsoleApp or WindowedApp or SharedLib", "platforms:Win32" }
-        targetdir "bin/x86" 
+        targetdir "bin/x86"         
     filter { "kind:ConsoleApp or WindowedApp or SharedLib", "platforms:x64" }
         targetdir "bin/x64" 
+        
 
     filter { "platforms:Win32" }
         system "Windows"
@@ -365,10 +366,47 @@ workspace "test"
             includedirs
             {                   
                 "3rdparty"   
-            }            
+            }           
             
+        project "test-semaphore"          
+            kind "WindowedApp"                            
+            characterset "MBCS"
+            flags { "NoManifest", "WinMain", "StaticRuntime" }       
+            defines {  }            
+            files
+            {                                  
+                "src/test/%{prj.name}/**.h",
+                "src/test/%{prj.name}/**.cpp", 
+                "src/test/%{prj.name}/**.rc" 
+            }
+            removefiles
+            {               
+            }
+            includedirs
+            {                   
+                "3rdparty"   
+            }      
+            
+        project "wtl_dialog_template"          
+            kind "WindowedApp"          
+            flags { "NoManifest", "WinMain", "StaticRuntime" }       
+            defines {  }            
+            files
+            {                                  
+                "src/test/%{prj.name}/**.h",
+                "src/test/%{prj.name}/**.cpp", 
+                "src/test/%{prj.name}/**.rc" 
+            }
+            removefiles
+            {               
+            }
+            includedirs
+            {                   
+                "3rdparty/wtl"   
+            }  
         
         
+           
            
 
 
