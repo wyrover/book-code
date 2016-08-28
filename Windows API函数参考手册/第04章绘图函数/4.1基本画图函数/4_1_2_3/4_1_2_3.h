@@ -3,7 +3,7 @@
 #define AFX_4_1_2_3_H__6A72E83E_B447_11D6_993A_00E04CE474BB__INCLUDED_
 
 #if _MSC_VER > 1000
-#pragma once
+    #pragma once
 #endif // _MSC_VER > 1000
 
 #include "resource.h"

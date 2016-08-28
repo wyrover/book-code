@@ -7,49 +7,45 @@
 #define MAX_LOADSTRING 100
 
 // Global Variables:
-HINSTANCE hInst;								// current instance
-TCHAR szTitle[MAX_LOADSTRING];								// The title bar text
-TCHAR szWindowClass[MAX_LOADSTRING];								// The title bar text
+HINSTANCE hInst;                                // current instance
+TCHAR szTitle[MAX_LOADSTRING];                              // The title bar text
+TCHAR szWindowClass[MAX_LOADSTRING];                                // The title bar text
 
 // Foward declarations of functions included in this code module:
-ATOM				MyRegisterClass(HINSTANCE hInstance);
-BOOL				InitInstance(HINSTANCE, int);
-LRESULT CALLBACK	WndProc(HWND, UINT, WPARAM, LPARAM);
-LRESULT CALLBACK	About(HWND, UINT, WPARAM, LPARAM);
+ATOM                MyRegisterClass(HINSTANCE hInstance);
+BOOL                InitInstance(HINSTANCE, int);
+LRESULT CALLBACK    WndProc(HWND, UINT, WPARAM, LPARAM);
+LRESULT CALLBACK    About(HWND, UINT, WPARAM, LPARAM);
 
 int APIENTRY WinMain(HINSTANCE hInstance,
                      HINSTANCE hPrevInstance,
                      LPSTR     lpCmdLine,
                      int       nCmdShow)
 {
- 	// TODO: Place code here.
-	MSG msg;
-	HACCEL hAccelTable;
+    // TODO: Place code here.
+    MSG msg;
+    HACCEL hAccelTable;
+    // Initialize global strings
+    LoadString(hInstance, IDS_APP_TITLE, szTitle, MAX_LOADSTRING);
+    LoadString(hInstance, IDC_MY5_2_1_2, szWindowClass, MAX_LOADSTRING);
+    MyRegisterClass(hInstance);
 
-	// Initialize global strings
-	LoadString(hInstance, IDS_APP_TITLE, szTitle, MAX_LOADSTRING);
-	LoadString(hInstance, IDC_MY5_2_1_2, szWindowClass, MAX_LOADSTRING);
-	MyRegisterClass(hInstance);
+    // Perform application initialization:
+    if (!InitInstance(hInstance, nCmdShow)) {
+        return FALSE;
+    }
 
-	// Perform application initialization:
-	if (!InitInstance (hInstance, nCmdShow)) 
-	{
-		return FALSE;
-	}
+    hAccelTable = LoadAccelerators(hInstance, (LPCTSTR)IDC_MY5_2_1_2);
 
-	hAccelTable = LoadAccelerators(hInstance, (LPCTSTR)IDC_MY5_2_1_2);
+    // Main message loop:
+    while (GetMessage(&msg, NULL, 0, 0)) {
+        if (!TranslateAccelerator(msg.hwnd, hAccelTable, &msg)) {
+            TranslateMessage(&msg);
+            DispatchMessage(&msg);
+        }
+    }
 
-	// Main message loop:
-	while (GetMessage(&msg, NULL, 0, 0)) 
-	{
-		if (!TranslateAccelerator(msg.hwnd, hAccelTable, &msg)) 
-		{
-			TranslateMessage(&msg);
-			DispatchMessage(&msg);
-		}
-	}
-
-	return msg.wParam;
+    return msg.wParam;
 }
 
 
@@ -69,23 +65,20 @@ int APIENTRY WinMain(HINSTANCE hInstance,
 //
 ATOM MyRegisterClass(HINSTANCE hInstance)
 {
-	WNDCLASSEX wcex;
-
-	wcex.cbSize = sizeof(WNDCLASSEX); 
-
-	wcex.style			= CS_HREDRAW | CS_VREDRAW;
-	wcex.lpfnWndProc	= (WNDPROC)WndProc;
-	wcex.cbClsExtra		= 0;
-	wcex.cbWndExtra		= 0;
-	wcex.hInstance		= hInstance;
-	wcex.hIcon			= LoadIcon(hInstance, (LPCTSTR)IDI_MY5_2_1_2);
-	wcex.hCursor		= LoadCursor(NULL, IDC_ARROW);
-	wcex.hbrBackground	= (HBRUSH)(COLOR_WINDOW+1);
-	wcex.lpszMenuName	= (LPCSTR)IDC_MY5_2_1_2;
-	wcex.lpszClassName	= szWindowClass;
-	wcex.hIconSm		= LoadIcon(wcex.hInstance, (LPCTSTR)IDI_SMALL);
-
-	return RegisterClassEx(&wcex);
+    WNDCLASSEX wcex;
+    wcex.cbSize = sizeof(WNDCLASSEX);
+    wcex.style          = CS_HREDRAW | CS_VREDRAW;
+    wcex.lpfnWndProc    = (WNDPROC)WndProc;
+    wcex.cbClsExtra     = 0;
+    wcex.cbWndExtra     = 0;
+    wcex.hInstance      = hInstance;
+    wcex.hIcon          = LoadIcon(hInstance, (LPCTSTR)IDI_MY5_2_1_2);
+    wcex.hCursor        = LoadCursor(NULL, IDC_ARROW);
+    wcex.hbrBackground  = (HBRUSH)(COLOR_WINDOW + 1);
+    wcex.lpszMenuName   = (LPCSTR)IDC_MY5_2_1_2;
+    wcex.lpszClassName  = szWindowClass;
+    wcex.hIconSm        = LoadIcon(wcex.hInstance, (LPCTSTR)IDI_SMALL);
+    return RegisterClassEx(&wcex);
 }
 
 //
@@ -100,22 +93,18 @@ ATOM MyRegisterClass(HINSTANCE hInstance)
 //
 BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 {
-   HWND hWnd;
+    HWND hWnd;
+    hInst = hInstance; // Store instance handle in our global variable
+    hWnd = CreateWindow(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
+                        CW_USEDEFAULT, 0, CW_USEDEFAULT, 0, NULL, NULL, hInstance, NULL);
 
-   hInst = hInstance; // Store instance handle in our global variable
+    if (!hWnd) {
+        return FALSE;
+    }
 
-   hWnd = CreateWindow(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
-      CW_USEDEFAULT, 0, CW_USEDEFAULT, 0, NULL, NULL, hInstance, NULL);
-
-   if (!hWnd)
-   {
-      return FALSE;
-   }
-
-   ShowWindow(hWnd, nCmdShow);
-   UpdateWindow(hWnd);
-
-   return TRUE;
+    ShowWindow(hWnd, nCmdShow);
+    UpdateWindow(hWnd);
+    return TRUE;
 }
 
 //
@@ -123,91 +112,94 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 //
 //  PURPOSE:  Processes messages for the main window.
 //
-//  WM_COMMAND	- process the application menu
-//  WM_PAINT	- Paint the main window
-//  WM_DESTROY	- post a quit message and return
+//  WM_COMMAND  - process the application menu
+//  WM_PAINT    - Paint the main window
+//  WM_DESTROY  - post a quit message and return
 //
 //
-			//锯齿位图的位数据
-int Zigzag[8]={0xff,0xf7,0xeb,0xdd,0xeb,0x7f,0xff,0xff}; 
+//锯齿位图的位数据
+int Zigzag[8] = {0xff, 0xf7, 0xeb, 0xdd, 0xeb, 0x7f, 0xff, 0xff};
 LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
-	int wmId, wmEvent;
-	PAINTSTRUCT ps;
-	HDC hdc;
-	TCHAR szHello[MAX_LOADSTRING];
-	LoadString(hInst, IDS_HELLO, szHello, MAX_LOADSTRING);
+    int wmId, wmEvent;
+    PAINTSTRUCT ps;
+    HDC hdc;
+    TCHAR szHello[MAX_LOADSTRING];
+    LoadString(hInst, IDS_HELLO, szHello, MAX_LOADSTRING);
 
-	switch (message) 
-	{
-		case WM_COMMAND:
-			wmId    = LOWORD(wParam); 
-			wmEvent = HIWORD(wParam); 
-			// Parse the menu selections:
-			switch (wmId)
-			{
-				case IDM_ABOUT:
-				   DialogBox(hInst, (LPCTSTR)IDD_ABOUTBOX, hWnd, (DLGPROC)About);
-				   break;
-				case IDM_EXIT:
-				   DestroyWindow(hWnd);
-				   break;
-				default:
-				   return DefWindowProc(hWnd, message, wParam, lParam);
-			}
-			break;
-		case WM_PAINT:
-			
-			break;
-			case WM_LBUTTONDOWN:
+    switch (message) {
+    case WM_COMMAND:
+        wmId    = LOWORD(wParam);
+        wmEvent = HIWORD(wParam);
 
+        // Parse the menu selections:
+        switch (wmId) {
+        case IDM_ABOUT:
+            DialogBox(hInst, (LPCTSTR)IDD_ABOUTBOX, hWnd, (DLGPROC)About);
+            break;
 
-HDC hDC;
-HBITMAP hBitmap;
-HBRUSH hBrush;
-RECT rect;
-hDC=GetDC(hWnd);
+        case IDM_EXIT:
+            DestroyWindow(hWnd);
+            break;
+
+        default:
+            return DefWindowProc(hWnd, message, wParam, lParam);
+        }
+
+        break;
+
+    case WM_PAINT:
+        break;
+
+    case WM_LBUTTONDOWN:
+        HDC hDC;
+        HBITMAP hBitmap;
+        HBRUSH hBrush;
+        RECT rect;
+        hDC = GetDC(hWnd);
 //由锯齿位图的位数据来创建一个位图
 //hBitmap=CreateBitmap(8,8,1,1,Zigzag);
-
-BITMAP	bitmap;
-bitmap.bmHeight=8;		//位图高度
-bitmap.bmWidth=8;		//位图宽度
-bitmap.bmPlanes=1;		//位图的位面个数
-bitmap.bmBitsPixel=1;	//位图中每个像素的位数
-bitmap.bmType=0;		//位图类型，必须为零
-bitmap.bmWidthBytes=2;	//位图中每行的字节个数，该值必须能背二整除
-bitmap.bmBits=Zigzag;	//位图的位数据
+        BITMAP  bitmap;
+        bitmap.bmHeight = 8;    //位图高度
+        bitmap.bmWidth = 8;     //位图宽度
+        bitmap.bmPlanes = 1;    //位图的位面个数
+        bitmap.bmBitsPixel = 1; //位图中每个像素的位数
+        bitmap.bmType = 0;      //位图类型，必须为零
+        bitmap.bmWidthBytes = 2; //位图中每行的字节个数，该值必须能背二整除
+        bitmap.bmBits = Zigzag; //位图的位数据
 //有bitmap来创建一个位图
-hBitmap=CreateBitmapIndirect(&bitmap);
-hBrush=CreatePatternBrush(hBitmap);
-GetClientRect(hWnd,&rect);
-FillRect(hDC,&rect,hBrush);
-			break;
-		case WM_DESTROY:
-			PostQuitMessage(0);
-			break;
-		default:
-			return DefWindowProc(hWnd, message, wParam, lParam);
-   }
-   return 0;
+        hBitmap = CreateBitmapIndirect(&bitmap);
+        hBrush = CreatePatternBrush(hBitmap);
+        GetClientRect(hWnd, &rect);
+        FillRect(hDC, &rect, hBrush);
+        break;
+
+    case WM_DESTROY:
+        PostQuitMessage(0);
+        break;
+
+    default:
+        return DefWindowProc(hWnd, message, wParam, lParam);
+    }
+
+    return 0;
 }
 
 // Mesage handler for about box.
 LRESULT CALLBACK About(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)
 {
-	switch (message)
-	{
-		case WM_INITDIALOG:
-				return TRUE;
+    switch (message) {
+    case WM_INITDIALOG:
+        return TRUE;
 
-		case WM_COMMAND:
-			if (LOWORD(wParam) == IDOK || LOWORD(wParam) == IDCANCEL) 
-			{
-				EndDialog(hDlg, LOWORD(wParam));
-				return TRUE;
-			}
-			break;
-	}
+    case WM_COMMAND:
+        if (LOWORD(wParam) == IDOK || LOWORD(wParam) == IDCANCEL) {
+            EndDialog(hDlg, LOWORD(wParam));
+            return TRUE;
+        }
+
+        break;
+    }
+
     return FALSE;
 }
