@@ -1,0 +1,1059 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+#include "dlgs.h"
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+    "dlgs.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "#include ""dlgs.h""\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif\r\n"
+    "#include ""res\\FontExplorer.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#include ""afxprint.rc""       // printing/print preview resources\r\n"
+    "#endif\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\FontExplorer.ico"
+IDR_FONTEXTYPE          ICON    DISCARDABLE     "res\\FontExplorerDoc.ico"
+IDI_ICON1               ICON    DISCARDABLE     "res\\icon1.ico"
+IDI_ICON2               ICON    DISCARDABLE     "res\\icon2.ico"
+IDI_ICON3               ICON    DISCARDABLE     "res\\icon3.ico"
+IDI_ICON4               ICON    DISCARDABLE     "res\\icon4.ico"
+IDI_JMNCO               ICON    DISCARDABLE     "res\\jmnco.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BLANKFONT           BITMAP  DISCARDABLE     "res\\bitmap1.bmp"
+IDB_DEVFONT             BITMAP  DISCARDABLE     "res\\devfont.bmp"
+IDB_RASFONT             BITMAP  DISCARDABLE     "res\\rasfont.bmp"
+IDB_TTFONT              BITMAP  DISCARDABLE     "res\\ttfont.bmp"
+IDB_VECFONT             BITMAP  DISCARDABLE     "res\\vecfont.bmp"
+IDR_MAINFRAME           BITMAP  MOVEABLE PURE   "res\\Toolbar.bmp"
+IDR_MAINFRAME1          BITMAP  MOVEABLE PURE   "res\\mainfram.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    FORMATDLGORD31, DIALOG
+    BEGIN
+        RIGHTMARGIN, 263
+        BOTTOMMARGIN, 220
+    END
+
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_KERNING, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 300
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 127
+    END
+
+    IDD_KERNOPTIONS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 178
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 107
+    END
+
+    IDD_LOGFONT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 361
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 232
+    END
+
+    IDD_OPTIONS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 220
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 131
+    END
+
+    IDD_PLACEMENT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 261
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 183
+    END
+
+    IDD_RASTER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 156
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 149
+    END
+
+    IDD_STOCKFONTS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 178
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 87
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS PRELOAD MOVEABLE PURE 
+BEGIN
+    "E",            IDM_FONTEXPLORER,       VIRTKEY, CONTROL, NOINVERT
+    "K",            IDM_KERNEXP,            VIRTKEY, CONTROL, NOINVERT
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL, NOINVERT
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL, NOINVERT
+    "P",            ID_FILE_PRINT,          VIRTKEY, CONTROL, NOINVERT
+    "R",            ID_RASTER,              VIRTKEY, CONTROL, NOINVERT
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL, NOINVERT
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL, NOINVERT
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT, NOINVERT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT, NOINVERT
+    VK_F1,          ID_HELP,                VIRTKEY, NOINVERT
+    VK_F1,          ID_CONTEXT_HELP,        VIRTKEY, SHIFT, NOINVERT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY, NOINVERT
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT, NOINVERT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT, NOINVERT
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL, NOINVERT
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+FORMATDLGORD31 DIALOG DISCARDABLE  13, 54, 367, 221
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Font"
+FONT 8, "Helv"
+BEGIN
+    LTEXT           "&Font:",stc1,7,7,40,9
+    COMBOBOX        cmb1,7,16,98,76,CBS_SIMPLE | CBS_OWNERDRAWFIXED | 
+                    CBS_AUTOHSCROLL | CBS_SORT | CBS_HASSTRINGS | 
+                    CBS_DISABLENOSCROLL | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Font st&yle:",stc2,110,7,44,9
+    COMBOBOX        cmb2,110,16,62,76,CBS_SIMPLE | CBS_DISABLENOSCROLL | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "&Size:",stc3,177,7,30,9
+    COMBOBOX        cmb3,177,16,27,76,CBS_SIMPLE | CBS_OWNERDRAWFIXED | 
+                    CBS_SORT | CBS_HASSTRINGS | CBS_DISABLENOSCROLL | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "OK",IDOK,7,203,45,14,WS_GROUP
+    PUSHBUTTON      "Cancel",IDCANCEL,58,203,45,14,WS_GROUP
+    PUSHBUTTON      "&Apply",psh3,109,203,45,14,WS_GROUP
+    PUSHBUTTON      "&Help",pshHelp,160,203,45,14,WS_GROUP
+    GROUPBOX        "Effects",grp1,7,97,98,73,WS_GROUP
+    CONTROL         "Stri&keout",chx1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    13,110,49,10
+    CONTROL         "&Underline",chx2,"Button",BS_AUTOCHECKBOX,13,123,51,10
+    LTEXT           "&Color:",stc4,13,136,30,9
+    COMBOBOX        cmb4,13,146,82,100,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | 
+                    CBS_AUTOHSCROLL | CBS_HASSTRINGS | WS_BORDER | 
+                    WS_VSCROLL | WS_TABSTOP
+    CTEXT           "AaBbYyZz",stc5,118,110,77,23,SS_NOPREFIX | NOT 
+                    WS_VISIBLE
+    GROUPBOX        "Sample",grp2,110,97,94,43,NOT WS_VISIBLE | WS_GROUP
+    LTEXT           "",stc6,7,176,98,20,SS_NOPREFIX | NOT WS_GROUP
+    LTEXT           "Sc&ript:",stc7,110,147,30,9
+    COMBOBOX        cmb5,110,158,94,30,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | 
+                    CBS_AUTOHSCROLL | CBS_HASSTRINGS | WS_BORDER | 
+                    WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Font Info",IDC_SAMPLE_BORDER,210,11,151,205
+    CONTROL         "Tree1",IDC_TREEMETRICS,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_LINESATROOT | TVS_DISABLEDRAGDROP | 
+                    WS_BORDER | WS_TABSTOP,215,23,142,183
+    CONTROL         "Font Info",IDC_INFO,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,210,3,66,8
+    CONTROL         "Char display",IDC_CHAR,"Button",BS_AUTORADIOBUTTON,282,
+                    3,66,8
+    PUSHBUTTON      "Options...",IDC_OPTIONS,154,142,50,14
+    COMBOBOX        IDC_LEGEND,110,186,94,19,CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWVARIABLE | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Color code legend",IDC_c_LEGEND,110,177,57,8
+    LTEXT           "Ap",IDC_CHARDISPLAY,215,21,144,188
+    PUSHBUTTON      "Copy",IDC_COPY,178,172,26,11
+END
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  22, 17, 204, 89
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "About "
+FONT 8, "System"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,166,74,32,14,WS_GROUP
+    LTEXT           "FileDescription",IDC_ABOUT_FILEDESCRIPTION,30,2,118,8
+    LTEXT           "Version ",IDC_STATIC,152,2,28,8
+    LTEXT           "ProductVersion",IDC_ABOUT_VERSION,180,2,17,8
+    LTEXT           "LegalCopyright",IDC_ABOUT_LEGALCOPYRIGHT,30,10,168,16
+    LTEXT           "Comments",IDC_ABOUT_COMMENTS,30,31,168,8
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKRECT,2,42,200,1
+    LTEXT           "OSVERSION",IDC_ABOUT_OSVERSION,4,45,196,8
+    LTEXT           "ProcessorVersion",IDC_ABOUT_PROCESSORVERSION,4,53,196,8
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKRECT,2,63,200,1
+    LTEXT           "LegalTrademarks",IDC_ABOUT_LEGALTRADEMARKS,3,68,156,18
+    ICON            IDR_MAINFRAME,IDC_STATIC,3,2,18,20
+    ICON            IDI_JMNCO,IDC_STATIC,3,27,18,20
+END
+
+IDD_FONTS DIALOG DISCARDABLE  0, 0, 221, 118
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Select Fonts"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,165,6,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,165,23,50,14
+    COMBOBOX        IDC_FONTLIST,3,96,153,133,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Change...",IDC_CHANGEFONT,165,40,50,14
+    CTEXT           "Sample\nABCDEFGabcdefg\n01234",IDC_FONTSAMPLE,9,8,138,
+                    52
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,3,2,153,67
+    LTEXT           "~~~",IDC_FONTNAME,3,75,213,13
+    ICON            108,IDC_STATIC,183,93,18,20
+END
+
+IDD_KERNING DIALOG DISCARDABLE  0, 0, 307, 134
+STYLE WS_MAXIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "Kerning Explorer"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_SAMPLE,30,4,90,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_TRACKVAL,140,4,13,13,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_TRACK,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,154,4,10,13
+    PUSHBUTTON      "&Font...",IDC_FONT,167,3,33,14
+    PUSHBUTTON      "Close",IDCANCEL,237,3,33,14
+    LTEXT           "Y.T.AV",IDC_UNKERNED,4,23,301,51
+    LTEXT           "Y.T.AV",IDC_KERNED,4,79,301,51
+    LTEXT           "Sample",IDC_STATIC,0,6,25,8
+    LTEXT           "Trk",IDC_c_TRACK,126,6,11,8
+    PUSHBUTTON      "Options...",IDC_OPTIONS,202,3,33,14
+    PUSHBUTTON      "Copy",IDC_COPY,272,3,33,14
+END
+
+IDD_KERNOPTIONS DIALOG DISCARDABLE  0, 0, 185, 114
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Options"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,128,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,128,24,50,14
+    CONTROL         "&Horizontal",IDC_HRULE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,11,12,45,10
+    CONTROL         "&Vertical",IDC_VRULE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,11,24,45,10
+    CONTROL         "&Character",IDC_CHRULE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,11,36,45,10
+    GROUPBOX        "Rulers",IDC_STATIC,0,0,69,50
+    CONTROL         "Enable internal &debugging options",IDC_DEBUG,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,4,57,118,10
+    CONTROL         "Use &Colors",IDC_COLORS,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,4,68,50,10
+    CONTROL         "&White background",IDC_WHITE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,4,79,71,10
+    CONTROL         "&Track",IDC_TRACK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    81,12,34,10
+    CONTROL         "&Pair",IDC_PAIR,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    81,23,28,10
+    GROUPBOX        "Kerning",IDC_STATIC,73,0,51,50
+    CONTROL         "Show &Kerned only",IDC_KERNED_ONLY,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,4,90,70,10
+    CONTROL         "&Use TextOut directly",IDC_BASAL,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,4,101,76,10
+END
+
+IDD_LOGFONT DIALOG DISCARDABLE  0, 0, 368, 239
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "LOGFONT Explorer"
+FONT 8, "MS Sans Serif"
+BEGIN
+    RTEXT           "LONG lfHeight",IDC_STATIC,20,4,56,9
+    EDITTEXT        IDC_LFHEIGHT,80,2,61,13,ES_AUTOHSCROLL
+    RTEXT           "LONG lfWidth",IDC_STATIC,20,18,56,9
+    EDITTEXT        IDC_LFWIDTH,80,17,61,13,ES_AUTOHSCROLL
+    RTEXT           "LONG lfEscapement",IDC_STATIC,14,34,62,8
+    EDITTEXT        IDC_LFESCAPEMENT,80,32,50,13,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPINESCAPEMENT,"msctls_updown32",
+                    UDS_ARROWKEYS,131,32,10,13
+    RTEXT           "LONG lfOrientation",IDC_c_lf_Orientation,20,49,56,8
+    EDITTEXT        IDC_LFORIENTATION,80,47,50,13,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPINORIENTATION,"msctls_updown32",
+                    UDS_ARROWKEYS,131,47,10,13
+    RTEXT           "LONG lfWeight",IDC_STATIC,20,63,56,9
+    COMBOBOX        IDC_LFWEIGHT,80,62,87,127,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    RTEXT           "BYTE lfItalic",IDC_STATIC,20,78,56,9
+    CONTROL         "",IDC_LFITALIC,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,80,
+                    77,26,10
+    RTEXT           "BYTE lfUnderline",IDC_STATIC,20,91,56,9
+    CONTROL         "",IDC_LFIUNDERLINE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,80,92,26,8
+    CONTROL         "BYTE fIStrikeout",IDC_LFISTRIKEOUT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,275,2,65,10
+    LTEXT           "BYTE lfCharSet",IDC_STATIC,286,18,56,9
+    COMBOBOX        IDC_LFCHARSET,171,17,112,47,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "BYTE lfOutPrecision",IDC_STATIC,286,32,62,8
+    COMBOBOX        IDC_LFOUTPRECISION,171,32,112,43,CBS_DROPDOWNLIST | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "BYTE lfClipPrecision",IDC_STATIC,286,48,63,8
+    COMBOBOX        IDC_LFCLIPPRECISION,171,47,112,40,CBS_DROPDOWNLIST | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "BYTE lfQuality",IDC_STATIC,287,63,44,8
+    COMBOBOX        IDC_LFQUALITY,171,62,112,41,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "BYTE lfPitchAndFamily",IDC_STATIC,287,78,70,8
+    COMBOBOX        IDC_LFFAMILY,202,77,81,46,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_LFPITCH,115,77,82,48,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_FACENAME,106,93,177,95,CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWVARIABLE | CBS_SORT | CBS_HASSTRINGS | 
+                    WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "&Create",IDC_CREATE,5,109,50,14
+    CONTROL         "Use GM_ADVANCED",IDC_GM_ADVANCED,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,172,3,82,10
+    PUSHBUTTON      "Cl&ose",IDCANCEL,312,109,50,14
+    EDITTEXT        IDC_RESULT,58,109,250,14,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "TCHAR lfFaceName[ ]",IDC_STATIC,288,94,69,8
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,106,75,261,16
+    CONTROL         "Tree1",IDC_DATA,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_LINESATROOT | WS_BORDER | WS_TABSTOP,
+                    205,127,161,112
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,2,128,199,111
+    LTEXT           "Static",IDC_SAMPLE,4,130,199,108
+END
+
+IDD_OPTIONS DIALOG DISCARDABLE  0, 0, 227, 138
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Options"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_SAMPLE,6,28,128,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SMALLSAMPLE,6,54,128,13,ES_AUTOHSCROLL
+    CONTROL         "Enable internal &debugging options",IDC_DEBUG,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,124,118,10
+    CONTROL         "Use &Colors",IDC_COLORS,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,91,50,10
+    CONTROL         "&White background",IDC_WHITE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,103,71,10
+    CONTROL         "&Horizontal",IDC_HRULE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,167,51,45,10
+    CONTROL         "&Vertical",IDC_VRULE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,167,63,45,10
+    CONTROL         "&Character",IDC_CHRULE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,167,75,45,10
+    CONTROL         "&Track",IDC_TRACK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    159,108,34,10
+    EDITTEXT        IDC_KERN,196,107,14,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_KERNSPIN,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,211,107,10,12
+    DEFPUSHBUTTON   "OK",IDOK,172,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,172,24,50,14
+    LTEXT           "Display Sample (large)",IDC_STATIC,6,17,70,8
+    LTEXT           "Display Sample (small)",IDC_STATIC,6,43,71,8
+    GROUPBOX        "Samples",IDC_STATIC,2,3,148,70
+    GROUPBOX        "Rulers",IDC_STATIC,155,39,72,50
+    CONTROL         "&Pair",IDC_PAIR,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    159,121,28,10
+    GROUPBOX        "Kerning",IDC_STATIC,155,93,72,43
+    GROUPBOX        "Effects",IDC_STATIC,2,79,148,39
+END
+
+IDD_PLACEMENT DIALOG DISCARDABLE  0, 0, 268, 190
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "GetCharacterPlacement Explorer"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_LPSTRING,38,4,147,15,ES_AUTOHSCROLL
+    CONTROL         "GCP_CLASSIN",IDC_GCP_CLASSIN,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,9,30,79,10
+    CONTROL         "GCP_DIACRITIC",IDC_GCP_DIACRITIC,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,9,40,79,10
+    CONTROL         "GCP_DISPLAYZWG",IDC_GCP_DISPLAYZWG,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,9,50,79,10
+    CONTROL         "GCP_GLYPHSHAPE",IDC_GCP_GLYPHSHAPE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,9,60,79,10
+    CONTROL         "GCP_JUSTIFY",IDC_GCP_JUSTIFY,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,9,70,79,10
+    CONTROL         "GCP_JUSTIFYIN",IDC_GCP_JUSTIFYIN,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,9,80,79,10
+    CONTROL         "GCP_KASHIDA",IDC_GCP_KASHIDA,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,9,90,79,10
+    CONTROL         "GCP_LIGATE",IDC_GCP_LIGATE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,9,100,79,10
+    CONTROL         "GCP_MAXEXTENT",IDC_GCP_MAXEXTENT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,97,30,101,10
+    CONTROL         "GCP_NEUTRALOVERRIDE",IDC_GCP_NEUTRALOVERRIDE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,97,40,101,10
+    CONTROL         "GCP_NUMERICOVERRIDE",IDC_GCP_NUMERICOVERRIDE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,97,50,101,10
+    CONTROL         "GCP_NUMERICSLATIN",IDC_GCP_NUMERICSLATIN,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,97,60,101,10
+    CONTROL         "GCP_NUMERICSLOCAL",IDC_GCP_NUMERICSLOCAL,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,97,70,101,10
+    CONTROL         "GCP_REORDER",IDC_GCP_REORDER,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,97,80,101,10
+    CONTROL         "GCP_SYMSWAPOFF",IDC_GCP_SYMSWAPOFF,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,97,90,101,10
+    CONTROL         "GCP_USEKERNING",IDC_GCP_USEKERNING,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,97,100,101,10
+    EDITTEXT        IDC_MAXEXTENT,233,4,32,15,ES_AUTOHSCROLL
+    PUSHBUTTON      "Close",IDCANCEL,214,23,50,14
+    PUSHBUTTON      "Font...",IDC_FONT,216,75,50,14
+    LTEXT           "Y.T.AV",IDC_SAMPLE,0,123,268,67
+    LTEXT           "lpString",IDC_STATIC,7,7,24,8
+    GROUPBOX        "dwFlags",IDC_STATIC,1,19,210,98
+    LTEXT           "nMaxExtent",IDC_C_MAXEXTENT,193,7,35,8
+    PUSHBUTTON      "Do it!",IDC_GETCHARPLACEMENT,216,59,50,14
+END
+
+IDD_RASTER DIALOG DISCARDABLE  0, 0, 163, 156
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Raster Fonts"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "W",IDC_SAMPLE,0,4,101,152
+    PUSHBUTTON      "Close",IDCANCEL,112,5,50,14
+    EDITTEXT        IDC_TEXT,144,23,18,14
+    COMBOBOX        IDC_FONTS,105,83,57,88,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_MULTIPLIER,133,63,19,14,ES_AUTOHSCROLL | ES_READONLY
+    CONTROL         "Spin1",IDC_SPINSIZE,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,152,63,10,14
+    RTEXT           "Height",IDC_HEIGHT_CAPTION,108,46,21,8
+    RTEXT           "X",IDC_MULTIPLIER_CAPTION,108,66,21,8
+    LTEXT           "Text",IDC_STATIC,126,26,14,8
+    COMBOBOX        IDC_FONT_SIZE,132,44,30,75,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Copy",IDC_COPY,112,101,50,14
+    CONTROL         "Raster",IDC_RASTER,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP | WS_TABSTOP,110,122,36,10
+    CONTROL         "Vector",IDC_VECTOR,"Button",BS_AUTORADIOBUTTON,110,134,
+                    36,10
+    CONTROL         "TrueType",IDC_TRUETYPE,"Button",BS_AUTORADIOBUTTON,110,
+                    146,46,10
+END
+
+IDD_STOCKFONTS DIALOG DISCARDABLE  0, 0, 185, 94
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Stock Fonts"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "Close",IDCANCEL,132,76,50,14
+    CONTROL         "ANSI_FIXED_FONT",IDC_ANSI_FIXED_FONT,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,10,22,76,10
+    CONTROL         "ANSI_VAR_FONT",IDC_ANSI_VAR_FONT,"Button",
+                    BS_AUTORADIOBUTTON,10,32,71,10
+    CONTROL         "DEVICE_DEFAULT_FONT",IDC_DEVICE_DEFAULT_FONT,"Button",
+                    BS_AUTORADIOBUTTON,10,42,97,10
+    CONTROL         "OEM_FIXED_FONT",IDC_OEM_FIXED_FONT,"Button",
+                    BS_AUTORADIOBUTTON,10,52,76,10
+    CONTROL         "SYSTEM_FIXED_FONT",IDC_SYSTEM_FIXED_FONT,"Button",
+                    BS_AUTORADIOBUTTON,10,62,89,10
+    CONTROL         "SYSTEM_FONT",IDC_SYSTEM_FONT,"Button",
+                    BS_AUTORADIOBUTTON,10,72,66,10
+    PUSHBUTTON      "Copy",IDC_COPY,132,57,50,14
+    LTEXT           "Static",IDC_SAMPLE,14,6,166,11
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_FONTEXTYPE MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&New\tCtrl+N",                ID_FILE_NEW
+        MENUITEM "&Open...\tCtrl+O",            ID_FILE_OPEN
+        MENUITEM "&Close",                      ID_FILE_CLOSE
+        MENUITEM "&Save\tCtrl+S",               ID_FILE_SAVE
+        MENUITEM "Save &As...",                 ID_FILE_SAVE_AS
+        MENUITEM SEPARATOR
+        MENUITEM "Font Explorer...\tCtrl+E",    IDM_FONTEXPLORER
+        MENUITEM "LOGFONT Explorer...\tCtrl+F", IDM_LOGFONT
+        MENUITEM "Kerning Explorer...\tCtrl+K", IDM_KERNEXP
+        MENUITEM "Raster Font Scaling\tCtrl+R", ID_RASTER
+        MENUITEM "GetCharPlacement Explorer...", IDM_GETCHARPLACEMENT
+        MENUITEM "Stock Font Explorer...",      IDM_STOCKFONT
+        MENUITEM SEPARATOR
+        MENUITEM "&Print...\tCtrl+P",           ID_FILE_PRINT
+        MENUITEM "Print Pre&view",              ID_FILE_PRINT_PREVIEW
+        MENUITEM "P&rint Setup...",             ID_FILE_PRINT_SETUP
+        MENUITEM "Font Setup...",               IDM_FONTSETUP
+        MENUITEM SEPARATOR
+        MENUITEM "Recent File",                 ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "&Undo\tCtrl+Z",               ID_EDIT_UNDO
+        MENUITEM SEPARATOR
+        MENUITEM "Cu&t\tCtrl+X",                ID_EDIT_CUT
+        MENUITEM "&Copy\tCtrl+C",               ID_EDIT_COPY
+        MENUITEM "&Paste\tCtrl+V",              ID_EDIT_PASTE
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+    END
+    POPUP "&Window"
+    BEGIN
+        MENUITEM "&New Window",                 ID_WINDOW_NEW
+        MENUITEM "&Cascade",                    ID_WINDOW_CASCADE
+        MENUITEM "&Tile",                       ID_WINDOW_TILE_HORZ
+        MENUITEM "&Arrange Icons",              ID_WINDOW_ARRANGE
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&Help Topics",                ID_HELP_FINDER
+        MENUITEM SEPARATOR
+        MENUITEM "&About Font Explorer...",     ID_APP_ABOUT
+    END
+END
+
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "Font Explorer...\tCtrl+E",    IDM_FONTEXPLORER
+        MENUITEM "LOGFONT Explorer...\tCtrl+F", IDM_LOGFONT
+        MENUITEM "Kerning explorer...\tCtrl+K", IDM_KERNEXP
+        MENUITEM "Raster Font Scaling\tCtrl+R", ID_RASTER
+        MENUITEM "GetCharPlacement Explorer...", IDM_GETCHARPLACEMENT
+        MENUITEM "Stock Font Explorer...",      IDM_STOCKFONT
+        MENUITEM SEPARATOR
+        MENUITEM "P&rint Setup...",             ID_FILE_PRINT_SETUP
+        MENUITEM "Font Setup...",               IDM_FONTSETUP
+        MENUITEM SEPARATOR
+        MENUITEM "Recent File",                 ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&Help Topics",                ID_HELP_FINDER
+        MENUITEM SEPARATOR
+        MENUITEM "&About Font Explorer...",     ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR DISCARDABLE  16, 15
+BEGIN
+    BUTTON      IDM_FONTEXPLORER
+    BUTTON      IDM_LOGFONT
+    BUTTON      IDM_KERNEXP
+    BUTTON      IDM_GETCHARPLACEMENT
+    BUTTON      ID_RASTER
+    BUTTON      IDM_STOCKFONT
+    SEPARATOR
+    BUTTON      ID_EDIT_CUT
+    BUTTON      ID_EDIT_COPY
+    BUTTON      ID_EDIT_PASTE
+    SEPARATOR
+    BUTTON      ID_FILE_PRINT
+    BUTTON      ID_APP_ABOUT
+    BUTTON      ID_CONTEXT_HELP
+END
+
+IDR_MAINFRAME1 TOOLBAR DISCARDABLE  16, 15
+BEGIN
+    BUTTON      IDM_FONTEXPLORER
+    BUTTON      IDM_LOGFONT
+    BUTTON      IDM_KERNEXP
+    BUTTON      IDM_GETCHARPLACEMENT
+    BUTTON      ID_RASTER
+    BUTTON      IDM_STOCKFONT
+    SEPARATOR
+    BUTTON      ID_EDIT_CUT
+    BUTTON      ID_EDIT_COPY
+    BUTTON      ID_EDIT_PASTE
+    SEPARATOR
+    BUTTON      ID_FILE_PRINT
+    BUTTON      ID_APP_ABOUT
+    BUTTON      ID_CONTEXT_HELP
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+1 VERSIONINFO
+ FILEVERSION 4,0,0,0
+ PRODUCTVERSION 4,0,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0xbL
+#else
+ FILEFLAGS 0xaL
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904e4"
+        BEGIN
+            VALUE "Comments", "Author: Joseph M. Newcomer\0"
+            VALUE "CompanyName", "The Joseph M. Newcomer Co.\0"
+            VALUE "FileDescription", "Font Explorer\0"
+            VALUE "FileVersion", "4.0\0"
+            VALUE "InternalName", "Font Explorer\0"
+            VALUE "LegalCopyright", "Copyright © 1995 Joseph M. Newcomer\0"
+            VALUE "LegalTrademarks", "I have no trademarks, legal or otherwise.\0"
+            VALUE "OriginalFilename", "FontExplorer.exe\0"
+            VALUE "ProductName", "Font Explorer\0"
+            VALUE "ProductVersion", "4.0\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "Font Explorer"
+    IDR_FONTEXTYPE          "\nFontEx\nFontEx\n\n\nFontExplorer.Document\nFontEx Document"
+    IDS_PROCESSOR_LEVEL_MIPS_UNKNOWN "Unknown MIPS processor"
+    IDS_PROCESSOR_LEVEL_PPC_UNKNOWN "Unknown Power PC processor"
+    IDS_PROCESSOR_NOREV_INTEL_386 "Intel 80386 processor"
+    IDS_PROCESSOR_NOREV_INTEL_486 "Intel 80486 processor"
+    IDS_PROCESSOR_NOREV_INTEL_PENTIUM "Intel Pentium processor"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "Font Explorer"
+    AFX_IDS_IDLEMESSAGE     "For Help, press F1"
+    AFX_IDS_HELPMODEMESSAGE "Select an object on which to get Help"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_NEW             "Create a new document\nNew"
+    ID_FILE_OPEN            "Open an existing document\nOpen"
+    ID_FILE_CLOSE           "Close the active document\nClose"
+    ID_FILE_SAVE            "Save the active document\nSave"
+    ID_FILE_SAVE_AS         "Save the active document with a new name\nSave As"
+    ID_FILE_PAGE_SETUP      "Change the printing options\nPage Setup"
+    ID_FILE_PRINT_SETUP     "Change the printer and printing options\nPrint Setup"
+    ID_FILE_PRINT           "Print the active document\nPrint"
+    ID_FILE_PRINT_PREVIEW   "Display full pages\nPrint Preview"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
+    ID_APP_EXIT             "Quit the application; prompts to save documents\nExit"
+    ID_HELP_INDEX           "Opens Help\nHelp Topics"
+    ID_HELP_FINDER          "List Help topics\nHelp Topics"
+    ID_HELP_USING           "Display instructions about how to use help\nHelp"
+    ID_CONTEXT_HELP         "Display help for clicked on buttons, menus and windows\nHelp"
+    ID_HELP                 "Display help for current task or command\nHelp"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "Open this document"
+    ID_FILE_MRU_FILE2       "Open this document"
+    ID_FILE_MRU_FILE3       "Open this document"
+    ID_FILE_MRU_FILE4       "Open this document"
+    ID_FILE_MRU_FILE5       "Open this document"
+    ID_FILE_MRU_FILE6       "Open this document"
+    ID_FILE_MRU_FILE7       "Open this document"
+    ID_FILE_MRU_FILE8       "Open this document"
+    ID_FILE_MRU_FILE9       "Open this document"
+    ID_FILE_MRU_FILE10      "Open this document"
+    ID_FILE_MRU_FILE11      "Open this document"
+    ID_FILE_MRU_FILE12      "Open this document"
+    ID_FILE_MRU_FILE13      "Open this document"
+    ID_FILE_MRU_FILE14      "Open this document"
+    ID_FILE_MRU_FILE15      "Open this document"
+    ID_FILE_MRU_FILE16      "Open this document"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_WINDOW_NEW           "Open another window for the active document\nNew Window"
+    ID_WINDOW_ARRANGE       "Arrange icons at the bottom of the window\nArrange Icons"
+    ID_WINDOW_CASCADE       "Arrange windows so they overlap\nCascade Windows"
+    ID_WINDOW_TILE_HORZ     "Arrange windows as non-overlapping tiles\nTile Windows"
+    ID_WINDOW_TILE_VERT     "Arrange windows as non-overlapping tiles\nTile Windows"
+    ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_CLEAR           "Erase the selection\nErase"
+    ID_EDIT_CLEAR_ALL       "Erase everything\nErase All"
+    ID_EDIT_COPY            "Copy the selection and put it on the Clipboard\nCopy"
+    ID_EDIT_CUT             "Cut the selection and put it on the Clipboard\nCut"
+    ID_EDIT_FIND            "Find the specified text\nFind"
+    ID_EDIT_PASTE           "Insert Clipboard contents\nPaste"
+    ID_EDIT_REPEAT          "Repeat the last action\nRepeat"
+    ID_EDIT_REPLACE         "Replace specific text with different text\nReplace"
+    ID_EDIT_SELECT_ALL      "Select the entire document\nSelect All"
+    ID_EDIT_UNDO            "Undo the last action\nUndo"
+    ID_EDIT_REDO            "Redo the previously undone action\nRedo"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "Show or hide the toolbar\nToggle ToolBar"
+    ID_VIEW_STATUS_BAR      "Show or hide the status bar\nToggle StatusBar"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+    AFX_IDS_MDICHILD        "Activate this window"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_PREVIEW_CLOSE   "Close print preview mode\nCancel Preview"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PLATFORM_WIN32_NT   "Microsoft Windows NT %u.%u (Build %u)"
+    IDS_PLATFORM_WIN32_NTAS "Microsoft Windows NT Advanced Server %u.%u (Build %u)"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PLATFORM_WIN32_NTW  "Microsoft Windows NT Workstation %u.%u (Build %u)"
+    IDS_PLATFORM_WIN32_NTS  "Microsoft Windows NT Server %u.%u (Build %u)"
+    IDS_PLATFORM_WIN32s     "Microsoft Win32s %u.%u (Build %u)"
+    IDS_PLATFORM_WIN32_WINDOWS "Microsoft Windows 95 %u.%u (Build %u)"
+    IDS_PLATFORM_UNKNOWN    "Unknown operating system %u.%u (Build %u)"
+    IDS_PROCESSOR_ARCHITECTURE_UNKNOWN "Unknown processor architecture"
+    IDS_PROCESSOR_ARCHITECTURE_INTEL_386_486 
+                            "Intel %1 step %2!0.2X! processor"
+    IDS_PROCESSOR_ARCHITECTURE_INTEL_PENTIUM 
+                            "Intel %1 model %2!d!, stepping %3!d! processor"
+    IDS_PROCESSOR_ARCHITECTURE_ALPHA 
+                            "DEC Alpha %1 model %2!c!, pass %3!d! processor"
+    IDS_PROCESSOR_ARCHITECTURE_MIPS "MIPS %1 revision %2!d! processor"
+    IDS_PROCESSOR_ARCHITECTURE_PPC 
+                            "Power PC %1 revision %2!d!.%3!d! processor"
+    IDS_PROCESSOR_LEVEL_INTEL_UNKNOWN "Unknown Intel processor"
+    IDS_PROCESSOR_LEVEL_ALPHA_UNKNOWN "Unknown Alpha processor"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PROCESSOR_NOREV_MIPS_R4000 "MIPS R4000 processor"
+    IDS_PROCESSOR_NOREV_ALPHA_21064 "DEC Alpha 21064 processor"
+    IDS_FSTYPE_EMBEDDABLE   " Embeddable"
+    IDS_FSTYPE_NOT_EMBEDDABLE "Not Embeddable"
+    IDS_FSTYPE_RO_EMBEDDABLE "Embeddable read only"
+    IDS_FSSELECTION_ITALIC  "Italic"
+    IDS_FSSELECTION_UNDERSCORE "Underscore"
+    IDS_FSSELECTION_NEGATIVE "Negative"
+    IDS_FSSELECTION_OUTLINE "Outline"
+    IDS_FSSELECTION_STRIKEOUT "Strikeout"
+    IDS_FSSELECTION_BOLD    "Bold"
+    IDS_FSSELECTION_UNKNOWN "Unknown %1!02x!"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_TMPF_FIXED_PITCH    "TMPF_FIXED_PITCH"
+    IDS_TMPF_VECTOR         "TMPF_VECTOR"
+    IDS_TMPF_TRUETYPE       "TMPF_TRUETYPE"
+    IDS_TMPF_DEVICE         "TMPF_DEVICE"
+    IDS_PITCH               "Pitch"
+    IDS_WIDTHS              "Widths"
+    IDS_TEXT_EXTENT         "GetTextExtent (%d, %d)"
+    IDS_TEXT_OVERHANG       "GetTextExtent+overhang: (%d, %d)"
+    IDS_ISCALE              "Scaling: win %d, view %d"
+    IDS_FSCALE              "Scaling %g, %g"
+    IDS_RECT_EXTENT         "Rectangle %d x %d"
+    IDS_SCALED_EXTENT       "Scaled (%d, %d)"
+    IDS_FW_DONTCARE         "FW_DONTCARE"
+    IDS_FW_THIN             "FW_THIN"
+    IDS_FW_EXTRALIGHT       "FW_EXTRALIGHT"
+    IDS_FW_ULTRALIGHT       "FW_ULTRALIGHT"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_FW_LIGHT            "FW_LIGHT"
+    IDS_FW_NORMAL           "FW_NORMAL"
+    IDS_FW_REGULAR          "FW_REGULAR"
+    IDS_FW_MEDIUM           "FW_MEDIUM"
+    IDS_FW_SEMIBOLD         "FW_SEMIBOLD"
+    IDS_FW_DEMIBOLD         "FW_DEMIBOLD"
+    IDS_FW_BOLD             "FW_BOLD"
+    IDS_FW_EXTRABOLD        "FW_EXTRABOLD"
+    IDS_FW_ULTRABOLD        "FW_ULTRABOLD"
+    IDS_FW_HEAVY            "FW_HEAVY"
+    IDS_FW_BLACK            "FW_BLACK"
+    IDS_ANSI_CHARSET        "ANSI_CHARSET"
+    IDS_DEFAULT_CHARSET     "DEFAULT_CHARSET"
+    IDS_SYMBOL_CHARSET      "SYMBOL_CHARSET"
+    IDS_SHIFTJIS_CHARSET    "SHIFTJIS_CHARSET"
+    IDS_GB2312_CHARSET      "GB2312_CHARSET"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_HANGEUL_CHARSET     "HANGEUL_CHARSET"
+    IDS_CHINESEBIG5_CHARSET "CHINESEBIG5_CHARSET"
+    IDS_OEM_CHARSET         "OEM_CHARSET"
+    IDS_JOHAB_CHARSET       "JOHAB_CHARSET"
+    IDS_HEBREW_CHARSET      "HEBREW_CHARSET"
+    IDS_ARABIC_CHARSET      "ARABIC_CHARSET"
+    IDS_TURKISH_CHARSET     "TURKISH_CHARSET"
+    IDS_THAI_CHARSET        "THAI_CHARSET"
+    IDS_EASTEUROPE_CHARSET  "EASTEUROPE_CHARSET"
+    IDS_RUSSIAN_CHARSET     "RUSSIAN_CHARSET"
+    IDS_MAC_CHARSET         "MAC_CHARSET"
+    IDS_BALTIC_CHARSET      "BALTIC_CHARSET"
+    IDS_GREEK_CHARSET       "GREEK_CHARSET"
+    IDS_OUT_CHARACTER_PRECIS "OUT_CHARACTER_PRECIS"
+    IDS_OUT_DEFAULT_PRECIS  "OUT_DEFAULT_PRECIS"
+    IDS_OUT_DEVICE_PRECIS   "OUT_DEVICE_PRECIS"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_OUT_OUTLINE_PRECIS  "OUT_OUTLINE_PRECIS"
+    IDS_OUT_RASTER_PRECIS   "OUT_RASTER_PRECIS"
+    IDS_OUT_STRING_PRECIS   "OUT_STRING_PRECIS"
+    IDS_OUT_STROKE_PRECIS   "OUT_STROKE_PRECIS"
+    IDS_OUT_TT_ONLY_PRECIS  "OUT_TT_ONLY_PRECIS"
+    IDS_OUT_TT_PRECIS       "OUT_TT_PRECIS"
+    IDS_CLIP_DEFAULT_PRECIS "CLIP_DEFAULT_PRECIS"
+    IDS_CLIP_CHARACTER_PRECIS "CLIP_CHARACTER_PRECIS"
+    IDS_CLIP_STROKE_PRECIS  "CLIP_STROKE_PRECIS"
+    IDS_CLIP_MASK           "CLIP_MASK"
+    IDS_CLIP_EMBEDDED       "CLIP_EMBEDDED"
+    IDS_CLIP_LH_ANGLES      "CLIP_LH_ANGLES"
+    IDS_CLIP_TT_ALWAYS      "CLIP_TT_ALWAYS"
+    IDS_DEFAULT_QUALITY     "DEFAULT_QUALITY"
+    IDS_DRAFT_QUALITY       "DRAFT_QUALITY"
+    IDS_PROOF_QUALITY       "PROOF_QUALITY"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_DEFAULT_PITCH       "DEFAULT_PITCH"
+    IDS_FIXED_PITCH         "FIXED_PITCH"
+    IDS_VARIABLE_PITCH      "VARIABLE_PITCH"
+    IDS_FF_DECORATIVE       "FF_DECORATIVE"
+    IDS_FF_DONTCARE         "FF_DONTCARE"
+    IDS_FF_MODERN           "FF_MODERN"
+    IDS_FF_ROMAN            "FF_ROMAN"
+    IDS_FF_SCRIPT           "FF_SCRIPT"
+    IDS_FF_SWISS            "FF_SWISS"
+    IDS_SAMPLE              "Sample text"
+    IDS_NONE                "(none)"
+    IDS_DRAWCODE            "0x%02x %d ""%c"" drawcode %d"
+    IDS_INTERNAL_LEADING    "Internal Leading"
+    IDS_HEIGHT              "Font height"
+    IDS_EXTERNAL_LEADING    "External Leading"
+    IDS_ASCENT              "Ascent height"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_DESCENT             "Descent height"
+    IDS_ABC1                "ABC ruler 1"
+    IDS_ABC2                "ABC ruler 2"
+    IDS_ABC_WIDTHS          "0x%02x %d ""%c"" [ %d %d %d ]"
+    IDS_TMPF_RASTER         "Raster font"
+    IDS_NTM_ITALIC          "0x%02x Italic"
+    IDS_NTM_UNDERSCORE      "0x%02x Underscore"
+    IDS_NTM_NEGATIVE        "0x%02x Negative"
+    IDS_NTM_OUTLINE         "0x%02x Outline"
+    IDS_NTM_STRIKEOUT       "0x%02x Strikeout"
+    IDS_NTM_BOLD            "0x%02x Bold"
+    IDS_KERNING_PAIRS       "Kerning pairs: %d"
+    IDS_FONTINFO            "Font Info "
+    IDS_RASTERFONTS         "Raster Fonts"
+    IDS_TRUETYPEFONTS       "TrueType Fonts"
+    IDS_VECTORFONTS         "Vector Fonts"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_MULTIPLIER          "X"
+    IDS_HEIGHT_CAPTION      "Height"
+    IDS_CHARS_HIGH          "®²¶¼Äåýø"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDM_FONTEXPLORER        "Explore font properties in detail\nFont Explorer"
+    IDM_LOGFONT             "Specify a LOGFONT structure and create a font\nLogFont Explorer"
+    IDM_KERNEXP             "Explore Pair Kerning and Track Kerning\nKerning Explorer"
+    IDM_GETCHARPLACEMENT    "GetCharPlacement Explorer\nGetCharPlacement Explorer"
+    ID_RASTER               "Show Raster Font Scaling\nRaster Scaling"
+    IDM_STOCKFONT           "Stock Font Explorer\nStock fonts"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif
+#include "res\FontExplorer.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#include "afxprint.rc"       // printing/print preview resources
+#endif
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,72 @@
+// MAKEHELP.BAT generated Help Map file.  Used by CONTROLEXPLORER.HPJ. 
+ 
+// Commands (ID_* and IDM_*) 
+HID_SETFONT                             0x10003
+HID_CLTEXP                              0x18003
+HID_CTLEXP                              0x18004
+HIDM_SLIDERS                            0x18005
+HIDM_LOGARITHM                          0x18007
+HIDM_CLEAR                              0x18009
+HIDM_MARK                               0x1800A
+ 
+// Prompts (IDP_*) 
+ 
+// Resources (IDR_*) 
+HIDR_MAINFRAME                          0x20080
+HIDR_CONTROTYPE                         0x20081
+HIDR_LOGPOPUP                           0x200BD
+ 
+// Dialogs (IDD_*) 
+HIDD_ABOUTBOX                           0x20064
+HIDD_LISTBOX                            0x20066
+HIDD_ABOUTBOX                           0x20064
+HIDD_BUTTONDLG                          0x20081
+HIDD_DROPDOWN                           0x20083
+HIDD_EDIT                               0x20084
+HIDD_SCROLLBAR                          0x20085
+HIDD_EDITTOOLS                          0x20087
+HIDD_EDITSTATE                          0x20088
+HIDD_EDITMAPPING                        0x20089
+HIDD_EDITCONTENTS                       0x2008A
+HIDD_EDITRECTANGLES                     0x2008B
+HIDD_INDEXPAGE                          0x2008C
+HIDD_EDITSCROLL                         0x2008D
+HIDD_EDITTABS                           0x2008E
+HIDD_DLGCODE                            0x2008F
+HIDD_STATIC                             0x20090
+HIDD_BUTTON                             0x20094
+HIDD_BUTTONMSG                          0x20095
+HIDD_LISTBOXSTRING                      0x20099
+HIDD_LISTBOXQUERY                       0x2009A
+HIDD_DIALOG1                            0x2009B
+HIDD_LISTBOXSTATE                       0x2009C
+HIDD_LISTBOXDIR                         0x2009D
+HIDD_LISTBOXRECT                        0x2009E
+HIDD_LISTBOXTABS                        0x2009F
+HIDD_DROPDOWNMESSAGES                   0x200A3
+HIDD_DDTEXT                             0x200A4
+HIDD_DDEFFECTS                          0x200A5
+HIDD_3D                                 0x200A6
+HIDD_HEADER                             0x200A7
+HIDD_HEADERMSGS                         0x200A8
+HIDD_HEADERLAYOUT                       0x200A9
+HIDD_SLIDERS                            0x200B1
+HIDD_TRACKBAR                           0x200B2
+HIDD_PROGRESS                           0x200B3
+HIDD_TRACKBAR_SEL                       0x200B4
+HIDD_TRACKBAR_TICKS                     0x200B5
+HIDD_TRACKBAR_POS                       0x200B6
+HIDD_TRACKBAR_RECT                      0x200B7
+HIDD_TRACKBAR_LOG                       0x200B8
+HIDD_UPDOWN                             0x200B9
+HIDD_UPDOWNPOS                          0x200BA
+HIDD_UPDOWNBUD                          0x200BB
+HIDD_UPDOWNACC                          0x200BC
+HIDD_TREE                               0x200BE
+HIDD_TREEINSERT                         0x200BF
+HIDD_TREEGETITEM                        0x200C0
+HIDD_TREEMISC                           0x200C1
+HIDD_TREEIMAGES                         0x200C2
+HIDD_TREECALLBACK                       0x200CD
+ 
+// Frame Controls (IDW_*) 

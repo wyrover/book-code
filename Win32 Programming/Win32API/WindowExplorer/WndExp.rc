@@ -1,0 +1,761 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif\r\n"
+    "#include ""res\\WndExp.rc2""   // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#include ""afxprint.rc""       // printing/print preview resources\r\n"
+    "#endif\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\WndExp.ico"
+IDS_GENERIC_POPUP       ICON    DISCARDABLE     "res\\popup.ico"
+IDI_JMNCO               ICON    DISCARDABLE     "res\\jmnco.ico"
+IDS_GENERIC_OVERLAPPED  ICON    DISCARDABLE     "res\\overlap.ico"
+IDS_GENERIC_CHILD       ICON    DISCARDABLE     "res\\child.ico"
+IDR_WINDOWTYPE          ICON    DISCARDABLE     "res\\WndExpDoc.ico"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP  MOVEABLE PURE   "res\\Toolbar.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR DISCARDABLE  16, 15
+BEGIN
+    BUTTON      ID_FILE_NEW
+    BUTTON      ID_FILE_OPEN
+    BUTTON      ID_FILE_SAVE
+    SEPARATOR
+    BUTTON      IDM_WNDEXP
+    SEPARATOR
+    BUTTON      ID_EDIT_CUT
+    BUTTON      ID_EDIT_COPY
+    BUTTON      ID_EDIT_PASTE
+    SEPARATOR
+    BUTTON      ID_FILE_PRINT
+    BUTTON      ID_APP_ABOUT
+    BUTTON      ID_CONTEXT_HELP
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&New\tCtrl+N",                ID_FILE_NEW
+        MENUITEM "&Open...\tCtrl+O",            ID_FILE_OPEN
+        MENUITEM SEPARATOR
+        MENUITEM "&Window Explorer...",         IDM_WNDEXP
+        MENUITEM "P&rint Setup...",             ID_FILE_PRINT_SETUP
+        MENUITEM SEPARATOR
+        MENUITEM "Recent File",                 ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&Help Topics",                ID_HELP_FINDER
+        MENUITEM SEPARATOR
+        MENUITEM "&About Window Explorer...",   ID_APP_ABOUT
+    END
+END
+
+IDR_WINDOWTYPE MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&New\tCtrl+N",                ID_FILE_NEW
+        MENUITEM "&Open...\tCtrl+O",            ID_FILE_OPEN
+        MENUITEM "&Close",                      ID_FILE_CLOSE
+        MENUITEM "&Save\tCtrl+S",               ID_FILE_SAVE
+        MENUITEM "Save &As...",                 ID_FILE_SAVE_AS
+        MENUITEM SEPARATOR
+        MENUITEM "&Window Explorer...",         IDM_WNDEXP
+        MENUITEM "&Print...\tCtrl+P",           ID_FILE_PRINT
+        MENUITEM "Print Pre&view",              ID_FILE_PRINT_PREVIEW
+        MENUITEM "P&rint Setup...",             ID_FILE_PRINT_SETUP
+        MENUITEM SEPARATOR
+        MENUITEM "Recent File",                 ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "&Undo\tCtrl+Z",               ID_EDIT_UNDO
+        MENUITEM SEPARATOR
+        MENUITEM "Cu&t\tCtrl+X",                ID_EDIT_CUT
+        MENUITEM "&Copy\tCtrl+C",               ID_EDIT_COPY
+        MENUITEM "&Paste\tCtrl+V",              ID_EDIT_PASTE
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+    END
+    POPUP "&Window"
+    BEGIN
+        MENUITEM "&New Window",                 ID_WINDOW_NEW
+        MENUITEM "&Cascade",                    ID_WINDOW_CASCADE
+        MENUITEM "&Tile",                       ID_WINDOW_TILE_HORZ
+        MENUITEM "&Arrange Icons",              ID_WINDOW_ARRANGE
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&Help Topics",                ID_HELP_FINDER
+        MENUITEM SEPARATOR
+        MENUITEM "&About Window Explorer...",   ID_APP_ABOUT
+    END
+END
+
+IDR_CONTEXTMENU MENU DISCARDABLE 
+BEGIN
+    POPUP "Popup"
+    BEGIN
+        MENUITEM "Properties",                  IDM_PROPERTIES, GRAYED
+        MENUITEM "&Destroy",                    IDM_DESTROY
+    END
+END
+
+IDR_MENU1 MENU DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&Round",                      IDM_ROUND_FILE
+        MENUITEM "&Flat",                       IDM_FLAT_FILE
+        MENUITEM "&Half-round",                 IDM_HALF_ROUND
+        MENUITEM "Rat-&tail",                   IDM_RAT_TAIL
+        MENUITEM SEPARATOR
+        MENUITEM "&Exit",                       IDM_DESTROY
+    END
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "&Snip",                       IDM_EDIT_SNIP
+        MENUITEM "&Plagiarize",                 IDM_PLAGIARIZE
+        MENUITEM "&Glue",                       IDM_GLUE
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Ocean",                      IDM_OCEAN_VIEW
+        MENUITEM "&Mountains",                  IDM_MOUNTAIN_VIEW
+    END
+    POPUP "&Window"
+    BEGIN
+        MENUITEM "&Bay",                        IDM_BAY_WINDOW
+        MENUITEM "&Picture",                    IDM_PICTURE_WINDOW
+        MENUITEM "&Triple-glazed",              IDM_TRIPLE_GLAZED
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&No help...",                 IDM_NOHELP
+        MENUITEM SEPARATOR
+        MENUITEM "About...",                    IDM_ABOUT_THIS
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS PRELOAD MOVEABLE PURE 
+BEGIN
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL
+    "P",            ID_FILE_PRINT,          VIRTKEY, CONTROL
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY 
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT
+    VK_F1,          ID_CONTEXT_HELP,        VIRTKEY, SHIFT
+    VK_F1,          ID_HELP,                VIRTKEY 
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_CREATEWINDOWEX DIALOG DISCARDABLE  0, 0, 350, 204
+STYLE WS_CHILD | WS_CAPTION
+CAPTION "CreateWindowEx"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "WS_EX_ACCEPTFILES",IDC_WS_EX_ACCEPTFILES,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,11,103,10
+    CONTROL         "WS_EX_APPWINDOW",IDC_WS_EX_APPWINDOW,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,21,103,10
+    CONTROL         "WS_EX_CLIENTEDGE",IDC_WS_EX_CLIENTEDGE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,31,103,10
+    CONTROL         "WS_EX_CONTEXTHELP",IDC_WS_EX_CONTEXTHELP,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,41,103,10
+    CONTROL         "WS_EX_CONTROLPARENT",IDC_WS_EX_CONTROLPARENT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,51,103,10
+    CONTROL         "WS_EX_DLGMODALFRAME",IDC_WS_EX_DLGMODALFRAME,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,61,103,10
+    CONTROL         "WS_EX_LEFT",IDC_WS_EX_LEFT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,71,103,10
+    CONTROL         "WS_EX_LEFTSCROLLBAR",IDC_WS_EX_LEFTSCROLLBAR,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,81,103,10
+    CONTROL         "WS_EX_LTRREADING",IDC_WS_EX_LTRREADING,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,91,103,10
+    CONTROL         "WS_EX_MDICHILD",IDC_WS_EX_MDICHILD,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,101,103,10
+    CONTROL         "WS_EX_NOPARENTNOTIFY",IDC_WS_EX_NOPARENTNOTIFY,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,111,103,10
+    CONTROL         "WS_EX_OVERLAPPEDWINDOW *",IDC_WS_EX_OVERLAPPEDWINDOW,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,117,11,118,10
+    CONTROL         "WS_EX_PALETTEWINDOW *",IDC_WS_EX_PALETTEWINDOW,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,117,21,103,10
+    CONTROL         "WS_EX_RIGHT",IDC_WS_EX_RIGHT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,117,31,103,10
+    CONTROL         "WS_EX_RIGHTSCROLLBAR",IDC_WS_EX_RIGHTSCROLLBAR,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,117,41,104,10
+    CONTROL         "WS_EX_RTLREADING",IDC_WS_EX_RTLREADING,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,117,51,86,10
+    CONTROL         "WS_EX_STATICEDGE",IDC_WS_EX_STATICEDGE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,117,61,103,10
+    CONTROL         "WS_EX_TOOLWINDOW",IDC_WS_EX_TOOLWINDOW,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,117,71,103,10
+    CONTROL         "WS_EX_TOPMOST",IDC_WS_EX_TOPMOST,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,117,81,103,10
+    CONTROL         "WS_EX_TRANSPARENT",IDC_WS_EX_TRANSPARENT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,117,91,103,10
+    CONTROL         "WS_EX_WINDOWEDGE",IDC_WS_EX_WINDOWEDGE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,117,101,103,10
+    LTEXT           "&Classname",IDC_STATIC,255,4,35,8
+    COMBOBOX        IDC_CLASSNAME,255,13,92,47,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "CreateWindowEx(exStyles, classname, windowname, style, x, y, w, h, parent, menu, hinstance, param)",
+                    IDC_STATIC,3,166,343,8
+    GROUPBOX        "exStyle",IDC_STATIC,3,0,250,123
+    EDITTEXT        IDC_WINDOWNAME,255,35,92,14,ES_AUTOHSCROLL
+    LTEXT           "Window&name",IDC_STATIC,255,26,42,8
+    PUSHBUTTON      "C&reateWindowEx( )",IDC_CREATE,285,189,62,12
+    PUSHBUTTON      "&Destroy",IDC_DESTROY,3,133,50,14
+    EDITTEXT        IDC_X,267,51,23,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_XSPIN,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,289,51,11,14
+    LTEXT           "&X",IDC_STATIC,256,54,8,8
+    EDITTEXT        IDC_Y,314,51,23,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_YSPIN,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,336,51,11,14
+    LTEXT           "&Y",IDC_STATIC,303,54,8,8
+    EDITTEXT        IDC_W,267,67,23,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_WSPIN,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,289,67,11,14
+    LTEXT           "&W",IDC_STATIC,256,70,8,8
+    EDITTEXT        IDC_H,314,67,23,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_HSPIN,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,336,67,11,14
+    LTEXT           "&H",IDC_STATIC,303,70,8,8
+    COMBOBOX        IDC_PARENT,256,90,91,48,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "&Parent",IDC_STATIC,257,81,21,8
+    EDITTEXT        IDC_MESSAGE,3,189,276,12,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_SHOW,3,175,344,12,ES_AUTOHSCROLL | ES_READONLY
+    CONTROL         "List1",IDC_WINDOWS,"SysListView32",LVS_REPORT | 
+                    LVS_SORTASCENDING | WS_BORDER | WS_TABSTOP,55,124,292,39
+    CONTROL         "API3 only",IDC_API3_ONLY,"Button",BS_AUTOCHECKBOX | 
+                    BS_LEFTTEXT | WS_TABSTOP,205,111,44,10
+    COMBOBOX        IDC_MENU,256,107,48,40,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_ID,314,106,23,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPINID,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,336,106,11,14
+END
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  22, 17, 204, 89
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "About "
+FONT 8, "System"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,166,74,32,14,WS_GROUP
+    LTEXT           "FileDescription",IDC_ABOUT_FILEDESCRIPTION,30,2,118,8
+    LTEXT           "Version ",IDC_STATIC,152,2,28,8
+    LTEXT           "ProductVersion",IDC_ABOUT_VERSION,180,2,17,8
+    LTEXT           "LegalCopyright",IDC_ABOUT_LEGALCOPYRIGHT,30,10,168,16
+    LTEXT           "Comments",IDC_ABOUT_COMMENTS,30,31,168,8
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKRECT,2,42,200,1
+    LTEXT           "OSVERSION",IDC_ABOUT_OSVERSION,4,45,196,8
+    LTEXT           "ProcessorVersion",IDC_ABOUT_PROCESSORVERSION,4,53,196,8
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKRECT,2,63,200,1
+    LTEXT           "LegalTrademarks",IDC_ABOUT_LEGALTRADEMARKS,3,68,156,18
+    ICON            IDR_MAINFRAME,IDC_STATIC,3,2,18,20
+    ICON            IDI_JMNCO,IDC_STATIC,4,27,18,20
+END
+
+IDD_STYLES DIALOG DISCARDABLE  0, 0, 229, 129
+STYLE WS_CHILD | WS_CAPTION
+CAPTION "Styles"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "WS_BORDER",IDC_WS_BORDER,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,2,2,60,10
+    CONTROL         "WS_CAPTION",IDC_WS_CAPTION,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,2,12,60,10
+    CONTROL         "WS_CHILD",IDC_WS_CHILD,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,2,22,60,10
+    CONTROL         "WS_CHILDWINDOW *",IDC_WS_CHILDWINDOW,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,2,32,84,10
+    CONTROL         "WS_CLIPCHILDREN",IDC_WS_CLIPCHILDREN,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,2,42,79,10
+    CONTROL         "WS_CLIPSIBLINGS",IDC_WS_CLIPSIBLINGS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,2,52,75,10
+    CONTROL         "WS_DLGFRAME",IDC_WS_DLGFRAME,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,2,62,68,10
+    CONTROL         "WS_GROUP",IDC_WS_GROUP,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,2,72,55,10
+    CONTROL         "WS_HSCROLL",IDC_WS_HSCROLL,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,2,82,62,10
+    CONTROL         "WS_MAXIMIZE",IDC_WS_MAXIMIZE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,2,92,62,10
+    CONTROL         "WS_MAXIMIZEBOX",IDC_WS_MAXIMIZEBOX,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,2,102,75,10
+    CONTROL         "WS_MINIMIZE",IDC_WS_MINIMIZE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,116,2,60,10
+    CONTROL         "WS_MINIMIZEBOX",IDC_WS_MINIMIZEBOX,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,116,12,73,10
+    CONTROL         "WS_OVERLAPPED",IDC_WS_OVERLAPPED,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,116,22,76,10
+    CONTROL         "WS_OVERLAPPEDWINDOW *",IDC_WS_OVERLAPPEDWINDOW,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,116,32,110,10
+    CONTROL         "WS_POPUP",IDC_WS_POPUP,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,116,42,60,10
+    CONTROL         "WS_POPUPWINDOW *",IDC_WS_POPUPWINDOW,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,116,52,88,10
+    CONTROL         "WS_SYSMENU",IDC_WS_SYSMENU,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,116,62,64,10
+    CONTROL         "WS_TABSTOP",IDC_WS_TABSTOP,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,116,72,63,10
+    CONTROL         "WS_THICKFRAME",IDC_WS_THICKFRAME,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,116,82,74,10
+    CONTROL         "WS_VISIBLE",IDC_WS_VISIBLE,"Button",BS_AUTOCHECKBOX | 
+                    WS_DISABLED | WS_TABSTOP,116,92,55,10
+    CONTROL         "WS_VSCROLL",IDC_WS_VSCROLL,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,116,102,61,10
+    EDITTEXT        IDC_FLAGS,69,113,91,14,ES_AUTOHSCROLL | ES_READONLY
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+1 VERSIONINFO
+ FILEVERSION 4,0,0,0
+ PRODUCTVERSION 4,0,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0xbL
+#else
+ FILEFLAGS 0xaL
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904e4"
+        BEGIN
+            VALUE "Comments", "Author: Joseph M. Newcomer\0"
+            VALUE "CompanyName", "The Joseph M. Newcomer Co.\0"
+            VALUE "FileDescription", "Window Explorer\0"
+            VALUE "FileVersion", "4.0\0"
+            VALUE "InternalName", "Window Explorer\0"
+            VALUE "LegalCopyright", "Copyright © 1996 Joseph M. Newcomer\0"
+            VALUE "LegalTrademarks", "I have no trademarks, legal or otherwise.\0"
+            VALUE "OriginalFilename", "WndExp.exe\0"
+            VALUE "ProductName", "Window Explorer\0"
+            VALUE "ProductVersion", "4.0\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 210
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "Window Explorer"
+    IDR_WINDOWTYPE          "\nWndExp\nWndExp\n\n\nWindowExplorer.Document\nWndExp Document"
+    IDS_PROCESSOR_LEVEL_MIPS_UNKNOWN "Unknown MIPS processor"
+    IDS_PROCESSOR_LEVEL_PPC_UNKNOWN "Unknown Power PC processor"
+    IDS_PROCESSOR_NOREV_INTEL_386 "Intel 80386 processor"
+    IDS_PROCESSOR_NOREV_INTEL_486 "Intel 80486 processor"
+    IDS_PROCESSOR_NOREV_INTEL_PENTIUM "Intel Pentium processor"
+    IDS_PROCESSOR_NOREV_MIPS_R4000 "MIPS R4000 processor"
+    IDS_PROCESSOR_NOREV_ALPHA_21064 "DEC Alpha 21064 processor"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "Window Explorer"
+    AFX_IDS_IDLEMESSAGE     "For Help, press F1"
+    AFX_IDS_HELPMODEMESSAGE "Select an object on which to get Help"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_NEW             "Create a new document\nNew"
+    ID_FILE_OPEN            "Open an existing document\nOpen"
+    ID_FILE_CLOSE           "Close the active document\nClose"
+    ID_FILE_SAVE            "Save the active document\nSave"
+    ID_FILE_SAVE_AS         "Save the active document with a new name\nSave As"
+    ID_FILE_PAGE_SETUP      "Change the printing options\nPage Setup"
+    ID_FILE_PRINT_SETUP     "Change the printer and printing options\nPrint Setup"
+    ID_FILE_PRINT           "Print the active document\nPrint"
+    ID_FILE_PRINT_PREVIEW   "Display full pages\nPrint Preview"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
+    ID_APP_EXIT             "Quit the application; prompts to save documents\nExit"
+    ID_HELP_INDEX           "Opens Help\nHelp Topics"
+    ID_HELP_FINDER          "List Help topics\nHelp Topics"
+    ID_HELP_USING           "Display instructions about how to use help\nHelp"
+    ID_CONTEXT_HELP         "Display help for clicked on buttons, menus and windows\nHelp"
+    ID_HELP                 "Display help for current task or command\nHelp"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "Open this document"
+    ID_FILE_MRU_FILE2       "Open this document"
+    ID_FILE_MRU_FILE3       "Open this document"
+    ID_FILE_MRU_FILE4       "Open this document"
+    ID_FILE_MRU_FILE5       "Open this document"
+    ID_FILE_MRU_FILE6       "Open this document"
+    ID_FILE_MRU_FILE7       "Open this document"
+    ID_FILE_MRU_FILE8       "Open this document"
+    ID_FILE_MRU_FILE9       "Open this document"
+    ID_FILE_MRU_FILE10      "Open this document"
+    ID_FILE_MRU_FILE11      "Open this document"
+    ID_FILE_MRU_FILE12      "Open this document"
+    ID_FILE_MRU_FILE13      "Open this document"
+    ID_FILE_MRU_FILE14      "Open this document"
+    ID_FILE_MRU_FILE15      "Open this document"
+    ID_FILE_MRU_FILE16      "Open this document"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_WINDOW_NEW           "Open another window for the active document\nNew Window"
+    ID_WINDOW_ARRANGE       "Arrange icons at the bottom of the window\nArrange Icons"
+    ID_WINDOW_CASCADE       "Arrange windows so they overlap\nCascade Windows"
+    ID_WINDOW_TILE_HORZ     "Arrange windows as non-overlapping tiles\nTile Windows"
+    ID_WINDOW_TILE_VERT     "Arrange windows as non-overlapping tiles\nTile Windows"
+    ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_CLEAR           "Erase the selection\nErase"
+    ID_EDIT_CLEAR_ALL       "Erase everything\nErase All"
+    ID_EDIT_COPY            "Copy the selection and put it on the Clipboard\nCopy"
+    ID_EDIT_CUT             "Cut the selection and put it on the Clipboard\nCut"
+    ID_EDIT_FIND            "Find the specified text\nFind"
+    ID_EDIT_PASTE           "Insert Clipboard contents\nPaste"
+    ID_EDIT_REPEAT          "Repeat the last action\nRepeat"
+    ID_EDIT_REPLACE         "Replace specific text with different text\nReplace"
+    ID_EDIT_SELECT_ALL      "Select the entire document\nSelect All"
+    ID_EDIT_UNDO            "Undo the last action\nUndo"
+    ID_EDIT_REDO            "Redo the previously undone action\nRedo"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "Show or hide the toolbar\nToggle ToolBar"
+    ID_VIEW_STATUS_BAR      "Show or hide the status bar\nToggle StatusBar"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+    AFX_IDS_MDICHILD        "Activate this window"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_PREVIEW_CLOSE   "Close print preview mode\nCancel Preview"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_HANDLE              "Handle"
+    IDS_CONTROL_TYPE        "Window"
+    IDS_EVENT               "Event"
+    IDS_WS_OVERLAPPED       "WS_OVERLAPPED"
+    IDS_WS_POPUP            "WS_POPUP"
+    IDS_WS_CHILD            "WS_CHILD"
+    IDS_WS_MINIMIZE         "WS_MINIMIZE"
+    IDS_WS_VISIBLE          "WS_VISIBLE"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PLATFORM_WIN32_NT   "Microsoft Windows NT %u.%u (Build %u)"
+    IDS_PLATFORM_WIN32_NTAS "Microsoft Windows NT Advanced Server %u.%u (Build %u)"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PLATFORM_WIN32_NTW  "Microsoft Windows NT Workstation %u.%u (Build %u)"
+    IDS_PLATFORM_WIN32_NTS  "Microsoft Windows NT %Server u.%u (Build %u)"
+    IDS_PLATFORM_WIN32s     "Microsoft Win32s %u.%u (Build %u)"
+    IDS_PLATFORM_WIN32_WINDOWS "Microsoft Windows 95 %u.%u (Build %u)"
+    IDS_PLATFORM_UNKNOWN    "Unknown operating system %u.%u (Build %u)"
+    IDS_ABOUT_CAPTION       "About Window Explorer Test"
+    IDS_ABOUT_BODY          "This tells you about the application, or in this case, about this little test message."
+    IDS_PROCESSOR_ARCHITECTURE_UNKNOWN "Unknown processor architecture"
+    IDS_PROCESSOR_ARCHITECTURE_INTEL_386_486 
+                            "Intel %1 step %2!0.2X! processor"
+    IDS_PROCESSOR_ARCHITECTURE_INTEL_PENTIUM 
+                            "Intel %1 model %2!d!, stepping %3!d! processor"
+    IDS_PROCESSOR_ARCHITECTURE_ALPHA 
+                            "DEC Alpha %1 model %2!c!, pass %3!d! processor"
+    IDS_PROCESSOR_ARCHITECTURE_MIPS "MIPS %1 revision %2!d! processor"
+    IDS_PROCESSOR_ARCHITECTURE_PPC 
+                            "Power PC %1 revision %2!d!.%3!d! processor"
+    IDS_PROCESSOR_LEVEL_INTEL_UNKNOWN "Unknown Intel processor"
+    IDS_PROCESSOR_LEVEL_ALPHA_UNKNOWN "Unknown Alpha processor"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDM_WNDEXP              "Window Explorer\nWindow Explorer"
+    IDM_PROPERTIES          "Display properties of the current window"
+    IDM_ROUND_FILE          "A file which is circular in cross-section and cylindrical"
+    IDM_FLAT_FILE           "A file which is flat"
+    IDM_HALF_ROUND          "A file which is flat on one size and round on the other"
+    IDM_OCEAN_VIEW          "Lots of water"
+    IDM_MOUNTAIN_VIEW       "Snow-capped"
+    IDM_BAY_WINDOW          "A window which projects outwards from the building"
+    IDM_PICTURE_WINDOW      "Large window"
+    IDM_TRIPLE_GLAZED       "Suitable for cold climates"
+    IDM_RAT_TAIL            "A file which is round in cross section and tapers"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_WS_DISABLED         "WS_DISABLED"
+    IDS_WS_CLIPSIBLINGS     "WS_CLIPSIBLINGS"
+    IDS_WS_CLIPCHILDREN     "WS_CLIPCHILDREN"
+    IDS_WS_MAXIMIZE         "WS_MAXIMIZE"
+    IDS_WS_CAPTION          "WS_CAPTION"
+    IDS_WS_BORDER           "WS_BORDER"
+    IDS_WS_DLGFRAME         "WS_DLGFRAME"
+    IDS_WS_VSCROLL          "WS_VSCROLL"
+    IDS_WS_HSCROLL          "WS_HSCROLL"
+    IDS_WS_SYSMENU          "WS_SYSMENU"
+    IDS_WS_THICKFRAME       "WS_THICKFRAME"
+    IDS_WS_GROUP            "WS_GROUP"
+    IDS_WS_TABSTOP          "WS_TABSTOP"
+    IDS_WS_MINIMIZEBOX      "WS_MINIMIZEBOX"
+    IDS_WS_MAXIMIZEBOX      "WS_MAXIMIZEBOX"
+    IDS_GENERIC_OVERLAPPED  "Generic Overlapped"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_GENERIC_POPUP       "Generic Popup"
+    IDS_GENERIC_CHILD       "Generic Child"
+    IDS_CREATEWINDOWEX_CAPTION "CreateWindowEx explorer"
+    IDS_CLASS               "Class"
+    IDS_CAPTION             "Caption"
+    IDS_EDIT                "EDIT"
+    IDS_BUTTON              "BUTTON"
+    IDS_STATIC              "STATIC"
+    IDS_LISTBOX             "LISTBOX"
+    IDS_SCROLLBAR           "SCROLLBAR"
+    IDS_COMBOBOX            "COMBOBOX"
+    IDS_DIALOG              "DIALOG"
+    IDS_THIS                "This window"
+    IDS_NONE                "None"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_HELP_NOHELP          "I see no help here"
+    IDM_EDIT_SNIP           "Snip something out"
+    IDM_PLAGIARIZE          "Make a copy and don't give any credit"
+    IDM_GLUE                "Glue something in"
+    IDM_KILLME              "Kill this window"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDR_MENU1               "Menu1"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif
+#include "res\WndExp.rc2"   // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#include "afxprint.rc"       // printing/print preview resources
+#endif
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

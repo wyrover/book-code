@@ -1,0 +1,348 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+#include "winver.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\Initials.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&New\tCtrl+N",                ID_FILE_NEW, GRAYED
+        MENUITEM "&Open...\tCtrl+O",            ID_FILE_OPEN, GRAYED
+        MENUITEM "&Close",                      ID_FILE_CLOSE, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "&Save\tCtrl+S",               ID_FILE_SAVE, GRAYED
+        MENUITEM "Save &As...\tF12",            ID_FILE_SAVE_AS, GRAYED
+        MENUITEM "Save Al&l",                   ID_FILE_SAVE_ALL, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "P&age Setup...",              ID_FILE_PAGE_SETUP, GRAYED
+        MENUITEM "&Print...\tCtrl+P",           ID_FILE_PRINT, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "&Undo\tCtrl+Z",               ID_EDIT_UNDO, GRAYED
+        MENUITEM "&Redo\tCtrl+A",               ID_EDIT_REDO, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "Cu&t\tCtrl+X",                ID_EDIT_CUT, GRAYED
+        MENUITEM "&Copy\tCtrl+C",               ID_EDIT_COPY, GRAYED
+        MENUITEM "&Paste\tCtrl+V",              ID_EDIT_PASTE, GRAYED
+        MENUITEM "&Delete\tDel",                ID_EDIT_CLEAR, GRAYED
+        MENUITEM "Select Al&l",                 ID_EDIT_SELECT_ALL, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "Pr&operties...\tAlt+Enter",   ID_EDIT_PROPERTIES, GRAYED
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&Help Topics...",             ID_HELP_HELP_TOPICS, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "&About Version...",           ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS MOVEABLE PURE 
+BEGIN
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL
+    "P",            ID_FILE_PRINT,          VIRTKEY, CONTROL
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY 
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT
+    VK_F12,         ID_FILE_SAVE_AS,        VIRTKEY, CONTROL, NOINVERT
+    "A",            ID_EDIT_REDO,           VIRTKEY, CONTROL, NOINVERT
+    VK_DELETE,      ID_EDIT_CLEAR,          VIRTKEY, CONTROL, NOINVERT
+    VK_RETURN,      ID_EDIT_PROPERTIES,     VIRTKEY, ALT, NOINVERT
+    "/",            ID_APP_ABOUT,           ASCII,  ALT, NOINVERT
+    "?",            ID_APP_ABOUT,           ASCII,  ALT, NOINVERT
+    VK_F1,          ID_HELP_HELP_TOPICS,    VIRTKEY, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  22, 17, 204, 83
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "About "
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,166,63,32,14,WS_GROUP
+    ICON            IDR_MAINFRAME,IDC_STATIC,3,2,18,20
+    LTEXT           "FileDescription",IDC_ABOUT_FILEDESCRIPTION,30,2,118,8
+    RTEXT           "ProductVersion",IDC_ABOUT_VERSION,180,2,17,8
+    LTEXT           "LegalCopyright",IDC_ABOUT_LEGALCOPYRIGHT,30,10,168,8
+    LTEXT           "Comments",IDC_ABOUT_COMMENTS,30,18,168,8
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKRECT,2,31,200,1
+    LTEXT           "OSVERSION",IDC_ABOUT_OSVERSION,4,34,196,8
+    LTEXT           "ProcessorVersion",IDC_ABOUT_PROCESSORVERSION,4,42,196,8
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKRECT,2,52,200,1
+    LTEXT           "LegalTrademarks",IDC_ABOUT_LEGALTRADEMARKS,3,57,156,18
+    LTEXT           "Version ",IDC_STATIC,152,2,28,8
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+1 VERSIONINFO
+ FILEVERSION 1,0,0,0
+ PRODUCTVERSION 1,0,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0xbL
+#else
+ FILEFLAGS 0xaL
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "Author: Brent Rector\0"
+            VALUE "CompanyName", "Wise Owl Consulting, Inc.\0"
+            VALUE "FileDescription", "Version Example Application\0"
+            VALUE "FileVersion", "1.0\0"
+            VALUE "InternalName", "Version\0"
+            VALUE "LegalCopyright", "Copyright © 1996 Wise Owl Consulting, Inc.\0"
+            VALUE "LegalTrademarks", "I have no trademarks, legal or otherwise.\0"
+            VALUE "OriginalFilename", "Version.exe\0"
+            VALUE "ProductName", "Version\0"
+            VALUE "ProductVersion", "1.0\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""winver.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_APP_TITLE           "Version Example Application"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "Registry Application Frame Window Class"
+    IDS_PLATFORM_WIN32_NT   "Microsoft Windows NT %u.%u (Build %u)"
+    IDS_PLATFORM_WIN32_NTAS "Microsoft Windows NT Advanced Server %u.%u (Build %u)"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PLATFORM_WIN32_NTW  "Microsoft Windows NT Workstation %u.%u (Build %u)"
+    IDS_PLATFORM_WIN32_NTS  "Microsoft Windows NT Server %u.%u (Build %u)"
+    IDS_PLATFORM_WIN32s     "Microsoft Win32s %u.%u (Build %u)"
+    IDS_PLATFORM_WIN32_WINDOWS "Microsoft Windows 95 %u.%u (Build %u)"
+    IDS_PLATFORM_UNKNOWN    "Unknown operating system %u.%u (Build %u)"
+    IDS_PROCESSOR_ARCHITECTURE_UNKNOWN "Unknown processor architecture"
+    IDS_PROCESSOR_ARCHITECTURE_INTEL_386_486 
+                            "Intel %1 step %2!0.2X! processor"
+    IDS_PROCESSOR_ARCHITECTURE_INTEL_PENTIUM 
+                            "Intel %1 model %2!d!, stepping %3!d! processor"
+    IDS_PROCESSOR_ARCHITECTURE_ALPHA 
+                            "DEC Alpha %1 model %2!c!, pass %3!d! processor"
+    IDS_PROCESSOR_ARCHITECTURE_MIPS "MIPS %1 revision %2!d! processor"
+    IDS_PROCESSOR_ARCHITECTURE_PPC 
+                            "Power PC %1 revision %2!d!.%3!d! processor"
+    IDS_PROCESSOR_LEVEL_INTEL_UNKNOWN "Unknown Intel processor"
+    IDS_PROCESSOR_LEVEL_ALPHA_UNKNOWN "Unknown Alpha processor"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PROCESSOR_LEVEL_MIPS_UNKNOWN "Unknown MIPS processor"
+    IDS_PROCESSOR_LEVEL_PPC_UNKNOWN "Unknown Power PC processor"
+    IDS_PROCESSOR_NOREV_INTEL_386 "Intel 80386 processor"
+    IDS_PROCESSOR_NOREV_INTEL_486 "Intel 80486 processor"
+    IDS_PROCESSOR_NOREV_INTEL_PENTIUM "Intel Pentium processor"
+    IDS_PROCESSOR_NOREV_MIPS_R4000 "MIPS R4000 processor"
+    IDS_PROCESSOR_NOREV_ALPHA_21064 "DEC Alpha 21064 processor"
+    IDS_NO_UNICODE          "Unicode support not available"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_NEW             "Create a new document\nNew"
+    ID_FILE_OPEN            "Open an existing document\nOpen"
+    ID_FILE_CLOSE           "Close the active document\nClose"
+    ID_FILE_SAVE            "Save the active document\nSave"
+    ID_FILE_SAVE_AS         "Save the active document with a new name\nSave As"
+    ID_FILE_SAVE_ALL        "Save all open documents\nSave All"
+    ID_FILE_PAGE_SETUP      "Change the printing options\nPage Setup"
+    ID_FILE_PRINT_SETUP     "Change the printer and printing options\nPrint Setup"
+    ID_FILE_PRINT           "Print the active document\nPrint"
+    ID_FILE_PRINT_PREVIEW   "Display full pages\nPrint Preview"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
+    ID_APP_EXIT             "Quit the application; prompts to save documents\nExit"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "Open this document"
+    ID_FILE_MRU_FILE2       "Open this document"
+    ID_FILE_MRU_FILE3       "Open this document"
+    ID_FILE_MRU_FILE4       "Open this document"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+    ID_WINDOW_NEW           "Open another window for the active document\nNew Window"
+    ID_WINDOW_ARRANGE       "Arrange icons at the bottom of the window\nArrange Icons"
+    ID_WINDOW_CASCADE       "Arrange windows so they overlap\nCascade Windows"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_WINDOW_TILE_HORZ     "Arrange windows as non-overlapping tiles\nTile Windows"
+    ID_WINDOW_TILE_VERT     "Arrange windows as non-overlapping tiles\nTile Windows"
+    ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_UNDO            "Undo the last action\nUndo"
+    ID_EDIT_REDO            "Redo the previously undone action\nRedo"
+    ID_EDIT_CUT             "Cut the selection and put it on the Clipboard\nCut"
+    ID_EDIT_COPY            "Copy the selection and put it on the Clipboard\nCopy"
+    ID_EDIT_PASTE           "Insert Clipboard contents\nPaste"
+    ID_EDIT_CLEAR           "Erase the selection\nErase"
+    ID_EDIT_CLEAR_ALL       "Erase everything\nErase All"
+    ID_EDIT_FIND            "Find the specified text\nFind"
+    ID_EDIT_REPEAT          "Repeat the last action\nRepeat"
+    ID_EDIT_REPLACE         "Replace specific text with different text\nReplace"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_SELECT_ALL      "Select the entire document\nSelect All"
+    ID_VIEW_TOOLBAR         "Show or hide the toolbar\nToggle ToolBar"
+    ID_VIEW_STATUS_BAR      "Show or hide the status bar\nToggle StatusBar"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

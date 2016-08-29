@@ -1,0 +1,1124 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif\r\n"
+    "#include ""res\\MenuExplorer.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#include ""afxprint.rc""       // printing/print preview resources\r\n"
+    "#endif\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\MenuExplorer.ico"
+IDR_MENUEXTYPE          ICON    DISCARDABLE     "res\\MenuExplorerDoc.ico"
+IDI_JMNCO               ICON    DISCARDABLE     "res\\jmnco.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_CHECK1              BITMAP  DISCARDABLE     "res\\check1.bmp"
+IDB_CHECK2              BITMAP  DISCARDABLE     "res\\bitmap1.bmp"
+IDB_CHECK3              BITMAP  DISCARDABLE     "res\\check3.bmp"
+IDB_CHECK4              BITMAP  DISCARDABLE     "res\\check4.bmp"
+IDB_CHECK5              BITMAP  DISCARDABLE     "res\\check5.bmp"
+IDB_CHECK6              BITMAP  DISCARDABLE     "res\\check6.bmp"
+IDB_CHECK7              BITMAP  DISCARDABLE     "res\\check7.bmp"
+IDB_CHECK8              BITMAP  DISCARDABLE     "res\\check8.bmp"
+IDB_COMPUTER            BITMAP  DISCARDABLE     "res\\computer.bmp"
+IDB_FLOUNDER            BITMAP  DISCARDABLE     "res\\flounder.bmp"
+IDB_GRAYCAT             BITMAP  DISCARDABLE     "res\\graycat.bmp"
+IDB_PLAID               BITMAP  DISCARDABLE     "res\\plaid.bmp"
+IDR_MAINFRAME           BITMAP  MOVEABLE PURE   "res\\Toolbar.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_ADVANCED, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 230
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 117
+    END
+
+    IDD_MENU, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 319
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 227
+    END
+
+    IDD_MENUINFO, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 319
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 216
+    END
+
+    IDD_OWNERDRAW, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 319
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 227
+    END
+
+    IDD_TRACKPOPUPMENU, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 319
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 126
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS PRELOAD MOVEABLE PURE 
+BEGIN
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    "E",            IDM_MENUEXPLORER,       VIRTKEY, CONTROL, NOINVERT
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL, NOINVERT
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL, NOINVERT
+    "P",            ID_FILE_PRINT,          VIRTKEY, CONTROL, NOINVERT
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL, NOINVERT
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL, NOINVERT
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT, NOINVERT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT, NOINVERT
+    VK_F1,          ID_HELP,                VIRTKEY, NOINVERT
+    VK_F1,          ID_CONTEXT_HELP,        VIRTKEY, SHIFT, NOINVERT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY, NOINVERT
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT, NOINVERT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT, NOINVERT
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL, NOINVERT
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  22, 17, 204, 89
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "About "
+FONT 8, "System"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,166,74,32,14,WS_GROUP
+    LTEXT           "FileDescription",IDC_ABOUT_FILEDESCRIPTION,30,2,118,8
+    LTEXT           "Version ",IDC_STATIC,152,2,28,8
+    LTEXT           "ProductVersion",IDC_ABOUT_VERSION,180,2,17,8
+    LTEXT           "LegalCopyright",IDC_ABOUT_LEGALCOPYRIGHT,30,10,168,16
+    LTEXT           "Comments",IDC_ABOUT_COMMENTS,30,31,168,8
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKRECT,2,42,200,1
+    LTEXT           "OSVERSION",IDC_ABOUT_OSVERSION,4,45,196,8
+    LTEXT           "ProcessorVersion",IDC_ABOUT_PROCESSORVERSION,4,53,196,8
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKRECT,2,63,200,1
+    LTEXT           "LegalTrademarks",IDC_ABOUT_LEGALTRADEMARKS,3,68,156,18
+    ICON            IDI_JMNCO,IDC_STATIC,7,26,18,20
+    ICON            IDR_MAINFRAME,IDC_STATIC,7,4,18,20
+END
+
+IDD_ADVANCED DIALOG DISCARDABLE  0, 0, 237, 124
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Advanced Options"
+FONT 8, "MS Sans Serif"
+BEGIN
+    RTEXT           "GetMenuDefaultItem",IDC_STATIC,7,17,62,8
+    PUSHBUTTON      "",IDC_GETMENUDEFAULTITEM,72,17,7,8
+    CONTROL         "None",IDC_NONE,"Button",BS_AUTORADIOBUTTON,88,15,33,10
+    CONTROL         "GMDI_GOINTOPOPUPS",IDC_GMDI_GOINTOPOPUPS,"Button",
+                    BS_AUTORADIOBUTTON,88,25,91,10
+    CONTROL         "GMDI_USEDISABLED",IDC_GMDI_USEDISABLED,"Button",
+                    BS_AUTORADIOBUTTON,88,35,84,10
+    RTEXT           "SetMenuDefaultItem",IDC_STATIC,7,51,61,8
+    PUSHBUTTON      "",IDC_SETMENUDEFAULTITEM,72,51,7,8
+    GROUPBOX        "Default",IDC_STATIC,3,2,189,61
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,6,14,180,34
+    RTEXT           "CheckMenuRadioItem",IDC_STATIC,7,73,68,8
+    PUSHBUTTON      "",IDC_SETMENUDEFAULTITEM2,80,73,7,8
+END
+
+IDD_MENU DIALOG DISCARDABLE  0, 0, 326, 234
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Menu Options"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Tree1",IDC_MENULIST,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_LINESATROOT | TVS_DISABLEDRAGDROP | 
+                    TVS_SHOWSELALWAYS | WS_BORDER | WS_TABSTOP,5,3,88,89
+    GROUPBOX        "Current Menu &Handle",IDC_STATIC,97,0,229,34
+    EDITTEXT        IDC_CURRENTHANDLE,99,14,44,14,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    RTEXT           "GetMenu(hWnd)",IDC_STATIC,143,10,50,8
+    PUSHBUTTON      "",IDC_GETMENU,197,10,7,8
+    RTEXT           "GetSubMenu",IDC_STATIC,153,20,40,8
+    PUSHBUTTON      "",IDC_GETSUBMENU,197,20,7,8
+    EDITTEXT        IDC_SUBMENU,210,14,24,14,ES_AUTOHSCROLL | ES_READONLY
+    CONTROL         "Spin1",IDC_SPINSUBMENU,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_AUTOBUDDY | UDS_ARROWKEYS,234,14,
+                    11,14
+    RTEXT           "GetSystemMenu",IDC_STATIC,251,5,51,8
+    PUSHBUTTON      "",IDC_GETSYSTEMMENU,305,5,7,8
+    CONTROL         "",IDC_SYSMENU_OPTION,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,315,5,8,8
+    RTEXT           "CreateMenu",IDC_STATIC,264,15,38,8
+    PUSHBUTTON      "",IDC_CREATEMENU,305,15,7,8
+    RTEXT           "Check Dimensions",IDC_STATIC,97,35,57,8
+    PUSHBUTTON      "",IDC_CHECKDIMENSIONS,157,35,7,8
+    RTEXT           "Restore",IDC_STATIC,129,45,25,8
+    PUSHBUTTON      "",IDC_RESTORE,157,45,7,8
+    RTEXT           "DrawMenuBar",IDC_STATIC,109,55,45,8
+    PUSHBUTTON      "",IDC_DRAWMENUBAR,157,55,7,8
+    RTEXT           "AppendMenu",IDC_STATIC,170,35,42,8
+    PUSHBUTTON      "",IDC_APPENDMENU,215,35,7,8
+    RTEXT           "InsertMenu",IDC_STATIC,178,45,34,8
+    PUSHBUTTON      "",IDC_INSERTMENU,215,45,7,8
+    RTEXT           "ModifyMenu",IDC_STATIC,174,55,38,8
+    PUSHBUTTON      "",IDC_MODIFYMENU,215,55,7,8
+    LTEXT           "New ID",IDC_NEWID_CAPTION,228,37,23,8
+    EDITTEXT        IDC_NEWID,228,49,24,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPINNEWID,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,252,49,11,14
+    RTEXT           "RemoveMenu",IDC_STATIC,269,35,44,8
+    PUSHBUTTON      "",IDC_REMOVEMENU,315,35,7,8
+    RTEXT           "DeleteMenu",IDC_STATIC,274,45,38,8
+    PUSHBUTTON      "",IDC_DELETEMENU,315,45,7,8
+    RTEXT           "DestroyMenu",IDC_STATIC,272,55,41,8
+    PUSHBUTTON      "",IDC_DESTROYMENU,315,55,7,8
+    GROUPBOX        "Break",IDC_STATIC,97,63,95,52
+    CONTROL         "None",IDC_MF_NOBREAK,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP | WS_TABSTOP,100,74,86,10
+    CONTROL         "MF_MENUBREAK",IDC_MF_MENUBREAK,"Button",
+                    BS_AUTORADIOBUTTON,100,86,86,10
+    CONTROL         "MF_MENUBARBREAK",IDC_MF_MENUBARBREAK,"Button",
+                    BS_AUTORADIOBUTTON,100,98,86,10
+    GROUPBOX        "Image",IDC_STATIC,195,63,128,52
+    CONTROL         "MF_STRING",IDC_MF_STRING,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP | WS_TABSTOP,198,72,53,10
+    COMBOBOX        IDC_MENUTEXT,254,68,66,30,CBS_DROPDOWN | CBS_AUTOHSCROLL | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "MF_BITMAP",IDC_MF_BITMAP,"Button",BS_AUTORADIOBUTTON,
+                    198,82,52,10
+    COMBOBOX        IDC_BITMAPS,254,81,66,67,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "MF_OWNERDRAW",IDC_MF_OWNERDRAW,"Button",
+                    BS_AUTORADIOBUTTON,198,92,76,10
+    CONTROL         "MF_SEPARATOR",IDC_MF_SEPARATOR,"Button",
+                    BS_AUTORADIOBUTTON,198,102,76,10
+    GROUPBOX        "Menu State",IDC_STATIC,5,93,72,51
+    CONTROL         "MF_ENABLED",IDC_MF_ENABLED,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP | WS_TABSTOP,13,102,62,10
+    CONTROL         "MF_DISABLED",IDC_MF_DISABLED,"Button",
+                    BS_AUTORADIOBUTTON,13,113,62,10
+    CONTROL         "MF_GRAYED",IDC_MF_GRAYED,"Button",BS_AUTORADIOBUTTON,13,
+                    123,62,10
+    CONTROL         "MF_CHECKED",IDC_MF_CHECKED,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,13,133,61,10
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,79,117,102,27
+    CONTROL         "MF_POPUP",IDC_MF_POPUP,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,82,119,50,10
+    EDITTEXT        IDC_POPUPHANDLE,135,124,44,14,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    RTEXT           "Set",IDC_STATIC,92,131,11,8
+    PUSHBUTTON      "",IDC_SETASPOPUP,82,131,7,8
+    GROUPBOX        "Selection",IDC_STATIC,5,144,167,37
+    CONTROL         "MF_BYCOMMAND",IDC_MF_BYCOMMAND,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,12,155,69,10
+    EDITTEXT        IDC_COMMAND,92,150,24,14,ES_AUTOHSCROLL | ES_READONLY
+    CONTROL         "Spin1",IDC_SPINCOMMAND,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_AUTOBUDDY | UDS_ARROWKEYS,116,150,
+                    11,14
+    PUSHBUTTON      "<",IDC_SET_COMMAND,132,152,9,11
+    EDITTEXT        IDC_CURRENT_COMMAND,145,150,24,14,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    CONTROL         "MF_BYPOSITION",IDC_MF_BYPOSITION,"Button",
+                    BS_AUTORADIOBUTTON,12,166,69,10
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,81,160,11,1
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,81,170,11,1
+    EDITTEXT        IDC_POSITION,92,165,24,14,ES_AUTOHSCROLL | ES_READONLY
+    CONTROL         "Spin1",IDC_SPINPOSITION,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_AUTOBUDDY | UDS_ARROWKEYS,116,165,
+                    11,14
+    PUSHBUTTON      "<",IDC_SET_POSITION,132,167,9,11
+    EDITTEXT        IDC_CURRENT_POSITION,145,165,24,14,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    RTEXT           "CheckMenuItem",IDC_STATIC,196,119,49,8
+    PUSHBUTTON      "",IDC_CHECKMENUITEM,247,119,7,8
+    CONTROL         "",IDC_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,257,
+                    119,8,8
+    RTEXT           "EnableMenuItem",IDC_STATIC,193,129,52,8
+    PUSHBUTTON      "",IDC_ENABLEMENUITEM,247,129,7,8
+    CONTROL         "",IDC_ENABLE,"Button",BS_AUTO3STATE | WS_TABSTOP,257,
+                    129,8,8
+    RTEXT           "GetMenuItemCount",IDC_STATIC,187,139,58,8
+    PUSHBUTTON      "",IDC_GETMENUITEMCOUNT,247,139,7,8
+    RTEXT           "GetMenuItemID",IDC_STATIC,197,149,47,8
+    PUSHBUTTON      "",IDC_GETMENUITEMID,247,149,7,8
+    RTEXT           "GetMenuState",IDC_STATIC,201,159,44,8
+    PUSHBUTTON      "",IDC_GETMENUSTATE,247,159,7,8
+    RTEXT           "GetMenuString",IDC_STATIC,199,169,45,8
+    PUSHBUTTON      "",IDC_GETMENUSTRING,247,169,7,8
+    GROUPBOX        "Context menu",IDC_STATIC,273,115,50,50
+    RTEXT           "Set",IDC_STATIC,295,127,11,8
+    PUSHBUTTON      "",IDC_SETASCONTEXTMENU,311,127,7,8
+    RTEXT           "Clear",IDC_STATIC,290,137,17,8
+    PUSHBUTTON      "",IDC_CLEARCONTEXTMENU,311,137,7,8
+    EDITTEXT        IDC_CONTEXTHANDLE,276,148,44,14,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    CONTROL         "Watch msgs",IDC_WATCH,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,272,168,52,10
+    CONTROL         "List1",IDC_MESSAGES,"SysListView32",LVS_REPORT | 
+                    LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,6,182,319,51
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,204,23,7,1
+    CONTROL         "",IDC_WRAP,"Button",BS_AUTOCHECKBOX | NOT WS_VISIBLE | 
+                    WS_TABSTOP,88,106,8,8
+    CONTROL         "",IDC_EXTEND,"Button",BS_AUTOCHECKBOX | NOT WS_VISIBLE | 
+                    WS_TABSTOP,88,98,8,8
+    PUSHBUTTON      "",IDC_TESTTREEWALK,78,98,7,8,NOT WS_VISIBLE
+    EDITTEXT        IDC_LIMIT,175,165,10,14,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    CONTROL         "^",IDC_AUTOZOOM,"Button",BS_AUTOCHECKBOX | NOT 
+                    WS_VISIBLE | WS_TABSTOP,94,43,14,10
+    COMBOBOX        IDC_OWNERDRAW,274,94,46,67,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    RTEXT           "CreatePopupMenu",IDC_STATIC,244,25,58,8
+    PUSHBUTTON      "",IDC_CREATEPOPUPMENU,305,25,7,8
+END
+
+IDD_MENUINFO DIALOG DISCARDABLE  0, 0, 326, 223
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "MenuInfo"
+FONT 8, "MS Sans Serif"
+BEGIN
+    RTEXT           "cbSize",IDC_STATIC,129,6,22,8
+    EDITTEXT        IDC_CBSIZE,86,3,40,14,ES_AUTOHSCROLL | ES_READONLY
+    GROUPBOX        "fMask",IDC_STATIC,84,18,140,68
+    EDITTEXT        IDC_FMASK,86,29,40,14,ES_AUTOHSCROLL | ES_READONLY
+    CONTROL         "MIIM_CHECKMARKS",IDC_MIIM_CHECKMARKS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,141,24,80,10
+    CONTROL         "MIIM_DATA",IDC_MIIM_DATA,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,141,34,52,10
+    CONTROL         "MIIM_ID",IDC_MIIM_ID,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,141,44,40,10
+    CONTROL         "MIIM_STATE",IDC_MIIM_STATE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,141,54,56,10
+    CONTROL         "MIIM_SUBMENU",IDC_MIIM_SUBMENU,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,141,64,68,10
+    CONTROL         "MIIM_TYPE",IDC_MIIM_TYPE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,141,74,52,10
+    GROUPBOX        "fType",IDC_FTYPE_CAPTION,84,87,240,59
+    EDITTEXT        IDC_FTYPE,86,98,40,14,ES_AUTOHSCROLL | ES_READONLY
+    CONTROL         "MFT_BITMAP",IDC_MFT_BITMAP,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP | WS_TABSTOP,141,93,59,10
+    CONTROL         "MFT_OWNERDRAW",IDC_MFT_OWNERDRAW,"Button",
+                    BS_AUTORADIOBUTTON,141,103,81,10
+    CONTROL         "MFT_STRING",IDC_MFT_STRING,"Button",BS_AUTORADIOBUTTON,
+                    141,113,59,10
+    CONTROL         "MFT_SEPARATOR",IDC_MFT_SEPARATOR,"Button",
+                    BS_AUTORADIOBUTTON,141,123,76,10
+    CONTROL         "No break",IDC_MFT_NOBREAK,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP | WS_TABSTOP,228,93,44,10
+    CONTROL         "MFT_MENUBREAK",IDC_MFT_MENUBREAK,"Button",
+                    BS_AUTORADIOBUTTON,228,103,76,10
+    CONTROL         "MFT_MENUBARBREAK",IDC_MFT_MENUBARBREAK,"Button",
+                    BS_AUTORADIOBUTTON,228,113,90,10
+    CONTROL         "MFT_RADIOCHECK",IDC_MFT_RADIOCHECK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,228,124,77,10
+    CONTROL         "MFT_RIGHTJUSTIFY",IDC_MFT_RIGHTJUSTIFY,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,228,134,82,10
+    GROUPBOX        "fState",IDC_FSTATE_CAPTION,84,146,140,58
+    EDITTEXT        IDC_FSTATE,86,159,40,14,ES_AUTOHSCROLL | ES_READONLY
+    CONTROL         "MFS_CHECKED",IDC_MFS_CHECKED,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,139,152,66,10
+    CONTROL         "MFS_DEFAULT",IDC_MFS_DEFAULT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,139,162,65,10
+    CONTROL         "MFS_DISABLED",IDC_MFS_DISABLED,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,139,172,67,10
+    CONTROL         "MFS_GRAYED",IDC_MFS_GRAYED,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,139,182,62,10
+    CONTROL         "MFS_HILITE",IDC_MFS_HILITE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,139,192,54,10
+    EDITTEXT        IDC_WID,231,2,40,14,ES_AUTOHSCROLL
+    LTEXT           "wID",IDC_WID_CAPTION,273,4,12,8
+    EDITTEXT        IDC_HSUBMENU,231,20,40,14,ES_AUTOHSCROLL
+    LTEXT           "hSubMenu",IDC_HSUBMENU_CAPTION,273,22,33,8
+    COMBOBOX        IDC_HBMPCHECKED,231,37,40,30,CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "bmpChecked",IDC_BMPCHECKED_CAPTION,273,40,42,8
+    COMBOBOX        IDC_HBMPUNCHECKED,231,53,40,30,CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "bmpUnchecked",IDC_BMPUNCHECKED_CAPTION,273,55,49,8
+    EDITTEXT        IDC_DWITEMDATA,231,69,40,14,ES_AUTOHSCROLL
+    LTEXT           "dwItemData",IDC_DWITEMDATA_CAPTION,273,71,37,8
+    EDITTEXT        IDC_DWTYPEDATA,231,150,40,14,ES_AUTOHSCROLL
+    LTEXT           "dwTypeData",IDC_DWTYPEDATA_CAPTION,273,153,40,8
+    EDITTEXT        IDC_CCH,231,166,40,14,ES_AUTOHSCROLL
+    LTEXT           "cch",IDC_CCH_CAPTION,273,169,12,8
+    LTEXT           "Menu text:",IDC_STATIC,231,182,31,8
+    COMBOBOX        IDC_MENUTEXT,230,191,95,30,CBS_DROPDOWN | 
+                    CBS_AUTOHSCROLL | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_BITMAPS,277,207,48,30,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Tree1",IDC_MENULIST,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_LINESATROOT | TVS_DISABLEDRAGDROP | 
+                    TVS_SHOWSELALWAYS | WS_BORDER | WS_TABSTOP,5,3,76,94
+    RTEXT           "GetMenuItemInfo",IDC_STATIC,18,116,51,8
+    PUSHBUTTON      "",IDC_GETMENUINFO,73,116,7,8
+    RTEXT           "SetMenuItemInfo",IDC_STATIC,18,126,51,8
+    PUSHBUTTON      "",IDC_SETMENUINFO,73,126,7,8
+    GROUPBOX        "Selection",IDC_STATIC,5,139,76,65
+    CONTROL         "MF_BYCOMMAND",IDC_MF_BYCOMMAND,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,9,149,69,10
+    EDITTEXT        IDC_COMMAND,19,161,24,14,ES_AUTOHSCROLL | ES_READONLY
+    CONTROL         "Spin1",IDC_SPINCOMMAND,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_AUTOBUDDY | UDS_ARROWKEYS,43,161,
+                    11,14
+    CONTROL         "MF_BYPOSITION",IDC_MF_BYPOSITION,"Button",
+                    BS_AUTORADIOBUTTON,9,176,69,10
+    EDITTEXT        IDC_POSITION,19,188,24,14,ES_AUTOHSCROLL | ES_READONLY
+    CONTROL         "Spin1",IDC_SPINPOSITION,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_AUTOBUDDY | UDS_ARROWKEYS,43,188,
+                    11,14
+    EDITTEXT        IDC_RESULT,5,207,219,13,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "hMenu",IDC_STATIC,17,103,21,8
+    EDITTEXT        IDC_MENUHANDLE,41,100,40,14,ES_AUTOHSCROLL | ES_READONLY
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,224,94,1,48
+END
+
+IDD_OWNERDRAW DIALOG DISCARDABLE  0, 0, 326, 234
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Owner Draw"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_ITEMHEIGHT,69,11,24,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPINITEMHEIGHT,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_AUTOBUDDY | UDS_ARROWKEYS,93,11,11,
+                    14
+    EDITTEXT        IDC_ITEMWIDTH,69,28,24,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPINITEMWIDTH,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_AUTOBUDDY | UDS_ARROWKEYS,93,28,11,
+                    14
+    CONTROL         "Subtract Check Width",IDC_DOSUBWIDTH,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,6,45,80,10
+    EDITTEXT        IDC_ACTUALCHECKWIDTH,88,44,17,14,ES_AUTOHSCROLL
+    RTEXT           "Add",IDC_STATIC,287,10,14,8
+    PUSHBUTTON      "",IDC_ADD,304,10,7,8
+    RTEXT           "Remove",IDC_STATIC,275,18,27,8
+    PUSHBUTTON      "",IDC_REMOVE,304,19,7,8
+    GROUPBOX        "Menu styles",IDC_STATIC,262,0,59,32
+    COMBOBOX        IDC_MENUCOLOR,74,106,48,30,CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWFIXED | CBS_SORT | CBS_HASSTRINGS | 
+                    WS_VSCROLL | WS_TABSTOP
+    RTEXT           "Menu color",IDC_STATIC,36,108,34,8
+    COMBOBOX        IDC_TEXTCOLOR,74,120,48,30,CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWFIXED | CBS_SORT | CBS_HASSTRINGS | 
+                    WS_VSCROLL | WS_TABSTOP
+    RTEXT           "Text color",IDC_STATIC,39,122,31,8
+    COMBOBOX        IDC_HILITEMENUCOLOR,74,134,48,30,CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWFIXED | CBS_SORT | CBS_HASSTRINGS | 
+                    WS_VSCROLL | WS_TABSTOP
+    RTEXT           "Highlight menu color",IDC_STATIC,8,136,62,8
+    COMBOBOX        IDC_HILITETEXTCOLOR,74,148,48,30,CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWFIXED | CBS_SORT | CBS_HASSTRINGS | 
+                    WS_VSCROLL | WS_TABSTOP
+    RTEXT           "Hightlight text color",IDC_STATIC,13,150,57,8
+    COMBOBOX        IDC_GRAYCOLOR,74,162,48,30,CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWFIXED | CBS_SORT | CBS_HASSTRINGS | 
+                    WS_VSCROLL | WS_TABSTOP
+    RTEXT           """Gray"" color",IDC_STATIC,32,164,38,8
+    COMBOBOX        IDC_CHECKMARKS,74,176,48,30,CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    RTEXT           "Checkmark",IDC_STATIC,32,178,35,8
+    GROUPBOX        "Size",IDC_STATIC,4,4,107,56
+    RTEXT           "Width",IDC_STATIC,48,14,18,8
+    RTEXT           "Height",IDC_STATIC,45,30,21,8
+    GROUPBOX        "Style 1: Text menu",IDC_STATIC,3,99,124,111
+    RTEXT           "Add",IDC_STATIC,98,194,14,8
+    PUSHBUTTON      "",IDC_ADD1,115,194,7,8
+    EDITTEXT        IDC_MENUTEXT,36,191,61,14,ES_AUTOHSCROLL
+    LTEXT           "Text",IDC_STATIC,19,194,14,8
+END
+
+IDD_TRACKPOPUPMENU DIALOG DISCARDABLE  0, 0, 326, 133
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "TrackPopupMenu"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "TPM_LEFTALIGN",IDC_TPM_LEFTALIGN,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,12,10,70,10
+    CONTROL         "TPM_CENTERALIGN",IDC_TPM_CENTERALIGN,"Button",
+                    BS_AUTORADIOBUTTON,12,20,82,10
+    CONTROL         "TPM_RIGHTALIGN",IDC_TPM_RIGHTALIGN,"Button",
+                    BS_AUTORADIOBUTTON,12,30,75,10
+    GROUPBOX        "Horizontal Alignment",IDC_STATIC,7,0,102,46
+    CONTROL         "TPM_HORIZONTAL",IDC_TPM_HORIZONTAL,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,12,57,77,10
+    CONTROL         "TPM_VERTICAL",IDC_TPM_VERTICAL,"Button",
+                    BS_AUTORADIOBUTTON,12,67,67,10
+    GROUPBOX        "Preference",IDC_PREFERENCE,8,47,101,35
+    CONTROL         "TPM_LEFTBUTTON",IDC_TPM_LEFTBUTTON,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,122,57,79,10
+    CONTROL         "TPM_RIGHTBUTTON",IDC_TPM_RIGHTBUTTON,"Button",
+                    BS_AUTORADIOBUTTON,122,67,84,10
+    GROUPBOX        "Tracking",IDC_STATIC,118,47,101,35
+    CONTROL         "TPM_TOPALIGN",IDC_TPM_TOPALIGN,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,123,10,68,10
+    CONTROL         "TPM_VCENTERALIGN",IDC_TPM_VCENTERALIGN,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,123,20,86,10
+    CONTROL         "TPM_BOTTOMALIGN",IDC_TPM_BOTTOMALIGN,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,123,30,83,10
+    GROUPBOX        "Vertical Alignment",IDC_VERTICAL_ALIGNMENT,118,0,102,46
+    CONTROL         "TPM_NONOTIFY",IDC_TPM_NONOTIFY,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,8,85,69,10
+    CONTROL         "TPM_RETURNCMD",IDC_TPM_RETURNCMD,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,8,95,78,10
+    EDITTEXT        IDC_LOG,8,105,317,27,ES_MULTILINE | ES_READONLY
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&New\tCtrl+N",                ID_FILE_NEW
+        MENUITEM "&Open...\tCtrl+O",            ID_FILE_OPEN
+        MENUITEM "Menu Explorer...\tCtrl+E",    IDM_MENUEXPLORER
+        MENUITEM SEPARATOR
+        MENUITEM "P&rint Setup...",             ID_FILE_PRINT_SETUP
+        MENUITEM SEPARATOR
+        MENUITEM "Recent File",                 ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+    END
+    POPUP "&Anatomy"
+    BEGIN
+        MENUITEM "Normal &Menu item",           IDM_DUMMY1
+        MENUITEM "&Another Menu Item",          IDM_DUMMY2
+        MENUITEM SEPARATOR
+        MENUITEM "Enable MenuBar &Break",       IDM_ENABLE_BAR
+        MENUITEM "&Disabled Item",              IDM_DUMMY3, GRAYED
+        MENUITEM "Checked &Item",               IDM_DUMMY4, CHECKED
+        MENUITEM "Ina&ctive item",              IDM_DUMMY8
+        MENUITEM SEPARATOR
+        MENUITEM "Enable &Menu Break",          IDM_ENABLE_BREAK
+        POPUP "Pop-up menu"
+        BEGIN
+            MENUITEM "&Pop-up item",                IDM_DUMMY6
+            MENUITEM "&Detailed item",              IDM_DUMMY7
+        END
+        MENUITEM "&Yet another menu item",      IDM_DUMMY9
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&Help Topics",                ID_HELP_FINDER
+        MENUITEM SEPARATOR
+        MENUITEM "&About Menu Explorer...",     ID_APP_ABOUT
+    END
+    MENUITEM "",                            65535
+END
+
+IDR_MENUEXTYPE MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&New\tCtrl+N",                ID_FILE_NEW
+        MENUITEM "&Open...\tCtrl+O",            ID_FILE_OPEN
+        MENUITEM "&Close",                      ID_FILE_CLOSE
+        MENUITEM "&Save\tCtrl+S",               ID_FILE_SAVE
+        MENUITEM "Save &As...",                 ID_FILE_SAVE_AS
+        MENUITEM "Menu Explorer...\tCtrl+E",    IDM_MENUEXPLORER
+        MENUITEM SEPARATOR
+        MENUITEM "&Print...\tCtrl+P",           ID_FILE_PRINT
+        MENUITEM "Print Pre&view",              ID_FILE_PRINT_PREVIEW
+        MENUITEM "P&rint Setup...",             ID_FILE_PRINT_SETUP
+        MENUITEM SEPARATOR
+        MENUITEM "Recent File",                 ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "&Undo\tCtrl+Z",               ID_EDIT_UNDO
+        MENUITEM SEPARATOR
+        MENUITEM "Cu&t\tCtrl+X",                ID_EDIT_CUT
+        MENUITEM "&Copy\tCtrl+C",               ID_EDIT_COPY
+        MENUITEM "&Paste\tCtrl+V",              ID_EDIT_PASTE
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+    END
+    POPUP "&Window"
+    BEGIN
+        MENUITEM "&New Window",                 ID_WINDOW_NEW
+        MENUITEM "&Cascade",                    ID_WINDOW_CASCADE
+        MENUITEM "&Tile",                       ID_WINDOW_TILE_HORZ
+        MENUITEM "&Arrange Icons",              ID_WINDOW_ARRANGE
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&Help Topics",                ID_HELP_FINDER
+        MENUITEM SEPARATOR
+        MENUITEM "&About Menu Explorer...",     ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR DISCARDABLE  16, 15
+BEGIN
+    BUTTON      ID_FILE_NEW
+    BUTTON      ID_FILE_OPEN
+    BUTTON      ID_FILE_SAVE
+    SEPARATOR
+    BUTTON      IDM_MENUEXPLORER
+    SEPARATOR
+    BUTTON      ID_EDIT_CUT
+    BUTTON      ID_EDIT_COPY
+    BUTTON      ID_EDIT_PASTE
+    SEPARATOR
+    BUTTON      ID_FILE_PRINT
+    BUTTON      ID_APP_ABOUT
+    BUTTON      ID_CONTEXT_HELP
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+1 VERSIONINFO
+ FILEVERSION 4,0,0,0
+ PRODUCTVERSION 4,0,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0xbL
+#else
+ FILEFLAGS 0xaL
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904e4"
+        BEGIN
+            VALUE "Comments", "Author: Joseph M. Newcomer\0"
+            VALUE "CompanyName", "The Joseph M. Newcomer Co.\0"
+            VALUE "FileDescription", "Menu Explorer\0"
+            VALUE "FileVersion", "4.0\0"
+            VALUE "InternalName", "MenuExplorer\0"
+            VALUE "LegalCopyright", "Copyright © 1996 Joseph M. Newcomer\0"
+            VALUE "LegalTrademarks", "I have no trademarks, legal or otherwise.\0"
+            VALUE "OriginalFilename", "MenuExplorer.exe\0"
+            VALUE "ProductName", "Menu Explorer\0"
+            VALUE "ProductVersion", "4.0\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "MenuExplorer"
+    IDR_MENUEXTYPE          "\nMenuEx\nMenuEx\n\n\nMenuExplorer.Document\nMenuEx Document"
+    IDS_PROCESSOR_LEVEL_MIPS_UNKNOWN "Unknown MIPS processor"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "MenuExplorer"
+    AFX_IDS_IDLEMESSAGE     "For Help, press F1"
+    AFX_IDS_HELPMODEMESSAGE "Select an object on which to get Help"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_NEW             "Create a new document\nNew"
+    ID_FILE_OPEN            "Open an existing document\nOpen"
+    ID_FILE_CLOSE           "Close the active document\nClose"
+    ID_FILE_SAVE            "Save the active document\nSave"
+    ID_FILE_SAVE_AS         "Save the active document with a new name\nSave As"
+    ID_FILE_PAGE_SETUP      "Change the printing options\nPage Setup"
+    ID_FILE_PRINT_SETUP     "Change the printer and printing options\nPrint Setup"
+    ID_FILE_PRINT           "Print the active document\nPrint"
+    ID_FILE_PRINT_PREVIEW   "Display full pages\nPrint Preview"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
+    ID_APP_EXIT             "Quit the application; prompts to save documents\nExit"
+    ID_HELP_INDEX           "Opens Help\nHelp Topics"
+    ID_HELP_FINDER          "List Help topics\nHelp Topics"
+    ID_HELP_USING           "Display instructions about how to use help\nHelp"
+    ID_CONTEXT_HELP         "Display help for clicked on buttons, menus and windows\nHelp"
+    ID_HELP                 "Display help for current task or command\nHelp"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "Open this document"
+    ID_FILE_MRU_FILE2       "Open this document"
+    ID_FILE_MRU_FILE3       "Open this document"
+    ID_FILE_MRU_FILE4       "Open this document"
+    ID_FILE_MRU_FILE5       "Open this document"
+    ID_FILE_MRU_FILE6       "Open this document"
+    ID_FILE_MRU_FILE7       "Open this document"
+    ID_FILE_MRU_FILE8       "Open this document"
+    ID_FILE_MRU_FILE9       "Open this document"
+    ID_FILE_MRU_FILE10      "Open this document"
+    ID_FILE_MRU_FILE11      "Open this document"
+    ID_FILE_MRU_FILE12      "Open this document"
+    ID_FILE_MRU_FILE13      "Open this document"
+    ID_FILE_MRU_FILE14      "Open this document"
+    ID_FILE_MRU_FILE15      "Open this document"
+    ID_FILE_MRU_FILE16      "Open this document"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_WINDOW_NEW           "Open another window for the active document\nNew Window"
+    ID_WINDOW_ARRANGE       "Arrange icons at the bottom of the window\nArrange Icons"
+    ID_WINDOW_CASCADE       "Arrange windows so they overlap\nCascade Windows"
+    ID_WINDOW_TILE_HORZ     "Arrange windows as non-overlapping tiles\nTile Windows"
+    ID_WINDOW_TILE_VERT     "Arrange windows as non-overlapping tiles\nTile Windows"
+    ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_CLEAR           "Erase the selection\nErase"
+    ID_EDIT_CLEAR_ALL       "Erase everything\nErase All"
+    ID_EDIT_COPY            "Copy the selection and put it on the Clipboard\nCopy"
+    ID_EDIT_CUT             "Cut the selection and put it on the Clipboard\nCut"
+    ID_EDIT_FIND            "Find the specified text\nFind"
+    ID_EDIT_PASTE           "Insert Clipboard contents\nPaste"
+    ID_EDIT_REPEAT          "Repeat the last action\nRepeat"
+    ID_EDIT_REPLACE         "Replace specific text with different text\nReplace"
+    ID_EDIT_SELECT_ALL      "Select the entire document\nSelect All"
+    ID_EDIT_UNDO            "Undo the last action\nUndo"
+    ID_EDIT_REDO            "Redo the previously undone action\nRedo"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "Show or hide the toolbar\nToggle ToolBar"
+    ID_VIEW_STATUS_BAR      "Show or hide the status bar\nToggle StatusBar"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+    AFX_IDS_MDICHILD        "Activate this window"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_PREVIEW_CLOSE   "Close print preview mode\nCancel Preview"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PLATFORM_WIN32_NT   "Microsoft Windows NT %u.%u (Build %u)"
+    IDS_PLATFORM_WIN32_NTAS "Microsoft Windows NT Advanced Server %u.%u (Build %u)"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PLATFORM_WIN32_NTW  "Microsoft Windows NT Workstation %u.%u (Build %u)"
+    IDS_PLATFORM_WIN32_NTS  "Microsoft Windows NT %Server u.%u (Build %u)"
+    IDS_PLATFORM_WIN32s     "Microsoft Win32s %u.%u (Build %u)"
+    IDS_PLATFORM_WIN32_WINDOWS "Microsoft Windows 95 %u.%u (Build %u)"
+    IDS_PLATFORM_UNKNOWN    "Unknown operating system %u.%u (Build %u)"
+    IDS_PLATFORM_WIN32_NT2  "Microsoft Windows NT %u.%u (Build %u)"
+    IDS_PLATFORM_WIN32_NTAS2 
+                            "Microsoft Windows NT Advanced Server %u.%u (Build %u)"
+    IDS_PLATFORM_WIN32_NTW2 "Microsoft Windows NT Workstation %u.%u (Build %u)"
+    IDS_PROCESSOR_ARCHITECTURE_UNKNOWN "Unknown processor architecture"
+    IDS_PROCESSOR_ARCHITECTURE_INTEL_386_486 
+                            "Intel %1 step %2!0.2X! processor"
+    IDS_PROCESSOR_ARCHITECTURE_INTEL_PENTIUM 
+                            "Intel %1 model %2!d!, stepping %3!d! processor"
+    IDS_PROCESSOR_ARCHITECTURE_ALPHA 
+                            "DEC Alpha %1 model %2!c!, pass %3!d! processor"
+    IDS_PROCESSOR_ARCHITECTURE_MIPS "MIPS %1 revision %2!d! processor"
+    IDS_PROCESSOR_ARCHITECTURE_PPC 
+                            "Power PC %1 revision %2!d!.%3!d! processor"
+    IDS_PROCESSOR_LEVEL_INTEL_UNKNOWN "Unknown Intel processor"
+    IDS_PROCESSOR_LEVEL_ALPHA_UNKNOWN "Unknown Alpha processor"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PROCESSOR_LEVEL_PPC_UNKNOWN "Unknown Power PC processor"
+    IDS_PROCESSOR_NOREV_INTEL_386 "Intel 80386 processor"
+    IDS_PROCESSOR_NOREV_INTEL_486 "Intel 80486 processor"
+    IDS_PROCESSOR_NOREV_INTEL_PENTIUM "Intel Pentium processor"
+    IDS_PROCESSOR_NOREV_MIPS_R4000 "MIPS R4000 processor"
+    IDS_PROCESSOR_NOREV_ALPHA_21064 "DEC Alpha 21064 processor"
+    IDS_GETSYSMENUREVERT    "GetSystemMenu(hWnd, TRUE)"
+    IDS_GETSYSMENU          "GetSystemMenu(hWnd, FALSE) => 0x%08x"
+    IDS_GETMENUITEMCOUNT    "GetMenuItemCount(0x%08x) => %d"
+    IDS_GETMENUITEMID       "GetMenuItemID(0x%08x, %d) => %d"
+    IDS_MENUEXPLORER        "Menu Explorer"
+    IDS_GETMENUSTRING       "GetMenuString(0x%08x, %d, ..., %s) => ""%s"""
+    IDS_MF_BYCOMMAND        "MF_BYCOMMAND"
+    IDS_MF_BYPOSITION       "MF_BYPOSITION"
+    IDS_HANDLE              "Handle"
+    IDS_CONTROL_TYPE        "Type"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_EVENT               "Event"
+    IDS_SEPARATOR           "(Separator)"
+    IDS_GETMENU             "GetMenu(hWnd) => 0x%08x (%s)"
+    IDS_MAIN                "(Main)"
+    IDS_SYSMENU             "(System menu)"
+    IDS_GETSUBMENU          "GetSubMenu(0x%08x, %d) => 0x%08x (%s)"
+    IDS_GETSUBMENU_NULL     "GetSubMenu(0x%08x, %d) => NULL"
+    IDS_UNASSIGNED          "#%d (unassigned)"
+    IDS_MF_OWNERDRAW        "MF_OWNERDRAW"
+    IDS_MF_STRING           "MF_STRING"
+    IDS_MF_BITMAP           "MF_BITMAP"
+    IDS_MF_POPUP            "MF_POPUP"
+    IDS_MF_SEPARATOR        "MF_SEPARATOR"
+    IDS_MF_MENUBREAK        "MF_MENUBREAK"
+    IDS_MF_MENUBARBREAK     "MF_MENUBARBREAK"
+    IDS_MF_ENABLED          "MF_ENABLED"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_MF_DISABLED         "MF_DISABLED"
+    IDS_MF_GRAYED           "MF_GRAYED"
+    IDS_MENU_STRING         " ""%s"") => "
+    IDS_MENU_BITMAP         "bm) => "
+    IDS_MENU_OWNERDRAW      "0x%08x) => "
+    IDS_MENU_SEPARATOR      "0) => "
+    IDS_TRUE                "TRUE"
+    IDS_FALSE               "FALSE"
+    IDS_APPENDMENU_PREFIX   "AppendMenu(0x%1!08x!, %3!04x!=%4!s!, "
+    IDS_CREATEMENU          "CreateMenu( ) => 0x%08x"
+    IDS_OK                  "OK"
+    IDS_ERROR               "Error"
+    IDS_WM_COMMAND          "WM_COMMAND(0x%08x=(%d, %d), 0x%08x)"
+    IDS_MSG                 "Msg"
+    IDS_DRAWMENUBAR         "DrawMenuBar(0x%08x)"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_MF_CHECKED          "MF_CHECKED"
+    IDS_MF_UNCHECKED        "MF_UNCHECKED"
+    IDS_CHECKMENUITEM       "CheckMenuItem(0x%08x, %d, 0x%04x=%s) => "
+    IDS_ENABLEMENUITEM      "EnableMenuItem(0x%08x, %d, 0x%04x=%s) => "
+    IDS_FLOUNDER            "Flounder"
+    IDS_GRAYCAT             "Little Gray Cat"
+    IDS_GETMENUSTATE        "GetMenuState(0x%08x, %d, %s) => "
+    IDS_COMPUTER            "Computer"
+    IDS_PLAID               "Plaid"
+    IDS_WM_INITMENUPOPUP    "WM_INITMENUPOPUP(0x%08x, 0x%08x=(%d, %d))"
+    IDS_WM_MENUSELECT       "WM_MENUSELECT(0x%08x=(%d, %d), 0x%08x)"
+    IDS_WM_INITMENU         "WM_INITMENU(0x%08x, 0)"
+    IDS_INSERTMENU_PREFIX   "InsertMenu(0x%1!08x!, %2!d!, 0x%3!04x!=%4!s!, "
+    IDS_BITMAP_MENU         "(bitmap)"
+    IDS_OWNERDRAW_MENU      "(owner-draw)"
+    IDS_WM_MENUCHAR         " WM_MENUCHAR(0x%08x=('%c', %s), 0x%08x)"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_MF_SYSMENU          "MF_SYSMENU"
+    IDS_WM_ENTERMENULOOP    "WM_ENTERMENULOOP(%s, 0)"
+    IDS_TRACKING            "(tracking)"
+    IDS_WM_EXITMENULOOP     "WM_EXITMENULOOP(%s, 0)"
+    IDS_REMOVEMENU          "RemoveMenu(0x%08x, %d, %s) => %s"
+    IDS_MAIN_MENU           "Main menu"
+    IDS_CONTEXT_MENU        "Context menu"
+    IDS_UNASSIGNED_MENUS    "Unassigned menus"
+    IDS_MENUS               "Menus"
+    IDS_SYSTEM_MENU         "System Menu"
+    IDS_DELETEMENU          "DeleteMenu(0x%08x, %d, %s) => %s"
+    IDS_TRACKPOPUPMENU      "%sTrackPopupMenu(0x%08x, %s, %d, %d, 0, 0x%08x, NULL)"
+    IDS_NULL                "NULL"
+    IDS_SETMENUITEMINFO     "SetMenuItemInfo(0x%08x, %d, %s, &info) => %s"
+    IDS_GETMENUITEMINFO     "GetMenuItemInfo(0x%08x, %d, %s, &info) => %s"
+    IDS_GETMENUCHECKMARKDIMENSIONS 
+                            "GetMenuCheckMarkDimensions()=> 0x%08x=(%d, %d)"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_GETCXMENUCHECK      "GetSystemMetrics(SM_CXMENUCHECK) => %d"
+    IDS_GETCYMENUCHECK      "GetSystemMetrics(SM_CYMENUCHECK) => %d"
+    IDS_DESTROYMENU         "DestroyMenu(0x%08x) => %s"
+    IDS_MODIFYMENU_PREFIX   "ModifyMenu(0x%1!08x!, %2!d!, 0x%3!04x!=%4!s!, "
+    IDS_MF_HILITE           "MF_HILITE"
+    IDS_MF_DEFAULT          "MF_DEFAULT"
+    IDS_TPM_LEFTBUTTON      "TPM_LEFTBUTTON"
+    IDS_TPM_RIGHTBUTTON     "TPM_RIGHTBUTTON"
+    IDS_TPM_LEFTALIGN       "TPM_LEFTALIGN"
+    IDS_TPM_CENTERALIGN     "TPM_CENTERALIGN"
+    IDS_TPM_RIGHTALIGN      "TPM_RIGHTALIGN"
+    IDS_TPM_TOPALIGN        "TPM_TOPALIGN"
+    IDS_TPM_VCENTERALIGN    "TPM_VCENTERALIGN"
+    IDS_TPM_BOTTOMALIGN     "TPM_BOTTOMALIGN"
+    IDS_TPM_HORIZONTAL      "TPM_HORIZONTAL"
+    IDS_TPM_VERTICAL        "TPM_VERTICAL"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_TPM_NONOTIFY        "TPM_NONOTIFY"
+    IDS_TPM_RETURNCMD       "TPM_RETURNCMD"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_RED                 "Red"
+    IDS_GREEN               "Green"
+    IDS_BLUE                "Blue"
+    IDS_CYAN                "Aqua"
+    IDS_MAGENTA             "Fuschia"
+    IDS_YELLOW              "Yellow"
+    IDS_BLACK               "Black"
+    IDS_GRAY                "Gray"
+    IDS_WHITE               "White"
+    IDS_LTGRAY              "Silver"
+    IDS_DKGRAY              "Dk. Gray"
+    IDS_TEAL                "Teal"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_LIME                "Lime"
+    IDS_MAROON              "Maroon"
+    IDS_OLIVE               "Olive"
+    IDS_PURPLE              "Purple"
+    IDS_NAVY                "Navy"
+    IDS_PALEGREEN           "Lt green"
+    IDS_SKYBLUE             "Sky blue"
+    IDS_CREAM               "Cream"
+    IDS_MDGRAY              "Md Gray"
+    IDS_CREATEPOPUPMENU     "CreatePopupMenu( ) => 0x%08x"
+    IDS_BAD_POPUP           "The menu you selected is not a popup menu.\nIt will not work properly as a context menu (see KB article Q75254); the popup menu will display as a vertical bar.  This can be fixed, and the menu can be forced to be a popup menu.\n\tYes - fix it up and continue\n\tNo - see what happens when you use the wrong one\n\tCancel - do not attempt to assign it."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_COLOR_SCROLLBAR     "~Scrollbar"
+    IDS_COLOR_BACKGROUND    "~Background"
+    IDS_COLOR_ACTIVECAPTION "~Active caption"
+    IDS_COLOR_INACTIVECAPTION "~Inactive caption"
+    IDS_COLOR_MENU          "~Menu"
+    IDS_COLOR_WINDOW        "~Window"
+    IDS_COLOR_WINDOWFRAME   "~Window frame"
+    IDS_COLOR_MENUTEXT      "~Menu text"
+    IDS_COLOR_WINDOWTEXT    "~Window text"
+    IDS_COLOR_CAPTIONTEXT   "~Caption text"
+    IDS_COLOR_ACTIVEBORDER  "~Active border"
+    IDS_COLOR_INACTIVEBORDER "~Inactive border"
+    IDS_COLOR_APPWORKSPACE  "~App workspace"
+    IDS_COLOR_HIGHLIGHT     "~Highlight"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_COLOR_HIGHLIGHTTEXT "~Highlight text"
+    IDS_COLOR_BTNFACE       "~Btn face"
+    IDS_COLOR_BTNSHADOW     "~Btn shadow"
+    IDS_COLOR_GRAYTEXT      "~Gray text"
+    IDS_COLOR_BTNTEXT       "~Btn text"
+    IDS_COLOR_INACTIVECAPTIONTEXT "~Inactive caption text"
+    IDS_COLOR_BTNHIGHLIGHT  "~Btn highlight"
+    IDS_COLOR_3DDKSHADOW    "~3D Dk Shadow"
+    IDS_COLOR_3DLIGHT       "~3D Light"
+    IDS_COLOR_INFOTEXT      "~Info text"
+    IDS_COLOR_INFOBK        "~Info bk"
+    IDS_COLOR_DESKTOP       "~Desktop"
+    IDS_COLOR_3DFACE        "~3D face"
+    IDS_COLOR_3DSHADOW      "~3D shadow"
+    IDS_COLOR_3DHIGHLIGHT   "~3D highlight"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDM_MENUEXPLORER        "Menu Explorer\nMenu Explorer"
+    IDM_DUMMY1              "A normal menu item"
+    IDM_DUMMY2              "Another normal menu item"
+    IDM_DUMMY3              "An item with the MF_GRAYED style"
+    IDM_DUMMY4              "An item with the MF_CHECKED style"
+    IDM_DUMMY6              "Some item in the popup menu"
+    IDM_DUMMY7              "Some detailed subitem in the popup menu"
+    IDM_ENABLE_BAR          "Toggles the MF_MENUBARBREAK style on this item"
+    IDM_DUMMY9              "Another normal menu item"
+    IDM_DUMMY8              "An item with the MF_DISABLED style"
+    IDM_ENABLE_BREAK        "Toggles the MF_MENUBREAK style on this item"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif
+#include "res\MenuExplorer.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#include "afxprint.rc"       // printing/print preview resources
+#endif
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

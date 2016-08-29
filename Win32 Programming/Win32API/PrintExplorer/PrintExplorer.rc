@@ -1,0 +1,1491 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif\r\n"
+    "#include ""res\\PrintExplorer.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#include ""afxprint.rc""       // printing/print preview resources\r\n"
+    "#endif\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\PrintExplorer.ico"
+IDR_PRINTETYPE          ICON    DISCARDABLE     "res\\PrintExplorerDoc.ico"
+IDI_JMNCO               ICON    DISCARDABLE     "res\\jmnco.ico"
+IDI_PRINTER             ICON    DISCARDABLE     "res\\printer.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&Print Explorer\tCtrl+P",     IDM_PRINTDLG
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&Help Topics",                ID_HELP_FINDER
+        MENUITEM SEPARATOR
+        MENUITEM "&About Print Explorer",       ID_APP_ABOUT
+    END
+END
+
+IDR_PRINTETYPE MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&New\tCtrl+N",                ID_FILE_NEW, GRAYED
+        MENUITEM "&Open...\tCtrl+O",            ID_FILE_OPEN, GRAYED
+        MENUITEM "&Close",                      ID_FILE_CLOSE, GRAYED
+        MENUITEM "&Save\tCtrl+S",               ID_FILE_SAVE, GRAYED
+        MENUITEM "Save &As...",                 ID_FILE_SAVE_AS, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "Print explorer...\tCtrl+P",   IDM_PRINTDLG
+        MENUITEM SEPARATOR
+        MENUITEM "Recent File",                 ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "&Undo\tCtrl+Z",               ID_EDIT_UNDO
+        MENUITEM SEPARATOR
+        MENUITEM "Cu&t\tCtrl+X",                ID_EDIT_CUT
+        MENUITEM "&Copy\tCtrl+C",               ID_EDIT_COPY
+        MENUITEM "&Paste\tCtrl+V",              ID_EDIT_PASTE
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+    END
+    POPUP "&Window"
+    BEGIN
+        MENUITEM "&New Window",                 ID_WINDOW_NEW
+        MENUITEM "&Cascade",                    ID_WINDOW_CASCADE
+        MENUITEM "&Tile",                       ID_WINDOW_TILE_HORZ
+        MENUITEM "&Arrange Icons",              ID_WINDOW_ARRANGE
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&Help Topics",                ID_HELP_FINDER
+        MENUITEM SEPARATOR
+        MENUITEM "&About Print Explorer...",    ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABORT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 178
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 87
+    END
+
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_CUSTOMPRINTING, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 178
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 87
+    END
+
+    IDD_DEVCAPABILITIES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 372
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 229
+    END
+
+    IDD_DEVICECAPS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 359
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 193
+    END
+
+    IDD_DEVMODE, DIALOG
+    BEGIN
+        RIGHTMARGIN, 321
+        TOPMARGIN, 1
+        BOTTOMMARGIN, 226
+    END
+
+    IDD_FLAGS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 357
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 148
+    END
+
+    IDD_PAGESETUP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 358
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 223
+    END
+
+    IDD_PRINTDLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 328
+        BOTTOMMARGIN, 228
+    END
+
+    IDD_PRINTDLL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 328
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 121
+    END
+
+    IDD_PRINTER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 178
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 87
+    END
+
+    IDD_SETDEVMODE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 358
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 88
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS PRELOAD MOVEABLE PURE 
+BEGIN
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    "E",            IDM_PRINTDLG,           VIRTKEY, CONTROL, NOINVERT
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL, NOINVERT
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL, NOINVERT
+    "P",            IDM_PRINTDLG,           VIRTKEY, CONTROL, NOINVERT
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL, NOINVERT
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL, NOINVERT
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT, NOINVERT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT, NOINVERT
+    VK_F1,          ID_HELP,                VIRTKEY, NOINVERT
+    VK_F1,          ID_CONTEXT_HELP,        VIRTKEY, SHIFT, NOINVERT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY, NOINVERT
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT, NOINVERT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT, NOINVERT
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL, NOINVERT
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABORT DIALOG DISCARDABLE  0, 0, 185, 94
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Printing"
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "Cancel",IDCANCEL,67,73,50,14
+    CTEXT           "Printing to",IDC_PAGE,0,8,185,10
+    CTEXT           "printer name",IDC_PRINTER,0,20,185,10
+    CTEXT           "on",IDC_STATIC,0,32,185,10
+    CTEXT           "port",IDC_PORT,0,44,185,10
+END
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  22, 17, 204, 89
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "About "
+FONT 8, "System"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,166,74,32,14,WS_GROUP
+    LTEXT           "FileDescription",IDC_ABOUT_FILEDESCRIPTION,30,2,118,8
+    LTEXT           "Version ",IDC_STATIC,152,2,28,8
+    LTEXT           "ProductVersion",IDC_ABOUT_VERSION,180,2,17,8
+    LTEXT           "LegalCopyright",IDC_ABOUT_LEGALCOPYRIGHT,30,10,168,16
+    LTEXT           "Comments",IDC_ABOUT_COMMENTS,30,31,168,8
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKRECT,2,42,200,1
+    LTEXT           "OSVERSION",IDC_ABOUT_OSVERSION,4,45,196,8
+    LTEXT           "ProcessorVersion",IDC_ABOUT_PROCESSORVERSION,4,53,196,8
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKRECT,2,63,200,1
+    LTEXT           "LegalTrademarks",IDC_ABOUT_LEGALTRADEMARKS,3,68,156,18
+    ICON            IDR_MAINFRAME,IDC_STATIC,3,2,18,20
+    ICON            IDI_JMNCO,IDC_STATIC,4,27,18,20
+END
+
+IDD_CUSTOMPRINTING DIALOG DISCARDABLE  0, 0, 185, 94
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Custom Printing Dialog"
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "Cancel",IDCANCEL,68,30,50,32
+    ICON            IDI_PRINTER,IDC_STATIC,7,7,18,20
+    CTEXT           "Static",IDC_PRINTER,0,80,185,13
+    CTEXT           "Printing on",IDC_STATIC,3,65,182,8
+    RTEXT           "Static",IDC_PAGENO,61,6,119,10
+END
+
+IDD_DEVCAPABILITIES DIALOG DISCARDABLE  0, 0, 379, 236
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "DeviceCapabilities"
+FONT 8, "MS Sans Serif"
+BEGIN
+    RTEXT           "DC_BINADJUST",IDC_c_DC_BINADJUST,41,38,52,8
+    EDITTEXT        IDC_DC_BINADJUST,97,36,93,12,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    RTEXT           "DC_BINNAMES",IDC_c_DC_BINNAMES,44,52,49,8
+    COMBOBOX        IDC_DC_BINNAMES,97,50,93,30,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    RTEXT           "DC_BINS",IDC_c_DC_BINS,63,66,30,8
+    COMBOBOX        IDC_DC_BINS,97,64,93,30,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    EDITTEXT        IDC_DC_COPIES,97,131,93,12,ES_AUTOHSCROLL | WS_DISABLED
+    RTEXT           "DC_COPIES",IDC_c_DC_COPIES,54,133,39,8
+    EDITTEXT        IDC_DC_DRIVER,97,146,93,12,ES_AUTOHSCROLL | WS_DISABLED
+    RTEXT           "DC_DRIVER",IDC_c_DC_DRIVER,53,148,40,8
+    CHECKBOX        "DC_DUPLEX",IDC_DC_DUPLEX,280,174,93,9,NOT WS_TABSTOP
+    RTEXT           "DC_DATATYPE_PRODUCED",IDC_c_DC_DATATYPE_PRODUCED,0,162,
+                    93,8
+    CHECKBOX        "DC_EMF_COMPLIANT",IDC_DC_EMF_COMPLIANT,280,188,93,9,NOT 
+                    WS_TABSTOP
+    RTEXT           "DC_ENUMRESOLUTIONS",IDC_c_DC_ENUMRESOLUTIONS,11,176,82,
+                    8
+    COMBOBOX        IDC_DC_ENUMRESOLUTIONS,97,174,93,30,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_DC_EXTRA,97,188,93,12,ES_AUTOHSCROLL | WS_DISABLED
+    RTEXT           "DC_EXTRA",IDC_c_DC_EXTRA,56,190,37,8
+    EDITTEXT        IDC_DC_FIELDS,97,202,93,12,ES_AUTOHSCROLL | WS_DISABLED
+    RTEXT           "DC_FIELDS",IDC_c_DC_FIELDS,56,204,37,8
+    LTEXT           "DC_FILEDEPENDENCIES",IDC_c_DC_FILEDEPENDENCIES,12,218,
+                    81,8
+    COMBOBOX        IDC_DC_FILEDEPENDENCIES,96,216,192,30,CBS_DROPDOWNLIST | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_DC_ORIENTATION,195,64,93,12,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    EDITTEXT        IDC_DC_MAXEXTENT_X,195,36,45,12,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    EDITTEXT        IDC_DC_MAXEXTENT_Y,242,36,45,12,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    EDITTEXT        IDC_DC_MINEXTENT_X,195,50,45,12,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    EDITTEXT        IDC_DC_MINEXTENT_Y,242,50,45,12,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    COMBOBOX        IDC_DC_PAPERNAMES,13,80,275,30,CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWVARIABLE | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_DC_PAPERSIZE,13,112,275,30,CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWVARIABLE | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_DC_SIZE,195,131,93,12,ES_AUTOHSCROLL | WS_DISABLED
+    EDITTEXT        IDC_DC_VERSION,195,159,93,12,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    COMBOBOX        IDC_DC_TRUETYPE,195,145,93,30,CBS_DROPDOWNLIST | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "DC_MAXEXTENT",IDC_c_DC_MAXEXTENT,290,38,55,8
+    LTEXT           "DC_MINEXTENT",IDC_c_DC_MINEXTENT,290,51,53,8
+    LTEXT           "DC_ORIENTATION",IDC_c_DC_ORIENTATION,290,65,60,8
+    LTEXT           "DC_PAPERNAMES",IDC_c_DC_PAPERNAMES,290,82,61,8
+    LTEXT           "DC_PAPERSIZE",IDC_c_DC_PAPERSIZE,290,114,52,8
+    LTEXT           "DC_SIZE",IDC_c_DC_SIZE,290,132,29,8
+    LTEXT           "DC_TRUETYPE",IDC_c_DC_TRUETYPE,290,146,51,8
+    LTEXT           "DC_VERSION",IDC_c_DC_VERSION,290,160,44,8
+    EDITTEXT        IDC_RESULT,237,4,135,12,ES_AUTOHSCROLL | ES_READONLY | 
+                    WS_DISABLED
+    EDITTEXT        IDC_hDevMode,48,4,184,12,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_hDevNames,48,18,184,12,ES_AUTOHSCROLL | ES_READONLY
+    RTEXT           "DEVMODE",IDC_c_DEVMODE,11,6,35,8
+    RTEXT           "DEVNAMES",IDC_c_DEVNAMES,7,21,39,8
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,3,1,231,32
+    COMBOBOX        IDC_DC_DATATYPE_PRODUCED,97,160,93,30,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_DC_PAPERS,13,96,275,30,CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWVARIABLE | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "DC_PAPERS",IDC_c_DC_PAPERS,290,98,42,8
+END
+
+IDD_DEVICECAPS DIALOG DISCARDABLE  0, 0, 366, 200
+STYLE WS_CHILD | WS_CAPTION | WS_SYSMENU
+CAPTION "GetDeviceCaps"
+FONT 8, "MS Sans Serif"
+BEGIN
+    RTEXT           "DRIVERVERSION",IDC_STATIC,4,4,57,8
+    RTEXT           "TECHNOLOGY",IDC_STATIC,13,18,48,8
+    RTEXT           "HORZSIZE",IDC_STATIC,26,32,35,8
+    RTEXT           "VERTSIZE",IDC_STATIC,27,46,34,8
+    RTEXT           "HORZRES",IDC_STATIC,27,59,34,8
+    RTEXT           "VERTRES",IDC_STATIC,27,72,34,8
+    RTEXT           "LOGPIXELSX",IDC_STATIC,20,86,41,8
+    RTEXT           "LOGPIXELSY",IDC_STATIC,19,100,42,8
+    RTEXT           "BITSPIXEL",IDC_STATIC,27,114,34,8
+    RTEXT           "PLANES",IDC_STATIC,33,128,28,8
+    RTEXT           "NUMBRUSHES",IDC_STATIC,11,142,50,8
+    RTEXT           "NUMPENS",IDC_STATIC,26,156,35,8
+    RTEXT           "NUMFONTS",IDC_STATIC,21,170,40,8
+    RTEXT           "NUMCOLORS",IDC_STATIC,17,184,44,8
+    RTEXT           "ASPECTX",IDC_STATIC,141,4,32,8
+    RTEXT           "ASPECTY",IDC_STATIC,142,18,33,8
+    RTEXT           "PDEVICESIZE",IDC_STATIC,130,46,45,8
+    RTEXT           "CLIPCAPS",IDC_STATIC,142,60,33,8
+    RTEXT           "SIZEPALETTE",IDC_C_SIZEPALETTE,129,74,46,8
+    RTEXT           "NUMRESERVED",IDC_STATIC,121,88,54,8
+    RTEXT           "COLORRES",IDC_STATIC,137,102,38,8
+    EDITTEXT        IDC_DRIVERVERSION,69,2,46,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    EDITTEXT        IDC_TECHNOLOGY,69,16,69,12,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_HORZSIZE,69,30,46,12,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_VERTSIZE,69,44,46,12,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_HORZRES,69,58,46,12,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_VERTRES,69,72,46,12,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_LOGPIXELSX,69,86,46,12,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_LOGPIXELSY,69,100,46,12,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_BITSPIXEL,69,114,46,12,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_PLANES,69,128,46,12,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_NUMBRUSHES,69,142,46,12,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_NUMPENS,69,156,46,12,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_NUMFONTS,69,170,46,12,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_NUMCOLORS,69,184,46,12,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_ASPECTX,180,2,46,12,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_ASPECTY,180,16,46,12,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_PDEVICESIZE,180,44,46,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    EDITTEXT        IDC_CLIPCAPS,180,58,46,12,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_SIZEPALETTE,180,72,46,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    EDITTEXT        IDC_NUMRESERVED,180,86,46,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    EDITTEXT        IDC_COLORRES,180,100,46,12,ES_AUTOHSCROLL | ES_READONLY
+    RTEXT           "ASPECTXY",IDC_STATIC,138,32,37,8
+    EDITTEXT        IDC_ASPECTXY,180,30,46,12,ES_AUTOHSCROLL | ES_READONLY
+    RTEXT           "RASTERCAPS",IDC_STATIC,128,116,47,8
+    COMBOBOX        IDC_RASTERCAPS,180,114,89,72,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    RTEXT           "CURVECAPS",IDC_STATIC,132,130,43,8
+    COMBOBOX        IDC_CURVECAPS,180,128,89,72,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    RTEXT           "LINECAPS",IDC_STATIC,141,144,34,8
+    COMBOBOX        IDC_LINECAPS,180,142,89,72,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    RTEXT           "POLYGONALCAPS",IDC_STATIC,115,158,60,8
+    COMBOBOX        IDC_POLYGONALCAPS,180,156,89,72,CBS_DROPDOWNLIST | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    RTEXT           "TEXTCAPS",IDC_STATIC,138,172,37,8
+    COMBOBOX        IDC_TEXTCAPS,180,170,89,72,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_RESULT,230,2,135,12,ES_AUTOHSCROLL | ES_READONLY | 
+                    WS_DISABLED
+END
+
+IDD_DEVMODE DIALOG DISCARDABLE  0, 0, 367, 236
+STYLE WS_CHILD | WS_CAPTION | WS_SYSMENU
+CAPTION "DEVMODE"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_dmDeviceName,79,17,100,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    RTEXT           "BCHAR dmDeviceName",IDC_c_dmDeviceName,0,19,76,8
+    EDITTEXT        IDC_dmSpecVersion,79,31,100,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    RTEXT           "WORD dmSpecVersion",IDC_c_dmSpecVersion,4,32,73,8
+    EDITTEXT        IDC_dmDriverVresion,79,45,100,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    RTEXT           "WORD dmDriverVersion",IDC_c_dmDriverVersion,2,47,75,8
+    EDITTEXT        IDC_dmSize,79,59,100,12,ES_AUTOHSCROLL | ES_READONLY
+    RTEXT           "WORD dmSize",IDC_c_dmSize,30,60,47,8
+    EDITTEXT        IDC_dmDriverExtra,79,73,100,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    RTEXT           "WORD dmDriverExtra",IDC_c_dmDriverExtra,10,74,67,8
+    EDITTEXT        IDC_dmFields,79,87,100,12,ES_AUTOHSCROLL | ES_READONLY
+    RTEXT           "DWORD dmFields",IDC_c_dmFields,20,88,57,8
+    EDITTEXT        IDC_dmOrientation,79,101,100,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    RTEXT           "short dmOrientation",IDC_c_dmOrientation,18,102,59,8
+    EDITTEXT        IDC_dmPaperSize,79,115,100,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    RTEXT           "short dmPaperSize",IDC_c_dmPaperSize,19,116,58,8
+    EDITTEXT        IDC_dmPaperLength,79,129,100,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    RTEXT           "short dmPaperLength",IDC_c_dmPaperLength,12,130,65,8
+    EDITTEXT        IDC_dmPaperWidth,79,143,100,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    RTEXT           "short dmPaperWidth",IDC_c_dmPaperWidth,15,144,62,8
+    EDITTEXT        IDC_dmScale,79,157,100,12,ES_AUTOHSCROLL | ES_READONLY
+    RTEXT           "short dmScale",IDC_c_dmScale,33,158,44,8
+    EDITTEXT        IDC_dmCopies,79,171,100,12,ES_AUTOHSCROLL | ES_READONLY
+    RTEXT           "short dmCopies",IDC_c_dmCopies,29,172,48,8
+    EDITTEXT        IDC_dmDefaultSource,79,185,100,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    RTEXT           "short dmDefaultSource",IDC_c_dmDefaultSource,8,186,69,8
+    EDITTEXT        IDC_dmPrintQuality,79,199,100,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    RTEXT           "short dmPrintQuality",IDC_c_dmPrintQuality,17,200,60,8
+    EDITTEXT        IDC_dmColor,79,213,100,12,ES_AUTOHSCROLL | ES_READONLY
+    RTEXT           "short dmColor",IDC_c_dmColor,33,213,43,8
+    EDITTEXT        IDC_dmDuplex,182,17,100,12,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "short dmDuplex",IDC_c_dmDuplex,283,18,48,8
+    EDITTEXT        IDC_dmTTOption,182,45,100,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    LTEXT           "short dmTTOption",IDC_c_dmTTOption,283,46,55,8
+    EDITTEXT        IDC_dmCollate,182,59,100,12,ES_READONLY
+    LTEXT           "short dmCollate",IDC_c_dmCollate,283,60,48,8
+    EDITTEXT        IDC_dmFormName,182,73,100,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    LTEXT           "TCHAR dmFormName[ ]",IDC_c_dmFormName,283,75,75,8
+    EDITTEXT        IDC_dmLogPixels,182,87,100,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    LTEXT           "WORD dmLogPixels",IDC_c_dmLogPixels,283,88,63,8
+    EDITTEXT        IDC_dmBitsPerPel,182,101,100,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    LTEXT           "DWORD dmBitsPerPel",IDC_c_dmBitsPerPel,283,103,70,8
+    EDITTEXT        IDC_dmPelsWidth,182,115,100,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    LTEXT           "DWORD dmPelsWidth",IDC_c_dmPelsWidth,283,116,69,8
+    EDITTEXT        IDC_dmPelsHeight,182,129,100,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    LTEXT           "DWORD dmPelsHeight",IDC_c_dmPelsHeight,283,130,72,8
+    EDITTEXT        IDC_dmDisplayFlags,182,143,100,12,ES_AUTOHSCROLL | 
+                    ES_READONLY | NOT WS_VISIBLE
+    LTEXT           "DWORD dmDisplayFlags",IDC_c_dmDisplayFlags,283,144,79,8,
+                    NOT WS_VISIBLE
+    EDITTEXT        IDC_dmDisplayFrequency,182,157,100,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    LTEXT           "DWORD dmDisplayFreq",IDC_c_dmDisplayFrequency,283,158,
+                    76,8
+    EDITTEXT        IDC_dmYResolution,182,31,100,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    LTEXT           "short dmYResolution",IDC_c_dmYResolution,283,32,63,8
+    EDITTEXT        IDC_RESULT,230,2,135,12,ES_AUTOHSCROLL | ES_READONLY | 
+                    WS_DISABLED
+END
+
+IDD_FLAGS DIALOG DISCARDABLE  0, 0, 364, 155
+STYLE WS_CHILD | WS_CAPTION | WS_SYSMENU
+CAPTION "PRINTDLG Flags"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "PD_ALLPAGES",IDC_PD_ALLPAGES,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,59,22,142,11
+    CONTROL         "PD_COLLATE",IDC_PD_COLLATE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,59,32,142,11
+    CONTROL         "PD_DISABLEPRINTTOFILE",IDC_PD_DISABLEPRINTTOFILE,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,59,42,142,10
+    CONTROL         "PD_ENABLEPRINTHOOK",IDC_PD_ENABLEPRINTHOOK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,59,52,142,10
+    CONTROL         "PD_ENABLEPRINTTEMPLATE",IDC_PD_ENABLEPRINTTEMPLATE,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,59,62,142,10
+    CONTROL         "PD_ENABLEPRINTTEMPLATEHANDLE",
+                    IDC_PD_ENABLEPRINTTEMPLATEHANDLE,"Button",
+                    BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,59,72,142,10
+    CONTROL         "PD_ENABLESETUPHOOK",IDC_PD_ENABLESETUPHOOK,"Button",
+                    BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,59,82,142,10
+    CONTROL         "PD_ENABLESETUPTEMPLATE",IDC_PD_ENABLESETUPTEMPLATE,
+                    "Button",BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,59,
+                    92,142,10
+    CONTROL         "PD_ENABLESETUPTEMPLATEHANDLE",
+                    IDC_PD_ENABLESETUPTEMPLATEHANDLE,"Button",
+                    BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,59,102,142,10
+    CONTROL         "PD_HIDEPRINTTOFILE",IDC_PD_HIDEPRINTTOFILE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,59,112,142,10
+    CONTROL         "PD_NOSELECTION",IDC_PD_NOSELECTION,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,210,22,109,10
+    CONTROL         "PD_NOWARNING",IDC_PD_NOWARNING,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,210,32,109,10
+    CONTROL         "PD_PAGENUMS",IDC_PD_PAGENUMS,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,210,42,109,10
+    CONTROL         "PD_PRINTSETUP",IDC_PD_PRINTSETUP,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,210,52,109,10
+    CONTROL         "PD_PRINTTOFILE",IDC_PD_PRINTTOFILE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,210,62,109,10
+    CONTROL         "PD_RETURNDC",IDC_PD_RETURNDC,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,210,72,109,10
+    CONTROL         "PD_RETURNDEFAULT",IDC_PD_RETURNDEFAULT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,210,82,109,10
+    CONTROL         "PD_RETURNIC",IDC_PD_RETURNIC,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,210,92,109,10
+    CONTROL         "PD_SELECTION",IDC_PD_SELECTION,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,210,102,109,10
+    CONTROL         "PD_SHOWHELP",IDC_PD_SHOWHELP,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,210,112,109,10
+    CONTROL         "PD_USEDEVMODECOPIES",IDC_PD_USEDEVMODECOPIES,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,210,122,102,10
+    CONTROL         "PD_NOPAGENUMS",IDC_PD_NOPAGENUMS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,59,122,142,10
+    PUSHBUTTON      "PrintDlg...",IDC_PRINTDLG2,7,1,43,18
+    EDITTEXT        IDC_RESULT2,229,2,135,12,ES_AUTOHSCROLL | ES_READONLY | 
+                    WS_DISABLED
+    CONTROL         "Custom Print Dialog",IDC_CUSTOMDLG,"Button",
+                    BS_AUTO3STATE | NOT WS_VISIBLE | WS_DISABLED | 
+                    WS_TABSTOP,169,135,75,10
+END
+
+IDD_PAGESETUP DIALOG DISCARDABLE  0, 0, 365, 230
+STYLE WS_CHILD | WS_CAPTION | WS_SYSMENU
+CAPTION "Page Setup"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "PSD_DEFAULTMINMARGINS",IDC_PSD_DEFAULTMINMARGINS,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,53,18,138,10
+    CONTROL         "PSD_DISABLEMARGINS",IDC_PSD_DISABLEMARGINS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,53,28,138,10
+    CONTROL         "PSD_DISABLEORIENTATION",IDC_PSD_DISABLEORIENTATION,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,53,38,138,10
+    CONTROL         "PSD_DISABLEPAGEPAINTING",IDC_PSD_DISABLEPAGEPAINTING,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,53,48,138,10
+    CONTROL         "PSD_DISABLEPAPER",IDC_PSD_DISABLEPAPER,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,53,58,138,10
+    CONTROL         "PSD_DISABLEPRINTER",IDC_PSD_DISABLEPRINTER,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,53,68,138,10
+    CONTROL         "PSD_ENABLEPAGEPAINTHOOK",IDC_PSD_ENABLEPAGEPAINTHOOK,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,53,78,138,10
+    CONTROL         "PSD_ENABLEPAGESETUPHOOK",IDC_PSD_ENABLEPAGESETUPHOOK,
+                    "Button",BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,53,
+                    88,138,10
+    CONTROL         "PSD_ENABLEPAGESETUPTEMPLATE",
+                    IDC_PSD_ENABLEPAGESETUPTEMPLATE,"Button",BS_AUTOCHECKBOX | 
+                    WS_DISABLED | WS_TABSTOP,53,98,138,10
+    CONTROL         "PSD_ENABLEPAGESETUPTEMPLATEHANDLE",
+                    IDC_PSD_ENABLEPAGESETUPTEMPLATEHANDLE,"Button",
+                    BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,197,18,165,10
+    CONTROL         "PSD_INHUNDREDTHSOFMILLIMETERS",
+                    IDC_PSD_INHUNDREDTHSOFMILLIMETERS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,197,28,165,10
+    CONTROL         "PSD_INTHOUSANDTHSOFINCHES",
+                    IDC_PSD_INTHOUSANDTHSOFINCHES,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,197,38,165,10
+    CONTROL         "PSD_MARGINS",IDC_PSD_MARGINS,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,197,48,165,10
+    CONTROL         "PSD_MINMARGINS",IDC_PSD_MINMARGINS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,197,58,165,10
+    CONTROL         "PSD_NOWARNING",IDC_PSD_NOWARNING,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,197,68,165,10
+    CONTROL         "PSD_RETURNDEFAULT",IDC_PSD_RETURNDEFAULT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,197,78,165,10
+    CONTROL         "PSD_SHOWHELP",IDC_PSD_SHOWHELP,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,197,88,165,10
+    RTEXT           "HANDLE hDevMode",IDC_STATIC,19,114,68,8
+    EDITTEXT        IDC_hDevMode,91,112,184,12,ES_AUTOHSCROLL | ES_READONLY
+    RTEXT           "HANDLE hDevNames",IDC_STATIC,18,128,69,8
+    EDITTEXT        IDC_hDevNames,91,126,184,12,ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "Defaults",IDC_DEFAULTS,278,112,42,26
+    LTEXT           "ptPaperSize",IDC_c_ptPaperSize,23,146,38,8
+    EDITTEXT        IDC_ptPaperSize_X,64,144,42,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_ptPaperSize_Y,109,144,42,12,ES_AUTOHSCROLL
+    LTEXT           "rtMinMargin\nleft\tright\ntop\tbottom",
+                    IDC_c_rtMinMargin,18,164,53,24
+    EDITTEXT        IDC_rtMinMargin_left,80,162,42,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_rtMinMaring_right,125,162,42,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_rtMinMargin_top,80,176,42,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_rtMinMargin_bottom,125,176,42,12,ES_AUTOHSCROLL
+    LTEXT           "rtMargin\nleft\tright\ntop\tbottom",IDC_c_rtMargin,177,
+                    164,54,23
+    EDITTEXT        IDC_rtMargin_left,235,162,42,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_rtMaring_right,280,162,42,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_rtMargin_top,235,176,42,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_rtMargin_bottom,280,176,42,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "Page setup...",IDC_PAGESETUP,7,1,41,18
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,14,110,308,30
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,14,142,141,16
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,14,160,156,30
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,173,160,152,30
+    EDITTEXT        IDC_RESULT,230,2,135,12,ES_AUTOHSCROLL | ES_READONLY | 
+                    WS_DISABLED
+    PUSHBUTTON      "Clear",IDC_CLEAR,129,2,50,14
+    LTEXT           "lpfnPagePaintHook",IDC_c_lpfnPagePaintHook,182,146,60,8
+    EDITTEXT        IDC_lpfnPagePaintHook,247,144,42,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,173,142,120,16
+    CONTROL         "List2",IDC_MESSAGES,"SysListView32",LVS_REPORT | 
+                    LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,14,192,347,36
+END
+
+IDD_PRINTDLG DIALOG DISCARDABLE  0, 0, 367, 229
+STYLE WS_CHILD | WS_CAPTION | WS_SYSMENU
+CAPTION "PRINTDLG"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_lStructSize,134,2,86,12,ES_AUTOHSCROLL | ES_READONLY | 
+                    WS_DISABLED
+    EDITTEXT        IDC_hwndOwner,134,16,86,12,ES_AUTOHSCROLL | ES_READONLY | 
+                    WS_DISABLED
+    EDITTEXT        IDC_hDevMode,134,31,184,12,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_hDevNames,134,45,184,12,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_hDC,134,60,86,12,ES_AUTOHSCROLL | ES_READONLY | 
+                    WS_DISABLED
+    EDITTEXT        IDC_Flags,281,59,86,12,ES_AUTOHSCROLL | ES_READONLY | 
+                    WS_DISABLED
+    EDITTEXT        IDC_nFromPage,134,74,86,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_nToPage,281,74,86,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_nMinPage,134,88,86,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_nMaxPage,281,88,86,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_nCopies,134,102,86,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_hInstance,134,116,86,12,ES_AUTOHSCROLL | ES_READONLY | 
+                    WS_DISABLED
+    EDITTEXT        IDC_lCustData,134,130,86,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_lpfnPrintHook,134,144,86,12,ES_AUTOHSCROLL | 
+                    ES_READONLY | WS_DISABLED
+    EDITTEXT        IDC_lpfnSetupHook,134,158,86,12,ES_AUTOHSCROLL | 
+                    ES_READONLY | WS_DISABLED
+    EDITTEXT        IDC_lpPrintTamplateName,134,172,86,12,ES_AUTOHSCROLL | 
+                    ES_READONLY | WS_DISABLED
+    EDITTEXT        IDC_lpSetupTemplateName,134,186,86,12,ES_AUTOHSCROLL | 
+                    ES_READONLY | WS_DISABLED
+    EDITTEXT        IDC_hPrintTemplate,134,200,86,12,ES_AUTOHSCROLL | 
+                    ES_READONLY | WS_DISABLED
+    EDITTEXT        IDC_hSetupTemplate,134,214,86,12,ES_AUTOHSCROLL | 
+                    ES_READONLY | WS_DISABLED
+    PUSHBUTTON      "Defaults",IDC_DEFAULTS,321,31,42,26
+    PUSHBUTTON      "Clear",IDC_CLEAR,314,209,50,14
+    RTEXT           "HANDLE hDevMode",IDC_STATIC,62,33,68,8
+    RTEXT           "DWORD lStructSize",IDC_STATIC,70,3,60,8
+    RTEXT           "HANDLE hDevNames",IDC_STATIC,61,47,69,8
+    RTEXT           "HDC hDC",IDC_STATIC,24,61,106,8
+    RTEXT           "DWORD Flags",IDC_STATIC,227,62,50,8
+    RTEXT           "WORD nFromPage",IDC_STATIC,24,75,106,8
+    RTEXT           "WORD nToPage",IDC_STATIC,225,76,53,8
+    RTEXT           "WORD nMinPage",IDC_STATIC,69,90,61,8
+    RTEXT           "WORD nCopies",IDC_STATIC,24,104,106,8
+    RTEXT           "HINSTANCE hInstance",IDC_STATIC,24,117,106,8
+    RTEXT           "DWORD lCustData",IDC_STATIC,24,131,106,8
+    RTEXT           "LPPRINTHOOKPROC",IDC_STATIC,24,145,106,8
+    RTEXT           "LPSETUPHOOKPROC",IDC_STATIC,24,159,106,8
+    RTEXT           "LPCTSTR  lpPrintTemplateName",IDC_STATIC,24,173,106,8
+    RTEXT           "LPCTSTR  lpSetupTemplateName",IDC_STATIC,24,187,106,8
+    RTEXT           "HANDLE hPrintTemplate",IDC_STATIC,24,201,106,8
+    RTEXT           "HANDLE hSetupTemplate",IDC_STATIC,24,215,106,8
+    RTEXT           "HWND hwndOwner",IDC_STATIC,71,17,59,8
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,57,29,308,30
+    RTEXT           "WORD nMaxPage",IDC_STATIC,221,89,57,8
+    PUSHBUTTON      "PrintDlg...",IDC_PRINTDLG,7,1,43,18
+    EDITTEXT        IDC_RESULT,230,2,135,12,ES_AUTOHSCROLL | ES_READONLY | 
+                    WS_DISABLED
+    PUSHBUTTON      "QuickDC...",IDC_QUICKDC,7,30,43,14
+    PUSHBUTTON      "Dates",IDC_QUICKDATE,7,88,43,14
+END
+
+IDD_PRINTDLL DIALOG DISCARDABLE  0, 0, 335, 128
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "PrintIt DLL"
+FONT 8, "MS Sans Serif"
+BEGIN
+    COMBOBOX        IDC_TOPLEFT,5,9,77,30,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_TOPCENTER,88,9,77,30,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_TOPRIGHT,171,9,77,30,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_BOTTOMLEFT,5,103,77,30,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_BOTTOMCENTER,88,103,77,30,CBS_DROPDOWNLIST | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_BOTTOMRIGHT,171,103,77,30,CBS_DROPDOWNLIST | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,2,6,251,112
+    CONTROL         "Enable Query",IDC_ENABLE_QUERY,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,89,29,57,10
+    PUSHBUTTON      "Print...",IDC_PRINT,7,26,43,18
+    EDITTEXT        IDC_YPOS,289,15,37,12,ES_AUTOHSCROLL | ES_READONLY
+    RTEXT           "ypos",IDC_STATIC,270,17,16,8
+    EDITTEXT        IDC_DY,289,29,37,12,ES_AUTOHSCROLL | ES_READONLY
+    RTEXT           "dy",IDC_STATIC,277,31,9,8
+    EDITTEXT        IDC_TOP,289,43,37,12,ES_AUTOHSCROLL | ES_READONLY
+    RTEXT           "top",IDC_STATIC,275,45,11,8
+    EDITTEXT        IDC_BOTTOM,289,71,37,12,ES_AUTOHSCROLL | ES_READONLY
+    RTEXT           "bottom",IDC_STATIC,264,73,22,8
+    EDITTEXT        IDC_PAGENO,289,99,37,12,ES_AUTOHSCROLL | ES_READONLY
+    RTEXT           "pageno",IDC_STATIC,261,101,25,8
+    GROUPBOX        "PrintData",IDC_STATIC,257,2,75,116
+    CONTROL         "Enable template && hook",IDC_HOOK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,89,39,88,10
+    EDITTEXT        IDC_LEFT,289,57,37,12,ES_AUTOHSCROLL | ES_READONLY
+    RTEXT           "left",IDC_STATIC,275,59,11,8
+    EDITTEXT        IDC_RIGHT,289,85,37,12,ES_AUTOHSCROLL | ES_READONLY
+    RTEXT           "right",IDC_STATIC,269,87,17,8
+    CONTROL         "50",IDC_50,"Button",BS_AUTORADIOBUTTON | WS_GROUP,187,
+                    39,36,9
+    CONTROL         "200",IDC_200,"Button",BS_AUTORADIOBUTTON,187,49,36,9
+    CONTROL         "500",IDC_500,"Button",BS_AUTORADIOBUTTON,187,59,36,9
+    CONTROL         "1000",IDC_1000,"Button",BS_AUTORADIOBUTTON,187,69,36,9
+    GROUPBOX        "Sample",IDC_STATIC,178,26,50,55
+END
+
+IDD_PRINTER DIALOG DISCARDABLE  0, 0, 185, 94
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Printing..."
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "EndDoc( )",IDOK,68,39,50,14
+    DEFPUSHBUTTON   "AbortDoc( )",IDCANCEL,68,56,50,14
+    PUSHBUTTON      "EndPage( )",IDC_ENDPAGE,68,22,50,14
+    GROUPBOX        "Printing operations",IDC_STATIC,45,10,95,67
+    LTEXT           "Page",IDC_STATIC,153,17,18,8
+    CTEXT           "0",IDC_PAGENO,153,31,18,9
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,147,15,31,27
+END
+
+IDD_SETDEVMODE DIALOG DISCARDABLE  0, 0, 365, 95
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Set DEVMODE"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "None",IDC_DMORIENT_None,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,31,33,98,12
+    CONTROL         "DMORIENT_PORTRAIT",IDC_DMORIENT_PORTRAIT,"Button",
+                    BS_AUTORADIOBUTTON,31,45,98,12
+    CONTROL         "DMORIENT_LANDSCAPE",IDC_DMORIENT_LANDSCAPE,"Button",
+                    BS_AUTORADIOBUTTON,31,57,98,12
+    GROUPBOX        "dmOrientation",IDC_dmOrientation,11,22,135,54,WS_GROUP
+    CONTROL         "None",IDC_DMTT_None,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,171,33,98,12
+    CONTROL         "DMTT_BITMAP",IDC_DMTT_BITMAP,"Button",
+                    BS_AUTORADIOBUTTON,171,45,98,12
+    CONTROL         "DMTT_DOWNLOAD",IDC_DMTT_DOWNLOAD,"Button",
+                    BS_AUTORADIOBUTTON,171,57,98,12
+    CONTROL         "DMTT_SUBDEV",IDC_DMTT_SUBDEV,"Button",
+                    BS_AUTORADIOBUTTON,171,69,98,12
+    GROUPBOX        "dmTTOption",IDC_dmTTOption,151,22,135,64,WS_GROUP
+    EDITTEXT        IDC_RESULT,230,2,135,12,ES_AUTOHSCROLL | ES_READONLY | 
+                    WS_DISABLED
+END
+
+PRINTDLGORD DIALOG DISCARDABLE  32, 32, 288, 186
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Print"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Printer",grp4,8,4,272,84,WS_GROUP
+    LTEXT           "&Name:",stc6,16,20,36,8
+    COMBOBOX        cmb4,52,18,152,152,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_GROUP | WS_TABSTOP
+    PUSHBUTTON      "&Properties",psh2,212,17,60,14,WS_GROUP
+    LTEXT           "Status:",stc8,16,36,36,10,SS_NOPREFIX
+    CONTROL         "",stc12,"Static",SS_LEFTNOWORDWRAP | SS_NOPREFIX | 
+                    WS_GROUP,52,36,224,10
+    LTEXT           "Type:",stc7,16,48,36,10,SS_NOPREFIX
+    CONTROL         "",stc11,"Static",SS_LEFTNOWORDWRAP | SS_NOPREFIX | 
+                    WS_GROUP,52,48,224,10
+    LTEXT           "Where:",stc10,16,60,36,10,SS_NOPREFIX
+    CONTROL         "",stc14,"Static",SS_LEFTNOWORDWRAP | SS_NOPREFIX | 
+                    WS_GROUP,52,60,224,10
+    LTEXT           "Comment:",stc9,16,72,36,10,SS_NOPREFIX
+    CONTROL         "",stc13,"Static",SS_LEFTNOWORDWRAP | SS_NOPREFIX | 
+                    WS_GROUP,52,72,152,10
+    CONTROL         "Print to fi&le",chx1,"Button",BS_AUTOCHECKBOX | 
+                    WS_GROUP | WS_TABSTOP,212,70,64,12
+    GROUPBOX        "Print range",grp1,8,92,162,64,WS_GROUP
+    CONTROL         "&All",rad1,"Button",BS_AUTORADIOBUTTON | WS_GROUP | 
+                    WS_TABSTOP,16,106,64,12
+    CONTROL         "&Months",rad3,"Button",BS_AUTORADIOBUTTON,16,122,36,12
+    CONTROL         "&Selection",rad2,"Button",BS_AUTORADIOBUTTON,16,138,64,
+                    12
+    RTEXT           "&from:",stc2,47,124,20,8
+    EDITTEXT        edt1,0,172,26,12,NOT WS_VISIBLE | WS_DISABLED | WS_GROUP
+    EDITTEXT        edt2,29,172,26,12,NOT WS_VISIBLE | WS_DISABLED | 
+                    WS_GROUP
+    GROUPBOX        "Copies",grp2,174,92,106,64,WS_GROUP
+    LTEXT           "Number of &copies:",stc5,177,108,60,8
+    EDITTEXT        edt3,240,106,32,12,WS_GROUP
+    ICON            "",ico3,194,121,18,20,SS_CENTERIMAGE | WS_GROUP
+    CONTROL         "C&ollate",chx2,"Button",BS_AUTOCHECKBOX | WS_GROUP | 
+                    WS_TABSTOP,240,130,36,12
+    DEFPUSHBUTTON   "OK",IDOK,180,164,48,14,WS_GROUP
+    PUSHBUTTON      "Cancel",IDCANCEL,232,164,48,14
+    EDITTEXT        IDC_STARTMONTH,70,123,30,12,ES_AUTOHSCROLL | WS_DISABLED
+    CONTROL         "Spin1",IDC_SPINSTART,"msctls_updown32",UDS_ARROWKEYS | 
+                    WS_TABSTOP,100,123,11,12
+    RTEXT           "&to:",stc3,112,124,10,11
+    EDITTEXT        IDC_ENDMONTH,125,123,30,12,ES_AUTOHSCROLL | WS_DISABLED
+    CONTROL         "Spin1",IDC_SPINEND,"msctls_updown32",UDS_ARROWKEYS | 
+                    WS_TABSTOP,155,123,11,12
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR DISCARDABLE  16, 15
+BEGIN
+    BUTTON      IDM_PRINTDLG
+    SEPARATOR
+    BUTTON      ID_EDIT_CUT
+    BUTTON      ID_EDIT_COPY
+    BUTTON      ID_EDIT_PASTE
+    SEPARATOR
+    BUTTON      ID_APP_ABOUT
+    BUTTON      ID_CONTEXT_HELP
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP  MOVEABLE PURE   "res\\Toolbar.bmp"
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+1 VERSIONINFO
+ FILEVERSION 4,0,0,0
+ PRODUCTVERSION 4,0,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0xbL
+#else
+ FILEFLAGS 0xaL
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904e4"
+        BEGIN
+            VALUE "Comments", "Author: Joseph M. Newcomer\0"
+            VALUE "CompanyName", "The Joseph M. Newcomer Co.\0"
+            VALUE "FileDescription", "Print Explorer\0"
+            VALUE "FileVersion", "4.0\0"
+            VALUE "InternalName", "Print Explorer\0"
+            VALUE "LegalCopyright", "Copyright © 1995 Joseph M. Newcomer\0"
+            VALUE "LegalTrademarks", "I have no trademarks, legal or otherwise.\0"
+            VALUE "OriginalFilename", "Chap11exe\0"
+            VALUE "ProductName", "Print Explorer\0"
+            VALUE "ProductVersion", "4.0\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "PrintExplorer"
+    IDR_PRINTETYPE          "\nPrintE\nPrintE\n\n\nPrintExplorer.Document\nPrintE Document"
+    IDS_PROCESSOR_LEVEL_MIPS_UNKNOWN "Unknown MIPS processor"
+    IDS_PROCESSOR_LEVEL_PPC_UNKNOWN "Unknown Power PC processor"
+    IDS_PROCESSOR_NOREV_INTEL_386 "Intel 80386 processor"
+    IDS_PROCESSOR_NOREV_INTEL_486 "Intel 80486 processor"
+    IDS_PROCESSOR_NOREV_INTEL_PENTIUM "Intel Pentium processor"
+    IDS_PROCESSOR_NOREV_MIPS_R4000 "MIPS R4000 processor"
+    IDS_PROCESSOR_NOREV_ALPHA_21064 "DEC Alpha 21064 processor"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "Print Explorer"
+    AFX_IDS_IDLEMESSAGE     "For Help, press F1"
+    AFX_IDS_HELPMODEMESSAGE "Select an object on which to get Help"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_NEW             "Create a new document\nNew"
+    ID_FILE_OPEN            "Open an existing document\nOpen"
+    ID_FILE_CLOSE           "Close the active document\nClose"
+    ID_FILE_SAVE            "Save the active document\nSave"
+    ID_FILE_SAVE_AS         "Save the active document with a new name\nSave As"
+    ID_FILE_PAGE_SETUP      "Change the printing options\nPage Setup"
+    ID_FILE_PRINT_SETUP     "Change the printer and printing options\nPrint Setup"
+    ID_FILE_PRINT           "Print the active document\nPrint"
+    ID_FILE_PRINT_PREVIEW   "Display full pages\nPrint Preview"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
+    ID_APP_EXIT             "Quit the application; prompts to save documents\nExit"
+    ID_HELP_INDEX           "Opens Help\nHelp Topics"
+    ID_HELP_FINDER          "List Help topics\nHelp Topics"
+    ID_HELP_USING           "Display instructions about how to use help\nHelp"
+    ID_CONTEXT_HELP         "Display help for clicked on buttons, menus and windows\nHelp"
+    ID_HELP                 "Display help for current task or command\nHelp"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "Open this document"
+    ID_FILE_MRU_FILE2       "Open this document"
+    ID_FILE_MRU_FILE3       "Open this document"
+    ID_FILE_MRU_FILE4       "Open this document"
+    ID_FILE_MRU_FILE5       "Open this document"
+    ID_FILE_MRU_FILE6       "Open this document"
+    ID_FILE_MRU_FILE7       "Open this document"
+    ID_FILE_MRU_FILE8       "Open this document"
+    ID_FILE_MRU_FILE9       "Open this document"
+    ID_FILE_MRU_FILE10      "Open this document"
+    ID_FILE_MRU_FILE11      "Open this document"
+    ID_FILE_MRU_FILE12      "Open this document"
+    ID_FILE_MRU_FILE13      "Open this document"
+    ID_FILE_MRU_FILE14      "Open this document"
+    ID_FILE_MRU_FILE15      "Open this document"
+    ID_FILE_MRU_FILE16      "Open this document"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_WINDOW_NEW           "Open another window for the active document\nNew Window"
+    ID_WINDOW_ARRANGE       "Arrange icons at the bottom of the window\nArrange Icons"
+    ID_WINDOW_CASCADE       "Arrange windows so they overlap\nCascade Windows"
+    ID_WINDOW_TILE_HORZ     "Arrange windows as non-overlapping tiles\nTile Windows"
+    ID_WINDOW_TILE_VERT     "Arrange windows as non-overlapping tiles\nTile Windows"
+    ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_CLEAR           "Erase the selection\nErase"
+    ID_EDIT_CLEAR_ALL       "Erase everything\nErase All"
+    ID_EDIT_COPY            "Copy the selection and put it on the Clipboard\nCopy"
+    ID_EDIT_CUT             "Cut the selection and put it on the Clipboard\nCut"
+    ID_EDIT_FIND            "Find the specified text\nFind"
+    ID_EDIT_PASTE           "Insert Clipboard contents\nPaste"
+    ID_EDIT_REPEAT          "Repeat the last action\nRepeat"
+    ID_EDIT_REPLACE         "Replace specific text with different text\nReplace"
+    ID_EDIT_SELECT_ALL      "Select the entire document\nSelect All"
+    ID_EDIT_UNDO            "Undo the last action\nUndo"
+    ID_EDIT_REDO            "Redo the previously undone action\nRedo"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "Show or hide the toolbar\nToggle ToolBar"
+    ID_VIEW_STATUS_BAR      "Show or hide the status bar\nToggle StatusBar"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+    AFX_IDS_MDICHILD        "Activate this window"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_PREVIEW_CLOSE   "Close print preview mode\nCancel Preview"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PLATFORM_WIN32_NT   "Microsoft Windows NT %u.%u (Build %u)"
+    IDS_PLATFORM_WIN32_NTAS "Microsoft Windows NT Advanced Server %u.%u (Build %u)"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PLATFORM_WIN32_NTW  "Microsoft Windows NT Workstation %u.%u (Build %u)"
+    IDS_PLATFORM_WIN32_NTS  "Microsoft Windows NT %Server u.%u (Build %u)"
+    IDS_PLATFORM_WIN32s     "Microsoft Win32s %u.%u (Build %u)"
+    IDS_PLATFORM_WIN32_WINDOWS "Microsoft Windows 95 %u.%u (Build %u)"
+    IDS_PLATFORM_UNKNOWN    "Unknown operating system %u.%u (Build %u)"
+    IDS_PROCESSOR_ARCHITECTURE_UNKNOWN "Unknown processor architecture"
+    IDS_PROCESSOR_ARCHITECTURE_INTEL_386_486 
+                            "Intel %1 step %2!0.2X! processor"
+    IDS_PROCESSOR_ARCHITECTURE_INTEL_PENTIUM 
+                            "Intel %1 model %2!d!, stepping %3!d! processor"
+    IDS_PROCESSOR_ARCHITECTURE_ALPHA 
+                            "DEC Alpha %1 model %2!c!, pass %3!d! processor"
+    IDS_PROCESSOR_ARCHITECTURE_MIPS "MIPS %1 revision %2!d! processor"
+    IDS_PROCESSOR_ARCHITECTURE_PPC 
+                            "Power PC %1 revision %2!d!.%3!d! processor"
+    IDS_PROCESSOR_LEVEL_INTEL_UNKNOWN "Unknown Intel processor"
+    IDS_PROCESSOR_LEVEL_ALPHA_UNKNOWN "Unknown Alpha processor"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_DMORIENT_LANDSCAPE  "DMORIENT_LANDSCAPE"
+    IDS_DMORIENT_PORTRAIT   "DMORIENT_PORTRAIT"
+    IDS_DMCOLOR_COLOR       "DMCOLOR_COLOR"
+    IDS_DMCOLOR_MONOCHROME  "DMCOLOR_MONOCHROME"
+    IDS_DMDUP_SIMPLEX       "DMDUP_SIMPLEX"
+    IDS_DMDUP_HORIZONTAL    "DMDUP_HORIZONTAL"
+    IDS_DMDUP_VERTICAL      "DMDUP_VERTICAL"
+    IDS_DMRES_HIGH          "DMRES_HIGH"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_DMRES_MEDIUM        "DMRES_MEDIUM"
+    IDS_DMRES_LOW           "DMRES_LOW"
+    IDS_DMRES_DRAFT         "DMRES_DRAFT"
+    IDS_DMTT_BITMAP         "DMTT_BITMAP"
+    IDS_DMTT_DOWNLOAD       "DMTT_DOWNLOAD"
+    IDS_DMTT_SUBDEV         "DMTT_SUBDEV"
+    IDS_DMCOLLATE_TRUE      "DMCOLLATE_TRUE"
+    IDS_DMCOLLATE_FALSE     "DMCOLLATE_FALSE"
+    IDS_DMGRAYSCALE         "DM_GRAYSCALE"
+    IDS_DMINTERLACED        "DM_INTERLACED"
+    IDS_DT_PLOTTER          "DT_PLOTTER"
+    IDS_DT_RASDISPLAY       "DT_RASDISPLAY"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_DT_RASPRINTER       "DT_RASPRINTER"
+    IDS_DT_RASCAMERA        "DT_RASCAMER"
+    IDS_DT_CHARSTREAM       "DT_CHARSTREAM"
+    IDS_DT_METAFILE         "DT_METAFILE"
+    IDS_DT_DISPFILE         "DT_DISPFILE"
+    IDS_RC_BANDING          "RC_BANDING"
+    IDS_RC_BITBLT           "RC_BITBLT"
+    IDS_RC_BITMAP64         "RC_BITMAP64"
+    IDS_RC_DI_BITMAP        "RC_DI_BITMAP"
+    IDS_RC_DIBTODEV         "RC_DIBTODEV"
+    IDS_RC_FLOODFILL        "RC_FLOODFILL"
+    IDS_RC_GDI20_OUTPUT     "RC_GDI20_OUTPUT"
+    IDS_RC_PALETTE          "RC_PALETTE"
+    IDS_RC_SCALING          "RC_SCALING"
+    IDS_RC_STRETCHBLT       "RC_STRETCHBLT"
+    IDS_RC_STRETCHDIB       "RC_STRETCHDIB"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_CC_NONE             "CC_NONE"
+    IDS_CC_CIRCLES          "CC_CIRCLES"
+    IDS_CC_PIE              "CC_PIE"
+    IDS_CC_CHORD            "CC_CHORD"
+    IDS_CC_ELLIPSES         "CC_ELLIPSES"
+    IDS_CC_WIDE             "CC_WIDE"
+    IDS_CC_STYLED           "CC_STYLED"
+    IDS_CC_WIDESTYLED       "CC_WIDESTYLED"
+    IDS_CC_INTERIORS        "CC_INTERIORS"
+    IDS_LC_NONE             "LC_NONE"
+    IDS_LC_POLYLINE         "LC_POLYLINE"
+    IDS_LC_MARKER           "LC_MARKER"
+    IDS_LC_POLYMARKER       "LC_POLYMARKER"
+    IDS_LC_WIDE             "LC_WIDE"
+    IDS_LC_STYLED           "LC_STYLED"
+    IDS_LC_WIDESTYLED       "LC_WIDESTYLED"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_LC_INTERIORS        "LC_INTERIORS"
+    IDS_PC_NONE             "PC_NONE"
+    IDS_PC_POLYGON          "PC_POLYGON"
+    IDS_PC_RECTANGLE        "PC_RECTANGLE"
+    IDS_PC_WINDPOLYGON      "PC_WINDPOLYGON"
+    IDS_PC_SCANLINE         "PC_SCANLINE"
+    IDS_PC_WIDE             "PC_WIDE"
+    IDS_PC_STYLED           "PC_STYLED"
+    IDS_PC_WIDESTYLED       "PC_WIDESTYLED"
+    IDS_PC_INTERIORS        "PC_INTERIORS"
+    IDS_TC_OP_CHARACTER     "TC_OP_CHARACTER"
+    IDS_TC_OP_STROKE        "TC_OP_STROKE"
+    IDS_TC_CP_STROKE        "TC_CP_STROKE"
+    IDS_TC_CR_90            "TC_CR_90"
+    IDS_TC_CR_ANY           "TC_CR_ANY"
+    IDS_TC_SF_X_YINDEP      "TC_SF_X_YINDEP"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_TC_SA_DOUBLE        "TC_SA_DOUBLE"
+    IDS_TC_SA_INTEGER       "TC_SA_INTEGER"
+    IDS_TC_SA_CONTIN        "TC_SA_CONTIN"
+    IDS_TC_EA_DOUBLE        "TC_EA_DOUBLE"
+    IDS_TC_IA_ABLE          "TC_IA_ABLE"
+    IDS_TC_UA_ABLE          "TC_UA_ABLE"
+    IDS_TC_SO_ABLE          "TC_SO_ABLE"
+    IDS_TC_RA_ABLE          "TC_RA_ABLE"
+    IDS_TC_VA_ABLE          "TC_VA_ABLE"
+    IDS_TC_RESERVED         "TC_RESERVED"
+    IDS_TC_SCROLLBLT        "TC_SCROLLBLT"
+    IDS_CC_ROUNDRECT        "CC_ROUNDRECT"
+    IDS_NO_DC               "DC field of PRINTDLG is NULL"
+    IDS_NO_DEVMODE          "DEVMODE field of PRINTDLG is NULL"
+    IDS_PRINTING_PAGE       "Printing page %d"
+    IDS_PAGENO              "Page %d"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_DCTT_BITMAP         "DCTT_BITMAP"
+    IDS_DCTT_DOWNLOAD       "DCTT_DOWNLOAD"
+    IDS_DCTT_DOWNLOAD_OUTLINE "DCTT_DOWNLOAD_OUTLINE"
+    IDS_DCTT_SUBDEV         "DCTT_SUBDEV"
+    IDS_DCBA_FACEUPNONE     "DCBA_FACEUPNONE"
+    IDS_DCBA_FACEUPCENTER   "DCBA_FACEUPCENTER"
+    IDS_DCBA_FACEUPLEFT     "DCBA_FACEUPLEFT"
+    IDS_DCBA_FACEUPRIGHT    "DCBA_FACEUPRIGHT"
+    IDS_DCBA_FACEDOWNNONE   "DCBA_FACEDOWNNONE"
+    IDS_DCBA_FACEDOWNCENTER "DCBA_FACEDOWNCENTER"
+    IDS_DCBA_FACEDOWNLEFT   "DCBA_FACEDOWNLEFT"
+    IDS_DCBA_FACEDOWNRIGHT  "DCBA_FACEDOWNRIGHT"
+    IDS_HDR_NONE            "None"
+    IDS_HDR_FILE            "File name"
+    IDS_HDR_DATE            "Date"
+    IDS_HDR_PAGENO          "Page number"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_RAW_ONLY            "RAW only"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_RC_GDI20_STATE      "RC_GDI20_STATE"
+    IDS_RC_SAVEBITMAP       "IDS_RC_SAVEBITMAP"
+    IDS_RC_BIGFONT          "RC_BIGFONT"
+    IDS_PC_TRAPEZOID        "PC_TRAPEZOID"
+    IDS_PC_POLYPOLYGON      "PC_POLYPOLYGON"
+    IDS_PC_PATHS            "PC_PATHS"
+    IDS_RC_OP_DX_OUTPUT     "RC_OP_DX_OUTPUT"
+    IDS_RC_DEVBITS          "RC_DEVBITS"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_DMPAPER_LETTER      "DMPAPER_LETTER"
+    IDS_DMPAPER_LEGAL       "DMPAPER_LEGAL"
+    IDS_DMPAPER_A4          "DMPAPER_A4"
+    IDS_DMPAPER_CSHEET      "DMPAPER_CSHEET"
+    IDS_DMPAPER_DSHEET      "DMPAPER_DSHEET"
+    IDS_DMPAPER_ESHEET      "DMPAPER_ESHEET"
+    IDS_DMPAPER_LETTERSMALL "DMPAPER_LETTERSMALL"
+    IDS_DMPAPER_TABLOID     "DMPAPER_TABLOID"
+    IDS_DMPAPER_LEDGER      "DMPAPER_LEDGER"
+    IDS_DMPAPER_STATEMENT   "DMPAPER_STATEMENT"
+    IDS_DMPAPER_EXECUTIVE   "DMPAPER_EXECUTIVE"
+    IDS_DMPAPER_A3          "DMPAPER_A3"
+    IDS_DMPAPER_A4SMALL     "DMPAPER_A4SMALL"
+    IDS_DMPAPER_A5          "DMPAPER_A5"
+    IDS_DMPAPER_B4          "DMPAPER_B4"
+    IDS_DMPAPER_FOLIO       "DMPAPER_FOLIO"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_DMPAPER_QUARTO      "DMPAPER_QUARTO"
+    IDS_DMPAPER_10X14       "DMPAPER_10X14"
+    IDS_DMPAPER_11X17       "DMPAPER_11X17"
+    IDS_DMPAPER_NOTE        "DMPAPER_NOTE"
+    IDS_DMPAPER_ENV_9       "DMPAPER_ENV_9"
+    IDS_DMPAPER_ENV_10      "DMPAPER_ENV_10"
+    IDS_DMPAPER_ENV_11      "DMPAPER_ENV_11"
+    IDS_DMPAPER_ENV_12      "DMPAPER_ENV_12"
+    IDS_DMPAPER_ENV_14      "DMPAPER_ENV_14"
+    IDS_DMPAPER_ENV_DL      "DMPAPER_ENV_DL"
+    IDS_DMPAPER_ENV_C5      "DMPAPER_ENV_C5"
+    IDS_DMPAPER_ENV_C3      "DMPAPER_ENV_C3"
+    IDS_DMPAPER_ENV_C4      "DMPAPER_ENV_C4"
+    IDS_DMPAPER_ENV_C6      "DMPAPER_ENV_C6"
+    IDS_DMPAPER_ENV_ITALY   "DMPAPER_ENV_ITALY"
+    IDS_DMPAPER_ENV_MONARCH "DMPAPER_ENV_MONARCH"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_DMPAPER_ENV_PERSONAL "DMPAPER_ENV_PERSONAL"
+    IDS_DMPAPER_FANFOLD_US  "DMPAPER_FANFOLD_US"
+    IDS_DMPAPER_FANFOLD_STD_GERMAN "DMPAPER_FANFOLD_STD_GERMAN"
+    IDS_DMPAPER_FANFOLD_LGL_GERMAN "DMPAPER_FANFOLD_LGL_GERMAN"
+    IDS_DMPAPER_B5          "DMPAPER_B5"
+    IDS_DMPAPER_ENV_B4      "DMPAPER_ENV_B4"
+    IDS_DMPAPER_ENV_B5      "DMPAPER_ENV_B5"
+    IDS_DMPAPER_ENV_B6      "DMPAPER_ENV_B6"
+    IDS_DMPAPER_ISO_B4      "DMPAPER_ISO_B4"
+    IDS_DMPAPER_JAPANESE_POSTCARD "DMPAPER_JAPANESE_POSTCARD"
+    IDS_DMPAPER_9X11        "DMPAPER_9X11"
+    IDS_DMPAPER_10X11       "DMPAPER_10X11"
+    IDS_DMPAPER_15X11       "DMPAPER_15X11"
+    IDS_DMPAPER_ENV_INVITE  "DMPAPER_ENV_INVITE"
+    IDS_DMPAPER_RESERVED_48 "DMPAPER_RESERVED_48"
+    IDS_DMPAPER_RESERVED_49 "DMPAPER_RESERVED_49"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_DMPAPER_LETTER_EXTRA "DMPAPER_LETTER_EXTRA"
+    IDS_DMPAPER_LEGAL_EXTRA "DMPAPER_LEGAL_EXTRA"
+    IDS_DMPAPER_TABLOID_EXTRA "DMPAPER_TABLOID_EXTRA"
+    IDS_DMPAPER_A4_EXTRA    "DMPAPER_A4_EXTRA"
+    IDS_DMPAPER_LETTER_TRANSVERSE "DMPAPER_LETTER_TRANSVERSE"
+    IDS_DMPAPER_A4_TRANSVERSE "DMPAPER_A4_TRANSVERSE"
+    IDS_DMPAPER_LETTER_EXTRA_TRANSVERSE "DMPAPER_LETTER_EXTRA_TRANSVERSE"
+    IDS_DMPAPER_A_PLUS      "DMPAPER_A_PLUS"
+    IDS_DMPAPER_B_PLUS      "DMPAPER_B_PLUS"
+    IDS_DMPAPER_LETTER_PLUS "DMPAPER_LETTER_PLUS"
+    IDS_DMPAPER_A4_PLUS     "DMPAPER_A4_PLUS"
+    IDS_DMPAPER_A5_TRANSVERSE "DMPAPER_A5_TRANSVERSE"
+    IDS_DMPAPER_B5_TRANSVERSE "DMPAPER_B5_TRANSVERSE"
+    IDS_DMPAPER_A3_EXTRA    "DMPAPER_A3_EXTRA"
+    IDS_DMPAPER_A5_EXTRA    "DMPAPER_A5_EXTRA"
+    IDS_DMPAPER_B5_EXTRA    "DMPAPER_B5_EXTRA"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_DMPAPER_A2          "DMPAPER_A2"
+    IDS_DMPAPER_A3_TRANSVERSE "DMPAPER_A3_TRANSVERSE"
+    IDS_DMPAPER_A3_EXTRA_TRANSVERSE "DMPAPER_A3_EXTRA_TRANSVERSE"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PAINTHOOK           "PagePaintHook"
+    IDS_WM_PSD_PAGESETUPDLG "WM_PSD_PAGESETUPDLG (%04x, %04x) = (%s, %s:%s:%s), %08x"
+    IDS_DOT_MATRIX          "Dot Matrix"
+    IDS_HPPCL               "HPPCL"
+    IDS_LANDSCAPE           "Landscape"
+    IDS_PORTRAIT            "Portrait"
+    IDS_PAPER               "Paper"
+    IDS_ENVELOPE            "Envelope"
+    IDS_HANDLE              "Handle"
+    IDS_CONTROL_TYPE        "Control type"
+    IDS_EVENT               "Event"
+    IDS_UNKNOWN             "Unknown"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_WM_PSD_GREEKTEXTRECT 
+                            "WM_PSD_GREEKTEXTRECT hdc:0x%08x {%d, %d, %d, %d}"
+    IDS_WM_PSD_YAFULLPAGERECT 
+                            "WM_PSD_YAFULLPAGERECT hdc:0x%08x {%d, %d, %d, %d}"
+    IDS_WM_PSD_MINMARGINRECT 
+                            "WM_PSD_MINMARGINRECT hdc:0x%08x {%d, %d, %d, %d}"
+    IDS_WM_PSD_MARGINRECT   "WM_PSD_MARGINRECT hdc:0x%08x {%d, %d, %d, %d}"
+    IDS_WM_PSD_FULLPAGERECT "WM_PSD_FULLPAGERECT hdc:0x%08x {%d, %d, %d, %d}"
+    IDS_WM_PSD_ENVSTAMPRECT "WM_PSD_ENVSTAMPRECT hdc:0x%08x {%d, %d, %d, %d}"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PAGE_SAMPLE         "ARTICLE I\r\n"
+    IDS_STRING1001          "Congress shall make no law respecting an establishment of religion, or prohibiting the free exercise thereof, or abridging the freedom of speech, or of the press; or the right of the people peaceably to assemble, and to petition the Government for a redress of grievances.\r\n"
+    IDS_STRING1002          "ARTICLE II\r\n"
+    IDS_STRING1003          "A well-regulated militia being necessary to the security of a free State, the right of the people to keep and bear arms shall not be infringed.\n"
+    IDS_STRING1004          "ARTICLE III\r\n"
+    IDS_STRING1005          "No soldier shall, in time of peace, be quartered in any house without the consent of the owner, nor in time of war, but in a manner to be prescribed by law.\r\n"
+    IDS_STRING1006          "ARTICLE IV\r\n"
+    IDS_STRING1007          "The right of the people to be secure in their persons, houses, papers, and effects, against unreasonable searches and seizures, shall not be violated, and no warrants shall issue, but upon probable cause, supported by oath or affirmation and particularly describing the place to be searched, and the persons or things to be seized.\r\n"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_STRING1008          "ARTICLE V\r\n"
+    IDS_STRING1009          "No person shall be held to answer for a capital, or otherwise infamous crime, unless on a presentment or indictment of a grand jury, except in cases arising the land or naval forces, or in the militia, when in actual service in time of war or public danger; nor shall any person be subject for the same offense to be twice put in jeopardy of life or limb; nor shall be compelled in only criminal case to be a witness against himself, nor be deprived of life, liberty, or property, without due process of law; nor shall private property be taken for public use, without just compensation.\r\n"
+    IDS_STRING1010          "ARTICLE VI\r\n"
+    IDS_STRING1011          "In all cirminal prosecutions the accused shall enjoy the right to a speedy and public trial, by an impartial jury of the State and district wherein the crim shall have been committed, which district shall have been previously ascertained by law, and to be informed of the nature and cause of the accusation; to be confronted with the witnesses against him; to have compulsory process for obtaining witnesses in his favor, and to have the assistance of counsel for his defense.\r\n"
+    IDS_STRING1012          "ARTICLE VII\r\n"
+    IDS_STRING1013          "In suits at common law, where the value in controversy shall exceed twenty dollars, the right of trial by jury shall be preserved, and no fact tried by a jusry shall be otherwise re-examined in any court of the United States, than according to the rules of the common law.\r\n"
+    IDS_STRING1014          "ARTICLE VIII\r\n"
+    IDS_STRING1015          "Excessive bail shall not be required, nor excessive fines imposed, nor cruel and unusual punishments inflicted.\r\n"
+    IDS_STRING1016          "ARTICLE IX\r\n"
+    IDS_STRING1017          "The enumeration in the Constitution of certain rights shall not be construed to deny or disparage others retained by the people.\r\n"
+    IDS_STRING1018          "ARTICLE X\r\n"
+    IDS_STRING1019          "The powers not delegated to the United States by the Constitution, nor prohibited by it to the States, are reserved to the States, respectively, or to the people."
+    IDS_PAGE_SAMPLE_END     "The foregoing choice of text is the consequence of watching the movie ""1776"" while proofreading this chapter of the book.  - jmn"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PDERR_GENERAL_CODES "<<base of printer codes>>"
+    IDS_PDERR_SETUPFAILURE  "PDERR_SETUPFAILURE"
+    IDS_PDERR_PARSEFAILURE  "PDERR_PARSEFAILURE"
+    IDS_PDERR_RETDEFFAILURE "PDERR_RETDEFAILURE"
+    IDS_PDERR_LOADDRVFAILURE "PDERR_LOADDRVFAILURE"
+    IDS_PDERR_GETDEVMODEFAIL "PDERR_GETDEVMODEFAIL"
+    IDS_PDERR_INITFAILURE   "PDERR_INITFAILURE"
+    IDS_PDERR_NODEVICES     "PDERR_NODEVICES"
+    IDS_PDERR_NODEFAULTPRN  "PDERR_NODEFAULTPRN"
+    IDS_PDERR_DNDMMISMATCH  "PDERR_DNDMMISMATCH"
+    IDS_PDERR_CREATEICFAILURE "PDERR_CREATEICFAILURE"
+    IDS_PDERR_PRINTERNOTFOUND "PDERR_PRINTERNOTFOUND"
+    IDS_PDERR_DEFAULTDIFFERENT "PDERR_DEFAULTDIFFERENT"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_CDERR_GENERALCODES  "<<base of general codes>>"
+    IDS_CDERR_STRUCTSIZE    "CDERR_STRUCTSIZE"
+    IDS_CDERR_INITIALIZATION "CDERR_INITIALIZATION"
+    IDS_CDERR_NOTEMPLATE    "CDERR_NOTEMPLATE"
+    IDS_CDERR_NOHINSTANCE   "CDERR_NOHINSTANCE"
+    IDS_CDERR_LOADSTRFAILURE "CDERR_LOADSTRFAILURE"
+    IDS_CDERR_FINDRESFAILURE "CDERR_FINDRESFAILURE"
+    IDS_CDERR_LOADRESFAILURE "CDERR_LOADRESFAILURE"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_CDERR_LOCKRESFAILURE "CDERR_LOCKRESFAILURE"
+    IDS_CDERR_MEMALLOCFAILURE "CDERR_MEMALLOCFAILURE"
+    IDS_CDERR_MEMLOCKFAILURE "CDERR_MEMLOCKFAILURE"
+    IDS_CDERR_NOHOOK        "CDERR_NOHOOK"
+    IDS_CDERR_REGISTERMSGFAIL "CDERR_REGISTERMSGFAIL"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDM_PRINTDLG            "Explore all aspects of printing\nPrint Explorer"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif
+#include "res\PrintExplorer.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#include "afxprint.rc"       // printing/print preview resources
+#endif
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

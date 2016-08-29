@@ -1,0 +1,16 @@
+// MAKEHELP.BAT generated Help Map file.  Used by CHARACTERSETS.HPJ. 
+ 
+// Commands (ID_* and IDM_*) 
+ 
+// Prompts (IDP_*) 
+ 
+// Resources (IDR_*) 
+HIDR_MAINFRAME                          0x20080
+HIDR_CHARACTYPE                         0x20081
+HIDR_ANSITYPE                           0x20082
+HIDR_OEMTYPE                            0x20083
+ 
+// Dialogs (IDD_*) 
+HIDD_ABOUTBOX                           0x20064
+ 
+// Frame Controls (IDW_*) 

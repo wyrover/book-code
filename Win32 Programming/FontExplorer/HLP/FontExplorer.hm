@@ -1,0 +1,30 @@
+// MAKEHELP.BAT generated Help Map file.  Used by FONTEXPLORER.HPJ. 
+ 
+// Commands (ID_* and IDM_*) 
+HIDM_FONTEXPLORER                       0x18003
+HIDM_LOGFONT                            0x18004
+HIDM_FONTSETUP                          0x18005
+HIDM_KERNEXP                            0x18006
+HIDM_GETCHARPLACEMENT                   0x18007
+HID_RASTER                              0x1800B
+HIDM_STOCKFONT                          0x1800C
+ 
+// Prompts (IDP_*) 
+ 
+// Resources (IDR_*) 
+HIDR_MAINFRAME1                         0x2006B
+HIDR_MAINFRAME                          0x20080
+HIDR_FONTEXTYPE                         0x20081
+ 
+// Dialogs (IDD_*) 
+HIDD_ABOUTBOX                           0x20064
+HIDD_OPTIONS                            0x20082
+HIDD_LOGFONT                            0x20083
+HIDD_FONTS                              0x2008B
+HIDD_KERNING                            0x2008C
+HIDD_KERNOPTIONS                        0x2008D
+HIDD_PLACEMENT                          0x2008E
+HIDD_RASTER                             0x20093
+HIDD_STOCKFONTS                         0x20094
+ 
+// Frame Controls (IDW_*) 

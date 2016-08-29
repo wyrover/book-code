@@ -1,0 +1,2 @@
+SECTIONS
+    .SHARED read write shared

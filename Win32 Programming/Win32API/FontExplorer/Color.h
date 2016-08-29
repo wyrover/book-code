@@ -1,0 +1,1 @@
+#define UWM_GETCOLOR (WM_USER+200)

@@ -1,0 +1,361 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif\r\n"
+    "#include ""res\\msgbox.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\msgbox.ico"
+IDI_JMNCO               ICON    DISCARDABLE     "res\\jmnco.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_MSGBOX_DIALOG DIALOGEX 0, 0, 288, 220
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "MessageBox Explorer"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "Buttons",IDC_STATIC,3,3,111,86
+    CONTROL         "MB_ABORTRETRYIGNORE",IDC_MB_ABORTRETRYIGNORE,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,7,14,103,10
+    CONTROL         "MB_OK",IDC_MB_OK,"Button",BS_AUTORADIOBUTTON,7,24,103,
+                    10
+    CONTROL         "MB_OKCANCEL",IDC_MB_OKCANCEL,"Button",
+                    BS_AUTORADIOBUTTON,7,34,103,10
+    CONTROL         "MB_RETRYCANCEL",IDC_MB_RETRYCANCEL,"Button",
+                    BS_AUTORADIOBUTTON,7,44,103,10
+    CONTROL         "MB_YESNO",IDC_MB_YESNO,"Button",BS_AUTORADIOBUTTON,7,54,
+                    103,10
+    CONTROL         "MB_YESNOCANCEL",IDC_MB_YESNOCANCEL,"Button",
+                    BS_AUTORADIOBUTTON,7,64,103,10
+    CONTROL         "MB_HELP",IDC_MB_HELP,"Button",BS_AUTOCHECKBOX | 
+                    WS_GROUP | WS_TABSTOP,7,74,103,10
+    GROUPBOX        "Modality",IDC_STATIC,3,89,111,45
+    CONTROL         "MB_APPLMODAL",IDC_MB_APPLMODAL,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,10,99,81,10
+    CONTROL         "MB_TASKMODAL",IDC_MB_TASKMODAL,"Button",
+                    BS_AUTORADIOBUTTON,10,110,81,10
+    CONTROL         "MB_SYSTEMMODAL",IDC_MB_SYSTEMMODAL,"Button",
+                    BS_AUTORADIOBUTTON,10,121,81,10
+    GROUPBOX        "Default",IDC_STATIC,118,3,38,54
+    CONTROL         "1",IDC_MB_DEFBUTTON1,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP | WS_TABSTOP,124,14,20,10
+    CONTROL         "2",IDC_MB_DEFBUTTON2,"Button",BS_AUTORADIOBUTTON,124,24,
+                    20,10
+    CONTROL         "3",IDC_MB_DEFBUTTON3,"Button",BS_AUTORADIOBUTTON,124,34,
+                    20,10
+    CONTROL         "4",IDC_MB_DEFBUTTON4,"Button",BS_AUTORADIOBUTTON,124,44,
+                    20,10
+    GROUPBOX        "Icon",IDC_STATIC,119,59,126,91
+    CONTROL         "None",IDC_NO_ICON,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP | WS_TABSTOP,147,71,92,10
+    ICON            "",IDC_ICONERROR_ICON,125,83,18,20
+    CONTROL         "MB_ICONERROR",IDC_MB_ICONERROR,"Button",
+                    BS_AUTORADIOBUTTON,147,86,92,10
+    ICON            "",IDC_ICONINFORMATION_ICON,125,99,18,20
+    CONTROL         "MB_ICONINFORMATION",IDC_MB_ICONINFORMATION,"Button",
+                    BS_AUTORADIOBUTTON,147,102,92,10
+    ICON            "",IDC_ICONQUESTION_ICON,125,115,18,20
+    CONTROL         "MB_ICONQUESTION",IDC_MB_ICONQUESTION,"Button",
+                    BS_AUTORADIOBUTTON,147,118,92,10
+    ICON            "",IDC_ICONWARNING_ICON,125,131,18,20
+    CONTROL         "MB_ICONWARNING",IDC_MB_ICONWARNING,"Button",
+                    BS_AUTORADIOBUTTON,147,134,92,10
+    CONTROL         "MB_RIGHT",IDC_MB_RIGHT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,165,6,109,10
+    CONTROL         "MB_RTLREADING",IDC_MB_RTLREADING,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,165,16,109,10
+    CONTROL         "MB_SERVICE_NOTIFICATION",IDC_MB_SERVICE_NOTIFICATION,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,165,26,109,10
+    CONTROL         "MB_DEFAULT_DESKTOP_ONLY",IDC_MB_DEFAULT_DESKTOP_ONLY,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,165,36,122,10
+    CONTROL         "MB_SETFOREGROUND",IDC_MB_SETFOREGROUND,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,165,46,109,10
+    LTEXT           "&Caption:",IDC_STATIC,4,173,26,8
+    EDITTEXT        IDC_CAPTION,35,171,251,14,ES_AUTOHSCROLL
+    LTEXT           "&Body",IDC_STATIC,4,189,17,8
+    EDITTEXT        IDC_BODY,35,188,251,14,ES_AUTOHSCROLL
+    LTEXT           "Result:",IDC_STATIC,4,207,22,8
+    EDITTEXT        IDC_RESULT,35,205,119,14,ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "MessageBox",IDC_MSGBOX,3,153,50,14
+    PUSHBUTTON      "&Help",ID_HELP,195,153,50,14
+    PUSHBUTTON      "Exit",IDCANCEL,142,153,50,14
+    LTEXT           "Flags",IDC_FLAGS,60,140,54,10
+    CONTROL         "NULL parent",IDC_NULLPARENT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,4,138,54,10
+END
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  22, 17, 204, 89
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "About "
+FONT 8, "System"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,166,74,32,14,WS_GROUP
+    LTEXT           "FileDescription",IDC_ABOUT_FILEDESCRIPTION,30,2,118,8
+    LTEXT           "Version ",IDC_STATIC,152,2,28,8
+    LTEXT           "ProductVersion",IDC_ABOUT_VERSION,180,2,17,8
+    LTEXT           "LegalCopyright",IDC_ABOUT_LEGALCOPYRIGHT,30,10,168,16
+    LTEXT           "Comments",IDC_ABOUT_COMMENTS,30,31,168,8
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKRECT,2,42,200,1
+    LTEXT           "OSVERSION",IDC_ABOUT_OSVERSION,4,45,196,8
+    LTEXT           "ProcessorVersion",IDC_ABOUT_PROCESSORVERSION,4,53,196,8
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKRECT,2,63,200,1
+    LTEXT           "LegalTrademarks",IDC_ABOUT_LEGALTRADEMARKS,3,68,156,18
+    ICON            IDI_JMNCO,IDC_STATIC,7,26,18,20
+    ICON            IDR_MAINFRAME,IDC_STATIC,7,4,18,20
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_MSGBOX_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 281
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 213
+    END
+
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+1 VERSIONINFO
+ FILEVERSION 4,0,0,0
+ PRODUCTVERSION 4,0,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0xbL
+#else
+ FILEFLAGS 0xaL
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904e4"
+        BEGIN
+            VALUE "Comments", "Author: Joseph M. Newcomer\0"
+            VALUE "CompanyName", "The Joseph M. Newcomer Co.\0"
+            VALUE "FileDescription", "MessageBox Explorer\0"
+            VALUE "FileVersion", "4.0\0"
+            VALUE "InternalName", "msgbox\0"
+            VALUE "LegalCopyright", "Copyright © 1996 Joseph M. Newcomer\0"
+            VALUE "LegalTrademarks", "I have no trademarks, legal or otherwise.\0"
+            VALUE "OriginalFilename", "msgbox.exe\0"
+            VALUE "ProductName", "MessageBox Explorer\0"
+            VALUE "ProductVersion", "4.0\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "&About msgbox..."
+    IDS_PLATFORM_WIN32_NT   "Microsoft Windows NT %u.%u (Build %u)"
+    IDS_PLATFORM_WIN32_NTAS "Microsoft Windows NT Advanced Server %u.%u (Build %u)"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PLATFORM_WIN32_NTW  "Microsoft Windows NT Workstation %u.%u (Build %u)"
+    IDS_PLATFORM_WIN32_NTS  "Microsoft Windows NT Server %u.%u (Build %u)"
+    IDS_PLATFORM_WIN32s     "Microsoft Win32s %u.%u (Build %u)"
+    IDS_PLATFORM_WIN32_WINDOWS "Microsoft Windows 95 %u.%u (Build %u)"
+    IDS_PLATFORM_UNKNOWN    "Unknown operating system %u.%u (Build %u)"
+    IDS_PLATFORM_WIN32_NT2  "Microsoft Windows NT %u.%u (Build %u)"
+    IDS_PLATFORM_WIN32_NTAS2 
+                            "Microsoft Windows NT Advanced Server %u.%u (Build %u)"
+    IDS_PLATFORM_WIN32_NTW2 "Microsoft Windows NT Workstation %u.%u (Build %u)"
+    IDS_PROCESSOR_ARCHITECTURE_UNKNOWN "Unknown processor architecture"
+    IDS_PROCESSOR_ARCHITECTURE_INTEL_386_486 
+                            "Intel %1 step %2!0.2X! processor"
+    IDS_PROCESSOR_ARCHITECTURE_INTEL_PENTIUM 
+                            "Intel %1 model %2!d!, stepping %3!d! processor"
+    IDS_PROCESSOR_ARCHITECTURE_ALPHA 
+                            "DEC Alpha %1 model %2!c!, pass %3!d! processor"
+    IDS_PROCESSOR_ARCHITECTURE_MIPS "MIPS %1 revision %2!d! processor"
+    IDS_PROCESSOR_ARCHITECTURE_PPC 
+                            "Power PC %1 revision %2!d!.%3!d! processor"
+    IDS_PROCESSOR_LEVEL_INTEL_UNKNOWN "Unknown Intel processor"
+    IDS_PROCESSOR_LEVEL_ALPHA_UNKNOWN "Unknown Alpha processor"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PROCESSOR_LEVEL_MIPS_UNKNOWN "Unknown MIPS processor"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PROCESSOR_LEVEL_PPC_UNKNOWN "Unknown Power PC processor"
+    IDS_PROCESSOR_NOREV_INTEL_386 "Intel 80386 processor"
+    IDS_PROCESSOR_NOREV_INTEL_486 "Intel 80486 processor"
+    IDS_PROCESSOR_NOREV_INTEL_PENTIUM "Intel Pentium processor"
+    IDS_PROCESSOR_NOREV_MIPS_R4000 "MIPS R4000 processor"
+    IDS_PROCESSOR_NOREV_ALPHA_21064 "DEC Alpha 21064 processor"
+    IDS_MB_ICONERROR        "MB_ICONERROR"
+    IDS_MB_ICONINFORMATION  "MB_ICONINFORMATION"
+    IDS_MB_ICONQUESTION     "MB_ICONQUESTION"
+    IDS_MB_ICONWARNING      "MB_ICONWARNING"
+    IDS_MB_APPLMODAL        "MB_APPLMODAL"
+    IDS_MB_TASKMODAL        "MB_TASKMODAL"
+    IDS_MB_SYSTEMODAL       "MB_SYSTEMMODAL"
+    IDS_MB_RIGHT            "MB_RIGHT"
+    IDS_MB_RTLREADING       "MB_RTLREADING"
+    IDS_MB_SERVICE_NOTIFICATION "MB_SERVICE_NOTIFICATION"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_MB_DEFAULT_DESKTOP_ONLY "MB_DEFAULT_DESKTOP_ONLY"
+    IDS_MB_SETFOREGROUND    "MB_SETFOREGROUN"
+    IDS_MB_ABORTRETRYCANCEL "MB_ABORTRETRYCANCEL"
+    IDS_MB_OKCANCEL         "MB_OKCANCEL"
+    IDS_MB_OK               "MB_OK"
+    IDS_MB_RETRYCANCEL      "MB_RETRYCANCEL"
+    IDS_MB_YESNO            "MB_YESNO"
+    IDS_MB_YESNOCANCEL      "MB_YESNOCANCEL"
+    IDS_MB_DEFBUTTON1       "MB_DEFBUTTON1"
+    IDS_MB_DEFBUTTON2       "MB_DEFBUTTON2"
+    IDS_MB_DEFBUTTON3       "MB_DEFBUTTON3"
+    IDS_MB_DEFBUTTON4       "MB_DEFBUTTON4"
+    IDS_MB_HELP             "MB_HELP"
+    IDS_IDABORT             "IDABORT"
+    IDS_IDCANCEL            "IDCANCEL"
+    IDS_IDIGNORE            "IDIGNORE"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_IDNO                "IDNO"
+    IDS_IDOK                "IDOK"
+    IDS_IDRETRY             "IDRETRY"
+    IDS_IDYES               "IDYES"
+    IDS_0                   "0"
+    IDS_SAMPLE_CAPTION      "Test MessageBox"
+    IDS_SAMPLE_BODY         "This is a sample message"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif
+#include "res\msgbox.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

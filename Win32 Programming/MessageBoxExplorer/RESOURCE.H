@@ -1,0 +1,120 @@
+//{{NO_DEPENDENCIES}}
+// Microsoft Developer Studio generated include file.
+// Used by msgbox.rc
+//
+#define IDM_ABOUTBOX                    0x0010
+#define IDD_ABOUTBOX                    100
+#define IDS_ABOUTBOX                    101
+#define IDD_MSGBOX_DIALOG               102
+#define IDS_PLATFORM_WIN32_NT           110
+#define IDS_PLATFORM_WIN32_NTAS         111
+#define IDS_PLATFORM_WIN32_NTW          112
+#define IDS_PLATFORM_WIN32_NTS          113
+#define IDS_PLATFORM_WIN32s             114
+#define IDS_PLATFORM_WIN32_WINDOWS      115
+#define IDS_PLATFORM_UNKNOWN            116
+#define IDS_PLATFORM_WIN32_NT2          117
+#define IDS_PLATFORM_WIN32_NTAS2        118
+#define IDS_PLATFORM_WIN32_NTW2         119
+#define IDS_PROCESSOR_ARCHITECTURE_UNKNOWN 120
+#define IDS_PROCESSOR_ARCHITECTURE_INTEL_386_486 121
+#define IDS_PROCESSOR_ARCHITECTURE_INTEL_PENTIUM 122
+#define IDS_PROCESSOR_ARCHITECTURE_ALPHA 123
+#define IDS_PROCESSOR_ARCHITECTURE_MIPS 124
+#define IDS_PROCESSOR_ARCHITECTURE_PPC  125
+#define IDS_PROCESSOR_LEVEL_INTEL_UNKNOWN 126
+#define IDS_PROCESSOR_LEVEL_ALPHA_UNKNOWN 127
+#define IDR_MAINFRAME                   128
+#define IDI_JMNCO                       140
+#define IDS_PROCESSOR_LEVEL_MIPS_UNKNOWN 143
+#define IDS_PROCESSOR_LEVEL_PPC_UNKNOWN 144
+#define IDS_PROCESSOR_NOREV_INTEL_386   145
+#define IDS_PROCESSOR_NOREV_INTEL_486   146
+#define IDS_PROCESSOR_NOREV_INTEL_PENTIUM 147
+#define IDS_PROCESSOR_NOREV_MIPS_R4000  148
+#define IDS_PROCESSOR_NOREV_ALPHA_21064 149
+#define IDS_MB_ICONERROR                150
+#define IDS_MB_ICONINFORMATION          151
+#define IDS_MB_ICONQUESTION             152
+#define IDS_MB_ICONWARNING              153
+#define IDS_MB_APPLMODAL                154
+#define IDS_MB_TASKMODAL                155
+#define IDS_MB_SYSTEMODAL               156
+#define IDS_MB_RIGHT                    157
+#define IDS_MB_RTLREADING               158
+#define IDS_MB_SERVICE_NOTIFICATION     159
+#define IDS_MB_DEFAULT_DESKTOP_ONLY     160
+#define IDS_MB_SETFOREGROUND            161
+#define IDS_MB_ABORTRETRYCANCEL         162
+#define IDS_MB_OKCANCEL                 163
+#define IDS_MB_OK                       164
+#define IDS_MB_RETRYCANCEL              165
+#define IDS_MB_YESNO                    166
+#define IDS_MB_YESNOCANCEL              167
+#define IDS_MB_DEFBUTTON1               168
+#define IDS_MB_DEFBUTTON2               169
+#define IDS_MB_DEFBUTTON3               170
+#define IDS_MB_DEFBUTTON4               171
+#define IDS_MB_HELP                     172
+#define IDS_IDABORT                     173
+#define IDS_IDCANCEL                    174
+#define IDS_IDIGNORE                    175
+#define IDS_IDNO                        176
+#define IDS_IDOK                        177
+#define IDS_IDRETRY                     178
+#define IDS_IDYES                       179
+#define IDS_0                           180
+#define IDS_SAMPLE_CAPTION              181
+#define IDS_SAMPLE_BODY                 182
+#define IDC_MB_ABORTRETRYIGNORE         1000
+#define IDC_MB_OK                       1001
+#define IDC_MB_OKCANCEL                 1002
+#define IDC_MB_RETRYCANCEL              1003
+#define IDC_MB_YESNO                    1004
+#define IDC_ABOUT_OSVERSION             1004
+#define IDC_MB_YESNOCANCEL              1005
+#define IDC_MB_HELP                     1006
+#define IDC_ABOUT_PROCESSORVERSION      1006
+#define IDC_MB_DEFBUTTON1               1007
+#define IDC_MB_DEFBUTTON2               1008
+#define IDC_ABOUT_FILEDESCRIPTION       1008
+#define IDC_MB_DEFBUTTON3               1009
+#define IDC_ABOUT_VERSION               1009
+#define IDC_MB_DEFBUTTON4               1010
+#define IDC_ABOUT_LEGALCOPYRIGHT        1010
+#define IDC_NO_ICON                     1011
+#define IDC_ABOUT_LEGALTRADEMARKS       1011
+#define IDC_MB_ICONERROR                1012
+#define IDC_ABOUT_COMMENTS              1012
+#define IDC_MB_ICONINFORMATION          1013
+#define IDC_MB_ICONQUESTION             1014
+#define IDC_MB_ICONWARNING              1015
+#define IDC_MB_APPLMODAL                1016
+#define IDC_MB_TASKMODAL                1017
+#define IDC_MB_SYSTEMMODAL              1018
+#define IDC_CAPTION                     1019
+#define IDC_BODY                        1020
+#define IDC_RESULT                      1021
+#define IDC_MB_RIGHT                    1022
+#define IDC_MB_RTLREADING               1023
+#define IDC_MB_SERVICE_NOTIFICATION     1024
+#define IDC_MB_DEFAULT_DESKTOP_ONLY     1025
+#define IDC_MB_SETFOREGROUND            1026
+#define IDC_MSGBOX                      1027
+#define IDC_ICONERROR_ICON              1028
+#define IDC_ICONINFORMATION_ICON        1029
+#define IDC_ICONQUESTION_ICON           1030
+#define IDC_ICONWARNING_ICON            1031
+#define IDC_FLAGS                       1032
+#define IDC_NULLPARENT                  1033
+
+// Next default values for new objects
+// 
+#ifdef APSTUDIO_INVOKED
+#ifndef APSTUDIO_READONLY_SYMBOLS
+#define _APS_NEXT_RESOURCE_VALUE        130
+#define _APS_NEXT_COMMAND_VALUE         32771
+#define _APS_NEXT_CONTROL_VALUE         1034
+#define _APS_NEXT_SYMED_VALUE           101
+#endif
+#endif

@@ -1,0 +1,1 @@
+UINT getPaperID(int paper);

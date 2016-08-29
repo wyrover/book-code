@@ -1,0 +1,30 @@
+// MAKEHELP.BAT generated Help Map file.  Used by MENUEXPLORER.HPJ. 
+ 
+// Commands (ID_* and IDM_*) 
+HIDM_MENUEXPLORER                       0x18003
+HIDM_DUMMY1                             0x18004
+HIDM_DUMMY2                             0x18005
+HIDM_DUMMY3                             0x18006
+HIDM_DUMMY4                             0x18007
+HIDM_DUMMY6                             0x18008
+HIDM_DUMMY7                             0x18009
+HIDM_ENABLE_BAR                         0x1800A
+HIDM_DUMMY9                             0x1800B
+HIDM_DUMMY8                             0x1800C
+HIDM_ENABLE_BREAK                       0x1800D
+ 
+// Prompts (IDP_*) 
+ 
+// Resources (IDR_*) 
+HIDR_MAINFRAME                          0x20080
+HIDR_MENUEXTYPE                         0x20081
+ 
+// Dialogs (IDD_*) 
+HIDD_ABOUTBOX                           0x20064
+HIDD_MENU                               0x20082
+HIDD_ADVANCED                           0x20088
+HIDD_TRACKPOPUPMENU                     0x20089
+HIDD_MENUINFO                           0x2008A
+HIDD_OWNERDRAW                          0x20094
+ 
+// Frame Controls (IDW_*) 

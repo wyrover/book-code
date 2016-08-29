@@ -1,0 +1,1 @@
+void copyToClipboard(CWnd * wnd);

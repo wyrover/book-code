@@ -1,0 +1,19 @@
+// MAKEHELP.BAT generated Help Map file.  Used by HEAPEXPLORER.HPJ. 
+ 
+// Commands (ID_* and IDM_*) 
+HIDM_HEAP                               0x18003
+HIDM_STRTEST                            0x18004
+ 
+// Prompts (IDP_*) 
+ 
+// Resources (IDR_*) 
+HIDR_MAINFRAME                          0x20080
+HIDR_HEAPEXTYPE                         0x20081
+ 
+// Dialogs (IDD_*) 
+HIDD_ABOUTBOX                           0x20064
+HIDD_HEAP                               0x20082
+HIDD_DEFAULTHEAP                        0x20083
+HIDD_CMYSTRING                          0x20084
+ 
+// Frame Controls (IDW_*) 
