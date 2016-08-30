@@ -1,6 +1,6 @@
 local p = premake
 
-workspace "test"
+workspace "boost-test"
     language "C++"
     location "build/%{_ACTION}"
     targetdir "bin"
@@ -84,15 +84,15 @@ workspace "test"
 
     function create_project(name)        
         project(name)          
-        kind "WindowedApp"                            
+        kind "ConsoleApp"                            
         characterset "MBCS"
         flags { "NoManifest", "WinMain", "StaticRuntime" }       
         defines {  }
         files
         {                                  
-            "src/test/%{prj.name}/**.h",
-            "src/test/%{prj.name}/**.cpp", 
-            "src/test/%{prj.name}/**.rc" 
+            "src/test/boost/%{prj.name}/**.h",
+            "src/test/boost/%{prj.name}/**.cpp", 
+            "src/test/boost/%{prj.name}/**.rc" 
         }
         removefiles
         {               
@@ -103,35 +103,13 @@ workspace "test"
         }       
     end
    
-    group "09 底层"
+    group "boost-test"  
 
-                 
-            
---        project "test-semaphore"          
---            kind "WindowedApp"                            
---            characterset "MBCS"
---            flags { "NoManifest", "WinMain", "StaticRuntime" }       
---            defines {  }
---            files
---            {                                  
---                "src/test/%{prj.name}/**.h",
---                "src/test/%{prj.name}/**.cpp", 
---                "src/test/%{prj.name}/**.rc" 
---            }
---            removefiles
---            {               
---            }
---            includedirs
---            {                   
---                "3rdparty"   
---            }      -        
-            
-
-            matches = os.matchdirs("src/test/*")
-            for i = #matches, 1, -1 do
-                --p.w(path.getname(matches[i]))  
-                create_project(path.getname(matches[i]))
-            end
+        matches = os.matchdirs("src/test/boost/*")
+        for i = #matches, 1, -1 do
+            --p.w(path.getname(matches[i]))  
+            create_project(path.getname(matches[i]))
+        end
         
 
 
