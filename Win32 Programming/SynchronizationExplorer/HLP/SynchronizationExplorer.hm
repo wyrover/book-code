@@ -1,0 +1,17 @@
+// MAKEHELP.BAT generated Help Map file.  Used by SYNCHRONIZATIONEXPLORER.HPJ. 
+ 
+// Commands (ID_* and IDM_*) 
+ 
+// Prompts (IDP_*) 
+ 
+// Resources (IDR_*) 
+HIDR_MAINFRAME                          0x20080
+HIDR_SYNCHRTYPE                         0x20081
+HIDR_PANEL                              0x20082
+ 
+// Dialogs (IDD_*) 
+HIDD_ABOUTBOX                           0x20064
+HIDD_TASK                               0x20082
+HIDD_CONTROL                            0x20083
+ 
+// Frame Controls (IDW_*) 

@@ -1,0 +1,124 @@
+//{{NO_DEPENDENCIES}}
+// Microsoft Developer Studio generated include file.
+// Used by CursorIconExplorer.rc
+//
+#define IDD_ABOUTBOX                    100
+#define IDS_PLATFORM_WIN32_NT           110
+#define IDS_PLATFORM_WIN32_NTAS         111
+#define IDS_PLATFORM_WIN32_NTW          112
+#define IDS_PLATFORM_WIN32_NTS          113
+#define IDS_PLATFORM_WIN32s             114
+#define IDS_PLATFORM_WIN32_WINDOWS      115
+#define IDS_PLATFORM_UNKNOWN            116
+#define IDS_PROCESSOR_ARCHITECTURE_UNKNOWN 120
+#define IDS_PROCESSOR_ARCHITECTURE_INTEL_386_486 121
+#define IDS_PROCESSOR_ARCHITECTURE_INTEL_PENTIUM 122
+#define IDS_PROCESSOR_ARCHITECTURE_ALPHA 123
+#define IDS_PROCESSOR_ARCHITECTURE_MIPS 124
+#define IDS_PROCESSOR_ARCHITECTURE_PPC  125
+#define IDS_PROCESSOR_LEVEL_INTEL_UNKNOWN 126
+#define IDS_PROCESSOR_LEVEL_ALPHA_UNKNOWN 127
+#define IDR_MAINFRAME                   128
+#define IDR_CURSORTYPE                  129
+#define IDD_OBM                         130
+#define IDI_JMNCO                       130
+#define IDS_PROCESSOR_LEVEL_MIPS_UNKNOWN 130
+#define IDS_PROCESSOR_LEVEL_PPC_UNKNOWN 131
+#define IDI_CAT                         131
+#define IDD_ICON                        132
+#define IDS_PROCESSOR_NOREV_INTEL_386   132
+#define IDS_PROCESSOR_NOREV_INTEL_486   133
+#define IDD_CURSORS                     134
+#define IDS_PROCESSOR_NOREV_INTEL_PENTIUM 134
+#define IDD_FMTMSG                      135
+#define IDS_PROCESSOR_NOREV_MIPS_R4000  135
+#define IDS_PROCESSOR_NOREV_ALPHA_21064 136
+#define IDS_PROCESSOR_LEVEL_MIPS_UNKNOWN2 137
+#define IDD_MSGTABLE                    138
+#define IDS_PROCESSOR_LEVEL_PPC_UNKNOWN2 138
+#define IDS_PROCESSOR_NOREV_INTEL_387   139
+#define IDS_PROCESSOR_NOREV_INTEL_487   140
+#define IDS_PROCESSOR_NOREV_INTEL_PENTIUM2 141
+#define IDS_PROCESSOR_NOREV_MIPS_R4001  142
+#define IDS_PROCESSOR_NOREV_ALPHA_21065 143
+#define IDS_EXPLAIN                     144
+#define IDC_ICONDEMO                    1000
+#define IDC_ABOUT_OSVERSION             1004
+#define IDC_ABOUT_PROCESSORVERSION      1006
+#define IDC_ABOUT_FILEDESCRIPTION       1008
+#define IDC_ABOUT_VERSION               1009
+#define IDC_ABOUT_LEGALCOPYRIGHT        1010
+#define IDC_ABOUT_LEGALTRADEMARKS       1011
+#define IDC_ABOUT_COMMENTS              1012
+#define IDC_RESULT                      1015
+#define IDC_COPY                        1016
+#define IDC_BITMAP                      1017
+#define IDC_AUTOCOPY                    1019
+#define IDC_ICONDISPLAY                 1021
+#define IDC_FMT                         1023
+#define IDC_P1                          1024
+#define IDC_P2                          1025
+#define IDC_P3                          1026
+#define IDC_TESTBUFF                    1027
+#define IDC_MSGBOX                      1028
+#define IDC_ENGLISH                     1033
+#define IDC_GERMAN                      1034
+#define IDC_SPANISH                     1035
+#define IDC_FRENCH                      1036
+#define IDC_HELLO                       1037
+#define IDC_GOODBYE                     1038
+#define IDC_BAD                         1039
+#define IDC_CAT                         1039
+#define IDC_NOTSOGOOD                   1040
+#define IDC_FISH                        1040
+#define IDC_OK                          1041
+#define IDC_MSGID                       1042
+#define IDC_MSG                         1043
+#define OBM_LFARROWI                    32734
+#define OBM_RGARROWI                    32735
+#define OBM_DNARROWI                    32736
+#define OBM_UPARROWI                    32737
+#define OBM_COMBO                       32738
+#define OBM_MNARROW                     32739
+#define OBM_LFARROWD                    32740
+#define OBM_RGARROWD                    32741
+#define OBM_DNARROWD                    32742
+#define OBM_UPARROWD                    32743
+#define OBM_REDUCED                     32746
+#define OBM_RESTORE                     32747
+#define OBM_ZOOM                        32748
+#define OBM_REDUCE                      32749
+#define OBM_LFARROW                     32750
+#define OBM_RGARROW                     32751
+#define OBM_DNARROW                     32752
+#define OBM_UPARROW                     32753
+#define OBM_CLOSE                       32754
+#define OBM_OLD_RESTORE                 32755
+#define OBM_OLD_ZOOM                    32756
+#define OBM_OLD_REDUCE                  32757
+#define OBM_BTNCORNERS                  32758
+#define OBM_CHECKBOXES                  32759
+#define OBM_CHECK                       32760
+#define OBM_BTSIZE                      32761
+#define OBM_OLD_LFARROW                 32762
+#define OBM_OLD_RGARROW                 32763
+#define OBM_OLD_DNARROW                 32764
+#define OBM_OLD_UPARROW                 32765
+#define OBM_SIZE                        32766
+#define OBM_OLD_CLOSE                   32767
+#define IDM_MSGBOX                      32771
+#define IDM_FMTMSG                      32772
+#define IDM_LOCALIZE                    32773
+#define IDM_CURSORS                     32774
+
+// Next default values for new objects
+// 
+#ifdef APSTUDIO_INVOKED
+#ifndef APSTUDIO_READONLY_SYMBOLS
+#define _APS_3D_CONTROLS                     1
+#define _APS_NEXT_RESOURCE_VALUE        132
+#define _APS_NEXT_COMMAND_VALUE         32775
+#define _APS_NEXT_CONTROL_VALUE         1002
+#define _APS_NEXT_SYMED_VALUE           101
+#endif
+#endif

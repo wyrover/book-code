@@ -1,0 +1,27 @@
+#------------------------
+# make file
+#------------------------
+
+all : generic.exe
+
+OBJS = generic.obj msgcolor.obj
+COMPILE_OPTS = -c -Gsw -Od -W3 -Zipe -AM 
+LINK_OPTS = /CO /MAP /NOD /align:16
+
+generic.res : generic.rc generic.h
+     rc  -r generic.rc
+     
+generic.obj : generic.c generic.h  msgcolor.h
+     cl $(COMPILE_OPTS) generic.c
+     
+msgcolor.obj : msgcolor.c msgcolor.h
+     cl $(COMPILE_OPTS) msgcolor.c     
+         
+generic.exe :: $(OBJS) generic.def generic.res
+     link $(LINK_OPTS) $(OBJS), generic, generic, mlibcew libw, generic
+     mapsym generic
+     rc  generic.res
+     
+generic.exe ::  generic.res
+     rc generic.res
+

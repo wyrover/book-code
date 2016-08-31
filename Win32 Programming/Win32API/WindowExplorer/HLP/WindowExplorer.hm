@@ -1,0 +1,37 @@
+// MAKEHELP.BAT generated Help Map file.  Used by WINDOW EXPLORER.HPJ. 
+ 
+// Commands (ID_* and IDM_*) 
+HIDM_WNDEXP                             0x18003
+HIDM_DESTROY                            0x18005
+HIDM_PROPERTIES                         0x18006
+HIDM_ROUND_FILE                         0x18007
+HIDM_FLAT_FILE                          0x18008
+HIDM_HALF_ROUND                         0x18009
+HIDM_OCEAN_VIEW                         0x1800A
+HIDM_MOUNTAIN_VIEW                      0x1800B
+HIDM_BAY_WINDOW                         0x1800C
+HIDM_PICTURE_WINDOW                     0x1800D
+HIDM_TRIPLE_GLAZED                      0x1800E
+HIDM_RAT_TAIL                           0x1800F
+HID_HELP_NOHELP                         0x18010
+HIDM_NOHELP                             0x18011
+HIDM_EDIT_SNIP                          0x18012
+HIDM_PLAGIARIZE                         0x18013
+HIDM_GLUE                               0x18014
+HIDM_ABOUT_THIS                         0x18015
+HIDM_KILLME                             0x18016
+ 
+// Prompts (IDP_*) 
+ 
+// Resources (IDR_*) 
+HIDR_MAINFRAME                          0x20080
+HIDR_WINDOWTYPE                         0x20081
+HIDR_CONTEXTMENU                        0x20087
+HIDR_MENU1                              0x200FA
+ 
+// Dialogs (IDD_*) 
+HIDD_ABOUTBOX                           0x20064
+HIDD_CREATEWINDOWEX                     0x20083
+HIDD_STYLES                             0x20084
+ 
+// Frame Controls (IDW_*) 

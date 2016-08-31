@@ -1,0 +1,51 @@
+==============================================================================
+                        ArmourBack Rhino PLAYER MODEL
+==============================================================================
+DESCRIPTION:
+
+	A plugin player model representing the 'Rhino' Battlesuit.
+
+	     From the 'ArmourBack' deathmatch pack included in 
+	            Disposable Heroes - by The Coven
+
+    This model can be used as a player model in Quake2 deathmatch mode.
+------------------------------------------------------------------------------
+INSTALLATION:
+
+	1) Unzip INCLUDING paths to the \quake2\ (or equivalent) directory.
+
+		OR
+
+	2) Unzip and stuff all files into a directory like so:
+	   quake2\baseq2\players\Rhino\
+
+	NOTE: It is critical that the files be located in the directory called 
+	      \Rhino\  any other directory name will cause malfunctions, and 
+	      you will get skin related errors in software video mode.
+
+
+PROBLEM ?
+    1) Engage brain.
+
+    2) if Engaging brain fails please contact us at 
+                  coven@planetquake.com
+
+------------------------------------------------------------------------------
+CREDIT AND COPYRIGHT:
+
+   Model: Andreas Möller <andreas.moller@karlstad.mail.telia.com,Internet>
+
+           Sounds :  Eric vonRothkirch <Electro-Emoboy@msn.com>
+
+            Animations:  Andrew Eglington <egg@powerup.com.au>
+
+                Skin:  Jens Matthies <jens.matthies@nwt.se>
+
+                ---------------------------------------
+                   This work remains the property of
+
+                             The Coven
+                  http://www.planetquake.com/TheCoven/
+               ---------------------------------------
+
+================================ END =========================================

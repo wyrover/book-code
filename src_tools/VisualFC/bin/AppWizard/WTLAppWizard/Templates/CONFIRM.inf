@@ -1,0 +1,73 @@
+[!if WTL_PROJTYPE_SDI]
+SDI type application [!output PROJECT_NAME] using WTL and ATL
+[!elif WTL_PROJTYPE_MTSDI]
+Multiple threads SDI type application $$ROOT$$ using WTL and ATL
+[!elif WTL_PROJTYPE_MDI]
+MDI type application $$ROOT$$ using WTL and ATL
+[!elif WTL_PROJTYPE_DLG_FRAME]
+Frame dialog based application [!output PROJECT_NAME] using WTL and ATL
+[!elif WTL_PROJTYPE_DLG_MODAL]
+Simple modal dialog based application $$ROOT$$ using WTL and ATL
+[!elif WTL_PROJTYPE_DLG]
+Dialog based application $$ROOT$$ using WTL and ATL
+[!endif]
+
+Classes to be created:
+[!if WTL_PROJTYPE_DLG]
+    Main Dialog: CMainDlg in maindlg.h
+[!else]
+    Main Frame: $$FRAME_CLASS$$ in $$frame_hfile$$.h
+[!endif]
+[!if WTL_PROJTYPE_MDI)
+    MDI Child: $$CHILD_FRAME_CLASS$$ in $$child_frame_hfile$$.h
+[!endif]
+[!if USE_VIEW_CLASS]
+    View: $$VIEW_CLASS$$ in $$root$$View.h
+[!endif]
+
+Features:
+[!if WTL_COM_SERVER]
+   + Application is a COM server
+[!endif]
+[!if WTL_HOST_AX]
+   + ActiveX controls containment enabled
+[!endif]
+
+[!if WTL_USE_TOOLBAR]
+   + Toolbar in main frame
+[!endif]
+[!if WTL_USE_STATUSBAR]
+   + Status bar in main frame
+[!endif]
+[!if WTL_USE_VIEW]
+[!if WTL_VIEWTYPE_FORM]
+   + View window uses a dialog based form
+$$IF(CREATE_AS_HOST)
+   + Form can host ActiveX controls
+$$ENDIF //CREATE_AS_HOST
+$$ELIF(VIEWTYPE_LISTBOX)
+   + View window superclasses List Box control
+$$ELIF(VIEWTYPE_EDIT)
+   + View window superclasses Edit control
+$$ELIF(VIEWTYPE_LISTVIEW)
+   + View window superclasses List View control
+$$ELIF(VIEWTYPE_TREEVIEW)
+   + View window superclasses Tree View control
+$$ELIF(VIEWTYPE_RICHEDIT)
+   + View window superclasses Rich Edit control
+$$ELIF(VIEWTYPE_DHTML || VIEWTYPE_DHTML_OLD)
+   + View window displays an HTML page
+$$ENDIF //VIEWTYPE_*
+$$IF(NOT_YET_IMPLEMENTED)
+   -  Printing and Print Preview support in view
+$$ENDIF //NOT_YET_IMPLEMENTED
+$$ENDIF //USE_VIEW_CLASS
+$$ENDIF //ATL_PROJTYPE_DLGMODAL
+$$ENDIF //ATL_PROJTYPE_DLG
+$$IF(ATL_PROJTYPE_DLG || ATL_PROJTYPE_DLGMODAL)
+$$IF(CREATE_AS_HOST)
+   + Dialog can host ActiveX controls
+$$ENDIF //CREATE_AS_HOST
+$$ENDIF //(ATL_PROJTYPE_DLG || ATL_PROJTYPE_DLGMODAL)
+   + Localizable text in:
+         English [United States]

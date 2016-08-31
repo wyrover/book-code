@@ -1,0 +1,674 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+#include "winver.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_BR                  ICON    DISCARDABLE     "res\\br.ico"
+IDI_JMNCO               ICON    DISCARDABLE     "res\\jmnco.ico"
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\Initials.ico"
+IDI_SYSMETRICS          ICON    DISCARDABLE     "res\\sysmetrics.ico"
+IDI_DEVCAPS             ICON    DISCARDABLE     "res\\devcaps.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&New\tCtrl+N",                ID_FILE_NEW, GRAYED
+        MENUITEM "&Open...\tCtrl+O",            ID_FILE_OPEN, GRAYED
+        MENUITEM "&Close",                      ID_FILE_CLOSE, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "&Save\tCtrl+S",               ID_FILE_SAVE, GRAYED
+        MENUITEM "Save &As...\tF12",            ID_FILE_SAVE_AS, GRAYED
+        MENUITEM "Save Al&l",                   ID_FILE_SAVE_ALL, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "P&age Setup...",              ID_FILE_PAGE_SETUP, GRAYED
+        MENUITEM "&Print...\tCtrl+P",           ID_FILE_PRINT, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "&Undo\tCtrl+Z",               ID_EDIT_UNDO, GRAYED
+        MENUITEM "&Redo\tCtrl+A",               ID_EDIT_REDO, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "Cu&t\tCtrl+X",                ID_EDIT_CUT, GRAYED
+        MENUITEM "&Copy\tCtrl+C",               ID_EDIT_COPY, GRAYED
+        MENUITEM "&Paste\tCtrl+V",              ID_EDIT_PASTE, GRAYED
+        MENUITEM "&Delete\tDel",                ID_EDIT_CLEAR, GRAYED
+        MENUITEM "Select Al&l",                 ID_EDIT_SELECT_ALL, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "Pr&operties...\tAlt+Enter",   ID_EDIT_PROPERTIES, GRAYED
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&System Metrics",             IDM_SYSMETRICS
+        MENUITEM "&Device Capabilities",        IDM_DEVCAPS
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&Help Topics...",             ID_HELP_HELP_TOPICS
+        MENUITEM SEPARATOR
+        MENUITEM "&About System Explorer...",   ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS MOVEABLE PURE 
+BEGIN
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL
+    "P",            ID_FILE_PRINT,          VIRTKEY, CONTROL
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY 
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT
+    VK_F12,         ID_FILE_SAVE_AS,        VIRTKEY, CONTROL, NOINVERT
+    "A",            ID_EDIT_REDO,           VIRTKEY, CONTROL, NOINVERT
+    VK_DELETE,      ID_EDIT_CLEAR,          VIRTKEY, CONTROL, NOINVERT
+    VK_RETURN,      ID_EDIT_PROPERTIES,     VIRTKEY, ALT, NOINVERT
+    "/",            ID_APP_ABOUT,           ASCII,  ALT, NOINVERT
+    "?",            ID_APP_ABOUT,           ASCII,  ALT, NOINVERT
+    VK_F1,          ID_HELP_HELP_TOPICS,    VIRTKEY, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  22, 17, 204, 95
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "About "
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,166,79,32,14,WS_GROUP
+    ICON            IDR_MAINFRAME,IDC_STATIC,5,0,15,16
+    LTEXT           "FileDescription",IDC_ABOUT_FILEDESCRIPTION,30,2,118,8
+    LTEXT           "Version ",IDC_STATIC,152,2,28,8
+    LTEXT           "ProductVersion",IDC_ABOUT_VERSION,180,2,17,8
+    LTEXT           "LegalCopyright",IDC_ABOUT_LEGALCOPYRIGHT,30,10,168,17
+    LTEXT           "Comments",IDC_ABOUT_COMMENTS,30,28,168,18
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKRECT,2,47,200,1
+    LTEXT           "OSVERSION",IDC_ABOUT_OSVERSION,4,50,196,8
+    LTEXT           "ProcessorVersion",IDC_ABOUT_PROCESSORVERSION,4,58,196,8
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKRECT,2,68,200,1
+    LTEXT           "LegalTrademarks",IDC_ABOUT_LEGALTRADEMARKS,3,73,156,18
+    ICON            IDR_BR,IDC_STATIC,5,14,15,16
+    ICON            IDI_JMNCO,IDC_STATIC,5,28,15,16
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+1 VERSIONINFO
+ FILEVERSION 1,0,0,0
+ PRODUCTVERSION 1,0,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0xbL
+#else
+ FILEFLAGS 0xaL
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "Authors: Brent Rector and Joseph M. Newcomer\0"
+            VALUE "CompanyName", "Wise Owl Consulting, Inc. and The Joseph M. Newcomer Co.\0"
+            VALUE "FileDescription", "System Explorer\0"
+            VALUE "FileVersion", "1.0\0"
+            VALUE "InternalName", "Template\0"
+            VALUE "LegalCopyright", "Copyright © 1996, Wise Owl Consulting, Inc. and The Joseph M. Newcomer Co.\0"
+            VALUE "LegalTrademarks", "We have no trademarks, legal or otherwise.\0"
+            VALUE "OriginalFilename", "SysExp.exe\0"
+            VALUE "ProductName", "System Explorer\0"
+            VALUE "ProductVersion", "1.0\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""winver.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP  DISCARDABLE     "res\\toolbar.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 83
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_APP_TITLE           "System Explorer"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "System Explorer Frame Window Class"
+    IDS_PLATFORM_WIN32_NT   "Microsoft Windows NT %u.%u (Build %u)"
+    IDS_PLATFORM_WIN32_NTAS "Microsoft Windows NT Advanced Server %u.%u (Build %u)"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PLATFORM_WIN32_NTW  "Microsoft Windows NT Workstation %u.%u (Build %u)"
+    IDS_PLATFORM_WIN32_NTS  "Microsoft Windows NT Server %u.%u (Build %u)"
+    IDS_PLATFORM_WIN32s     "Microsoft Win32s %u.%u (Build %u)"
+    IDS_PLATFORM_WIN32_WINDOWS "Microsoft Windows 95 %u.%u (Build %u)"
+    IDS_PLATFORM_UNKNOWN    "Unknown operating system %u.%u (Build %u)"
+    IDS_PROCESSOR_ARCHITECTURE_UNKNOWN "Unknown processor architecture"
+    IDS_PROCESSOR_ARCHITECTURE_INTEL_386_486 
+                            "Intel %1 step %2!0.2X! processor"
+    IDS_PROCESSOR_ARCHITECTURE_INTEL_PENTIUM 
+                            "Intel %1 model %2!d!, stepping %3!d! processor"
+    IDS_PROCESSOR_ARCHITECTURE_ALPHA 
+                            "DEC Alpha %1 model %2!c!, pass %3!d! processor"
+    IDS_PROCESSOR_ARCHITECTURE_MIPS "MIPS %1 revision %2!d! processor"
+    IDS_PROCESSOR_ARCHITECTURE_PPC 
+                            "Power PC %1 revision %2!d!.%3!d! processor"
+    IDS_PROCESSOR_LEVEL_INTEL_UNKNOWN "Unknown Intel processor"
+    IDS_PROCESSOR_LEVEL_ALPHA_UNKNOWN "Unknown Alpha processor"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PROCESSOR_LEVEL_MIPS_UNKNOWN "Unknown MIPS processor"
+    IDS_PROCESSOR_LEVEL_PPC_UNKNOWN "Unknown Power PC processor"
+    IDS_PROCESSOR_NOREV_INTEL_386 "Intel 80386 processor"
+    IDS_PROCESSOR_NOREV_INTEL_486 "Intel 80486 processor"
+    IDS_PROCESSOR_NOREV_INTEL_PENTIUM "Intel Pentium processor"
+    IDS_PROCESSOR_NOREV_MIPS_R4000 "MIPS R4000 processor"
+    IDS_PROCESSOR_NOREV_ALPHA_21064 "DEC Alpha 21064 processor"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_SM_CXSCREEN         "SM_CXSCREEN"
+    233                     "Width of screen"
+    IDS_SM_CYSCREEN         "SM_CYSCREEN"
+    235                     "Height of screen"
+    IDS_SM_CXFRAME          "SM_CXFRAME"
+    237                     "Width of window frame that can be sized"
+    IDS_SM_CYFRAME          "SM_CYFRAME"
+    239                     "Height of window frame that can be sized"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_SM_CXHSCROLL        "SM_CXHSCROLL"
+    241                     "Width of arrow bitmap on horizontal scroll bar"
+    IDS_SM_CYHSCROLL        "SM_CYHSCROLL"
+    243                     "Height of arrow bitmap on horizontal scroll bar"
+    IDS_SM_CXVSCROLL        "SM_CXVSCROLL"
+    245                     "Width of arrow bitmap on vertical scroll bar"
+    IDS_SM_CYVSCROLL        "SM_CYVSCROLL"
+    247                     "Height of arrow bitmap on vertical scroll bar"
+    IDS_SM_CYCAPTION        "SM_CYCAPTION"
+    249                     "Height of caption"
+    IDS_SM_CXBORDER         "SM_CXBORDER"
+    251                     "Width of window frame that cannot be sized"
+    IDS_SM_CYBORDER         "SM_CYBORDER"
+    253                     "Height of window frame that cannot be sized"
+    IDS_SM_CXDLGFRAME       "SM_CXDLGFRAME"
+    255                     "Width of WS_DLGFRAME frame"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_SM_CYDLGFRAME       "SM_CYDLGFRAME"
+    257                     "Height of WS_DLGFRAME frame"
+    IDS_SM_CXHTHUMB         "SM_CXHTHUMB"
+    259                     "Width of scroll box on horizontal scroll bar"
+    IDS_SM_CYVTHUMB         "SM_CYVTHUMB"
+    261                     "Height of scroll box on vertical scroll bar"
+    IDS_SM_CXICON           "SM_CXICON"
+    263                     "Width of icon"
+    IDS_SM_CYICON           "SM_CYICON"
+    265                     "Height of icon"
+    IDS_SM_CXCURSOR         "SM_CXCURSOR"
+    267                     "Width of cursor"
+    IDS_SM_CYCURSOR         "SM_CYCURSOR"
+    269                     "Height of cursor"
+    IDS_SM_CYMENU           "SM_CYMENU"
+    271                     "Height of single line menu bar"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_SM_CXFULLSCREEN     "SM_CXFULLSCREEN"
+    273                     "Width of full screen window's client area"
+    IDS_SM_CYFULLSCREEN     "SM_CYFULLSCREEN"
+    275                     "Height of full screen window's client area"
+    IDS_SM_CYKANJIWINDOW    "SM_CYKANJIWINDOW"
+    277                     "Height of Kanji window"
+    IDS_SM_MOUSEPRESENT     "SM_MOUSEPRESENT"
+    279                     "Mouse is installed"
+    IDS_SM_DEBUG            "SM_DEBUG"
+    281                     "Windows debug version"
+    IDS_SM_SWAPBUTTON       "SM_SWAPBUTTON"
+    283                     "Mouse buttons swapped"
+    IDS_SM_RESERVED1        "SM_RESERVED1"
+    285                     "Reserved system metric 1"
+    IDS_SM_RESERVED2        "SM_RESERVED2"
+    287                     "Reserved system metric 2"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_SM_RESERVED3        "SM_RESERVED3"
+    289                     "Reserved system metric 3"
+    IDS_SM_RESERVED4        "SM_RESERVED4"
+    291                     "Reserved system metric 4"
+    IDS_SM_CXMIN            "SM_CXMIN"
+    293                     "Minimum width of a window"
+    IDS_SM_CYMIN            "SM_CYMIN"
+    295                     "Minimum height of a window"
+    IDS_SM_CXSIZE           "SM_CXSIZE"
+    297                     "Width of title bar bitmaps"
+    IDS_SM_CYSIZE           "SM_CYSIZE"
+    299                     "Height of title bar bitmaps"
+    IDS_SM_CXMINTRACK       "SM_CXMINTRACK"
+    301                     "Minimum tracking width of a window"
+    IDS_SM_CYMINTRACK       "SM_CYMINTRACK"
+    303                     "Minimum tracking height of a window"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_SM_CXDOUBLECLK      "SM_CXDOUBLECLK"
+    305                     "Width of double-click rectangle"
+    IDS_SM_CYDOUBLECLK      "SM_CYDOUBLECLK"
+    307                     "Height of double-click rectangle"
+    IDS_SM_CXICONSPACING    "SM_CXICONSPACING"
+    309                     "Width of icon tiling rectangle"
+    IDS_SM_CYICONSPACING    "SM_CYICONSPACING"
+    311                     "Height of icon tiling rectangle"
+    IDS_SM_MENUDROPALIGNMENT "SM_MENUDROPALIGNMENT"
+    313                     "Popup menu alignment code"
+    IDS_SM_PENWINDOWS       "SM_PENWINDOWS"
+    315                     "Pen Windows DLL handle"
+    IDS_SM_DBCSENABLED      "SM_DBCSENABLED"
+    317                     "Double-byte characters are in use"
+    IDS_SM_CMETRICS         "SM_CMETRICS"
+    319                     "Number of system metrics"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_SM_CYFIXEDFRAME     "SM_CYFIXEDFRAME"
+    337                     "Fixed frame height"
+    IDS_SM_CXMAXIMIZED      "SM_CXMAXIMIZED"
+    339                     "Maximized x"
+    IDS_SM_CYMAXIMIZED      "SM_CYMAXIMIZED"
+    341                     "Maximized y"
+    IDS_SM_CXMAXTRACK       "SM_CXMAXTRACK"
+    343                     "Max track x"
+    IDS_SM_CYMAXTRACK       "SM_CYMAXTRACK"
+    345                     "Max track y"
+    IDS_SM_CXMENUCHECK      "SM_CXMENUCHECK"
+    347                     "Menu check mark width"
+    IDS_SM_CYMENUCHECK      "SM_CYMENUCHECK"
+    349                     "Menu check mark height"
+    IDS_SM_CXMENUSIZE       "SM_CXMENUSIZE"
+    351                     "Width of menu button"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_SM_CYMENUSIZE       "SM_CYMENUSIZE"
+    353                     "Height of menu button"
+    IDS_SM_CXMINIMIZED      "SM_CXMINIMIZED"
+    355                     "Minimized width"
+    IDS_SM_CYMINIMIZED      "SM_CYMINIMIZED"
+    357                     "Minimized height"
+    IDS_SM_CXMINSPACING     "SM_CXMINSPACING"
+    359                     "Minimum spacing"
+    IDS_SM_CYMINSPACING     "SM_CYMINSPACING"
+    361                     "Minimum spacing"
+    IDS_SM_CYSMCAPTION      "SM_CYSMCAPTION"
+    363                     "Height of small window caption"
+    IDS_SM_CXSMICON         "SM_CXSMICON"
+    365                     "Width of small icon"
+    IDS_SM_CYSMICON         "SM_CYSMICON"
+    367                     "Height of small icon"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_SCROLLINGWINDOWCLASS "ScrollingWindowClass"
+    IDS_SYSTEMMETRICSCLASS  "SystemMetricsClass"
+    IDS_SYSTEMMETRICSTITLE  "System Metrics"
+    IDS_DEVICECAPSCLASS     "DeviceCapsClass"
+    IDS_DEVICECAPSTITLE     "Device Capabilities"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_NEW             "Create a new document\nNew"
+    ID_FILE_OPEN            "Open an existing document\nOpen"
+    ID_FILE_CLOSE           "Close the active document\nClose"
+    ID_FILE_SAVE            "Save the active document\nSave"
+    ID_FILE_SAVE_AS         "Save the active document with a new name\nSave As"
+    ID_FILE_SAVE_ALL        "Save all open documents\nSave All"
+    ID_FILE_PAGE_SETUP      "Change the printing options\nPage Setup"
+    ID_FILE_PRINT_SETUP     "Change the printer and printing options\nPrint Setup"
+    ID_FILE_PRINT           "Print the active document\nPrint"
+    ID_FILE_PRINT_PREVIEW   "Display full pages\nPrint Preview"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
+    ID_APP_EXIT             "Quit the application; prompts to save documents\nExit"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "Open this document"
+    ID_FILE_MRU_FILE2       "Open this document"
+    ID_FILE_MRU_FILE3       "Open this document"
+    ID_FILE_MRU_FILE4       "Open this document"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+    ID_WINDOW_NEW           "Open another window for the active document\nNew Window"
+    ID_WINDOW_ARRANGE       "Arrange icons at the bottom of the window\nArrange Icons"
+    ID_WINDOW_CASCADE       "Arrange windows so they overlap\nCascade Windows"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_WINDOW_TILE_HORZ     "Arrange windows as non-overlapping tiles\nTile Windows"
+    ID_WINDOW_TILE_VERT     "Arrange windows as non-overlapping tiles\nTile Windows"
+    ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_UNDO            "Undo the last action\nUndo"
+    ID_EDIT_REDO            "Redo the previously undone action\nRedo"
+    ID_EDIT_CUT             "Cut the selection and put it on the Clipboard\nCut"
+    ID_EDIT_COPY            "Copy the selection and put it on the Clipboard\nCopy"
+    ID_EDIT_PASTE           "Insert Clipboard contents\nPaste"
+    ID_EDIT_CLEAR           "Erase the selection\nErase"
+    ID_EDIT_CLEAR_ALL       "Erase everything\nErase All"
+    ID_EDIT_FIND            "Find the specified text\nFind"
+    ID_EDIT_REPEAT          "Repeat the last action\nRepeat"
+    ID_EDIT_REPLACE         "Replace specific text with different text\nReplace"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_SELECT_ALL      "Select the entire document\nSelect All"
+    ID_VIEW_TOOLBAR         "Show or hide the toolbar\nToggle ToolBar"
+    ID_VIEW_STATUS_BAR      "Show or hide the status bar\nToggle StatusBar"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_SM_ARRANGE          "SM_ARRANGE"
+    321                     "How the system arranges minimized windows"
+    IDS_SM_CLEANBOOT        "SM_CLEANBOOT"
+    323                     "State of most recent system boot"
+    IDS_SM_CMOUSEBUTTONS    "SM_CMOUSEBUTTONS"
+    325                     "Number of mouse buttons"
+    IDS_SM_CXDRAG           "SM_CXDRAG"
+    327                     "Drag x limit"
+    IDS_SM_CYDRAG           "SM_CYDRAG"
+    329                     "Drag y limit"
+    IDS_SM_CXEDGE           "SM_CXEDGE"
+    331                     "Width of a vertical edge"
+    IDS_SM_CYEDGE           "SM_CYEDGE"
+    333                     "Thickness of horizontal edge"
+    IDS_SM_CXFIXEDFRAME     "SM_CXFIXEDFRAME"
+    335                     "Fixed frame width"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_DRIVERVERSION       "DRIVERVERSION"
+    501                     "Version number"
+    IDS_TECHNOLOGY          "TECHNOLOGY"
+    503                     "Device technology"
+    IDS_HORZSIZE            "HORZSIZE"
+    505                     "Width of the display (in millimeters)"
+    IDS_VERTSIZE            "VERTSIZE"
+    507                     "Height of the display (in millimeters)"
+    IDS_HORZRES             "HORZRES"
+    509                     "Width of the display (in pixels)"
+    IDS_VERTRES             "VERTRES"
+    511                     "Height of the display (in pixels)"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_LOGPIXELSX          "LOGPIXELSX"
+    513                     "Number of pixels per logical inch (width)"
+    IDS_LOGPIXELSY          "LOGPIXELSY"
+    515                     "Number of pixels per logical inch (height)"
+    IDS_BITSPIXEL           "BITSPIXEL"
+    517                     "Number of adjacent color bits per pixel"
+    IDS_PLANES              "PLANES"
+    519                     "Number of color planes"
+    IDS_NUMBRUSHES          "NUMBRUSHES"
+    521                     "Number of device-specific brushes"
+    IDS_NUMPENS             "NUMPENS"
+    523                     "Number of device-specific pens"
+    IDS_NUMFONTS            "NUMFONTS"
+    525                     "Number of device-specific fonts"
+    IDS_NUMCOLORS           "NUMCOLORS"
+    527                     "Number of entries in device's color table"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ASPECTX             "ASPECTX"
+    529                     "Relative width of a pixel for line drawing"
+    IDS_ASPECTY             "ASPECTY"
+    531                     "Relative height of a pixel for line drawing"
+    IDS_ASPECTXY            "ASPECTXY"
+    533                     "Diagonal width of a pixel for line drawing"
+    IDS_PDEVICESIZE         "PDEVICESIZE"
+    535                     "Size of PDEVICE data structure"
+    IDS_CLIPCAPS            "CLIPCAPS"
+    537                     "Non-zero if device can clip to a rectangle"
+    IDS_SIZEPALETTE         "SIZEPALETTE"
+    539                     "Number of entries in system palette"
+    IDS_NUMRESERVED         "NUMRESERVED"
+    541                     "Number of reserved entries in system palette"
+    IDS_COLORRES            "COLORRES"
+    543                     "Color resolution in bits per pixel"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_RASTERCAPS          "RASTERCAPS"
+    545                     "Raster capabilities of the device"
+    IDS_CURVECAPS           "CURVECAPS"
+    547                     "Curve capabilities of the device"
+    IDS_LINECAPS            "LINECAPS"
+    549                     "Line capabilities of the device"
+    IDS_POLYGONALCAPS       "POLYGONALCAPS"
+    551                     "Polygonal capabilities of the device"
+    IDS_TEXTCAPS            "TEXTCAPS"
+    553                     "Text capabilities of the device"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_SM_CXSMSIZE         "SM_CXSMSIZE"
+    369                     "Width of small caption button"
+    IDS_SM_CYSMSIZE         "SM_CYSMSIZE"
+    371                     "Height of small caption button"
+    IDS_SM_CXSIZEFRAME      "SM_CXSIZEFRAME"
+    373                     "Width of vertical sizing frame"
+    IDS_SM_CYSIZEFRAME      "SM_CYSIZEFRAME"
+    375                     "Height of horizontal sizing frame"
+    IDS_SM_MIDEASTENABLED   "SM_MIDEASTENABLED"
+    377                     "Hebrew or Arabic language support enabled"
+    IDS_SM_NETWORK          "SM_NETWORK"
+    379                     "Network support enabled"
+    IDS_SM_SECURE           "SM_SECURE"
+    381                     "Security features enabled"
+    IDS_SM_SHOWSOUNDS       "SM_SHOWSOUNDS"
+    383                     "Display sounds visually"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_CLEAN_BOOT          "Clean"
+    IDS_FAILSAFE_BOOT       "Failsafe"
+    IDS_FAILSAFE_NETWORK_BOOT "Failsafe/Network"
+    IDS_VALUE               "0000"
+    IDS_MM                  "mm"
+    IDS_PIXELS              "pixels"
+    IDS_DEV_VALUE           "0x00000000"
+    IDS_ARW_TOPLEFT         "TL"
+    IDS_ARW_TOPRIGHT        "TR"
+    IDS_ARW_BOTTOMLEFT      "BL"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ARW_BOTTOMRIGHT     "BR"
+    IDS_ARW_UD              "+U/D"
+    IDS_ARW_LR              "+L/R"
+    IDS_ARW_HIDE            "+H"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

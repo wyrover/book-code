@@ -1,0 +1,4 @@
+root.h
+[!if CODE_USE_CPP_FILES]
+root.cpp
+[!endif]

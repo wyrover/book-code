@@ -1,0 +1,22 @@
+// MAKEHELP.BAT generated Help Map file.  Used by CURSORICONEXPLORER.HPJ. 
+ 
+// Commands (ID_* and IDM_*) 
+HIDM_MSGBOX                             0x18003
+HIDM_FMTMSG                             0x18004
+HIDM_LOCALIZE                           0x18005
+ 
+// Prompts (IDP_*) 
+ 
+// Resources (IDR_*) 
+HIDR_MAINFRAME                          0x20080
+HIDR_CURSORTYPE                         0x20081
+ 
+// Dialogs (IDD_*) 
+HIDD_ABOUTBOX                           0x20064
+HIDD_OBM                                0x20082
+HIDD_ICON                               0x20084
+HIDD_CURSORS                            0x20086
+HIDD_FMTMSG                             0x20087
+HIDD_MSGTABLE                           0x2008A
+ 
+// Frame Controls (IDW_*) 

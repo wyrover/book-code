@@ -1,0 +1,66 @@
+stdafx.cpp
+stdafx.h
+root.cpp
+root.h
+[!if PROJECT_LANG_2052]
+root_chs.rc
+[!else]
+root.rc
+[!endif]
+
+[!if PROJECT_VS60]
+root.dsp
+[!endif]
+
+[!if PROJECT_VS2002]
+root.vs2002.vcproj
+[!endif]
+
+[!if PROJECT_VS2003]
+root.vs2003.vcproj
+[!endif]
+
+[!if PROJECT_VS2005]
+root.vs2005.vcproj
+[!endif]
+
+[!if PROJECT_VS2008]
+root.vs2008.vcproj
+[!endif]
+
+[!if WINX_APPTYPE_DLG_FRAME]
+toolbar.bmp
+[!endif]
+
+[!if WINX_APPTYPE_DLG || WINX_APPTYPE_DLG_MODAL]
+MainDlg.h
+[!if WINX_USE_CPP_FILES]
+MainDlg.cpp
+[!endif]
+[!endif]
+
+[!if WINX_APPTYPE_DLG_FRAME]
+[!if WINX_USE_ADDVFCFILES]
+vfcframe.h
+framedlg.h
+[!endif]
+[!endif]
+
+root.ico
+resource.h
+
+[!if WINX_USE_VIEW]
+view.h
+[!if WINX_USE_CPP_FILES]
+view.cpp
+[!endif]
+[!endif]
+
+[!if !WINX_APPTYPE_DLG_MODAL]
+AboutDlg.h
+[!endif]
+
+
+[!if WINX_USE_MANIFEST]
+root.exe.manifest
+[!endif]

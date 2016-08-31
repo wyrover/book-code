@@ -1,0 +1,1 @@
+void centerWindow(HWND hwnd);

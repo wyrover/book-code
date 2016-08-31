@@ -1,0 +1,357 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+MAIN DIALOG DISCARDABLE  0, 0, 301, 153
+STYLE DS_NOFAILCREATE | DS_CENTER | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | 
+    WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "AccessEnum - www.sysinternals.com"
+MENU MENU
+CLASS "ShareEnumClass"
+FONT 8, "MS Shell Dlg"
+BEGIN
+    DEFPUSHBUTTON   "S&can",IDC_REFRESH,4,135,50,14
+    PUSHBUTTON      "&Cancel",IDCANCEL,62,135,50,14,WS_DISABLED
+    PUSHBUTTON      "&Save...",IDC_EXPORT,120,135,50,14,WS_DISABLED
+    LTEXT           "213 requests pending...",IDC_STATUS,175,138,68,8
+    PUSHBUTTON      "&Quit",IDC_QUIT,247,135,50,14
+    LTEXT           "AccessEnum displays who has access to items within a directory or registry key:",
+                    IDC_DESCRIPTION,4,3,250,8
+    COMBOBOX        IDC_PATH,4,11,251,82,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Directory...",IDC_BROWSE_FILE,257,5,39,12
+    CONTROL         "List1",IDC_LIST,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | WS_BORDER | WS_TABSTOP,4,34,293,93
+    PUSHBUTTON      "Registry...",IDC_BROWSE_REG,257,18,39,12
+END
+
+ABOUT DIALOG DISCARDABLE  0, 0, 197, 57
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About AccessEnum"
+FONT 8, "MS Shell Dlg"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,139,35,50,14
+    LTEXT           "AccessEnum 1.32",IDC_STATIC,47,7,73,8
+    LTEXT           "Copyright © 2003-2005",IDC_STATIC,47,16,93,8
+    LTEXT           "www.sysinternals.com",IDC_LINK,47,42,86,8
+    LTEXT           "Bryce Cogswell",IDC_STATIC,47,32,62,8
+    ICON            "APPICON",IDC_STATIC,7,7,20,20
+END
+
+ABORT DIALOG DISCARDABLE  0, 0, 185, 47
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION
+CAPTION "AccessEnum"
+FONT 8, "MS Shell Dlg"
+BEGIN
+    LTEXT           "Scan cancelled by user.",IDC_STATIC,39,7,139,10
+    ICON            "APPICON",IDC_STATIC,7,7,20,20
+    LTEXT           "It may take several seconds for all outstanding requests to complete...",
+                    IDC_STATIC,39,21,139,19
+END
+
+COMPARE DIALOG DISCARDABLE  0, 0, 256, 162
+STYLE DS_NOFAILCREATE | DS_CENTER | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | 
+    WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "Compare Security"
+FONT 8, "MS Shell Dlg"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,202,144,50,14
+    LTEXT           "Security differences:",IDC_STATIC,4,3,178,8
+    LISTBOX         IDC_LIST,4,14,248,124,NOT LBS_NOTIFY | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+END
+
+FILEPERM DIALOG DISCARDABLE  0, 0, 274, 98
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "File Permissions Options"
+FONT 8, "MS Shell Dlg"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,161,77,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,217,77,50,14
+    CONTROL         "Display only files that have permissions less restrictive than parent (default).",
+                    IDNO,"Button",BS_AUTORADIOBUTTON | BS_TOP,7,50,251,10
+    CONTROL         "Display files with permissions that differ from parent.",
+                    IDYES,"Button",BS_AUTORADIOBUTTON | BS_TOP,7,60,176,10
+    LTEXT           "By default AccessEnum treats files and directories differently:\n - Directories are displayed if their permissions differ from their parent folder.\n - Files are displayed if their permissions are more lax than their parent folder.",
+                    IDC_STATIC,7,7,260,26
+    LTEXT           "Select which files to display:",IDC_STATIC,7,40,209,8
+END
+
+HELP DIALOG DISCARDABLE  0, 0, 306, 226
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "AccessEnum Help"
+FONT 8, "MS Shell Dlg"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,249,205,50,14
+    EDITTEXT        IDC_EDIT,7,7,292,192,ES_MULTILINE | ES_READONLY | NOT 
+                    WS_BORDER
+END
+
+REGBROWSE DIALOG DISCARDABLE  0, 0, 256, 162
+STYLE DS_NOFAILCREATE | DS_CENTER | WS_MAXIMIZEBOX | WS_POPUP | WS_VISIBLE | 
+    WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "Open Registry Key"
+FONT 8, "MS Shell Dlg"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,149,144,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,202,144,50,14
+    CONTROL         "Tree1",IDC_TREE,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_LINESATROOT | TVS_DISABLEDRAGDROP | 
+                    TVS_SHOWSELALWAYS | TVS_FULLROWSELECT | WS_BORDER | 
+                    WS_TABSTOP,4,14,248,122
+    LTEXT           "Select a registry key:",IDC_STATIC,4,5,178,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// 24
+//
+
+1                       24      MOVEABLE PURE   "res\\Accessenum.exe.manifest"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    "MAIN", DIALOG
+    BEGIN
+        LEFTMARGIN, 4
+        RIGHTMARGIN, 297
+        TOPMARGIN, 3
+        BOTTOMMARGIN, 149
+    END
+
+    "ABOUT", DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 190
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 50
+    END
+
+    "ABORT", DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 178
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 40
+    END
+
+    "COMPARE", DIALOG
+    BEGIN
+        LEFTMARGIN, 4
+        RIGHTMARGIN, 252
+        BOTTOMMARGIN, 158
+    END
+
+    "FILEPERM", DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 267
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 91
+    END
+
+    "HELP", DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 299
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 219
+    END
+
+    "REGBROWSE", DIALOG
+    BEGIN
+        LEFTMARGIN, 4
+        RIGHTMARGIN, 252
+        BOTTOMMARGIN, 158
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+MENU MENU DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "Compare to saved...",         IDC_COMPARE
+        MENUITEM "E&xit",                       IDC_QUIT
+    END
+    POPUP "&Options"
+    BEGIN
+        MENUITEM "&File display options...",    IDC_FILEOPTIONS
+        MENUITEM "&Show Local System account",  IDC_LOCAL_SYSTEM
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&Contents...",                IDC_HELPCONTENTS
+        MENUITEM "&About...",                   IDC_ABOUT
+    END
+END
+
+POPUP MENU DISCARDABLE 
+BEGIN
+    POPUP "Popup"
+    BEGIN
+        MENUITEM "Properties...",               IDC_PROPERTIES
+        MENUITEM "Explore...",                  IDC_EXPLORE
+        MENUITEM SEPARATOR
+        MENUITEM "Exclude",                     IDC_EXCLUDE
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_MYCOMPUTER          ICON    DISCARDABLE     "res\\mycomput.ico"
+APPICON                 ICON    DISCARDABLE     "appicon.ico"
+IDI_FOLDERCLOSED        ICON    DISCARDABLE     "res\\foldercl.ico"
+IDI_FOLDEROPEN          ICON    DISCARDABLE     "res\\folderop.ico"
+IDI_STRING              ICON    DISCARDABLE     "res\\string.ico"
+IDI_BINARY              ICON    DISCARDABLE     "res\\binary.ico"
+IDI_UPARROW             ICON    DISCARDABLE     "ico00002.ico"
+IDI_DOWNARROW           ICON    DISCARDABLE     "uparrow1.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+ACCELERATORS ACCELERATORS DISCARDABLE 
+BEGIN
+    VK_F5,          IDC_REFRESH,            VIRTKEY, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+HAND                    CURSOR  DISCARDABLE     "hand.cur"
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,32,0,0
+ PRODUCTVERSION 1,32,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "Sysinternals - www.sysinternals.com\0"
+            VALUE "FileDescription", "AccessEnum\0"
+            VALUE "FileVersion", "1.32\0"
+            VALUE "InternalName", "AccessEnum\0"
+            VALUE "LegalCopyright", "Copyright © 2002-2005 Bryce Cogswell\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "AccessEnum.exe\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "Sysinternals AccessEnum\0"
+            VALUE "ProductVersion", "1.32\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

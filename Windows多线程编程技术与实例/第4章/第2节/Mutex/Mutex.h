@@ -3,7 +3,7 @@
 #define AFX_MUTEX_H__63DF592D_8A5A_4404_88D1_585F7772BF78__INCLUDED_
 
 #if _MSC_VER > 1000
-#pragma once
+    #pragma once
 #endif // _MSC_VER > 1000
 
 #include "resource.h"

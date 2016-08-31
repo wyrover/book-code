@@ -1,0 +1,9 @@
+--------------------Configuration: print - Win32 Debug--------------------
+Compiling...
+printit.c
+D:\WIN32\WISEOWL\Books\Win32SDK\printing\print\printit.c(269) : error C2146: syntax error : missing ')' before identifier 'fn'
+D:\WIN32\WISEOWL\Books\Win32SDK\printing\print\printit.c(269) : error C2081: 'LPPrintHeaderFunc' : name in formal parameter list illegal
+D:\WIN32\WISEOWL\Books\Win32SDK\printing\print\printit.c(269) : error C2280: missing '{' before identifier 'fn'?
+D:\WIN32\WISEOWL\Books\Win32SDK\printing\print\printit.c(578) : fatal error C1004: unexpected end of file found
+Error executing cl.exe.
+print.dll - 4 error(s), 0 warning(s)

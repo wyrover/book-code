@@ -1,0 +1,1 @@
+int whichNew(HWND hwnd);

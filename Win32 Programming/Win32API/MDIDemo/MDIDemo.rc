@@ -1,0 +1,765 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+#include "winver.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\mainframe.ico"
+IDR_TEXT                ICON    DISCARDABLE     "res\\text.ico"
+IDR_GRAPHIC             ICON    DISCARDABLE     "res\\graph.ico"
+IDR_CUSTOM              ICON    DISCARDABLE     "res\\custom.ico"
+IDI_BRJMN               ICON    DISCARDABLE     "res\\brjmn.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&New\tCtrl+N",                ID_FILE_NEW
+        MENUITEM "&Open...\tCtrl+O",            ID_FILE_OPEN, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "P&age Setup...",              ID_FILE_PAGE_SETUP, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Status Line",                ID_VIEW_STATUS_BAR
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&Help Topics...",             ID_HELP_HELP_TOPICS
+        MENUITEM SEPARATOR
+        MENUITEM "&About MDI",                  ID_APP_ABOUT
+    END
+END
+
+IDR_TEXT MENU DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&New\tCtrl+N",                ID_FILE_NEW
+        MENUITEM "&Open...\tCtrl+O",            ID_FILE_OPEN, GRAYED
+        MENUITEM "&Close",                      ID_FILE_CLOSE, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "&Save\tCtrl+S",               ID_FILE_SAVE, GRAYED
+        MENUITEM "Save &As...\tF12",            ID_FILE_SAVE_AS, GRAYED
+        MENUITEM "Save Al&l",                   ID_FILE_SAVE_ALL, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "P&age Setup...",              ID_FILE_PAGE_SETUP, GRAYED
+        MENUITEM "&Print...\tCtrl+P",           ID_FILE_PRINT, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "&Undo\tCtrl+Z",               ID_EDIT_UNDO, GRAYED
+        MENUITEM "&Redo\tCtrl+A",               ID_EDIT_REDO, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "Cu&t\tCtrl+X",                ID_EDIT_CUT, GRAYED
+        MENUITEM "&Copy\tCtrl+C",               ID_EDIT_COPY, GRAYED
+        MENUITEM "&Paste\tCtrl+V",              ID_EDIT_PASTE, GRAYED
+        MENUITEM "&Delete\tDel",                ID_EDIT_CLEAR, GRAYED
+        MENUITEM "Select Al&l",                 ID_EDIT_SELECT_ALL, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "Pr&operties...\tAlt+Enter",   ID_EDIT_PROPERTIES, GRAYED
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Status Line",                ID_VIEW_STATUS_BAR
+    END
+    MENUITEM "Font!",                       IDM_FONT
+    POPUP "Window"
+    BEGIN
+        MENUITEM "New Window",                  ID_WINDOW_NEW, GRAYED
+        MENUITEM "&Cascade",                    ID_WINDOW_CASCADE
+        MENUITEM "Tile &Horizontally",          ID_WINDOW_TILE_HORZ
+        MENUITEM "&Tile Vertically",            ID_WINDOW_TILE_VERT
+        MENUITEM "Arrange Icons",               ID_WINDOW_ARRANGE
+        MENUITEM "Close &All",                  ID_CLOSE_ALL
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&Help Topics...",             ID_HELP_HELP_TOPICS
+        MENUITEM SEPARATOR
+        MENUITEM "&About MDI Explorer",         ID_APP_ABOUT
+    END
+END
+
+IDR_GRAPHIC MENU DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&New\tCtrl+N",                ID_FILE_NEW
+        MENUITEM "&Open...\tCtrl+O",            ID_FILE_OPEN, GRAYED
+        MENUITEM "&Close",                      ID_FILE_CLOSE, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "&Save\tCtrl+S",               ID_FILE_SAVE, GRAYED
+        MENUITEM "Save &As...\tF12",            ID_FILE_SAVE_AS, GRAYED
+        MENUITEM "Save Al&l",                   ID_FILE_SAVE_ALL, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "P&age Setup...",              ID_FILE_PAGE_SETUP, GRAYED
+        MENUITEM "&Print...\tCtrl+P",           ID_FILE_PRINT, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "&Undo\tCtrl+Z",               ID_EDIT_UNDO, GRAYED
+        MENUITEM "&Redo\tCtrl+A",               ID_EDIT_REDO, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "Cu&t\tCtrl+X",                ID_EDIT_CUT, GRAYED
+        MENUITEM "&Copy\tCtrl+C",               ID_EDIT_COPY, GRAYED
+        MENUITEM "&Paste\tCtrl+V",              ID_EDIT_PASTE, GRAYED
+        MENUITEM "&Delete\tDel",                ID_EDIT_CLEAR, GRAYED
+        MENUITEM "Select Al&l",                 ID_EDIT_SELECT_ALL, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "Pr&operties...\tAlt+Enter",   ID_EDIT_PROPERTIES, GRAYED
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Status Line",                ID_VIEW_STATUS_BAR
+    END
+    POPUP "&Color"
+    BEGIN
+        MENUITEM "&Red\tCtrl+R",                IDM_RED
+        MENUITEM "&Green\tCtrl+G",              IDM_GREEN
+        MENUITEM "&Blue\tCtrl+B",               IDM_BLUE
+        MENUITEM "&Yellow\tCtrl+Y",             IDM_YELLOW
+    END
+    POPUP "Window"
+    BEGIN
+        MENUITEM "New Window",                  ID_WINDOW_NEW, GRAYED
+        MENUITEM "&Cascade",                    ID_WINDOW_CASCADE
+        MENUITEM "Tile &Horizontally",          ID_WINDOW_TILE_HORZ
+        MENUITEM "&Tile Vertically",            ID_WINDOW_TILE_VERT
+        MENUITEM "Arrange Icons",               ID_WINDOW_ARRANGE
+        MENUITEM "Close &All",                  ID_CLOSE_ALL
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&Help Topics...",             ID_HELP_HELP_TOPICS
+        MENUITEM SEPARATOR
+        MENUITEM "&About MDI Explorer",         ID_APP_ABOUT
+    END
+END
+
+IDR_CUSTOM MENU DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&New\tCtrl+N",                ID_FILE_NEW
+        MENUITEM "&Open...\tCtrl+O",            ID_FILE_OPEN, GRAYED
+        MENUITEM "&Close",                      ID_FILE_CLOSE, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "&Save\tCtrl+S",               ID_FILE_SAVE, GRAYED
+        MENUITEM "Save &As...\tF12",            ID_FILE_SAVE_AS, GRAYED
+        MENUITEM "Save Al&l",                   ID_FILE_SAVE_ALL, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "P&age Setup...",              ID_FILE_PAGE_SETUP, GRAYED
+        MENUITEM "&Print...\tCtrl+P",           ID_FILE_PRINT, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "&Undo\tCtrl+Z",               ID_EDIT_UNDO, GRAYED
+        MENUITEM "&Redo\tCtrl+A",               ID_EDIT_REDO, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "Cu&t\tCtrl+X",                ID_EDIT_CUT, GRAYED
+        MENUITEM "&Copy\tCtrl+C",               ID_EDIT_COPY, GRAYED
+        MENUITEM "&Paste\tCtrl+V",              ID_EDIT_PASTE, GRAYED
+        MENUITEM "&Delete\tDel",                ID_EDIT_CLEAR, GRAYED
+        MENUITEM "Select Al&l",                 ID_EDIT_SELECT_ALL, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "Pr&operties...\tAlt+Enter",   ID_EDIT_PROPERTIES, GRAYED
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Status Line",                ID_VIEW_STATUS_BAR
+    END
+    MENUITEM "Font!",                       IDM_FONT
+    POPUP "Window"
+    BEGIN
+        MENUITEM "New Window",                  ID_WINDOW_NEW, GRAYED
+        MENUITEM "&Cascade",                    ID_WINDOW_CASCADE
+        MENUITEM "Tile &Horizontally",          ID_WINDOW_TILE_HORZ
+        MENUITEM "&Tile Vertically",            ID_WINDOW_TILE_VERT
+        MENUITEM "Arrange Icons",               ID_WINDOW_ARRANGE
+        MENUITEM "Close &All",                  ID_CLOSE_ALL
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&Help Topics...",             ID_HELP_HELP_TOPICS
+        MENUITEM SEPARATOR
+        MENUITEM "&About MDI Explorer",         ID_APP_ABOUT
+    END
+END
+
+IDR_TEXT_CONTEXT MENU DISCARDABLE 
+BEGIN
+    POPUP "&Text popup"
+    BEGIN
+        MENUITEM "&Undo\tCtrl+Z",               ID_EDIT_UNDO, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "Cu&t\tCtrl+X",                ID_EDIT_CUT, GRAYED
+        MENUITEM "&Copy\tCtrl+C",               ID_EDIT_COPY, GRAYED
+        MENUITEM "&Paste\tCtrl+V",              ID_EDIT_PASTE, GRAYED
+        MENUITEM "&Delete\tDel",                ID_EDIT_CLEAR, GRAYED
+        MENUITEM "Select Al&l",                 ID_EDIT_SELECT_ALL, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "Pr&operties...\tAlt+Enter",   ID_EDIT_PROPERTIES, GRAYED
+        MENUITEM "Font...\tCtrl+F",             IDM_FONT
+        MENUITEM SEPARATOR
+        MENUITEM "&Help Topics...",             ID_HELP_HELP_TOPICS
+        MENUITEM SEPARATOR
+        MENUITEM "&About MDI",                  ID_APP_ABOUT
+    END
+END
+
+IDR_GRAPHIC_CONTEXT MENU DISCARDABLE 
+BEGIN
+    POPUP "&Graphic popup"
+    BEGIN
+        MENUITEM "&Red\tCtrl+R",                IDM_RED
+        MENUITEM "&Green\tCtrl+G",              IDM_GREEN
+        MENUITEM "&Blue\tCtrl+B",               IDM_BLUE
+        MENUITEM "&Yellow\tCtrl+Y",             IDM_YELLOW
+        MENUITEM SEPARATOR
+        MENUITEM "&Help Topics...",             ID_HELP_HELP_TOPICS
+        MENUITEM SEPARATOR
+        MENUITEM "&About MDI",                  ID_APP_ABOUT
+    END
+END
+
+IDR_CUSTOM_CONTEXT MENU DISCARDABLE 
+BEGIN
+    POPUP "&Custom popup"
+    BEGIN
+        MENUITEM "&Undo\tCtrl+Z",               ID_EDIT_UNDO, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "Cu&t\tCtrl+X",                ID_EDIT_CUT, GRAYED
+        MENUITEM "&Copy\tCtrl+C",               ID_EDIT_COPY, GRAYED
+        MENUITEM "&Paste\tCtrl+V",              ID_EDIT_PASTE, GRAYED
+        MENUITEM "&Delete\tDel",                ID_EDIT_CLEAR, GRAYED
+        MENUITEM "Select Al&l",                 ID_EDIT_SELECT_ALL, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "Pr&operties...\tAlt+Enter",   ID_EDIT_PROPERTIES, GRAYED
+        MENUITEM "Font...\tCtrl+F",             IDM_FONT
+        MENUITEM SEPARATOR
+        MENUITEM "&Help Topics...",             ID_HELP_HELP_TOPICS
+        MENUITEM SEPARATOR
+        MENUITEM "&About MDI",                  ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS MOVEABLE PURE 
+BEGIN
+    "/",            ID_APP_ABOUT,           ASCII,  ALT, NOINVERT
+    "?",            ID_APP_ABOUT,           ASCII,  ALT, NOINVERT
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL, NOINVERT
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL, NOINVERT
+    VK_F1,          ID_HELP_HELP_TOPICS,    VIRTKEY, NOINVERT
+END
+
+IDR_GRAPHIC ACCELERATORS MOVEABLE PURE 
+BEGIN
+    "/",            ID_APP_ABOUT,           ASCII,  ALT, NOINVERT
+    "?",            ID_APP_ABOUT,           ASCII,  ALT, NOINVERT
+    "A",            ID_EDIT_REDO,           VIRTKEY, CONTROL, NOINVERT
+    "B",            IDM_BLUE,               VIRTKEY, CONTROL, NOINVERT
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    "G",            IDM_GREEN,              VIRTKEY, CONTROL, NOINVERT
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL, NOINVERT
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL, NOINVERT
+    "P",            ID_FILE_PRINT,          VIRTKEY, CONTROL, NOINVERT
+    "R",            IDM_RED,                VIRTKEY, CONTROL, NOINVERT
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL, NOINVERT
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL, NOINVERT
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT, NOINVERT
+    VK_DELETE,      ID_EDIT_CLEAR,          VIRTKEY, CONTROL, NOINVERT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT, NOINVERT
+    VK_F1,          ID_HELP_HELP_TOPICS,    VIRTKEY, NOINVERT
+    VK_F12,         ID_FILE_SAVE_AS,        VIRTKEY, CONTROL, NOINVERT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY, NOINVERT
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT, NOINVERT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT, NOINVERT
+    VK_RETURN,      ID_EDIT_PROPERTIES,     VIRTKEY, ALT, NOINVERT
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL, NOINVERT
+    "Y",            IDM_YELLOW,             VIRTKEY, CONTROL, NOINVERT
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL, NOINVERT
+END
+
+IDR_TEXT ACCELERATORS MOVEABLE PURE 
+BEGIN
+    "/",            ID_APP_ABOUT,           ASCII,  ALT, NOINVERT
+    "?",            ID_APP_ABOUT,           ASCII,  ALT, NOINVERT
+    "A",            ID_EDIT_REDO,           VIRTKEY, CONTROL, NOINVERT
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    "F",            IDM_FONT,               VIRTKEY, CONTROL, NOINVERT
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL, NOINVERT
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL, NOINVERT
+    "P",            ID_FILE_PRINT,          VIRTKEY, CONTROL, NOINVERT
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL, NOINVERT
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL, NOINVERT
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT, NOINVERT
+    VK_DELETE,      ID_EDIT_CLEAR,          VIRTKEY, CONTROL, NOINVERT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT, NOINVERT
+    VK_F1,          ID_HELP_HELP_TOPICS,    VIRTKEY, NOINVERT
+    VK_F12,         ID_FILE_SAVE_AS,        VIRTKEY, CONTROL, NOINVERT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY, NOINVERT
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT, NOINVERT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT, NOINVERT
+    VK_RETURN,      ID_EDIT_PROPERTIES,     VIRTKEY, ALT, NOINVERT
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL, NOINVERT
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL, NOINVERT
+END
+
+IDR_CUSTOM ACCELERATORS MOVEABLE PURE 
+BEGIN
+    "/",            ID_APP_ABOUT,           ASCII,  ALT, NOINVERT
+    "?",            ID_APP_ABOUT,           ASCII,  ALT, NOINVERT
+    "A",            ID_EDIT_REDO,           VIRTKEY, CONTROL, NOINVERT
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    "F",            IDM_FONT,               VIRTKEY, CONTROL, NOINVERT
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL, NOINVERT
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL, NOINVERT
+    "P",            ID_FILE_PRINT,          VIRTKEY, CONTROL, NOINVERT
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL, NOINVERT
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL, NOINVERT
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT, NOINVERT
+    VK_DELETE,      ID_EDIT_CLEAR,          VIRTKEY, CONTROL, NOINVERT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT, NOINVERT
+    VK_F1,          ID_HELP_HELP_TOPICS,    VIRTKEY, NOINVERT
+    VK_F12,         ID_FILE_SAVE_AS,        VIRTKEY, CONTROL, NOINVERT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY, NOINVERT
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT, NOINVERT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT, NOINVERT
+    VK_RETURN,      ID_EDIT_PROPERTIES,     VIRTKEY, ALT, NOINVERT
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL, NOINVERT
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  22, 17, 204, 91
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "About "
+FONT 8, "System"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,166,75,32,14,WS_GROUP
+    ICON            IDR_MAINFRAME,IDC_STATIC,3,2,18,16
+    LTEXT           "FileDescription",IDC_ABOUT_FILEDESCRIPTION,30,2,118,8
+    LTEXT           "Version ",IDC_STATIC,152,2,28,8
+    LTEXT           "ProductVersion",IDC_ABOUT_VERSION,180,2,17,8
+    LTEXT           "LegalCopyright",IDC_ABOUT_LEGALCOPYRIGHT,30,10,168,19
+    LTEXT           "Comments",IDC_ABOUT_COMMENTS,30,30,168,9
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKRECT,2,43,200,1
+    LTEXT           "OSVERSION",IDC_ABOUT_OSVERSION,4,46,196,8
+    LTEXT           "ProcessorVersion",IDC_ABOUT_PROCESSORVERSION,4,54,196,8
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKRECT,2,64,200,1
+    LTEXT           "LegalTrademarks",IDC_ABOUT_LEGALTRADEMARKS,3,69,156,18
+    ICON            IDI_BRJMN,IDC_STATIC,3,27,18,16
+END
+
+IDD_NEW DIALOG DISCARDABLE  0, 0, 185, 65
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "New"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "&Graphic window",IDC_GRAPHIC,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,10,15,63,10
+    CONTROL         "&Text window",IDC_TEXT,"Button",BS_AUTORADIOBUTTON,10,
+                    31,53,10
+    CONTROL         "&Custom window",IDC_CUSTOM,"Button",BS_AUTORADIOBUTTON,
+                    10,47,62,10
+    GROUPBOX        "New what?",IDC_STATIC,3,3,82,57,WS_GROUP
+    DEFPUSHBUTTON   "OK",IDOK,128,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,128,24,50,14
+    PUSHBUTTON      "Custom O&ptions",IDC_CUSTOMOPTIONS,128,42,50,14
+END
+
+IDD_OPTIONS DIALOG DISCARDABLE  0, 0, 288, 154
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Options"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,231,6,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,231,23,50,14
+    CONTROL         "WS_HSCROLL (HS)",IDC_WS_HSCROLL,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,12,27,94,10
+    CONTROL         "WS_VSCROLL (VS)",IDC_WS_VSCROLL,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,112,27,94,10
+    GROUPBOX        "General Window Styles",IDC_STATIC,6,16,204,27
+    GROUPBOX        "Edit control styles",IDC_STATIC,6,45,204,90
+    CONTROL         "ES_AUTOHSCROLL (AH)",IDC_ES_AUTOHSCROLL,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,12,58,94,10
+    CONTROL         "ES_AUTOVSCROLL (AV)",IDC_ES_AUTOVSCROLL,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,12,68,94,10
+    CONTROL         "ES_CENTER (TC)",IDC_ES_CENTER,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,12,78,94,10
+    CONTROL         "ES_LEFT (TL)",IDC_ES_LEFT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,12,88,94,10
+    CONTROL         "ES_LOWERCASE (LC)",IDC_ES_LOWERCASE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,12,98,94,10
+    CONTROL         "ES_MULTILINE (ML)",IDC_ES_MULTILINE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,12,108,94,10
+    CONTROL         "ES_NUMBER (#)",IDC_ES_NUMBER,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,112,58,94,10
+    CONTROL         "ES_OEMCONVERT (OEM)",IDC_ES_OEMCONVERT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,112,68,94,10
+    CONTROL         "ES_PASSWORD (PW)",IDC_ES_PASSWORD,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,112,78,94,10
+    CONTROL         "ES_READONLY (RO)",IDC_ES_READONLY,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,112,88,94,10
+    CONTROL         "ES_RIGHT (TR)",IDC_ES_RIGHT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,112,98,94,10
+    CONTROL         "ES_UPPERCASE (UC)",IDC_ES_UPPERCASE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,112,108,94,10
+    CONTROL         "ES_WANTRETURN (WR)",IDC_ES_WANTRETURN,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,112,118,95,10
+    GROUPBOX        "Edit control",IDC_STATIC,2,5,220,143
+    CONTROL         "Subclass Edit Control",IDC_SUBCLASS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,12,136,80,10
+    CONTROL         "Process WM_CTLCOLOREDIT",IDC_CTLCOLOR,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,98,136,109,10
+    CONTROL         "ES_NOHIDESEL (NH)",IDC_ES_NOHIDESEL,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,12,118,94,10
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+1 VERSIONINFO
+ FILEVERSION 4,0,0,0
+ PRODUCTVERSION 4,0,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0xbL
+#else
+ FILEFLAGS 0xaL
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904e4"
+        BEGIN
+            VALUE "Comments", "Author: Brent Rector and Joseph M. Newcomer\0"
+            VALUE "CompanyName", "Wise Owl Consulting, Inc. and The Joseph M. Newcomer Co.\0"
+            VALUE "FileDescription", "MDI Demo\0"
+            VALUE "FileVersion", "4.0\0"
+            VALUE "InternalName", "MDI Demo\0"
+            VALUE "LegalCopyright", "Copyright © Wise Owl Consulting, Inc. and Joseph M. Newcomer, 1996\0"
+            VALUE "LegalTrademarks", "We have no trademarks, legal or otherwise.\0"
+            VALUE "OriginalFilename", "MDIDemo.exe\0"
+            VALUE "ProductName", "MDI Demo\0"
+            VALUE "ProductVersion", "4.0\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
+
+#endif    // !_MAC
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""winver.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP  DISCARDABLE     "res\\toolbar.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 83
+    END
+
+    IDD_NEW, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 178
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 58
+    END
+
+    IDD_OPTIONS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 281
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 147
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_APP_TITLE           "MDI Demo"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "MDI Explorer Frame Window Class"
+    IDR_TEXT                "Text Class"
+    IDR_GRAPHIC             "Graphic Class"
+    IDR_CUSTOM              "Custom Class"
+    IDS_TEXT                "Text window"
+    IDS_GRAPHIC             "Graphic Window"
+    IDS_CUSTOM              "Custom Text Window: "
+    IDS_PLATFORM_WIN32_NT   "Microsoft Windows NT %u.%u (Build %u)"
+    IDS_PLATFORM_WIN32_NTAS "Microsoft Windows NT Advanced Server %u.%u (Build %u)"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PLATFORM_WIN32_NTW  "Microsoft Windows NT Workstation %u.%u (Build %u)"
+    IDS_PLATFORM_WIN32_NTS  "Microsoft Windows NT %Server u.%u (Build %u)"
+    IDS_PLATFORM_WIN32s     "Microsoft Win32s %u.%u (Build %u)"
+    IDS_PLATFORM_WIN32_WINDOWS "Microsoft Windows 95 %u.%u (Build %u)"
+    IDS_PLATFORM_UNKNOWN    "Unknown operating system %u.%u (Build %u)"
+    IDS_PROCESSOR_ARCHITECTURE_UNKNOWN "Unknown processor architecture"
+    IDS_PROCESSOR_ARCHITECTURE_INTEL_386_486 
+                            "Intel %1 step %2!0.2X! processor"
+    IDS_PROCESSOR_ARCHITECTURE_INTEL_PENTIUM 
+                            "Intel %1 model %2!d!, stepping %3!d! processor"
+    IDS_PROCESSOR_ARCHITECTURE_ALPHA 
+                            "DEC Alpha %1 model %2!c!, pass %3!d! processor"
+    IDS_PROCESSOR_ARCHITECTURE_MIPS "MIPS %1 revision %2!d! processor"
+    IDS_PROCESSOR_ARCHITECTURE_PPC 
+                            "Power PC %1 revision %2!d!.%3!d! processor"
+    IDS_PROCESSOR_LEVEL_INTEL_UNKNOWN "Unknown Intel processor"
+    IDS_PROCESSOR_LEVEL_ALPHA_UNKNOWN "Unknown Alpha processor"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PROCESSOR_LEVEL_MIPS_UNKNOWN "Unknown MIPS processor"
+    IDS_PROCESSOR_LEVEL_PPC_UNKNOWN "Unknown Power PC processor"
+    IDS_PROCESSOR_NOREV_INTEL_386 "Intel 80386 processor"
+    IDS_PROCESSOR_NOREV_INTEL_486 "Intel 80486 processor"
+    IDS_PROCESSOR_NOREV_INTEL_PENTIUM "Intel Pentium processor"
+    IDS_PROCESSOR_NOREV_MIPS_R4000 "MIPS R4000 processor"
+    IDS_PROCESSOR_NOREV_ALPHA_21064 "DEC Alpha 21064 processor"
+    IDS_HS                  "HS"
+    IDS_VS                  "VS"
+    IDS_AH                  "AH"
+    IDS_AV                  "AV"
+    IDS_TC                  "TC"
+    IDS_TL                  "TL"
+    IDS_ML                  "ML"
+    IDS_PW                  "PW"
+    IDS_OEM                 "OEM"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+    IDS_NO_UNICODE          "Unicode support not available"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_NEW             "Create a new document\nNew"
+    ID_FILE_OPEN            "Open an existing document\nOpen"
+    ID_FILE_CLOSE           "Close the active document\nClose"
+    ID_FILE_SAVE            "Save the active document\nSave"
+    ID_FILE_SAVE_AS         "Save the active document with a new name\nSave As"
+    ID_FILE_SAVE_ALL        "Save all open documents\nSave All"
+    ID_FILE_PAGE_SETUP      "Change the printing options\nPage Setup"
+    ID_FILE_PRINT_SETUP     "Change the printer and printing options\nPrint Setup"
+    ID_FILE_PRINT           "Print the active document\nPrint"
+    ID_FILE_PRINT_PREVIEW   "Display full pages\nPrint Preview"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
+    ID_APP_EXIT             "Quit the application; prompts to save documents\nExit"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "Open this document"
+    ID_FILE_MRU_FILE2       "Open this document"
+    ID_FILE_MRU_FILE3       "Open this document"
+    ID_FILE_MRU_FILE4       "Open this document"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+    ID_WINDOW_NEW           "Open another window for the active document\nNew Window"
+    ID_WINDOW_ARRANGE       "Arrange icons at the bottom of the window\nArrange Icons"
+    ID_WINDOW_CASCADE       "Arrange windows so they overlap\nCascade Windows"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_WINDOW_TILE_HORZ     "Arrange windows as non-overlapping tiles\nTile Windows"
+    ID_WINDOW_TILE_VERT     "Arrange windows as non-overlapping tiles\nTile Windows"
+    ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
+    ID_HELP_HELP_TOPICS     "Display on-line help"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_UNDO            "Undo the last action\nUndo"
+    ID_EDIT_REDO            "Redo the previously undone action\nRedo"
+    ID_EDIT_CUT             "Cut the selection and put it on the Clipboard\nCut"
+    ID_EDIT_COPY            "Copy the selection and put it on the Clipboard\nCopy"
+    ID_EDIT_PASTE           "Insert Clipboard contents\nPaste"
+    ID_EDIT_CLEAR           "Erase the selection\nErase"
+    ID_EDIT_CLEAR_ALL       "Erase everything\nErase All"
+    ID_EDIT_FIND            "Find the specified text\nFind"
+    ID_EDIT_REPEAT          "Repeat the last action\nRepeat"
+    ID_EDIT_REPLACE         "Replace specific text with different text\nReplace"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_SELECT_ALL      "Select the entire document\nSelect All"
+    IDM_RED                 "Set the drawing color to Red"
+    IDM_GREEN               "Set the drawing color to Green"
+    IDM_BLUE                "Set the drawing color to Blue"
+    IDM_YELLOW              "Set the drawing color to Yellow"
+    IDM_FONT                "Choose the text font\nFont selection"
+    ID_CLOSE_ALL            "Close all document windows"
+    ID_VIEW_TOOLBAR         "Show or hide the toolbar\nToggle ToolBar"
+    ID_VIEW_STATUS_BAR      "Show or hide the status bar\nToggle StatusBar"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_LC                  "LC"
+    IDS_UC                  "UC"
+    IDS_WR                  "WR"
+    IDS_RO                  "RO"
+    IDS_NM                  "#"
+    IDS_RO_TEXT             "Read-only text"
+    IDS_TR                  "TR"
+    IDS_NO_SUBCLASS         "X"
+    IDS_NO_COLOR            "nc"
+    IDS_NH                  "NH"
+    IDS_HELP_FAILED         "Unable to activate help"
+    IDS_SAVE_CHANGES_CAPTION "Buffer modified"
+    IDS_SAVE_CHANGES        "Buffer has been modified. Close anyway?"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,1844 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif\r\n"
+    "#include ""res\\GDIExplorer.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#include ""afxprint.rc""       // printing/print preview resources\r\n"
+    "#endif\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_GDIEXPTYPE          ICON    DISCARDABLE     "res\\GDIExplorerDoc.ico"
+IDI_BEZIER              ICON    DISCARDABLE     "res\\bezier.ico"
+IDI_BMPBRUSH            ICON    DISCARDABLE     "res\\bmpbrush.ico"
+IDI_CHORD               ICON    DISCARDABLE     "res\\chord.ico"
+IDI_CLIP1               ICON    DISCARDABLE     "res\\clip1.ico"
+IDI_CLIP2               ICON    DISCARDABLE     "res\\clip2.ico"
+IDI_CLIP3               ICON    DISCARDABLE     "res\\clip3.ico"
+IDI_COMPLEX             ICON    DISCARDABLE     "res\\complex.ico"
+IDI_ELLIPSE             ICON    DISCARDABLE     "res\\ellipse.ico"
+IDI_ENDCAPS             ICON    DISCARDABLE     "res\\endcaps.ico"
+IDI_FOCUS               ICON    DISCARDABLE     "res\\focus.ico"
+IDI_GEOPEN              ICON    DISCARDABLE     "res\\geopen.ico"
+IDI_HATCHBRUSH          ICON    DISCARDABLE     "res\\hatch.ico"
+IDI_JMNCO               ICON    DISCARDABLE     "res\\jmnco.ico"
+IDI_LINEJOIN            ICON    DISCARDABLE     "res\\linejoin.ico"
+IDI_PENSTYLE            ICON    DISCARDABLE     "res\\penstyle.ico"
+IDI_PIE                 ICON    DISCARDABLE     "res\\pie.ico"
+IDI_POLYGON             ICON    DISCARDABLE     "res\\poly.ico"
+IDI_POLYPOLYGON         ICON    DISCARDABLE     "res\\polypoly.ico"
+IDI_RANDOM              ICON    DISCARDABLE     "res\\random.ico"
+IDI_RECTANGLE           ICON    DISCARDABLE     "res\\rect.ico"
+IDI_ROUNDRECT           ICON    DISCARDABLE     "res\\rrect.ico"
+IDI_STROKEANDFILL       ICON    DISCARDABLE     "res\\saf.ico"
+IDI_TEXTXFORM           ICON    DISCARDABLE     "res\\txform.ico"
+IDI_XFORM               ICON    DISCARDABLE     "res\\xform.ico"
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\chap6.ico"
+IDI_ARC                 ICON    DISCARDABLE     "res\\arc.ico"
+IDI_ARCTO               ICON    DISCARDABLE     "res\\arcto.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_HSTRIPES            BITMAP  DISCARDABLE     "res\\hstripes.bmp"
+IDB_MARBLE              BITMAP  DISCARDABLE     "res\\marble.bmp"
+IDB_MASK1               BITMAP  DISCARDABLE     "res\\mask1.bmp"
+IDB_MASK2               BITMAP  DISCARDABLE     "res\\mask2.bmp"
+IDB_MASK3               BITMAP  DISCARDABLE     "res\\mask3.bmp"
+IDB_MASK4               BITMAP  DISCARDABLE     "res\\mask4.bmp"
+IDB_PLAID               BITMAP  DISCARDABLE     "res\\plaid.bmp"
+IDB_REDBRICK            BITMAP  DISCARDABLE     "res\\redbrick.bmp"
+IDB_RGB1                BITMAP  DISCARDABLE     "res\\rgb1.bmp"
+IDB_RGB2                BITMAP  DISCARDABLE     "res\\rgb2.bmp"
+IDB_RGB3                BITMAP  DISCARDABLE     "res\\rgb3.bmp"
+IDB_RGB4                BITMAP  DISCARDABLE     "res\\rgb4.bmp"
+IDB_RGB5                BITMAP  DISCARDABLE     "res\\rgb5.bmp"
+IDB_RGB6                BITMAP  DISCARDABLE     "res\\rgb6.bmp"
+IDB_STAR                BITMAP  DISCARDABLE     "res\\star.bmp"
+IDB_VSTRIPES            BITMAP  DISCARDABLE     "res\\bitmap2.bmp"
+IDR_MAINFRAME           BITMAP  MOVEABLE PURE   "res\\mainfram.bmp"
+IDB_DESERT              BITMAP  DISCARDABLE     "res\\desert.bmp"
+IDB_GRADED              BITMAP  DISCARDABLE     "res\\graded.bmp"
+IDB_DESERT1             BITMAP  DISCARDABLE     "res\\desert1.bmp"
+IDB_GRADED1             BITMAP  DISCARDABLE     "res\\graded1.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&New\tCtrl+N",                ID_FILE_NEW
+        MENUITEM "&Open...\tCtrl+O",            ID_FILE_OPEN
+        MENUITEM SEPARATOR
+        MENUITEM "P&rint Setup...",             ID_FILE_PRINT_SETUP
+        MENUITEM SEPARATOR
+        MENUITEM "&Matrix Explorer...",         IDC_XFORM, GRAYED
+        MENUITEM "&BLT Explorer",               IDM_BLTEXP
+        MENUITEM "&DrawEdge Explorer...",       ID_DRAWEDGE
+        MENUITEM "Region Explorer...",          IDM_REGION
+        MENUITEM SEPARATOR
+        MENUITEM "Recent File",                 ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&Help Topics",                ID_HELP_FINDER
+        MENUITEM SEPARATOR
+        MENUITEM "&About GDI Explorer...",      ID_APP_ABOUT
+    END
+END
+
+IDR_GDIEXPTYPE MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&New\tCtrl+N",                ID_FILE_NEW
+        MENUITEM "&Close",                      ID_FILE_CLOSE
+        MENUITEM SEPARATOR
+        MENUITEM "&Write old-style metafile\tCtrl+S", ID_WRITE_METAFILE
+        MENUITEM "Write &Enhanced metafile\tCtrl+E", ID_WRITE_ENHANCED
+        MENUITEM "&Matrix Explorer...",         IDM_MATEXP, GRAYED
+        MENUITEM "&BLT Explorer",               IDM_BLTEXP
+        MENUITEM "&DrawEdge Explorer...",       ID_DRAWEDGE
+        MENUITEM "Region Explorer...",          IDM_REGION
+        MENUITEM SEPARATOR
+        MENUITEM "&Print...\tCtrl+P",           ID_FILE_PRINT
+        MENUITEM "Print Pre&view",              ID_FILE_PRINT_PREVIEW
+        MENUITEM "P&rint Setup...",             ID_FILE_PRINT_SETUP
+        MENUITEM SEPARATOR
+        MENUITEM "Recent File",                 ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "&Undo\tCtrl+Z",               ID_EDIT_UNDO
+        MENUITEM SEPARATOR
+        MENUITEM "Cu&t\tCtrl+X",                ID_EDIT_CUT
+        MENUITEM "&Copy\tCtrl+C",               ID_EDIT_COPY
+        MENUITEM "&Paste\tCtrl+V",              ID_EDIT_PASTE
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+        MENUITEM "Bounding Box",                ID_VIEW_BB
+    END
+    MENUITEM "&Select!",                    IDM_SELECT
+    POPUP "&Window"
+    BEGIN
+        MENUITEM "&New Window",                 ID_WINDOW_NEW
+        MENUITEM "&Cascade",                    ID_WINDOW_CASCADE
+        MENUITEM "&Tile",                       ID_WINDOW_TILE_HORZ
+        MENUITEM "&Arrange Icons",              ID_WINDOW_ARRANGE
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&Help Topics",                ID_HELP_FINDER
+        MENUITEM SEPARATOR
+        MENUITEM "&About GDI Explorer...",      ID_APP_ABOUT
+    END
+END
+
+IDI_POLYPOLYGON MENU DISCARDABLE 
+BEGIN
+    POPUP "Placeholder"
+    BEGIN
+        POPUP "SetPolyFillMode"
+        BEGIN
+            MENUITEM "WINDING",                     IDM_SETPOLYFILL_WINDING
+            MENUITEM "ALTERNATE",                   IDM_SETPOLYFILL_ALTERNATE
+
+        END
+        MENUITEM "Set Control Points...",       IDM_SETCONTROLPOINTS
+    END
+END
+
+IDI_RANDOM MENU DISCARDABLE 
+BEGIN
+    POPUP "Placeholder"
+    BEGIN
+        POPUP "SetPolyFillMode"
+        BEGIN
+            MENUITEM "WINDING",                     IDM_SETPOLYFILL_WINDING
+            MENUITEM "ALTERNATE",                   IDM_SETPOLYFILL_ALTERNATE
+
+            MENUITEM "None",                        IDM_SETPOLYFILL_NONE
+        END
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS PRELOAD MOVEABLE PURE 
+BEGIN
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL
+    "P",            ID_FILE_PRINT,          VIRTKEY, CONTROL
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY 
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT
+    VK_F1,          ID_CONTEXT_HELP,        VIRTKEY, SHIFT
+    VK_F1,          ID_HELP,                VIRTKEY 
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_BITBLT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 270
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 207
+    END
+
+    IDD_BRUSH, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 178
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 87
+    END
+
+    IDD_DIBITS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 309
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 112
+    END
+
+    IDD_DRAWEDGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 269
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 230
+    END
+
+    IDD_MFH, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 206
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 121
+    END
+
+    IDD_POLYPOLYSET, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 140
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 119
+    END
+
+    IDD_RGN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 236
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 110
+    END
+
+    IDD_ROPFINDER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 209
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 87
+    END
+
+    IDD_TRANSFORM, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 145
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  22, 17, 204, 89
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "About "
+FONT 8, "System"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,166,74,32,14,WS_GROUP
+    LTEXT           "FileDescription",IDC_ABOUT_FILEDESCRIPTION,30,2,118,8
+    LTEXT           "Version ",IDC_STATIC,152,2,28,8
+    LTEXT           "ProductVersion",IDC_ABOUT_VERSION,180,2,17,8
+    LTEXT           "LegalCopyright",IDC_ABOUT_LEGALCOPYRIGHT,30,10,168,16
+    LTEXT           "Comments",IDC_ABOUT_COMMENTS,30,31,168,8
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKRECT,2,42,200,1
+    LTEXT           "OSVERSION",IDC_ABOUT_OSVERSION,4,45,196,8
+    LTEXT           "ProcessorVersion",IDC_ABOUT_PROCESSORVERSION,4,53,196,8
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKRECT,2,63,200,1
+    LTEXT           "LegalTrademarks",IDC_ABOUT_LEGALTRADEMARKS,3,68,156,18
+    ICON            IDI_JMNCO,IDC_STATIC,7,26,18,20
+    ICON            IDR_MAINFRAME,IDC_STATIC,7,4,18,20
+END
+
+IDD_BITBLT DIALOG DISCARDABLE  0, 0, 277, 214
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "BitBlt"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_SRCX,2,15,22,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SRCXSPIN,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,24,15,11,14
+    EDITTEXT        IDC_SRCY,36,15,22,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SRCYSPIN,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,58,15,11,14
+    EDITTEXT        IDC_SRCLRX,34,106,22,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SRCLRXSPIN,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,56,106,11,14
+    EDITTEXT        IDC_SRCLRY,68,106,22,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SRCLRYSPIN,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,90,106,11,14
+    EDITTEXT        IDC_ULX,135,15,22,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_ULXSPIN,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,157,15,11,14
+    EDITTEXT        IDC_ULY,170,15,22,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_ULYSPIN,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,192,15,11,14
+    EDITTEXT        IDC_PLGX,206,15,22,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_PLGXSPIN,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,228,15,11,14
+    EDITTEXT        IDC_PLGY,241,15,22,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_PLGYSPIN,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,263,15,11,14
+    EDITTEXT        IDC_LRX,180,106,22,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_LRXSPIN,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,202,106,11,14
+    EDITTEXT        IDC_LRY,215,106,22,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_LRYSPIN,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,237,106,11,14
+    LTEXT           "&Bitmap",IDC_BITMAP_CAPTION,4,147,24,8
+    COMBOBOX        IDC_BITMAP,32,145,97,28,CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWVARIABLE | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "&ROP",IDC_ROP_CAPTION,134,147,25,8
+    COMBOBOX        IDC_ROP,163,145,107,28,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_SOURCE,"Static",SS_BLACKRECT,17,31,73,73
+    LTEXT           "BitBlt(...)",IDC_OP,4,160,267,23
+    PUSHBUTTON      "BitB&lt >",IDC_DOBLT,94,32,83,14
+    PUSHBUTTON      "White >",IDC_CLEARW,139,48,38,14
+    CONTROL         "",IDC_DEST,"Static",SS_BLACKRECT,180,31,73,73
+    LTEXT           "error message",IDC_ERROR,4,190,267,23
+    GROUPBOX        "Mask",IDC_MASK_CAPTION,127,62,50,41
+    CONTROL         "",IDC_MASK,"Static",SS_BLACKRECT,131,73,42,25
+    CONTROL         "Exten&ded",IDC_EXTENDED,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,226,133,42,10
+    PUSHBUTTON      "Set",IDC_SETMASK,79,12,21,14
+    PUSHBUTTON      "Clear",IDC_CLEARMASK,103,12,21,14
+    LTEXT           "xSrc",IDC_XSRC_CAPTION,4,4,14,8
+    LTEXT           "ySrc",IDC_YSRC_CAPTION,37,4,15,8
+    GROUPBOX        "Mask",IDC_MASK_CTL_CAPTION,71,0,60,30
+    LTEXT           "ulx",IDC_PT0_X,136,4,20,8
+    LTEXT           "uly",IDC_PT0_Y,170,4,20,8
+    LTEXT           "pt[1].x",IDC_PT1_X,206,4,20,8
+    LTEXT           "pt[1].y",IDC_PT1_Y,241,4,20,8
+    LTEXT           "width",IDC_PT2_X,180,121,20,8
+    LTEXT           "height",IDC_PT2_Y,215,121,20,8
+    LTEXT           "size.cx",IDC_WIDTH,33,121,28,8
+    LTEXT           "size.cy",IDC_HEIGHT,67,121,26,8
+    EDITTEXT        IDC_XMASK,110,106,22,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_XMASKSPIN,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,132,106,11,14
+    EDITTEXT        IDC_YMASK,144,106,22,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_YMASKSPIN,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,166,106,11,14
+    LTEXT           "xmask",IDC_XMASK_CAPTION,112,121,20,8
+    LTEXT           "ymask",IDC_YMASK_CAPTION,145,121,20,8
+    GROUPBOX        "&ROP",IDC_ROP_BORDER,157,128,116,32
+    COMBOBOX        IDC_STRETCHBLT,32,131,97,28,CBS_DROPDOWNLIST | CBS_SORT | 
+                    NOT WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Stretch",IDC_STRETCH_CAPTION,4,133,24,8,NOT WS_VISIBLE
+    PUSHBUTTON      "Black >",IDC_CLEARB,94,48,38,14
+    GROUPBOX        "Brush",IDC_BRUSH_CAPTION,94,62,31,41
+    CONTROL         "",IDC_BRUSH,"Static",SS_BLACKRECT,99,73,21,25
+    PUSHBUTTON      "Copy",ID_EDIT_COPY,251,106,22,14
+END
+
+IDD_BRUSH DIALOG DISCARDABLE  0, 0, 185, 94
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Brush"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "&Stock",IDC_STOCKBRUSH,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,6,14,31,10
+    COMBOBOX        IDC_STOCKBRUSHES,40,13,89,30,CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWFIXED | CBS_SORT | CBS_HASSTRINGS | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "So&lid",IDC_SOLIDBRUSH,"Button",BS_AUTORADIOBUTTON,6,30,
+                    31,10
+    COMBOBOX        IDC_SOLIDBRUSHES,40,29,89,30,CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWFIXED | CBS_SORT | CBS_HASSTRINGS | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "&Hatch",IDC_HATCHBRUSH,"Button",BS_AUTORADIOBUTTON,6,46,
+                    31,10
+    COMBOBOX        IDC_HATCHBRUSHES,40,45,89,30,CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWFIXED | CBS_SORT | CBS_HASSTRINGS | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "&Origin",IDC_ORIGIN_CAPTION,9,65,19,8
+    EDITTEXT        IDC_BRUSHORGX,40,62,17,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPINX,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,57,62,10,14
+    EDITTEXT        IDC_BRUSHORGY,70,62,17,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPINY,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,87,62,11,14
+    GROUPBOX        "Brush",IDC_STATIC,0,0,134,78
+    CONTROL         "",IDC_HATCHSAMPLE,"Static",SS_BLACKFRAME,99,62,30,14
+END
+
+IDD_DIBITS DIALOG DISCARDABLE  0, 0, 316, 119
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "GetDIBits"
+FONT 8, "MS Sans Serif"
+BEGIN
+    COMBOBOX        IDC_BITMAP,6,3,97,28,CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWVARIABLE | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_SOURCE,"Static",SS_BLACKRECT,18,32,73,73
+    EDITTEXT        IDC_BISIZE,164,17,40,14,ES_AUTOHSCROLL | WS_DISABLED
+    RTEXT           "biSize",IDC_STATIC,139,20,20,8
+    EDITTEXT        IDC_BIWIDTH,164,33,40,14,ES_AUTOHSCROLL | WS_DISABLED
+    RTEXT           "biWidth",IDC_STATIC,135,36,24,8
+    EDITTEXT        IDC_BIHEIGHT,164,49,40,14,ES_AUTOHSCROLL | WS_DISABLED
+    RTEXT           "biHeight",IDC_STATIC,133,52,26,8
+    EDITTEXT        IDC_BIPLANES,164,65,40,14,ES_AUTOHSCROLL | WS_DISABLED
+    RTEXT           "biPlanes",IDC_STATIC,131,68,28,8
+    EDITTEXT        IDC_BIBITCOUNT,164,81,40,14,ES_AUTOHSCROLL | WS_DISABLED
+    RTEXT           "biBitcount",IDC_STATIC,129,84,30,8
+    EDITTEXT        IDC_BICOMPRESSION,164,97,40,14,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    RTEXT           "biCompression",IDC_STATIC,112,100,47,8
+    EDITTEXT        IDC_BISIZEIMAGE,266,17,40,14,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    RTEXT           "biSizeImage",IDC_STATIC,210,20,39,8
+    EDITTEXT        IDC_BIXPELSPERMTER,266,33,40,14,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    RTEXT           "biXPelsPerMeter",IDC_STATIC,210,36,52,8
+    EDITTEXT        IDC_BIYPELSPERMETER,266,49,40,14,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    RTEXT           "biYPelsPerMeter",IDC_STATIC,210,52,52,8
+    EDITTEXT        IDC_BICLRUSED,266,65,40,14,ES_AUTOHSCROLL | WS_DISABLED
+    RTEXT           "biClrUsed",IDC_STATIC,210,68,31,8
+    EDITTEXT        IDC_BICLRIMPORTANT,266,81,40,14,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    RTEXT           "biClrImportant",IDC_STATIC,210,84,42,8
+    GROUPBOX        "BITMAPINFOHEADER",IDC_STATIC,108,4,203,112
+    GROUPBOX        "Image",IDC_STATIC,6,19,97,93
+END
+
+IDD_DRAWEDGE DIALOG DISCARDABLE  0, 0, 276, 237
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "DrawEdge Explorer"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Inner/Outer Edge",IDC_STATIC,8,44,182,83
+    CONTROL         "EDGE_BUMP",IDC_EDGE_BUMP,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,16,55,58,10
+    CONTROL         "EDGE_ETCHED",IDC_EDGE_ETCHED,"Button",
+                    BS_AUTORADIOBUTTON,16,73,67,10
+    CONTROL         "EDGE_RAISED",IDC_EDGE_RAISED,"Button",
+                    BS_AUTORADIOBUTTON,16,91,64,10
+    CONTROL         "EDGE_SUNKEN",IDC_EDGE_SUNKEN,"Button",
+                    BS_AUTORADIOBUTTON,16,109,67,10
+    GROUPBOX        "Inner Edge",IDC_STATIC,88,50,99,35
+    CONTROL         "BDR_RAISEDINNER",IDC_BDR_RAISEDINNER,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,94,61,80,10
+    CONTROL         "BDR_SUNKENINNER",IDC_BDR_SUNKENINNER,"Button",
+                    BS_AUTORADIOBUTTON,94,71,83,10
+    GROUPBOX        "Outer Edge",IDC_STATIC,88,86,99,35
+    CONTROL         "BDR_RAISEDOUTER",IDC_BDR_RAISEDOUTER,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,94,97,83,10
+    CONTROL         "BDR_SUNKENOUTER",IDC_BDR_SUNKENOUTER,"Button",
+                    BS_AUTORADIOBUTTON,94,107,86,10
+    GROUPBOX        "Edges",IDC_STATIC,8,130,79,71
+    CONTROL         "BF_TOP",IDC_BF_TOP,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,16,141,42,10
+    CONTROL         "BF_LEFT",IDC_BF_LEFT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,16,151,45,10
+    CONTROL         "BF_BOTTOM",IDC_BF_BOTTOM,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,16,161,57,10
+    CONTROL         "BF_RIGHT",IDC_BF_RIGHT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,16,171,49,10
+    CONTROL         "BF_DIAGONAL",IDC_BF_DIAGONAL,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,16,181,62,10
+    GROUPBOX        "Composite edge flags",IDC_STATIC,93,130,149,103
+    CONTROL         "BF_TOPLEFT",IDC_BF_TOPLEFT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,102,141,59,10
+    CONTROL         "BF_TOPRIGHT",IDC_BF_TOPRIGHT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,102,151,63,10
+    CONTROL         "BF_DIAGONAL_ENDTOPLEFT",IDC_BF_DIAGONAL_ENDTOPLEFT,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,102,161,111,10
+    CONTROL         "BF_DIAGONAL_ENDTOPRIGHT",IDC_BF_DIAGONAL_ENDTOPRIGHT,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,102,171,115,10
+    CONTROL         "BF_DIAGONAL_ENDBOTTOMLEFT",
+                    IDC_BF_DIAGONAL_ENDBOTTOMLEFT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,102,181,126,10
+    CONTROL         "BF_DIAGONAL_ENDBOTTOMRIGHT",
+                    IDC_BF_DIAGONAL_ENDBOTTOMRIGHT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,102,191,130,10
+    CONTROL         "BF_BOTTOMLEFT",IDC_BF_BOTTOMLEFT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,102,201,74,10
+    CONTROL         "BF_BOTTOMRIGHT",IDC_BF_BOTTOMRIGHT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,102,211,78,10
+    CONTROL         "BF_RECT",IDC_BF_RECT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,102,221,47,10
+    GROUPBOX        "Features",IDC_STATIC,196,44,67,70
+    CONTROL         "BF_ADJUST",IDC_BF_ADJUST,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,204,58,55,10
+    CONTROL         "BF_SOFT",IDC_BF_SOFT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,204,69,46,10
+    CONTROL         "BF_FLAT",IDC_BF_FLAT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,204,79,45,10
+    CONTROL         "BF_MONO",IDC_BF_MONO,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,204,89,49,10
+    CONTROL         "BF_MIDDLE",IDC_BF_MIDDLE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,204,99,53,10
+    PUSHBUTTON      "Erase",IDC_ERASE,8,205,50,14
+    CONTROL         "Auto Erase",IDC_AUTOERASE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,9,222,49,10
+    PUSHBUTTON      "Copy",IDC_COPY,66,205,21,14
+    GROUPBOX        "Owner-draw button",IDC_STATIC,80,0,155,44
+    PUSHBUTTON      "<",IDC_GETUPSTYLE,84,10,9,14
+    CTEXT           "Up",IDC_STATIC,98,14,10,8
+    PUSHBUTTON      " >",IDC_SETUPSTYLE,115,10,9,14
+    PUSHBUTTON      "<",IDC_GETDOWNSTYLE,84,26,9,14
+    CTEXT           "Down",IDC_STATIC,95,29,18,8
+    PUSHBUTTON      ">",IDC_SETDOWNSTYLE,115,26,9,14
+    CONTROL         "L",IDC_L,"Button",BS_AUTORADIOBUTTON | WS_GROUP,188,7,
+                    20,10
+    CONTROL         "C",IDC_HC,"Button",BS_AUTORADIOBUTTON,188,18,21,10
+    CONTROL         "R",IDC_R,"Button",BS_AUTORADIOBUTTON,188,29,21,10
+    CONTROL         "T",IDC_T,"Button",BS_AUTORADIOBUTTON | WS_GROUP,211,7,
+                    21,10
+    CONTROL         "C",IDC_VC,"Button",BS_AUTORADIOBUTTON,211,18,21,10
+    CONTROL         "B",IDC_B,"Button",BS_AUTORADIOBUTTON,211,29,21,10
+    CONTROL         "Owner Draw",IDC_BUTTON,"Button",BS_OWNERDRAW | 
+                    WS_TABSTOP,131,10,51,21
+    CONTROL         "",IDC_SAMPLE,"Static",SS_BLACKFRAME,9,4,60,33
+    PUSHBUTTON      "Close",IDCANCEL,196,117,50,14
+    CONTROL         "Enabled",IDC_ENABLE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,131,32,42,10
+END
+
+IDD_EXAMPLE DIALOG DISCARDABLE  0, 0, 259, 179
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Examples"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "AngleArc",IDC_ANGLEARC,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,4,4,69,12
+    CONTROL         "Arc",IDC_ARC,"Button",BS_AUTORADIOBUTTON,4,18,69,12
+    CONTROL         "ArcTo",IDC_ARCTO,"Button",BS_AUTORADIOBUTTON,4,31,69,12
+    CONTROL         "Bézier curves",IDC_BEZIER,"Button",BS_AUTORADIOBUTTON,4,
+                    46,69,12
+    CONTROL         "Bitmap brush",IDC_BMPBRUSH,"Button",BS_AUTORADIOBUTTON,
+                    4,60,69,12
+    CONTROL         "Chord",IDC_CHORD,"Button",BS_AUTORADIOBUTTON,4,74,69,12
+    CONTROL         "Complex path ",IDC_COMPLEX_PATH,"Button",
+                    BS_AUTORADIOBUTTON,4,88,69,12
+    CONTROL         "DrawFocusRect",IDC_DRAWFOCUS,"Button",
+                    BS_AUTORADIOBUTTON,4,102,69,12
+    CONTROL         "Ellipse",IDC_ELLIPSE,"Button",BS_AUTORADIOBUTTON,4,116,
+                    69,12
+    CONTROL         "End caps - direct",IDC_ENDCAPS,"Button",
+                    BS_AUTORADIOBUTTON,4,130,74,12
+    CONTROL         "End caps - stroked",IDC_ENDCAPS_STROKED,"Button",
+                    BS_AUTORADIOBUTTON,4,144,69,12
+    CONTROL         "Geometric Pens",IDC_GEOPEN,"Button",BS_AUTORADIOBUTTON,
+                    86,4,69,12
+    CONTROL         "Hatch brush styles",IDC_HATCHBRUSH,"Button",
+                    BS_AUTORADIOBUTTON,86,18,69,12
+    CONTROL         "Line joins",IDC_LINEJOIN,"Button",BS_AUTORADIOBUTTON,86,
+                    32,75,12
+    CONTROL         "Pen styles",IDC_PENSTYLES,"Button",BS_AUTORADIOBUTTON,
+                    86,46,69,12
+    CONTROL         "Pie",IDC_PIE,"Button",BS_AUTORADIOBUTTON,86,60,69,12
+    CONTROL         "Polygon",IDC_POLYGON,"Button",BS_AUTORADIOBUTTON,86,74,
+                    69,12
+    CONTROL         "PolyPolygon",IDC_POLYPOLYGON,"Button",
+                    BS_AUTORADIOBUTTON,86,88,69,12
+    CONTROL         "Random",IDC_RANDOM,"Button",BS_AUTORADIOBUTTON,86,102,
+                    69,12
+    CONTROL         "Rectangle",IDC_RECTANGLE,"Button",BS_AUTORADIOBUTTON,86,
+                    116,69,12
+    CONTROL         "Rounded rectangle",IDC_ROUNDRECT,"Button",
+                    BS_AUTORADIOBUTTON,86,130,69,12
+    CONTROL         "Stroking and Filling",IDC_STROKEANDFILL,"Button",
+                    BS_AUTORADIOBUTTON,86,144,69,12
+    CONTROL         "Text clipping: region",IDC_TEXTCLIP1,"Button",
+                    BS_AUTORADIOBUTTON,172,4,80,12
+    CONTROL         "Text clipping: bkgnd",IDC_TEXTCLIP2,"Button",
+                    BS_AUTORADIOBUTTON,172,18,80,12
+    CONTROL         "Text clipping: clipped",IDC_TEXTCLIP3,"Button",
+                    BS_AUTORADIOBUTTON,172,32,80,12
+    CONTROL         "Text transform",IDC_TEXTXFORM,"Button",
+                    BS_AUTORADIOBUTTON,172,46,69,12
+    CONTROL         "Transformations",IDC_XFORM,"Button",BS_AUTORADIOBUTTON,
+                    172,60,69,12
+    CONTROL         "Unimplemented",IDC_UNIMP24,"Button",BS_AUTORADIOBUTTON | 
+                    WS_DISABLED,172,74,69,12
+    CONTROL         "Unimplemented",IDC_UNIMP25,"Button",BS_AUTORADIOBUTTON | 
+                    WS_DISABLED,172,88,69,12
+    CONTROL         "Unimplemented",IDC_UNIMP26,"Button",BS_AUTORADIOBUTTON | 
+                    WS_DISABLED,172,102,69,12
+    CONTROL         "Unimplemented",IDC_UNIMP27,"Button",BS_AUTORADIOBUTTON | 
+                    WS_DISABLED,172,116,69,12
+    CONTROL         "Unimplemented",IDC_UNIMP28,"Button",BS_AUTORADIOBUTTON | 
+                    WS_DISABLED,172,130,69,12
+    CONTROL         "Unimplemented",IDC_UNIMP29,"Button",BS_AUTORADIOBUTTON | 
+                    WS_DISABLED,172,144,69,12
+    PUSHBUTTON      "Cancel",IDCANCEL,104,161,50,14
+END
+
+IDD_MFH DIALOG DISCARDABLE  0, 0, 213, 128
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "MetaFile Header Tweaker"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,155,6,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,155,22,50,14
+    EDITTEXT        IDC_LEFT,6,13,26,13,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_TOP,33,13,26,13,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKRECT,31,29,75,36
+    EDITTEXT        IDC_RIGHT,80,68,26,13,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_BOTTOM,107,68,26,13,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_INCH,108,86,26,13,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           ".inch",IDC_STATIC,67,89,15,8
+    GROUPBOX        "Placeable Metafile Header",IDC_STATIC,3,1,135,104
+    PUSHBUTTON      "Use old",IDC_USEOLD,7,86,28,14
+    LTEXT           "Static",IDC_OLDLEFT,63,15,18,8
+    LTEXT           "Static",IDC_OLDTOP,84,15,18,8
+    LTEXT           "Static",IDC_OLDRIGHT,39,71,18,8
+    LTEXT           "Static",IDC_OLDBOTTOM,60,71,18,8
+    LTEXT           "Static",IDC_OLDINCH,87,89,18,8
+    EDITTEXT        IDC_PELX,177,51,26,13,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "Static",IDC_OLDPELX,156,54,18,8
+    EDITTEXT        IDC_PELY,177,66,26,13,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "Static",IDC_OLDPELY,156,69,18,8
+    PUSHBUTTON      "Use old",IDC_USEOLDPELXY,176,81,28,14
+    GROUPBOX        "PelX , Y",IDC_STATIC,149,38,62,61
+    CONTROL         "Change origin",IDC_SETORIGIN,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,11,113,58,10
+END
+
+IDD_POLYPOLYSET DIALOG DISCARDABLE  0, 0, 147, 126
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "PolyPolygon Control Points"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,66,4,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,66,20,50,14
+    LISTBOX         IDC_POINTS,7,3,53,120,LBS_MULTIPLESEL | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_RANDOM DIALOG DISCARDABLE  0, 0, 160, 94
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Random Setup"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,106,6,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,106,23,50,14
+    LTEXT           "&Seed",IDC_STATIC,3,9,18,8
+    EDITTEXT        IDC_SEED,29,7,62,12,ES_AUTOHSCROLL
+    CONTROL         "Winding",IDC_WINDING,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,13,48,66,11
+    CONTROL         "Alternate",IDC_ALTERNATE,"Button",BS_AUTORADIOBUTTON,13,
+                    64,66,11
+    GROUPBOX        "Fill",IDC_STATIC,4,33,88,60
+    CONTROL         "None",IDC_NONE,"Button",BS_AUTORADIOBUTTON,13,80,66,11
+    LTEXT           "S&ides",IDC_STATIC,3,23,18,8
+    EDITTEXT        IDC_SIDES,68,21,23,12,ES_AUTOHSCROLL | ES_READONLY
+    CONTROL         "Generic1",IDC_SPINSIDES,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_AUTOBUDDY | UDS_ARROWKEYS | 
+                    WS_TABSTOP,91,21,8,12
+    CONTROL         "Random",IDC_RANDOM_SIDES,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,29,21,37,10
+END
+
+IDD_RGN DIALOG DISCARDABLE  0, 0, 243, 117
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Region Explorer"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "Close",IDCANCEL,7,101,50,14
+    CONTROL         "",IDC_CONTAINED,"Static",SS_BLACKFRAME,102,18,62,62
+    CONTROL         "",IDC_INTERSECT,"Static",SS_BLACKFRAME,7,18,91,62
+    CONTROL         "RGN_AND",IDC_RGN_AND,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,177,27,49,10
+    CONTROL         "RGN_DIFF",IDC_RGN_DIFF,"Button",BS_AUTORADIOBUTTON,177,
+                    37,49,10
+    CONTROL         "RGN_OR",IDC_RGN_OR,"Button",BS_AUTORADIOBUTTON,177,47,
+                    45,10
+    CONTROL         "RGN_XOR",IDC_RGN_XOR,"Button",BS_AUTORADIOBUTTON,177,57,
+                    49,10
+    GROUPBOX        "Operation",IDC_STATIC,172,14,63,59
+    CONTROL         "Region1",IDC_RGN_1,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,177,83,42,10
+    CONTROL         "Region2",IDC_RGN_2,"Button",BS_AUTORADIOBUTTON,177,93,
+                    42,10
+    CONTROL         "Result",IDC_RGN_RESULT,"Button",BS_AUTORADIOBUTTON,177,
+                    104,35,10
+    GROUPBOX        "Show",IDC_STATIC,172,73,62,43
+    GROUPBOX        "Op",IDC_STATIC,101,81,64,34
+    CONTROL         "FillRgn",IDC_FILLRGN,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,108,92,37,10
+    CONTROL         "FrameRgn",IDC_FRAMERGN,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,108,102,48,10
+    PUSHBUTTON      "Copy",IDC_COPY1,8,2,21,14
+    PUSHBUTTON      "Copy",IDC_COPY2,102,2,21,14
+    CONTROL         "Monochrome",IDC_MONO,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,84,56,10
+END
+
+IDD_ROPFINDER DIALOG DISCARDABLE  0, 0, 216, 94
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "ROP finder"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "",IDC_P7,"Button",BS_OWNERDRAW | WS_DISABLED,52,11,8,8
+    CONTROL         "",IDC_P6,"Button",BS_OWNERDRAW | WS_DISABLED,63,11,8,8
+    CONTROL         "",IDC_P5,"Button",BS_OWNERDRAW | WS_DISABLED,74,11,8,8
+    CONTROL         "",IDC_P4,"Button",BS_OWNERDRAW | WS_DISABLED,85,11,8,8
+    CONTROL         "",IDC_P3,"Button",BS_OWNERDRAW | WS_DISABLED,96,11,8,8
+    CONTROL         "",IDC_P2,"Button",BS_OWNERDRAW | WS_DISABLED,107,11,8,8
+    CONTROL         "",IDC_P1,"Button",BS_OWNERDRAW | WS_DISABLED,118,11,8,8
+    CONTROL         "",IDC_P0,"Button",BS_OWNERDRAW | WS_DISABLED,129,11,8,8
+    RTEXT           "Pattern",IDC_STATIC,26,11,22,8
+    CONTROL         "",IDC_S7,"Button",BS_OWNERDRAW | WS_DISABLED,52,21,8,8
+    CONTROL         "",IDC_S6,"Button",BS_OWNERDRAW | WS_DISABLED,63,21,8,8
+    CONTROL         "",IDC_S5,"Button",BS_OWNERDRAW | WS_DISABLED,74,21,8,8
+    CONTROL         "",IDC_S4,"Button",BS_OWNERDRAW | WS_DISABLED,85,21,8,8
+    CONTROL         "",IDC_S3,"Button",BS_OWNERDRAW | WS_DISABLED,96,21,8,8
+    CONTROL         "",IDC_S2,"Button",BS_OWNERDRAW | WS_DISABLED,107,21,8,8
+    CONTROL         "",IDC_S1,"Button",BS_OWNERDRAW | WS_DISABLED,118,21,8,8
+    CONTROL         "",IDC_S0,"Button",BS_OWNERDRAW | WS_DISABLED,129,21,8,8
+    RTEXT           "Source",IDC_STATIC,25,21,23,8
+    CONTROL         "",IDC_D7,"Button",BS_OWNERDRAW | WS_DISABLED,52,31,8,8
+    CONTROL         "",IDC_D6,"Button",BS_OWNERDRAW | WS_DISABLED,63,31,8,8
+    CONTROL         "",IDC_D5,"Button",BS_OWNERDRAW | WS_DISABLED,74,31,8,8
+    CONTROL         "",IDC_D4,"Button",BS_OWNERDRAW | WS_DISABLED,85,31,8,8
+    CONTROL         "",IDC_D3,"Button",BS_OWNERDRAW | WS_DISABLED,96,31,8,8
+    CONTROL         "",IDC_D2,"Button",BS_OWNERDRAW | WS_DISABLED,107,31,8,8
+    CONTROL         "",IDC_D1,"Button",BS_OWNERDRAW | WS_DISABLED,118,31,8,8
+    CONTROL         "",IDC_D0,"Button",BS_OWNERDRAW | WS_DISABLED,129,31,8,8
+    CTEXT           "Destination",IDC_STATIC,13,31,35,8
+    CONTROL         "",IDC_R7,"Button",BS_OWNERDRAW | WS_TABSTOP,52,45,8,8
+    CONTROL         "",IDC_R6,"Button",BS_OWNERDRAW | WS_TABSTOP,63,45,8,8
+    CONTROL         "",IDC_R5,"Button",BS_OWNERDRAW | WS_TABSTOP,74,45,8,8
+    CONTROL         "",IDC_R4,"Button",BS_OWNERDRAW | WS_TABSTOP,85,45,8,8
+    CONTROL         "",IDC_R3,"Button",BS_OWNERDRAW | WS_TABSTOP,96,45,8,8
+    CONTROL         "",IDC_R2,"Button",BS_OWNERDRAW | WS_TABSTOP,107,45,8,8
+    CONTROL         "",IDC_R1,"Button",BS_OWNERDRAW | WS_TABSTOP,118,45,8,8
+    CONTROL         "",IDC_R0,"Button",BS_OWNERDRAW | WS_TABSTOP,129,45,8,8
+    RTEXT           "&Result",IDC_STATIC,28,45,20,8
+    COMBOBOX        IDC_ROP,27,62,110,30,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,3,41,140,16
+    CTEXT           "0x00000000",IDC_ROPCODE,27,78,100,13
+END
+
+IDD_TRANSFORM DIALOG DISCARDABLE  0, 0, 256, 189
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Transform Explorer"
+FONT 8, "MS Sans Serif"
+BEGIN
+    COMBOBOX        IDC_M11c,3,13,31,52,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    EDITTEXT        IDC_M11,34,12,24,14,ES_AUTOHSCROLL
+    CONTROL         "Generic1",IDC_M11s,"msctls_updown32",UDS_ARROWKEYS,58,
+                    12,10,14
+    COMBOBOX        IDC_M12c,75,13,31,52,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    EDITTEXT        IDC_M21,106,12,24,14,ES_AUTOHSCROLL
+    CONTROL         "Generic1",IDC_M12s,"msctls_updown32",UDS_ARROWKEYS,130,
+                    12,10,14
+    COMBOBOX        IDC_M21c,3,33,31,52,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    EDITTEXT        IDC_M12,34,32,24,14,ES_AUTOHSCROLL
+    CONTROL         "Generic1",IDC_M21s,"msctls_updown32",UDS_ARROWKEYS,58,
+                    32,10,14
+    COMBOBOX        IDC_M22c,75,33,31,52,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    EDITTEXT        IDC_M22,106,32,24,14,ES_AUTOHSCROLL
+    CONTROL         "Generic1",IDC_M22s,"msctls_updown32",UDS_ARROWKEYS,130,
+                    32,10,14
+    EDITTEXT        IDC_DY,106,52,24,14,ES_AUTOHSCROLL
+    CONTROL         "Generic1",IDC_DYs,"msctls_updown32",UDS_ARROWKEYS,130,
+                    52,10,14
+    PUSHBUTTON      "v",IDC_STORE0,11,128,9,14
+    PUSHBUTTON      "^",IDC_LOAD0,31,128,9,14
+    PUSHBUTTON      "v",IDC_STORE1,45,128,9,14
+    PUSHBUTTON      "^",IDC_LOAD1,65,128,9,14
+    PUSHBUTTON      "v",IDC_STORE2,79,128,9,14
+    PUSHBUTTON      "^",IDC_LOAD2,99,128,9,14
+    PUSHBUTTON      "v",IDC_STORE3,113,128,9,14
+    PUSHBUTTON      "^",IDC_LOAD3,133,128,9,14
+    PUSHBUTTON      "v",IDC_STORE4,147,128,9,14
+    PUSHBUTTON      "^",IDC_LOAD4,167,128,9,14
+    PUSHBUTTON      "v",IDC_STORE5,181,128,9,14
+    PUSHBUTTON      "^",IDC_LOAD5,201,128,9,14
+    PUSHBUTTON      "v",IDC_STORE6,215,128,9,14
+    PUSHBUTTON      "^",IDC_LOAD6,235,128,9,14
+    PUSHBUTTON      "x CTM",IDC_XCTM,82,82,24,14
+    PUSHBUTTON      "CTMx",IDC_CTMx,82,106,23,14
+    PUSHBUTTON      "Identity",IDC_IDENTITY,4,75,50,14
+    PUSHBUTTON      "Close",IDCANCEL,4,91,50,14
+    CONTROL         "Text",IDC_TEXT,"Button",BS_AUTORADIOBUTTON,154,111,29,
+                    10
+    CONTROL         "Graphic",IDC_GRAPHIC,"Button",BS_AUTORADIOBUTTON,201,
+                    111,40,10
+    EDITTEXT        IDC_DX,34,52,24,14,ES_AUTOHSCROLL
+    CONTROL         "Generic1",IDC_DXs,"msctls_updown32",UDS_ARROWKEYS,58,52,
+                    10,14
+    CONTROL         "",IDC_IMAGE,"Static",SS_BLACKFRAME,153,7,99,100
+    GROUPBOX        "Matrix",IDC_STATIC,1,1,142,70
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKRECT,2,28,141,2
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKRECT,2,48,141,2
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKRECT,71,7,2,63
+    LTEXT           "0 0\n0 0\n0 0",IDC_STACK0,11,144,29,38,SS_SUNKEN | 
+                    WS_BORDER
+    LTEXT           "0 0\n0 0\n0 0",IDC_STACK1,45,144,29,38,SS_SUNKEN | 
+                    WS_BORDER
+    LTEXT           "0 0\n0 0\n0 0",IDC_STACK2,79,144,29,38,SS_SUNKEN | 
+                    WS_BORDER
+    LTEXT           "0 0\n0 0\n0 0",IDC_STACK3,113,144,29,38,SS_SUNKEN | 
+                    WS_BORDER
+    LTEXT           "0 0\n0 0\n0 0",IDC_STACK4,147,144,29,38,SS_SUNKEN | 
+                    WS_BORDER
+    LTEXT           "0 0\n0 0\n0 0",IDC_STACK5,181,144,29,38,SS_SUNKEN | 
+                    WS_BORDER
+    LTEXT           "0 0\n0 0\n0 0",IDC_STACK6,215,144,29,38,SS_SUNKEN | 
+                    WS_BORDER
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,7,124,241,63
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKRECT,71,71,2,54
+    LTEXT           "0 0\n0 0\n0 0",IDC_CTM,113,82,29,38,SS_SUNKEN | 
+                    WS_BORDER
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_TRANSFORM DLGINIT
+BEGIN
+    IDC_M11c, 0x403, 1, 0
+"\000" 
+    IDC_M11c, 0x403, 4, 0
+0x6973, 0x006e, 
+    IDC_M11c, 0x403, 5, 0
+0x732d, 0x6e69, "\000" 
+    IDC_M11c, 0x403, 4, 0
+0x6f63, 0x0073, 
+    IDC_M11c, 0x403, 5, 0
+0x632d, 0x736f, "\000" 
+    IDC_M12c, 0x403, 1, 0
+"\000" 
+    IDC_M12c, 0x403, 4, 0
+0x6973, 0x006e, 
+    IDC_M12c, 0x403, 5, 0
+0x732d, 0x6e69, "\000" 
+    IDC_M12c, 0x403, 4, 0
+0x6f63, 0x0073, 
+    IDC_M12c, 0x403, 5, 0
+0x632d, 0x736f, "\000" 
+    IDC_M21c, 0x403, 1, 0
+"\000" 
+    IDC_M21c, 0x403, 4, 0
+0x6973, 0x006e, 
+    IDC_M21c, 0x403, 5, 0
+0x732d, 0x6e69, "\000" 
+    IDC_M21c, 0x403, 4, 0
+0x6f63, 0x0073, 
+    IDC_M21c, 0x403, 5, 0
+0x632d, 0x736f, "\000" 
+    IDC_M22c, 0x403, 1, 0
+"\000" 
+    IDC_M22c, 0x403, 4, 0
+0x6973, 0x006e, 
+    IDC_M22c, 0x403, 5, 0
+0x732d, 0x6e69, "\000" 
+    IDC_M22c, 0x403, 4, 0
+0x6f63, 0x0073, 
+    IDC_M22c, 0x403, 5, 0
+0x632d, 0x736f, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR DISCARDABLE  16, 15
+BEGIN
+    BUTTON      IDM_MATEXP
+    BUTTON      ID_SELECT
+    BUTTON      IDM_BLTEXP
+    BUTTON      ID_DRAWEDGE
+    BUTTON      IDM_REGION
+    SEPARATOR
+    BUTTON      ID_WRITE_ENHANCED
+    BUTTON      ID_FILE_PRINT
+    SEPARATOR
+    BUTTON      ID_APP_ABOUT
+    BUTTON      ID_CONTEXT_HELP
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+1 VERSIONINFO
+ FILEVERSION 4,0,0,0
+ PRODUCTVERSION 4,0,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0xbL
+#else
+ FILEFLAGS 0xaL
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904e4"
+        BEGIN
+            VALUE "Comments", "Author: Joseph M. Newcomer\0"
+            VALUE "CompanyName", "The Joseph M. Newcomer Co.\0"
+            VALUE "FileDescription", "GDI Explorer\0"
+            VALUE "FileVersion", "4.0\0"
+            VALUE "InternalName", "GDI Explorer\0"
+            VALUE "LegalCopyright", "Copyright © 1996 Joseph M. Newcomer\0"
+            VALUE "LegalTrademarks", "I have no trademarks, legal or otherwise.\0"
+            VALUE "OriginalFilename", "chap6.exe\0"
+            VALUE "ProductName", "GDI Explorer\0"
+            VALUE "ProductVersion", "4.0\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "GDI Explorer"
+    IDR_GDIEXPTYPE          "\nGDIExp\nGDIExp\n\n\nGDIExplorer.Document\nGDIExp Document"
+    IDS_CLIPPER             "Cat"
+    IDS_BG                  "mew!  "
+    IDS_COMPLEX_CAPTION     "Printer"
+    IDS_A_PATH              "(a) A path"
+    IDS_STROKED_PATH        "(b) Stroked path"
+    IDS_WIDE_STROKED        "(c) Wide pen stroked "
+    IDS_CLOSED_FIGURE       "(d) Closed figure"
+    IDS_CLOSED_WIDE         "(e) Closed figure, wide pen"
+    IDS_UNCLOSED_FIGURE     "(f) Unclosed figure"
+    IDS_UNCLOSED_WIDE       "(g) Unclosed figure, wide pen"
+    IDS_FILLED_PATH         "(h) Filled path"
+    IDS_STROKED_AND_FILLED  "(i) Stroked and Filled path"
+    IDS_BMPBRUSH            "Our Share of the Marble Puff-Pastry Slab Market\n"
+    IDS_PROCESSOR_LEVEL_MIPS_UNKNOWN "Unknown MIPS processor"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "GDI Explorer"
+    AFX_IDS_IDLEMESSAGE     "For Help, press F1"
+    AFX_IDS_HELPMODEMESSAGE "Select an object on which to get Help"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_NEW             "Create a new document\nNew"
+    ID_FILE_OPEN            "Open an existing document\nOpen"
+    ID_FILE_CLOSE           "Close the active document\nClose"
+    ID_FILE_SAVE            "Save the active document\nSave"
+    ID_FILE_SAVE_AS         "Save the active document with a new name\nSave As"
+    ID_FILE_PAGE_SETUP      "Change the printing options\nPage Setup"
+    ID_FILE_PRINT_SETUP     "Change the printer and printing options\nPrint Setup"
+    ID_FILE_PRINT           "Print the active document\nPrint"
+    ID_FILE_PRINT_PREVIEW   "Display full pages\nPrint Preview"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
+    ID_APP_EXIT             "Quit the application; prompts to save documents\nExit"
+    ID_HELP_INDEX           "Opens Help\nHelp Topics"
+    ID_HELP_FINDER          "List Help topics\nHelp Topics"
+    ID_HELP_USING           "Display instructions about how to use help\nHelp"
+    ID_CONTEXT_HELP         "Display help for clicked on buttons, menus and windows\nHelp"
+    ID_HELP                 "Display help for current task or command\nHelp"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "Open this document"
+    ID_FILE_MRU_FILE2       "Open this document"
+    ID_FILE_MRU_FILE3       "Open this document"
+    ID_FILE_MRU_FILE4       "Open this document"
+    ID_FILE_MRU_FILE5       "Open this document"
+    ID_FILE_MRU_FILE6       "Open this document"
+    ID_FILE_MRU_FILE7       "Open this document"
+    ID_FILE_MRU_FILE8       "Open this document"
+    ID_FILE_MRU_FILE9       "Open this document"
+    ID_FILE_MRU_FILE10      "Open this document"
+    ID_FILE_MRU_FILE11      "Open this document"
+    ID_FILE_MRU_FILE12      "Open this document"
+    ID_FILE_MRU_FILE13      "Open this document"
+    ID_FILE_MRU_FILE14      "Open this document"
+    ID_FILE_MRU_FILE15      "Open this document"
+    ID_FILE_MRU_FILE16      "Open this document"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_WINDOW_NEW           "Open another window for the active document\nNew Window"
+    ID_WINDOW_ARRANGE       "Arrange icons at the bottom of the window\nArrange Icons"
+    ID_WINDOW_CASCADE       "Arrange windows so they overlap\nCascade Windows"
+    ID_WINDOW_TILE_HORZ     "Arrange windows as non-overlapping tiles\nTile Windows"
+    ID_WINDOW_TILE_VERT     "Arrange windows as non-overlapping tiles\nTile Windows"
+    ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_CLEAR           "Erase the selection\nErase"
+    ID_EDIT_CLEAR_ALL       "Erase everything\nErase All"
+    ID_EDIT_COPY            "Copy the selection and put it on the Clipboard\nCopy"
+    ID_EDIT_CUT             "Cut the selection and put it on the Clipboard\nCut"
+    ID_EDIT_FIND            "Find the specified text\nFind"
+    ID_EDIT_PASTE           "Insert Clipboard contents\nPaste"
+    ID_EDIT_REPEAT          "Repeat the last action\nRepeat"
+    ID_EDIT_REPLACE         "Replace specific text with different text\nReplace"
+    ID_EDIT_SELECT_ALL      "Select the entire document\nSelect All"
+    ID_EDIT_UNDO            "Undo the last action\nUndo"
+    ID_EDIT_REDO            "Redo the previously undone action\nRedo"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "Show or hide the toolbar\nToggle ToolBar"
+    ID_VIEW_STATUS_BAR      "Show or hide the status bar\nToggle StatusBar"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+    AFX_IDS_MDICHILD        "Activate this window"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_PREVIEW_CLOSE   "Close print preview mode\nCancel Preview"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDM_BLTEXP              "Explore BLT operations - BitBlt, PlgBlt, StretchBlt\nBlt Explorer"
+    ID_DRAWEDGE             "DrawEdge Explorer\nDrawEdge"
+    IDM_REGION              "Explore the CombineRgn operator\nRegion Explorer"
+    ID_VIEW_BB              "Shows bounding box of graphic image"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_WRITE_METAFILE       "Write an old metafile (.wmf) with insertable header\nOld metafile"
+    ID_WRITE_ENHANCED       "Write an Enhanced Metafile (.emf) with insertable header\nEnhanced Metafile"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDC_XFORM               "Explore how to use transformation matrixes\nMatrix Explorer"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PLATFORM_WIN32_NT   "Microsoft Windows NT %u.%u (Build %u)"
+    IDS_PLATFORM_WIN32_NTAS "Microsoft Windows NT Advanced Server %u.%u (Build %u)"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PLATFORM_WIN32_NTW  "Microsoft Windows NT Workstation %u.%u (Build %u)"
+    IDS_PLATFORM_WIN32_NTS  "Microsoft Windows NT Server %u.%u (Build %u)"
+    IDS_PLATFORM_WIN32s     "Microsoft Win32s %u.%u (Build %u)"
+    IDS_PLATFORM_WIN32_WINDOWS "Microsoft Windows 95 %u.%u (Build %u)"
+    IDS_PLATFORM_UNKNOWN    "Unknown operating system %u.%u (Build %u)"
+    IDS_PROCESSOR_ARCHITECTURE_UNKNOWN "Unknown processor architecture"
+    IDS_PROCESSOR_ARCHITECTURE_INTEL_386_486 
+                            "Intel %1 step %2!0.2X! processor"
+    IDS_PROCESSOR_ARCHITECTURE_INTEL_PENTIUM 
+                            "Intel %1 model %2!d!, stepping %3!d! processor"
+    IDS_PROCESSOR_ARCHITECTURE_ALPHA 
+                            "DEC Alpha %1 model %2!c!, pass %3!d! processor"
+    IDS_PROCESSOR_ARCHITECTURE_MIPS "MIPS %1 revision %2!d! processor"
+    IDS_PROCESSOR_ARCHITECTURE_PPC 
+                            "Power PC %1 revision %2!d!.%3!d! processor"
+    IDS_PROCESSOR_LEVEL_INTEL_UNKNOWN "Unknown Intel processor"
+    IDS_PROCESSOR_LEVEL_ALPHA_UNKNOWN "Unknown Alpha processor"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PROCESSOR_LEVEL_PPC_UNKNOWN "Unknown Power PC processor"
+    IDS_PROCESSOR_NOREV_INTEL_386 "Intel 80386 processor"
+    IDS_PROCESSOR_NOREV_INTEL_486 "Intel 80486 processor"
+    IDS_PROCESSOR_NOREV_INTEL_PENTIUM "Intel Pentium processor"
+    IDS_PROCESSOR_NOREV_MIPS_R4000 "MIPS R4000 processor"
+    IDS_PROCESSOR_NOREV_ALPHA_21064 "DEC Alpha 21064 processor"
+    IDS_NYI                 "Not Yet Implemented"
+    IDS_BEZIER_DOUBLE_CURVE "Double curve"
+    IDS_BEZIER_CROSSOVER    "Crossover"
+    IDS_BEZIER_SIMPLE_CURVE "Simple curve"
+    IDS_BEZIER_COMPLEX_CURVE "Complex curve"
+    IDS_BEZIER_FAILED       "Bézier curve drawing failed"
+    IDS_NOT_SUPPORTED       "Feature not supported"
+    IDS_SHEAR_TRANSFORMATION_FAILED "Shear transformation failed"
+    IDS_EXTCREATEPEN_FAILED "ExtCreatePen operation failed"
+    IDS_XFORM_IDENTITY      "Identity"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_XFORM_TRANSLATION   "Translation"
+    IDS_XFORM_ROTATION30    "30 degree\r\nrotation"
+    IDS_XFORM_SCALING_HALF  "Scaling x 0.5"
+    IDS_XFORM_SHEARV        "Vertical shear"
+    IDS_XFORM_SHEARH        "Horizontal shear"
+    IDS_PEN_FAILED          "Pen creation failed"
+    IDS_TRANSFORM_FAILED    "Transform failed"
+    IDS_BEVEL_JOIN          "Bevel Join"
+    IDS_MITER_JOIN          "Miter Join"
+    IDS_ROUND_JOIN          "Round Join"
+    IDS_HEIGHT              "Height"
+    IDS_WIDTH               "Width"
+    IDS_SHADOW_MESSAGE      "Message"
+    IDS_ROUND               "Round"
+    IDS_FLAT                "Flat"
+    IDS_SQUARE              "Square"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_WIN95ENDCAPS        "Note that end caps have no effect in Windows 95 when drawn with PolyLine.  Try ""End Caps with Stroke"""
+    IDS_DESC_CHORD          "A chord drawn by the Chord() function"
+    IDS_DESC_PIE            "A pie section drawn by the Pie function"
+    IDS_DESC_RECT           "A rectangle drawn by the Rectangle function"
+    IDS_DESC_ELLIPSE        "An ellipse drawn by the Ellipse function"
+    IDS_DESC_ROUNDRECT      "A rounded rectangle drawn by the RoundRect function"
+    IDS_DESC_BITMAPFILL     "Using a bitmap brush for fill"
+    IDS_DESC_BEZIER         "Some Bézier curves and their control points"
+    IDS_DESC_GEOPEN         "Some geometric pens"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_DESC_LINEJOIN       "Line joins"
+    IDS_DESC_STROKEANDFILL  "Stroking and filling"
+    IDS_DESC_CLIPPING_REGION "Text Clipping - Clipping region"
+    IDS_DESC_CLIPPING_BACKGROUND "Text Clipping - Background text"
+    IDS_DESC_CLIPPING_FULL  "Text Clipping - Clipped background"
+    IDS_DESC_ENDCAPS        "End caps - not stroked"
+    IDS_DESC_ENDCAPS_STROKED "End caps -stroked"
+    IDS_DESC_XFORM          "Transformations"
+    IDS_DESC_TEXTXFORM      "Text transformations"
+    IDS_DESC_ARC            "Lines drawn by the Arc function"
+    IDS_DESC_ANGLEARC       "Line drawn by the AngleArc function"
+    IDS_DESC_PENSTYLES      "One-pixel-wide lines in each of the seven pen styles"
+    IDS_DESC_HATCHBRUSH     "The six styles used by the CreateHatchBrush function"
+    IDS_DESC_POLYGON        "Example of the polygon-filling modes: WINDING and ALTERNATE"
+    IDS_DESC_DRAWFOCUS      "A rectangle drawn in the style used to indicate focus"
+    IDS_DESC_COMPLEX_PATH   "A complex path including lines, Bézier curves, and text"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_DESC_RANDOM         "Random figure"
+    IDS_EMF_FILES           "Enhanced metafiles (*.emf)"
+    IDS_WMF_FILES           "Windows metafiles (*.wmf)"
+    IDS_EMF_EXT             "emf"
+    IDS_WMF_EXT             "wmf"
+    IDS_METAFILE_DESC       "Win32 illustration program"
+    IDS_DESC_LINEJOIN_STROKED "Line joins done with PolyLine and StrokePath"
+    IDS_WIN95FAILURE        "Note that end caps do not work correctly when drawn directly with PolyLine on Windows 95.  You must use stroked paths."
+    IDS_DESC_POLYPOLYGON    "Polygons drawn with a single PolyPolygon call"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_DESC_ARCTO          "Lines drawn by the ArcTo function"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_BLACKNESS           "BLACKNESS: D = 0"
+    IDS_DSTINVERT           "DSTINVERT: D = ~D"
+    IDS_MERGECOPY           "MERGECOPY: D = P & S"
+    IDS_MERGEPAINT          "MERGEPAINT: D = ~S | D"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_NOTSRCCOPY          "NOTSRCCOPY: D = ~S"
+    IDS_NOTSRCERASE         "NOTSRCERASE: D = ~(S | D)"
+    IDS_PATCOPY             "PATCOPY: D = P"
+    IDS_PATINVERT           "PATINVERT: D = D ^ P"
+    IDS_PATPAINT            "PATPAINT: D = P | ~S | D"
+    IDS_SRCAND              "SRCAND: D = S & D"
+    IDS_SRCCOPY             "SRCCOPY: D = S"
+    IDS_SRCERASE            "SRCERASE: D = S & ~D"
+    IDS_SRCINVERT           "SRCINVERT: D = S ^ D"
+    IDS_SRCPAINT            "SRCPAINT: D = S | D"
+    IDS_WHITENESS           "WHITENESS: D = 1"
+    IDB_PLAID               "Plaid"
+    IDS_MARBLE              "Marble"
+    IDS_BITBLT              "BitBlt"
+    IDS_PATBLT              "PatBlt"
+    IDS_STRETCHBLT          "StretchBlt"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PLGBLT              "PlgBlt"
+    IDS_PATBLT_FMT          "PatBlt(hdest, ulx: %d, uly: %d, width: %d, height: %d, %s)"
+    IDS_BITBLT_FMT          "BitBlt(hdest, ulx: %d, uly: %d, width: %d, height: %d, %s, xsrc: %d, ysrc: %d, %s)"
+    IDS_PLGBLT_FMT          "PlgBlt(hdest, [{%d, %d}, {%d, %d}, {%d, %d}], hsrc, xsrc: %d, ysrc: %d, width: %d, height: %d, mask: %s, xmask: %d, ymask: %d)"
+    IDS_STRETCHBLT_FMT      "StretchBlt(hdest, xdst: %d, ydst: %d, wdst: %d, htdst: %d, hsrc, xsrc: %d, ysrc: %d, wsrc: %d, htsrc: %d, %s)"
+    IDS_MASKBLT_FMT         "MaskBlt(hdest, xdst: %d, ydst: %d, dstwid: %d, dstht: %d,  hsrc,  xsrc: %d, ysrc: %d, hmask%s, maskx: %d, masky: %d, MAKEROP4(%s, %s): 0x%08lx)"
+    IDS_MASKBLT             "MaskBlt"
+    IDS_MASKBLT_OP          "MaskB&lt >"
+    IDS_BITBLT_OP           "BitB&lt >"
+    IDS_PATBLT_OP           "PatB&lt >"
+    IDS_PLGBLT_OP           "PlgB&lt >"
+    IDS_STRETCHBLT_OP       "StretchB&lt >"
+    IDS_MASK_CAPTION        "Mask"
+    IDS_STRETCH_CAPTION     "St&retch"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_STRETCH_ANDSCANS    "STRETCH_ANDSCANS"
+    IDS_STRETCH_ORSCANS     "STRETCH_ORSCANS"
+    IDS_STRETCH_DELETESCANS "STRETCH_DELETESCANS"
+    IDS_STRETCH_HALFTONE    "STRETCH_HALFTONE"
+    IDS_PT0X                "pt[0].x"
+    IDS_PT0Y                "pt[0].y"
+    IDS_PT2X                "pt[2].x"
+    IDS_PT2Y                "pt[2].y"
+    IDS_BI_RGB              "BI_RGB"
+    IDS_BI_RLE8             "BI_RLE8"
+    IDS_BI_RLE4             "BI_RLE4"
+    IDS_BI_BITFIELDS        "BI_BITFIELDS"
+    IDS_ROP2                "ROP2"
+    IDS_ROP_FG              "(White)"
+    IDS_ROP_BG              "(Black)"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_R2_BLACK            "R2_BLACK"
+    IDS_R2_NOTMERGEPEN      "R2_NOTMERGEPEN"
+    IDS_R2_MASKNOTPEN       "R2_MASKNOTPEN"
+    IDS_R2_NOTCOPYPEN       "R2_NOTCOPYPEN"
+    IDS_R2_MASKPENNOT       "R2_MASKPENNOT"
+    IDS_R2_NOT              "R2_NOT"
+    IDS_R2_XORPEN           "R2_XORPEN"
+    IDS_R2_NOTMASKPEN       "R2_NOTMASKPEN"
+    IDS_R2_MASKPEN          "R2_MASKPEN"
+    IDS_R2_NOTXORPEN        "R2_NOTXORPEN"
+    IDS_R2_NOP              "R2_NOP"
+    IDS_R2_MERGENOTPEN      "R2_MERGENOTPEN"
+    IDS_R2_COPYPEN          "R2_COPYPEN"
+    IDS_R2_MERGEPENNOT      "R2_MERGEPENNOT"
+    IDS_R2_MERGEPEN         "R2_MERGEPEN"
+    IDS_R2_WHITE            "R2_WHITE"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_HS_HORIZONTAL       "HS_HORIZONTAL"
+    IDS_HS_VERTICAL         "HS_VERTICAL"
+    IDS_HS_CROSS            "HS_CROSS"
+    IDS_HS_FDIAGONAL        "HS_FDIAGONAL"
+    IDS_HS_BDIAGONAL        "HS_BDIAGONAL"
+    IDS_HS_DIAGCROSS        "HS_DIAGCROSS"
+    IDS_WHITE_BRUSH         "WHITE_BRUSH"
+    IDS_LTGRAY_BRUSH        "LTGRAY_BRUSH"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_GRAY_BRUSH          "GRAY_BRUSH"
+    IDS_DKGRAY_BRUSH        "DKGRAY_BRUSH"
+    IDS_BLACK_BRUSH         "BLACK_BRUSH"
+    IDS_NULL_BRUSH          "NULL_BRUSH"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_RED                 "Red"
+    IDS_GREEN               "Green"
+    IDS_BLUE                "Blue"
+    IDS_CYAN                "Aqua"
+    IDS_MAGENTA             "Fuschia"
+    IDS_YELLOW              "Yellow"
+    IDS_BLACK               "Black"
+    IDS_GRAY                "Gray"
+    IDS_WHITE               "White"
+    IDS_LTGRAY              "Silver"
+    IDS_DKGRAY              "Dk. Gray"
+    IDS_TEAL                "Teal"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_LIME                "Lime"
+    IDS_MAROON              "Maroon"
+    IDS_OLIVE               "Olive"
+    IDS_PURPLE              "Purple"
+    IDS_NAVY                "Navy"
+    IDS_PALEGREEN           "Lt green"
+    IDS_SKYBLUE             "Sky blue"
+    IDS_CREAM               "Cream"
+    IDS_MDGRAY              "Md Gray"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_COLOR_SCROLLBAR     "~Scrollbar"
+    IDS_COLOR_BACKGROUND    "~Background"
+    IDS_COLOR_ACTIVECAPTION "~Active caption"
+    IDS_COLOR_INACTIVECAPTION "~Inactive caption"
+    IDS_COLOR_MENU          "~Menu"
+    IDS_COLOR_WINDOW        "~Window"
+    IDS_COLOR_WINDOWFRAME   "~Window frame"
+    IDS_COLOR_MENUTEXT      "~Menu text"
+    IDS_COLOR_WINDOWTEXT    "~Window text"
+    IDS_COLOR_CAPTIONTEXT   "~Caption text"
+    IDS_COLOR_ACTIVEBORDER  "~Active border"
+    IDS_COLOR_INACTIVEBORDER "~Inactive border"
+    IDS_COLOR_APPWORKSPACE  "~App workspace"
+    IDS_COLOR_HIGHLIGHT     "~Highlight"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_COLOR_HIGHLIGHTTEXT "~Highlight text"
+    IDS_COLOR_BTNFACE       "~Btn face"
+    IDS_COLOR_BTNSHADOW     "~Btn shadow"
+    IDS_COLOR_GRAYTEXT      "~Gray text"
+    IDS_COLOR_BTNTEXT       "~Btn text"
+    IDS_COLOR_INACTIVECAPTIONTEXT "~Inactive caption text"
+    IDS_COLOR_BTNHIGHLIGHT  "~Btn highlight"
+    IDS_COLOR_3DDKSHADOW    "~3D Dk Shadow"
+    IDS_COLOR_3DLIGHT       "~3D Light"
+    IDS_COLOR_INFOTEXT      "~Info text"
+    IDS_COLOR_INFOBK        "~Info bk"
+    IDS_COLOR_DESKTOP       "~Desktop"
+    IDS_COLOR_3DFACE        "~3D face"
+    IDS_COLOR_3DSHADOW      "~3D shadow"
+    IDS_COLOR_3DHIGHLIGHT   "~3D highlight"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_0                   "00: 0 (BLACKNESS)"
+    IDS_DPSoon              "01: DPSoon"
+    IDS_DPSona              "02: DPSona"
+    IDS_PSon                "03: PSon"
+    IDS_SDPona              "04: SDPona"
+    IDS_DPon                "05: DPon"
+    IDS_PDSxnon             "06: PDSxnon"
+    IDS_PDSaon              "07: PDSaon"
+    IDS_SDPnaa              "08: SDPnaa"
+    IDS_PDSxon              "09: PDSxon"
+    IDS_DPna                "0A: DPna"
+    IDS_PSDnaon             "0B: PSDnaon"
+    IDS_SPna                "0C: SPna"
+    IDS_PDSnaon             "0D: PDSnaon"
+    IDS_PDSonon             "0E: PDSonon"
+    IDS_Pn                  "0F: Pn"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PDSona              "10: PDSona"
+    IDS_DSon                "11: DSon (NOTSRCERASE)"
+    IDS_SDPxnon             "12: SDPxnon"
+    IDS_SDPaon              "13: SDPaon"
+    IDS_DPSxnon             "14: DPSxnon"
+    IDS_DPSaon              "15: DPSaon"
+    IDS_PSDPSanaxx          "16: PSDPSanaxx"
+    IDS_SSPxDSxaxn          "17: SSPxDSxaxn"
+    IDS_SPxPDxa             "18: SPxPDxa"
+    IDS_SDPSanaxn           "19: SDPSanaxn"
+    IDS_PDSPaox             "1A: PDSPaox"
+    IDS_SDPSxaxn            "1B: SDPSxaxn"
+    IDS_PSDPaox             "1C: PSDPaox"
+    IDS_DSPDxaxn            "1D: DSPDxaxn"
+    IDS_PDSox               "1E: PDSox"
+    IDS_PDSoan              "1F: PDSoan"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_DPSnaa              "20: DPSnaa"
+    IDS_SDPxon              "21: SDPxon"
+    IDS_DSna                "22: DSna"
+    IDS_SPDnaon             "23: SPDnaon"
+    IDS_SPxDSxa             "24: SPxDSxa"
+    IDS_PDSPanaxn           "25: PDSPanaxn"
+    IDS_SDPSaox             "26: SDPSaox"
+    IDS_SDPSxnox            "27: SDPSxnox"
+    IDS_DPSxa               "28: DPSxa"
+    IDS_PSDPSaoxxn          "29: PSDPSaoxxn"
+    IDS_DPSana              "2A: DPSana"
+    IDS_SSPxPDxaxn          "2B: SSPxPDxaxn"
+    IDS_SPDSoax             "2C: SPDSoax"
+    IDS_PSDnox              "2D: PSDnox"
+    IDS_PSDPxox             "2E: PSDPxox"
+    IDS_PSDnoan             "2F: PSDnoan"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PSna                "30: PSna"
+    IDS_SDPnaon             "31: SDPnaon"
+    IDS_SDPSoox             "32: SDPSoox"
+    IDS_Sn                  "33: Sn (NOTSRCCOPY)"
+    IDS_SPDSaox             "34: SPDSaox"
+    IDS_SPDSxnox            "35: SPDSxnox"
+    IDS_SDPox               "36: SDPox"
+    IDS_SDPoan              "37: SDPoan"
+    IDS_PSDPoax             "38: PSDPoax"
+    IDS_SPDnox              "39: SPDnox"
+    IDS_SPDSxox             "3A: SPDSxox"
+    IDS_SPDnoan             "3B: SPDnoan"
+    IDS_PSx                 "3C: PSx"
+    IDS_SPDSonox            "3D: SPDSonox"
+    IDS_SPDSnaox            "3E: SPDSnaox"
+    IDS_PSan                "3F: PSan"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PSDnaa              "40: PSDnaa"
+    IDS_DPSxon              "41: DPSxon"
+    IDS_SDxPDxa             "42: SDxPDxa"
+    IDS_SPDSanaxn           "43: SPDSanaxn"
+    IDS_SDna                "44: SDna (SRCERASE)"
+    IDS_DPSnaon             "45: DPSnaon"
+    IDS_DSPDaox             "46: DSPDaox"
+    IDS_PSDPxaxn            "47: PSDPxaxn"
+    IDS_SDPxa               "48: SDPxa"
+    IDS_PDSPDaoxxn          "49: PDSPDaoxxn"
+    IDS_DPSDoax             "4A: DPSDoax"
+    IDS_PDSnox              "4B: PDSnox"
+    IDS_SDPana              "4C: SDPana"
+    IDS_SSPxDSxoxn          "4D: SSPxDSxoxn"
+    IDS_PDSPxox             "4E: PDSPxox"
+    IDS_PDSnoan             "4F: PDSnoan"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PDna                "50: PDna"
+    IDS_DSPnaon             "51: DSPnaon"
+    IDS_DPSDaox             "52: DPSDaox"
+    IDS_SPDSxaxn            "53: SPDSxaxn"
+    IDS_DPSonon             "54: DPSonon"
+    IDS_Dn                  "55: Dn (DSTINVERT)"
+    IDS_DPSox               "56: DPSox"
+    IDS_DPSoan              "57: DPSoan"
+    IDS_PDSPoax             "58: PDSPoax"
+    IDS_DPSnox              "59: DPSnox"
+    IDS_DPx                 "5A: DPx"
+    IDS_DPSDonox            "5B: DPSDonox"
+    IDS_DPSDxox             "5C: DPSDxox"
+    IDS_DPSnoan             "5D: DPSnoan"
+    IDS_DPSDnaox            "5E: DPSDnaox"
+    IDS_DPan                "5F: DPan"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PDSxa               "60: PDSxa"
+    IDS_DSPDSaoxxn          "61: DSPDSaoxxn"
+    IDS_DSPDoax             "62: DSPDoax"
+    IDS_SDPnox              "63: SDPnox"
+    IDS_SDPSoax             "64: SDPSoax"
+    IDS_DSPnox              "65: DSPnox"
+    IDS_DSx                 "66: DSx (SRCINVERT)"
+    IDS_SDPSonox            "67: SDPSonox"
+    IDS_DSPDSonoxxn         "68: DSPDSonoxxn"
+    IDS_PDSxxn              "69: PDSxxn"
+    IDS_DPSax               "6A: DPSax"
+    IDS_PSDPSoaxxn          "6B: PSDPSoaxxn"
+    IDS_SDPax               "6C: SDPax"
+    IDS_PDSPDoaxxn          "6D: PDSPDoaxxn"
+    IDS_SDPSnoax            "6E: SDPSnoax"
+    IDS_PDSxnan             "6F: PDSxnan"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PDSana              "70: PDSana"
+    IDS_SSDxPDxaxn          "71: SSDxPDxaxn"
+    IDS_SDPSxox             "72: SDPSxox"
+    IDS_SDPnoan             "73: SDPnoan"
+    IDS_DSPDxox             "74: DSPDxox"
+    IDS_DSPnoan             "75: DSPnoan"
+    IDS_SDPSnaox            "76: SDPSnaox"
+    IDS_DSan                "77: DSan"
+    IDS_PDSax               "78: PDSax"
+    IDS_DSPDSoaxxn          "79: DSPDSoaxxn"
+    IDS_DPSDnoax            "7A: DPSDnoax"
+    IDS_SDPxnan             "7B: SDPxnan"
+    IDS_SPDSnoax            "7C: SPDSnoax"
+    IDS_DPSxnan             "7D: DPSxnan"
+    IDS_SPxDSxo             "7E: SPxDSxo"
+    IDS_DPSaan              "7F: DPSaan"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_DPSaa               "80: DPSaa"
+    IDS_SPxDSxon            "81: SPxDSxon"
+    IDS_DPSxna              "82: DPSxna"
+    IDS_SPDSnoaxn           "83: SPDSnoaxn"
+    IDS_SDPxna              "84: SDPxna"
+    IDS_PDSPnoaxn           "85: PDSPnoaxn"
+    IDS_DSPDSoaxx           "86: DSPDSoaxx"
+    IDS_PDSaxn              "87: PDSaxn"
+    IDS_DSa                 "88: DSa (SRCAND)"
+    IDS_SDPSnaoxn           "89: SDPSnaoxn"
+    IDS_DSPnoa              "8A: DSPnoa"
+    IDS_DSPDxoxn            "8B: DSPDxoxn"
+    IDS_SDPnoa              "8C: SDPnoa"
+    IDS_SDPSxoxn            "8D: SDPSxoxn"
+    IDS_SSDxPDxax           "8E: SSDxPDxax"
+    IDS_PDSanan             "8F: PDSanan"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PDSxna              "90: PDSxna"
+    IDS_SDPSnoaxn           "91: SDPSnoaxn"
+    IDS_DPSDPoaxx           "92: DPSDPoaxx"
+    IDS_SPDaxn              "93: SPDaxn"
+    IDS_PSDPSoaxx           "94: PSDPSoaxx"
+    IDS_DPSaxn              "95: DPSaxn"
+    IDS_DPSxx               "96: DPSxx"
+    IDS_PSDPSonoxx          "97: PSDPSonoxx"
+    IDS_SDPSonoxn           "98: SDPSonoxn"
+    IDS_DSxn                "99: DSxn"
+    IDS_DPSnax              "9A: DPSnax"
+    IDS_SDPSoaxn            "9B: SDPSoaxn"
+    IDS_SPDnax              "9C: SPDnax"
+    IDS_DSPDoaxn            "9D: DSPDoaxn"
+    IDS_DSPDSaoxx           "9E: DSPDSaoxx"
+    IDS_PDSxan              "9F: PDSxan"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_DPa                 "A0: DPa"
+    IDS_PDSPnaoxn           "A1: PDSPnaoxn"
+    IDS_DPSnoa              "A2: DPSnoa"
+    IDS_DPSDxoxn            "A3: DPSDxoxn"
+    IDS_PDSPonoxn           "A4: PDSPonoxn"
+    IDS_PDxn                "A5: PDxn"
+    IDS_DSPnax              "A6: DSPnax"
+    IDS_PDSPoaxn            "A7: PDSPoaxn"
+    IDS_DPSoa               "A8: DPSoa"
+    IDS_DPSoxn              "A9: DPSoxn"
+    IDS_D                   "AA: D"
+    IDS_DPSono              "AB: DPSono"
+    IDS_SPDSxax             "AC: SPDSxax"
+    IDS_DPSDaoxn            "AD: DPSDaoxn"
+    IDS_DSPnao              "AE: DSPnao"
+    IDS_DPno                "AF: DPno"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PDSnoa              "B0: PDSnoa"
+    IDS_PDSPxoxn            "B1: PDSPxoxn"
+    IDS_SSPxDSxox           "B2: SSPxDSxox"
+    IDS_SDPanan             "B3: SDPanan"
+    IDS_PSDnax              "B4: PSDnax"
+    IDS_DPSDoaxn            "B5: DPSDoaxn"
+    IDS_DPSDPaoxx           "B6: DPSDPaoxx"
+    IDS_SDPxan              "B7: SDPxan"
+    IDS_PSDPxax             "B8: PSDPxax"
+    IDS_DSPDaoxn            "B9: DSPDaoxn"
+    IDS_DPSnao              "BA: DPSnao"
+    IDS_DSno                "BB: DSno (MERGEPAINT)"
+    IDS_SPDSanax            "BC: SPDSanax"
+    IDS_SDxPDxan            "BD: SDxPDxan"
+    IDS_DPSxo               "BE: DPSxo"
+    IDS_DPSano              "BF: DPSano"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PSa                 "C0: PSa (MERGECOPY)"
+    IDS_SPDSnaoxn           "C1: SPDSnaoxn"
+    IDS_SPDSonoxn           "C2: SPDSonoxn"
+    IDS_PSxn                "C3: PSxn"
+    IDS_SPDnoa              "C4: SPDnoa"
+    IDS_SPDSxoxn            "C5: SPDSxoxn"
+    IDS_SDPnax              "C6: SDPnax"
+    IDS_PSDPoaxn            "C7: PSDPoaxn"
+    IDS_SDPoa               "C8: SDPoa"
+    IDS_SPDoxn              "C9: SPDoxn"
+    IDS_DPSDxax             "CA: DPSDxax"
+    IDS_SPDSaoxn            "CB: SPDSaoxn"
+    IDS_S                   "CC: S (SRCCOPY)"
+    IDS_SDPono              "CD: SDPono"
+    IDS_SDPnao              "CE: SDPnao"
+    IDS_SPno                "CF: SPno"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PSDnoa              "D0: PSDnoa"
+    IDS_PSDPxoxn            "D1: PSDPxoxn"
+    IDS_PDSnax              "D2: PDSnax"
+    IDS_SPDSoaxn            "D3: SPDSoaxn"
+    IDS_SSPxPDxax           "D4: SSPxPDxax"
+    IDS_DPSanan             "D5: DPSanan"
+    IDS_PSDPSaoxx           "D6: PSDPSaoxx"
+    IDS_DPSxan              "D7: DPSxan"
+    IDS_PDSPxax             "D8: PDSPxax"
+    IDS_SDPSaoxn            "D9: SDPSaoxn"
+    IDS_DPSDanax            "DA: DPSDanax"
+    IDS_SPxDSxan            "DB: SPxDSxan"
+    IDS_SPDnao              "DC: SPDnao"
+    IDS_SDno                "DD: SDno"
+    IDS_SDPxo               "DE: SDPxo"
+    IDS_SDPano              "DF: SDPano"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PDSoa               "E0: PDSoa"
+    IDS_PDSoxn              "E1: PDSoxn"
+    IDS_DSPDxax             "E2: DSPDxax"
+    IDS_PSDPaoxn            "E3: PSDPaoxn"
+    IDS_SDPSxax             "E4: SDPSxax"
+    IDS_PDSPaoxn            "E5: PDSPaoxn"
+    IDS_SDPSanax            "E6: SDPSanax"
+    IDS_SPxPDxan            "E7: SPxPDxan"
+    IDS_SSPxDSxax           "E8: SSPxDSxax"
+    IDS_DSPDSanaxxn         "E9: DSPDSanaxxn"
+    IDS_DPSao               "EA: DPSao"
+    IDS_DPSxno              "EB: DPSxno"
+    IDS_SDPao               "EC: SDPao"
+    IDS_SDPxno              "ED: SDPxno"
+    IDS_DSo                 "EE: DSo (SRCPAINT)"
+    IDS_SDPnoo              "EF: SDPnoo"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_P                   "F0: P (PATCOPY)"
+    IDS_PDSono              "F1: PDSono"
+    IDS_PDSnao              "F2: PDSnao"
+    IDS_PSno                "F3: PSno"
+    IDS_PSDnao              "F4: PSDnao"
+    IDS_PDno                "F5: PDno"
+    IDS_PDSxo               "F6: PDSxo"
+    IDS_PDSano              "F7: PDSano"
+    IDS_PDSao               "F8: PDSao"
+    IDS_PDSxno              "F9: PDSxno"
+    IDS_DPo                 "FA: DPo"
+    IDS_DPSnoo              "FB: DPSnoo (PATPAINT)"
+    IDS_PSo                 "FC: PSo"
+    IDS_PSDnoo              "FD: PSDnoo"
+    IDS_DPSoo               "FE: DPSoo"
+    IDS_1                   "FF: 1 (WHITENESS)"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_WIN95_BOGUS         "Warning: StretchBlt may ignore the %s mode in Win95. This is a Win95 bug.   See KB article Q138105."
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif
+#include "res\GDIExplorer.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#include "afxprint.rc"       // printing/print preview resources
+#endif
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

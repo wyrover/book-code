@@ -3,7 +3,7 @@
 #define AFX_EVENT_H__4A7FF6CD_EC52_46C1_9E03_A1C87CE4E140__INCLUDED_
 
 #if _MSC_VER > 1000
-#pragma once
+    #pragma once
 #endif // _MSC_VER > 1000
 
 #include "resource.h"

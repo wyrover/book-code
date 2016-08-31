@@ -1,0 +1,2 @@
+LPDLGTEMPLATE makeAboutBoxTemplate(void);
+

@@ -1,0 +1,3 @@
+#define UWM_SHOW_INFO (WM_USER + 100)
+#define UWM_RELEASE_INFO (WM_USER + 101)
+

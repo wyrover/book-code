@@ -1,0 +1,26 @@
+// MAKEHELP.BAT generated Help Map file.  Used by PRINTEXPLORER.HPJ. 
+ 
+// Commands (ID_* and IDM_*) 
+HIDM_PRINTDLG                           0x18005
+ 
+// Prompts (IDP_*) 
+ 
+// Resources (IDR_*) 
+HIDR_MAINFRAME                          0x20080
+HIDR_PRINTETYPE                         0x20081
+ 
+// Dialogs (IDD_*) 
+HIDD_ABOUTBOX                           0x20064
+HIDD_PRINTDLG                           0x20082
+HIDD_FLAGS                              0x20084
+HIDD_PRINTER                            0x20085
+HIDD_DEVMODE                            0x20086
+HIDD_SETDEVMODE                         0x20087
+HIDD_DEVICECAPS                         0x20088
+HIDD_PAGESETUP                          0x20089
+HIDD_ABORT                              0x2008A
+HIDD_PRINTDLL                           0x2008B
+HIDD_CUSTOMPRINTING                     0x2008C
+HIDD_DEVCAPABILITIES                    0x20090
+ 
+// Frame Controls (IDW_*) 

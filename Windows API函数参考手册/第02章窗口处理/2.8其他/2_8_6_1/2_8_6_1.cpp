@@ -7,49 +7,45 @@
 #define MAX_LOADSTRING 100
 
 // Global Variables:
-HINSTANCE hInst;								// current instance
-TCHAR szTitle[MAX_LOADSTRING];								// The title bar text
-TCHAR szWindowClass[MAX_LOADSTRING];								// The title bar text
+HINSTANCE hInst;                                // current instance
+TCHAR szTitle[MAX_LOADSTRING];                              // The title bar text
+TCHAR szWindowClass[MAX_LOADSTRING];                                // The title bar text
 
 // Foward declarations of functions included in this code module:
-ATOM				MyRegisterClass(HINSTANCE hInstance);
-BOOL				InitInstance(HINSTANCE, int);
-LRESULT CALLBACK	WndProc(HWND, UINT, WPARAM, LPARAM);
-LRESULT CALLBACK	About(HWND, UINT, WPARAM, LPARAM);
+ATOM                MyRegisterClass(HINSTANCE hInstance);
+BOOL                InitInstance(HINSTANCE, int);
+LRESULT CALLBACK    WndProc(HWND, UINT, WPARAM, LPARAM);
+LRESULT CALLBACK    About(HWND, UINT, WPARAM, LPARAM);
 
 int APIENTRY WinMain(HINSTANCE hInstance,
                      HINSTANCE hPrevInstance,
                      LPSTR     lpCmdLine,
                      int       nCmdShow)
 {
- 	// TODO: Place code here.
-	MSG msg;
-	HACCEL hAccelTable;
+    // TODO: Place code here.
+    MSG msg;
+    HACCEL hAccelTable;
+    // Initialize global strings
+    LoadString(hInstance, IDS_APP_TITLE, szTitle, MAX_LOADSTRING);
+    LoadString(hInstance, IDC_MY2_8_6_1, szWindowClass, MAX_LOADSTRING);
+    MyRegisterClass(hInstance);
 
-	// Initialize global strings
-	LoadString(hInstance, IDS_APP_TITLE, szTitle, MAX_LOADSTRING);
-	LoadString(hInstance, IDC_MY2_8_6_1, szWindowClass, MAX_LOADSTRING);
-	MyRegisterClass(hInstance);
+    // Perform application initialization:
+    if (!InitInstance(hInstance, nCmdShow)) {
+        return FALSE;
+    }
 
-	// Perform application initialization:
-	if (!InitInstance (hInstance, nCmdShow)) 
-	{
-		return FALSE;
-	}
+    hAccelTable = LoadAccelerators(hInstance, (LPCTSTR)IDC_MY2_8_6_1);
 
-	hAccelTable = LoadAccelerators(hInstance, (LPCTSTR)IDC_MY2_8_6_1);
+    // Main message loop:
+    while (GetMessage(&msg, NULL, 0, 0)) {
+        if (!TranslateAccelerator(msg.hwnd, hAccelTable, &msg)) {
+            TranslateMessage(&msg);
+            DispatchMessage(&msg);
+        }
+    }
 
-	// Main message loop:
-	while (GetMessage(&msg, NULL, 0, 0)) 
-	{
-		if (!TranslateAccelerator(msg.hwnd, hAccelTable, &msg)) 
-		{
-			TranslateMessage(&msg);
-			DispatchMessage(&msg);
-		}
-	}
-
-	return msg.wParam;
+    return msg.wParam;
 }
 
 
@@ -69,23 +65,20 @@ int APIENTRY WinMain(HINSTANCE hInstance,
 //
 ATOM MyRegisterClass(HINSTANCE hInstance)
 {
-	WNDCLASSEX wcex;
-
-	wcex.cbSize = sizeof(WNDCLASSEX); 
-
-	wcex.style			= CS_HREDRAW | CS_VREDRAW;
-	wcex.lpfnWndProc	= (WNDPROC)WndProc;
-	wcex.cbClsExtra		= 0;
-	wcex.cbWndExtra		= 0;
-	wcex.hInstance		= hInstance;
-	wcex.hIcon			= LoadIcon(hInstance, (LPCTSTR)IDI_MY2_8_6_1);
-	wcex.hCursor		= LoadCursor(NULL, IDC_ARROW);
-	wcex.hbrBackground	= (HBRUSH)(COLOR_WINDOW+1);
-	wcex.lpszMenuName	= (LPCSTR)IDC_MY2_8_6_1;
-	wcex.lpszClassName	= szWindowClass;
-	wcex.hIconSm		= LoadIcon(wcex.hInstance, (LPCTSTR)IDI_SMALL);
-
-	return RegisterClassEx(&wcex);
+    WNDCLASSEX wcex;
+    wcex.cbSize = sizeof(WNDCLASSEX);
+    wcex.style          = CS_HREDRAW | CS_VREDRAW;
+    wcex.lpfnWndProc    = (WNDPROC)WndProc;
+    wcex.cbClsExtra     = 0;
+    wcex.cbWndExtra     = 0;
+    wcex.hInstance      = hInstance;
+    wcex.hIcon          = LoadIcon(hInstance, (LPCTSTR)IDI_MY2_8_6_1);
+    wcex.hCursor        = LoadCursor(NULL, IDC_ARROW);
+    wcex.hbrBackground  = (HBRUSH)(COLOR_WINDOW + 1);
+    wcex.lpszMenuName   = (LPCSTR)IDC_MY2_8_6_1;
+    wcex.lpszClassName  = szWindowClass;
+    wcex.hIconSm        = LoadIcon(wcex.hInstance, (LPCTSTR)IDI_SMALL);
+    return RegisterClassEx(&wcex);
 }
 
 //
@@ -100,22 +93,18 @@ ATOM MyRegisterClass(HINSTANCE hInstance)
 //
 BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 {
-   HWND hWnd;
+    HWND hWnd;
+    hInst = hInstance; // Store instance handle in our global variable
+    hWnd = CreateWindow(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
+                        CW_USEDEFAULT, 0, CW_USEDEFAULT, 0, NULL, NULL, hInstance, NULL);
 
-   hInst = hInstance; // Store instance handle in our global variable
+    if (!hWnd) {
+        return FALSE;
+    }
 
-   hWnd = CreateWindow(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
-      CW_USEDEFAULT, 0, CW_USEDEFAULT, 0, NULL, NULL, hInstance, NULL);
-
-   if (!hWnd)
-   {
-      return FALSE;
-   }
-
-   ShowWindow(hWnd, nCmdShow);
-   UpdateWindow(hWnd);
-
-   return TRUE;
+    ShowWindow(hWnd, nCmdShow);
+    UpdateWindow(hWnd);
+    return TRUE;
 }
 
 //
@@ -123,96 +112,102 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 //
 //  PURPOSE:  Processes messages for the main window.
 //
-//  WM_COMMAND	- process the application menu
-//  WM_PAINT	- Paint the main window
-//  WM_DESTROY	- post a quit message and return
+//  WM_COMMAND  - process the application menu
+//  WM_PAINT    - Paint the main window
+//  WM_DESTROY  - post a quit message and return
 //
 //
 LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
-	int wmId, wmEvent;
-	PAINTSTRUCT ps;
-	HDC hdc;
-	TCHAR szHello[MAX_LOADSTRING];
-	LoadString(hInst, IDS_HELLO, szHello, MAX_LOADSTRING);
-static setcapture=0;
-	switch (message) 
-	{
-		case WM_COMMAND:
-			wmId    = LOWORD(wParam); 
-			wmEvent = HIWORD(wParam); 
-			// Parse the menu selections:
-			switch (wmId)
-			{
-				case IDM_ABOUT:
-				   DialogBox(hInst, (LPCTSTR)IDD_ABOUTBOX, hWnd, (DLGPROC)About);
-				   break;
-				case IDM_EXIT:
-				   DestroyWindow(hWnd);
-				   break;
-				default:
-				   return DefWindowProc(hWnd, message, wParam, lParam);
-			}
-			break;
-		case WM_PAINT:
-		
-			break;
-			case WM_LBUTTONDOWN:
-		//下面的代码部分在消息主循环的WM_LBUTTONDOWN中
+    int wmId, wmEvent;
+    PAINTSTRUCT ps;
+    HDC hdc;
+    TCHAR szHello[MAX_LOADSTRING];
+    LoadString(hInst, IDS_HELLO, szHello, MAX_LOADSTRING);
+    static setcapture = 0;
 
-if(!setcapture){
-		SetCapture(hWnd);
-		SetWindowPos(hWnd,HWND_TOPMOST,0,0,0,0,SWP_NOSIZE|SWP_NOMOVE);
-		setcapture=1;
-}
-else{
-		HWND temp;
-		POINT pt;
-		
-		short int xPos = LOWORD(lParam); 	//鼠标的水平坐标
-		short int yPos = HIWORD(lParam);  //鼠标的垂直坐标
-		pt.x=xPos;
-		pt.y=yPos;
-		ClientToScreen(hWnd,&pt);
-		temp=WindowFromPoint(pt);
-		if(temp)
-		{
-			char szName[64];
-			GetWindowText(temp,szName,64);
-			MessageBox(hWnd,szName,"FindWindow",MB_OK);
-		}
-}
+    switch (message) {
+    case WM_COMMAND:
+        wmId    = LOWORD(wParam);
+        wmEvent = HIWORD(wParam);
 
-case WM_RBUTTONDOWN:
-		if(setcapture){
-			ReleaseCapture();
-		}
-		break;
-			break;
-		case WM_DESTROY:
-			PostQuitMessage(0);
-			break;
-		default:
-			return DefWindowProc(hWnd, message, wParam, lParam);
-   }
-   return 0;
+        // Parse the menu selections:
+        switch (wmId) {
+        case IDM_ABOUT:
+            DialogBox(hInst, (LPCTSTR)IDD_ABOUTBOX, hWnd, (DLGPROC)About);
+            break;
+
+        case IDM_EXIT:
+            DestroyWindow(hWnd);
+            break;
+
+        default:
+            return DefWindowProc(hWnd, message, wParam, lParam);
+        }
+
+        break;
+
+    case WM_PAINT:
+        break;
+
+    case WM_LBUTTONDOWN:
+
+        //下面的代码部分在消息主循环的WM_LBUTTONDOWN中
+        if (!setcapture) {
+            SetCapture(hWnd);
+            SetWindowPos(hWnd, HWND_TOPMOST, 0, 0, 0, 0, SWP_NOSIZE | SWP_NOMOVE);
+            setcapture = 1;
+        } else {
+            HWND temp;
+            POINT pt;
+            short int xPos = LOWORD(lParam);    //鼠标的水平坐标
+            short int yPos = HIWORD(lParam);  //鼠标的垂直坐标
+            pt.x = xPos;
+            pt.y = yPos;
+            ClientToScreen(hWnd, &pt);
+            temp = WindowFromPoint(pt);
+
+            if (temp) {
+                char szName[64];
+                GetWindowText(temp, szName, 64);
+                MessageBox(hWnd, szName, "FindWindow", MB_OK);
+            }
+        }
+
+    case WM_RBUTTONDOWN:
+        if (setcapture) {
+            ReleaseCapture();
+        }
+
+        break;
+        break;
+
+    case WM_DESTROY:
+        PostQuitMessage(0);
+        break;
+
+    default:
+        return DefWindowProc(hWnd, message, wParam, lParam);
+    }
+
+    return 0;
 }
 
 // Mesage handler for about box.
 LRESULT CALLBACK About(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)
 {
-	switch (message)
-	{
-		case WM_INITDIALOG:
-				return TRUE;
+    switch (message) {
+    case WM_INITDIALOG:
+        return TRUE;
 
-		case WM_COMMAND:
-			if (LOWORD(wParam) == IDOK || LOWORD(wParam) == IDCANCEL) 
-			{
-				EndDialog(hDlg, LOWORD(wParam));
-				return TRUE;
-			}
-			break;
-	}
+    case WM_COMMAND:
+        if (LOWORD(wParam) == IDOK || LOWORD(wParam) == IDCANCEL) {
+            EndDialog(hDlg, LOWORD(wParam));
+            return TRUE;
+        }
+
+        break;
+    }
+
     return FALSE;
 }

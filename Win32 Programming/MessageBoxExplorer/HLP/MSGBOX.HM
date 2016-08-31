@@ -1,0 +1,15 @@
+// MAKEHELP.BAT generated Help Map file.  Used by MSGBOX.HPJ. 
+ 
+// Commands (ID_* and IDM_*) 
+HIDM_ABOUTBOX                           0x10010
+ 
+// Prompts (IDP_*) 
+ 
+// Resources (IDR_*) 
+HIDR_MAINFRAME                          0x20080
+ 
+// Dialogs (IDD_*) 
+HIDD_ABOUTBOX                           0x20064
+HIDD_MSGBOX_DIALOG                      0x20066
+ 
+// Frame Controls (IDW_*) 
