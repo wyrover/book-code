@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="IDeletable" Collapsed="true">
+    <Position X="8.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AsyncInvoke.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IAsyncResult">
+    <Position X="1.75" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAEAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>AsyncInvoke.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IDelegate">
+    <Position X="9.75" Y="1.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAYABAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AsyncInvoke.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISynchronizeInvoke">
+    <Position X="5" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAYABAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AsyncInvoke.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CAsyncRequest" Collapsed="true">
+    <Position X="1.75" Y="2.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAQQAAAAAECAAAAAEABAAAEAEAAFAAQA=</HashCode>
+      <FileName>AsyncInvoke.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CAsyncResult" Collapsed="true">
+    <Position X="0.75" Y="3.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAQQAECAAAAAAAEAAAAAAAAAEACAAAAI=</HashCode>
+      <FileName>AsyncInvoke.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CThreadMethodEntry" Collapsed="true">
+    <Position X="2.75" Y="3.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AEAMIAAAAAAAAQQAACAAAAAAAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>AsyncInvoke.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CDelegateWorker" Collapsed="true">
+    <Position X="0.5" Y="6.25" Width="1.5" />
+    <NestedTypes>
+      <Typedef Name="CDelegateWorker::RequestType" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>AsyncInvoke.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQQAAAAAAAAAAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>AsyncInvoke.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IClassDelegate" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AsyncInvoke.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CClassDelegate&lt;T&gt;" Collapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAIAAAAAAAAAAAAACEAABAAAAAAAAAAAAQ=</HashCode>
+      <FileName>AsyncInvoke.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CDelegate" Collapsed="true">
+    <Position X="9.75" Y="3.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAggYARAAAAEAAAAAEAEAAAAAAiAAAAAAAgA=</HashCode>
+      <FileName>AsyncInvoke.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CSynchronizeInvoke" Collapsed="true">
+    <Position X="5" Y="2.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAACAAA4ABAAAEAAAAAIAABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AsyncInvoke.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CMainDlg" Collapsed="true">
+    <Position X="5" Y="3.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAABCAEAAgAABQgAAAAAAAAAAAAAAAAECAIAAAAAQAA=</HashCode>
+      <FileName>MainDlg.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

@@ -1,0 +1,270 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\ServerSocket.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\ServerSocket.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About ServerSocket"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "ServerSocket Version 1.0",IDC_STATIC,40,10,119,8,
+                    SS_NOPREFIX
+    LTEXT           "Copyright (C) 2002",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "OK",IDOK,178,7,50,14,WS_GROUP
+END
+
+IDD_SERVERSOCKET_DIALOG DIALOGEX 0, 0, 324, 230
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "Server Config"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    LTEXT           "Server Port:",IDC_STATIC,5,14,45,12
+    EDITTEXT        IDC_SVR_PORT,57,12,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SVR_PORTINC,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_AUTOBUDDY | UDS_ARROWKEYS | 
+                    UDS_NOTHOUSANDS,97,12,11,14
+    GROUPBOX        "Socket Type",IDC_STATIC,136,5,100,25
+    CONTROL         "TCP",IDC_TCP,"Button",BS_AUTORADIOBUTTON | WS_GROUP,145,
+                    16,30,10
+    CONTROL         "UDP",IDC_UDP,"Button",BS_AUTORADIOBUTTON,186,16,31,10
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,5,35,258,1
+    EDITTEXT        IDC_TXT_MESSAGE,5,63,255,14,ES_AUTOHSCROLL | NOT 
+                    WS_BORDER,WS_EX_STATICEDGE
+    PUSHBUTTON      "Send",IDC_BTN_SEND,269,63,50,26
+    EDITTEXT        IDC_MESSAGE_LIST,5,92,255,132,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_AUTOHSCROLL | NOT WS_BORDER | 
+                    WS_VSCROLL | WS_HSCROLL,WS_EX_STATICEDGE
+    PUSHBUTTON      "Start",IDC_BTN_START,269,92,50,26
+    PUSHBUTTON      "Stop",IDC_BTN_STOP,269,124,50,26
+    DEFPUSHBUTTON   "Close",IDOK,269,199,50,26
+    LTEXT           "Click 'Start' to start the Server.  'Stop' to Stop it.\nUse Send to Send message to peer.",
+                    IDC_STATIC,5,39,179,20
+    LTEXT           "Message view:",IDC_STATIC,5,80,54,8
+END
+
+IDD_CLIENTSOCKET_DIALOG DIALOGEX 0, 0, 324, 230
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "Client Config"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Server Port:",IDC_STATIC,5,7,45,12
+    EDITTEXT        IDC_SVR_PORT,60,5,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SVR_PORTINC,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_AUTOBUDDY | UDS_ARROWKEYS | 
+                    UDS_NOTHOUSANDS,100,5,11,14
+    LTEXT           "Server Address:",IDC_STATIC,5,32,51,8
+    CONTROL         "IPAddress1",IDC_IPADDRESS,"SysIPAddress32",WS_TABSTOP,
+                    60,30,100,12
+    GROUPBOX        "Socket Type",IDC_STATIC,219,5,100,25
+    CONTROL         "TCP",IDC_TCP,"Button",BS_AUTORADIOBUTTON | WS_GROUP,229,
+                    16,30,10
+    CONTROL         "UDP",IDC_UDP,"Button",BS_AUTORADIOBUTTON,269,16,31,10
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,5,48,257,1
+    EDITTEXT        IDC_TXT_MESSAGE,5,75,255,14,ES_AUTOHSCROLL | NOT 
+                    WS_BORDER,WS_EX_STATICEDGE
+    PUSHBUTTON      "Send",IDC_BTN_SEND,269,76,50,26
+    EDITTEXT        IDC_MESSAGE_LIST,5,104,255,120,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_AUTOHSCROLL | NOT WS_BORDER | 
+                    WS_VSCROLL | WS_HSCROLL,WS_EX_STATICEDGE
+    PUSHBUTTON      "Connect",IDC_BTN_START,269,105,50,26
+    PUSHBUTTON      "Disconnect",IDC_BTN_STOP,269,143,50,26
+    DEFPUSHBUTTON   "Close",IDOK,269,199,50,26
+    LTEXT           "Click 'Connect' to Connect to the Server.  'Disconnect' to disconnect from server.\nUse Send to Send message to peer.",
+                    IDC_STATIC,5,55,255,18
+    LTEXT           "Message view:",IDC_STATIC,5,92,54,8
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,2,0,0
+ PRODUCTVERSION 1,2,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "ServerSocket MFC Application\0"
+            VALUE "FileVersion", "1, 2, 0, 0\0"
+            VALUE "InternalName", "ServerSocket\0"
+            VALUE "LegalCopyright", "Copyright (C) 2002\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "ServerSocket.EXE\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "ServerSocket Application\0"
+            VALUE "ProductVersion", "1, 2, 0, 0\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_SERVERSOCKET_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 5
+        RIGHTMARGIN, 319
+        TOPMARGIN, 5
+        BOTTOMMARGIN, 225
+    END
+
+    IDD_CLIENTSOCKET_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 5
+        RIGHTMARGIN, 319
+        TOPMARGIN, 5
+        BOTTOMMARGIN, 225
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "&About ServerSocket..."
+    IDP_SOCKETS_INIT_FAILED "Windows sockets initialization failed."
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\ServerSocket.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
