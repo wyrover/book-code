@@ -310,7 +310,7 @@ workspace "test"
         project "api-test"                    
             kind "ConsoleApp"                         
             flags { "WinMain", "NoManifest",  "StaticRuntime" }
-            prebuildcommands { "../../format_code.bat src/test/api-test" }
+            --prebuildcommands { "../../format_code.bat src/test/api-test" }
             files
             {
                 "src/test/api-test/**.h",
@@ -413,10 +413,48 @@ workspace "test"
                 "3rdparty/wtl"   
             }  
         
+        project "clean-driverstore"          
+            kind "ConsoleApp"                                       
+            flags { "NoManifest", "WinMain", "StaticRuntime" }       
+            defines {  }
+            files
+            {                                  
+                "src/%{prj.name}/**.h",
+                "src/%{prj.name}/**.cpp", 
+                "src/%{prj.name}/**.rc"                           
+            }
+            removefiles
+            {               
+            }
+            includedirs
+            {                   
+                "3rdparty"   
+            }  
+            links
+            {
+                "Setupapi.lib"
+            }
+            
+         
+        project "vc-ltl-test"          
+            kind "ConsoleApp"                                       
+            flags { "NoManifest", "WinMain" }       
+            defines {  }
+            files
+            {                                  
+                "src/%{prj.name}/**.h",
+                "src/%{prj.name}/**.cpp", 
+                "src/%{prj.name}/**.rc"                           
+            }
+            removefiles
+            {               
+            }
+            includedirs
+            {                   
+                "3rdparty"   
+            }   
+           
         
-           
-           
-
 
         
 
