@@ -1,0 +1,3 @@
+首先生成 MySplitter.exe 和SelfCombineCtrl.exe， 
+然后用FileMerger.exe程序把上述两文件安先后顺序合并，
+即可以生成的制作自合并分割文件的程序,例如 MyFileCut.exe。

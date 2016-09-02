@@ -1,0 +1,7 @@
+1) 首先生成控制体文件 SelfExtCtrl.exe, 
+2) 准备3个用于被捆绑的应用程序:例如,calc1.exe, calc2.exe,calc3.exe,
+3) 编译生成 SelfExtBind.exe,用于合并以上4个文件。 
+
+把以上5个文件发放在同一个目录下，
+运行SelfExtBind.exe后生成一个新文件 SelfExt.exe,同时calc1.exe、calc2.exe、calc3.exe被删除。
+用鼠标双击SelfExt.exe文件，则可以从SelfExt.exe文件分解出被捆绑的文件.
