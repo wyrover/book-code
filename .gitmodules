@@ -1,0 +1,3 @@
+[submodule "lib"]
+	path = lib
+	url = https://git.oschina.net/wyrover/cpp-3rdparty-lib.git
