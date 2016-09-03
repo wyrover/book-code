@@ -1,0 +1,41 @@
+This is the output from running MATLAB Add-in.
+Please close this window after viewing it.
+--------------MCC/MEX BEGIN---------------
+mcc -k "D:\VC2005\Exp_13_3_4\mcc.mak" -/n -p -A line:on -g libmmfile.mlib -vh  "D:\VC2005\Exp_13_3_4\myeig.m" "D:\VC2005\Exp_13_3_4\mymagic.m"
+Compiler version: 3.0
+Parsing file "d:\vc2005\exp_13_3_4\myeig.m"
+	(Referenced from: "Compiler Command Line").
+Parsing file "d:\vc2005\exp_13_3_4\mymagic.m"
+	(Referenced from: "Compiler Command Line").
+Generating file "myeig.hpp".
+Generating file "myeig.cpp".
+Generating file "mymagic.hpp".
+Generating file "mymagic.cpp".
+Generating file "myeig_main.cpp".
+Executing command: mbuild -g -v -output "myeig" "myeig.cpp" "mymagic.cpp" "myeig_main.cpp" -link exe -k "D:\VC2005\Exp_13_3_4\mcc.mak" -nohg -no_setup
+ This is mbuild Copyright 1984-2002 The MathWorks, Inc.
+
+-> Default options filename found in C:\Documents and Settings\Administrator\Application Data\MathWorks\MATLAB\R13
+----------------------------------------------------------------
+->    Options file           = C:\Documents and Settings\Administrator\Application Data\MathWorks\MATLAB\R13\compopts.bat
+->    COMPILER               = cl
+->    Compiler flags:
+         COMPFLAGS           = -c -Zp8 -G5 -W3 -nologo -Zm500 -GX -MD -I"d:\MATLAB6p5\extern\include\cpp" -DMSVC -DIBMPC -DMSWIND
+         OPTIMFLAGS          = -O2 -DNDEBUG
+         DEBUGFLAGS          = -Zi -Fd"myeig.pdb"
+         arguments           = 
+         Name switch         = /Fo
+->    Pre-linking commands   = 
+->    LINKER                 = link
+->    Link directives:
+         LINKFLAGS           = kernel32.lib user32.lib gdi32.lib advapi32.lib oleaut32.lib ole32.lib /LIBPATH:"d:\MATLAB6p5\extern\lib\win32\microsoft\msvc60" libmmfile.lib libmatlb.lib /nologo libmx.lib libmat.lib libmwservices.lib libmex.lib libut.lib d:\MATLAB6p5\extern\lib\win32\libmatpm.lib
+         LINKFLAGSPOST       = 
+         Name directive      = "/out:myeig.exe"
+         File link directive = 
+         Lib. link directive = 
+         Rsp file indicator  = @
+->    Resource Compiler      = rc /fo ".res"
+->    Resource Linker        = 
+----------------------------------------------------------------
+
+--------------MCC/MEX DONE----------------

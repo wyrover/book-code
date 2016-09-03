@@ -1,0 +1,2 @@
+D:\VC2005\Exp_13_3_5\myeig.m
+D:\VC2005\Exp_13_3_5\mymagic.m
