@@ -36,3 +36,19 @@ book code
 -  https://github.com/tujiaw/pipe
 -  https://github.com/awakecoding/xrdp-ng/blob/bbc04f19df0544cfaeb83eebe3263cc38d99a132/session-manager/common/pbRPC/RpcEngine.cpp
 -  https://github.com/sim0629/tightvnc/blob/af064f5fa430d8a75ad256216328e37e04b49dc1/win-system/PipeServer.h
+
+
+
+
+
+-  https://github.com/bupthongyi/Rpc   是一个基于 boost.asio 的命名管道方式 IPC, 支持 google protobuf
+-  http://www.cppremote.com/
+-  https://github.com/maligulzar/Rstudio-instrumented
+-  https://github.com/ggf005/MyProjects     PPTV
+-  https://github.com/0xfab-ri/dlna-microstack
+-  https://github.com/Vatyx/NamedPipeCapture
+-  https://github.com/chunteck/base     boost.asio 命名管道
+-  https://github.com/SidneyYue/ClientLibXcode/blob/a4c4b6bb046dcc698d736f3588428443069ce125/OwbClientlibXcode/ThridParty/RCF-2.0.0.2679/include/RCF/test/TransportFactories.hpp
+-  https://github.com/bransorem/prov/blob/80cce013b762ef4d60b8bb6cb56c67f2b37af8b1/server.cpp
+-  https://github.com/winetaster/InfinityCore
+-  https://github.com/search?l=cpp&p=3&q=uv_pipe_init&ref=reposearch&type=Code&utf8=%E2%9C%93
