@@ -1,23 +1,24 @@
+includeexternal ("premake5-include.lua")
+
 workspace "ipc"
     language "C++"
-    location "build/%{_ACTION}"
-    targetdir "bin"
+    location "build/%{_ACTION}"    
 
     configurations { "Debug", "Release", "TRACE", "TRACE_MT" }
     platforms { "Win32", "x64" }    
 
     filter { "kind:StaticLib", "platforms:Win32" }
-        targetdir "lib/x86" 
+        targetdir "lib/x86/%{_ACTION}" 
     filter { "kind:StaticLib", "platforms:x64" }
-        targetdir "lib/x64" 
+        targetdir "lib/x64/%{_ACTION}" 
     filter { "kind:SharedLib", "platforms:Win32" }
-        implibdir "lib/x86" 
+        implibdir "lib/x86/%{_ACTION}" 
     filter { "kind:SharedLib", "platforms:x64" }
-        implibdir "lib/x64" 
+        implibdir "lib/x64/%{_ACTION}" 
     filter { "kind:ConsoleApp or WindowedApp or SharedLib", "platforms:Win32" }
-        targetdir "bin/x86"         
+        targetdir "bin/x86/%{_ACTION}"         
     filter { "kind:ConsoleApp or WindowedApp or SharedLib", "platforms:x64" }
-        targetdir "bin/x64" 
+        targetdir "bin/x64/%{_ACTION}" 
         
 
     filter { "platforms:Win32" }
@@ -25,9 +26,9 @@ workspace "ipc"
         architecture "x32"
         libdirs 
         {
-            "lib/x86",
-            "lib/x86/boost",
-            "bin/x86"            
+            "lib/x86/%{_ACTION}",
+            "lib/x86/%{_ACTION}/boost-1_60",
+            "bin/x86/%{_ACTION}"            
         }
     
     filter { "platforms:x64" }
@@ -35,9 +36,9 @@ workspace "ipc"
         architecture "x64"   
         libdirs
         {
-            "lib/x64",
-            "lib/x64/boost",
-            "bin/x64"
+            "lib/x64/%{_ACTION}",
+            "lib/x64/%{_ACTION}/boost-1_60",
+            "bin/x64/%{_ACTION}"
         }
 
     filter "configurations:Debug"
