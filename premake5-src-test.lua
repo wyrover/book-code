@@ -412,6 +412,24 @@ workspace "test"
             {                   
                 "3rdparty/wtl"   
             }  
+
+        project "dectet-process"          
+            kind "WindowedApp"          
+            flags { "NoManifest", "WinMain", "StaticRuntime" }       
+            defines {  }            
+            files
+            {                                  
+                "src/test/%{prj.name}/**.h",
+                "src/test/%{prj.name}/**.cpp", 
+                "src/test/%{prj.name}/**.rc" 
+            }
+            removefiles
+            {               
+            }
+            includedirs
+            {                   
+                "3rdparty/wtl"   
+            }              
         
         project "clean-driverstore"          
             kind "ConsoleApp"                                       

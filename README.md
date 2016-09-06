@@ -52,3 +52,4 @@ book code
 -  https://github.com/bransorem/prov/blob/80cce013b762ef4d60b8bb6cb56c67f2b37af8b1/server.cpp
 -  https://github.com/winetaster/InfinityCore
 -  https://github.com/search?l=cpp&p=3&q=uv_pipe_init&ref=reposearch&type=Code&utf8=%E2%9C%93
+-  http://www.deltavsoft.com/RCFProto.html
