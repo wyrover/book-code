@@ -1,6 +1,7 @@
 # book-code
 book code
 
+-  https://github.com/fffaraz/awesome-cpp
 -  https://github.com/Paolo-Maffei/OpenNT
 -  https://github.com/Microsoft/Windows-classic-samples
 -  https://github.com/uri247/Win81Desktop
