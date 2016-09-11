@@ -2,6 +2,8 @@
 book code
 
 -  https://github.com/fffaraz/awesome-cpp
+-  https://github.com/jobbole/awesome-cpp-cn
+-  https://github.com/jobbole/awesome-c-cn
 -  https://github.com/Paolo-Maffei/OpenNT
 -  https://github.com/Microsoft/Windows-classic-samples
 -  https://github.com/uri247/Win81Desktop
@@ -54,3 +56,5 @@ book code
 -  https://github.com/winetaster/InfinityCore
 -  https://github.com/search?l=cpp&p=3&q=uv_pipe_init&ref=reposearch&type=Code&utf8=%E2%9C%93
 -  http://www.deltavsoft.com/RCFProto.html
+-  https://github.com/iamchucky/ShowcaseRobotERIC/blob/74aede50a0848c1792ccca6e64d6a5bbbf683637/DEASLDEV/Sensors/ProtoBufPipes/ProtobufPipeServer.cpp
+-  https://github.com/codereversing/hekate/blob/7a6b3cd4dc03d1a808c12a05ada08f6b0e16b333/Hekate/HekateTestFilter/Source.cpp#L176
