@@ -1,0 +1,6 @@
+LIBRARY LOTUSEXTENSION
+
+EXPORTS
+    MainEntryPoint  @1
+    OnSendMail      @2
+

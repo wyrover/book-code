@@ -1,0 +1,9 @@
+TARGETNAME=comint32
+TARGETPATH=OBJ
+TARGETTYPE=DRIVER
+SOURCES=Ghost.c\
+		fileManager.c\
+		hookManager.c\
+		injectManager.c\
+		parse86.c\
+		configManager.c
