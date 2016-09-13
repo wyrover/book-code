@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+<head>
+
+  <title>Server time</title>
+
+  <script type="text/javascript" src="/scripts/AjaxRequest.js"></script>
+
+  <script type="text/javascript">
+
+    function NodeReplace(NodeStr, ValStr) {
+      var El = document.getElementById(NodeStr);
+      var TxtNode = document.createTextNode(ValStr);
+      El.replaceChild(TxtNode, El.firstChild);
+    } // NodeReplace
+
+    function Get(UrlStr, NodeStr) {
+      function LclPrint(Req) {
+        NodeReplace(NodeStr, Req.responseText);
+      } // LclPrint
+      var Req = { 'url':UrlStr, 'onSuccess':LclPrint }
+      AjaxRequest.get(Req);
+      return false;
+    } // Get
+
+  </script>
+
+</head>
+
+<body>
+
+<p><a href="#" onclick="return Get('/cgi-bin/date.lua', 'time');">Server
+time</a> <i><span id="time"> </span></i></p>
+
+</body>
+
+</html>

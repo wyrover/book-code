@@ -58,3 +58,19 @@ book code
 -  http://www.deltavsoft.com/RCFProto.html
 -  https://github.com/iamchucky/ShowcaseRobotERIC/blob/74aede50a0848c1792ccca6e64d6a5bbbf683637/DEASLDEV/Sensors/ProtoBufPipes/ProtobufPipeServer.cpp
 -  https://github.com/codereversing/hekate/blob/7a6b3cd4dc03d1a808c12a05ada08f6b0e16b333/Hekate/HekateTestFilter/Source.cpp#L176
+
+
+## LuaBridge
+
+-  https://github.com/Zephilinox/LSFML
+-  https://github.com/Johnny-Martin/ComBase/blob/586b6b4614ecf690f272fc407eea1947052935d1/UIEngine/source/luabridge/LuaBridge.cpp
+-  https://github.com/moteus/lua-windows-environment
+-  https://github.com/moteus/lua-path/tree/master/lua
+-  https://github.com/moteus/lzlib
+-  https://github.com/moteus/lua-env/tree/master/src
+-  https://github.com/moteus/luafilesystem
+-  https://github.com/moteus/lua-winreg
+-  https://github.com/ylw633/scite-mql
+-  https://github.com/Soulflare3/ilua/blob/8cf42b4559feff27598c42dfca6d6a17e7ca8503/src/core/api/binds.cpp
+-  https://github.com/malcome/Lua4Lazarus
+-  https://github.com/lainz/lainzcodestudio

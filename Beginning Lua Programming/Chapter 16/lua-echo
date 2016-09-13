@@ -1,0 +1,17 @@
+# description: A sample Lua server
+
+service lua-echo
+{
+  socket_type    = stream
+  type           = UNLISTED
+  protocol       = tcp
+  user           = nobody
+  wait           = no
+  server         = /usr/local/bin/lua
+  server_args    = /var/local/lua/echo.lua
+  disable        = no
+  port           = 23032
+  log_type       = FILE /var/local/lua/log
+  log_on_success = PID HOST DURATION
+  log_on_failure = HOST
+}

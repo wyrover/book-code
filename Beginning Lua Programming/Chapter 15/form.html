@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+<head>
+
+  <title>Simple HTML Form</title>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <link rel="stylesheet" href="/css/general.css" type="text/css" />
+
+</head>
+
+<body>
+
+  <h1>Simple form demonstration</h1>
+
+  <form action="/cgi-bin/cgishow.lua?Number=42" method="get">
+
+  <div><input type="hidden" name="Number" value="42" /></div>
+
+  <table class="shade" summary=""><tbody>
+
+  <tr>
+
+    <td class="label">User</td>
+
+    <td><input type="text" size="20" name="User" /></td>
+
+    <td class="label">Password</td>
+
+    <td><input type="password" size="20" name="Pass" /></td>
+
+  </tr>
+
+  <tr>
+
+    <td class="label top">Site(s)</td><td>
+
+    <select name="Site" size="4" multiple="multiple">
+      <option value="1">Abbey of Pomposa, near Ferrara</option>
+      <option value="2">Castle del Monte, Apulia</option>
+      <option value="3">Cathedral of Pisa, Pisa</option>
+      <option value="4">Chancellery Palace, Rome</option>
+      <option value="5">Church of San Spirito, Florence</option>
+      <option value="6">Doge's Palace, Venice</option>
+      <option value="7">Ducal Palace, Urbino</option>
+      <option value="8">Florence Cathedral, Florence</option>
+      <option value="9">Leaning Tower, Pisa</option>
+      <option value="10">Orvieto Cathedral, Orvieto</option>
+      <option value="11">Ospedale Degli Innocenti, Florence</option>
+      <option value="12">Palazzo Strozzi, Florence</option>
+      <option value="13">Pazzi Chapel, Florence</option>
+      <option value="14">Piazza del Campo, Siena</option>
+      <option value="15">Ponte Vecchio, Florence</option>
+      <option value="16">S. Andrea, Mantua</option>
+      <option value="17">S. Maria Della Pace, Rome</option>
+      <option value="18">S. Maria Novella, Florence</option>
+      <option value="19">S. Maria degli Angeli, Florence</option>
+      <option value="20">San Lorenzo, Florence, Florence</option>
+      <option value="21">San Sebastiano, at Mantua</option>
+      <option value="22">San Zeno Maggiore, Verona</option>
+      <option value="23">St. Mark's, Venice</option>
+    </select>
+
+    </td>
+
+    <td class="label top">Remarks</td>
+
+    <td><textarea name="Text" rows="3" cols="32"></textarea></td>
+
+  </tr>
+
+  <tr>
+
+    <td class="label">Artist</td>
+
+    <td colspan="3">
+
+    <input type="radio" name="Artist" value="1" checked="checked" />
+      Filippo Brunelleschi
+    <input type="radio" name="Artist" value="2" />Leon Battista Alberti
+    <input type="radio" name="Artist" value="3" />Donato Bramante
+
+    </td>
+
+  </tr>
+
+  <tr>
+
+    <td class="label">Art</td>
+
+    <td colspan="3">
+
+    <input type="checkbox" name="Art" value="Arch" checked="checked" />Architecture
+    <input type="checkbox" name="Art" value="Paint" />Painting
+    <input type="checkbox" name="Art" value="Sculpt" />Sculpture
+
+    </td>
+
+  </tr>
+
+  <tr>
+
+    <td class="right" colspan="4"><input type="submit" value="Submit" /></td>
+
+  </tr>
+
+  </tbody></table>
+
+  </form>
+
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+REGEDIT4
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\.lua]
+@="luafile"
+"Content Type"="application/lua"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\.luac]
+@="luafile"
+"Content Type"="application/lua"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\luafile]
+@="Lua script"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\luafile\DefaultIcon]
+@="C:\\Program Files\\utility\\lua.ico,0"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\luafile\Shell]
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\luafile\Shell\open]
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\luafile\Shell\open\command]
+@="\"c:\\program files\\utility\\lua.exe\" \"%1\""
