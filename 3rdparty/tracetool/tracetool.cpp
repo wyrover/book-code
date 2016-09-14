@@ -3111,6 +3111,11 @@ void TraceToSend::EnterMethod(const char *leftMsg , const char *rightMsg , int B
 {
     string msg = "Enter " ;
     msg = msg + leftMsg ;
+
+	OutputDebugStringA(msg.c_str());
+	OutputDebugStringA("\n");
+	printf_s("%s\n", msg.c_str());
+
     Indent(msg.c_str(), rightMsg, BackGroundColor, true);
 }
 
@@ -3129,6 +3134,10 @@ void TraceToSend::EnterMethod(const wchar_t *leftMsg , const wchar_t *rightMsg ,
     char * strRightMsg = TTrace::WideToMbs(rightMsg) ;
     string msg = "Enter " ;
     msg = msg + strLeftMsg ;
+
+	OutputDebugStringA(msg.c_str());
+	OutputDebugStringA("\n");
+	printf_s("%s\n", msg.c_str());
     Indent(msg.c_str(), strRightMsg, BackGroundColor, true);
     free(strLeftMsg) ;
     free(strRightMsg) ;
@@ -3147,6 +3156,11 @@ void TraceToSend::ExitMethod(const char *leftMsg, const char *rightMsg , int Bac
 {
     string msg = "Exit " ;
     msg = msg + leftMsg ;
+
+	OutputDebugStringA(msg.c_str());
+	OutputDebugStringA("\n");
+	printf_s("%s\n", msg.c_str());
+
     UnIndent(msg.c_str(), rightMsg, BackGroundColor, true);
 }
 
@@ -3165,6 +3179,11 @@ void TraceToSend::ExitMethod(const wchar_t *leftMsg, const wchar_t *rightMsg , i
     char * strRightMsg = TTrace::WideToMbs(rightMsg) ;
     string msg = "Exit " ;
     msg = msg + strLeftMsg ;
+
+	OutputDebugStringA(msg.c_str());
+	OutputDebugStringA("\n");
+	printf_s("%s\n", msg.c_str());
+
     UnIndent(msg.c_str(), strRightMsg, BackGroundColor, true);
     free(strLeftMsg) ;
     free(strRightMsg) ;

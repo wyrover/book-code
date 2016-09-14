@@ -74,3 +74,12 @@ book code
 -  https://github.com/Soulflare3/ilua/blob/8cf42b4559feff27598c42dfca6d6a17e7ca8503/src/core/api/binds.cpp
 -  https://github.com/malcome/Lua4Lazarus
 -  https://github.com/lainz/lainzcodestudio
+
+
+
+## msvcrt
+
+-  https://github.com/changloong/msvcrt
+-  https://github.com/BackupTheBerlios/vs90-msvcrt
+-  https://github.com/yumeyao/7zip
+-  https://github.com/bin-y/nodefaultlib
