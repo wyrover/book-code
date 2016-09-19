@@ -568,7 +568,33 @@ workspace "ipc"
             pchsource "src/thread_pool/%{prj.name}/stdafx.cpp"
             pchheader "stdafx.h"   
 
-
+        project "test-threadpool"          
+            kind "ConsoleApp"          
+            --characterset "MBCS"
+            flags { "NoManifest", "WinMain", "StaticRuntime" }       
+            defines {  }            
+            files            
+            {                                  
+                "src/thread_pool/%{prj.name}/**.h",
+                "src/thread_pool/%{prj.name}/**.cpp", 
+                "src/thread_pool/%{prj.name}/**.rc" 
+            }
+            removefiles
+            {               
+            }
+            includedirs
+            {                   
+                
+            }  
+            libdirs
+            {
+                "lib/x86/%{_ACTION}/boost-1_56"
+            }
+            links
+            {
+                --"ws2_32.lib"    
+            }   
+                        
 
 
 
