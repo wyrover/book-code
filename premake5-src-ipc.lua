@@ -16,9 +16,9 @@ workspace "ipc"
     filter { "kind:SharedLib", "platforms:x64" }
         implibdir "lib/x64/%{_ACTION}" 
     filter { "kind:ConsoleApp or WindowedApp or SharedLib", "platforms:Win32" }
-        targetdir "bin/x86/%{_ACTION}"         
+        targetdir "bin/x86/%{_ACTION}/%{wks.name}"         
     filter { "kind:ConsoleApp or WindowedApp or SharedLib", "platforms:x64" }
-        targetdir "bin/x64/%{_ACTION}" 
+        targetdir "bin/x64/%{_ACTION}/%{wks.name}" 
         
 
     filter { "platforms:Win32" }
@@ -88,7 +88,32 @@ workspace "ipc"
         {
             "/wd4267",                      -- 关闭 64 位检测
             "/wd4996"
-        }   
+        }    
+        
+    print("test")
+
+    function create_console_project(name, dir, mbcs)        
+        project(name)          
+        kind "ConsoleApp"                          
+        if mbcs == "mbcs" then
+            characterset "MBCS"
+        end
+        flags { "NoManifest", "WinMain", "StaticRuntime" }       
+        defines {  }
+        files
+        {                                  
+            dir .. "/%{prj.name}/**.h",
+            dir .. "/%{prj.name}/**.cpp", 
+            dir .. "/%{prj.name}/**.rc" 
+        }
+        removefiles
+        {               
+        }
+        includedirs
+        {                   
+            "3rdparty"   
+        }       
+    end
 
     group "同步对象"    
 
@@ -197,52 +222,11 @@ workspace "ipc"
 
     group "namedpipe"          
             
-            
-        project "NPServer"          
-            kind "ConsoleApp"          
-            characterset "MBCS"
-            flags { "NoManifest", "WinMain", "StaticRuntime" }       
-            defines {  }            
-            files            
-            {                                  
-                "src/ipc/%{prj.name}/**.h",
-                "src/ipc/%{prj.name}/**.cpp", 
-                "src/ipc/%{prj.name}/**.rc" 
-            }
-            removefiles
-            {               
-            }
-            includedirs
-            {                   
-                
-            }  
-            links
-            {
-                
-            }
+        
+        create_console_project("NPServer", "src/ipc", "mbcs")
+        create_console_project("NPClient", "src/ipc", "mbcs")
 
-        project "NPClient"          
-            kind "ConsoleApp"          
-            characterset "MBCS"
-            flags { "NoManifest", "WinMain", "StaticRuntime" }       
-            defines {  }            
-            files            
-            {                                  
-                "src/ipc/%{prj.name}/**.h",
-                "src/ipc/%{prj.name}/**.cpp", 
-                "src/ipc/%{prj.name}/**.rc" 
-            }
-            removefiles
-            {               
-            }
-            includedirs
-            {                   
-                
-            }  
-            links
-            {
-                
-            }
+        
 
     group "socket-one-to-one"
 
@@ -418,51 +402,9 @@ workspace "ipc"
             
     group "命名管道封装"
         
-        project "PipeClient"          
-            kind "ConsoleApp"          
-            --characterset "MBCS"
-            flags { "NoManifest", "WinMain", "StaticRuntime" }       
-            defines {  }            
-            files            
-            {                                  
-                "src/ipc/%{prj.name}/**.h",
-                "src/ipc/%{prj.name}/**.cpp", 
-                "src/ipc/%{prj.name}/**.rc" 
-            }
-            removefiles
-            {               
-            }
-            includedirs
-            {                   
-                
-            }  
-            links
-            {
-                --"ws2_32.lib"    
-            }  
+        create_console_project("PipeClient", "src/ipc")
+        create_console_project("PipeServer", "src/ipc")        
         
-        project "PipeServer"          
-            kind "ConsoleApp"          
-            --characterset "MBCS"
-            flags { "NoManifest", "WinMain", "StaticRuntime" }       
-            defines {  }            
-            files            
-            {                                  
-                "src/ipc/%{prj.name}/**.h",
-                "src/ipc/%{prj.name}/**.cpp", 
-                "src/ipc/%{prj.name}/**.rc" 
-            }
-            removefiles
-            {               
-            }
-            includedirs
-            {                   
-                
-            }  
-            links
-            {
-                --"ws2_32.lib"    
-            }   
 
     group "内存映射"
 
@@ -487,7 +429,10 @@ workspace "ipc"
             links
             {
                 --"ws2_32.lib"    
-            }   
+            }  
+
+        create_console_project("sharedmemory-server", "src/ipc")  
+        create_console_project("sharedmemory-client", "src/ipc")           
 
 
     group "线程池"
