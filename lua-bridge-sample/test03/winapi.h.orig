@@ -1,0 +1,17 @@
+#ifndef __WINAPI_H__
+#define __WINAPI_H__
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+int luaopen_winapi(lua_State *L);
+
+
+#ifdef __cplusplus
+}
+#endif
+
+
+
+#endif // __WINAPI_H__

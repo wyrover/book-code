@@ -1,0 +1,276 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><script language="JScript">
+			function showRun(o,x) {
+				if(x.innerHTML.length == 0){
+					x.innerHTML = "<button type='button' style='font-size:70%' onclick='runLua(\""
+					+ o + "\")'>R<br/>U<br/>N</button>"
+				}
+			}
+			function runLua(o) {
+				var shl = new ActiveXObject('WScript.Shell');
+				var fso = new ActiveXObject('Scripting.FileSystemObject');
+				var obj = document.all(o);
+				var scr = obj.innerText;
+				var tmp = shl.ExpandEnvironmentStrings('%tmp%\\__script.lua')
+				var cmd = 'lua.exe "'+tmp+'"'				
+				var tsf = fso.CreateTextFile(tmp, true);
+				tsf.Write(scr);
+				tsf.Close();
+				var ret = shl.Run(cmd,1,1);
+				if(ret != 0){
+					alert('*** Run Error ***'+'\nCode:'+ret
+					+'\n*** Command ***\n'+cmd
+					+'\n*** Script ***\n'+scr);
+				}
+			}
+		  
+		</script><title>winreg</title><link rel="stylesheet" href="main.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.70.1"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="article" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="id349951"></a>winreg</h2></div><div><div class="author"><h3 class="author"><span class="firstname">Jas</span> <span class="surname">Latrix</span></h3></div></div><div><p class="copyright">Copyright © 2005, 2006 Jas Latrix <code class="email">&lt;<a href="mailto:jastejada%20at%20yahoo%20dot%20com">jastejada at yahoo dot com</a>&gt;</code></p></div><div><div class="legalnotice"><a name="id349898"></a>All Rights Deserved. Use at your own risk!. Shake well before using.</div></div></div><hr></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="#Introduction">1. Introduction</a></span></dt><dt><span class="section"><a href="#rootkeyprefix">2. Root key prefix</a></span></dt><dt><span class="section"><a href="#accessoption">3. Access Option</a></span></dt><dt><span class="section"><a href="#winreg">4. winreg</a></span></dt><dd><dl><dt><span class="section"><a href="#winreg-id95157">4.1. Function(s) of winreg</a></span></dt></dl></dd><dt><span class="section"><a href="#RegistryObject">5. RegistryObject</a></span></dt><dd><dl><dt><span class="section"><a href="#RegistryObject-id95263">5.1. Method(s) of RegistryObject</a></span></dt></dl></dd></dl></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="Introduction"></a>1. Introduction</h2></div></div></div><em class="firstterm">winreg</em> is a Lua binary module to Access
+		Microsoft(R) Windows(R) Registry.
+		The registry is a system-defined database that applications and
+		Microsoft(R) Windows(R) system components use to store
+		and retrieve configuration data.
+		<p>Load the module via the <code class="code">require</code> function (make sure Lua can find the module), for example:
+		</p><table onmouseover='showRun("id88362",id88362_2)'><tr><td align="left" valign="top" colspan="2"></td></tr><tr><td valign="top" id="id88362_2"></td><td id="id88362"><pre class="programlisting">require"winreg"
+
+-- prints all the special folders
+hkey = winreg.openkey[[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion]]
+
+skey = hkey:openkey([[Explorer\Shell Folders]])
+for name in skey:enumvalue() do
+	print("\nname: " .. name
+	   .. "\npath: " .. skey:getvalue(name))
+end</pre></td></tr></table></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="rootkeyprefix"></a>2. Root key prefix</h2></div></div></div><p>
+		The function <a href="#winreg.createkey">createkey</a> and <a href="#winreg.openkey">openkey</a>
+		needs a root key prefix. It must be one of this strings:
+		</p><div class="table"><a name="rootkeyprefix_table"></a><p class="title"><b>Table 1. Root Key Prefix</b></p><div class="table-contents"><table summary="Root Key Prefix" border="1"><colgroup><col><col></colgroup><thead><tr><th>Root key Name</th><th>Abbreviation</th></tr></thead><tbody><tr><td>HKEY_CURRENT_USER</td><td>HKCU</td></tr><tr><td>HKEY_LOCAL_MACHINE</td><td>HKLM</td></tr><tr><td>HKEY_CLASSES_ROOT</td><td>HKCR</td></tr><tr><td>HKEY_USERS</td><td>HKU</td></tr><tr><td>HKEY_CURRENT_CONFIG</td><td>HKCC</td></tr></tbody></table></div></div><br class="table-break"></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="accessoption"></a>3. Access Option</h2></div></div></div><p>
+		The function <a href="#winreg.createkey">createkey</a> and <a href="#winreg.openkey">openkey</a>
+		needs a security access for the new key.
+		It must be a string containing one of this character.
+		</p><div class="table"><a name="accessoption2"></a><p class="title"><b>Table 2. Key Access</b></p><div class="table-contents"><table summary="Key Access" border="1"><colgroup><col><col></colgroup><thead><tr><th>Char</th><th>Description</th></tr></thead><tbody><tr><td>'w'</td><td>Permission to create subkeys and set subkey data</td></tr><tr><td>'r'</td><td>Permission to query subkey data and enumerate subkeys</td></tr><tr><td>'a'</td><td>All access</td></tr></tbody></table></div></div><br class="table-break"><p>If no argument is given the default is 'a'</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="winreg"></a>4. winreg</h2></div></div></div><em class="firstterm">winreg</em> the global table of the registry module.
+			<p>Use <a href="#winreg.createkey">createkey</a> to create a registry key
+			or use <a href="#winreg.openkey">openkey</a> to open an existing registry key.
+			Those two function will return a <a href="#RegistryObject">registry object</a></p><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="winreg-id95157"></a>4.1. Function(s) of winreg</h3></div></div></div><div class="variablelist"><dl><dt><span class="term"></span></dt><dd><a href="#winreg.createkey">createkey</a> | <a href="#winreg.openkey">openkey</a><sub> 2</sub></dd></dl></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="winreg.createkey"></a>4.1.1. createkey</h4></div></div></div><a class="indexterm" name="id348494"></a>Creates the specified registry key.
+				If the key already exists in the registry,
+				the function opens it.<div class="variablelist"><dl><dt><span class="term"><span class="bold"><strong>Syntax</strong></span></span></dt><dd><pre class="programlisting">winreg.<span class="bold"><strong>createkey</strong></span>(<em class="parameter"><code>str_subkey</code></em>, <em class="parameter"><code>str_access</code></em>)</pre></dd><dt><span class="term"><span class="bold"><strong>Arguments</strong></span></span></dt><dd><div class="variablelist"><dl><dt><span class="term"><span class="emphasis"><em>str_subkey</em></span></span></dt><dd>
+				Name of subkey to create.
+				It must be prefix with a rootkey, see <a href="#rootkeyprefix" title="2. Root key prefix">Section 2, &#8220;Root key prefix&#8221;</a></dd><dt><span class="term"><span class="emphasis"><em>str_access</em></span></span></dt><dd>
+				Security access option, see <a href="#accessoption" title="3. Access Option">Section 3, &#8220;Access Option&#8221;</a>.</dd></dl></div></dd><dt><span class="term"><span class="bold"><strong>Returns</strong></span></span></dt><dd><table class="simplelist" border="0" summary="Simple list"><tr><td><span class="emphasis"><em>Success</em></span></td><td>the created <a href="#RegistryObject">registry object</a></td></tr><tr><td><span class="emphasis"><em>Failure</em></span></td><td>nil.</td></tr></table></dd></dl></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="winreg.openkey"></a>4.1.2. openkey</h4></div></div></div><a class="indexterm" name="id352449"></a>Opens the specified registry key<div class="variablelist"><dl><dt><span class="term"><span class="bold"><strong>Syntax</strong></span></span></dt><dd><pre class="programlisting">winreg.<span class="bold"><strong>openkey</strong></span>(<em class="parameter"><code>str_subkey</code></em>, <em class="parameter"><code>str_access</code></em>)</pre></dd><dt><span class="term"><span class="bold"><strong>Arguments</strong></span></span></dt><dd><div class="variablelist"><dl><dt><span class="term"><span class="emphasis"><em>str_subkey</em></span></span></dt><dd>Name of subkey to open.
+			It must be prefix with a rootkey, see <a href="#rootkeyprefix" title="2. Root key prefix">Section 2, &#8220;Root key prefix&#8221;</a></dd><dt><span class="term"><span class="emphasis"><em>str_access</em></span></span></dt><dd>
+				Security access option, see <a href="#accessoption" title="3. Access Option">Section 3, &#8220;Access Option&#8221;</a>.</dd></dl></div></dd><dt><span class="term"><span class="bold"><strong>Returns</strong></span></span></dt><dd><table class="simplelist" border="0" summary="Simple list"><tr><td><span class="emphasis"><em>Success</em></span></td><td>a <a href="#RegistryObject">registry object</a></td></tr><tr><td><span class="emphasis"><em>Failure</em></span></td><td>nil.</td></tr></table></dd><dt><span class="term"><span class="bold"><strong>Remarks</strong></span></span></dt><dd>
+				You can use this function to establishes a connection
+				to a predefined registry handle on another computer by setting
+				the format of <code class="varname">str_subkey</code> to:
+				<pre class="programlisting">\\COMPNAME\ROOTKEY</pre><code class="code">COMPNAME</code> is the name of the remote computer.
+				<code class="code">ROOTKEY</code> must be HKEY_LOCAL_MACHINE or HKEY_USERS.
+			</dd></dl></div></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="RegistryObject"></a>5. RegistryObject</h2></div></div></div><p>
+			This object holds a registry handle (HKEY).
+			The handle is automatically closed when the object is destroyed.
+			</p><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="RegistryObject-id95263"></a>5.1. Method(s) of RegistryObject</h3></div></div></div><div class="variablelist"><dl><dt><span class="term"></span></dt><dd><a href="#RegistryObject.close">close</a> | <a href="#RegistryObject.createkey">createkey</a> | <a href="#RegistryObject.deletekey">deletekey</a> | <a href="#RegistryObject.deletevalue">deletevalue</a> | <a href="#RegistryObject.enumkey">enumkey</a> | <a href="#RegistryObject.enumvalue">enumvalue</a> | <a href="#RegistryObject.flushkey">flushkey</a> | <a href="#RegistryObject.getinfo">getinfo</a> | <a href="#RegistryObject.getstrval">getstrval</a> | <a href="#RegistryObject.getvaltype">getvaltype</a> | <a href="#RegistryObject.getvalue">getvalue</a> | <a href="#RegistryObject.load">load</a> | <a href="#RegistryObject.openkey">openkey</a> | <a href="#RegistryObject.replace">replace</a> | <a href="#RegistryObject.restore">restore</a> | <a href="#RegistryObject.save">save</a> | <a href="#RegistryObject.setvalue">setvalue</a> | <a href="#RegistryObject.unload">unload</a><sub> 18</sub></dd></dl></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="RegistryObject.close"></a>5.1.1. close</h4></div></div></div><a class="indexterm" name="id352697"></a>Releases the <span class="emphasis"><em>registry object's key handle</em></span><div class="variablelist"><dl><dt><span class="term"><span class="bold"><strong>Syntax</strong></span></span></dt><dd><pre class="programlisting">RegistryObject:<span class="bold"><strong>close</strong></span>()</pre></dd><dt><span class="term"><span class="bold"><strong>Returns</strong></span></span></dt><dd><table class="simplelist" border="0" summary="Simple list"><tr><td><span class="emphasis"><em>Success</em></span></td><td>Reference to <code class="code">RegistryObject</code> it self</td></tr><tr><td><span class="emphasis"><em>Failure</em></span></td><td>nil.</td></tr></table></dd><dt><span class="term"><span class="bold"><strong>Example</strong></span></span></dt><dd><table onmouseover='showRun("id95279",id95279_2)'><tr><td align="left" valign="top" colspan="2"></td></tr><tr><td valign="top" id="id95279_2"></td><td id="id95279"><pre class="programlisting">
+require"winreg"			
+reg = winreg.openkey("HKEY_LOCAL_MACHINE\\SOFTWARE")
+reg:close() -- reg is now useless but not nil
+-- this is failure
+reg:openkey(".lua"):setvalue("","lua_script","sz")
+</pre></td></tr></table></dd></dl></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="RegistryObject.createkey"></a>5.1.2. createkey</h4></div></div></div><a class="indexterm" name="id353896"></a>Creates the specified registry key in <code class="code">RegistryObject</code>.
+				If the key already exists in the registry,
+				the function opens it.<div class="variablelist"><dl><dt><span class="term"><span class="bold"><strong>Syntax</strong></span></span></dt><dd><pre class="programlisting">RegistryObject:<span class="bold"><strong>createkey</strong></span>(<em class="parameter"><code>str_subkey</code></em>)</pre></dd><dt><span class="term"><span class="bold"><strong>Arguments</strong></span></span></dt><dd><div class="variablelist"><dl><dt><span class="term"><span class="emphasis"><em>str_subkey</em></span></span></dt><dd>name of subkey to create</dd></dl></div></dd><dt><span class="term"><span class="bold"><strong>Returns</strong></span></span></dt><dd><table class="simplelist" border="0" summary="Simple list"><tr><td><span class="emphasis"><em>Success</em></span></td><td>a new <a href="#RegistryObject">registry object</a></td></tr><tr><td><span class="emphasis"><em>Failure</em></span></td><td>nil.</td></tr></table></dd><dt><span class="term"><span class="bold"><strong>Example</strong></span></span></dt><dd><table onmouseover='showRun("id95451",id95451_2)'><tr><td align="left" valign="top" colspan="2"></td></tr><tr><td valign="top" id="id95451_2"></td><td id="id95451"><pre class="programlisting">
+require"winreg"
+hkey = winreg.openkey([[HKCU\SOFTWARE]])
+ pkey = hkey:createkey("PARENTKEY")
+  ckey = pkey:createkey("CHILDKEY")
+
+val  = "TESTVALUE"
+dat  = "TESTDATA"
+ckey:setvalue(val, dat)
+
+tkey = winreg.openkey([[HKCU\SOFTWARE\PARENTKEY\CHILDKEY]])
+assert(tkey:getvalue(val) == dat)
+</pre></td></tr></table></dd></dl></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="RegistryObject.deletekey"></a>5.1.3. deletekey</h4></div></div></div><a class="indexterm" name="id354026"></a>Deletes a key and all its descendents.<div class="variablelist"><dl><dt><span class="term"><span class="bold"><strong>Syntax</strong></span></span></dt><dd><pre class="programlisting">RegistryObject:<span class="bold"><strong>deletekey</strong></span>(<em class="parameter"><code>str_subkey</code></em>)</pre></dd><dt><span class="term"><span class="bold"><strong>Arguments</strong></span></span></dt><dd><div class="variablelist"><dl><dt><span class="term"><span class="emphasis"><em>str_subkey</em></span></span></dt><dd>The name of subkey to delete</dd></dl></div></dd><dt><span class="term"><span class="bold"><strong>Returns</strong></span></span></dt><dd><table class="simplelist" border="0" summary="Simple list"><tr><td><span class="emphasis"><em>Success</em></span></td><td>Reference to <code class="code">RegistryObject</code> it self</td></tr><tr><td><span class="emphasis"><em>Failure</em></span></td><td>nil.</td></tr></table></dd><dt><span class="term"><span class="bold"><strong>Example</strong></span></span></dt><dd><table onmouseover='showRun("id95479",id95479_2)'><tr><td align="left" valign="top" colspan="2"></td></tr><tr><td valign="top" id="id95479_2"></td><td id="id95479"><pre class="programlisting">
+require"winreg"
+hkey = winreg.createkey([[HKCU\Software\PARENTKEY\CHILDKEY]])
+hkey:setvalue("VALUE1", "STRING")
+hkey:setvalue("VALUE2", 2^32)
+hkey:setvalue("VALUE3", {"awecq", "wecqw", "qweqwe"})
+hkey:close()
+
+hkey = winreg.createkey([[HKCU\Software\PARENTKEY\CHILDKEY\CHILDKEY2]])
+hkey:setvalue("VALUE4", "%windir%", "expand_sz")
+hkey:setvalue("VALUE5", 45)
+hkey:close()
+
+xkey = winreg.openkey([[HKCU\Software]])
+assert(xkey:deletekey("PARENTKEY"))
+</pre></td></tr></table></dd></dl></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="RegistryObject.deletevalue"></a>5.1.4. deletevalue</h4></div></div></div><a class="indexterm" name="id354151"></a>Removes a named value from the <code class="code">RegistryObject</code>.<div class="variablelist"><dl><dt><span class="term"><span class="bold"><strong>Syntax</strong></span></span></dt><dd><pre class="programlisting">RegistryObject:<span class="bold"><strong>deletevalue</strong></span>(<em class="parameter"><code>str_value</code></em>)</pre></dd><dt><span class="term"><span class="bold"><strong>Arguments</strong></span></span></dt><dd><div class="variablelist"><dl><dt><span class="term"><span class="emphasis"><em>str_value</em></span></span></dt><dd>The name of value to delete</dd></dl></div></dd><dt><span class="term"><span class="bold"><strong>Returns</strong></span></span></dt><dd><table class="simplelist" border="0" summary="Simple list"><tr><td><span class="emphasis"><em>Success</em></span></td><td>Reference to <code class="code">RegistryObject</code> it self</td></tr><tr><td><span class="emphasis"><em>Failure</em></span></td><td>nil.</td></tr></table></dd><dt><span class="term"><span class="bold"><strong>Example</strong></span></span></dt><dd><table onmouseover='showRun("id95512",id95512_2)'><tr><td align="left" valign="top" colspan="2"></td></tr><tr><td valign="top" id="id95512_2"></td><td id="id95512"><pre class="programlisting">
+require"winreg"
+hkey = winreg.createkey([[HKCU\Software\PARENTKEY\CHILDKEY]])
+hkey:setvalue("VALUE1", "STRING")
+hkey:setvalue("VALUE2", 2^32)
+hkey:setvalue("VALUE3", {"awecq", "wecqw", "qweqwe"})
+hkey:close()
+
+xkey = winreg.openkey([[HKCU\Software\PARENTKEY\CHILDKEY]])
+assert(xkey:deletevalue("VALUE1"))
+assert(xkey:deletevalue("VALUE2"))
+assert(xkey:deletevalue("VALUE3"))
+</pre></td></tr></table></dd></dl></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="RegistryObject.enumkey"></a>5.1.5. enumkey</h4></div></div></div><a class="indexterm" name="id354286"></a>Returns an enumerator function for for-in-loops.
+				The function returns the name of a subkey each time it is called.
+				<div class="variablelist"><dl><dt><span class="term"><span class="bold"><strong>Syntax</strong></span></span></dt><dd><pre class="programlisting">RegistryObject:<span class="bold"><strong>enumkey</strong></span>()</pre></dd><dt><span class="term"><span class="bold"><strong>Returns</strong></span></span></dt><dd><table class="simplelist" border="0" summary="Simple list"><tr><td><span class="emphasis"><em>Success</em></span></td><td>Enumerator function for for-in-loops</td></tr><tr><td><span class="emphasis"><em>Failure</em></span></td><td>nil.</td></tr></table></dd><dt><span class="term"><span class="bold"><strong>Remarks</strong></span></span></dt><dd>While enumerating, DO NOT make calls to any functions that might
+				change the key being enumerated.</dd><dt><span class="term"><span class="bold"><strong>Example</strong></span></span></dt><dd><table onmouseover='showRun("id95539",id95539_2)'><tr><td align="left" valign="top" colspan="2"></td></tr><tr><td valign="top" id="id95539_2"></td><td id="id95539"><pre class="programlisting">
+require"winreg"
+-- Enumerate Application paths
+rkey = [[HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths]]
+hkey = winreg.openkey(rkey)
+for k in hkey:enumkey() do
+	print(k,(hkey:openkey(k):getvalue()))
+	collectgarbage()
+end
+</pre></td></tr></table></dd></dl></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="RegistryObject.enumvalue"></a>5.1.6. enumvalue</h4></div></div></div><a class="indexterm" name="id354400"></a>Returns an enumerator function for for-in-loops.
+				The function returns two values each time it is called,
+				the value name and value type (see <a href="#hkeyretdatatype" title="Table 4. Data Type">Table 4, &#8220;Data Type&#8221;</a>).
+				<div class="variablelist"><dl><dt><span class="term"><span class="bold"><strong>Syntax</strong></span></span></dt><dd><pre class="programlisting">RegistryObject:<span class="bold"><strong>enumvalue</strong></span>()</pre></dd><dt><span class="term"><span class="bold"><strong>Returns</strong></span></span></dt><dd><table class="simplelist" border="0" summary="Simple list"><tr><td><span class="emphasis"><em>Success</em></span></td><td>Enumerator function for for-in-loops</td></tr><tr><td><span class="emphasis"><em>Failure</em></span></td><td>nil.</td></tr></table></dd><dt><span class="term"><span class="bold"><strong>Remarks</strong></span></span></dt><dd>While enumerating, DO NOT make calls to any registration functions that might
+				change the key being enumerated.</dd><dt><span class="term"><span class="bold"><strong>Example</strong></span></span></dt><dd><table onmouseover='showRun("id95571",id95571_2)'><tr><td align="left" valign="top" colspan="2"></td></tr><tr><td valign="top" id="id95571_2"></td><td id="id95571"><pre class="programlisting">
+require"winreg"
+-- Enumerate start up programs
+
+rkey = "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run"
+hkey = winreg.openkey(rkey)
+
+print('\n'..rkey..":")
+for name, kind in hkey:enumvalue() do
+	print("\nname: " .. name
+	.. "\ncommand: " .. hkey:getvalue(name))
+end
+
+rkey = "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\RunOnce"
+hkey = winreg.openkey(rkey)
+
+print('\n'..rkey..":")
+for name, kind in hkey:enumvalue() do
+	print("\nname: " .. name
+	.. "\ncommand: " .. hkey:getvalue(name))
+end
+</pre></td></tr></table></dd></dl></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="RegistryObject.flushkey"></a>5.1.7. flushkey</h4></div></div></div><a class="indexterm" name="id354515"></a>Writes all the attributes of the <span class="emphasis"><em>registry object's key handle</em></span> into the registry.<div class="variablelist"><dl><dt><span class="term"><span class="bold"><strong>Syntax</strong></span></span></dt><dd><pre class="programlisting">RegistryObject:<span class="bold"><strong>flushkey</strong></span>()</pre></dd><dt><span class="term"><span class="bold"><strong>Returns</strong></span></span></dt><dd><table class="simplelist" border="0" summary="Simple list"><tr><td><span class="emphasis"><em>Success</em></span></td><td>Reference to <code class="code">RegistryObject</code> it self</td></tr><tr><td><span class="emphasis"><em>Failure</em></span></td><td>nil.</td></tr></table></dd><dt><span class="term"><span class="bold"><strong>Remarks</strong></span></span></dt><dd>
+					An application should only call <code class="code">flushkey</code> if it requires absolute certainty that registry changes are on disk. In general, <code class="code">flushkey</code> rarely, if ever, need be used.
+				</dd></dl></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="RegistryObject.getinfo"></a>5.1.8. getinfo</h4></div></div></div><a class="indexterm" name="id354608"></a>Retrieves information about the <span class="emphasis"><em>registry object's key handle</em></span><div class="variablelist"><dl><dt><span class="term"><span class="bold"><strong>Syntax</strong></span></span></dt><dd><pre class="programlisting">RegistryObject:<span class="bold"><strong>getinfo</strong></span>()</pre></dd><dt><span class="term"><span class="bold"><strong>Returns</strong></span></span></dt><dd><p>If the function succeeds, the return value is a table having this value</p><div class="informaltable"><a name="hkeyinfo"></a><table border="1"><colgroup><col><col><col></colgroup><thead><tr><th>Key</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code class="varname">class</code></td><td><code class="code">string</code></td><td>class name</td></tr><tr><td><code class="varname">subkeys</code></td><td><code class="code">number</code></td><td>number of subkeys</td></tr><tr><td><code class="varname">values</code></td><td><code class="code">number</code></td><td>number of value entries</td></tr><tr><td><code class="varname">maxsubkeylen</code></td><td><code class="code">number</code></td><td>longest subkey name length</td></tr><tr><td><code class="varname">maxclasslen</code></td><td><code class="code">number</code></td><td>longest class string length</td></tr><tr><td><code class="varname">maxvaluelen</code></td><td><code class="code">number</code></td><td>value name length</td></tr></tbody></table></div><p>If the function fails, the return value is <code class="code">nil</code></p></dd><dt><span class="term"><span class="bold"><strong>Example</strong></span></span></dt><dd><table onmouseover='showRun("id95580",id95580_2)'><tr><td align="left" valign="top" colspan="2"></td></tr><tr><td valign="top" id="id95580_2"></td><td id="id95580"><pre class="programlisting">
+require"winreg"
+rkey = [[HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer]]
+info = winreg.openkey(rkey):getinfo()
+print("number of subkeys : '" .. info.subkeys .. "'")
+print("longest subkey name length : '" .. info.maxsubkeylen .. "'")
+print("longest class string length : '" .. info.maxclasslen .. "'")
+print("number of value entries : '" .. info.values .. "'")
+print("longest value name length : '" .. info.maxvaluelen .. "'")
+print("class string : '" .. info.class .. "'")
+</pre></td></tr></table></dd></dl></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="RegistryObject.getstrval"></a>5.1.9. getstrval</h4></div></div></div><a class="indexterm" name="id354799"></a>Retrieves the data for a specified value name associated with an open registry key.
+			The return value is string.
+			<div class="variablelist"><dl><dt><span class="term"><span class="bold"><strong>Syntax</strong></span></span></dt><dd><pre class="programlisting">RegistryObject:<span class="bold"><strong>getstrval</strong></span>(<em class="parameter"><code>str_value</code></em>)</pre></dd><dt><span class="term"><span class="bold"><strong>Arguments</strong></span></span></dt><dd><div class="variablelist"><dl><dt><span class="term"><span class="emphasis"><em>str_value</em></span></span></dt><dd>The name of value to query.</dd></dl></div></dd><dt><span class="term"><span class="bold"><strong>Returns</strong></span></span></dt><dd><p>If the function succeeds, the return value is a string,
+				see table below for how data string conversion is done.
+				</p><div class="table"><a name="id354861"></a><p class="title"><b>Table 3. Data Type String Conversion</b></p><div class="table-contents"><table summary="Data Type String Conversion" border="1"><colgroup><col><col></colgroup><thead><tr><th>Type</th><th>Description</th><th>Conversion</th></tr></thead><tbody><tr><td>1</td><td>A null-terminated string.</td><td>Lua string null not included.</td></tr><tr><td>2</td><td>A null-terminated string that contains unexpanded references to environment variables (for example, "%PATH%").</td><td>Lua string null not included. References to environment variables are expanded</td></tr><tr><td>3</td><td>binary data</td><td>Lua string containing binary data</td></tr><tr><td>4</td><td>A 32-bit number</td><td>The number converted to string</td></tr><tr><td>7</td><td>An array of null-terminated strings, terminated by two null characters.</td><td>Th same string</td></tr></tbody></table></div></div><br class="table-break"><p>If the function fails, the return value is <code class="code">nil</code></p></dd><dt><span class="term"><span class="bold"><strong>Example</strong></span></span></dt><dd><table onmouseover='showRun("id95707",id95707_2)'><tr><td align="left" valign="top" colspan="2"></td></tr><tr><td valign="top" id="id95707_2"></td><td id="id95707"><pre class="programlisting">
+require"winreg"
+rkey = "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run"
+hkey = winreg.openkey(rkey)
+for name, kind in hkey:enumvalue() do
+	print("\nname: " .. name
+	.. "\nvalue: " .. hkey:getstrval(name))
+end
+	</pre></td></tr></table></dd></dl></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="RegistryObject.getvaltype"></a>5.1.10. getvaltype</h4></div></div></div><a class="indexterm" name="id354992"></a>Returns the value type.<div class="variablelist"><dl><dt><span class="term"><span class="bold"><strong>Syntax</strong></span></span></dt><dd><pre class="programlisting">RegistryObject:<span class="bold"><strong>getvaltype</strong></span>(<em class="parameter"><code>str_value</code></em>)</pre></dd><dt><span class="term"><span class="bold"><strong>Arguments</strong></span></span></dt><dd><div class="variablelist"><dl><dt><span class="term"><span class="emphasis"><em>str_value</em></span></span></dt><dd>The name of value to query.</dd></dl></div></dd><dt><span class="term"><span class="bold"><strong>Returns</strong></span></span></dt><dd>
+				If the value name does not exist, return <code class="code">nil</code>.
+				If the value name exist, return its type see <a href="#hkeyretdatatype" title="Table 4. Data Type">Table 4, &#8220;Data Type&#8221;</a></dd><dt><span class="term"><span class="bold"><strong>Example</strong></span></span></dt><dd><table onmouseover='showRun("id95733",id95733_2)'><tr><td align="left" valign="top" colspan="2"></td></tr><tr><td valign="top" id="id95733_2"></td><td id="id95733"><pre class="programlisting">
+require"winreg"
+rkey = "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run"
+hkey = winreg.openkey(rkey)
+for name, kind in hkey:enumvalue() do
+	print("\nname: " .. name
+	.. "\ntype: " .. hkey:getvaltype(name))
+	assert(kind == hkey:getvaltype(name))
+end
+	</pre></td></tr></table></dd></dl></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="RegistryObject.getvalue"></a>5.1.11. getvalue</h4></div></div></div><a class="indexterm" name="id355112"></a>Retrieves the data and type for a specified value name associated with an open registry key.<div class="variablelist"><dl><dt><span class="term"><span class="bold"><strong>Syntax</strong></span></span></dt><dd><pre class="programlisting">RegistryObject:<span class="bold"><strong>getvalue</strong></span>(<em class="parameter"><code>str_name</code></em>)</pre></dd><dt><span class="term"><span class="bold"><strong>Arguments</strong></span></span></dt><dd><div class="variablelist"><dl><dt><span class="term"><span class="emphasis"><em>str_name</em></span></span></dt><dd>The name of the value to be queried</dd></dl></div></dd><dt><span class="term"><span class="bold"><strong>Returns</strong></span></span></dt><dd><p>If the function succeeds, the return value is the <code class="varname">data</code> and it's <code class="varname">type</code>.
+				see table below
+				</p><div class="table"><a name="hkeyretdatatype"></a><p class="title"><b>Table 4. Data Type</b></p><div class="table-contents"><table summary="Data Type" border="1"><colgroup><col><col></colgroup><thead><tr><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>1</td><td>data is a <code class="code">string</code> (REG_SZ)</td></tr><tr><td>2</td><td>data is a <code class="code">string</code> that contains unexpanded references
+								to environment variables (for example, "%COMSPEC%") (REG_EXPAND_SZ).</td></tr><tr><td>3</td><td>data is a <code class="code">string</code> containing binary data (REG_BINARY)</td></tr><tr><td>4</td><td>data is a <code class="code">number</code>(A 32-bit number) (REG_DWORD)</td></tr><tr><td>7</td><td>data is a <code class="code">table</code> conataining strings (REG_MULTI_SZ)</td></tr></tbody></table></div></div><br class="table-break"><p>If the function fails, the return value is <code class="code">nil</code></p></dd></dl></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="RegistryObject.load"></a>5.1.12. load</h4></div></div></div><a class="indexterm" name="id355284"></a>Creates a subkey under <span class="emphasis"><em>registry object's key handle</em></span> and stores registration information from a specified file into that subkey<div class="variablelist"><dl><dt><span class="term"><span class="bold"><strong>Syntax</strong></span></span></dt><dd><pre class="programlisting">RegistryObject:<span class="bold"><strong>load</strong></span>(<em class="parameter"><code>str_key</code></em>, <em class="parameter"><code>str_file</code></em>)</pre></dd><dt><span class="term"><span class="bold"><strong>Arguments</strong></span></span></dt><dd><div class="variablelist"><dl><dt><span class="term"><span class="emphasis"><em>str_key</em></span></span></dt><dd>The name of the key to be created under <span class="emphasis"><em>registry object's key handle</em></span></dd><dt><span class="term"><span class="emphasis"><em>str_file</em></span></span></dt><dd>The name of a file that has registration information.
+				 This file must have been created with the <a href="#RegistryObject.save">save</a> function.
+				 Under the file allocation table (FAT) file system, the filename may not have an extension.</dd></dl></div></dd><dt><span class="term"><span class="bold"><strong>Returns</strong></span></span></dt><dd><table class="simplelist" border="0" summary="Simple list"><tr><td><span class="emphasis"><em>Success</em></span></td><td>Reference to <code class="code">RegistryObject</code> it self</td></tr><tr><td><span class="emphasis"><em>Failure</em></span></td><td>nil.</td></tr></table></dd><dt><span class="term"><span class="bold"><strong>Remarks</strong></span></span></dt><dd><p>The MS Win32 API documentation implies <span class="emphasis"><em>registry object's key handle</em></span> must be open using only
+			<span class="emphasis"><em>HKEY_USER</em></span> or <span class="emphasis"><em>HKEY_LOCAL_MACHINE</em></span>
+			or <span class="emphasis"><em>\\Computername\HKEY_USER</em></span>
+			or <span class="emphasis"><em>\\Computername\HKEY_LOCAL_MACHINE</em></span> as the subkey</p><p>This registration information is in the form of a hive.
+			 A hive is a discrete body of keys, subkeys,
+			 and values that is rooted at the top of the registry hierarchy.
+			 A hive is backed by a single file and .LOG file.</p></dd><dt><span class="term"><span class="bold"><strong>Example</strong></span></span></dt><dd><table onmouseover='showRun("id95939",id95939_2)'><tr><td align="left" valign="top" colspan="2"></td></tr><tr><td valign="top" id="id95939_2"></td><td id="id95939"><pre class="programlisting">
+require"winreg"
+hkey = winreg.openkey([[HKLM]])
+hkey:load("PARENTKEY", "TESTREGFILE")
+</pre></td></tr></table></dd></dl></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="RegistryObject.openkey"></a>5.1.13. openkey</h4></div></div></div><a class="indexterm" name="id355486"></a>Opens the registry key under <span class="emphasis"><em>registry object's key handle</em></span><div class="variablelist"><dl><dt><span class="term"><span class="bold"><strong>Syntax</strong></span></span></dt><dd><pre class="programlisting">RegistryObject:<span class="bold"><strong>openkey</strong></span>(<em class="parameter"><code>str_subkey</code></em>)</pre></dd><dt><span class="term"><span class="bold"><strong>Arguments</strong></span></span></dt><dd><div class="variablelist"><dl><dt><span class="term"><span class="emphasis"><em>str_subkey</em></span></span></dt><dd>Name of subkey to open.</dd></dl></div></dd><dt><span class="term"><span class="bold"><strong>Returns</strong></span></span></dt><dd><table class="simplelist" border="0" summary="Simple list"><tr><td><span class="emphasis"><em>Success</em></span></td><td>a new <a href="#RegistryObject">registry object</a></td></tr><tr><td><span class="emphasis"><em>Failure</em></span></td><td>nil.</td></tr></table></dd><dt><span class="term"><span class="bold"><strong>Example</strong></span></span></dt><dd><table onmouseover='showRun("id95970",id95970_2)'><tr><td align="left" valign="top" colspan="2"></td></tr><tr><td valign="top" id="id95970_2"></td><td id="id95970"><pre class="programlisting">
+require"winreg"
+-- Enumerate shell folders
+hkey = winreg.openkey([[HKCU\Software\Microsoft\Windows\CurrentVersion]])
+skey = hkey:openkey("Explorer\\Shell Folders")
+for name, kind in skey:enumvalue(true) do
+	print("\nname: " .. name .. " (type " .. kind .. ")")
+end
+</pre></td></tr></table></dd></dl></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="RegistryObject.replace"></a>5.1.14. replace</h4></div></div></div><a class="indexterm" name="id355621"></a>Replaces the file backing a key and all its subkeys with another file, so that when the system is next started, the key and subkeys will have the values stored in the new file<div class="variablelist"><dl><dt><span class="term"><span class="bold"><strong>Syntax</strong></span></span></dt><dd><pre class="programlisting">RegistryObject:<span class="bold"><strong>replace</strong></span>(<em class="parameter"><code>str_subkey</code></em>, <em class="parameter"><code>str_newfile</code></em>, <em class="parameter"><code>str_oldfile</code></em>)</pre></dd><dt><span class="term"><span class="bold"><strong>Arguments</strong></span></span></dt><dd><div class="variablelist"><dl><dt><span class="term"><span class="emphasis"><em>str_subkey</em></span></span></dt><dd>The name of a key whose subkeys and values are replaced by this function.</dd><dt><span class="term"><span class="emphasis"><em>str_newfile</em></span></span></dt><dd>The name of a file that has registration information.
+				 This file must have been created with the <a href="#RegistryObject.save">save</a> function.
+				 Under the file allocation table (FAT) file system, the filename may not have an extension.</dd><dt><span class="term"><span class="emphasis"><em>str_oldfile</em></span></span></dt><dd>The name of a file that receives a backup copy of the registry information being replaced. If this file is created under the FAT file system, it should not have an extension</dd></dl></div></dd><dt><span class="term"><span class="bold"><strong>Returns</strong></span></span></dt><dd><table class="simplelist" border="0" summary="Simple list"><tr><td><span class="emphasis"><em>Success</em></span></td><td>Reference to <code class="code">RegistryObject</code> it self</td></tr><tr><td><span class="emphasis"><em>Failure</em></span></td><td>nil.</td></tr></table></dd><dt><span class="term"><span class="bold"><strong>Remarks</strong></span></span></dt><dd><p>The MS Win32 API documentation implies <span class="emphasis"><em>registry object's key handle</em></span> must be open using only
+			<span class="emphasis"><em>HKEY_USER</em></span> or <span class="emphasis"><em>HKEY_LOCAL_MACHINE</em></span><span class="emphasis"><em>HKEY_CURRENT_USER</em></span> or <span class="emphasis"><em>HKEY_CLASSES_ROOT</em></span>
+			 as the subkey</p></dd></dl></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="RegistryObject.restore"></a>5.1.15. restore</h4></div></div></div><a class="indexterm" name="id352089"></a>Reads the registry information in a specified file and copies it over the specified key.
+				This registry information may be in the form of a key and multiple levels of subkeys<div class="variablelist"><dl><dt><span class="term"><span class="bold"><strong>Syntax</strong></span></span></dt><dd><pre class="programlisting">RegistryObject:<span class="bold"><strong>restore</strong></span>(<em class="parameter"><code>str_newfile</code></em>)</pre></dd><dt><span class="term"><span class="bold"><strong>Arguments</strong></span></span></dt><dd><div class="variablelist"><dl><dt><span class="term"><span class="emphasis"><em>str_newfile</em></span></span></dt><dd>The name of a file that has registration information.
+				 This file must have been created with the <a href="#RegistryObject.save">save</a> function.
+				 Under the file allocation table (FAT) file system, the filename may not have an extension.</dd></dl></div></dd><dt><span class="term"><span class="bold"><strong>Returns</strong></span></span></dt><dd><table class="simplelist" border="0" summary="Simple list"><tr><td><span class="emphasis"><em>Success</em></span></td><td>Reference to <code class="code">RegistryObject</code> it self</td></tr><tr><td><span class="emphasis"><em>Failure</em></span></td><td>nil.</td></tr></table></dd></dl></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="RegistryObject.save"></a>5.1.16. save</h4></div></div></div><a class="indexterm" name="id358368"></a>Saves the <span class="emphasis"><em>registry object's key handle</em></span> subkeys and values to a new file<div class="variablelist"><dl><dt><span class="term"><span class="bold"><strong>Syntax</strong></span></span></dt><dd><pre class="programlisting">RegistryObject:<span class="bold"><strong>save</strong></span>(<em class="parameter"><code>str_file</code></em>)</pre></dd><dt><span class="term"><span class="bold"><strong>Arguments</strong></span></span></dt><dd><div class="variablelist"><dl><dt><span class="term"><span class="emphasis"><em>str_file</em></span></span></dt><dd>Name of the file to save registry data to.
+				This file cannot already exist.
+				If this filename includes an extension,
+				It cannot be used on file allocation table (FAT) file systems
+				by the <a href="#RegistryObject.load">load</a>, <a href="#RegistryObject.replace">replace</a>, or <a href="#RegistryObject.restore">restore</a> function.</dd></dl></div></dd><dt><span class="term"><span class="bold"><strong>Returns</strong></span></span></dt><dd><table class="simplelist" border="0" summary="Simple list"><tr><td><span class="emphasis"><em>Success</em></span></td><td>Reference to <code class="code">RegistryObject</code> it self</td></tr><tr><td><span class="emphasis"><em>Failure</em></span></td><td>nil.</td></tr></table></dd><dt><span class="term"><span class="bold"><strong>Example</strong></span></span></dt><dd><table onmouseover='showRun("id96151",id96151_2)'><tr><td align="left" valign="top" colspan="2"></td></tr><tr><td valign="top" id="id96151_2"></td><td id="id96151"><pre class="programlisting">
+require"winreg"
+hkey = winreg.createkey([[HKCU\Software\PARENTKEY\CHILDKEY]])
+hkey:setvalue("VALUE1", "STRING")
+hkey:setvalue("VALUE2", 2^31)
+hkey:setvalue("VALUE3", {"abcde", "12345", "!@#$%"})
+hkey:setvalue("VALUE4", "BINARY", "binary")
+hkey:setvalue("VALUE5", "%WINDIR%", "expand_sz")
+hkey:save("TESTREGDATA")
+</pre></td></tr></table></dd></dl></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="RegistryObject.setvalue"></a>5.1.17. setvalue</h4></div></div></div><a class="indexterm" name="id355836"></a>Stores data in the value field of an open registry key.<div class="variablelist"><dl><dt><span class="term"><span class="bold"><strong>Syntax</strong></span></span></dt><dd><pre class="programlisting">RegistryObject:<span class="bold"><strong>setvalue</strong></span>(<em class="parameter"><code>str_value</code></em>, <em class="parameter"><code>var_data</code></em>, [<em class="parameter"><code>var_type</code></em>])</pre></dd><dt><span class="term"><span class="bold"><strong>Arguments</strong></span></span></dt><dd><div class="variablelist"><dl><dt><span class="term"><span class="emphasis"><em>str_value</em></span></span></dt><dd>Required<code class="code"> string</code> value. 
+				The name of the value to set</dd><dt><span class="term"><span class="emphasis"><em>var_data</em></span></span></dt><dd>Required. 
+				Data to be stored with the specified value name.
+				The type of this argument depends on <code class="varname">var_type</code></dd><dt><span class="term"><span class="emphasis"><em>var_type</em></span></span></dt><dd>Optional. 
+				Type of information to be stored as the value's data.
+				This parameter can be one of the following values:
+				<div class="table"><a name="valuedatatype"></a><p class="title"><b>Table 5. Registry Value Data Type</b></p><div class="table-contents"><div class="caption">Registry Value Data Type</div><table border="1"><colgroup><col><col></colgroup><thead><tr><th>String Value</th><th>Integer Value</th><th>Description</th><th>Required Lua Value of <code class="varname">var_data</code></th></tr></thead><tbody><tr><td>"sz"</td><td>1</td><td>A null-terminated string</td><td><code class="code">string</code></td></tr><tr><td>"expand_sz"</td><td>2</td><td>A null-terminated string that contains unexpanded references to environment variables, for example "%PATH%"</td><td><code class="code">string</code></td></tr><tr><td>"binary"</td><td>3</td><td>Binary data in any form</td><td><code class="code">string</code></td></tr><tr><td>"dword"</td><td>4</td><td>A 32-bit number</td><td><code class="code">number</code></td></tr><tr><td>"multi_sz"</td><td>7</td><td>An array of null-terminated strings</td><td><code class="code">string</code> or <code class="code">table</code> conataining strings</td></tr></tbody></table></div></div><br class="table-break"><p>The default value of this argument depends on <code class="varname">var_data</code>'s type.
+					If <code class="varname">var_data</code> is a <code class="code">table</code>  the data type will be <code class="varname">"multi_sz"</code>, only the string value in the table will be retrieve.
+					If <code class="varname">var_data</code> is a <code class="code">number</code> the data type will be <code class="varname">"dword"</code>.
+					If <code class="varname">var_data</code> is a <code class="code">string</code> the data type will be <code class="varname">"sz"</code>.
+					</p></dd></dl></div></dd><dt><span class="term"><span class="bold"><strong>Returns</strong></span></span></dt><dd><table class="simplelist" border="0" summary="Simple list"><tr><td><span class="emphasis"><em>Success</em></span></td><td>Reference to <code class="code">RegistryObject</code> it self</td></tr><tr><td><span class="emphasis"><em>Failure</em></span></td><td>nil.</td></tr></table></dd><dt><span class="term"><span class="bold"><strong>Example</strong></span></span></dt><dd><table onmouseover='showRun("id96358",id96358_2)'><tr><td align="left" valign="top" colspan="2"></td></tr><tr><td valign="top" id="id96358_2"></td><td id="id96358"><pre class="programlisting">
+require"winreg"
+hkey = winreg.createkey([[HKCU\Software\PARENTKEY\CHILDKEY]])
+hkey:setvalue("VALUE1", "STRING")
+hkey:setvalue("VALUE2", 2^31)
+hkey:setvalue("VALUE3", {"abcde", "12345", "!@#$%"})
+hkey:setvalue("VALUE4", "BINARY", "binary")
+hkey:setvalue("VALUE5", "%WINDIR%", "expand_sz")
+hkey:close()
+
+hkey = winreg.createkey([[HKCU\Software\PARENTKEY\CHILDKEY]])
+
+value, type = hkey:getvalue("VALUE1")
+assert(type == 1 and value == "STRING")
+
+value, type = hkey:getvalue("VALUE2")
+assert(type == 4 and value == (2^31))
+
+value, type = hkey:getvalue("VALUE3")
+assert(type == 7 and value[1] == "abcde"
+and value[2] == "12345" and value[3] == "!@#$%")
+
+value, type = hkey:getvalue("VALUE4")
+assert(type == 3 and value == "BINARY")
+
+value, type = hkey:getvalue("VALUE5")
+assert(type == 2 and value == "%WINDIR%")
+</pre></td></tr></table></dd></dl></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="RegistryObject.unload"></a>5.1.18. unload</h4></div></div></div><a class="indexterm" name="id358585"></a>Unloads the specified key and subkeys from the registry.<div class="variablelist"><dl><dt><span class="term"><span class="bold"><strong>Syntax</strong></span></span></dt><dd><pre class="programlisting">RegistryObject:<span class="bold"><strong>unload</strong></span>(<em class="parameter"><code>str_subkey</code></em>)</pre></dd><dt><span class="term"><span class="bold"><strong>Arguments</strong></span></span></dt><dd><div class="variablelist"><dl><dt><span class="term"><span class="emphasis"><em>str_subkey</em></span></span></dt><dd>The name of the subkey to be unloaded. The key referred to by the this parameter must have been created by using the <a href="#RegistryObject.load">load</a> method.</dd></dl></div></dd><dt><span class="term"><span class="bold"><strong>Returns</strong></span></span></dt><dd><table class="simplelist" border="0" summary="Simple list"><tr><td><span class="emphasis"><em>Success</em></span></td><td>Reference to <code class="code">RegistryObject</code> it self</td></tr><tr><td><span class="emphasis"><em>Failure</em></span></td><td>nil.</td></tr></table></dd><dt><span class="term"><span class="bold"><strong>Remarks</strong></span></span></dt><dd><p>The MS Win32 API documentation implies <span class="emphasis"><em>registry object's key handle</em></span> must be open using only
+				<span class="emphasis"><em>HKEY_USER</em></span> or <span class="emphasis"><em>HKEY_LOCAL_MACHINE</em></span>
+				or <span class="emphasis"><em>\\Computername\HKEY_USER</em></span>
+				or <span class="emphasis"><em>\\Computername\HKEY_LOCAL_MACHINE</em></span> as the subkey</p>
+					This function removes a hive from the registry but does not modify the file containing the registry information.
+					A hive is a discrete body of keys, subkeys, and values that is rooted at the top of the registry hierarchy.
+				</dd><dt><span class="term"><span class="bold"><strong>Example</strong></span></span></dt><dd><table onmouseover='showRun("id96440",id96440_2)'><tr><td align="left" valign="top" colspan="2"></td></tr><tr><td valign="top" id="id96440_2"></td><td id="id96440"><pre class="programlisting">
+require"winreg"			
+hkey = winreg.openkey([[HKLM]])
+hkey:unload("PARENTKEY")
+</pre></td></tr></table></dd></dl></div></div></div></div></div></body></html>
