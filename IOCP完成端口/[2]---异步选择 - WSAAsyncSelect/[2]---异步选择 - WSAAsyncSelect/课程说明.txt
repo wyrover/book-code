@@ -1,0 +1,82 @@
+如果你想在Windows平台上构建服务器应用，那么I/O模型是你必须考虑的。
+Windows操作系统提供了五种I/O模型，分别是：
+
+■ 选择（select）；
+■ 异步选择（WSAAsyncSelect）；
+■ 事件选择（WSAEventSelect）；
+■ 重叠I/O（Overlapped I/O）；
+■ 完成端口（Completion Port) 。
+
+每一种模型适用于一种特定的应用场景。程序员应该对自己的应用需求非常明确，
+综合考虑到程序的扩展性和可移植性等因素，作出自己的选择。
+==============================================
+█ 异步选择（WSAAsyncSelect）模型是一个有用的异步 I/O 模型。利用这个模型，应用程序可在一个套接字上，
+接收以 Windows 消息为基础的网络事件通知。具体的做法是在建好一个套接字后，调用WSAAsyncSelect函数。
+该模型的核心即是WSAAsyncSelect函数。
+
+█ 要想使用 WSAAsyncSelect 模型，在应用程序中，首先必须用CreateWindow函数创建一个窗口，再为该窗口提供一个窗口例程函数（WinProc）。
+
+█ WSAAsyncSelect 的函数原型如下：
+int WSAAsyncSelect(
+  __in          SOCKET s,
+  __in          HWND hWnd,
+  __in          unsigned int wMsg,
+  __in          long lEvent
+);
+
+● s 参数指定的是我们感兴趣的那个套接字。
+● hWnd 参数指定一个窗口句柄，它对应于网络事件发生之后，想要收到通知消息的那个窗口。
+● wMsg 参数指定在发生网络事件时，打算接收的消息。该消息会投递到由hWnd窗口句柄指定的那个窗口。
+（通常，应用程序需要将这个消息设为比Windows的WM_USER大的一个值，避免网络窗口消息与系统预定义的标准窗口消息发生混淆与冲突）
+● lEvent 参数指定一个位掩码，对应于一系列网络事件的组合，大多数应用程序通常感兴趣的网络事件类型包括： 
+FD_READ、FD_WRITE、FD_ACCEPT、FD_CONNECT、FD_CLOSE。当然，到底使用FD_ACCEPT，还是使用FD_CONNECT类型，
+要取决于应用程序的身份是客户端，还是服务器。如应用程序同时对多个网络事件有兴趣，只需对各种类型执行一次简单的按位OR（或）运算，
+然后将它们分配给lEvent就可以了，例如：
+WSAAsyncSeltct(s, hwnd, WM_SOCKET, FD_CONNECT | FD_READ | FD_WRITE | FD_CLOSE);
+解释说明：我们的应用程序以后便可在套接字s上，接收到有关连接、发送、接收以及套接字关闭这一系列网络事件的通知。
+
+█ 注意 ①：
+多个事件务必在套接字上一次注册！
+另外还要注意的是，一旦在某个套接字上允许了事件通知，那么以后除非明确调用closesocket命令，
+或者由应用程序针对那个套接字调用了WSAAsyncSelect，从而更改了注册的网络事件类型，否则的话，
+事件通知会永远有效！若将lEvent参数设为0，效果相当于停止在套接字上进行的所有网络事件通知。
+
+█ 注意 ②：
+若应用程序针对一个套接字调用了WSAAsyncSelect，那么套接字的模式会从“锁定”变成“非锁定”。
+这样一来，如果调用了像WSARecv这样的Winsock函数，但当时却并没有数据可用，那么必然会造成调用的失败，并返回WSAEWOULDBLOCK错误。
+为防止这一点，应用程序应依赖于由WSAAsyncSelect的uMsg参数指定的用户自定义窗口消息，来判断网络事件类型何时在套接字上发生；而不应盲目地进行调用。
+
+FD_READ			应用程序想要接收有关是否可读的通知，以便读入数据
+FD_WRITE		应用程序想要接收有关是否可写的通知，以便写入数据
+FD_ACCEPT		应用程序想接收与进入连接有关的通知
+FD_CONNECT	应用程序想接收与一次连接完成的通知
+FD_CLOSE		应用程序想接收与套接字关闭的通知
+
+█ 应用程序在一个套接字上成功调用了WSAAsyncSelect之后，会在与hWnd窗口句柄对应的窗口例程中，以Windows消息的形式，接收网络事件通知。
+窗口例程通常定义如下：
+LRESULT CALLBACK WindowProc( 
+    HWND hwnd,
+    UINT uMsg,
+    WPARAM wParam,
+    LPARAM lParam
+);
+
+● hWnd 参数指定一个窗口的句柄，对窗口例程的调用正是由那个窗口发出的。
+● uMsg 参数指定需要对哪些消息进行处理。这里我们感兴趣的是WSAAsyncSelect调用中定义的消息。
+● wParam 参数指定在其上面发生了一个网络事件的套接字。假若同时为这个窗口例程分配了多个套接字，这个参数的重要性便显示出来了。
+● lParam参数中，包含了两方面重要的信息。其中， lParam的低字（低位字）指定了已经发生的网络事件，而lParam的高字（高位字）包含了可能出现的任何错误代码。
+
+█ 步骤：网络事件消息抵达一个窗口例程后，应用程序首先应检查lParam的高字位，以判断是否在网络错误。
+这里有一个特殊的宏： WSAGETSELECTERROR，可用它返回高字位包含的错误信息。
+若应用程序发现套接字上没有产生任何错误，接着便应调查到底是哪个网络事件类型，具体的做法便是读取lParam低字位的内容。
+此时可使用另一个特殊的宏：WSAGETSELECTEVENT，用它返回lParam的低字部分。
+
+█ 注意 ③：应用程序如何对 FD_WRITE 事件通知进行处理。
+只有在三种条件下，才会发出 FD_WRITE 通知：
+■ 使用 connect 或 WSAConnect，一个套接字首次建立了连接。
+■ 使用 accept 或 WSAAccept，套接字被接受以后。
+■ 若 send、WSASend、sendto 或 WSASendTo 操作失败，返回了 WSAEWOULDBLOCK 错误，而且缓冲区的空间变得可用。
+
+因此，作为一个应用程序，自收到首条 FD_WRITE 消息开始，便应认为自己必然能在一个套接字上发出数据，
+直至一个send、WSASend、sendto 或 WSASendTo 返回套接字错误 WSAEWOULDBLOCK。
+经过了这样的失败以后，要再用另一条 FD_WRITE 通知应用程序再次发送数据。

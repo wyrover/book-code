@@ -1,0 +1,127 @@
+如果你想在Windows平台上构建服务器应用，那么I/O模型是你必须考虑的。
+Windows操作系统提供了五种I/O模型，分别是：
+
+■ 选择（select）；
+■ 异步选择（WSAAsyncSelect）；
+■ 事件选择（WSAEventSelect）；
+■ 重叠I/O（Overlapped I/O）；
+■ 完成端口（Completion Port) 。
+
+每一种模型适用于一种特定的应用场景。程序员应该对自己的应用需求非常明确，
+综合考虑到程序的扩展性和可移植性等因素，作出自己的选择。
+==============================================
+█ 事件选择（WSAEventSelect）模型是另一个有用的异步 I/O 模型。和 WSAAsyncSelect 模型类似的是，
+它也允许应用程序在一个或多个套接字上，接收以事件为基础的网络事件通知，最主要的差别在于网络事件会投
+递至一个事件对象句柄，而非投递到一个窗口例程。
+
+█ 事件通知模型要求我们的应用程序针对使用的每一个套接字，首先创建一个事件对象。
+创建方法是调用 WSACreateEvent 函数，它的定义如下：
+
+WSAEVENT WSACreateEvent(void);
+
+█ WSACreateEvent 函数的返回值很简单，就是一个创建好的事件对象句柄，接下来必须将其与某个套接字关联在一起，
+同时注册自己感兴趣的网络事件类型（FD_READ、FD_WRITE、FD_ACCEPT、FD_CONNECT、FD_CLOSE等），
+方法是调用 WSAEventSelect 函数，其定义如下：
+int WSAEventSelect(
+  __in          SOCKET s,
+  __in          WSAEVENT hEventObject,
+  __in          long lNetworkEvents
+);
+● s 参数代表感兴趣的套接字；
+● hEventObject 参数指定要与套接字关联在一起的事件对象—用 WSACreateEvent 取得的那一个；
+● lNetworkEvents 参数则对应一个“位掩码”，用于指定应用程序感兴趣的各种网络事件类型的一个组合。
+
+█ WSACreateEvent 创建的事件有两种工作状态，以及两种工作模式。
+工作状态分别是“已传信”（signaled）和“未传信”（nonsignaled）。
+工作模式则包括“人工重设”（manual reset）和“自动重设”（auto reset）。
+
+WSACreateEvent 开始是在一种未传信的工作状态，并用一种人工重设模式，来创建事件句柄。
+随着网络事件触发了与一个套接字关联在一起的事件对象，工作状态便会从“未传信”转变成“已传信”。
+由于事件对象是在一种人工重设模式中创建的，所以在完成了一个 I/O 请求的处理之后，
+我们的应用程序需要负责将工作状态从已传信更改为未传信。要做到这一点，可调用 WSAResetEvent 函数，对它的定义如下：
+BOOL WSAResetEvent(
+  __in          WSAEVENT hEvent
+);
+
+● 该函数唯一的参数便是一个事件句柄；基于调用是成功还是失败，会分别返回TRUE或FALSE。
+应用程序完成了对一个事件对象的处理后，便应调用WSACloseEvent函数，释放由事件句柄使用的系统资源。
+对 WSACloseEvent 函数的定义如下：
+BOOL WSACloseEvent(
+  __in          WSAEVENT hEvent
+);
+● 该函数也要拿一个事件句柄作为自己唯一的参数，并会在成功后返回TRUE，失败后返回FALSE。
+
+█ 一个套接字同一个事件对象句柄关联在一起后，应用程序便可开始I/O处理；
+方法是等待网络事件触发事件对象句柄的工作状态。WSAWaitForMultipleEvents 函数的设计宗旨便是用来等待一个或多个事件对象句柄，
+并在事先指定的一个或所有句柄进入“已传信”状态后，或在超过了一个规定的时间周期后，立即返回。
+下面是 WSAWaitForMultipleEvents 函数的定义：
+
+DWORD WSAWaitForMultipleEvents(
+  __in          DWORD cEvents,
+  __in          const WSAEVENT* lphEvents,
+  __in          BOOL fWaitAll,
+  __in          DWORD dwTimeout,
+  __in          BOOL fAlertable
+);
+
+● cEvents 和 lphEvents 参数定义了由 WSAEVENT 对象构成的一个数组。在这个数组中，
+cEvents指定的是事件对象的数量，而lphEvents对应的是一个指针，用于直接引用该数组。
+
+要注意的是，WSAWaitForMultipleEvents 只能支持由 WSA_MAXIMUM_WAIT_EVENTS 对象规定的一个最大值，在此定义成64个。
+因此，针对发出 WSAWaitForMultipleEvents 调用的每个线程，该 I/O 模型一次最多都只能支持64个套接字。
+假如想让这个模型同时管理不止64个套接字，必须创建额外的工作者线程，以便等待更多的事件对象。
+
+● fWaitAll 参数指定了 WSAWaitForMultipleEvents 如何等待在事件数组中的对象。
+若设为TRUE，那么只有等 lphEvents 数组内包含的所有事件对象都已进入“已传信”状态，函数才会返回；
+但若设为FALSE，任何一个事件对象进入“已传信”状态，函数就会返回。就后一种情况来说，返回值指出了到底是哪个事件对象造成了函数的返回。
+通常，应用程序应将该参数设为 FALSE，一次只为一个套接字事件提供服务。
+
+● dwTimeout参数规定了 WSAWaitForMultipleEvents 最多可等待一个网络事件发生有多长时间，以毫秒为单位，这是一项“超时”设定。
+超过规定的时间，函数就会立即返回，即使由 fWaitAll 参数规定的条件尚未满足也如此。
+考虑到它对性能造成的影响，应尽量避免将超时值设为0。
+假如没有等待处理的事件，WSAWaitForMultipleEvents 便会返回 WSA_WAIT_TIMEOUT。
+如 dwTimeout 设为 WSAINFINITE（永远等待），那么只有在一个网络事件传信了一个事件对象后，函数才会返回。
+
+● fAlertable 参数，在我们使用 WSAEventSelect 模型的时候，它是可以忽略的，且应设为 FALSE。
+该参数主要用于在重叠式 I/O 模型中，在完成例程的处理过程中使用。
+
+█ 若 WSAWaitForMultipleEvents 收到一个事件对象的网络事件通知，便会返回一个值，指出造成函数返回的事件对象。
+这样一来，我们的应用程序便可引用事件数组中已传信的事件，并检索与那个事件对应的套接字，判断到底是在哪个套接字上，发生了什么网络事件类型。
+对事件数组中的事件进行引用时，应该用 WSAWaitForMultipleEvents 的返回值，减去预定义的值 WSA_WAIT_EVENT_0，得到具体的引用值（即索引位置）。
+如下例所示：
+Index = WSAWaitForMultipleEvents(...);
+MyEvent = EventArray[Index - WSA_WAIT_EVENT_0];
+
+█ 知道了造成网络事件的套接字后，接下来可调用 WSAEnumNetworkEvents 函数，调查发生了什么类型的网络事件。
+该函数定义如下：
+int WSAEnumNetworkEvents(
+  __in          SOCKET s,
+  __in          WSAEVENT hEventObject,
+  __out         LPWSANETWORKEVENTS lpNetworkEvents
+);
+
+● s 参数对应于造成了网络事件的套接字。
+● hEventObject 参数则是可选的；它指定了一个事件句柄，对应于打算重设的那个事件对象。由于我们的事件对象处在一个“已传信”状态，
+所以可将它传入，令其自动成为“未传信”状态。如果不想用 hEventObject 参数来重设事件，那么可使用 WSAResetEvent 函数，该函数之前已经讨论过了。
+● 参数 lpNetworkEvents，代表一个指针，指向 WSANETWORKEVENTS 结构，用于接收套接字上发生的网络事件类型以及可能出现的任何错误代码。
+WSANETWORKEVENTS 结构的定义如下：
+
+typedef struct _WSANETWORKEVENTS {
+  long lNetworkEvents;
+  int iErrorCode[FD_MAX_EVENTS];
+} WSANETWORKEVENTS,  *LPWSANETWORKEVENTS;
+
+● lNetworkEvents 参数指定了一个值，对应于套接字上发生的所有网络事件类型（FD_READ、FD_WRITE 等）。
+注意：一个事件进入传信状态时，可能会同时发生多个网络事件类型。例如，一个繁忙的服务器应用可能同时收到 FD_READ 和 FD_WRITE 通知。
+● iErrorCode 参数指定的是一个错误代码数组，同 lNetworkEvents 中的事件关联在一起。
+针对每个网络事件类型，都存在着一个特殊的事件索引，名字与事件类型的名字类似，只是要在事件名字后面添加一个“_BIT”后缀字串即可。
+例如，对 FD_READ 事件类型来说，iErrorCode 数组的索引标识符便是 FD_READ_BIT。下述代码片断对此进行了阐释（针对FD_READ事件）：
+if (NetwordEvents.lNetworkEvents & FD_READ)
+{
+	if (NetworkEvents.iErrorCode[FD_READ_BIT] != 0)
+	{
+		printf("FD_READ failed with error %d\n", NetworkEvents.iErrorCode[FD_READ_BIT]);
+	}
+}
+
+完成了对 WSANETWORKEVENTS 结构中的事件的处理之后，我们的应用程序应在所有可用的套接字上，继续等待更多的网络事件。

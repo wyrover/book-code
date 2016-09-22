@@ -1,0 +1,166 @@
+大家好，我是Syc          QQ：7657318			QQ 技术交流群：http://www.cctry.com/thread-377-1-1.html
+今天给大家做的教程是：
+WinSock 异步I/O模型[4]---重叠 I/O - Overlapped I/O
+----------------------------------------------------------------------------
+如果你想在Windows平台上构建服务器应用，那么I/O模型是你必须考虑的。
+Windows操作系统提供了五种I/O模型，分别是：
+
+■ 选择（select）；
+■ 异步选择（WSAAsyncSelect）；
+■ 事件选择（WSAEventSelect）；
+■ 重叠 I/O（Overlapped I/O）；
+■ 完成端口（Completion Port) 。
+
+每一种模型适用于一种特定的应用场景。程序员应该对自己的应用需求非常明确，
+综合考虑到程序的扩展性和可移植性等因素，作出自己的选择。
+==============================================
+
+█ 在 Winsock 中，重叠 I/O（Overlapped I/O）模型能达到更佳的系统性能，高于之前讲过的三种。
+重叠模型的基本设计原理便是让应用程序使用一个重叠的数据结构（WSAOVERLAPPED），一次投递一个或多个 Winsock I/O 请求。
+针对这些提交的请求，在它们完成之后，我们的应用程序会收到通知，于是我们就可以对数据进行处理了。
+
+█ 要想在一个套接字上使用重叠 I/O 模型，首先必须使用 WSA_FLAG_OVERLAPPED 这个标志，创建一个套接字。例如：
+SOCKET s = WSASocket(AF_INET, SOCK_STREAM, 0, NULL, 0, WSA_FLAG_OVERLAPPED);
+
+创建套接字的时候，假如使用的是 socket 函数，那么会默认设置 WSA_FLAG_OVERLAPPED 标志。
+
+成功建好一个套接字，同时将其与一个本地接口绑定到一起后，便可开始进行重叠 I/O 操作，
+为了要使用重叠结构，我们常用的 send、recv 等收发数据的函数也都要被 WSASend、WSARecv 替换掉了，
+方法是调用下述的 Winsock 函数，同时指定一个 WSAOVERLAPPED 结构（可选），它们的用法我后面会讲到：
+■ WSASend
+■ WSASendTo
+■ WSARecv
+■ WSARecvFrom
+■ WSAIoctl
+■ AcceptEx
+■ TrnasmitFile
+
+WSA_IO_PENDING ： 最常见的返回值，这是说明我们的重叠函数调用成功了，但是 I/O 操作还没有完成。
+
+█ 若随一个 WSAOVERLAPPED 结构一起调用这些函数，函数会立即完成并返回，无论套接字是否设为阻塞模式。
+那么我们如何来得知我们的 I/O 请求是否成功了呢？方法有两个：
+■ 等待“事件对象通知”；
+■ 通过“完成例程”。
+
+★ 今天，给大家讲的是第一种：事件通知（第二种不是很常用）；
+
+█ 这里只需要注意一点，重叠函数（如：WSARecv）的参数中都有一个 Overlapped 参数，我们可以假设是把我们的WSARecv这样的操作“绑定”到这个重叠结构上，
+提交一个请求，而不是将操作立即完成，其他的事情就交给重叠结构去做，而其中重叠结构又要与Windows的事件对象“绑定”在一起，
+这样我们调用完 WSARecv 以后就可以“坐享其成”，等到重叠操作完成以后，自然会有与之对应的事件来通知我们操作完成，
+然后我们就可以来根据重叠操作的结果取得我们想要的数据了。
+
+重叠 I/O 的事件通知方法要求将 Win32事件对象与 WSAOVERLAPPED 结构关联在一起，
+当 I/O 操作完成后，事件的状态会变成“已传信”状态，即激发态（是不是跟上节课给大家讲的事件选择模型很像？）；下面来看一下 WSAOVERLAPPED 结构的定义：
+
+typedef struct _WSAOVERLAPPED {
+    DWORD    Internal;
+    DWORD    InternalHigh;
+    DWORD    Offset;
+    DWORD    OffsetHigh;
+    WSAEVENT hEvent;
+} WSAOVERLAPPED, FAR * LPWSAOVERLAPPED;
+
+typedef struct _WSAOVERLAPPED {
+  ULONG_PTR Internal;
+  ULONG_PTR InternalHigh;
+  union {
+     struct {
+       DWORD Offset;
+       DWORD OffsetHigh;
+     };    PVOID Pointer;
+  };
+  HANDLE hEvent;
+} WSAOVERLAPPED,  *LPWSAOVERLAPPED;
+
+其中，Internal、InternalHigh、Offset 和 OffsetHigh 字段均由系统在内部使用，不应由应用程序直接进行处理或使用。
+而另一方面，hEvent 字段有点儿特殊，它允许应用程序将一个事件对象句柄同一个套接字关联起来。
+大家可能会觉得奇怪，如何将一个事件对象句柄分配给该字段呢？正如我们早先在 WSAEventSelect 模型中讲述的那样，
+可用 WSACreateEvent 函数来创建一个事件对象句柄。一旦创建好一个事件句柄，简单地将重叠结构的 hEvent 字段分配给事件句柄，
+再使用重叠结构，调用一个Winsock函数即可，比如 WSASend 或 WSARecv。
+
+█ 一个重叠 I/O 请求最终完成后，我们的应用程序要负责取回重叠 I/O 操作的结果。一个重叠请求操作最终完成之后，
+在事件通知方法中，Winsock会更改与一个 WSAOVERLAPPED 结构对应的一个事件对象的事件传信状态，
+将其从“未传信”变成“已传信”。由于一个事件对象已分配给 WSAOVERLAPPED 结构，所以只需简单地调用 WSAWaitForMultipleEvents 函数，
+从而判断出一个重叠 I/O 调用在什么时候完成。该函数已在我们前面介绍过了。
+
+█ 发现一次重叠请求完成之后，接着需要调用 WSAGetOverlappedResult（取得重叠结构）函数，判断那个重叠调用到底是成功，还是失败。该函数的定义如下：
+BOOL WSAAPI WSAGetOverlappedResult(
+  __in          SOCKET s,
+  __in          LPWSAOVERLAPPED lpOverlapped,
+  __out         LPDWORD lpcbTransfer,
+  __in          BOOL fWait,
+  __out         LPDWORD lpdwFlags
+);
+
+■ s 参数用于指定在重叠操作开始的时候，与之对应的那个套接字。
+■ lpOverlapped 参数是一个指针，对应于在重叠操作开始时，指定的那个 WSAOVERLAPPED 结构。
+■ lpcbTransfer 参数也是一个指针，对应一个DWORD（双字）变量，负责接收一次重叠发送或接收操作实际传输的字节数。
+■ fWait 参数用于决定函数是否应该等待一次待决（未决）的重叠操作完成。若将 fWait设为 TRUE，那么除非操作完成，否则函数不会返回；
+若设为FALSE，而且操作仍然处于“待决”状态，那么WSAGetOverlappedResult 函数会返回 FALSE值，同时返回一个WSAIOINCOMPLETE（I/O操作未完成）错误。
+但就我们目前的情况来说，由于需要等候重叠操作的一个已传信事件完成，所以该参数无论采用什么设置，都没有任何效果。
+■ 参数 lpdwFlags 对应于一个指针，指向一个DWORD（双字），负责接收结果标志（假如原先的重叠调用是用WSARecv或WSARecvFrom函数发出的）。
+
+■ 返回值：若 WSAGetOverlappedResult 函数调用成功，返回值就是TRUE。这意味着我们的重叠 I/O 操作已成功完成，而且由 lpcbTransfer 参数指向的值已进行了更新。
+若返回值是FALSE，那么可能是由下述任何一种原因造成的：
+1）、重叠 I/O操 作仍处在“待决”状态。
+2）、重叠操作已经完成，但含有错误。
+3）、重叠操作的完成状态不可判决，因为在提供给 WSAGetOverlappedResult函数的一个或多个参数中，存在着错误。
+
+失败后，由 lpcbTransfer 参数指向的值不会进行更新，而且我们的应用程序应调用 WSAGetLastError 函数，调查到底是何种原因造成了调用失败。
+
+█ 重叠 I/O 模型的编程步骤总结如下：
+1) 创建一个套接字，开始在指定的端口上监听连接请求；
+
+2) 接受一个客户端进入的连接请求；
+
+3) 为接受的套接字新建一个 WSAOVERLAPPED 结构，并为该结构分配一个事件对象句柄，
+同时将该事件对象句柄分配给一个事件数组，以便稍后由 WSAWaitForMultipleEvents 函数使用。
+
+4) 在套接字上投递一个异步 WSARecv 请求，指定参数为 WSAOVERLAPPED 结构。
+注意函数通常会以失败告终，返回 SOCKET_ERROR 错误状态 WSA_IO_PENDING（I/O操作尚未完成）；
+
+5) 使用步骤3)的事件数组，调用 WSAWaitForMultipleEvents 函数，并等待与重叠调用关联在一起的事件进入“已传信”状态（换言之，等待那个事件的“触发”）；
+
+6) WSAWaitForMultipleEvents 函数返回后，针对“已传信”状态的事件，调用 WSAResetEvent（重设事件）函数，从而重设事件对象，并对完成的重叠请求进行处理；
+
+7) 使用 WSAGetOverlappedResult 函数，判断重叠调用的返回状态是什么；
+
+8) 在套接字上投递另一个重叠 WSARecv 请求；
+
+9) 重复步骤5)~8)。
+
+█ 在 Windows NT 和 Windows 2000 中，重叠 I/O 模型也允许应用程序以一种重叠方式，实现对客户端连接的接受。
+具体的做法是在监听套接字上调用 AcceptEx 函数。AcceptEx 是一个特殊的 Winsock1.1 扩展函数，位于 Mswsock.h 头文件以及 Mswsock.lib 库文件内。
+AcceptEx 函数的定义如下：
+BOOL AcceptEx(
+  __in          SOCKET sListenSocket,
+  __in          SOCKET sAcceptSocket,
+  __in          PVOID lpOutputBuffer,
+  __in          DWORD dwReceiveDataLength,
+  __in          DWORD dwLocalAddressLength,
+  __in          DWORD dwRemoteAddressLength,
+  __out         LPDWORD lpdwBytesReceived,
+  __in          LPOVERLAPPED lpOverlapped
+);
+
+● sListenSocket 参数指定的是一个监听套接字。
+● sAcceptSocket 参数指定的是另一个套接字，负责对进入连接请求的“接受”。
+AcceptEx 函数和 accept 函数的区别在于，我们必须提供接受的套接字，而不是让函数自动为我们创建。
+正是由于要提供套接字，所以要求我们事先调用 socket 或 WSASocket 函数，创建一个套接字，以便通过 sAcceptSocket 参数，将其传递给 AcceptEx。
+● lpOutputBuffer 参数指定的是一个特殊的缓冲区，因为它要负责三种数据的接收：服务器的本地地址，客户机的远程地址，以及在新建连接上发送的第一个数据块。
+● dwReceiveDataLength参数以字节为单位，指定了在 lpOutputBuffer 缓冲区中，保留多大的空间，用于数据的接收。
+如这个参数设为0，那么在连接的接受过程中，不会再一道接收任何数据。
+● dwLocalAddressLength 和 dwRemoteAddressLength 参数也是以字节为单位，指定在 lpOutputBuffer 缓冲区中，保留多大的空间，
+在一个套接字被接受的时候，用于本地和远程地址信息的保存。
+
+要注意的是，和当前采用的传送协议允许的最大地址长度比较起来，这里指定的缓冲区大小至少应多出16字节。
+举个例子来说：假定正在使用的是 TCP/IP 协议，那么这里的大小应设为“SOCKADDRIN 结构的长度＋16字节”。
+
+● lpdwBytesReceived 参数用于返回接收到的实际数据量，以字节为单位。
+只有在操作以同步方式完成的前提下，才会设置这个参数。假如 AcceptEx 函数返回 ERROR_IO_PENDING，
+那么这个参数永远都不会设置，我们必须利用完成事件通知机制，获知实际读取的字节量。
+
+● lpOverlapped 参数对应的是一个 OVERLAPPED 结构，允许 AcceptEx 以一种异步方式工作。
+如我们早先所述，只有在一个重叠 I/O 应用中，该函数才需要使用事件对象通知机制，这是由于此时没有一个完成例程参数可供使用。
+也就是说 AcceptEx 函数只能由本节课给大家讲的“事件通知”方式获取异步 I/O 请求的结果，而“完成例程”方法无法被使用。
+
