@@ -71,6 +71,31 @@ namespace
 }
 
 
+LPTSTR
+SystemMessage (
+			   LPTSTR Buffer,
+			   HRESULT hr
+			   )
+{
+	LPTSTR   message;
+
+	FormatMessage (FORMAT_MESSAGE_ALLOCATE_BUFFER |
+		FORMAT_MESSAGE_FROM_SYSTEM,
+		NULL,
+		hr,
+		MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT),
+		(LPTSTR) &message,
+		0,
+		NULL);
+
+	wsprintf (Buffer, TEXT("%s(%lx)\n"), message, hr);
+
+	LocalFree (message);
+	return Buffer;
+}
+
+
+
 
 static const int kMaxLogLen = 16 * 1024;
 #define MAX_LEN (kMaxLogLen + 1)

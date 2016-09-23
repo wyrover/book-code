@@ -1,0 +1,404 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="Source Files\KernelReload">
+      <UniqueIdentifier>{6d6b13fa-01be-49d1-9759-661877572252}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Ntfs">
+      <UniqueIdentifier>{35c7d705-3c23-49cf-b747-e7b73b2ffaea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Kbdclass">
+      <UniqueIdentifier>{c3df1538-d4d0-4a0f-914b-325a1242675a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Ntos">
+      <UniqueIdentifier>{784a3806-ffc5-48e8-a79e-15fe53874559}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Control">
+      <UniqueIdentifier>{70852226-5eb8-4ab4-8c46-f674005af98b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Tcpip">
+      <UniqueIdentifier>{882d8d28-f221-4812-8666-d6115969a1bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SSDT">
+      <UniqueIdentifier>{b74a5f05-9eac-4fcc-b01f-8efe86287120}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SysModule">
+      <UniqueIdentifier>{6f0cce1d-9b7a-40ed-a248-a41d7f80295e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Process">
+      <UniqueIdentifier>{d05806d9-8ae4-4a1b-9bd3-2a8d291d8316}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\nsiproxy">
+      <UniqueIdentifier>{2c2474b0-15d3-4bd8-a4d4-987f453f6f21}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\KernelHookCheck">
+      <UniqueIdentifier>{bd11908a-7843-4075-85e4-1058674ad083}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Protect">
+      <UniqueIdentifier>{0855fa9a-7335-47f2-94b2-7dce69d4c960}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Services">
+      <UniqueIdentifier>{59beefaa-800b-4c4d-b120-ac0e64b1fae5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\LogDefense">
+      <UniqueIdentifier>{1c52ba3b-2a1a-4aba-be8d-3debb59585f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Dump">
+      <UniqueIdentifier>{80887769-d35f-4205-acb3-11c3adb4728f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Win32K">
+      <UniqueIdentifier>{b56a76b1-7ff0-4828-b94b-ea964b69042b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ObjectHookCheck">
+      <UniqueIdentifier>{41e4e9f8-2822-4c46-aaa2-1ae770af996d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\KernelFilterDriver">
+      <UniqueIdentifier>{94d34cc5-5bc8-43d8-bc6a-85015c757b9e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SystemThread">
+      <UniqueIdentifier>{25d51b68-5f8f-449f-aa96-22591917e501}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\KernelThread">
+      <UniqueIdentifier>{9aca4fce-6374-4858-880a-3262d3845f27}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Mouclass">
+      <UniqueIdentifier>{5e0a31a9-5d9b-4273-9a5f-5d7c8e6d65f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Atapi">
+      <UniqueIdentifier>{7f44b9c3-7a63-4b81-bc36-3b78ca3c4f60}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\DpcTimer">
+      <UniqueIdentifier>{035942b2-d12d-4487-8b27-fa4f60771234}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SystemNotify">
+      <UniqueIdentifier>{ba06c6d7-5321-467a-99bf-8c22c80aea64}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Startup">
+      <UniqueIdentifier>{c2b3c795-e58b-4d75-b778-a7549d40c779}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\WorkQueue">
+      <UniqueIdentifier>{61a8d541-56c6-45b9-96dc-7b85cbbbd617}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\LookupKernelData">
+      <UniqueIdentifier>{aaaa60e6-599a-4940-be85-80b0cfbc851a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\FuncAddrValid">
+      <UniqueIdentifier>{3642b1ce-73a9-4cee-8a55-9373e5a58ef7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\IoTimer">
+      <UniqueIdentifier>{d4f56c8c-e2b8-41c4-885a-db31532e407a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\MessageHook">
+      <UniqueIdentifier>{457a0256-7ecd-4933-b013-3112643859a4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="SafeSystem.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FileSystem.c">
+      <Filter>Source Files\KernelReload</Filter>
+    </ClCompile>
+    <ClCompile Include="InlineHook.c">
+      <Filter>Source Files\KernelReload</Filter>
+    </ClCompile>
+    <ClCompile Include="KernelReload.c">
+      <Filter>Source Files\KernelReload</Filter>
+    </ClCompile>
+    <ClCompile Include="Ntfs.c">
+      <Filter>Source Files\Ntfs</Filter>
+    </ClCompile>
+    <ClCompile Include="kbdclass.c">
+      <Filter>Source Files\Kbdclass</Filter>
+    </ClCompile>
+    <ClCompile Include="InitWindowsVersion.c">
+      <Filter>Source Files\KernelReload</Filter>
+    </ClCompile>
+    <ClCompile Include="ntos.c">
+      <Filter>Source Files\Ntos</Filter>
+    </ClCompile>
+    <ClCompile Include="Control.c">
+      <Filter>Source Files\Control</Filter>
+    </ClCompile>
+    <ClCompile Include="ReLoadSSDTTableHook.c">
+      <Filter>Source Files\SSDT</Filter>
+    </ClCompile>
+    <ClCompile Include="SSDT.c">
+      <Filter>Source Files\SSDT</Filter>
+    </ClCompile>
+    <ClCompile Include="SysModule.c">
+      <Filter>Source Files\SysModule</Filter>
+    </ClCompile>
+    <ClCompile Include="Port.c">
+      <Filter>Source Files\Tcpip</Filter>
+    </ClCompile>
+    <ClCompile Include="Tcpip.c">
+      <Filter>Source Files\Tcpip</Filter>
+    </ClCompile>
+    <ClCompile Include="KillProcess.c">
+      <Filter>Source Files\Process</Filter>
+    </ClCompile>
+    <ClCompile Include="nsiproxy.c">
+      <Filter>Source Files\nsiproxy</Filter>
+    </ClCompile>
+    <ClCompile Include="Process.c">
+      <Filter>Source Files\Process</Filter>
+    </ClCompile>
+    <ClCompile Include="DeleteFile.c">
+      <Filter>Source Files\Ntfs</Filter>
+    </ClCompile>
+    <ClCompile Include="ProcessModule.c">
+      <Filter>Source Files\Process</Filter>
+    </ClCompile>
+    <ClCompile Include="KernelHookCheck.c">
+      <Filter>Source Files\KernelHookCheck</Filter>
+    </ClCompile>
+    <ClCompile Include="AntiInlineHook.c">
+      <Filter>Source Files\KernelHookCheck</Filter>
+    </ClCompile>
+    <ClCompile Include="Protect.c">
+      <Filter>Source Files\Protect</Filter>
+    </ClCompile>
+    <ClCompile Include="Services.c">
+      <Filter>Source Files\Services</Filter>
+    </ClCompile>
+    <ClCompile Include="Function.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NetworkDefense.c">
+      <Filter>Source Files\LogDefense</Filter>
+    </ClCompile>
+    <ClCompile Include="dump.c">
+      <Filter>Source Files\Dump</Filter>
+    </ClCompile>
+    <ClCompile Include="file.c">
+      <Filter>Source Files\Ntfs</Filter>
+    </ClCompile>
+    <ClCompile Include="DriverHips.c">
+      <Filter>Source Files\SysModule</Filter>
+    </ClCompile>
+    <ClCompile Include="ShadowSSDT.c">
+      <Filter>Source Files\SSDT</Filter>
+    </ClCompile>
+    <ClCompile Include="win32k.c">
+      <Filter>Source Files\Win32K</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectHookCheck.c">
+      <Filter>Source Files\ObjectHookCheck</Filter>
+    </ClCompile>
+    <ClCompile Include="KernelFilterDriver.c">
+      <Filter>Source Files\KernelFilterDriver</Filter>
+    </ClCompile>
+    <ClCompile Include="SystemThread.c">
+      <Filter>Source Files\SystemThread</Filter>
+    </ClCompile>
+    <ClCompile Include="KernelThread.c">
+      <Filter>Source Files\KernelThread</Filter>
+    </ClCompile>
+    <ClCompile Include="Mouclass.c">
+      <Filter>Source Files\Mouclass</Filter>
+    </ClCompile>
+    <ClCompile Include="Atapi.c">
+      <Filter>Source Files\Atapi</Filter>
+    </ClCompile>
+    <ClCompile Include="DpcTimer.c">
+      <Filter>Source Files\DpcTimer</Filter>
+    </ClCompile>
+    <ClCompile Include="SystemNotify.c">
+      <Filter>Source Files\SystemNotify</Filter>
+    </ClCompile>
+    <ClCompile Include="Startup.c">
+      <Filter>Source Files\Startup</Filter>
+    </ClCompile>
+    <ClCompile Include="WorkQueue.c">
+      <Filter>Source Files\WorkQueue</Filter>
+    </ClCompile>
+    <ClCompile Include="LookupKernelData.c">
+      <Filter>Source Files\LookupKernelData</Filter>
+    </ClCompile>
+    <ClCompile Include="Fixrelocation.c">
+      <Filter>Source Files\KernelReload</Filter>
+    </ClCompile>
+    <ClCompile Include="FuncAddrValid.c">
+      <Filter>Source Files\FuncAddrValid</Filter>
+    </ClCompile>
+    <ClCompile Include="ReLoadShadowSSDTTableHook.c">
+      <Filter>Source Files\SSDT</Filter>
+    </ClCompile>
+    <ClCompile Include="IoTimer.c">
+      <Filter>Source Files\IoTimer</Filter>
+    </ClCompile>
+    <ClCompile Include="msghook.c">
+      <Filter>Source Files\MessageHook</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Common.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="drvcommon.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="drvversion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FileSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InitWindowsVersion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InlineHook.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="kbdclass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="KernelReload.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Ntfs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ntifs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ntos.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SafeSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Control.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ReLoadSSDTTableHook.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SSDT.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SysModule.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Port.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tcpip.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="KillProcess.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="nsiproxy.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Process.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DeleteFile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ProcessModule.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="KernelHookCheck.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AntiInlineHook.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Protect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Services.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Function.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NetworkDefense.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dump.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="file.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DriverHips.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ShadowSSDT.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="win32k.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectHookCheck.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="KernelFilterDriver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SystemThread.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="KernelThread.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="fixrelocation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Mouclass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Atapi.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DpcTimer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SystemNotify.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Startup.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WorkQueue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LookupKernelData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FuncAddrValid.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ReLoadShadowSSDTTableHook.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IoTimer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="msghook.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="drvversion.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

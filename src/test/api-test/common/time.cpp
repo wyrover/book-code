@@ -1,4 +1,5 @@
 #include "time.h"
+#include <strsafe.h>
 
 namespace cactus
 {
@@ -69,6 +70,18 @@ BOOL ZLTime::Calc(LARGE_INTEGER& llTimeBegin, double& dfTimeInterval)
 BOOL ZLTime::GetTime(LARGE_INTEGER& llCurrentTime)
 {
     return ::QueryPerformanceCounter(&llCurrentTime);
+}
+
+void PrintSystemTime( PCHAR lpszBuf, DWORD cbBuf )
+{
+	SYSTEMTIME SysDate;
+	CHAR szSysDate[128], szSysTime[65];
+
+	GetLocalTime(&SysDate);
+	GetDateFormatA(0x0409, LOCALE_USE_CP_ACP, &SysDate, "yyyy-MM-dd", szSysDate, sizeof(szSysDate));
+	GetTimeFormatA(0x0409, LOCALE_USE_CP_ACP, &SysDate, "HH':'mm':'ss", szSysTime, sizeof(szSysTime));
+
+	_snprintf(lpszBuf, cbBuf, "%s %s", szSysDate, szSysTime);
 }
 
 }

@@ -1,0 +1,485 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+    <None Include="res\AProtect.rc2">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\A-ProtectDoc.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\A-Protect.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="UserImages.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\KernelHook.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\KernelModule.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\KernelThread.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\GDriver.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\Dispatch.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\Process.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\Services.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\Tcpview.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\Hips.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\ring3.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\icon10.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\Toolbar.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\Toolbar256.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\A-Protect.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\TcpSniffer.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\Other.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\ProtectSetting.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\null.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\new.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\A-Protect1.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\Eye.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\Nsiproxy.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\ntfs-Fsd.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\Ssdt.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\tcpip.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\本机所有数据.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\监控设置.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\开启监控-刷新.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\内核钩子.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\启动项.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\系统回调.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\线程创建.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\atapi.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\DPC定时器.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\IO定时器.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\ObjectHook.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\ShadowSSDT.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\工作队列线程.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\键盘.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\鼠标.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\系统线程.ico">
+      <Filter>资源文件</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="A-Protect.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MainFrm.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="A-ProtectDoc.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="A-ProtectView.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Atapi.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CProcessSearch.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DLLModule.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DpcTimer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="FilterDriver.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="FsdHook.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="HipsLog.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Install.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Kbdclass.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="KernelHook.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="KernelThread.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Md5.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Mouclass.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Nsiproxy.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectHook.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Process.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ProcessHandle.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ProcessThread.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Services.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ShadowSSDT.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SSDT.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SubModule.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SystemNotify.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SystemThread.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Tcpip.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TcpView.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="uninstall360.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UnloadDllModule.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Windows7Home_CN.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Windows7SP1_CN.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Windows2003SP1_CN.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Windows2003SP2_CN.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowsXPSP2_CN.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowsXPSP3_CN.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="AboutDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="C3600Splash.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="KernelModule.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ndis5hlp.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="tcpdump.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SnifferSetting.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ProtectSetting.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Startup.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="WorkQueue.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MyList.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="EnumSymbols.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="StackThread.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="LookUpKernelData.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SelectKernelModuleHook.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SelectAnyModule.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="IoTimer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageHook.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="A-Protect.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MainFrm.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="A-ProtectDoc.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="A-ProtectView.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Atapi.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CProcessSearch.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DLLModule.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DpcTimer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="FilterDriver.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="FsdHook.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="HipsLog.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Install.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Kbdclass.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="KernelHook.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="KernelModule.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="KernelThread.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Md5.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Mouclass.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Nsiproxy.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectHook.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Process.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ProcessHandle.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ProcessThread.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Services.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ShadowSSDT.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SSDT.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SubModule.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SystemNotify.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SystemThread.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Tcpip.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TcpView.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="uninstall360.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AboutDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="C3600Splash.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ndis5hlp.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="tcpdump.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SnifferSetting.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ProtectSetting.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Startup.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="WorkQueue.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MyList.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="EnumSymbols.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="StackThread.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="LookUpKernelData.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectKernelModuleHook.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectAnyModule.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="IoTimer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MessageHook.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="A-Protect.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

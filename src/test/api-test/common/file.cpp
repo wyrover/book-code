@@ -339,3 +339,23 @@ void cactus::enumFile(const std::wstring& searchPath, cactus::EnumCallback callb
 
     ::FindClose(findFile);
 }
+
+std::vector<BYTE> cactus::ReadFileToMem( LPCWSTR name )
+{
+	FILE* fp;
+	std::vector<unsigned char> ret;
+
+	if (_wfopen_s(&fp, name, L"rb") == 0)
+	{
+		fseek(fp, 0, SEEK_END);
+
+		ret.resize(ftell(fp));
+		fseek(fp, 0, SEEK_SET);
+
+		fread(&ret[0], 1, ret.size(), fp);
+
+		fclose(fp);
+	}
+
+	return ret;
+}

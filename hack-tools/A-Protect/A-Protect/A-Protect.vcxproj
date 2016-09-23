@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{323E89DB-C7C2-441D-8A8D-CE6F688F96AB}</ProjectGuid>
+    <RootNamespace>AProtect</RootNamespace>
+    <Keyword>MFCProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <IgnoreAllDefaultLibraries>
+      </IgnoreAllDefaultLibraries>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>
+      </IgnoreSpecificDefaultLibraries>
+      <UACExecutionLevel>RequireAdministrator</UACExecutionLevel>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+    <None Include="res\A-Protect.bmp" />
+    <None Include="res\A-Protect.ico" />
+    <None Include="res\A-Protect1.ico" />
+    <None Include="res\A-ProtectDoc.ico" />
+    <None Include="res\AProtect.rc2" />
+    <None Include="res\atapi.ico" />
+    <None Include="res\Dispatch.ico" />
+    <None Include="res\DPC定时器.ico" />
+    <None Include="res\Eye.ico" />
+    <None Include="res\GDriver.ico" />
+    <None Include="res\Hips.ico" />
+    <None Include="res\icon10.ico" />
+    <None Include="res\IO定时器.ico" />
+    <None Include="res\KernelHook.ico" />
+    <None Include="res\KernelModule.ico" />
+    <None Include="res\KernelThread.ico" />
+    <None Include="res\new.ico" />
+    <None Include="res\Nsiproxy.ico" />
+    <None Include="res\ntfs-Fsd.ico" />
+    <None Include="res\null.ico" />
+    <None Include="res\ObjectHook.ico" />
+    <None Include="res\Other.ico" />
+    <None Include="res\Process.ico" />
+    <None Include="res\ProtectSetting.ico" />
+    <None Include="res\ring3.ico" />
+    <None Include="res\Services.ico" />
+    <None Include="res\ShadowSSDT.ico" />
+    <None Include="res\Ssdt.ico" />
+    <None Include="res\tcpip.ico" />
+    <None Include="res\TcpSniffer.ico" />
+    <None Include="res\Tcpview.ico" />
+    <None Include="res\Toolbar.bmp" />
+    <None Include="res\Toolbar256.bmp" />
+    <None Include="res\内核钩子.ico" />
+    <None Include="res\启动项.ico" />
+    <None Include="res\工作队列线程.ico" />
+    <None Include="res\开启监控-刷新.ico" />
+    <None Include="res\本机所有数据.ico" />
+    <None Include="res\监控设置.ico" />
+    <None Include="res\系统回调.ico" />
+    <None Include="res\系统线程.ico" />
+    <None Include="res\线程创建.ico" />
+    <None Include="res\键盘.ico" />
+    <None Include="res\鼠标.ico" />
+    <None Include="UserImages.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="A-Protect.h" />
+    <ClInclude Include="A-ProtectDoc.h" />
+    <ClInclude Include="A-ProtectView.h" />
+    <ClInclude Include="AboutDlg.h" />
+    <ClInclude Include="Atapi.h" />
+    <ClInclude Include="C3600Splash.h" />
+    <ClInclude Include="CProcessSearch.h" />
+    <ClInclude Include="DLLModule.h" />
+    <ClInclude Include="DpcTimer.h" />
+    <ClInclude Include="EnumSymbols.h" />
+    <ClInclude Include="FilterDriver.h" />
+    <ClInclude Include="FsdHook.h" />
+    <ClInclude Include="HipsLog.h" />
+    <ClInclude Include="Install.h" />
+    <ClInclude Include="IoTimer.h" />
+    <ClInclude Include="Kbdclass.h" />
+    <ClInclude Include="KernelHook.h" />
+    <ClInclude Include="KernelModule.h" />
+    <ClInclude Include="KernelThread.h" />
+    <ClInclude Include="LookUpKernelData.h" />
+    <ClInclude Include="MainFrm.h" />
+    <ClInclude Include="Md5.h" />
+    <ClInclude Include="MessageHook.h" />
+    <ClInclude Include="Mouclass.h" />
+    <ClInclude Include="MyList.h" />
+    <ClInclude Include="ndis5hlp.h" />
+    <ClInclude Include="Nsiproxy.h" />
+    <ClInclude Include="ObjectHook.h" />
+    <ClInclude Include="Process.h" />
+    <ClInclude Include="ProcessHandle.h" />
+    <ClInclude Include="ProcessThread.h" />
+    <ClInclude Include="ProtectSetting.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="SelectAnyModule.h" />
+    <ClInclude Include="SelectKernelModuleHook.h" />
+    <ClInclude Include="Services.h" />
+    <ClInclude Include="ShadowSSDT.h" />
+    <ClInclude Include="SnifferSetting.h" />
+    <ClInclude Include="SSDT.h" />
+    <ClInclude Include="StackThread.h" />
+    <ClInclude Include="Startup.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="SubModule.h" />
+    <ClInclude Include="SystemNotify.h" />
+    <ClInclude Include="SystemThread.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="tcpdump.h" />
+    <ClInclude Include="Tcpip.h" />
+    <ClInclude Include="TcpView.h" />
+    <ClInclude Include="uninstall360.h" />
+    <ClInclude Include="UnloadDllModule.h" />
+    <ClInclude Include="Windows2003SP1_CN.h" />
+    <ClInclude Include="Windows2003SP2_CN.h" />
+    <ClInclude Include="Windows7Home_CN.h" />
+    <ClInclude Include="Windows7SP1_CN.h" />
+    <ClInclude Include="WindowsXPSP2_CN.h" />
+    <ClInclude Include="WindowsXPSP3_CN.h" />
+    <ClInclude Include="WorkQueue.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="A-Protect.cpp" />
+    <ClCompile Include="A-ProtectDoc.cpp" />
+    <ClCompile Include="A-ProtectView.cpp" />
+    <ClCompile Include="AboutDlg.cpp" />
+    <ClCompile Include="Atapi.cpp" />
+    <ClCompile Include="C3600Splash.cpp" />
+    <ClCompile Include="CProcessSearch.cpp" />
+    <ClCompile Include="DLLModule.cpp" />
+    <ClCompile Include="DpcTimer.cpp" />
+    <ClCompile Include="EnumSymbols.cpp" />
+    <ClCompile Include="FilterDriver.cpp" />
+    <ClCompile Include="FsdHook.cpp" />
+    <ClCompile Include="HipsLog.cpp" />
+    <ClCompile Include="Install.cpp" />
+    <ClCompile Include="IoTimer.cpp" />
+    <ClCompile Include="Kbdclass.cpp" />
+    <ClCompile Include="KernelHook.cpp" />
+    <ClCompile Include="KernelModule.cpp" />
+    <ClCompile Include="KernelThread.cpp" />
+    <ClCompile Include="LookUpKernelData.cpp" />
+    <ClCompile Include="MainFrm.cpp" />
+    <ClCompile Include="Md5.cpp" />
+    <ClCompile Include="MessageHook.cpp" />
+    <ClCompile Include="Mouclass.cpp" />
+    <ClCompile Include="MyList.cpp" />
+    <ClCompile Include="ndis5hlp.cpp" />
+    <ClCompile Include="Nsiproxy.cpp" />
+    <ClCompile Include="ObjectHook.cpp" />
+    <ClCompile Include="Process.cpp" />
+    <ClCompile Include="ProcessHandle.cpp" />
+    <ClCompile Include="ProcessThread.cpp" />
+    <ClCompile Include="ProtectSetting.cpp" />
+    <ClCompile Include="SelectAnyModule.cpp" />
+    <ClCompile Include="SelectKernelModuleHook.cpp" />
+    <ClCompile Include="Services.cpp" />
+    <ClCompile Include="ShadowSSDT.cpp" />
+    <ClCompile Include="SnifferSetting.cpp" />
+    <ClCompile Include="SSDT.cpp" />
+    <ClCompile Include="StackThread.cpp" />
+    <ClCompile Include="Startup.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="SubModule.cpp" />
+    <ClCompile Include="SystemNotify.cpp" />
+    <ClCompile Include="SystemThread.cpp" />
+    <ClCompile Include="tcpdump.cpp" />
+    <ClCompile Include="Tcpip.cpp" />
+    <ClCompile Include="TcpView.cpp" />
+    <ClCompile Include="uninstall360.cpp" />
+    <ClCompile Include="WorkQueue.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="A-Protect.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="A-Protect.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

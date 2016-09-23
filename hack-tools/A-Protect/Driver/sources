@@ -1,0 +1,53 @@
+# $Id$
+TARGETNAME=A-Protect
+TARGETPATH=obj
+TARGETTYPE=DRIVER
+
+SOURCES=SafeSystem.c \
+        ntos.c\
+        Ntfs.c\
+        kbdclass.c\
+        FileSystem.c \
+        InlineHook.c \
+        InitWindowsVersion.c \
+        KernelReload.c\
+        Control.c\
+        ReLoadSSDTTableHook.c\
+        SSDT.c\
+        ShadowSSDT.c\
+        ldasm.c\
+        libdasm.c\
+        SysModule.c\
+        Port.c\
+        Tcpip.c\
+        nsiproxy.c\
+        KillProcess.c\
+        Process.c\
+        Services.c\
+        DeleteFile.c\
+        ProcessModule.c\
+        KernelHookCheck.c\
+        AntiInlineHook.c\
+        Protect.c\
+        Function.c\
+        win32k.c\
+        NetworkDefense.c\
+        dump.c\
+        file.c\
+        DriverHips.c\
+        ObjectHookCheck.c\
+        KernelFilterDriver.c\
+        SystemThread.c\
+        KernelThread.c\
+        fixrelocation.c\
+        Mouclass.c \
+        Atapi.c \
+        DpcTimer.c \
+        SystemNotify.c \
+        Startup.c \
+        WorkQueue.c \
+        LookupKernelData.c \
+        FuncAddrValid.c \
+        ReLoadShadowSSDTTableHook.c \
+        IoTimer.c \
+        msghook.c

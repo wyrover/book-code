@@ -1,0 +1,18 @@
+TARGETNAME=ndis5pkt
+TARGETPATH=obj
+TARGETTYPE=DRIVER
+
+C_DEFINES=$(C_DEFINES) -DNDIS_MINIPORT_DRIVER -DNDIS_WDM=1
+
+C_DEFINES=$(C_DEFINES) -DNDIS51_MINIPORT=1
+C_DEFINES=$(C_DEFINES) -DNDIS51=1
+
+TARGETLIBS=$(DDK_LIB_PATH)\ndis.lib
+
+MSC_WARING_LEVEL=/W3
+
+SOURCES=ndis5pkt.c \
+	openclos.c \
+        read.c \
+        readfast.c \
+        write.c 

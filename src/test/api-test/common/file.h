@@ -104,6 +104,8 @@ int CompareVersion(const std::wstring& l, const std::wstring& r);
 typedef void (WINAPI *EnumCallback)(const std::wstring& path, void* param);
 void enumFile(const std::wstring& searchPath, EnumCallback calllback, void* param);
 
+std::vector<BYTE> ReadFileToMem(LPCWSTR name);
+
 }
 
 

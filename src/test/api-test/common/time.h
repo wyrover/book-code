@@ -45,6 +45,8 @@ public:
     static BOOL GetTime(LARGE_INTEGER& llCurrentTime);
 };
 
+void PrintSystemTime(PCHAR lpszBuf, DWORD cbBuf);
+
 
 }
 

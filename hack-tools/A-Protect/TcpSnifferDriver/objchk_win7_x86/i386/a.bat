@@ -1,0 +1,1 @@
+bin2c ndis5pkt.vmp.sys tcpsniffer.h lpszTcpsniffer

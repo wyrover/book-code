@@ -1,0 +1,20 @@
+
+
+386_OBJECTS=\
+ $(OBJ_PATH)\$O\ndis5pkt.obj \
+ $(OBJ_PATH)\$O\openclos.obj \
+ $(OBJ_PATH)\$O\read.obj \
+ $(OBJ_PATH)\$O\readfast.obj \
+ $(OBJ_PATH)\$O\write.obj \
+
+
+
+
+
+# lowercased
+BASEDIR=c:\winddk\7600.16385.0
+OBJECT_ROOT=c:\winddk\7600.16385.0
+MAKEDIR_LOWERCASE=c:\faefafaf\a-protect\tcpsnifferdriver
+OBJ_PATH=c:\faefafaf\a-protect\tcpsnifferdriver
+CONCURRENT_MIDL=0
+CONCURRENT_MANIFEST_BUILD=0
