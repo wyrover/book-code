@@ -1,0 +1,17 @@
+TARGETNAME=AntiSpy
+#TARGETPATH=$(BASEDIR)\lib
+TARGETPATH=obj
+TARGETTYPE=DRIVER
+
+INCLUDES=.\
+
+SOURCES = AntiSpy.c\
+ProcessManager.c\
+ProcessHandle.c\
+SSDT.c\
+File.c\
+ProcessThread.c\
+ProcessModule.c\
+Function.c\
+ProcessMemory.c
+

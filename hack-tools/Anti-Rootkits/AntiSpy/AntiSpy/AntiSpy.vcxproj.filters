@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="主DLG">
+      <UniqueIdentifier>{9d6560cb-90c4-4414-b37b-647324629b79}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="进程管理">
+      <UniqueIdentifier>{f4769628-59f0-4121-82c2-061a573bc6f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="驱动模块">
+      <UniqueIdentifier>{aa512cac-4051-4a15-829b-be6a8874a488}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="IOControlCode">
+      <UniqueIdentifier>{75068476-3f9a-417a-97f7-6645153b305f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="进程管理\ProcessManager">
+      <UniqueIdentifier>{3662c3d6-3c7c-4c94-8e25-ba1c1b4bd9bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="进程管理\ProcessMoudle">
+      <UniqueIdentifier>{2eeb0e94-88c3-4c5f-96ed-101e29af1ad5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="进程管理\ProcessHandle">
+      <UniqueIdentifier>{e2ad3dfa-0616-4d8b-941a-1b1d83bcd96f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="进程管理\ProcessWind">
+      <UniqueIdentifier>{9f2c4e8b-3cb1-4628-a4f0-133aef4eed73}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="进程管理\ProcessMemory">
+      <UniqueIdentifier>{fc6e5d67-e2e3-4d71-b9ba-1fd7af995fb6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="进程管理\ProcessThread">
+      <UniqueIdentifier>{8363bead-1396-4764-a8b9-7d6fde279c9d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+    <None Include="res\AntiSpy.rc2">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\AntiSpy.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\FileUnKnowICON.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\bitmap1.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\res1.bin">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="AntiSpy.sys" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AntiSpy.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="AntiSpyDlg.h">
+      <Filter>主DLG</Filter>
+    </ClInclude>
+    <ClInclude Include="DriverModule.h">
+      <Filter>驱动模块</Filter>
+    </ClInclude>
+    <ClInclude Include="IOControlCode.h">
+      <Filter>IOControlCode</Filter>
+    </ClInclude>
+    <ClInclude Include="ProcessManager.h">
+      <Filter>进程管理\ProcessManager</Filter>
+    </ClInclude>
+    <ClInclude Include="ProcessModule.h">
+      <Filter>进程管理\ProcessMoudle</Filter>
+    </ClInclude>
+    <ClInclude Include="ProcessHandle.h">
+      <Filter>进程管理\ProcessHandle</Filter>
+    </ClInclude>
+    <ClInclude Include="ProcessWind.h">
+      <Filter>进程管理\ProcessWind</Filter>
+    </ClInclude>
+    <ClInclude Include="ProcessMemory.h">
+      <Filter>进程管理\ProcessMemory</Filter>
+    </ClInclude>
+    <ClInclude Include="ProcessWndChangDataDlg.h">
+      <Filter>进程管理\ProcessWind</Filter>
+    </ClInclude>
+    <ClInclude Include="ProcessThread.h">
+      <Filter>进程管理\ProcessThread</Filter>
+    </ClInclude>
+    <ClInclude Include="ReadProcessMemory.h">
+      <Filter>进程管理\ProcessMemory</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AntiSpy.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AntiSpyDlg.cpp">
+      <Filter>主DLG</Filter>
+    </ClCompile>
+    <ClCompile Include="DriverModule.cpp">
+      <Filter>驱动模块</Filter>
+    </ClCompile>
+    <ClCompile Include="ProcessManager.cpp">
+      <Filter>进程管理\ProcessManager</Filter>
+    </ClCompile>
+    <ClCompile Include="ProcessModule.cpp">
+      <Filter>进程管理\ProcessMoudle</Filter>
+    </ClCompile>
+    <ClCompile Include="ProcessHandle.cpp">
+      <Filter>进程管理\ProcessHandle</Filter>
+    </ClCompile>
+    <ClCompile Include="ProcessWind.cpp">
+      <Filter>进程管理\ProcessWind</Filter>
+    </ClCompile>
+    <ClCompile Include="ProcessWndChangDataDlg.cpp">
+      <Filter>进程管理\ProcessWind</Filter>
+    </ClCompile>
+    <ClCompile Include="ProcessMemory.cpp">
+      <Filter>进程管理\ProcessMemory</Filter>
+    </ClCompile>
+    <ClCompile Include="ProcessThread.cpp">
+      <Filter>进程管理\ProcessThread</Filter>
+    </ClCompile>
+    <ClCompile Include="ReadProcessMemory.cpp">
+      <Filter>进程管理\ProcessMemory</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="AntiSpy.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

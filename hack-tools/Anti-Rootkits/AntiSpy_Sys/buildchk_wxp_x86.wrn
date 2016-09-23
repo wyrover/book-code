@@ -1,0 +1,7 @@
+1>warnings in directory d:\antispy_sys
+1>d:\antispy_sys\processthread.c(103) : warning C4996: 'ExAllocatePool': was declared deprecated
+1>d:\antispy_sys\processthread.c(107) : warning C4098: 'GetThreadsModule' : 'void' function returning a value
+1>d:\antispy_sys\processthread.c(308) : warning C4550: expression evaluates to a function which is missing an argument list
+1>d:\antispy_sys\processthread.c(321) : warning C4550: expression evaluates to a function which is missing an argument list
+1>d:\antispy_sys\processthread.c(479) : warning C4133: 'function' : incompatible types - from 'UNICODE_STRING32 *' to 'UNICODE_STRING *'
+1>d:\antispy_sys\processthread.c(520) : warning C4996: 'ExAllocatePool': was declared deprecated

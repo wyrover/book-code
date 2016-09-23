@@ -1,0 +1,10 @@
+1>warnings in directory f:\sys\antispy_sys
+1>f:\sys\antispy_sys\processmanager.c(26) : warning C4305: 'return' : truncation from 'NTSTATUS' to 'BOOLEAN'
+1>f:\sys\antispy_sys\processmanager.c(83) : warning C4242: 'return' : conversion from 'NTSTATUS' to 'BOOLEAN', possible loss of data
+1>f:\sys\antispy_sys\processmanager.c(106) : warning C4242: 'return' : conversion from 'NTSTATUS' to 'BOOLEAN', possible loss of data
+1>f:\sys\antispy_sys\processmanager.c(375) : warning C4047: 'initializing' : 'ULONG_PTR' differs in levels of indirection from 'void *'
+1>f:\sys\antispy_sys\processmanager.c(379) : warning C4550: expression evaluates to a function which is missing an argument list
+1>f:\sys\antispy_sys\processmanager.c(454) : warning C4996: 'ExAllocatePool': was declared deprecated
+1>f:\sys\antispy_sys\processmanager.c(491) : warning C4996: 'ExAllocatePool': was declared deprecated
+1>f:\sys\antispy_sys\processmanager.c(491) : warning C4033: 'KillProcessForcedByProcessId_InsertAPC' must return a value
+1>f:\sys\antispy_sys\processmanager.c(492) : warning C4716: 'KillProcessForcedByProcessId_InsertAPC' : must return a value

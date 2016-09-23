@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include=".\AntiSpy.c">
+      <Filter>AntiSpy</Filter>
+    </ClCompile>
+    <ClCompile Include=".\AntiSpy.h">
+      <Filter>AntiSpy</Filter>
+    </ClCompile>
+    <ClCompile Include="SSDT.c">
+      <Filter>SSDT</Filter>
+    </ClCompile>
+    <ClCompile Include="File.c">
+      <Filter>File</Filter>
+    </ClCompile>
+    <ClCompile Include="ProcessHandle.c">
+      <Filter>ProcessManager\ProcessHande</Filter>
+    </ClCompile>
+    <ClCompile Include="ProcessManager.c">
+      <Filter>ProcessManager\ProcessManager</Filter>
+    </ClCompile>
+    <ClCompile Include="ProcessThread.c">
+      <Filter>ProcessManager\ProcessThread</Filter>
+    </ClCompile>
+    <ClCompile Include="ProcessModule.c">
+      <Filter>ProcessManager\ProcessModule</Filter>
+    </ClCompile>
+    <ClCompile Include="Function.c">
+      <Filter>Fuction</Filter>
+    </ClCompile>
+    <ClCompile Include="ProcessMemory.c">
+      <Filter>ProcessManager\ProcessMemory</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="AntiSpy">
+      <UniqueIdentifier>{c109bb1e-990a-49cf-8662-1dfa0307f02f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ProcessManager">
+      <UniqueIdentifier>{19d598bd-c014-4d97-87e6-c50e94f8a0d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="IOControlCode">
+      <UniqueIdentifier>{c2bd4ad3-254e-4951-b574-bb1d2c4dfa68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SSDT">
+      <UniqueIdentifier>{7362d914-6cfc-4248-955c-a3ef17da3fcc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="File">
+      <UniqueIdentifier>{ae844449-bc6d-49dd-afbb-302a8f07250b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ProcessManager\ProcessHande">
+      <UniqueIdentifier>{77d6c4e3-d1b8-4b31-9e6e-d77e69de6ad8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ProcessManager\ProcessManager">
+      <UniqueIdentifier>{0f287509-6576-42ee-87e3-5e78a6eddfd9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ProcessManager\ProcessThread">
+      <UniqueIdentifier>{fdab6fda-afe4-47ca-9775-2f6c047789a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ProcessManager\ProcessMemory">
+      <UniqueIdentifier>{f429c5e1-92b6-4592-b165-a986c85591b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ProcessManager\ProcessModule">
+      <UniqueIdentifier>{f172d065-2aec-444a-93c3-bbfe87a61f49}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fuction">
+      <UniqueIdentifier>{f179f4a3-1968-4ba8-9494-e867e4a865df}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="IOControlCode.h">
+      <Filter>IOControlCode</Filter>
+    </ClInclude>
+    <ClInclude Include="SSDT.h">
+      <Filter>SSDT</Filter>
+    </ClInclude>
+    <ClInclude Include="File.h">
+      <Filter>File</Filter>
+    </ClInclude>
+    <ClInclude Include="ProcessHandle.h">
+      <Filter>ProcessManager\ProcessHande</Filter>
+    </ClInclude>
+    <ClInclude Include="ProcessManager.h">
+      <Filter>ProcessManager\ProcessManager</Filter>
+    </ClInclude>
+    <ClInclude Include="ProcessThread.h">
+      <Filter>ProcessManager\ProcessThread</Filter>
+    </ClInclude>
+    <ClInclude Include="ProcessModule.h">
+      <Filter>ProcessManager\ProcessModule</Filter>
+    </ClInclude>
+    <ClInclude Include="Function.h">
+      <Filter>Fuction</Filter>
+    </ClInclude>
+    <ClInclude Include="ProcessMemory.h">
+      <Filter>ProcessManager\ProcessMemory</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="sources" />
+  </ItemGroup>
+</Project>

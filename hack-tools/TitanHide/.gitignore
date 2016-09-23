@@ -1,0 +1,13 @@
+*Debug/
+*Release/
+x64/
+ipch/
+signed/
+*.opensdf
+*.sdf
+*.suo
+*.rar
+*.vddklaunch
+*.reg
+*.TMP
+!BreakOnSysRq.reg

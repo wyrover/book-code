@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SafeMan", "SafeMan\SafeMan.vcproj", "{FDC1C2FB-1E2E-49F0-8207-A3EB840E66E9}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ProcessDriver.WXP", "ProcessDriver\ProcessDriver.WXP.vcproj", "{518611D9-B424-47D3-BC45-8071986DDCF2}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SSDTDriver.WXP", "SSDTDriver\SSDTDriver.WXP.vcproj", "{C298D4C0-BB9C-402F-BFC9-0040CEF37F79}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MonitorDriver.WXP", "MonitorDriver\MonitorDriver.WXP.vcproj", "{C0131F39-0E41-4B76-B788-44880BC1B612}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		WXP checked|Win32 = WXP checked|Win32
+		WXP free|Win32 = WXP free|Win32
+		WXP2K checked|Win32 = WXP2K checked|Win32
+		WXP2K free|Win32 = WXP2K free|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FDC1C2FB-1E2E-49F0-8207-A3EB840E66E9}.WXP checked|Win32.ActiveCfg = Debug|Win32
+		{FDC1C2FB-1E2E-49F0-8207-A3EB840E66E9}.WXP checked|Win32.Build.0 = Debug|Win32
+		{FDC1C2FB-1E2E-49F0-8207-A3EB840E66E9}.WXP free|Win32.ActiveCfg = Release|Win32
+		{FDC1C2FB-1E2E-49F0-8207-A3EB840E66E9}.WXP2K checked|Win32.ActiveCfg = Release|Win32
+		{FDC1C2FB-1E2E-49F0-8207-A3EB840E66E9}.WXP2K free|Win32.ActiveCfg = Release|Win32
+		{518611D9-B424-47D3-BC45-8071986DDCF2}.WXP checked|Win32.ActiveCfg = WXP checked|Win32
+		{518611D9-B424-47D3-BC45-8071986DDCF2}.WXP checked|Win32.Build.0 = WXP checked|Win32
+		{518611D9-B424-47D3-BC45-8071986DDCF2}.WXP checked|Win32.Deploy.0 = WXP checked|Win32
+		{518611D9-B424-47D3-BC45-8071986DDCF2}.WXP free|Win32.ActiveCfg = WXP free|Win32
+		{518611D9-B424-47D3-BC45-8071986DDCF2}.WXP free|Win32.Build.0 = WXP free|Win32
+		{518611D9-B424-47D3-BC45-8071986DDCF2}.WXP free|Win32.Deploy.0 = WXP free|Win32
+		{518611D9-B424-47D3-BC45-8071986DDCF2}.WXP2K checked|Win32.ActiveCfg = WXP2K checked|Win32
+		{518611D9-B424-47D3-BC45-8071986DDCF2}.WXP2K checked|Win32.Build.0 = WXP2K checked|Win32
+		{518611D9-B424-47D3-BC45-8071986DDCF2}.WXP2K checked|Win32.Deploy.0 = WXP2K checked|Win32
+		{518611D9-B424-47D3-BC45-8071986DDCF2}.WXP2K free|Win32.ActiveCfg = WXP2K free|Win32
+		{518611D9-B424-47D3-BC45-8071986DDCF2}.WXP2K free|Win32.Build.0 = WXP2K free|Win32
+		{518611D9-B424-47D3-BC45-8071986DDCF2}.WXP2K free|Win32.Deploy.0 = WXP2K free|Win32
+		{C298D4C0-BB9C-402F-BFC9-0040CEF37F79}.WXP checked|Win32.ActiveCfg = WXP checked|Win32
+		{C298D4C0-BB9C-402F-BFC9-0040CEF37F79}.WXP checked|Win32.Build.0 = WXP checked|Win32
+		{C298D4C0-BB9C-402F-BFC9-0040CEF37F79}.WXP free|Win32.ActiveCfg = WXP free|Win32
+		{C298D4C0-BB9C-402F-BFC9-0040CEF37F79}.WXP free|Win32.Build.0 = WXP free|Win32
+		{C298D4C0-BB9C-402F-BFC9-0040CEF37F79}.WXP2K checked|Win32.ActiveCfg = WXP2K checked|Win32
+		{C298D4C0-BB9C-402F-BFC9-0040CEF37F79}.WXP2K checked|Win32.Build.0 = WXP2K checked|Win32
+		{C298D4C0-BB9C-402F-BFC9-0040CEF37F79}.WXP2K free|Win32.ActiveCfg = WXP2K free|Win32
+		{C298D4C0-BB9C-402F-BFC9-0040CEF37F79}.WXP2K free|Win32.Build.0 = WXP2K free|Win32
+		{C0131F39-0E41-4B76-B788-44880BC1B612}.WXP checked|Win32.ActiveCfg = WXP checked|Win32
+		{C0131F39-0E41-4B76-B788-44880BC1B612}.WXP checked|Win32.Build.0 = WXP checked|Win32
+		{C0131F39-0E41-4B76-B788-44880BC1B612}.WXP free|Win32.ActiveCfg = WXP free|Win32
+		{C0131F39-0E41-4B76-B788-44880BC1B612}.WXP free|Win32.Build.0 = WXP free|Win32
+		{C0131F39-0E41-4B76-B788-44880BC1B612}.WXP2K checked|Win32.ActiveCfg = WXP2K checked|Win32
+		{C0131F39-0E41-4B76-B788-44880BC1B612}.WXP2K checked|Win32.Build.0 = WXP2K checked|Win32
+		{C0131F39-0E41-4B76-B788-44880BC1B612}.WXP2K free|Win32.ActiveCfg = WXP2K free|Win32
+		{C0131F39-0E41-4B76-B788-44880BC1B612}.WXP2K free|Win32.Build.0 = WXP2K free|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
