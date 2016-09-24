@@ -1,0 +1,8 @@
+; HookDll.def : Declares the module parameters for the DLL.
+
+LIBRARY      "HookDll"
+DESCRIPTION  'HookDll Windows Dynamic Link Library'
+
+EXPORTS
+	StartHook
+	StopHook

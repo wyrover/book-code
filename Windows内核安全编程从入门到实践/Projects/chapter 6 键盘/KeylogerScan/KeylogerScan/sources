@@ -1,0 +1,7 @@
+TARGETNAME=KeylogerScan
+TARGETTYPE=DRIVER
+
+SOURCES=stdafx.cpp \
+	KeylogerScan.cpp \
+	ReadPE.cpp \
+	libdasm.c

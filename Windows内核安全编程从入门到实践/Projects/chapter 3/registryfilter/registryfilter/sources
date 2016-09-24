@@ -1,0 +1,5 @@
+TARGETNAME=RegistryFilter
+TARGETTYPE=DRIVER
+
+SOURCES=RegistryFilter.c
+	

@@ -1,0 +1,5 @@
+TARGETNAME=Keyloger
+TARGETTYPE=DRIVER
+
+SOURCES=stdafx.cpp \
+	Keyloger.cpp

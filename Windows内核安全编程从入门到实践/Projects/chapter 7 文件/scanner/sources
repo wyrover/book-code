@@ -1,0 +1,13 @@
+TARGETNAME=scanner
+TARGETTYPE=DRIVER
+DRIVERTYPE=FS
+
+
+INCLUDES=$(INCLUDES);..\inc
+
+TARGETLIBS= $(TARGETLIBS) \
+            $(IFSKIT_LIB_PATH)\fltMgr.lib
+
+SOURCES=scanner.c   \
+        scanner.rc
+

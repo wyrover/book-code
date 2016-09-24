@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "scanner", "scanner.vcproj", "{F7FD2518-7475-4E56-BA4C-72D9F477EBD0}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "scannerUser", "scannerUser\scannerUser.vcproj", "{EAB4ABEE-BD2E-4DC8-AB4A-D1E50C0D39A5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F7FD2518-7475-4E56-BA4C-72D9F477EBD0}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F7FD2518-7475-4E56-BA4C-72D9F477EBD0}.Debug|Win32.Build.0 = Debug|Win32
+		{F7FD2518-7475-4E56-BA4C-72D9F477EBD0}.Release|Win32.ActiveCfg = Release|Win32
+		{F7FD2518-7475-4E56-BA4C-72D9F477EBD0}.Release|Win32.Build.0 = Release|Win32
+		{EAB4ABEE-BD2E-4DC8-AB4A-D1E50C0D39A5}.Debug|Win32.ActiveCfg = Debug|Win32
+		{EAB4ABEE-BD2E-4DC8-AB4A-D1E50C0D39A5}.Debug|Win32.Build.0 = Debug|Win32
+		{EAB4ABEE-BD2E-4DC8-AB4A-D1E50C0D39A5}.Release|Win32.ActiveCfg = Release|Win32
+		{EAB4ABEE-BD2E-4DC8-AB4A-D1E50C0D39A5}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

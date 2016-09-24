@@ -1,0 +1,5 @@
+TARGETNAME=Client
+TARGETTYPE=DRIVER
+
+SOURCES=stdafx.cpp \
+	Client.cpp

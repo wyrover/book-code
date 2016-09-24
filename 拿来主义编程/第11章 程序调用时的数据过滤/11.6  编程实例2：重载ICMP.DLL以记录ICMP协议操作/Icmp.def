@@ -1,0 +1,9 @@
+; Icmp.def : Declares the module parameters for the DLL.
+
+LIBRARY      "Icmp"
+DESCRIPTION  'Icmp Windows Dynamic Link Library'
+
+EXPORTS
+    IcmpCreateFile
+	IcmpCloseHandle
+	IcmpSendEcho

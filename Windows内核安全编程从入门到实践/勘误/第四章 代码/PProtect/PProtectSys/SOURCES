@@ -1,0 +1,9 @@
+TARGETNAME=PProtect
+TARGETPATH=obj
+TARGETTYPE=DRIVER
+
+
+
+SOURCES=Entry.c PProtect.c
+
+

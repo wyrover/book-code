@@ -1,0 +1,5 @@
+TARGETNAME=Async
+TARGETTYPE=DRIVER
+
+SOURCES=stdafx.cpp \
+	Async.cpp

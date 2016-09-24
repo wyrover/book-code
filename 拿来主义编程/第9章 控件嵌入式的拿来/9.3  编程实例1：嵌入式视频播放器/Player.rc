@@ -1,0 +1,252 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\Player.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.chs\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\Player.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于 Player"
+FONT 9, "宋体"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "Player 1.0 版",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "版权所有 (C) 2012",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "确定",IDOK,178,7,50,14,WS_GROUP
+END
+
+IDD_PLAYER_DIALOG DIALOGEX 0, 0, 506, 355
+STYLE DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "VLC播放器"
+FONT 9, "宋体"
+BEGIN
+    PUSHBUTTON      "退出系统",IDCANCEL,434,317,57,21
+    CONTROL         "",IDC_VLCPLUGIN1,"{9BE31822-FDAD-461B-AD51-BE1D1C159921}",
+                    WS_TABSTOP,143,17,344,269
+    LTEXT           "文件名",IDC_STATIC,149,299,25,8
+    EDITTEXT        IDC_EDIT_Filename,181,295,248,18,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    PUSHBUTTON      "播放",IDC_BUTTONPlay,273,318,49,20
+    PUSHBUTTON      "停止",IDC_BUTTONStop,373,318,49,20
+    PUSHBUTTON      "暂停",IDC_BUTTONPause,323,318,49,20
+    GROUPBOX        "ActiveX嵌入式播放器",IDC_STATIC,133,2,366,346
+    CONTROL         130,IDC_STATIC,"Static",SS_BITMAP | SS_SUNKEN,7,7,116,
+                    343
+    PUSHBUTTON      "浏览",IDC_BUTTONBrowser,434,293,57,21
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "Player Microsoft 基础类应用程序\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "Player\0"
+            VALUE "LegalCopyright", "版权所有 (C) 2012\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "Player.EXE\0"
+            VALUE "ProductName", "Player 应用程序\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_PLAYER_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 499
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 348
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BITMAP_LeftPic      BITMAP  DISCARDABLE     "res\\LeftPic.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_PLAYER_DIALOG DLGINIT
+BEGIN
+    IDC_VLCPLUGIN1, 0x376, 304, 0
+0x0000, 0x0000, 0x0007, 0x0000, 0x0028, 0x0043, 0x006f, 0x0075, 0x006e, 
+0x0074, 0x0029, 0x0003, 0x000b, 0x0000, 0x0008, 0x0000, 0x0041, 0x0075, 
+0x0074, 0x006f, 0x004c, 0x006f, 0x006f, 0x0070, 0x000b, 0x0000, 0x0008, 
+0x0000, 0x0041, 0x0075, 0x0074, 0x006f, 0x0050, 0x006c, 0x0061, 0x0079, 
+0x000b, 0xffff, 0x0009, 0x0000, 0x0042, 0x0061, 0x0063, 0x006b, 0x0043, 
+0x006f, 0x006c, 0x006f, 0x0072, 0x0003, 0x0000, 0x0000, 0x0007, 0x0000, 
+0x0042, 0x0061, 0x0073, 0x0065, 0x0055, 0x0052, 0x004c, 0x0008, 0x0000, 
+0x0000, 0x000c, 0x0000, 0x0045, 0x0078, 0x0074, 0x0065, 0x006e, 0x0074, 
+0x0048, 0x0065, 0x0069, 0x0067, 0x0068, 0x0074, 0x0003, 0x29c1, 0x0000, 
+0x000b, 0x0000, 0x0045, 0x0078, 0x0074, 0x0065, 0x006e, 0x0074, 0x0057, 
+0x0069, 0x0064, 0x0074, 0x0068, 0x0003, 0x3555, 0x0000, 0x0003, 0x0000, 
+0x004d, 0x0052, 0x004c, 0x0008, 0x0000, 0x0000, 0x0009, 0x0000, 0x0053, 
+0x0074, 0x0061, 0x0072, 0x0074, 0x0054, 0x0069, 0x006d, 0x0065, 0x0003, 
+0x0000, 0x0000, 0x0007, 0x0000, 0x0054, 0x006f, 0x006f, 0x006c, 0x0062, 
+0x0061, 0x0072, 0x000b, 0x0000, 0x0007, 0x0000, 0x0056, 0x0069, 0x0073, 
+0x0069, 0x0062, 0x006c, 0x0065, 0x000b, 0xffff, 0x0006, 0x0000, 0x0056, 
+0x006f, 0x006c, 0x0075, 0x006d, 0x0065, 0x0003, 0x0032, 0x0000, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "关于 Player(&A)..."
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE 4, 2
+#pragma code_page(936)
+#endif //_WIN32
+#include "res\Player.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.chs\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

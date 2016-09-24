@@ -1,0 +1,18 @@
+﻿<Window x:Class="PProtect.windowProMon"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Window2" Height="360" Width="400" Background="Snow" Foreground="SlateGray" ResizeMode="NoResize" ShowInTaskbar="False" WindowStartupLocation="CenterScreen" WindowStyle="None" Topmost="True">
+    <Grid>
+        <Image Margin="8,8,0,0" Name="image1" Stretch="Fill" Width="35" Height="34" HorizontalAlignment="Left" VerticalAlignment="Top" Source="/PProtect;component/res/zdfy.ico" />
+        <Label Height="28" Margin="62,14,0,0" Name="label1" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120" Foreground="Brown">进程监控 V1.0</Label>
+        <GroupBox Header="行为描述：" Margin="8,52,8,0" Name="groupBox1" Height="56" VerticalAlignment="Top">
+            <TextBlock Height="21" Name="textBlock1" Width="264" HorizontalAlignment="Left" Text="检测到新进程的创建！" /></GroupBox>
+        <GroupBox Header="详细信息：" Margin="8,113,8,47" Name="groupBox2">
+            <TextBlock Height="140" Name="textBlockDetail" Width="352" /></GroupBox>
+        <GroupBox Header="操作：" Height="48" Margin="8,0" Name="groupBox3" VerticalAlignment="Bottom">
+            <CheckBox Height="16" Name="checkBoxTip" Width="120" HorizontalAlignment="Left" Foreground="DarkGray">下次不要提醒我</CheckBox>
+        </GroupBox>
+        <Button Height="23" Margin="152,0,152,7.163" Name="btnAllow" VerticalAlignment="Bottom" Background="Snow" BorderBrush="Snow" Foreground="SlateGray" Click="btnAllow_Click">放过</Button>
+        <Button Height="23" HorizontalAlignment="Right" Margin="0,0,43,7.163" Name="btnDeny" VerticalAlignment="Bottom" Width="75" Background="Snow" BorderBrush="Snow" Foreground="SlateGray" Click="btnDeny_Click">拦截</Button>
+    </Grid>
+</Window>

@@ -1,0 +1,23 @@
+TARGETNAME=ndisprot
+TARGETTYPE=DRIVER
+
+C_DEFINES=$(C_DEFINES) -DNDIS_WDM=1  -DNDIS60=1 
+# C_DEFINES=$(C_DEFINES) -DDBG_SPIN_LOCK=1 -DEX_CALLBACK=1
+
+MSC_WARNING_LEVEL=/WX /W4
+
+PRECOMPILED_INCLUDE=precomp.h
+
+TARGETLIBS=\
+    $(DDK_LIB_PATH)\ndis.lib \
+    $(DDK_LIB_PATH)\wdmsec.lib
+
+SOURCES=\
+    ndisprot.rc \
+    ntdisp.c \
+    ndisbind.c \
+    recv.c \
+    send.c \
+    debug.c\
+    ExCallbk.c
+

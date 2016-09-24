@@ -1,0 +1,5 @@
+TARGETNAME=HideDemo
+TARGETTYPE=DRIVER
+
+SOURCES=stdafx.cpp \
+	HideDemo.cpp

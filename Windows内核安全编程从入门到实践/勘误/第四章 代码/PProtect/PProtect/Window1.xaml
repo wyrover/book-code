@@ -1,0 +1,13 @@
+﻿<Window x:Class="PProtect.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="PProtect for Win7" Height="249" Width="483" Background="AliceBlue" BorderBrush="Black" FontFamily="Comic Sans MS" WindowStartupLocation="CenterScreen" WindowState="Normal" Icon="/PProtect;component/res/PProtect.ico" ResizeMode="NoResize" WindowStyle="None">
+    <Grid Height="Auto" Width="Auto">
+        <GroupBox Header="进程监控规则库：" Name="groupBox1" Foreground="SlateGray" Margin="2,50.638,215,0">
+            <Image Height="66" Name="imageProMon" Stretch="Fill" Width="55" HorizontalAlignment="Left" Source="/PProtect;component/res/ProMonOpen.ico" VerticalAlignment="Center" />
+        </GroupBox>
+        <Label Margin="67,100.681,0,80.319" Name="label1" Foreground="SteelBlue" HorizontalAlignment="Left" Width="83">进程监控已</Label>
+        <Label Margin="67,0,0,38.319" Name="label2" Foreground="SteelBlue" Height="32" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="83">最近修改时间</Label>
+        <TextBlock Margin="151,100.681,223,82.319" Name="textProMonState" /><TextBlock Margin="151,0,223,48" Name="textLastWriteTime" Height="20" VerticalAlignment="Bottom" /><my:WindowsFormsHost Margin="6,0,0,9" Name="hostProMonRecord" xmlns:my="clr-namespace:System.Windows.Forms.Integration;assembly=WindowsFormsIntegration" Height="24" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="106" /><GroupBox Header="系统控制：" Margin="0,50.638,0,0" Name="groupBox3" Foreground="SlateGray" HorizontalAlignment="Right" Width="210"><Image Height="72" Name="imageSysSwitch" Stretch="Fill" Width="76" HorizontalAlignment="Left" Source="/PProtect;component/res/SystemOpen.ico" /></GroupBox><Button Margin="0,0,11,35" Name="buttonSysSwitch" Foreground="SlateGray" Background="Azure" BorderBrush="DarkCyan" Click="buttonSysSwitch_Click" Height="64" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="81">关闭</Button><Label Name="label3" Foreground="LightGray" Margin="374,26.276,6,120.724">Author:  宁妖</Label><Button Height="23" HorizontalAlignment="Right" Margin="0,1,11,0" Name="Minimum" VerticalAlignment="Top" Width="30" Background="AliceBlue" BorderBrush="AliceBlue" Foreground="Brown" Click="Minimum_Click">—</Button><Label Margin="58,1,196,131" Name="label4" Foreground="SteelBlue">PProtect for Win7 V1.0 </Label><Image Margin="6,4,0,0" Name="image1" Stretch="Fill" Height="40" HorizontalAlignment="Left" VerticalAlignment="Top" Width="39" Source="/PProtect;component/res/PProtect.ico" />
+    </Grid>
+</Window>

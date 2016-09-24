@@ -1,0 +1,8 @@
+TARGETNAME=diskperf
+TARGETTYPE=DRIVER
+
+
+INCLUDES=..\inc
+
+SOURCES=diskperf.c   
+

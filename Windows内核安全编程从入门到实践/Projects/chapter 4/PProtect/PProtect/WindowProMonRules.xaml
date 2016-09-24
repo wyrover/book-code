@@ -1,0 +1,12 @@
+﻿<Window x:Class="PProtect.WindowProMonRules"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="WindowProMonRules" Height="435" Width="500" Background="AliceBlue" Foreground="AliceBlue" OpacityMask="Blue" ResizeMode="NoResize" WindowStartupLocation="CenterOwner" WindowStyle="None">
+    <Grid>
+        <Image Height="23" Margin="8,8,0,0" Name="image1" Stretch="Fill" VerticalAlignment="Top" Width="24" HorizontalAlignment="Left" Source="/PProtect;component/res/PProtect.ico" />
+        <Label Height="28" Margin="57,4,0,0" Name="label1" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120" Foreground="SteelBlue">进程监控规则库</Label>
+        <Button Height="23" HorizontalAlignment="Right" Margin="0,9,9,0" Name="btnExit" VerticalAlignment="Top" Width="37" Background="AliceBlue" BorderBrush="AliceBlue" Foreground="Brown" Click="btnExit_Click">X</Button>
+        <ListView Margin="8,45,9,37" Name="listViewProRules" Background="Transparent" BorderBrush="Transparent" Foreground="SteelBlue" />
+        <Button Height="23" HorizontalAlignment="Right" Margin="0,0,9,8" Name="btn_del" VerticalAlignment="Bottom" Width="75" Background="AliceBlue" BorderBrush="SlateBlue" Foreground="SlateGray" Click="btn_del_Click">删除</Button>
+    </Grid>
+</Window>

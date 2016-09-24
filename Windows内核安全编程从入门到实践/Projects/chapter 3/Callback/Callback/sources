@@ -1,0 +1,5 @@
+TARGETNAME=Callback
+TARGETTYPE=DRIVER
+
+SOURCES=stdafx.cpp \
+	Callback.cpp

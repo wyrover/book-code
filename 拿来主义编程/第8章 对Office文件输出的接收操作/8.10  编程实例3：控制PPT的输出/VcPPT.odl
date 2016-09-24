@@ -1,0 +1,42 @@
+// VcPPT.odl : type library source for VcPPT.exe
+
+// This file will be processed by the MIDL compiler to produce the
+// type library (VcPPT.tlb).
+
+[ uuid(9955C5A5-CFB6-49C5-9D62-E2959D475B0E), version(1.0) ]
+library VcPPT
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+
+	//  Primary dispatch interface for CVcPPTDoc
+	
+	[ uuid(00C190A1-BAD8-465A-8903-0E32A8210A99) ]
+	dispinterface IVcPPT
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CVcPPTDlgAutoProxy)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CVcPPTDlgAutoProxy)
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CVcPPTDoc
+	
+	[ uuid(786CC47F-8DD0-40ED-8AF3-C5B04E270387) ]
+	coclass VcPPT
+	{
+		[default] dispinterface IVcPPT;
+	};
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

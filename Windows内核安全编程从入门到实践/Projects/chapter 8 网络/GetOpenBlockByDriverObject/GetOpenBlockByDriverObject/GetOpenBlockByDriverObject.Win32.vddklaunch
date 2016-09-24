@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<DDKLaunchParams xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PathOnTarget>%SystemRoot%\System32\Drivers\GetOpenBlockByDriverObject.sys</PathOnTarget>
+  <StartMode>LegacyStartStop</StartMode>
+  <StartModeArg>GetOpenBlockByDriverObject</StartModeArg>
+  <StopMode>LegacyStartStop</StopMode>
+  <StopModeArg>GetOpenBlockByDriverObject</StopModeArg>
+</DDKLaunchParams>

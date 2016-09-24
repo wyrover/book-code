@@ -1,0 +1,247 @@
+主要内容包括：启动、打开、关闭、幻灯片播放、首页、末页、上一页、下一页等。
+本代码以PowerPoint 2003为例，其他OFFICE组件及版本方法与此类似。
+
+下面是主要步骤和代码：
+1、创建MFC对话框应用程序，在向导的第2步选择automation，其他保持默认即可。
+
+2、在对话框上添加启动、打开、关闭、幻灯片播放、首页、末页、上一页、下一页等按钮及函数。
+
+3、在应用程序的InitInstance()中初始化OLE，代码如下：
+// Initialize OLE libraries
+if (!AfxOleInit())
+{
+    AfxMessageBox("Failed to initialize OLE");
+    return FALSE;
+}
+
+4、运用类向导添加PowerPoint类型库，类型库默认在"C:\Program Files\Microsoft Office\Office11\"下，文件名为：msppt.olb。In your dialog's class , open class-wizard , select the automation tab, select "Add Class" ... "From a type library" and select msppt8.olb from "C:\Program Files\Microsoft Office\Office\" 
+
+
+5、在对话框应用程序的头文件中添加：
+#include "msppt.h"
+
+6、在在对话框应用程序的头文件中添加如下变量：
+_Application app; 
+Presentations Presentations;
+_Presentation Presentation;
+SlideShowView View;
+SlideShowWindow SlideShowWindow;
+SlideShowSettings slideshow;
+Slides slides; 
+_Slide slide;
+DocumentWindow documentwindow;
+View ActiveView;
+
+7、在启动按钮函数中添加如下代码：
+void CXXXDlg::OnBtnStart()
+{
+    // Start PowerPoint and get Application object...
+    if(!app.CreateDispatch("Powerpoint.Application"))
+    {
+        AfxMessageBox("Couldn't start PowerPoint.");
+    }
+    else // Make PowerPoint visible and display a message
+    {
+        app.SetVisible(TRUE);
+        TRACE("PowerPoint is Running!");
+    }
+}
+
+8、在打开按钮函数中添加如下代码：
+void CXXXDlg::OnBtnOpen()
+{
+    static char BASED_CODE szFilter[] = "PowerPoint Files (*.ppt)|*.ppt||";
+    CFileDialog FileDlg(TRUE,"PPT",NULL,OFN_FILEMUSTEXIST|OFN_NONETWORKBUTTON
+                |OFN_PATHMUSTEXIST,szFilter);
+    FileDlg.DoModal();
+
+    // To get the selected file's path and name
+    CString strFileName;
+    strFileName = FileDlg.GetPathName();
+
+    if(!strFileName.IsEmpty())
+    {
+        Presentations = app.GetPresentations();
+        Presentation = Presentations.Open(strFileName,0,0,1);
+    }
+}
+
+9、在关闭按钮函数中添加如下代码：
+void CXXXDlg::OnBtnClose() 
+{
+    documentwindow=app.GetActiveWindow();//获得活动的文档
+    documentwindow.Close();//关闭当前活动的文档
+    if (CanExit())
+        app.Quit();
+}
+
+10、在运行按钮函数中添加如下代码：
+void CXXXDlg::OnBtnRun() 
+{
+    Presentations = app.GetActivePresentation();
+    slides = Presentation.GetSlides(); 
+    // Show the first slide of the presentation
+    slide = slides.Item(COleVariant((long)1)); 
+
+    //Run the show
+    slideshow = Presentation.GetSlideShowSettings(); 
+    slideshow.Run();
+}
+
+11、在翻到首页按钮函数中添加如下代码：
+void CXXXDlg::OnBtnFirst() 
+{
+    Presentation = app.GetActivePresentation();
+    SlideShowWindow = Presentation.GetSlideShowWindow();
+    View = SlideShowWindow.GetView();
+    View.First();
+}
+
+12、在翻到末叶按钮函数中添加如下代码：
+void CXXXDlg::OnBtnLast() 
+{
+    Presentation = app.GetActivePresentation();
+    SlideShowWindow = Presentation.GetSlideShowWindow();
+    View = SlideShowWindow.GetView();
+    View.Last();
+} 
+
+13、在翻到前页按钮函数中添加如下代码：
+void CXXXDlg::OnBtnPrevious() 
+{
+    Presentation = app.GetActivePresentation();
+    SlideShowWindow = Presentation.GetSlideShowWindow();
+    View = SlideShowWindow.GetView();
+    View.Previous();
+}
+
+14、在翻到下页按钮函数中添加如下代码：
+void CXXXDlg::OnBtnNext() 
+{
+    Presentation = app.GetActivePresentation();
+    SlideShowWindow = Presentation.GetSlideShowWindow();
+    View = SlideShowWindow.GetView();
+    View.Next();
+}
+
+15.获得幻灯片总数
+void CXXXDlg::OnBtnGetSlidesCount() 
+{
+
+       Presentations=app.GetActivePresentation();
+
+       slides=Presentation.GetSlides();
+
+long endpos=slides.GetCount(); //获得幻灯片总数
+}
+
+16.获得当前幻灯片序号
+void CXXXDlg::OnBtnGetCurrentPosition() 
+{
+
+       Presentation=app.GetActivePresentation();
+
+       SlideShowWindow=Presentation.GetSlideShowWindow();
+
+       View=SlideShowWindow.GetView();    
+
+       long Curpos=View.GetCurrentShowPosition();//当前幻灯片序号 
+}
+
+
+VC6.0对PowerPoint 2003的基本操作及步骤如上，如果有新看法和新认识希望能和我一起分享。
+ 
+Introduction
+This tutorial helps you to learn the basics of automation. With this code, you can control PowerPoint from your application. You can open PowerPoint programmatically, open any presentation, go to any slide that you want to, run the slideshow etc.
+
+Steps to follow
+By following the same steps given below, you can automate , word, excel or any Microsoft office application.
+
+Create a dialog based application and in the App-wizard's step 3 of 6, select the automation checkbox. 
+Create buttons for Start , Run, Close, First Slide, Last Slide, Previous Slide and Next Slide functions and use the following functions accordingly. 
+In your application's InitInstance function , add the following lines.  Collapse Copy Code// Initialize OLE libraries
+if (!AfxOleInit())
+{
+    AfxMessageBox("Failed to initialize OLE");
+    return FALSE;
+}In your dialog's class , open class-wizard , select the automation tab, select "Add Class" ... "From a type library" and select msppt8.olb from "C:\Program Files\Microsoft Office\Office\" 
+In your header file of your dialog, include the following line.  Collapse Copy Code#include "msppt8.h"Add the following variables in your dialog's header file.  Collapse Copy Code_Application app; // app is the PowerPoint _Application object
+
+Presentations Presentations;
+_Presentation Presentation;
+
+SlideShowView View;
+
+SlideShowWindow SlideShowWindow;
+SlideShowSettings slideshow;
+Slides slides; 
+_Slide slide;To start PowerPoint, you have to write this code in the Start button's function.  Collapse Copy Codevoid CPowerPntDlg::OnBtnStart()
+{
+    // Start PowerPoint and get Application object...
+    if(!app.CreateDispatch("Powerpoint.Application"))
+    {
+        AfxMessageBox("Couldn't start PowerPoint.");
+    }
+    else // Make PowerPoint visible and display a message
+    {
+        app.SetVisible(TRUE);
+        TRACE("PowerPoint is Running!");
+    }
+}To open a presentation from the hard disk, add this code in the Open button's function call.  Collapse Copy Codevoid CPowerPntDlg::OnBtnOpen()
+{
+    static char BASED_CODE szFilter[] = "PowerPoint Files (*.ppt)|*.ppt||";
+    CFileDialog FileDlg(TRUE,"PPT",NULL,OFN_FILEMUSTEXIST|OFN_NONETWORKBUTTON
+                |OFN_PATHMUSTEXIST,szFilter);
+    FileDlg.DoModal();
+
+    // To get the selected file's path and name
+    CString strFileName;
+    strFileName = FileDlg.GetPathName();
+
+    if(!strFileName.IsEmpty())
+    {
+        Presentations = app.GetPresentations();
+        Presentation = Presentations.Open(strFileName,0,0,1);
+    }
+}To close PowerPoint add this code in the Close button's function call.  Collapse Copy Codevoid CPowerPntDlg::OnBtnClose() 
+{
+    if (CanExit())
+        app.Quit();
+}To run the slideshow use this code in the Run button's function call  Collapse Copy Codevoid CPowerPntDlg::OnBtnRun() 
+{
+    Presentations = app.GetActivePresentation();
+    slides = Presentation.GetSlides(); 
+    // Show the first slide of the presentation 
+    slide = slides.Item(COleVariant((long)1)); 
+
+    //Run the show 
+    slideshow = Presentation.GetSlideShowSettings(); 
+    slideshow.Run();
+}Sometimes, you might want to start all over from the first slide. To go to the first slide you can use this code.  Collapse Copy Codevoid CPowerPntDlg::OnBtnFirst() 
+{
+    Presentation = app.GetActivePresentation();
+    SlideShowWindow = Presentation.GetSlideShowWindow();
+    View = SlideShowWindow.GetView();
+    View.First();
+}And similarly, to go to the last slide  Collapse Copy Codevoid CPowerPntDlg::OnBtnLast() 
+{
+    Presentation = app.GetActivePresentation();
+    SlideShowWindow = Presentation.GetSlideShowWindow();
+    View = SlideShowWindow.GetView();
+    View.Last();
+}Now that you have the slideshow running, you would obviously want to go to the previous slide at some point of time. To do just that, you can use this code.  Collapse Copy Codevoid CPowerPntDlg::OnBtnPrevious() 
+{
+    Presentation = app.GetActivePresentation();
+    SlideShowWindow = Presentation.GetSlideShowWindow();
+    View = SlideShowWindow.GetView();
+    View.Previous();
+}Interested to go to the next slide now ? In that case, this function will help you. Collapse Copy Codevoid CPowerPntDlg::OnBtnNext() 
+{
+    Presentation = app.GetActivePresentation();
+    SlideShowWindow = Presentation.GetSlideShowWindow();
+    View = SlideShowWindow.GetView();
+    View.Next();
+}
+
+文章出处：http://www.diybl.com/course/3_program/vc/vc_js/2008320/105852_2.html
+http://www.codeproject.com/KB/COM/ole_automation.aspx

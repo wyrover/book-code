@@ -1,0 +1,284 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\MyCalculator.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.chs\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\MyCalculator.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于 MyCalculator"
+FONT 9, "宋体"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "MyCalculator 1.0 版",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "版权所有 (C) 2013",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "确定",IDOK,178,7,50,14,WS_GROUP
+END
+
+IDD_MYCALCULATOR_DIALOG DIALOGEX 0, 0, 369, 185
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "计算器"
+FONT 9, "宋体"
+BEGIN
+    EDITTEXT        403,15,10,305,14,ES_RIGHT | ES_READONLY
+    CONTROL         "Hyp",141,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,59,50,34,
+                    10
+    CONTROL         "Inv",140,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,17,50,34,
+                    10
+    GROUPBOX        "",-1,15,42,82,20,0,WS_EX_NOPARENTNOTIFY
+    PUSHBUTTON      "标差",84,15,68,24,18,NOT WS_TABSTOP
+    RADIOBUTTON     "十六进制",306,17,30,44,10,WS_TABSTOP
+    RADIOBUTTON     "十进制",307,65,30,37,10,WS_TABSTOP
+    RADIOBUTTON     "八进制",308,107,30,37,10,WS_TABSTOP
+    RADIOBUTTON     "二进制",309,149,30,37,10,WS_TABSTOP
+    GROUPBOX        "",-1,15,22,178,20,0,WS_EX_NOPARENTNOTIFY
+    GROUPBOX        "",-1,197,22,161,20,0,WS_EX_NOPARENTNOTIFY
+    RADIOBUTTON     "角度",314,201,30,32,10,WS_TABSTOP
+    RADIOBUTTON     "弧度",315,241,30,32,10,WS_TABSTOP
+    RADIOBUTTON     "梯度",316,279,30,32,10,WS_TABSTOP
+    RADIOBUTTON     "四字",310,201,30,32,10,WS_TABSTOP
+    RADIOBUTTON     "双字",311,241,30,32,10,WS_TABSTOP
+    RADIOBUTTON     "单字",312,279,30,32,10,WS_TABSTOP
+    RADIOBUTTON     "字节",313,319,30,32,10,WS_TABSTOP
+    PUSHBUTTON      "均值",118,15,88,24,18,NOT WS_TABSTOP
+    PUSHBUTTON      "求和",119,15,108,24,18,NOT WS_TABSTOP
+    PUSHBUTTON      "s",120,15,128,24,18,NOT WS_TABSTOP
+    PUSHBUTTON      "Dat",121,15,148,24,18,NOT WS_TABSTOP
+    PUSHBUTTON      "F-E",110,47,68,24,18,NOT WS_TABSTOP
+    PUSHBUTTON      "dms",108,47,88,24,18,NOT WS_TABSTOP
+    PUSHBUTTON      "sin",98,47,108,24,18,NOT WS_TABSTOP
+    PUSHBUTTON      "cos",99,47,128,24,18,NOT WS_TABSTOP
+    PUSHBUTTON      "tan",100,47,148,24,18,NOT WS_TABSTOP
+    PUSHBUTTON      "(",122,73,68,24,18,NOT WS_TABSTOP
+    PUSHBUTTON      "Exp",117,73,88,24,18,NOT WS_TABSTOP
+    PUSHBUTTON      "x^y",95,73,108,24,18,NOT WS_TABSTOP
+    PUSHBUTTON      "x^3",105,73,128,24,18,NOT WS_TABSTOP
+    PUSHBUTTON      "x^2",104,73,148,24,18,NOT WS_TABSTOP
+    PUSHBUTTON      ")",123,99,68,24,18,NOT WS_TABSTOP
+    PUSHBUTTON      "ln",101,99,88,24,18,NOT WS_TABSTOP
+    PUSHBUTTON      "log",102,99,108,24,18,NOT WS_TABSTOP
+    PUSHBUTTON      "n!",106,99,128,24,18,NOT WS_TABSTOP
+    PUSHBUTTON      "1/x",107,99,148,24,18,NOT WS_TABSTOP
+    PUSHBUTTON      "MC",113,133,68,24,18,NOT WS_TABSTOP
+    PUSHBUTTON      "MR",114,133,88,24,18,NOT WS_TABSTOP
+    PUSHBUTTON      "MS",115,133,108,24,18,NOT WS_TABSTOP
+    PUSHBUTTON      "M+",116,133,128,24,18,NOT WS_TABSTOP
+    PUSHBUTTON      "pi",111,133,148,24,18,NOT WS_TABSTOP
+    PUSHBUTTON      "7",131,203,68,24,18,NOT WS_TABSTOP
+    PUSHBUTTON      "4",128,203,88,24,18,NOT WS_TABSTOP
+    PUSHBUTTON      "1",125,203,108,24,18,NOT WS_TABSTOP
+    PUSHBUTTON      "0",124,203,128,24,18,NOT WS_TABSTOP
+    PUSHBUTTON      "A",134,203,148,24,18,NOT WS_TABSTOP
+    PUSHBUTTON      "8",132,229,68,24,18,NOT WS_TABSTOP
+    PUSHBUTTON      "5",129,229,88,24,18,NOT WS_TABSTOP
+    PUSHBUTTON      "2",126,229,108,24,18,NOT WS_TABSTOP
+    PUSHBUTTON      "+/-",80,229,128,24,18,NOT WS_TABSTOP
+    PUSHBUTTON      "B",135,229,148,24,18,NOT WS_TABSTOP
+    PUSHBUTTON      "9",133,255,68,24,18,NOT WS_TABSTOP
+    PUSHBUTTON      "6",130,255,88,24,18,NOT WS_TABSTOP
+    PUSHBUTTON      "3",127,255,108,24,18,NOT WS_TABSTOP
+    PUSHBUTTON      ".",85,255,128,24,18,NOT WS_TABSTOP
+    PUSHBUTTON      "C",136,255,148,24,18,NOT WS_TABSTOP
+    PUSHBUTTON      "/",90,281,68,24,18,NOT WS_TABSTOP
+    PUSHBUTTON      "*",91,281,88,24,18,NOT WS_TABSTOP
+    PUSHBUTTON      "-",93,281,108,24,18,NOT WS_TABSTOP
+    PUSHBUTTON      "+",92,281,128,24,18,NOT WS_TABSTOP
+    PUSHBUTTON      "D",137,281,148,24,18,NOT WS_TABSTOP
+    PUSHBUTTON      "Mod",94,307,68,24,18,NOT WS_TABSTOP
+    PUSHBUTTON      "OR",87,307,88,24,18,NOT WS_TABSTOP
+    PUSHBUTTON      "Lsh",89,307,108,24,18,NOT WS_TABSTOP
+    PUSHBUTTON      "=",112,307,128,24,18,NOT WS_TABSTOP
+    PUSHBUTTON      "E",138,307,148,24,18,NOT WS_TABSTOP
+    PUSHBUTTON      "And",86,333,68,24,18,NOT WS_TABSTOP
+    PUSHBUTTON      "Xor",88,333,88,24,18,NOT WS_TABSTOP
+    PUSHBUTTON      "Not",97,333,108,24,18,NOT WS_TABSTOP
+    PUSHBUTTON      "Int",96,333,128,24,18,NOT WS_TABSTOP
+    PUSHBUTTON      "F",139,333,148,24,18,NOT WS_TABSTOP
+    PUSHBUTTON      "Backspace",83,225,46,43,18,NOT WS_TABSTOP
+    PUSHBUTTON      "CE",82,269,46,43,18,NOT WS_TABSTOP
+    PUSHBUTTON      "C",81,315,46,43,18,NOT WS_TABSTOP
+    CTEXT           "",401,135,46,18,16,SS_NOTIFY | SS_CENTERIMAGE,
+                    WS_EX_CLIENTEDGE
+    CTEXT           "",402,103,46,18,16,SS_NOTIFY | SS_CENTERIMAGE,
+                    WS_EX_CLIENTEDGE
+    LTEXT           "",1000,9,170,8,8
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "MyCalculator Microsoft 基础类应用程序\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "MyCalculator\0"
+            VALUE "LegalCopyright", "版权所有 (C) 2013\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "MyCalculator.EXE\0"
+            VALUE "ProductName", "MyCalculator 应用程序\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_MYCALCULATOR_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 362
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 178
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "关于 MyCalculator(&A)..."
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE 4, 2
+#pragma code_page(936)
+#endif //_WIN32
+#include "res\MyCalculator.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.chs\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

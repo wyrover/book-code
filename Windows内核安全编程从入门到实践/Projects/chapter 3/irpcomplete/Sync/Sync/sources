@@ -1,0 +1,5 @@
+TARGETNAME=Sync
+TARGETTYPE=DRIVER
+
+SOURCES=stdafx.cpp \
+	Sync.cpp
