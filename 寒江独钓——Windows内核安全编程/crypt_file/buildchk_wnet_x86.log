@@ -1,0 +1,111 @@
+BUILD: Computing Include file dependencies:
+BUILD: Examining c:\winddk\source_code\crypt_file directory for files to compile.
+skipping post pass 0 command
+Compiling and Linking c:\winddk\source_code\crypt_file *************
+'nmake.exe /nologo BUILDMSG=Stop. -i BUILD_PASS=PASS2 LINKONLY=1 NOPASS0=1 MAKEDIR_RELATIVE_TO_BASEDIR=source_code\crypt_file'
+c:\winddk\source_code\crypt_file: TARGETPATH is obj
+BUILDMSG: _NT_TARGET_VERSION SET TO WS03
+ cl.exe @c:\winddk\source_code\crypt_file\objchk_wnet_x86\i386\cl.rsp
+Microsoft (R) 32-bit C/C++ Optimizing Compiler Version 14.00.50727.278 for 80x86
+Copyright (C) Microsoft Corporation.  All rights reserved.
+cl /Fo"c:\winddk\source_code\crypt_file\objchk_wnet_x86\i386/"
+ /FC
+ /Ii386
+ /I.
+ /Ic:\winddk\source_code\crypt_file\objchk_wnet_x86\i386
+ /IC:\WINDDK\inc\api
+ /IC:\WINDDK\inc\api
+ /IC:\WINDDK\inc\ddk
+ /IC:\WINDDK\inc\ddk
+ /IC:\WINDDK\inc\crt
+ /D_X86_=1
+ /Di386=1
+ /DSTD_CALL
+ /DCONDITION_HANDLING=1
+ /DNT_INST=0
+ /DWIN32=100
+ /D_NT1X_=100
+ /DWINNT=1
+ /D_WIN32_WINNT=0x0502
+ /DWINVER=0x0502
+ /D_WIN32_IE=0x0603
+ /DWIN32_LEAN_AND_MEAN=1
+ /DDEVL=1
+ /DDBG=1
+ /D__BUILDMACHINE__=WinDDK
+ /DFPO=0
+ /D_DLL=1
+ /DNDEBUG
+ /DMSC_NOOPT
+ /DNTDDI_VERSION=0x05020100
+ /c
+ /Zc:wchar_t-
+ /Zl
+ /Zp8
+ /Gy
+ /Gm-
+ -cbstring
+ /W3
+ /Gz
+ /hotpatch
+ /EHs-c-
+ /GR-
+ /GF
+ /GS
+ /Zi
+ /Od
+ /Oi
+ /Oy-
+ /Zi
+ /Fdc:\winddk\source_code\crypt_file\objchk_wnet_x86\i386\
+ /DKMDF_MAJOR_VERSION=01
+ /DKMDF_MINOR_VERSION=007
+ /FIC:\WINDDK\inc\api\warning.h
+ .\cf_sfilter.c .\cf_file_irp.c .\cf_list.c .\cf_proc.c .\cf_modify_irp.c .\cf_create.c 
+cf_sfilter.c
+cf_file_irp.c
+cf_list.c
+cf_proc.c
+cf_modify_irp.c
+cf_create.c
+Generating Code...
+ link.exe /out:c:\winddk\source_code\crypt_file\objchk_wnet_x86\i386\crypt_file.sys /machine:ix86 @c:\winddk\source_code\crypt_file\objchk_wnet_x86\i386\lnk.rsp
+Microsoft (R) Incremental Linker Version 8.00.50727.278
+Copyright (C) Microsoft Corporation.  All rights reserved.
+/MERGE:_PAGE=PAGE 
+/MERGE:_TEXT=.text 
+/SECTION:INIT,d 
+/OPT:REF 
+/OPT:ICF 
+/IGNORE:4198,4010,4037,4039,4065,4070,4078,4087,4089,4221 
+/INCREMENTAL:NO 
+/release 
+/NODEFAULTLIB 
+/WX 
+/debug 
+/debugtype:cv,fixup,pdata 
+/version:6.0 
+/osversion:6.0 
+/functionpadmin:5 
+/safeseh 
+/pdbcompress 
+/STACK:0x40000,0x1000 
+/driver 
+/base:0x10000 
+/subsystem:native,5.02 
+/entry:GsDriverEntry@8 
+/out:c:\winddk\source_code\crypt_file\objchk_wnet_x86\i386\crypt_file.sys 
+c:\winddk\source_code\crypt_file\objchk_wnet_x86\i386\cf_sfilter.obj 
+c:\winddk\source_code\crypt_file\objchk_wnet_x86\i386\cf_file_irp.obj 
+c:\winddk\source_code\crypt_file\objchk_wnet_x86\i386\cf_list.obj 
+c:\winddk\source_code\crypt_file\objchk_wnet_x86\i386\cf_proc.obj 
+c:\winddk\source_code\crypt_file\objchk_wnet_x86\i386\cf_modify_irp.obj 
+c:\winddk\source_code\crypt_file\objchk_wnet_x86\i386\cf_create.obj 
+c:\winddk\lib\wnet\i386\BufferOverflowK.lib 
+c:\winddk\lib\wnet\i386\ntoskrnl.lib 
+c:\winddk\lib\wnet\i386\hal.lib 
+c:\winddk\lib\wnet\i386\wmilib.lib 
+c:\winddk\lib\wnet\i386\wdmsec.lib 
+c:\winddk\lib\wnet\i386\ntstrsafe.lib 
+..\lib\sfilter_chk_WNET.lib 
+c:\winddk\lib\wnet\i386\sehupd.lib 

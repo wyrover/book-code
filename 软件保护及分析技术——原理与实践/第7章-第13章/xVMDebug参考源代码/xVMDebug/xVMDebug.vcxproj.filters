@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="3rdparty">
+      <UniqueIdentifier>{47bb1c40-0c4a-4aef-b47e-587c4971668a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="nCom">
+      <UniqueIdentifier>{a77f58d4-6a34-4a28-b515-9e6d29b7d042}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libudis86">
+      <UniqueIdentifier>{c5b7cf9c-67e3-48a0-8c87-cd5aa826aca0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="nasm">
+      <UniqueIdentifier>{804599db-344a-4e71-95f9-0d6b857c7c35}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ollydbg2_plugin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xdynamic_ollydbg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xvmblockframe.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xvmdebug.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xvmdebugframe.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xvmiatcallframe.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="virtualdebug\VirtualDebug.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="virtualdebug\VirtualDebugApiLayer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\nCom\npacketbase.cpp">
+      <Filter>nCom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\nCom\PipeBase.cpp">
+      <Filter>nCom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\nedmalloc\nedmalloc.cpp">
+      <Filter>3rdparty</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\libudis86\decode.c">
+      <Filter>libudis86</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\libudis86\itab.c">
+      <Filter>libudis86</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\libudis86\syn.c">
+      <Filter>libudis86</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\libudis86\syn-att.c">
+      <Filter>libudis86</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\libudis86\syn-intel.c">
+      <Filter>libudis86</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\libudis86\udis86.c">
+      <Filter>libudis86</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\nSRK\nSRK_CC\nasm\i386\nasm_i386.cpp">
+      <Filter>nasm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\nSRK\nSRK_CC\nasm\base\nasm_base.cpp">
+      <Filter>nasm</Filter>
+    </ClCompile>
+    <ClCompile Include="patternAsm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\nCom\nexpress.cpp">
+      <Filter>nCom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\nNetLib\npipeclient.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NativeSysCallID.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bypassanti.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xvmdebugcpu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xApiWatch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="xVMDebug.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="xVMDebug.def" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xdynamic_ollydbg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xvmblockframe.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xvmdebug.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xvmdebugcpu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xvmdebugframe.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xvmiatcallframe.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ollydbg2\plugin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="virtualdebug\VirtualDebug.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="virtualdebug\VirtualDebugApiLayer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\nCom\npacketbase.h">
+      <Filter>nCom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\nCom\PipeBase.h">
+      <Filter>nCom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\nSRK\nSRK_CC\nasm\i386\nasm_i386.h">
+      <Filter>nasm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\nSRK\nSRK_CC\nasm\base\nasm_base.h">
+      <Filter>nasm</Filter>
+    </ClInclude>
+    <ClInclude Include="patternAsm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\nCom\nexpress.h">
+      <Filter>nCom</Filter>
+    </ClInclude>
+    <ClInclude Include="NativeSysCallID.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bypassanti.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ollydbg2_plugin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xApiWatch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="xVMDebug.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

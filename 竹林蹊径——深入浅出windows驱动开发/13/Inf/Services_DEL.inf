@@ -1,0 +1,32 @@
+; 文件：Services_DEL.inf
+; 描述：删除注册表中的一个服务
+; 归属：《竹林蹊径》 张佩
+; 联系：Zhang.Mibox@gmail.com
+; 版本：04/01/2010  1.0.0000.00000
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=InfTest
+ClassGuid={78A1C341-4539-11d3-B88D-00C04FAD5172}
+Provider=ChinaHearing
+DriverVer=04/01/2010, 1.0.0000.00000
+
+; 一个空的但必须的DefaultInstall域
+; 用到的是他的服务子域
+[DefaultInstall]
+AddReg = NullReg
+
+[NullReg]
+
+; 服务域，将Service.inf文件新建的两个服务从注册表中删除
+[DefaultInstall.Services]
+; AddSrvice指令是必须要有的，但我们这个文件的目的不是新建而是删除，
+; 故而让这个指令的实际内容为空(NULL)
+; AddService = NULLAddService
+
+; 把注册表中的Service1/Service2两个服务删除
+DelService = Service1
+DelService = Service2
+
+; 空的添加服务域
+[NULLAddService]

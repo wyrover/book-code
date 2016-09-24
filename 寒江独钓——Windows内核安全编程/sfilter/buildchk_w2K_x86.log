@@ -1,0 +1,6 @@
+BUILD: Computing Include file dependencies:
+BUILD: Examining f:\work\dep\windriv\sfilter directory for files to compile.
+Compiling f:\work\dep\windriv\sfilter directory ********************
+'nmake.exe /c BUILDMSG=Stop. -i NTTEST= UMTEST= NOLINK=1 NOPASS0=1 386=1'
+1>BUILDMSG: Processing f:\work\dep\windriv\sfilter
+1>BUILDMSG: Warning : The sample "F:\work\dep\windriv\sfilter" is not valid for the current OS target.

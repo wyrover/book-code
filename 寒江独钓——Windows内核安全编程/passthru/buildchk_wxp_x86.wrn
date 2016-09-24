@@ -1,0 +1,6 @@
+warnings in directory i:\0sourcecode\source_code\source_code\passthru
+i:\0sourcecode\source_code\source_code\passthru\analysispacket.c(156) : warning C4018: '<=' : signed/unsigned mismatch
+i:\0sourcecode\source_code\source_code\passthru\hook.c(18) : warning C4715: 'myCreate' : not all control paths return a value
+i:\0sourcecode\source_code\source_code\passthru\hook.c(43) : warning C4715: 'myWrite' : not all control paths return a value
+i:\0sourcecode\source_code\source_code\passthru\hook.c(68) : warning C4715: 'myRead' : not all control paths return a value
+i:\0sourcecode\source_code\source_code\passthru\hook.c(93) : warning C4715: 'myDeviceControl' : not all control paths return a value

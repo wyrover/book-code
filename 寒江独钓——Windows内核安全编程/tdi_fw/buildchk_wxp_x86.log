@@ -1,0 +1,33 @@
+BUILD: Computing Include file dependencies:
+BUILD: Examining d:\work\pln\º®½­¶Àµö\source_code\tdi_fw directory for files to compile.
+Compiling d:\work\pln\º®½­¶Àµö\source_code\tdi_fw directory ********************
+'nmake.exe /c BUILDMSG=Stop. -i NTTEST= UMTEST= NOLINK=1 NOPASS0=1 386=1'
+1>BUILDMSG: Processing d:\work\pln\º®½­¶Àµö\source_code\tdi_fw
+1>cl -nologo -Ii386\ -I. -IC:\WINDDK\3790\inc\mfc42 -I.. -IC:\WINDDK\3790\bin\..\src\network\inc -Iobjchk_wxp_x86\i386 -IC:\WINDDK\3790\inc\wxp -IC:\WINDDK\3790\inc\wxp -IC:\WINDDK\3790\inc\crt -D_X86_=1 -Di386=1  -DSTD_CALL -DCONDITION_HANDLING=1   -DNT_INST=0 -DWIN32=100 -D_NT1X_=100 -DWINNT=1 -D_WIN32_WINNT=0x0501 /DWINVER=0x0501 -D_WIN32_IE=0x0600    -DWIN32_LEAN_AND_MEAN=1 -DDEVL=1 -DDBG=1 -D__BUILDMACHINE__=WinDDK -DFPO=0  -DNDEBUG -DUSE_PACKET_ENGINE     /c /Zel /Zp8 /Gy /Gi- /Gm-  /W3 /WX /Gz  /QIfdiv- /QIf /G6 /GX-  /GR- /GF  -Z7 /Od /Oi  /Oy-   -FIC:\WINDDK\3790\inc\wxp\warning.h   .\tdi_fw.c 
+1>tdi_fw.c
+1>	lib -out:objchk_wxp_x86\i386\tdi_fw.lib -IGNORE:4198,4010,4037,4039,4065,4070,4078,4087,4089,4221  /WX -nodefaultlib -machine:ix86 @C:\DOCUME~1\tanwen\LOCALS~1\Temp\nm87.tmp
+1>Microsoft (R) Library Manager Version 7.10.2179
+1>Copyright (C) Microsoft Corporation.  All rights reserved.
+1>
+1>objchk_wxp_x86\i386\tdi_fw.obj 
+1>objchk_wxp_x86\i386\dispatch.obj 
+1>objchk_wxp_x86\i386\disp_conn.obj 
+1>objchk_wxp_x86\i386\disp_dg.obj 
+1>objchk_wxp_x86\i386\disp_ev.obj 
+1>objchk_wxp_x86\i386\disp_obj.obj 
+1>objchk_wxp_x86\i386\events.obj 
+1>objchk_wxp_x86\i386\ev_conn.obj 
+1>objchk_wxp_x86\i386\ev_dg.obj 
+1>objchk_wxp_x86\i386\filter.obj 
+1>objchk_wxp_x86\i386\memtrack.obj 
+1>objchk_wxp_x86\i386\obj_tbl.obj 
+1>objchk_wxp_x86\i386\sock.obj 
+1>objchk_wxp_x86\i386\ipc.obj 
+1>objchk_wxp_x86\i386\pid_pname.obj 
+1>objchk_wxp_x86\i386\packet.obj 
+1>objchk_wxp_x86\i386\conn_state.obj 
+1>objchk_wxp_x86\i386\sids.obj 
+1>objchk_wxp_x86\i386\disp_sr.obj 
+1>objchk_wxp_x86\i386\ev_recv.obj 
+1>
+1>Stop.

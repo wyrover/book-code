@@ -1,0 +1,193 @@
+BUILD: Computing Include file dependencies:
+BUILD: Examining i:\0sourcecode\source_code\source_code\passthru directory for files to compile.
+skipping post pass 0 command
+Compiling and Linking i:\0sourcecode\source_code\source_code\passthru *************
+'nmake.exe /nologo BUILDMSG=Stop. -i BUILD_PASS=PASS2 LINKONLY=1 NOPASS0=1 MAKEDIR_RELATIVE_TO_BASEDIR='
+BUILDMSG: _NT_TARGET_VERSION SET TO WINXP
+cl.exe /Ii386 /I. /Ii:\0sourcecode\source_code\source_code\passthru\objchk_wxp_x86\i386 /IG:\WinDDK\6001.18001\inc\api /IG:\WinDDK\6001.18001\inc\api /IG:\WinDDK\6001.18001\inc\ddk /IG:\WinDDK\6001.18001\inc\ddk /IG:\WinDDK\6001.18001\inc\crt /D_X86_=1 /Di386=1 /DSTD_CALL /DCONDITION_HANDLING=1 /DNT_INST=0 /DWIN32=100 /D_NT1X_=100 /DWINNT=1 /D_WIN32_WINNT=0x0501 /DWINVER=0x0501 /D_WIN32_IE=0x0603 /DWIN32_LEAN_AND_MEAN=1 /DDEVL=1 /DDBG=1 /D__BUILDMACHINE__=WinDDK /DFPO=0 /D_DLL=1 /DNDEBUG -DNDIS_MINIPORT_DRIVER -DNDIS_WDM=1 -DNDIS51_MINIPORT=1 -DNDIS51=1 /DDEPRECATE_DDK_FUNCTIONS=1 /DMSC_NOOPT /DNTDDI_VERSION=0x05010200 /c /Zc:wchar_t- /Zl /Zp8 /Gy /Gm- -cbstring /W3 /Gz /hotpatch /EHs-c- /GR- /GF /GS /Zi /Od /Oi /Oy- /Zi /Fdi:\0sourcecode\source_code\source_code\passthru\objchk_wxp_x86\i386\ /DKMDF_MAJOR_VERSION=01 /DKMDF_MINOR_VERSION=007 /FIG:\WinDDK\6001.18001\inc\api\warning.h /Yuprecomp.h /Fpi:\0sourcecode\source_code\source_code\passthru\objchk_wxp_x86\i386\precomp.pch /Ylpassthru /Ycprecomp.h /Fpi:\0sourcecode\source_code\source_code\passthru\objchk_wxp_x86\i386\precomp.pch /Fo"i:\0sourcecode\source_code\source_code\passthru\objchk_wxp_x86\i386\precomp.obj" /Tc
+#include "precomp.h"
+Microsoft (R) 32-bit C/C++ Optimizing Compiler Version 14.00.50727.278 for 80x86
+Copyright (C) Microsoft Corporation.  All rights reserved.
+cl 
+ /Ii386
+ /I.
+ /Ii:\0sourcecode\source_code\source_code\passthru\objchk_wxp_x86\i386
+ /IG:\WinDDK\6001.18001\inc\api
+ /IG:\WinDDK\6001.18001\inc\api
+ /IG:\WinDDK\6001.18001\inc\ddk
+ /IG:\WinDDK\6001.18001\inc\ddk
+ /IG:\WinDDK\6001.18001\inc\crt
+ /D_X86_=1
+ /Di386=1
+ /DSTD_CALL
+ /DCONDITION_HANDLING=1
+ /DNT_INST=0
+ /DWIN32=100
+ /D_NT1X_=100
+ /DWINNT=1
+ /D_WIN32_WINNT=0x0501
+ /DWINVER=0x0501
+ /D_WIN32_IE=0x0603
+ /DWIN32_LEAN_AND_MEAN=1
+ /DDEVL=1
+ /DDBG=1
+ /D__BUILDMACHINE__=WinDDK
+ /DFPO=0
+ /D_DLL=1
+ /DNDEBUG
+ -DNDIS_MINIPORT_DRIVER
+ -DNDIS_WDM=1
+ -DNDIS51_MINIPORT=1
+ -DNDIS51=1
+ /DDEPRECATE_DDK_FUNCTIONS=1
+ /DMSC_NOOPT
+ /DNTDDI_VERSION=0x05010200
+ /c
+ /Zc:wchar_t-
+ /Zl
+ /Zp8
+ /Gy
+ /Gm-
+ -cbstring
+ /W3
+ /Gz
+ /hotpatch
+ /EHs-c-
+ /GR-
+ /GF
+ /GS
+ /Zi
+ /Od
+ /Oi
+ /Oy-
+ /Zi
+ /Fdi:\0sourcecode\source_code\source_code\passthru\objchk_wxp_x86\i386\
+ /DKMDF_MAJOR_VERSION=01
+ /DKMDF_MINOR_VERSION=007
+ /FIG:\WinDDK\6001.18001\inc\api\warning.h
+ /Ylpassthru /Ycprecomp.h /Fpi:\0sourcecode\source_code\source_code\passthru\objchk_wxp_x86\i386\precomp.pch /Fo"i:\0sourcecode\source_code\source_code\passthru\objchk_wxp_x86\i386\precomp.obj"
+pch_hdr.src
+ rc -l 409 -DSXS_PROCESSOR_ARCHITECTURE="""x86"""  -DSXS_TARGET="""passthru.sys"""   -DSYSTEM_COMPATIBLE_ASSEMBLY_NAME="""Microsoft.Windows.SystemCompatible"""  -DLSYSTEM_COMPATIBLE_ASSEMBLY_NAME=L"""Microsoft.Windows.SystemCompatible"""   -DSXS_ASSEMBLY_VERSION=""""""  /r /fo i:\0sourcecode\source_code\source_code\passthru\objchk_wxp_x86\i386\passthru.res /D_X86_=1 /Di386=1  /DSTD_CALL /DCONDITION_HANDLING=1   /DNT_INST=0 /DWIN32=100 /D_NT1X_=100 /DWINNT=1 /D_WIN32_WINNT=0x0501 /DWINVER=0x0501 /D_WIN32_IE=0x0603    /DWIN32_LEAN_AND_MEAN=1  /DDEVL=1 /DDBG=1 /D__BUILDMACHINE__=WinDDK /DFPO=0   /D_DLL=1 /DNDEBUG  -DNDIS_MINIPORT_DRIVER -DNDIS_WDM=1 -DNDIS51_MINIPORT=1 -DNDIS51=1 /DDEPRECATE_DDK_FUNCTIONS=1 /DMSC_NOOPT /DNTDDI_VERSION=0x05010200   /Ii:\0sourcecode\source_code\source_code\passthru\objchk_wxp_x86\i386 /IG:\WinDDK\6001.18001\inc\api /IG:\WinDDK\6001.18001\inc\api /IG:\WinDDK\6001.18001\inc\ddk /IG:\WinDDK\6001.18001\inc\ddk /IG:\WinDDK\6001.18001\inc\crt .\passthru.rc
+Microsoft (R) Windows (R) Resource Compiler Version 6.0.5724.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+ cl.exe @i:\0sourcecode\source_code\source_code\passthru\objchk_wxp_x86\i386\cl.rsp
+Microsoft (R) 32-bit C/C++ Optimizing Compiler Version 14.00.50727.278 for 80x86
+Copyright (C) Microsoft Corporation.  All rights reserved.
+cl /Fo"i:\0sourcecode\source_code\source_code\passthru\objchk_wxp_x86\i386/"
+ /FC
+ /Ii386
+ /I.
+ /Ii:\0sourcecode\source_code\source_code\passthru\objchk_wxp_x86\i386
+ /IG:\WinDDK\6001.18001\inc\api
+ /IG:\WinDDK\6001.18001\inc\api
+ /IG:\WinDDK\6001.18001\inc\ddk
+ /IG:\WinDDK\6001.18001\inc\ddk
+ /IG:\WinDDK\6001.18001\inc\crt
+ /D_X86_=1
+ /Di386=1
+ /DSTD_CALL
+ /DCONDITION_HANDLING=1
+ /DNT_INST=0
+ /DWIN32=100
+ /D_NT1X_=100
+ /DWINNT=1
+ /D_WIN32_WINNT=0x0501
+ /DWINVER=0x0501
+ /D_WIN32_IE=0x0603
+ /DWIN32_LEAN_AND_MEAN=1
+ /DDEVL=1
+ /DDBG=1
+ /D__BUILDMACHINE__=WinDDK
+ /DFPO=0
+ /D_DLL=1
+ /DNDEBUG
+ -DNDIS_MINIPORT_DRIVER
+ -DNDIS_WDM=1
+ -DNDIS51_MINIPORT=1
+ -DNDIS51=1
+ /DDEPRECATE_DDK_FUNCTIONS=1
+ /DMSC_NOOPT
+ /DNTDDI_VERSION=0x05010200
+ /c
+ /Zc:wchar_t-
+ /Zl
+ /Zp8
+ /Gy
+ /Gm-
+ -cbstring
+ /W3
+ /Gz
+ /hotpatch
+ /EHs-c-
+ /GR-
+ /GF
+ /GS
+ /Zi
+ /Od
+ /Oi
+ /Oy-
+ /Zi
+ /Fdi:\0sourcecode\source_code\source_code\passthru\objchk_wxp_x86\i386\
+ /DKMDF_MAJOR_VERSION=01
+ /DKMDF_MINOR_VERSION=007
+ /FIG:\WinDDK\6001.18001\inc\api\warning.h
+ /Yuprecomp.h
+ /Fpi:\0sourcecode\source_code\source_code\passthru\objchk_wxp_x86\i386\precomp.pch
+ .\miniport.c .\passthru.c .\protocol.c .\analysispacket.c .\hook.c 
+miniport.c
+passthru.c
+protocol.c
+analysispacket.c
+i:\0sourcecode\source_code\source_code\passthru\analysispacket.c(156) : warning C4018: '<=' : signed/unsigned mismatch
+warnings in directory i:\0sourcecode\source_code\source_code\passthru
+i:\0sourcecode\source_code\source_code\passthru\analysispacket.c(156) : warning C4018: '<=' : signed/unsigned mismatch
+hook.c
+Generating Code...
+i:\0sourcecode\source_code\source_code\passthru\hook.c(18) : warning C4715: 'myCreate' : not all control paths return a value
+i:\0sourcecode\source_code\source_code\passthru\hook.c(18) : warning C4715: 'myCreate' : not all control paths return a value
+i:\0sourcecode\source_code\source_code\passthru\hook.c(43) : warning C4715: 'myWrite' : not all control paths return a value
+i:\0sourcecode\source_code\source_code\passthru\hook.c(43) : warning C4715: 'myWrite' : not all control paths return a value
+i:\0sourcecode\source_code\source_code\passthru\hook.c(68) : warning C4715: 'myRead' : not all control paths return a value
+i:\0sourcecode\source_code\source_code\passthru\hook.c(68) : warning C4715: 'myRead' : not all control paths return a value
+i:\0sourcecode\source_code\source_code\passthru\hook.c(93) : warning C4715: 'myDeviceControl' : not all control paths return a value
+i:\0sourcecode\source_code\source_code\passthru\hook.c(93) : warning C4715: 'myDeviceControl' : not all control paths return a value
+ link.exe /out:i:\0sourcecode\source_code\source_code\passthru\objchk_wxp_x86\i386\passthru.sys /machine:ix86 @i:\0sourcecode\source_code\source_code\passthru\objchk_wxp_x86\i386\lnk.rsp
+Microsoft (R) Incremental Linker Version 8.00.50727.278
+Copyright (C) Microsoft Corporation.  All rights reserved.
+/MERGE:_PAGE=PAGE 
+/MERGE:_TEXT=.text 
+/SECTION:INIT,d 
+/OPT:REF 
+/OPT:ICF 
+/IGNORE:4198,4010,4037,4039,4065,4070,4078,4087,4089,4221 
+/INCREMENTAL:NO 
+/release 
+/NODEFAULTLIB 
+/WX 
+/debug 
+/debugtype:cv,fixup,pdata 
+/version:6.0 
+/osversion:6.0 
+/functionpadmin:5 
+/safeseh 
+/pdbcompress 
+/STACK:0x40000,0x1000 
+/driver 
+/base:0x10000 
+/align:0x80 /stub:g:\winddk\6001.18001\lib\wxp\stub512.com 
+/subsystem:native,5.01 
+/entry:GsDriverEntry@8 
+/out:i:\0sourcecode\source_code\source_code\passthru\objchk_wxp_x86\i386\passthru.sys 
+i:\0sourcecode\source_code\source_code\passthru\objchk_wxp_x86\i386\precomp.obj 
+i:\0sourcecode\source_code\source_code\passthru\objchk_wxp_x86\i386\passthru.res 
+i:\0sourcecode\source_code\source_code\passthru\objchk_wxp_x86\i386\miniport.obj 
+i:\0sourcecode\source_code\source_code\passthru\objchk_wxp_x86\i386\passthru.obj 
+i:\0sourcecode\source_code\source_code\passthru\objchk_wxp_x86\i386\protocol.obj 
+i:\0sourcecode\source_code\source_code\passthru\objchk_wxp_x86\i386\analysispacket.obj 
+i:\0sourcecode\source_code\source_code\passthru\objchk_wxp_x86\i386\hook.obj 
+g:\winddk\6001.18001\lib\wxp\i386\BufferOverflowK.lib 
+g:\winddk\6001.18001\lib\wxp\i386\ntoskrnl.lib 
+g:\winddk\6001.18001\lib\wxp\i386\hal.lib 
+g:\winddk\6001.18001\lib\wxp\i386\wmilib.lib 
+g:\winddk\6001.18001\lib\wxp\i386\ndis.lib 
+g:\winddk\6001.18001\lib\wxp\i386\sehupd.lib 

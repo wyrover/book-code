@@ -1,0 +1,25 @@
+; 文件：CopyFiles.inf
+; 归属：《竹林蹊径》 张佩
+; 联系：Zhang.Mibox@gmail.com
+; 版本：04/01/2010  1.0.0000.00000
+
+[Version]
+Signature="$WINDOWS NT$"
+Provider=ChinaHearing
+DriverVer=04/01/2010, 1.0.0000.00000
+
+[SourceDisksNames]
+1="Test",,,
+
+[SourceDisksFiles]
+Test.txt = 1
+
+[DestinationDirs]
+myFiles=10
+
+[DefaultInstall]
+; 将[myFiles]中列出的所有文件拷贝到系统目录中
+CopyFiles = myFiles
+ 
+[myFiles]
+Test.txt

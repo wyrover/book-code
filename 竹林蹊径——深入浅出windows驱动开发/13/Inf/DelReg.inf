@@ -1,0 +1,16 @@
+; 文件：DelReg.inf
+; 归属：《竹林蹊径》 张佩
+; 联系：Zhang.Mibox@gmail.com
+; 版本：04/01/2010  1.0.0000.00000
+
+[Version]
+Signature="$WINDOWS NT$"
+Provider=ChinaHearing
+DriverVer=04/01/2010, 1.0.0000.00000
+
+[DefaultInstall]
+DelReg = SWDelReg
+ 
+[SWDelReg]
+HKLM, SOFTWARE\AddRegTest, , 0x00002000, 			; 删除整个子键
+

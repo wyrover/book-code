@@ -1,0 +1,30 @@
+!IF 0
+
+Copyright (C) Microsoft Corporation, 1997 - 1999
+
+Module Name:
+
+    sources.
+
+!ENDIF
+
+TARGETNAME=tdifw_smpl
+TARGETPATH=obj
+TARGETTYPE=DRIVER
+DRIVERTYPE=DRIVER
+SOURCES=tdifw_smpl.c
+
+LIB_POST_FIX=WNET
+
+!if "$(DDK_TARGET_OS)"=="WinXP"
+LIB_POST_FIX=WXP
+!endif
+
+!if "$(DDK_TARGET_OS)"=="Win2K"
+LIB_POST_FIX=W2K
+!endif
+
+TARGETLIBS= $(DDK_LIB_PATH)\tdi.lib \
+					..\lib\tdi_fw_$(DDKBUILDENV)_$(LIB_POST_FIX).lib
+						
+

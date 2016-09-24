@@ -1,0 +1,15 @@
+!IF 0
+
+Copyright (C) Microsoft Corporation, 1997 - 1999
+
+Module Name:
+
+    sources.
+
+!ENDIF
+
+TARGETNAME=ctrl2cap
+TARGETPATH=obj
+TARGETTYPE=DRIVER
+
+SOURCES =ctrl2cap.c

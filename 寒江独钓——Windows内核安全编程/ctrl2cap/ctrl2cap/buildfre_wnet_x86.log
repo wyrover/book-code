@@ -1,0 +1,7 @@
+BUILD: Computing Include file dependencies:
+BUILD: Examining e:\security\hanjiangsrc\source_code\ctrl2cap directory for files to compile.
+oacr invalidate root:x86fre /autocleanqueue
+Compiling and Linking e:\security\hanjiangsrc\source_code\ctrl2cap *************
+'nmake.exe /nologo BUILDMSG=Stop. -i BUILD_PASS=PASS2 LINKONLY=1 NOPASS0=1 MAKEDIR_RELATIVE_TO_BASEDIR='
+e:\security\hanjiangsrc\source_code\ctrl2cap: TARGETPATH is obj
+BUILDMSG: _NT_TARGET_VERSION SET TO WS03

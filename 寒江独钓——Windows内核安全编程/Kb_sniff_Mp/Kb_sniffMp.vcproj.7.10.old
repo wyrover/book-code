@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="7.10"
+	Name="Kb_sniffMp"
+	ProjectGUID="{5482DCA1-DD2C-4C35-B687-925F9EE42FD8}">
+	<Platforms>
+		<Platform
+			Name="Win32"/>
+	</Platforms>
+	<Configurations>
+		<Configuration
+			Name="Win32 Checked|Win32"
+			OutputDirectory=".\objchk/i386"
+			IntermediateDirectory=".\objchk/i386"
+			ConfigurationType="1"
+			CharacterSet="1">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="/Zel -cbstring /QIfdiv- /QIf "
+				Optimization="0"
+				EnableIntrinsicFunctions="TRUE"
+				AdditionalIncludeDirectories=".,$(TARGET_INC_PATH),$(CRT_INC_PATH),$(DDK_INC_PATH),$(WDM_INC_PATH)"
+				PreprocessorDefinitions="_X86_=1;i386=1;STD_CALL;CONDITION_HANDLING=1;NT_INST=0;WIN32=100;_NT1X_=100;WINNT=1;WIN32_LEAN_AND_MEAN=1;DEVL=1;FPO=0;NDEBUG;_DLL=1;DBG=1;DEPRECATE_DDK_FUNCTIONS;_WIN32_WINNT=$(_WIN32_WINNT);WINVER=$(WINVER);_WIN32_IE=$(_WIN32_IE);NTDDI_VERSION=$(NTDDI_VERSION)"
+				StringPooling="TRUE"
+				ExceptionHandling="FALSE"
+				BufferSecurityCheck="FALSE"
+				EnableFunctionLevelLinking="TRUE"
+				PrecompiledHeaderFile="$(IntDir)/Kb_sniffMp.pch"
+				AssemblerListingLocation="$(IntDir)/"
+				ObjectFile="$(IntDir)/"
+				ProgramDataBaseFileName="$(OutDir)/Kb_sniffMp.pdb"
+				BrowseInformation="0"
+				WarningLevel="3"
+				SuppressStartupBanner="TRUE"
+				DebugInformationFormat="3"
+				CallingConvention="2"
+				CompileAs="0"
+				ForcedIncludeFiles="warning.h"/>
+			<Tool
+				Name="VCCustomBuildTool"
+				Description="---------------------------Build SoftICE Symbols----------------------------"
+				CommandLine="$(DRIVERWORKS)\bin\nmsym /trans:source,package,always $(OUTDIR)\$(TARGETNAME).sys
+"
+				Outputs="$(OutDir)\$(TARGETNAME).nms"/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalOptions="/subsystem:native /ignore:4010,4037,4039,4065,4070,4078,4087,4089,4221,4210 /driver"
+				AdditionalDependencies="ntoskrnl.lib hal.lib wmilib.lib $(NOINHERIT)"
+				OutputFile="$(OutDir)/Kb_sniffMp.sys"
+				Version="5.0"
+				LinkIncremental="1"
+				SuppressStartupBanner="TRUE"
+				AdditionalLibraryDirectories="$(TARGET_LIB_PATH)"
+				IgnoreAllDefaultLibraries="TRUE"
+				GenerateDebugInformation="TRUE"
+				ProgramDatabaseFile="$(OutDir)/Kb_sniffMp.pdb"
+				StackReserveSize="262144"
+				StackCommitSize="4096"
+				OptimizeReferences="2"
+				EnableCOMDATFolding="2"
+				EntryPointSymbol="DriverEntry"
+				SetChecksum="TRUE"
+				BaseAddress="0x10000"
+				MergeSections=".rdata=.text"/>
+			<Tool
+				Name="VCMIDLTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="_DEBUG"
+				Culture="1033"
+				AdditionalIncludeDirectories="$(TARGET_INC_PATH),$(CRT_INC_PATH)"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCWebDeploymentTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+		<Configuration
+			Name="Win32 Free|Win32"
+			OutputDirectory=".\objfre/i386"
+			IntermediateDirectory=".\objfre/i386"
+			ConfigurationType="1"
+			CharacterSet="1">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="/Zel -cbstring /QIfdiv- /QIf "
+				Optimization="3"
+				FavorSizeOrSpeed="2"
+				OmitFramePointers="FALSE"
+				AdditionalIncludeDirectories=".,$(TARGET_INC_PATH),$(CRT_INC_PATH),$(DDK_INC_PATH),$(WDM_INC_PATH)"
+				PreprocessorDefinitions="_X86_=1;i386=1;STD_CALL;CONDITION_HANDLING=1;NT_INST=0;WIN32=100;_NT1X_=100;WINNT=1;WIN32_LEAN_AND_MEAN=1;DEVL=1;FPO=0;NDEBUG;_DLL=1;_WIN32_WINNT=$(_WIN32_WINNT);WINVER=$(WINVER);_WIN32_IE=$(_WIN32_IE);NTDDI_VERSION=$(NTDDI_VERSION)"
+				StringPooling="TRUE"
+				ExceptionHandling="FALSE"
+				BufferSecurityCheck="FALSE"
+				EnableFunctionLevelLinking="TRUE"
+				PrecompiledHeaderFile="$(IntDir)/Kb_sniffMp.pch"
+				AssemblerListingLocation="$(IntDir)/"
+				ObjectFile="$(IntDir)/"
+				ProgramDataBaseFileName="$(OutDir)/"
+				BrowseInformation="0"
+				WarningLevel="3"
+				SuppressStartupBanner="TRUE"
+				CallingConvention="2"
+				CompileAs="0"
+				ForcedIncludeFiles="warning.h"/>
+			<Tool
+				Name="VCCustomBuildTool"
+				Description="---------------------------Build SoftICE Symbols----------------------------"
+				CommandLine="$(DRIVERWORKS)\bin\nmsym /trans:source,package,always $(OUTDIR)\$(TARGETNAME).sys
+"
+				Outputs="$(OutDir)\$(TARGETNAME).nms"/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalOptions="/subsystem:native /ignore:4010,4037,4039,4065,4070,4078,4087,4089,4221,4210 /driver"
+				AdditionalDependencies="ntoskrnl.lib hal.lib wmilib.lib $(NOINHERIT)"
+				OutputFile="$(OutDir)/Kb_sniffMp.sys"
+				Version="5.0"
+				LinkIncremental="1"
+				SuppressStartupBanner="TRUE"
+				AdditionalLibraryDirectories="$(TARGET_LIB_PATH)"
+				IgnoreAllDefaultLibraries="TRUE"
+				GenerateDebugInformation="TRUE"
+				StackReserveSize="262144"
+				StackCommitSize="4096"
+				OptimizeReferences="2"
+				EnableCOMDATFolding="2"
+				EntryPointSymbol="DriverEntry"
+				SetChecksum="TRUE"
+				BaseAddress="0x10000"
+				MergeSections=".rdata=.text"/>
+			<Tool
+				Name="VCMIDLTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="NDEBUG"
+				Culture="1033"
+				AdditionalIncludeDirectories="$(TARGET_INC_PATH),$(CRT_INC_PATH)"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCWebDeploymentTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+	</Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter
+			Name="Source Files"
+			Filter=".c;.cpp">
+			<File
+				RelativePath=".\Kb_sniffMp.c">
+			</File>
+			<File
+				RelativePath=".\KbRelated.c">
+			</File>
+		</Filter>
+		<Filter
+			Name="Header Files"
+			Filter=".h">
+			<File
+				RelativePath=".\Kb_sniffMp.h">
+			</File>
+			<File
+				RelativePath=".\KbRelated.h">
+			</File>
+		</Filter>
+		<Filter
+			Name="Resource Files"
+			Filter=".rc">
+		</Filter>
+		<File
+			RelativePath=".\sources">
+		</File>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

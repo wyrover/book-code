@@ -1,0 +1,140 @@
+;-------------------------------------------------------------------------------
+; NDISEDGE.INF
+;
+; Microsoft Sample NDIS-WDM Virtual Miniport Ethernet Adapter
+;
+; Copyright (c) Microsoft Corporation.  All rights reserved.
+
+
+[version]
+Signature   = "$Windows NT$"
+Class       = Net
+ClassGUID   = {4d36e972-e325-11ce-bfc1-08002be10318}
+Provider    = %Msft%
+DriverVer   = 01/08/2003,1.0.0.0
+CatalogFile = KmdfSamples.cat
+
+[ControlFlags]
+ExcludeFromSelect={b85b7c50-6a01-11d2-b841-00c04fad5171}\Ndisedge
+
+[Manufacturer]
+%Msft% = Msft,NT$ARCH$
+
+; For Win2K
+[Msft]
+%Ndisedge.DeviceDesc%    = Ndisedge.ndi, root\Ndisedge ; Root enumerated
+%Ndisedge.DeviceDesc%    = Ndisedge.ndi, {b85b7c50-6a01-11d2-b841-00c04fad5171}\Ndisedge ; Toaster Bus enumerated
+
+; For WinXP and later
+[Msft.NT$ARCH$]
+%Ndisedge.DeviceDesc%    = Ndisedge.ndi, root\Ndisedge ; Root enumerated
+%Ndisedge.DeviceDesc%    = Ndisedge.ndi, {b85b7c50-6a01-11d2-b841-00c04fad5171}\Ndisedge ; Toaster Bus enumerated
+
+;-------------------------------------------------------------------------------
+; Microsoft Virtual Ethernet Adapter
+;
+[Ndisedge.ndi]
+Characteristics = 0x4 ; NCF_PHYSICAL
+BusType         = 15 ; if you specify NCF_PHYSICAL, you must specify bustype
+AddReg          = Ndisedge.Reg, ParamsPromiscuous
+CopyFiles       = Ndisedge.CopyFiles
+
+[Ndisedge.ndi.Services]
+AddService      = Ndisedge, 2, Ndisedge.Service, Ndisedge.EventLog
+
+;-----------------------------------------------------------------------------
+; Microsoft Virtual Miniport Common
+;
+[Ndisedge.Reg]
+HKR,    ,                         BusNumber,           0, "0"
+HKR, Ndi,                         Service,             0, "Ndisedge"
+HKR, Ndi\Interfaces,              UpperRange,          0, "ndis5"
+HKR, Ndi\Interfaces,              LowerRange,          0, "ethernet"
+
+[ParamsPromiscuous]
+;
+;    Should the physical NIC be set to Promiscuous mode
+;
+HKR, Ndi\Params\Promiscuous,     ParamDesc, , %Promiscuous%
+HKR, Ndi\Params\Promiscuous,     Default,  ,"0"
+HKR, Ndi\Params\Promiscuous,     type, ,      enum
+HKR, Ndi\Params\Promiscuous\enum,"1",  ,     %Promiscuous_Enable%
+HKR, Ndi\Params\Promiscuous\enum,"0",  ,     %Promiscuous_Disable%
+
+
+;-----------------------------------------------------------------------------
+; DestinationDirs
+;
+[DestinationDirs]
+Ndisedge.CopyFiles = 12
+
+[Ndisedge.CopyFiles]
+Ndisedge.sys,,,2
+
+;-----------------------------------------------------------------------------
+; Driver and Service Section
+;
+
+[Ndisedge.Service]
+DisplayName     = %Ndisedge.Service.DispName%
+ServiceType     = 1 ;%SERVICE_KERNEL_DRIVER%
+StartType       = 3 ;%SERVICE_DEMAND_START%
+ErrorControl    = 1 ;%SERVICE_ERROR_NORMAL%
+ServiceBinary   = %12%\ndisedge.sys
+LoadOrderGroup  = NDIS
+AddReg          = TextModeFlags.Reg
+
+[Ndisedge.EventLog]
+AddReg = Ndisedge.AddEventLog.Reg
+
+[Ndisedge.AddEventLog.Reg]
+HKR, , EventMessageFile, 0x00020000, "%%SystemRoot%%\System32\netevent.dll"
+HKR, , TypesSupported,   0x00010001, 7
+
+[TextModeFlags.Reg]
+HKR, , TextModeFlags,    0x00010001, 0x0001
+
+[SourceDisksNames]
+1 = %DiskId1%,,,""
+
+[SourceDisksFiles]
+ndisedge.sys  = 1,,
+
+;
+;--- Ndisedge.ndi WDF Coinstaller installation ------
+;
+[DestinationDirs]
+Ndisedge_CoInstaller_CopyFiles = 11
+
+[Ndisedge.ndi.CoInstallers]
+AddReg=Ndisedge_CoInstaller_AddReg
+CopyFiles=Ndisedge_CoInstaller_CopyFiles
+
+[Ndisedge_CoInstaller_AddReg]
+HKR,,CoInstallers32,0x00010000, "WdfCoInstaller$KMDFCOINSTALLERVERSION$.dll,WdfCoInstaller"
+
+[Ndisedge_CoInstaller_CopyFiles]
+WdfCoInstaller$KMDFCOINSTALLERVERSION$.dll
+
+[SourceDisksFiles]
+WdfCoInstaller$KMDFCOINSTALLERVERSION$.dll=1 ; make sure the number matches with SourceDisksNames
+
+[Ndisedge.ndi.Wdf]
+KmdfService = Ndisedge, Ndisedge_wdfsect
+[Ndisedge_wdfsect]
+KmdfLibraryVersion = $KMDFVERSION$
+
+
+
+;-----------------------------------------------------------------------------
+; Localizable Strings
+;
+[Strings]
+Msft                       = "Microsoft"
+Ndisedge.DeviceDesc        = "Microsoft Sample NDIS-WDM Virtual Miniport Ethernet Adapter"
+Ndisedge.Service.DispName    = "Microsoft Sample NDIS-WDM Virtual Miniport Ethernet Adapter Service"
+DiskId1 = "Microsoft Sample NDIS-WDM Virtual Miniport Ethernet Adapter Device Installation Disk #1"
+Promiscuous        = "Set the physical NIC to promiscuous mode"
+Promiscuous_Disable = "Disable"
+Promiscuous_Enable  = "Enable"
+

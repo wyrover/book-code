@@ -1,0 +1,63 @@
+<html>
+<head>
+<META HTTP-EQUIV="Content-Type" content="text/html; charset=gb2312">
+</head>
+<body>
+<pre>
+<table width=100% bgcolor=#CFCFE5><tr> <td> <font face=arial size=+3>
+Build Log
+</font></table><table width=* cellspacing=0 cellpadding=0><tr><td width=0 bgcolor=#EDEDF5>&nbsp;</td><td width=0 bgcolor=#FFFFFF>&nbsp;</td><td width=*><pre>
+<h3>------- Build started: Project: passthru, Configuration: Release|Win32 -------
+</h3>
+</pre></table><table width=100% bgcolor=#DFDFE5><tr><td><font face=arial size=+2>
+Command Lines
+</font></table><table width=* cellspacing=0 cellpadding=0><tr><td width=0 bgcolor=#EDEDF5>&nbsp;</td><td width=0 bgcolor=#FFFFFF>&nbsp;</td><td width=*><pre>Creating temporary file "C:\DOCUME~1\tanwen\LOCALS~1\Temp\BAT000001.bat" with contents
+[
+@echo off
+my_build fre WNET
+if errorlevel 1 goto VCReportError
+goto VCEnd
+:VCReportError
+echo Project : error PRJ0019: A tool returned an error code from "Performing Makefile project actions"
+exit 1
+:VCEnd
+]
+Creating command line "C:\DOCUME~1\tanwen\LOCALS~1\Temp\BAT000001.bat"
+</pre></table><table width=100% bgcolor=#DFDFE5><tr><td><font face=arial size=+2>
+Output Window
+</font></table><table width=* cellspacing=0 cellpadding=0><tr><td width=0 bgcolor=#EDEDF5>&nbsp;</td><td width=0 bgcolor=#FFFFFF>&nbsp;</td><td width=*><pre>Performing Makefile project actions
+fre is chk or fre WNET is WXP or W2K or WNET.
+d:\work\pln\寒江独钓\source_code\passthru>if "" == "/a" call my_clean fre WNET 
+d:\work\pln\寒江独钓\source_code\passthru>pushd.
+d:\work\pln\寒江独钓\source_code\passthru>call C:\WINDDK\6001.18001\bin\setenv.bat C:\WINDDK\6001.18001 fre WNET 
+D:\work\pln\寒江独钓\source_code\passthru>build
+path contains nonexistant c:\program files\microsoft visual studio .net 2003\common7\tools\bin\prerelease, removing
+BUILD: Compile and Link for x86
+BUILD: Loading c:\winddk\6001.18001\build.dat...
+BUILD: Computing Include file dependencies:
+BUILD: Start time: Sat May 09 11:29:25 2009
+BUILD: Examining d:\work\pln\寒江独钓\source_code\passthru directory for files to compile.
+    d:\work\pln\寒江独钓\source_code\passthru 
+BUILD: Saving c:\winddk\6001.18001\build.dat...
+BUILD: Compiling and Linking d:\work\pln\寒江独钓\source_code\passthru directory
+_NT_TARGET_VERSION SET TO WS03
+Precompiling - precomp.h
+Compiling resources - passthru.rc
+Compiling - miniport.c
+Compiling - passthru.c
+Compiling - protocol.c
+Compiling - analysispacket.c
+Compiling - hook.c
+Compiling - generating code...
+Linking Executable - d:\work\pln\????\source_code\passthru\objfre_wnet_x86\i386\passthru.sys
+BUILD: Finish time: Sat May 09 11:29:38 2009
+BUILD: Done
+
+    10 files compiled - 1 Warning - 2,012 LPS
+    1 executable built
+</pre></table><table width=100% bgcolor=#DFDFE5><tr><td><font face=arial size=+2>
+Results
+</font></table><table width=* cellspacing=0 cellpadding=0><tr><td width=0 bgcolor=#EDEDF5>&nbsp;</td><td width=0 bgcolor=#FFFFFF>&nbsp;</td><td width=*><pre>
+Build log was saved at "file://d:\work\pln\寒江独钓\source_code\passthru\free\BuildLog.htm"
+passthru - 0 error(s), 0 warning(s)</pre></table><table   width=100% height=20 bgcolor=#CFCFE5><tr><td><font face=arial size=+2>
+</font></table></body></html>

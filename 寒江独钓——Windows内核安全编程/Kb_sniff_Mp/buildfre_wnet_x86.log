@@ -1,0 +1,6 @@
+BUILD: Computing Include file dependencies:
+BUILD: Examining e:\security\hanjiangsrc\source_code\kb_sniff_mp directory for files to compile.
+oacr invalidate root:x86fre /autocleanqueue
+Compiling and Linking e:\security\hanjiangsrc\source_code\kb_sniff_mp *************
+'nmake.exe /nologo BUILDMSG=Stop. -i BUILD_PASS=PASS2 LINKONLY=1 NOPASS0=1 MAKEDIR_RELATIVE_TO_BASEDIR='
+BUILDMSG: _NT_TARGET_VERSION SET TO WS03

@@ -1,0 +1,65 @@
+Protection Options for Software: test (Input File: StackIncrease.exe)
+---------------------------------------
+
+Macros Information
+------------------
+VM Macros: 1
+CodeReplace Macros: 0
+ENCRYPT Macros: 0
+CLEAR Macros: 0
+CHECK_PROTECTION Macros: 0
+CHECK_CODE_INTEGRITY Macros: 0
+CHECK_REGISTRATION Macros: 0
+CHECK_VIRTUAL_PC Macros: 0
+
+
+Protection Options
+------------------
+Anti-Debugger: Disabled
+Anti-Dumpers: DISABLED
+Entry Point Obfuscation: DISABLED
+Resource Encryption: DISABLED
+VMWare compatible: DISABLED
+API-Wrapping Level: Disable
+Anti-Patching: None
+Metamorph Security: DISABLED
+Memory Guard: DISABLED
+When Debugger Found: Display Message
+Application compression: DISABLED
+Resources compression: DISABLED
+SecureEngine compression: DISABLED
+Anti-File Monitor: DISABLED
+Anti-Registry Monitor: DISABLED
+Delphi/BCB form protection: DISABLED
+Ring-0 Protection: DISABLED
+
+
+Virtual Machine Settings
+------------------------
+Number of Virtual APIs wrapped: 0
+API Virtualization Level: 3
+Entry Point Virtualization: 15 instructions
+Multi Branch Technology: DISABLED
+Virtual Machine Processor: Mutable CISC processor
+Number of CPUs: 1
+Opcode Type: Metamorphic - Level 2
+Dynamic Opcode: 20% Dynamic
+
+
+Advanced Protection Options
+---------------------------
+Encrypt Application: ENABLED
+DLL plugin: DISABLED
+Export Generators: DISABLED
+Keep Trial Running: DISABLED
+Hide from PE scanners: Standard
+.NET assemblies: DISABLED
+Active Context: DISABLED
+Custom Event: 
+Add Manifest: Don't add manifest
+Launch Application: 
+
+
+XBundler files
+--------------
+No files to bundle

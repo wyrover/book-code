@@ -1,0 +1,65 @@
+BUILD: Computing Include file dependencies:
+BUILD: Examining d:\work\pln\skipping post pass 0 command
+Compiling d:\work\pln\'nmake.exe /nologo BUILDMSG=Stop. -i BUILD_PASS=PASS1 NOLINK=1 NOPASS0=1 MAKEDIR_RELATIVE_TO_BASEDIR='
+d:\work\pln\????\source_code\sfilter: TARGETPATH is obj
+BUILDMSG: _NT_TARGET_VERSION SET TO WS03
+ cl.exe @d:\work\pln\????\source_code\sfilter\objchk_wnet_x86\i386\cl.rsp
+Microsoft (R) 32-bit C/C++ Optimizing Compiler Version 14.00.50727.278 for 80x86
+Copyright (C) Microsoft Corporation.  All rights reserved.
+cl /Fo"d:\work\pln\
+ /FC
+ /MT
+ /U_MT
+ /Ii386
+ /I.
+ /Id:\work\pln\
+ /IC:\WINDDK\6001.18001\inc\api
+ /IC:\WINDDK\6001.18001\inc\api
+ /IC:\WINDDK\6001.18001\inc\ddk
+ /IC:\WINDDK\6001.18001\inc\ddk
+ /IC:\WINDDK\6001.18001\inc\crt
+ /D_X86_=1
+ /Di386=1
+ /DSTD_CALL
+ /DCONDITION_HANDLING=1
+ /DNT_INST=0
+ /DWIN32=100
+ /D_NT1X_=100
+ /DWINNT=1
+ /D_WIN32_WINNT=0x0502
+ /DWINVER=0x0502
+ /D_WIN32_IE=0x0603
+ /DWIN32_LEAN_AND_MEAN=1
+ /DDEVL=1
+ /DDBG=1
+ /D__BUILDMACHINE__=WinDDK
+ /DFPO=0
+ /DMSC_NOOPT
+ /DNTDDI_VERSION=0x05020100
+ /c
+ /Zc:wchar_t-
+ /Zl
+ /Zp8
+ /Gy
+ /Gm-
+ /W3
+ /Gz
+ /hotpatch
+ /EHs-c-
+ /GR-
+ /GF
+ /GS
+ /Z7
+ /Od
+ /Oi
+ /Oy-
+ /Z7
+ /DKMDF_MAJOR_VERSION=01
+ /DKMDF_MINOR_VERSION=007
+ /FIC:\WINDDK\6001.18001\inc\api\warning.h
+ .\sfilter.c 
+sfilter.c
+ link.exe /lib /out:d:\work\pln\????\source_code\sfilter\objchk_wnet_x86\i386\sfilter.lib /IGNORE:4198,4010,4037,4039,4065,4070,4078,4087,4089,4221  /WX /nodefaultlib /machine:ix86 @d:\work\pln\????\source_code\sfilter\objchk_wnet_x86\i386\lib.rsp
+Microsoft (R) Library Manager Version 8.00.50727.278
+Copyright (C) Microsoft Corporation.  All rights reserved.
+d:\work\pln\

@@ -1,0 +1,59 @@
+# Copyright (c) Microsoft Corporation.  All rights reserved.
+#
+# sources
+# Microsoft Virutal NDIS-WDM Miniport Driver
+# BUILD command sources file
+#
+
+TARGETNAME=ndisedge
+TARGETTYPE=DRIVER
+TARGETPATH=obj
+
+
+TARGETLIBS=$(DDK_LIB_PATH)\ndis.lib \
+        $(DDK_LIB_PATH)\ntstrsafe.lib
+
+# System and NDIS wrapper definitions.
+C_DEFINES=$(C_DEFINES) -DNDIS_MINIPORT_DRIVER=1 -DNDIS_WDM=1 
+C_DEFINES=$(C_DEFINES) -DINTERFACE_WITH_NDISPROT=1 
+
+!if !defined(DDK_TARGET_OS) || "$(DDK_TARGET_OS)"=="Win2K"
+#
+# The driver is built in the Win2K build environment
+#
+C_DEFINES=$(C_DEFINES) -DNDIS50_MINIPORT=1 
+!else 
+#
+# The driver is built in the XP or .NET build environment
+# So let us build NDIS 5.1 version.
+#
+C_DEFINES=$(C_DEFINES) -DNDIS51_MINIPORT=1 
+!endif
+
+KMDF_VERSION_MAJOR=1
+
+INF_NAME=ndisedge
+
+NTTARGETFILES=$(OBJ_PATH)\$(O)\$(INF_NAME).inf
+
+
+
+MISCFILES=$(NTTARGETFILES)
+
+
+C_DEFINES = $(C_DEFINES)  
+
+NO_BINPLACE=1
+
+SOURCES = \
+        ndiswdm.c \
+        init.c \
+        request.c \
+        send.c \
+        receive.c \
+        ExCallbk.c\
+        ndiswdm.rc 
+
+
+
+

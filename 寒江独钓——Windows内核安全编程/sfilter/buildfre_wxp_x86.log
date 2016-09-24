@@ -1,0 +1,14 @@
+BUILD: Computing Include file dependencies:
+BUILD: Examining d:\work2\pln\º®½­¶Àµö\source_code\sfilter directory for files to compile.
+Compiling d:\work2\pln\º®½­¶Àµö\source_code\sfilter directory ********************
+'nmake.exe /c BUILDMSG=Stop. -i NTTEST= UMTEST= NOLINK=1 NOPASS0=1 386=1'
+1>BUILDMSG: Processing d:\work2\pln\º®½­¶Àµö\source_code\sfilter
+1>cl -nologo -Ii386\ -I. -IC:\WINDDK\3790\inc\mfc42 -Iobjfre_wxp_x86\i386 -IC:\WINDDK\3790\inc\wxp -IC:\WINDDK\3790\inc\wxp -IC:\WINDDK\3790\inc\ddk\wxp -IC:\WINDDK\3790\inc\ifs\wxp -IC:\WINDDK\3790\inc\crt -D_X86_=1 -Di386=1  -DSTD_CALL -DCONDITION_HANDLING=1   -DNT_INST=0 -DWIN32=100 -D_NT1X_=100 -DWINNT=1 -D_WIN32_WINNT=0x0501 /DWINVER=0x0501 -D_WIN32_IE=0x0600    -DWIN32_LEAN_AND_MEAN=1 -DDEVL=1 -D__BUILDMACHINE__=WinDDK -DFPO=1  -DNDEBUG      /c /Zel /Zp8 /Gy /Gi- /Gm-  /W3 /WX /Gz  /QIfdiv- /QIf /G6 /GX-  /GR- /GF  -Z7 /Oxs  /Oy   -FIC:\WINDDK\3790\inc\wxp\warning.h   .\sfilter.c 
+1>sfilter.c
+1>	lib -out:objfre_wxp_x86\i386\sfilter.lib -IGNORE:4198,4010,4037,4039,4065,4070,4078,4087,4089,4221  /WX -nodefaultlib -machine:ix86 @C:\DOCUME~1\tanwen\LOCALS~1\Temp\nm6.tmp
+1>Microsoft (R) Library Manager Version 7.10.2179
+1>Copyright (C) Microsoft Corporation.  All rights reserved.
+1>
+1>objfre_wxp_x86\i386\sfilter.obj 
+1>
+1>Stop.

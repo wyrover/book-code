@@ -1,0 +1,65 @@
+#
+# UMDF_VERSION_MAJOR controls the headers that the driver uses.
+# UMDF_VERSION_MAJOR + UMDF_VERSION_MINOR control which version 
+# of UMDF the driver is bound to in the INF and which 
+# update coinstaller it requires (through stampinf). 
+#
+
+UMDF_VERSION_MAJOR=1
+KMDF_VERSION_MAJOR=1
+
+
+
+TARGETNAME=umdf1394vdev
+TARGETTYPE=DYNLINK
+
+USE_MSVCRT=1
+
+WIN32_WINNT_VERSION=$(LATEST_WIN32_WINNT_VERSION)
+_NT_TARGET_VERSION=$(_NT_TARGET_VERSION_WINXP)
+NTDDI_VERSION=$(LATEST_NTDDI_VERSION)
+
+#
+# Set the warning level high
+#
+
+MSC_WARNING_LEVEL=/W4 /WX
+
+#pragma warning( disable: 4201 ) // nonstandard extension used : nameless struct/union
+MSC_WARNING_LEVEL=$(MSC_WARNING_LEVEL) /wd4201
+
+C_DEFINES = $(C_DEFINES)  /D_UNICODE /DUNICODE
+
+DLLENTRY=_DllMainCRTStartup
+DLLDEF=exports.def
+
+INCLUDES=$(INCLUDES); \
+                    $(DDK_INC_PATH)\wdm; \
+                    $(DDK_INC_PATH)\wdf\kmdf\10;\
+                    ..\inc; \
+                    ..\..\inc
+
+SOURCES=\
+    umdf_vdev.rc                    \
+    umdf_vdev_dll.cpp               \
+    umdf_vdev_com.cpp               \
+    umdf_vdev_driver.cpp            \
+    umdf_vdev_device.cpp            \
+    umdf_vdev_sequentialqueue.cpp   \
+    umdf_vdev_parallelqueue.cpp            
+
+TARGETLIBS=\
+        $(SDK_LIB_PATH)\strsafe.lib     \
+        $(SDK_LIB_PATH)\kernel32.lib    \
+        $(SDK_LIB_PATH)\advapi32.lib
+
+
+
+#
+# This sets up the WPP preprocessor and tells it to scan umdf_vdev.h to find
+# the trace function definition that's in there.
+#
+
+RUN_WPP= $(SOURCES) -dll -scan:umdf_vdev.h
+
+

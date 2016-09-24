@@ -1,0 +1,8 @@
+LIBRARY			V-ASIODrv
+HEAPSIZE		4096
+EXPORTS	
+				DllGetClassObject	PRIVATE
+				DllCanUnloadNow		PRIVATE
+				DllRegisterServer	PRIVATE
+				DllUnregisterServer	PRIVATE
+				DllEntryPoint

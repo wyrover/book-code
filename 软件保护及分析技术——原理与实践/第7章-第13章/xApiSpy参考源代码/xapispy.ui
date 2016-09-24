@@ -1,0 +1,3210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>xApiSpy</class>
+ <widget class="QMainWindow" name="xApiSpy">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>706</width>
+    <height>573</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>函数监视器</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <layout class="QGridLayout" name="gridLayout_9">
+    <property name="leftMargin">
+     <number>3</number>
+    </property>
+    <property name="topMargin">
+     <number>3</number>
+    </property>
+    <property name="rightMargin">
+     <number>3</number>
+    </property>
+    <property name="bottomMargin">
+     <number>3</number>
+    </property>
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <item row="1" column="0">
+     <widget class="QSplitter" name="sp2">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="handleWidth">
+       <number>3</number>
+      </property>
+      <widget class="QFrame" name="frmOptions">
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <property name="leftMargin">
+         <number>3</number>
+        </property>
+        <property name="topMargin">
+         <number>3</number>
+        </property>
+        <property name="rightMargin">
+         <number>3</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QTabWidget" name="tabOpts">
+          <property name="tabShape">
+           <enum>QTabWidget::Triangular</enum>
+          </property>
+          <property name="currentIndex">
+           <number>1</number>
+          </property>
+          <widget class="QWidget" name="tabAction">
+           <attribute name="title">
+            <string>Actions</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_3">
+            <property name="leftMargin">
+             <number>3</number>
+            </property>
+            <property name="topMargin">
+             <number>3</number>
+            </property>
+            <property name="rightMargin">
+             <number>3</number>
+            </property>
+            <property name="bottomMargin">
+             <number>3</number>
+            </property>
+            <item row="0" column="0">
+             <widget class="QWidget" name="wdtAction" native="true">
+              <layout class="QVBoxLayout" name="verticalLayout">
+               <property name="spacing">
+                <number>3</number>
+               </property>
+               <property name="leftMargin">
+                <number>0</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout33">
+                 <item>
+                  <widget class="QLabel" name="label">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>50</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="text">
+                    <string>Action:</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QComboBox" name="cmbActions">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <item>
+                    <property name="text">
+                     <string>Inject Module To Target Process</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Anti-Memory Copy Execute</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_2">
+                 <item>
+                  <widget class="QStackedWidget" name="stkActions">
+                   <property name="currentIndex">
+                    <number>0</number>
+                   </property>
+                   <widget class="QWidget" name="page">
+                    <layout class="QVBoxLayout" name="verticalLayout_15">
+                     <property name="spacing">
+                      <number>3</number>
+                     </property>
+                     <property name="leftMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>0</number>
+                     </property>
+                     <item>
+                      <layout class="QHBoxLayout" name="horizontalLayout_16">
+                       <item>
+                        <widget class="QLabel" name="label_10">
+                         <property name="text">
+                          <string>Module:</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLineEdit" name="edtModulePath"/>
+                       </item>
+                       <item>
+                        <widget class="QToolButton" name="btnSelModule">
+                         <property name="text">
+                          <string>Select(&amp;S)...</string>
+                         </property>
+                         <property name="icon">
+                          <iconset resource="xApiSpy.qrc">
+                           <normaloff>:/ico/images/open.ico</normaloff>:/ico/images/open.ico</iconset>
+                         </property>
+                         <property name="toolButtonStyle">
+                          <enum>Qt::ToolButtonTextBesideIcon</enum>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QToolButton" name="btnInjectModule">
+                         <property name="text">
+                          <string>Inject(&amp;I)</string>
+                         </property>
+                         <property name="icon">
+                          <iconset resource="xApiSpy.qrc">
+                           <normaloff>:/ico/images/Continue.ico</normaloff>:/ico/images/Continue.ico</iconset>
+                         </property>
+                         <property name="toolButtonStyle">
+                          <enum>Qt::ToolButtonTextBesideIcon</enum>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </item>
+                     <item>
+                      <layout class="QHBoxLayout" name="horizontalLayout_17">
+                       <item>
+                        <widget class="QLabel" name="label_11">
+                         <property name="text">
+                          <string>Result:</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLineEdit" name="edtIMBase">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
+                         <property name="readOnly">
+                          <bool>true</bool>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QToolButton" name="btnIMSnap1">
+                         <property name="text">
+                          <string/>
+                         </property>
+                         <property name="icon">
+                          <iconset resource="xApiSpy.qrc">
+                           <normaloff>:/ico/images/Eye1.ico</normaloff>:/ico/images/Eye1.ico</iconset>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QToolButton" name="btnIMSnap2">
+                         <property name="text">
+                          <string/>
+                         </property>
+                         <property name="icon">
+                          <iconset resource="xApiSpy.qrc">
+                           <normaloff>:/ico/images/Eye2.ico</normaloff>:/ico/images/Eye2.ico</iconset>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <spacer name="horizontalSpacer_4">
+                         <property name="orientation">
+                          <enum>Qt::Horizontal</enum>
+                         </property>
+                         <property name="sizeHint" stdset="0">
+                          <size>
+                           <width>40</width>
+                           <height>20</height>
+                          </size>
+                         </property>
+                        </spacer>
+                       </item>
+                      </layout>
+                     </item>
+                     <item>
+                      <spacer name="verticalSpacer_9">
+                       <property name="orientation">
+                        <enum>Qt::Vertical</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>20</width>
+                         <height>40</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                    </layout>
+                   </widget>
+                   <widget class="QWidget" name="page_2"/>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="tabOptions">
+           <attribute name="title">
+            <string>Options</string>
+           </attribute>
+           <widget class="QGroupBox" name="groupBox_4">
+            <property name="geometry">
+             <rect>
+              <x>6</x>
+              <y>14</y>
+              <width>141</width>
+              <height>70</height>
+             </rect>
+            </property>
+            <property name="title">
+             <string>Action Way:</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_12">
+             <item>
+              <widget class="QRadioButton" name="radioAciton">
+               <property name="text">
+                <string>Current Event</string>
+               </property>
+               <property name="checked">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QRadioButton" name="radioRM">
+               <property name="text">
+                <string>Remote Thread</string>
+               </property>
+               <property name="checked">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+           <widget class="QGroupBox" name="chkXVMDebug">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>100</y>
+              <width>151</width>
+              <height>48</height>
+             </rect>
+            </property>
+            <property name="title">
+             <string>Enable Virtual Debug</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="checked">
+             <bool>false</bool>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_21">
+             <item row="0" column="0">
+              <widget class="QCheckBox" name="chkVDAttach">
+               <property name="text">
+                <string>Waitting For Attach</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+           <widget class="QGroupBox" name="groupBox_13">
+            <property name="geometry">
+             <rect>
+              <x>170</x>
+              <y>10</y>
+              <width>361</width>
+              <height>131</height>
+             </rect>
+            </property>
+            <property name="title">
+             <string>Loading Options</string>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_20">
+             <item row="1" column="0">
+              <widget class="QCheckBox" name="chkVirKrl32">
+               <property name="text">
+                <string>Direct Import</string>
+               </property>
+               <property name="checked">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QCheckBox" name="chkDisSafeSEH">
+               <property name="text">
+                <string>Disable SafeSEH</string>
+               </property>
+               <property name="checked">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="0">
+              <widget class="QCheckBox" name="chkPSSnapshot">
+               <property name="text">
+                <string>Enable Process Snapshot</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QCheckBox" name="chkBreakOnOEP">
+               <property name="text">
+                <string>Break On OEP</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QCheckBox" name="chkAntiAntiDebug">
+               <property name="text">
+                <string>Enhance Anti-Anti-Debug</string>
+               </property>
+               <property name="checked">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QCheckBox" name="chkVMExecEnc">
+               <property name="text">
+                <string>Enhance VM Execution</string>
+               </property>
+               <property name="checked">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="0">
+              <widget class="QCheckBox" name="chkSandBox">
+               <property name="text">
+                <string>Enalbe Sandbox</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </widget>
+          <widget class="QWidget" name="tabBreakpoint">
+           <attribute name="title">
+            <string>Breakpoint</string>
+           </attribute>
+           <layout class="QHBoxLayout" name="horizontalLayout_22">
+            <property name="spacing">
+             <number>3</number>
+            </property>
+            <property name="leftMargin">
+             <number>3</number>
+            </property>
+            <property name="topMargin">
+             <number>3</number>
+            </property>
+            <property name="rightMargin">
+             <number>3</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="QGroupBox" name="grpBreakSet">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="title">
+               <string>Breakpoint</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_18">
+               <property name="spacing">
+                <number>3</number>
+               </property>
+               <property name="leftMargin">
+                <number>3</number>
+               </property>
+               <property name="topMargin">
+                <number>3</number>
+               </property>
+               <property name="rightMargin">
+                <number>3</number>
+               </property>
+               <property name="bottomMargin">
+                <number>3</number>
+               </property>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_19">
+                 <item>
+                  <widget class="QLabel" name="label_14">
+                   <property name="minimumSize">
+                    <size>
+                     <width>50</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>50</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <property name="text">
+                    <string>Type:</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QComboBox" name="cmbBPType">
+                   <item>
+                    <property name="text">
+                     <string>Execute</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Access</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Write</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_20">
+                 <item>
+                  <widget class="QLabel" name="label_12">
+                   <property name="minimumSize">
+                    <size>
+                     <width>50</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>50</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <property name="text">
+                    <string>Address:</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="edtBPAddr">
+                   <property name="minimumSize">
+                    <size>
+                     <width>100</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>100</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <property name="inputMask">
+                    <string>HHHHHHHH</string>
+                   </property>
+                   <property name="placeholderText">
+                    <string>00000000</string>
+                   </property>
+                   <property name="clearButtonEnabled">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_21">
+                 <item>
+                  <widget class="QLabel" name="label_13">
+                   <property name="minimumSize">
+                    <size>
+                     <width>50</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>50</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <property name="text">
+                    <string>Size:</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QSpinBox" name="spinBPSize">
+                   <property name="minimum">
+                    <number>1</number>
+                   </property>
+                   <property name="maximum">
+                    <number>800000000</number>
+                   </property>
+                   <property name="value">
+                    <number>1</number>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <spacer name="verticalSpacer_5">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="groupBox_8">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="title">
+               <string>Condition</string>
+              </property>
+              <property name="checkable">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_19">
+              <item>
+               <widget class="QToolButton" name="toolButton_10">
+                <property name="text">
+                 <string>...</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QToolButton" name="toolButton_11">
+                <property name="text">
+                 <string>...</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="tab_2">
+           <attribute name="title">
+            <string>Api Spy</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_4">
+            <property name="leftMargin">
+             <number>3</number>
+            </property>
+            <property name="topMargin">
+             <number>3</number>
+            </property>
+            <property name="rightMargin">
+             <number>3</number>
+            </property>
+            <property name="bottomMargin">
+             <number>3</number>
+            </property>
+            <property name="horizontalSpacing">
+             <number>6</number>
+            </property>
+            <property name="verticalSpacing">
+             <number>3</number>
+            </property>
+            <item row="0" column="0">
+             <widget class="QWidget" name="widget" native="true">
+              <layout class="QGridLayout" name="gridLayout_16">
+               <item row="0" column="0">
+                <layout class="QFormLayout" name="formLayout_2">
+                 <item row="0" column="0">
+                  <widget class="QLabel" name="label_2">
+                   <property name="minimumSize">
+                    <size>
+                     <width>100</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>100</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <property name="text">
+                    <string>Max Records:</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QSpinBox" name="spinMaxRecords">
+                   <property name="minimumSize">
+                    <size>
+                     <width>60</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>60</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <property name="minimum">
+                    <number>1000</number>
+                   </property>
+                   <property name="maximum">
+                    <number>100000</number>
+                   </property>
+                   <property name="singleStep">
+                    <number>1000</number>
+                   </property>
+                   <property name="value">
+                    <number>30000</number>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item row="1" column="0">
+                <widget class="QCheckBox" name="chkHookExport">
+                 <property name="text">
+                  <string>Hook Export Table</string>
+                 </property>
+                 <property name="checked">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="0">
+                <widget class="QCheckBox" name="chkUseVExport">
+                 <property name="text">
+                  <string>Virtual Export Table</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="0">
+                <widget class="QCheckBox" name="chkDefMH">
+                 <property name="text">
+                  <string>Hook All Module</string>
+                 </property>
+                 <property name="checked">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="0">
+                <widget class="QCheckBox" name="chkUseNullStub">
+                 <property name="text">
+                  <string>Use Null Stub</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <spacer name="verticalSpacer_6">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="tabVMTrace">
+           <attribute name="title">
+            <string>VMTrace</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_8">
+            <property name="leftMargin">
+             <number>3</number>
+            </property>
+            <property name="topMargin">
+             <number>3</number>
+            </property>
+            <property name="rightMargin">
+             <number>3</number>
+            </property>
+            <property name="bottomMargin">
+             <number>3</number>
+            </property>
+            <property name="spacing">
+             <number>3</number>
+            </property>
+            <item row="0" column="0">
+             <layout class="QHBoxLayout" name="horizontalLayout">
+              <item>
+               <widget class="QLabel" name="label_3">
+                <property name="minimumSize">
+                 <size>
+                  <width>100</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>Record File:</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="edtRcFile">
+                <property name="text">
+                 <string>Q:\RD\wl\snapshot\rcdump.xtrace</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QToolButton" name="btnSelRF">
+                <property name="text">
+                 <string>Select...</string>
+                </property>
+                <property name="icon">
+                 <iconset resource="xApiSpy.qrc">
+                  <normaloff>:/ico/images/open.ico</normaloff>:/ico/images/open.ico</iconset>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QToolButton" name="btnEnterVM">
+                <property name="text">
+                 <string>EnterVM</string>
+                </property>
+                <property name="icon">
+                 <iconset resource="xApiSpy.qrc">
+                  <normaloff>:/ico/images/Continue.ico</normaloff>:/ico/images/Continue.ico</iconset>
+                </property>
+                <property name="toolButtonStyle">
+                 <enum>Qt::ToolButtonTextBesideIcon</enum>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item row="1" column="0">
+             <layout class="QHBoxLayout" name="horizontalLayout_7">
+              <item>
+               <widget class="QGroupBox" name="chkStopAddr">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="title">
+                 <string>Pause At Address</string>
+                </property>
+                <property name="checkable">
+                 <bool>true</bool>
+                </property>
+                <layout class="QGridLayout" name="gridLayout_6">
+                 <property name="leftMargin">
+                  <number>3</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>3</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>3</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>3</number>
+                 </property>
+                 <property name="spacing">
+                  <number>3</number>
+                 </property>
+                 <item row="0" column="0">
+                  <widget class="QLineEdit" name="edtEndAddr">
+                   <property name="minimumSize">
+                    <size>
+                     <width>100</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>100</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <property name="inputMask">
+                    <string>HHHHHHHH</string>
+                   </property>
+                   <property name="placeholderText">
+                    <string>00000000</string>
+                   </property>
+                   <property name="clearButtonEnabled">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QGroupBox" name="chkStopNR">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="title">
+                 <string>Pause When Records</string>
+                </property>
+                <property name="checkable">
+                 <bool>true</bool>
+                </property>
+                <property name="checked">
+                 <bool>false</bool>
+                </property>
+                <layout class="QGridLayout" name="gridLayout_7">
+                 <property name="leftMargin">
+                  <number>3</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>3</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>3</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>3</number>
+                 </property>
+                 <property name="spacing">
+                  <number>3</number>
+                 </property>
+                 <item row="0" column="0">
+                  <widget class="QSpinBox" name="spinNR">
+                   <property name="minimum">
+                    <number>1000</number>
+                   </property>
+                   <property name="maximum">
+                    <number>1000000</number>
+                   </property>
+                   <property name="singleStep">
+                    <number>1000</number>
+                   </property>
+                   <property name="value">
+                    <number>10000</number>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QGroupBox" name="chkMaxRecords">
+                <property name="title">
+                 <string>Max Records</string>
+                </property>
+                <property name="checkable">
+                 <bool>true</bool>
+                </property>
+                <layout class="QGridLayout" name="gridLayout_5">
+                 <property name="leftMargin">
+                  <number>3</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>3</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>3</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>3</number>
+                 </property>
+                 <property name="spacing">
+                  <number>3</number>
+                 </property>
+                 <item row="0" column="0">
+                  <widget class="QSpinBox" name="spinMaxRC">
+                   <property name="minimum">
+                    <number>1000</number>
+                   </property>
+                   <property name="maximum">
+                    <number>1000000</number>
+                   </property>
+                   <property name="singleStep">
+                    <number>1000</number>
+                   </property>
+                   <property name="value">
+                    <number>100000</number>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer_3">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+            <item row="4" column="0">
+             <spacer name="verticalSpacer_4">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="2" column="0">
+             <widget class="QGroupBox" name="groupBox_12">
+              <property name="title">
+               <string>Trace Options</string>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_19">
+               <property name="leftMargin">
+                <number>3</number>
+               </property>
+               <property name="topMargin">
+                <number>3</number>
+               </property>
+               <property name="rightMargin">
+                <number>3</number>
+               </property>
+               <property name="bottomMargin">
+                <number>3</number>
+               </property>
+               <property name="spacing">
+                <number>3</number>
+               </property>
+               <item row="0" column="1">
+                <widget class="QCheckBox" name="chkVMPrint">
+                 <property name="text">
+                  <string>Print</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="0">
+                <widget class="QCheckBox" name="chkBypassSys">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="text">
+                  <string>ByPass System Code</string>
+                 </property>
+                 <property name="checked">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="tabResOpt">
+           <attribute name="title">
+            <string>Resource</string>
+           </attribute>
+           <layout class="QHBoxLayout" name="horizontalLayout_8">
+            <property name="spacing">
+             <number>3</number>
+            </property>
+            <property name="leftMargin">
+             <number>3</number>
+            </property>
+            <property name="topMargin">
+             <number>3</number>
+            </property>
+            <property name="rightMargin">
+             <number>3</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_4">
+              <property name="sizeConstraint">
+               <enum>QLayout::SetFixedSize</enum>
+              </property>
+              <item>
+               <widget class="QGroupBox" name="chkForModule">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>120</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="title">
+                 <string>ModuleBase</string>
+                </property>
+                <layout class="QGridLayout" name="gridLayout_10">
+                 <property name="leftMargin">
+                  <number>3</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>3</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>3</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>3</number>
+                 </property>
+                 <property name="spacing">
+                  <number>3</number>
+                 </property>
+                 <item row="0" column="0">
+                  <widget class="QLineEdit" name="spinRsrcModBase">
+                   <property name="minimumSize">
+                    <size>
+                     <width>100</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>100</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <property name="inputMask">
+                    <string>HHHHHHHH</string>
+                   </property>
+                   <property name="placeholderText">
+                    <string>00000000</string>
+                   </property>
+                   <property name="clearButtonEnabled">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="chkMemSection">
+                <property name="text">
+                 <string>Get From Section</string>
+                </property>
+                <property name="checked">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="chkMoniterApi">
+                <property name="text">
+                 <string>Hook Resource API</string>
+                </property>
+                <property name="checked">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QToolButton" name="btnLoadRes">
+                <property name="text">
+                 <string>Load Res Data</string>
+                </property>
+                <property name="icon">
+                 <iconset resource="xApiSpy.qrc">
+                  <normaloff>:/ico/images/open.ico</normaloff>:/ico/images/open.ico</iconset>
+                </property>
+                <property name="toolButtonStyle">
+                 <enum>Qt::ToolButtonTextBesideIcon</enum>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QToolButton" name="btnSaveRes">
+                <property name="text">
+                 <string>Save Res Data</string>
+                </property>
+                <property name="icon">
+                 <iconset resource="xApiSpy.qrc">
+                  <normaloff>:/ico/images/Save.ico</normaloff>:/ico/images/Save.ico</iconset>
+                </property>
+                <property name="toolButtonStyle">
+                 <enum>Qt::ToolButtonTextBesideIcon</enum>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="verticalSpacer_3">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="chkBruteforceRes">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="title">
+               <string>Bruteforce</string>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+              <property name="checked">
+               <bool>false</bool>
+              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout_9">
+               <property name="spacing">
+                <number>3</number>
+               </property>
+               <property name="leftMargin">
+                <number>3</number>
+               </property>
+               <property name="topMargin">
+                <number>3</number>
+               </property>
+               <property name="rightMargin">
+                <number>3</number>
+               </property>
+               <property name="bottomMargin">
+                <number>3</number>
+               </property>
+               <item>
+                <layout class="QVBoxLayout" name="verticalLayout_6">
+                 <item>
+                  <widget class="QLabel" name="label_4">
+                   <property name="text">
+                    <string>Res Type:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QComboBox" name="txtResBFType">
+                   <property name="editable">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QCheckBox" name="chkAllIDType">
+                   <property name="text">
+                    <string>All Type ID</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer name="verticalSpacer_2">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QVBoxLayout" name="verticalLayout_7">
+                 <item>
+                  <widget class="QLabel" name="label_5">
+                   <property name="text">
+                    <string>Res Name:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPlainTextEdit" name="txtResStrs"/>
+                 </item>
+                 <item>
+                  <widget class="QGroupBox" name="chkStartMemRG">
+                   <property name="title">
+                    <string>Str in MRG</string>
+                   </property>
+                   <property name="checkable">
+                    <bool>true</bool>
+                   </property>
+                   <property name="checked">
+                    <bool>false</bool>
+                   </property>
+                   <layout class="QGridLayout" name="gridLayout_12">
+                    <property name="leftMargin">
+                     <number>3</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>3</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>3</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>3</number>
+                    </property>
+                    <property name="horizontalSpacing">
+                     <number>3</number>
+                    </property>
+                    <property name="verticalSpacing">
+                     <number>0</number>
+                    </property>
+                    <item row="0" column="2">
+                     <widget class="QLineEdit" name="edtMGE">
+                      <property name="inputMask">
+                       <string>HHHHHHHH</string>
+                      </property>
+                      <property name="placeholderText">
+                       <string>00000000</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="0">
+                     <widget class="QLineEdit" name="edtMGS">
+                      <property name="inputMask">
+                       <string>HHHHHHHH</string>
+                      </property>
+                      <property name="placeholderText">
+                       <string>00000000</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="1">
+                     <widget class="QLabel" name="label_6">
+                      <property name="text">
+                       <string>-&gt;</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="groupBox">
+              <property name="title">
+               <string>Rebuild</string>
+              </property>
+              <layout class="QFormLayout" name="formLayout">
+               <property name="fieldGrowthPolicy">
+                <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+               </property>
+               <item row="1" column="0">
+                <widget class="QCheckBox" name="chkGenReloc">
+                 <property name="text">
+                  <string>Gen. Reloc</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="0">
+                <widget class="QCheckBox" name="chkBKSrc">
+                 <property name="text">
+                  <string>Backup PE File</string>
+                 </property>
+                 <property name="checked">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_5">
+              <item>
+               <widget class="QToolButton" name="btnStartRsrcSpy">
+                <property name="minimumSize">
+                 <size>
+                  <width>80</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>Start</string>
+                </property>
+                <property name="icon">
+                 <iconset resource="xApiSpy.qrc">
+                  <normaloff>:/ico/images/Continue.ico</normaloff>:/ico/images/Continue.ico</iconset>
+                </property>
+                <property name="toolButtonStyle">
+                 <enum>Qt::ToolButtonTextBesideIcon</enum>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="verticalSpacer">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QToolButton" name="btnResReBuild">
+                <property name="minimumSize">
+                 <size>
+                  <width>80</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>Rebuild</string>
+                </property>
+                <property name="icon">
+                 <iconset resource="xApiSpy.qrc">
+                  <normaloff>:/ico/images/clear.ico</normaloff>:/ico/images/clear.ico</iconset>
+                </property>
+                <property name="toolButtonStyle">
+                 <enum>Qt::ToolButtonTextBesideIcon</enum>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="tabIAT">
+           <attribute name="title">
+            <string>IAT</string>
+           </attribute>
+           <layout class="QHBoxLayout" name="horizontalLayout_28">
+            <property name="spacing">
+             <number>3</number>
+            </property>
+            <property name="leftMargin">
+             <number>3</number>
+            </property>
+            <property name="topMargin">
+             <number>3</number>
+            </property>
+            <property name="rightMargin">
+             <number>3</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="QGroupBox" name="groupBox_5">
+              <property name="title">
+               <string/>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_23">
+               <item>
+                <widget class="QToolButton" name="btnLoadXImport">
+                 <property name="text">
+                  <string>Load IAT Data</string>
+                 </property>
+                 <property name="icon">
+                  <iconset resource="xApiSpy.qrc">
+                   <normaloff>:/ico/images/open.ico</normaloff>:/ico/images/open.ico</iconset>
+                 </property>
+                 <property name="toolButtonStyle">
+                  <enum>Qt::ToolButtonTextBesideIcon</enum>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QToolButton" name="btnSaveXImport">
+                 <property name="text">
+                  <string>Save IAT Data</string>
+                 </property>
+                 <property name="icon">
+                  <iconset resource="xApiSpy.qrc">
+                   <normaloff>:/ico/images/Save.ico</normaloff>:/ico/images/Save.ico</iconset>
+                 </property>
+                 <property name="toolButtonStyle">
+                  <enum>Qt::ToolButtonTextBesideIcon</enum>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer name="verticalSpacer_15">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="grpAddImp">
+              <property name="title">
+               <string>Manual Add Import</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_22">
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_25">
+                 <item>
+                  <widget class="QLabel" name="label_15">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>80</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="text">
+                    <string>Module Name:</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QComboBox" name="comboBox">
+                   <property name="editable">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_26">
+                 <item>
+                  <widget class="QLabel" name="label_16">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>80</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="text">
+                    <string>API:</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QComboBox" name="comboBox_2">
+                   <property name="editable">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_27">
+                 <item>
+                  <widget class="QLabel" name="label_17">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>80</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="text">
+                    <string>RVA:</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="edtBPAddr_2">
+                   <property name="minimumSize">
+                    <size>
+                     <width>100</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>100</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <property name="inputMask">
+                    <string>HHHHHHHH</string>
+                   </property>
+                   <property name="placeholderText">
+                    <string>00000000</string>
+                   </property>
+                   <property name="clearButtonEnabled">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer name="horizontalSpacer_5">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <spacer name="verticalSpacer_14">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="groupBox_10">
+              <property name="title">
+               <string>Rebuild</string>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_18">
+               <property name="leftMargin">
+                <number>3</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>3</number>
+               </property>
+               <property name="bottomMargin">
+                <number>3</number>
+               </property>
+               <property name="spacing">
+                <number>3</number>
+               </property>
+               <item row="0" column="0">
+                <widget class="QGroupBox" name="groupBox_11">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="title">
+                  <string>Manual IAT</string>
+                 </property>
+                 <layout class="QFormLayout" name="formLayout_3">
+                  <property name="horizontalSpacing">
+                   <number>3</number>
+                  </property>
+                  <property name="verticalSpacing">
+                   <number>3</number>
+                  </property>
+                  <property name="leftMargin">
+                   <number>3</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>3</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>3</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>3</number>
+                  </property>
+                  <item row="1" column="0">
+                   <widget class="QLabel" name="label_18">
+                    <property name="text">
+                     <string>RVA:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QLineEdit" name="edtBPAddr_4">
+                    <property name="minimumSize">
+                     <size>
+                      <width>100</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>100</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="inputMask">
+                     <string>HHHHHHHH</string>
+                    </property>
+                    <property name="placeholderText">
+                     <string>00000000</string>
+                    </property>
+                    <property name="clearButtonEnabled">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="1">
+                   <widget class="QLineEdit" name="edtBPAddr_3">
+                    <property name="minimumSize">
+                     <size>
+                      <width>100</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>100</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="inputMask">
+                     <string>HHHHHHHH</string>
+                    </property>
+                    <property name="placeholderText">
+                     <string>00000000</string>
+                    </property>
+                    <property name="clearButtonEnabled">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="0">
+                   <widget class="QLabel" name="label_19">
+                    <property name="text">
+                     <string>Size:</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="2" column="0">
+                <widget class="QToolButton" name="btnFixImport">
+                 <property name="text">
+                  <string>Fix Dump</string>
+                 </property>
+                 <property name="icon">
+                  <iconset resource="xApiSpy.qrc">
+                   <normaloff>:/ico/images/clear.ico</normaloff>:/ico/images/clear.ico</iconset>
+                 </property>
+                 <property name="toolButtonStyle">
+                  <enum>Qt::ToolButtonTextBesideIcon</enum>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="0">
+                <spacer name="verticalSpacer_16">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="1" column="0">
+                <widget class="QCheckBox" name="chkBKSrcIAT">
+                 <property name="text">
+                  <string>Backup Src PE</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="tabReloc">
+           <attribute name="title">
+            <string>Relocation</string>
+           </attribute>
+           <layout class="QHBoxLayout" name="horizontalLayout_13">
+            <property name="spacing">
+             <number>3</number>
+            </property>
+            <property name="leftMargin">
+             <number>3</number>
+            </property>
+            <property name="topMargin">
+             <number>3</number>
+            </property>
+            <property name="rightMargin">
+             <number>3</number>
+            </property>
+            <property name="bottomMargin">
+             <number>3</number>
+            </property>
+            <item>
+             <widget class="QGroupBox" name="groupBox_2">
+              <property name="title">
+               <string>Snapshot1</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_9">
+               <property name="spacing">
+                <number>3</number>
+               </property>
+               <property name="leftMargin">
+                <number>3</number>
+               </property>
+               <property name="topMargin">
+                <number>3</number>
+               </property>
+               <property name="rightMargin">
+                <number>3</number>
+               </property>
+               <property name="bottomMargin">
+                <number>3</number>
+               </property>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_11">
+                 <item>
+                  <widget class="QLineEdit" name="edtSnap1Addr1">
+                   <property name="inputMask">
+                    <string>HHHHHHHH</string>
+                   </property>
+                   <property name="placeholderText">
+                    <string>00000000</string>
+                   </property>
+                   <property name="clearButtonEnabled">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_7">
+                   <property name="text">
+                    <string>-&gt;</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="edtSnap1Addr2">
+                   <property name="inputMask">
+                    <string>HHHHHHHH</string>
+                   </property>
+                   <property name="placeholderText">
+                    <string>00000000</string>
+                   </property>
+                   <property name="clearButtonEnabled">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QToolButton" name="btnTakeSnap1">
+                   <property name="text">
+                    <string/>
+                   </property>
+                   <property name="icon">
+                    <iconset resource="xApiSpy.qrc">
+                     <normaloff>:/ico/images/snapshot.ico</normaloff>:/ico/images/snapshot.ico</iconset>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <widget class="QTableWidget" name="tabSnap1">
+                 <property name="font">
+                  <font>
+                   <pointsize>8</pointsize>
+                  </font>
+                 </property>
+                 <property name="editTriggers">
+                  <set>QAbstractItemView::NoEditTriggers</set>
+                 </property>
+                 <property name="showDropIndicator" stdset="0">
+                  <bool>false</bool>
+                 </property>
+                 <property name="selectionBehavior">
+                  <enum>QAbstractItemView::SelectRows</enum>
+                 </property>
+                 <property name="verticalScrollMode">
+                  <enum>QAbstractItemView::ScrollPerPixel</enum>
+                 </property>
+                 <property name="horizontalScrollMode">
+                  <enum>QAbstractItemView::ScrollPerPixel</enum>
+                 </property>
+                 <attribute name="horizontalHeaderHighlightSections">
+                  <bool>false</bool>
+                 </attribute>
+                 <attribute name="horizontalHeaderMinimumSectionSize">
+                  <number>18</number>
+                 </attribute>
+                 <attribute name="verticalHeaderDefaultSectionSize">
+                  <number>18</number>
+                 </attribute>
+                 <attribute name="verticalHeaderMinimumSectionSize">
+                  <number>18</number>
+                 </attribute>
+                 <column>
+                  <property name="text">
+                   <string>name</string>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <family>微软雅黑</family>
+                    <pointsize>8</pointsize>
+                   </font>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text">
+                   <string>Address</string>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <pointsize>8</pointsize>
+                   </font>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text">
+                   <string>Size</string>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <pointsize>8</pointsize>
+                   </font>
+                  </property>
+                 </column>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="groupBox_3">
+              <property name="title">
+               <string>Snapshot2</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_10">
+               <property name="spacing">
+                <number>3</number>
+               </property>
+               <property name="leftMargin">
+                <number>3</number>
+               </property>
+               <property name="topMargin">
+                <number>3</number>
+               </property>
+               <property name="rightMargin">
+                <number>3</number>
+               </property>
+               <property name="bottomMargin">
+                <number>3</number>
+               </property>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_12">
+                 <item>
+                  <widget class="QLineEdit" name="edtSnap2Addr1">
+                   <property name="inputMask">
+                    <string>HHHHHHHH</string>
+                   </property>
+                   <property name="placeholderText">
+                    <string>00000000</string>
+                   </property>
+                   <property name="clearButtonEnabled">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_8">
+                   <property name="text">
+                    <string>-&gt;</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="edtSnap2Addr2">
+                   <property name="inputMask">
+                    <string>HHHHHHHH</string>
+                   </property>
+                   <property name="placeholderText">
+                    <string>00000000</string>
+                   </property>
+                   <property name="clearButtonEnabled">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QToolButton" name="btnTakeSnap2">
+                   <property name="text">
+                    <string>...</string>
+                   </property>
+                   <property name="icon">
+                    <iconset resource="xApiSpy.qrc">
+                     <normaloff>:/ico/images/snapshot.ico</normaloff>:/ico/images/snapshot.ico</iconset>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <widget class="QTableWidget" name="tabSnap2">
+                 <property name="font">
+                  <font>
+                   <pointsize>8</pointsize>
+                  </font>
+                 </property>
+                 <property name="editTriggers">
+                  <set>QAbstractItemView::NoEditTriggers</set>
+                 </property>
+                 <property name="selectionBehavior">
+                  <enum>QAbstractItemView::SelectRows</enum>
+                 </property>
+                 <property name="verticalScrollMode">
+                  <enum>QAbstractItemView::ScrollPerPixel</enum>
+                 </property>
+                 <property name="horizontalScrollMode">
+                  <enum>QAbstractItemView::ScrollPerPixel</enum>
+                 </property>
+                 <attribute name="horizontalHeaderHighlightSections">
+                  <bool>false</bool>
+                 </attribute>
+                 <attribute name="horizontalHeaderMinimumSectionSize">
+                  <number>18</number>
+                 </attribute>
+                 <attribute name="verticalHeaderDefaultSectionSize">
+                  <number>18</number>
+                 </attribute>
+                 <attribute name="verticalHeaderHighlightSections">
+                  <bool>true</bool>
+                 </attribute>
+                 <attribute name="verticalHeaderMinimumSectionSize">
+                  <number>18</number>
+                 </attribute>
+                 <column>
+                  <property name="text">
+                   <string>name</string>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <family>微软雅黑</family>
+                    <pointsize>8</pointsize>
+                   </font>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text">
+                   <string>Address</string>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <family>微软雅黑</family>
+                    <pointsize>8</pointsize>
+                   </font>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text">
+                   <string>Size</string>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <family>微软雅黑</family>
+                    <pointsize>8</pointsize>
+                   </font>
+                  </property>
+                 </column>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_11">
+              <property name="spacing">
+               <number>3</number>
+              </property>
+              <item>
+               <widget class="QGroupBox" name="groupBox_6">
+                <property name="title">
+                 <string>RVA Base</string>
+                </property>
+                <layout class="QGridLayout" name="gridLayout_14">
+                 <property name="leftMargin">
+                  <number>3</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>3</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>3</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>3</number>
+                 </property>
+                 <property name="spacing">
+                  <number>3</number>
+                 </property>
+                 <item row="0" column="0">
+                  <widget class="QLineEdit" name="edtRelocBase">
+                   <property name="inputMask">
+                    <string>HHHHHHHH</string>
+                   </property>
+                   <property name="placeholderText">
+                    <string>00000000</string>
+                   </property>
+                   <property name="clearButtonEnabled">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QGroupBox" name="groupBox_7">
+                <property name="title">
+                 <string>Manual Delta</string>
+                </property>
+                <layout class="QGridLayout" name="gridLayout_15">
+                 <property name="leftMargin">
+                  <number>3</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>3</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>3</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>3</number>
+                 </property>
+                 <property name="spacing">
+                  <number>3</number>
+                 </property>
+                 <item row="0" column="0">
+                  <widget class="QLineEdit" name="edtRelocDelta">
+                   <property name="inputMask">
+                    <string>HHHHHHHH</string>
+                   </property>
+                   <property name="placeholderText">
+                    <string>00000000</string>
+                   </property>
+                   <property name="clearButtonEnabled">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QToolButton" name="btnDetectReloc">
+                <property name="text">
+                 <string>Detect Changes</string>
+                </property>
+                <property name="icon">
+                 <iconset resource="xApiSpy.qrc">
+                  <normaloff>:/ico/images/Eye.ico</normaloff>:/ico/images/Eye.ico</iconset>
+                </property>
+                <property name="toolButtonStyle">
+                 <enum>Qt::ToolButtonTextBesideIcon</enum>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="chkBKSrcReloc">
+                <property name="text">
+                 <string>Backup PE File</string>
+                </property>
+                <property name="checked">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QToolButton" name="btnRebuildReloc">
+                <property name="text">
+                 <string>Rebuild Relocs</string>
+                </property>
+                <property name="icon">
+                 <iconset resource="xApiSpy.qrc">
+                  <normaloff>:/ico/images/clear.ico</normaloff>:/ico/images/clear.ico</iconset>
+                </property>
+                <property name="toolButtonStyle">
+                 <enum>Qt::ToolButtonTextBesideIcon</enum>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="tabSnapshot">
+           <attribute name="title">
+            <string>Snapshot</string>
+           </attribute>
+           <layout class="QHBoxLayout" name="horizontalLayout_23">
+            <item>
+             <widget class="QGroupBox" name="groupBox_9">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="title">
+               <string>Shot Options</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_14">
+               <property name="spacing">
+                <number>3</number>
+               </property>
+               <property name="leftMargin">
+                <number>3</number>
+               </property>
+               <property name="topMargin">
+                <number>3</number>
+               </property>
+               <property name="rightMargin">
+                <number>3</number>
+               </property>
+               <property name="bottomMargin">
+                <number>3</number>
+               </property>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_15">
+                 <item>
+                  <widget class="QLabel" name="label_9">
+                   <property name="minimumSize">
+                    <size>
+                     <width>100</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="text">
+                    <string>Snapshot File:</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="edtSnapFile">
+                   <property name="text">
+                    <string>Q:\RD\wl\snapshot\test.exe</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QToolButton" name="btnSelSnapFile">
+                   <property name="text">
+                    <string>Select...</string>
+                   </property>
+                   <property name="icon">
+                    <iconset resource="xApiSpy.qrc">
+                     <normaloff>:/ico/images/open.ico</normaloff>:/ico/images/open.ico</iconset>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QGridLayout" name="gridLayout_17">
+                 <item row="0" column="0">
+                  <widget class="QCheckBox" name="chkSaveTEB">
+                   <property name="text">
+                    <string>Save TIB</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="0">
+                  <widget class="QCheckBox" name="chkFullMem">
+                   <property name="text">
+                    <string>Full PreMemory Dump</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <spacer name="verticalSpacer_12">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_20">
+              <item>
+               <widget class="QToolButton" name="btnSnapShot">
+                <property name="text">
+                 <string>Shot</string>
+                </property>
+                <property name="icon">
+                 <iconset resource="xApiSpy.qrc">
+                  <normaloff>:/ico/images/snapshot.ico</normaloff>:/ico/images/snapshot.ico</iconset>
+                </property>
+                <property name="toolButtonStyle">
+                 <enum>Qt::ToolButtonTextBesideIcon</enum>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="verticalSpacer_11">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QTabWidget" name="tabBody">
+       <property name="tabPosition">
+        <enum>QTabWidget::South</enum>
+       </property>
+       <property name="tabShape">
+        <enum>QTabWidget::Triangular</enum>
+       </property>
+       <property name="currentIndex">
+        <number>0</number>
+       </property>
+       <widget class="QWidget" name="tabApiSpy">
+        <attribute name="title">
+         <string>API Calls</string>
+        </attribute>
+        <layout class="QGridLayout" name="gridLayout">
+         <property name="leftMargin">
+          <number>3</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>3</number>
+         </property>
+         <property name="bottomMargin">
+          <number>3</number>
+         </property>
+         <item row="0" column="0">
+          <widget class="QSplitter" name="sp1">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <widget class="QWidget" name="layoutWidget55">
+            <layout class="QVBoxLayout" name="verticalLayout_3">
+             <item>
+              <widget class="QWidget" name="widget_2" native="true">
+               <layout class="QHBoxLayout" name="horizontalLayout_6">
+                <property name="leftMargin">
+                 <number>3</number>
+                </property>
+                <property name="topMargin">
+                 <number>3</number>
+                </property>
+                <property name="rightMargin">
+                 <number>3</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
+                <item>
+                 <spacer name="horizontalSpacer">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QToolButton" name="toolButton">
+                  <property name="text">
+                   <string>...</string>
+                  </property>
+                  <property name="icon">
+                   <iconset resource="xApiSpy.qrc">
+                    <normaloff>:/ico/images/log.ico</normaloff>:/ico/images/log.ico</iconset>
+                  </property>
+                  <property name="toolButtonStyle">
+                   <enum>Qt::ToolButtonTextBesideIcon</enum>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <widget class="XApiTreeView" name="treeModule">
+               <property name="selectionMode">
+                <enum>QAbstractItemView::ExtendedSelection</enum>
+               </property>
+               <property name="verticalScrollMode">
+                <enum>QAbstractItemView::ScrollPerPixel</enum>
+               </property>
+               <property name="indentation">
+                <number>16</number>
+               </property>
+               <property name="uniformRowHeights">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+           <widget class="QWidget" name="layoutWidget">
+            <layout class="QVBoxLayout" name="verticalLayout_2">
+             <item>
+              <widget class="QWidget" name="wdtTableOpt" native="true">
+               <layout class="QHBoxLayout" name="horizontalLayout_4">
+                <property name="leftMargin">
+                 <number>3</number>
+                </property>
+                <property name="topMargin">
+                 <number>3</number>
+                </property>
+                <property name="rightMargin">
+                 <number>3</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
+                <item>
+                 <spacer name="horizontalSpacer_2">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QToolButton" name="btnClearRecords">
+                  <property name="text">
+                   <string>Clear</string>
+                  </property>
+                  <property name="icon">
+                   <iconset resource="xApiSpy.qrc">
+                    <normaloff>:/ico/images/clear.ico</normaloff>:/ico/images/clear.ico</iconset>
+                  </property>
+                  <property name="toolButtonStyle">
+                   <enum>Qt::ToolButtonTextBesideIcon</enum>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <widget class="QTableView" name="tabApiCall">
+               <property name="editTriggers">
+                <set>QAbstractItemView::NoEditTriggers</set>
+               </property>
+               <property name="showDropIndicator" stdset="0">
+                <bool>false</bool>
+               </property>
+               <property name="dragDropOverwriteMode">
+                <bool>false</bool>
+               </property>
+               <property name="selectionBehavior">
+                <enum>QAbstractItemView::SelectRows</enum>
+               </property>
+               <property name="horizontalScrollMode">
+                <enum>QAbstractItemView::ScrollPerPixel</enum>
+               </property>
+               <property name="showGrid">
+                <bool>true</bool>
+               </property>
+               <property name="cornerButtonEnabled">
+                <bool>false</bool>
+               </property>
+               <attribute name="horizontalHeaderHighlightSections">
+                <bool>false</bool>
+               </attribute>
+               <attribute name="horizontalHeaderMinimumSectionSize">
+                <number>20</number>
+               </attribute>
+               <attribute name="horizontalHeaderStretchLastSection">
+                <bool>true</bool>
+               </attribute>
+               <attribute name="verticalHeaderVisible">
+                <bool>false</bool>
+               </attribute>
+               <attribute name="verticalHeaderDefaultSectionSize">
+                <number>20</number>
+               </attribute>
+               <attribute name="verticalHeaderMinimumSectionSize">
+                <number>20</number>
+               </attribute>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="tabRsrc">
+        <attribute name="title">
+         <string>Resource Tree</string>
+        </attribute>
+        <layout class="QGridLayout" name="gridLayout_11">
+         <property name="leftMargin">
+          <number>3</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>3</number>
+         </property>
+         <property name="bottomMargin">
+          <number>3</number>
+         </property>
+         <property name="spacing">
+          <number>3</number>
+         </property>
+         <item row="0" column="0">
+          <widget class="QSplitter" name="spRes">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <widget class="XApiTreeView" name="resTree">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+           </widget>
+           <widget class="NHexView" name="resHex" native="true"/>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="tabImportTable">
+        <attribute name="title">
+         <string>Import Table</string>
+        </attribute>
+        <layout class="QHBoxLayout" name="horizontalLayout_24">
+         <property name="leftMargin">
+          <number>3</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>3</number>
+         </property>
+         <property name="bottomMargin">
+          <number>3</number>
+         </property>
+         <item>
+          <widget class="XApiTreeView" name="treeImport">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_21">
+           <item>
+            <widget class="QToolButton" name="btnExport">
+             <property name="text">
+              <string>...</string>
+             </property>
+             <property name="icon">
+              <iconset resource="xApiSpy.qrc">
+               <normaloff>:/ico/images/export.ico</normaloff>:/ico/images/export.ico</iconset>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_13">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="tabPatchs">
+        <attribute name="title">
+         <string>Patchs</string>
+        </attribute>
+        <layout class="QGridLayout" name="gridLayout_13">
+         <property name="leftMargin">
+          <number>3</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>3</number>
+         </property>
+         <property name="bottomMargin">
+          <number>3</number>
+         </property>
+         <property name="spacing">
+          <number>3</number>
+         </property>
+         <item row="0" column="0">
+          <widget class="QSplitter" name="spPatch">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="handleWidth">
+            <number>3</number>
+           </property>
+           <widget class="QWidget" name="layoutWidget">
+            <layout class="QHBoxLayout" name="horizontalLayout_10">
+             <item>
+              <widget class="QTableView" name="tabPatch1">
+               <property name="selectionBehavior">
+                <enum>QAbstractItemView::SelectRows</enum>
+               </property>
+               <attribute name="horizontalHeaderHighlightSections">
+                <bool>false</bool>
+               </attribute>
+               <attribute name="verticalHeaderDefaultSectionSize">
+                <number>21</number>
+               </attribute>
+              </widget>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_8">
+               <property name="spacing">
+                <number>3</number>
+               </property>
+               <item>
+                <widget class="QToolButton" name="toolButton_6">
+                 <property name="text">
+                  <string>...</string>
+                 </property>
+                 <property name="icon">
+                  <iconset resource="xApiSpy.qrc">
+                   <normaloff>:/ico/images/open.ico</normaloff>:/ico/images/open.ico</iconset>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QToolButton" name="toolButton_3">
+                 <property name="text">
+                  <string>...</string>
+                 </property>
+                 <property name="icon">
+                  <iconset resource="xApiSpy.qrc">
+                   <normaloff>:/ico/images/Save.ico</normaloff>:/ico/images/Save.ico</iconset>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer name="verticalSpacer_7">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item>
+                <widget class="QToolButton" name="btnSelPatchs">
+                 <property name="text">
+                  <string>...</string>
+                 </property>
+                 <property name="icon">
+                  <iconset resource="xApiSpy.qrc">
+                   <normaloff>:/ico/images/Continue.ico</normaloff>:/ico/images/Continue.ico</iconset>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer name="verticalSpacer_10">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+           <widget class="QWidget" name="layoutWidget">
+            <layout class="QHBoxLayout" name="horizontalLayout_14">
+             <item>
+              <widget class="QTableView" name="tabPatch2">
+               <property name="selectionBehavior">
+                <enum>QAbstractItemView::SelectRows</enum>
+               </property>
+               <attribute name="horizontalHeaderHighlightSections">
+                <bool>false</bool>
+               </attribute>
+               <attribute name="verticalHeaderDefaultSectionSize">
+                <number>21</number>
+               </attribute>
+              </widget>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_13">
+               <item>
+                <widget class="QToolButton" name="toolButton_4">
+                 <property name="text">
+                  <string>...</string>
+                 </property>
+                 <property name="icon">
+                  <iconset resource="xApiSpy.qrc">
+                   <normaloff>:/ico/images/open.ico</normaloff>:/ico/images/open.ico</iconset>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QToolButton" name="toolButton_5">
+                 <property name="text">
+                  <string>...</string>
+                 </property>
+                 <property name="icon">
+                  <iconset resource="xApiSpy.qrc">
+                   <normaloff>:/ico/images/Save.ico</normaloff>:/ico/images/Save.ico</iconset>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer name="verticalSpacer_8">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="tabHexView">
+        <attribute name="title">
+         <string>HexView</string>
+        </attribute>
+        <layout class="QHBoxLayout" name="horizontalLayout_18">
+         <property name="spacing">
+          <number>3</number>
+         </property>
+         <property name="leftMargin">
+          <number>3</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>3</number>
+         </property>
+         <property name="bottomMargin">
+          <number>3</number>
+         </property>
+         <item>
+          <widget class="NHexView" name="widget_3" native="true">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_17">
+           <item>
+            <widget class="QToolButton" name="toolButton_8">
+             <property name="text">
+              <string>...</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QToolButton" name="toolButton_9">
+             <property name="text">
+              <string>...</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>706</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="fileMenu">
+    <property name="title">
+     <string>File(&amp;F)</string>
+    </property>
+    <addaction name="actionCreatePS"/>
+    <addaction name="actionSave"/>
+   </widget>
+   <widget class="QMenu" name="menu_Help">
+    <property name="title">
+     <string>Help(&amp;H)</string>
+    </property>
+    <addaction name="action_About"/>
+   </widget>
+   <widget class="QMenu" name="menuTools_T">
+    <property name="title">
+     <string>Tools(&amp;T)</string>
+    </property>
+    <addaction name="actionOptions"/>
+   </widget>
+   <widget class="QMenu" name="menuDebug_D">
+    <property name="title">
+     <string>Debug(&amp;D)</string>
+    </property>
+    <addaction name="actionContinue"/>
+    <addaction name="actionStep"/>
+    <addaction name="actionBreak"/>
+    <addaction name="actionPause"/>
+    <addaction name="actionStop"/>
+   </widget>
+   <addaction name="fileMenu"/>
+   <addaction name="menuDebug_D"/>
+   <addaction name="menuTools_T"/>
+   <addaction name="menu_Help"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <property name="windowTitle">
+    <string>MainToolbar</string>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>16</width>
+     <height>16</height>
+    </size>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionCreatePS"/>
+   <addaction name="actionSave"/>
+   <addaction name="separator"/>
+   <addaction name="actionContinue"/>
+   <addaction name="actionStep"/>
+   <addaction name="actionBreak"/>
+   <addaction name="actionPause"/>
+   <addaction name="actionStop"/>
+   <addaction name="separator"/>
+   <addaction name="actionOptions"/>
+   <addaction name="actionAppOutput"/>
+   <addaction name="separator"/>
+   <addaction name="action_About"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QDockWidget" name="dockOutput">
+   <property name="windowTitle">
+    <string>Application Output</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>8</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents">
+    <layout class="QGridLayout" name="gridLayout_2">
+     <property name="leftMargin">
+      <number>0</number>
+     </property>
+     <property name="topMargin">
+      <number>0</number>
+     </property>
+     <property name="rightMargin">
+      <number>0</number>
+     </property>
+     <property name="bottomMargin">
+      <number>0</number>
+     </property>
+     <item row="0" column="0">
+      <widget class="QPlainTextEdit" name="txtOutput">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <action name="actionCreatePS">
+   <property name="icon">
+    <iconset resource="xApiSpy.qrc">
+     <normaloff>:/ico/images/open.ico</normaloff>:/ico/images/open.ico</iconset>
+   </property>
+   <property name="text">
+    <string>Open(&amp;O)...</string>
+   </property>
+  </action>
+  <action name="action_About">
+   <property name="icon">
+    <iconset resource="xApiSpy.qrc">
+     <normaloff>:/ico/images/main.ico</normaloff>:/ico/images/main.ico</iconset>
+   </property>
+   <property name="text">
+    <string>About(&amp;A)...</string>
+   </property>
+  </action>
+  <action name="actionOptions">
+   <property name="icon">
+    <iconset resource="xApiSpy.qrc">
+     <normaloff>:/ico/images/Options.ico</normaloff>:/ico/images/Options.ico</iconset>
+   </property>
+   <property name="text">
+    <string>Options</string>
+   </property>
+  </action>
+  <action name="actionContinue">
+   <property name="icon">
+    <iconset resource="xApiSpy.qrc">
+     <normaloff>:/ico/images/Continue.ico</normaloff>:/ico/images/Continue.ico</iconset>
+   </property>
+   <property name="text">
+    <string>Continue</string>
+   </property>
+   <property name="shortcut">
+    <string>F9</string>
+   </property>
+  </action>
+  <action name="actionPause">
+   <property name="icon">
+    <iconset resource="xApiSpy.qrc">
+     <normaloff>:/ico/images/pause.ico</normaloff>:/ico/images/pause.ico</iconset>
+   </property>
+   <property name="text">
+    <string>Pause</string>
+   </property>
+   <property name="shortcut">
+    <string>F12</string>
+   </property>
+  </action>
+  <action name="actionAppOutput">
+   <property name="icon">
+    <iconset resource="xApiSpy.qrc">
+     <normaloff>:/ico/images/log.ico</normaloff>:/ico/images/log.ico</iconset>
+   </property>
+   <property name="text">
+    <string>AppOutput</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+A</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="icon">
+    <iconset resource="xApiSpy.qrc">
+     <normaloff>:/ico/images/Save.ico</normaloff>:/ico/images/Save.ico</iconset>
+   </property>
+   <property name="text">
+    <string>Save</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionStop">
+   <property name="icon">
+    <iconset resource="xApiSpy.qrc">
+     <normaloff>:/ico/images/stop.ico</normaloff>:/ico/images/stop.ico</iconset>
+   </property>
+   <property name="text">
+    <string>Stop</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+F11</string>
+   </property>
+  </action>
+  <action name="actionStep">
+   <property name="icon">
+    <iconset resource="xApiSpy.qrc">
+     <normaloff>:/ico/images/step.ico</normaloff>:/ico/images/step.ico</iconset>
+   </property>
+   <property name="text">
+    <string>Step</string>
+   </property>
+   <property name="shortcut">
+    <string>F7</string>
+   </property>
+  </action>
+  <action name="actionBreak">
+   <property name="icon">
+    <iconset resource="xApiSpy.qrc">
+     <normaloff>:/ico/images/break.ico</normaloff>:/ico/images/break.ico</iconset>
+   </property>
+   <property name="text">
+    <string>Break</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+F12</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>NHexView</class>
+   <extends>QWidget</extends>
+   <header>hexview/nhexview.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>XApiTreeView</class>
+   <extends>QTreeView</extends>
+   <header>xapitreeview.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="xApiSpy.qrc"/>
+ </resources>
+ <connections/>
+</ui>

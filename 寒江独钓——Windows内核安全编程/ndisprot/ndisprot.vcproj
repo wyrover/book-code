@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="gb2312"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="7.10"
+	Name="ndisprot"
+	ProjectGUID="{39B1A5C4-F474-4452-BC81-A9C1032F0769}"
+	Keyword="MakeFileProj">
+	<Platforms>
+		<Platform
+			Name="Win32"/>
+	</Platforms>
+	<Configurations>
+		<Configuration
+			Name="Debug|Win32"
+			OutputDirectory="Debug"
+			IntermediateDirectory="Debug"
+			ConfigurationType="0">
+			<Tool
+				Name="VCNMakeTool"
+				BuildCommandLine="my_build chk WXP"
+				ReBuildCommandLine="my_build chk WXP /a"
+				CleanCommandLine="my_clean chk WXP"
+				Output="ndisprot.sys"/>
+		</Configuration>
+		<Configuration
+			Name="Release|Win32"
+			OutputDirectory="Release"
+			IntermediateDirectory="Release"
+			ConfigurationType="0">
+			<Tool
+				Name="VCNMakeTool"
+				BuildCommandLine="my_build fre WXP"
+				ReBuildCommandLine="my_build fre WXP /a"
+				CleanCommandLine="my_clean fre WXP"
+				Output="ndisprot.sys"/>
+		</Configuration>
+	</Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter
+			Name="Source Files"
+			Filter="cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx"
+			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}">
+			<File
+				RelativePath=".\debug.c">
+			</File>
+			<File
+				RelativePath=".\excallbk.c">
+			</File>
+			<File
+				RelativePath=".\my_build.bat">
+			</File>
+			<File
+				RelativePath=".\my_clean.bat">
+			</File>
+			<File
+				RelativePath=".\ndisbind.c">
+			</File>
+			<File
+				RelativePath=".\ntdisp.c">
+			</File>
+			<File
+				RelativePath=".\recv.c">
+			</File>
+			<File
+				RelativePath=".\send.c">
+			</File>
+		</Filter>
+		<Filter
+			Name="Header Files"
+			Filter="h;hpp;hxx;hm;inl;inc;xsd"
+			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}">
+			<File
+				RelativePath=".\debug.h">
+			</File>
+			<File
+				RelativePath=".\macros.h">
+			</File>
+			<File
+				RelativePath=".\ndisprot.h">
+			</File>
+			<File
+				RelativePath=".\nuiouser.h">
+			</File>
+			<File
+				RelativePath=".\precomp.h">
+			</File>
+		</Filter>
+		<Filter
+			Name="Resource Files"
+			Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx"
+			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}">
+			<File
+				RelativePath=".\ndisprot.rc">
+			</File>
+		</Filter>
+		<Filter
+			Name="user"
+			Filter="">
+			<File
+				RelativePath=".\test\uiotest.c">
+			</File>
+		</Filter>
+		<File
+			RelativePath=".\readme.txt">
+		</File>
+		<File
+			RelativePath=".\sources">
+		</File>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

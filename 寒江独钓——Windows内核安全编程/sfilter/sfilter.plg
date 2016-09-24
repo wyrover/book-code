@@ -1,0 +1,47 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: sfilter - Win32 win2003 chk--------------------
+</h3>
+
+chk is chk or fre WNET is WXP or W2K or WNET.
+
+D:\Work\dep\windriv\sfilter>if "" == "/a" call my_clean chk WNET 
+
+D:\Work\dep\windriv\sfilter>pushd.
+
+D:\Work\dep\windriv\sfilter>call c:\winddk\3790.1830\bin\setenv.bat c:\winddk\3790.1830 chk WNET 
+
+D:\Work\dep\windriv\sfilter>build
+BUILD: Adding /Y to COPYCMD so xcopy ops won't hang.
+BUILD: Object root set to: ==> objchk_wnet_x86
+BUILD: Compile and Link for i386
+BUILD: Loading c:\winddk\3790.1830\build.dat...
+BUILD: Computing Include file dependencies:
+BUILD: Examining d:\work\dep\windriv\sfilter directory for files to compile.
+    d:\work\dep\windriv\sfilter 
+BUILD: Done
+
+
+D:\Work\dep\windriv\sfilter>if not exist ..\inc mkdir ..\inc 
+
+D:\Work\dep\windriv\sfilter>if not exist ..\inc\sfilter mkdir ..\inc\sfilter 
+
+D:\Work\dep\windriv\sfilter>if not exist ..\lib mkdir ..\lib 
+
+D:\Work\dep\windriv\sfilter>copy *.h ..\inc\sfilter\ 
+sfilter.h
+已复制         1 个文件。
+
+D:\Work\dep\windriv\sfilter>copy .\objchk_WNET_x86\i386\sfilter.lib ..\lib\sfilter_chk_WNET.lib 
+已复制         1 个文件。
+
+
+
+<h3>Results</h3>
+sfilter.lib - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document>
+	<Protection
+		InputFileName="Q:\Documents\Books\Second\code\Part3\Chapter15\StackIncrease.exe"
+		Options="0"
+		CheckKernelModeDebugger="false"
+		CompressionMode="0"
+		VMCodeSectionName=".vmp"
+		VMExecutorCount="1"
+		LicenseDataFileName=""
+		OutputFileName=""
+		>
+		<Messages
+		/>
+		<Folders
+		/>
+		<Procedures>
+			<Procedure
+				MapAddress="VMProtectMarker &quot;VM Mark&quot;"
+			/>
+		</Procedures>
+	</Protection>
+	<DLLBox
+	/>
+	<Script
+	/>
+	<LicenseManager
+		ProductCode=""
+		Algorithm=""
+		Bits="0"
+		PublicExp=""
+		PrivateExp=""
+		Modulus=""
+	/>
+</Document>

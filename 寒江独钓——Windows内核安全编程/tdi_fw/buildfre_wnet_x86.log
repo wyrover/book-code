@@ -1,0 +1,78 @@
+BUILD: Computing Include file dependencies:
+d:\work\pln\: Do not set ntdebug.
+d:\work\pln\: 
+d:\work\pln\: Do not set ntdebug.
+d:\work\pln\: 
+BUILD: Examining d:\work\pln\skipping post pass 0 command
+Compiling d:\work\pln\'nmake.exe /nologo BUILDMSG=Stop. -i BUILD_PASS=PASS1 NOLINK=1 NOPASS0=1 MAKEDIR_RELATIVE_TO_BASEDIR='
+d:\work\pln\????\source_code\tdi_fw: TARGETPATH is obj
+BUILDMSG: _NT_TARGET_VERSION SET TO WS03
+ cl.exe @d:\work\pln\????\source_code\tdi_fw\objfre_wnet_x86\i386\cl.rsp
+Microsoft (R) 32-bit C/C++ Optimizing Compiler Version 14.00.50727.278 for 80x86
+Copyright (C) Microsoft Corporation.  All rights reserved.
+cl /Fo"d:\work\pln\
+ /FC
+ /MT
+ /U_MT
+ /Ii386
+ /I.
+ /I..
+ /Ic:\winddk\6001.18001\bin\..\src\network\inc
+ /Id:\work\pln\
+ /IC:\WINDDK\6001.18001\inc\api
+ /IC:\WINDDK\6001.18001\inc\api
+ /IC:\WINDDK\6001.18001\inc\crt
+ /D_X86_=1
+ /Di386=1
+ /DSTD_CALL
+ /DCONDITION_HANDLING=1
+ /DNT_INST=0
+ /DWIN32=100
+ /D_NT1X_=100
+ /DWINNT=1
+ /D_WIN32_WINNT=0x0502
+ /DWINVER=0x0502
+ /D_WIN32_IE=0x0603
+ /DWIN32_LEAN_AND_MEAN=1
+ /DDEVL=1
+ /D__BUILDMACHINE__=WinDDK
+ /DFPO=0
+ /DNDEBUG
+ -DUSE_PACKET_ENGINE
+ /DNTDDI_VERSION=0x05020100
+ /c
+ /Zc:wchar_t-
+ /Zl
+ /Zp8
+ /Gy
+ /Gm-
+ /W3
+ /WX
+ /Gz
+ /hotpatch
+ /EHs-c-
+ /GR-
+ /GF
+ /GS
+ /Z7
+ /Oxs
+ /Oy-
+ /Z7
+ /DKMDF_MAJOR_VERSION=01
+ /DKMDF_MINOR_VERSION=007
+ /FIC:\WINDDK\6001.18001\inc\api\warning.h
+ .\tdi_fw.c .\dispatch.c .\disp_conn.c .\disp_dg.c .\disp_ev.c .\disp_obj.c .\events.c .\ev_conn.c .\ev_dg.c .\filter.c .\memtrack.c .\obj_tbl.c .\sock.c .\ipc.c .\pid_pname.c .\packet.c .\conn_state.c .\sids.c .\disp_sr.c .\ev_recv.c 
+tdi_fw.c
+dispatch.c
+disp_conn.c
+disp_dg.c
+disp_ev.c
+disp_obj.c
+events.c
+ev_conn.c
+ev_dg.c
+filter.c
+memtrack.c
+obj_tbl.c
+sock.c
+ipc.c

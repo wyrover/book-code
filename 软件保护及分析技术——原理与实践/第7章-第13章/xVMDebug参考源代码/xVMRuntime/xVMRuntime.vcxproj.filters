@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="VirtualDebugCRT">
+      <UniqueIdentifier>{47d2cf23-5d2b-4aeb-bfef-64a98f0132fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TinyCScript">
+      <UniqueIdentifier>{1ec5e861-f826-4d4f-92a8-9e4e42ef55dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TinyCScript\tcc">
+      <UniqueIdentifier>{b48fbd3a-9d7d-4ac5-8b3a-cfff35972aaf}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="xapihookruntime.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="xpedumper.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="xsandbox.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="xvmdebug_crt.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="xvmiatcall.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="xvmresource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="xvmruntime.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="VirtualDebugCRT\VirtualDebugApiLayerCRT.h">
+      <Filter>VirtualDebugCRT</Filter>
+    </ClInclude>
+    <ClInclude Include="VirtualDebugCRT\threadidcache.h">
+      <Filter>VirtualDebugCRT</Filter>
+    </ClInclude>
+    <ClInclude Include="VirtualDebugCRT\breakpoints.h">
+      <Filter>VirtualDebugCRT</Filter>
+    </ClInclude>
+    <ClInclude Include="TinyCScript\tinyc.h">
+      <Filter>TinyCScript</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\tcc\libtcc.h">
+      <Filter>TinyCScript\tcc</Filter>
+    </ClInclude>
+    <ClInclude Include="TinyCScript\crt\internal\internal.h">
+      <Filter>TinyCScript</Filter>
+    </ClInclude>
+    <ClInclude Include="TinyCScript\crt\internal\codeblock.h">
+      <Filter>TinyCScript</Filter>
+    </ClInclude>
+    <ClInclude Include="xmemtracer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TinyCScript\crt\internal\xstate.h">
+      <Filter>TinyCScript</Filter>
+    </ClInclude>
+    <ClInclude Include="xvmr.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="xpedumper.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="xsandbox.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="xvmdebug_crt.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="xvmhookruntime.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="xvmiatcall.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="xvmresource.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="xvmruntime.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="VirtualDebugCRT\VirtualDebugApiLayerCRT.cpp">
+      <Filter>VirtualDebugCRT</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\nCom\PipeBase.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\nCom\npacketbase.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\nNetLib\npipeclient.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="VirtualDebugCRT\threadidcache.cpp">
+      <Filter>VirtualDebugCRT</Filter>
+    </ClCompile>
+    <ClCompile Include="VirtualDebugCRT\breakpoints.cpp">
+      <Filter>VirtualDebugCRT</Filter>
+    </ClCompile>
+    <ClCompile Include="TinyCScript\tinyc.cpp">
+      <Filter>TinyCScript</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\tcc\libtcc.c">
+      <Filter>TinyCScript\tcc</Filter>
+    </ClCompile>
+    <ClCompile Include="TinyCScript\crtfuncs.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="vmexec_interface.cpp">
+      <Filter>TinyCScript</Filter>
+    </ClCompile>
+    <ClCompile Include="xmemtracer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="cb_interface.cpp">
+      <Filter>TinyCScript</Filter>
+    </ClCompile>
+    <ClCompile Include="dbg_interface.cpp">
+      <Filter>TinyCScript</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="xVMRuntime.def">
+      <Filter>源文件</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <MASM Include="xvmhookStub32.asm">
+      <Filter>源文件</Filter>
+    </MASM>
+    <MASM Include="TinyCScript\tinyc_crt32.asm">
+      <Filter>TinyCScript</Filter>
+    </MASM>
+  </ItemGroup>
+</Project>

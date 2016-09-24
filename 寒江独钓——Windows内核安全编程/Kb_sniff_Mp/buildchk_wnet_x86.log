@@ -1,0 +1,8 @@
+BUILD: Computing Include file dependencies:
+BUILD: Examining e:\security\kb_sniff_mp directory for files to compile.
+oacr invalidate root:x86chk /autocleanqueue
+Compiling and Linking e:\security\kb_sniff_mp *************
+'nmake.exe /nologo BUILDMSG=Stop. -i BUILD_PASS=PASS2 LINKONLY=1 NOPASS0=1 MAKEDIR_RELATIVE_TO_BASEDIR='
+BUILDMSG: _NT_TARGET_VERSION SET TO WS03
+ D:\WinDDK\7000\Bin\x86\oacr\oacrcl @e:\security\kb_sniff_mp\objchk_wnet_x86\i386\cl.rsp
+ D:\WinDDK\7000\Bin\x86\oacr\oacrlink		 /out:e:\security\kb_sniff_mp\objchk_wnet_x86\i386\Kb_sniffMp.sys /machine:ix86 @e:\security\kb_sniff_mp\objchk_wnet_x86\i386\lnk.rsp

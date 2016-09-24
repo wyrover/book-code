@@ -1,0 +1,42 @@
+; 文件：ProfileItems.inf
+; 归属：《竹林蹊径》 张佩
+; 联系：Zhang.Mibox@gmail.com
+; 版本：04/01/2010  1.0.0000.00000
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=InfTest
+ClassGuid={78A1C341-4539-11d3-B88D-00C04FAD5172}
+Provider=ChinaHearing
+DriverVer=04/01/2010, 1.0.0000.00000
+
+; 一个空的但必须的DefaultInstall域
+; 用到的是他的服务子域
+[DefaultInstall]
+AddReg = NullReg
+
+[NullReg]
+
+[DefaultInstall.Services]
+AddService = Service1,0x00000000, Service1_Inst
+AddService = Service2,0x00000000, Service2_Inst
+
+[Service1_Inst]
+DisplayName   = %Service1Desc% ; friendly name (see Strings)
+ServiceType   = 1                ; SERVICE_KERNEL_DRIVER
+StartType     = 3                ; SERVICE_MANUAL_START
+ErrorControl  = 1                ; SERVICE_ERROR_NORMAL
+ServiceBinary = %10%\system32\drivers\1.sys; 不存在的文件
+ 
+[Service2_Inst]
+DisplayName   = %Service2Desc% 
+ServiceType   = 1 
+StartType     = 3 
+ErrorControl  = 1 
+ServiceBinary = %10%\system32\drivers\2.sys; 不存在的文件
+ 
+[Strings] ; only immediately preceding %strkey% tokens shown here
+Service1Desc="竹林蹊径 Inf 示例 Service1"
+Service2Desc="竹林蹊径 Inf 示例 Service2"
+
+

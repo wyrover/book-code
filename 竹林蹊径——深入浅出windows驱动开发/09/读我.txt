@@ -1,0 +1,2 @@
+inverted_call工程取自OSR经典文章《Kernel: Calling User Mode - Using the Inverted Call Model》。
+原文请参考：http://www.osronline.com/article.cfm?id=94

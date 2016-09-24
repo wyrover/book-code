@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document>
+	<Protection
+		InputFileName="Q:\Documents\Books\Second\code\Part5\VMProtect_Unpack\notepad2.exe"
+		Options="104392"
+		CheckKernelModeDebugger="true"
+		CompressionMode="0"
+		VMCodeSectionName=".vmp"
+		VMExecutorCount="5"
+		LicenseDataFileName=""
+		OutputFileName=""
+		>
+		<Messages
+		/>
+		<Folders
+		/>
+		<Procedures>
+			<Procedure
+				MapAddress="EntryPoint"
+				CompilationType="2"
+			/>
+			<Procedure
+				Address="4647993"
+				CompilationType="2"
+			/>
+		</Procedures>
+	</Protection>
+	<DLLBox
+	/>
+	<Script
+	/>
+	<LicenseManager
+		ProductCode=""
+		Algorithm=""
+		Bits="0"
+		PublicExp=""
+		PrivateExp=""
+		Modulus=""
+	/>
+</Document>

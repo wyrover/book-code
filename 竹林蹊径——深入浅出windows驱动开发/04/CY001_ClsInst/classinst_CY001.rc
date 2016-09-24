@@ -1,0 +1,30 @@
+
+
+#include "resource.h"
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE    VFT_APP
+#define VER_FILESUBTYPE VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Class Installer for CY001"
+#define VER_INTERNALNAME_STR        "CY001ClsInst.dll"
+#define VER_ORIGINALFILENAME_STR    "CY001ClsInst.dll"
+
+#include <common.ver>
+
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+DLG_TOASTER_PORTSETTINGS DIALOGEX 0, 0, 110, 100
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "CY001"
+FONT 18, "MS Shell Dlg"
+BEGIN
+    LTEXT           "Hello CY001!",
+                    IDC_STATIC,35,24,171,27,0,0
+END

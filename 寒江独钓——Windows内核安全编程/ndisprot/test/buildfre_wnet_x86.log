@@ -1,0 +1,96 @@
+BUILD: Computing Include file dependencies:
+BUILD: Examining d:\work\pln\skipping post pass 0 command
+Compiling and Linking d:\work\pln\'nmake.exe /nologo BUILDMSG=Stop. -i BUILD_PASS=PASS2 LINKONLY=1 NOPASS0=1 MAKEDIR_RELATIVE_TO_BASEDIR='
+BUILDMSG: _NT_TARGET_VERSION SET TO WS03
+ cl.exe @d:\work\pln\????\source_code\ndisprot\test\objfre_wnet_x86\i386\cl.rsp
+Microsoft (R) 32-bit C/C++ Optimizing Compiler Version 14.00.50727.278 for 80x86
+Copyright (C) Microsoft Corporation.  All rights reserved.
+cl /Fo"d:\work\pln\
+ /FC
+ /Ii386
+ /I.
+ /I..\sys
+ /Id:\work\pln\
+ /IC:\WINDDK\6001.18001\inc\api
+ /IC:\WINDDK\6001.18001\inc\api
+ /IC:\WINDDK\6001.18001\inc\crt
+ /D_X86_=1
+ /Di386=1
+ /DSTD_CALL
+ /DCONDITION_HANDLING=1
+ /DNT_INST=0
+ /DWIN32=100
+ /D_NT1X_=100
+ /DWINNT=1
+ /D_WIN32_WINNT=0x0502
+ /DWINVER=0x0502
+ /D_WIN32_IE=0x0603
+ /DWIN32_LEAN_AND_MEAN=1
+ /DDEVL=1
+ /D__BUILDMACHINE__=WinDDK
+ /DFPO=0
+ /DNDEBUG
+ /D_DLL=1
+ /D_MT=1
+ -D_WIN32WIN_
+ /DNTDDI_VERSION=0x05020100
+ /c
+ /Zc:wchar_t-
+ /Zl
+ /Zp8
+ /Gy
+ /Gm-
+ /W3
+ /WX
+ /Gz
+ /hotpatch
+ /EHs-c-
+ /GR-
+ /GF
+ /GS
+ /Zi
+ /Oxs
+ /Oy-
+ /Zi
+ /Fdd:\work\pln\
+ /DKMDF_MAJOR_VERSION=01
+ /DKMDF_MINOR_VERSION=007
+ /FIC:\WINDDK\6001.18001\inc\api\warning.h
+ .\uiotest.c 
+uiotest.c
+ link.exe /out:d:\work\pln\????\source_code\ndisprot\test\objfre_wnet_x86\i386\uiotest.exe /machine:ix86 @d:\work\pln\????\source_code\ndisprot\test\objfre_wnet_x86\i386\lnk.rsp
+Microsoft (R) Incremental Linker Version 8.00.50727.278
+Copyright (C) Microsoft Corporation.  All rights reserved.
+/MERGE:_PAGE=PAGE 
+/MERGE:_TEXT=.text 
+/SECTION:INIT,d 
+/OPT:REF 
+/OPT:ICF 
+/IGNORE:4198,4010,4037,4039,4065,4070,4078,4087,4089,4221 
+/INCREMENTAL:NO 
+/release 
+/NODEFAULTLIB 
+/WX 
+/debug 
+/debugtype:cv,fixup,pdata 
+/version:6.0 
+/osversion:6.0 
+/functionpadmin:5 
+/safeseh 
+/opt:nowin98 
+/nxcompat 
+/merge:.rdata=.text 
+/pdbcompress 
+/STACK:0x40000,0x2000 
+/tsaware 
+/dynamicbase 
+/subsystem:console,5.02 
+/base:@C:\WINDDK\6001.18001\bin\coffbase.txt,usermode 
+/entry:mainCRTStartup 
+d:\work\pln\
+c:\winddk\6001.18001\lib\wnet\i386\advapi32.lib 
+c:\winddk\6001.18001\lib\wnet\i386\kernel32.lib 
+c:\winddk\6001.18001\lib\wnet\i386\msvcrt_win2003.obj 
+C:\WINDDK\6001.18001\lib\crt\i386\msvcrt.lib 
+c:\winddk\6001.18001\lib\wnet\i386\user32.lib 
+c:\winddk\6001.18001\lib\wnet\i386\sehupd.lib 

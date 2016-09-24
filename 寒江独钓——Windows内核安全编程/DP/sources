@@ -1,0 +1,5 @@
+TARGETNAME=DP
+TARGETTYPE=DRIVER
+
+SOURCES=DPMain.c		\
+        DPBitmap.c

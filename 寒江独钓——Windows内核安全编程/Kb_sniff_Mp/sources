@@ -1,0 +1,4 @@
+TARGETNAME=Kb_sniffMp
+TARGETTYPE=DRIVER
+SOURCES=Kb_sniffMp.c \
+        KbRelated.c 

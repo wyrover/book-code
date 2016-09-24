@@ -1,0 +1,128 @@
+BUILD: Computing Include file dependencies:
+BUILD: Examining d:\work\pln\skipping post pass 0 command
+Compiling d:\work\pln\'nmake.exe /nologo BUILDMSG=Stop. -i BUILD_PASS=PASS1 NOLINK=1 NOPASS0=1 MAKEDIR_RELATIVE_TO_BASEDIR='
+d:\work\pln\????\source_code\ndisedge: TARGETPATH is obj
+BUILDMSG: _NT_TARGET_VERSION SET TO WS03
+ rc -l 409 -DSXS_PROCESSOR_ARCHITECTURE="""x86"""  -DSXS_TARGET="""ndisedge.sys"""   -DSYSTEM_COMPATIBLE_ASSEMBLY_NAME="""Microsoft.Windows.SystemCompatible"""  -DLSYSTEM_COMPATIBLE_ASSEMBLY_NAME=L"""Microsoft.Windows.SystemCompatible"""   -DSXS_ASSEMBLY_VERSION=""""""  /r /fo d:\work\pln\
+Microsoft (R) Windows (R) Resource Compiler Version 6.0.5724.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+ cl.exe @d:\work\pln\????\source_code\ndisedge\objchk_wnet_x86\i386\cl.rsp
+Microsoft (R) 32-bit C/C++ Optimizing Compiler Version 14.00.50727.278 for 80x86
+Copyright (C) Microsoft Corporation.  All rights reserved.
+cl /Fo"d:\work\pln\
+ /FC
+ /Ii386
+ /I.
+ /Id:\work\pln\
+ /IC:\WINDDK\6001.18001\inc\api
+ /IC:\WINDDK\6001.18001\inc\api
+ /IC:\WINDDK\6001.18001\inc\ddk
+ /IC:\WINDDK\6001.18001\inc\ddk
+ /IC:\WINDDK\6001.18001\inc\wdf\kmdf\1.7
+ /IC:\WINDDK\6001.18001\inc\crt
+ /D_X86_=1
+ /Di386=1
+ /DSTD_CALL
+ /DCONDITION_HANDLING=1
+ /DNT_INST=0
+ /DWIN32=100
+ /D_NT1X_=100
+ /DWINNT=1
+ /D_WIN32_WINNT=0x0502
+ /DWINVER=0x0502
+ /D_WIN32_IE=0x0603
+ /DWIN32_LEAN_AND_MEAN=1
+ /DDEVL=1
+ /DDBG=1
+ /D__BUILDMACHINE__=WinDDK
+ /DFPO=0
+ /D_DLL=1
+ /DNDEBUG
+ -DNDIS_MINIPORT_DRIVER=1
+ -DNDIS_WDM=1
+ -DINTERFACE_WITH_NDISPROT=1
+ -DNDIS51_MINIPORT=1
+ /DDEPRECATE_DDK_FUNCTIONS=1
+ /DMSC_NOOPT
+ /DNTDDI_VERSION=0x05020100
+ /c
+ /Zc:wchar_t-
+ /Zl
+ /Zp8
+ /Gy
+ /Gm-
+ -cbstring
+ /W3
+ /Gz
+ /hotpatch
+ /EHs-c-
+ /GR-
+ /GF
+ /GS
+ /Zi
+ /Od
+ /Oi
+ /Oy-
+ /Zi
+ /Fdd:\work\pln\
+ /DKMDF_MAJOR_VERSION=01
+ /DKMDF_MINOR_VERSION=007
+ /FIC:\WINDDK\6001.18001\inc\api\warning.h
+ .\ndiswdm.c .\init.c .\request.c .\send.c .\receive.c .\excallbk.c 
+ndiswdm.c
+init.c
+request.c
+send.c
+receive.c
+excallbk.c
+Generating Code...
+ copy .\ndisedge.inx d:\work\pln\????\source_code\ndisedge\objchk_wnet_x86\i386\ndisedge.inf
+
+ stampinf -f d:\work\pln\????\source_code\ndisedge\objchk_wnet_x86\i386\ndisedge.inf -a x86 -k 1.7
+Using version information from C:\WINDDK\6001.18001\inc\api\ntverp.h
+Stamping d:\work\pln\
+Linking for d:\work\pln\'nmake.exe /nologo BUILDMSG=Stop. -i BUILD_PASS=PASS2 LINKONLY=1 NOPASS0=1 MAKEDIR_RELATIVE_TO_BASEDIR='
+d:\work\pln\????\source_code\ndisedge: TARGETPATH is obj
+BUILDMSG: _NT_TARGET_VERSION SET TO WS03
+ link.exe /out:d:\work\pln\????\source_code\ndisedge\objchk_wnet_x86\i386\ndisedge.sys /machine:ix86 @d:\work\pln\????\source_code\ndisedge\objchk_wnet_x86\i386\lnk.rsp
+Microsoft (R) Incremental Linker Version 8.00.50727.278
+Copyright (C) Microsoft Corporation.  All rights reserved.
+/MERGE:_PAGE=PAGE 
+/MERGE:_TEXT=.text 
+/SECTION:INIT,d 
+/OPT:REF 
+/OPT:ICF 
+/IGNORE:4198,4010,4037,4039,4065,4070,4078,4087,4089,4221 
+/INCREMENTAL:NO 
+/release 
+/NODEFAULTLIB 
+/WX 
+/debug 
+/debugtype:cv,fixup,pdata 
+/version:6.0 
+/osversion:6.0 
+/functionpadmin:5 
+/safeseh 
+/pdbcompress 
+/STACK:0x40000,0x1000 
+/driver 
+/base:0x10000 
+/subsystem:native,5.02 
+/entry:FxDriverEntry@8 
+/out:d:\work\pln\
+d:\work\pln\
+d:\work\pln\
+d:\work\pln\
+d:\work\pln\
+d:\work\pln\
+d:\work\pln\
+d:\work\pln\
+c:\winddk\6001.18001\lib\wnet\i386\BufferOverflowK.lib 
+c:\winddk\6001.18001\lib\wnet\i386\ntoskrnl.lib 
+c:\winddk\6001.18001\lib\wnet\i386\hal.lib 
+c:\winddk\6001.18001\lib\wnet\i386\wmilib.lib 
+C:\WINDDK\6001.18001\lib\wdf\kmdf\i386\1.7\WdfLdr.lib 
+C:\WINDDK\6001.18001\lib\wdf\kmdf\i386\1.7\WdfDriverEntry.lib 
+c:\winddk\6001.18001\lib\wnet\i386\ndis.lib 
+c:\winddk\6001.18001\lib\wnet\i386\ntstrsafe.lib 
+c:\winddk\6001.18001\lib\wnet\i386\sehupd.lib 

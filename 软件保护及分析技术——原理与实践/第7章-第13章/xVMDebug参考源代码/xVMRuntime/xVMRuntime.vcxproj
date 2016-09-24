@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{9951B75E-8198-46E1-8193-3919B948F72A}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>xVMRuntime</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120_xp</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120_xp</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>./../../xHooklib/vcpu/backend/bochs-2.6.2/;./../../xHooklib/vcpu/backend/bochs-2.6.2/instrument/stubs/;./../../xHooklib/vcpu/backend/bochs-2.6.2/cpu/;../../../3rdparty/;../../../3rdparty/yasm/;../../../3rdparty/yasm/libyasm/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <OmitFramePointers>true</OmitFramePointers>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <OutputFile>$(OutDir)$(TargetName)$(PlatformArchitecture)$(TargetExt)</OutputFile>
+      <ModuleDefinitionFile>xVMRuntime.def</ModuleDefinitionFile>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ProgramDatabaseFile>$(OutDir)$(TargetName)$(PlatformArchitecture).pdb</ProgramDatabaseFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalIncludeDirectories>./../../xHooklib/vcpu/backend/bochs-2.6.2/;./../../xHooklib/vcpu/backend/bochs-2.6.2/instrument/stubs/;./../../xHooklib/vcpu/backend/bochs-2.6.2/cpu/;../../../3rdparty/;../../../3rdparty/yasm/;../../../3rdparty/yasm/libyasm/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ModuleDefinitionFile>xVMRuntime.def</ModuleDefinitionFile>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <OutputFile>$(OutDir)$(TargetName)32$(TargetExt)</OutputFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\3rdparty\tcc\libtcc.h" />
+    <ClInclude Include="TinyCScript\crt\internal\xstate.h" />
+    <ClInclude Include="xmemtracer.h" />
+    <ClInclude Include="TinyCScript\crt\internal\codeblock.h" />
+    <ClInclude Include="TinyCScript\crt\internal\internal.h" />
+    <ClInclude Include="TinyCScript\tinyc.h" />
+    <ClInclude Include="VirtualDebugCRT\breakpoints.h" />
+    <ClInclude Include="VirtualDebugCRT\threadidcache.h" />
+    <ClInclude Include="VirtualDebugCRT\VirtualDebugApiLayerCRT.h" />
+    <ClInclude Include="xapihookruntime.h" />
+    <ClInclude Include="xpedumper.h" />
+    <ClInclude Include="xsandbox.h" />
+    <ClInclude Include="xvmdebug_crt.h" />
+    <ClInclude Include="xvmiatcall.h" />
+    <ClInclude Include="xvmr.h" />
+    <ClInclude Include="xvmresource.h" />
+    <ClInclude Include="xvmruntime.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\3rdparty\tcc\libtcc.c" />
+    <ClCompile Include="..\..\..\nCom\npacketbase.cpp" />
+    <ClCompile Include="..\..\..\nCom\PipeBase.cpp" />
+    <ClCompile Include="..\..\..\nNetLib\npipeclient.cpp" />
+    <ClCompile Include="cb_interface.cpp" />
+    <ClCompile Include="dbg_interface.cpp" />
+    <ClCompile Include="xmemtracer.cpp" />
+    <ClCompile Include="TinyCScript\crtfuncs.cpp" />
+    <ClCompile Include="TinyCScript\tinyc.cpp" />
+    <ClCompile Include="VirtualDebugCRT\breakpoints.cpp" />
+    <ClCompile Include="VirtualDebugCRT\threadidcache.cpp" />
+    <ClCompile Include="VirtualDebugCRT\VirtualDebugApiLayerCRT.cpp" />
+    <ClCompile Include="vmexec_interface.cpp" />
+    <ClCompile Include="xpedumper.cpp" />
+    <ClCompile Include="xsandbox.cpp" />
+    <ClCompile Include="xvmdebug_crt.cpp" />
+    <ClCompile Include="xvmhookruntime.cpp" />
+    <ClCompile Include="xvmiatcall.cpp" />
+    <ClCompile Include="xvmresource.cpp" />
+    <ClCompile Include="xvmruntime.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <MASM Include="TinyCScript\tinyc_crt32.asm" />
+    <MASM Include="xvmhookStub32.asm">
+      <FileType>Document</FileType>
+    </MASM>
+    <None Include="xVMRuntime.def" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\ncvm\ncasm\ncasm.vcxproj">
+      <Project>{d6f45e51-8a58-4845-b529-e991e028a144}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\xHooklib\vcpu\bochs.vcxproj">
+      <Project>{25329d5b-fcdd-4c0a-95c8-a3682fb9681b}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\xHooklib\vcpu\vcpu.vcxproj">
+      <Project>{16e9f69e-ffe5-4c54-b76f-8d3d14e9cec2}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\xHooklib\xHooklib.vcxproj">
+      <Project>{5e2d06ac-dc68-4efb-aafe-2798f17716ed}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\xHooklib\xhook_vmexec.vcxproj">
+      <Project>{0582068f-5b9a-49cc-9440-02a8c655823f}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.targets" />
+  </ImportGroup>
+</Project>

@@ -1,0 +1,37 @@
+TARGETNAME=tdi_fw
+TARGETPATH=obj
+TARGETTYPE=LIBRARY
+
+C_DEFINES=-DUSE_PACKET_ENGINE
+# You can specify this define too: -DUSE_TDI_HOOKING
+
+USER_INCLUDES=..;$(NTMAKEENV)\..\src\network\inc
+
+SOURCES=	tdi_fw.c \
+			dispatch.c \
+			disp_conn.c \
+			disp_dg.c \
+			disp_ev.c \
+			disp_obj.c \
+			events.c \
+			ev_conn.c \
+			ev_dg.c \
+			filter.c \
+			memtrack.c \
+			obj_tbl.c \
+			sock.c \
+			ipc.c \
+			pid_pname.c \
+			packet.c \
+			conn_state.c \
+			sids.c \
+			disp_sr.c \
+			ev_recv.c
+
+!if "$(NTDEBUG)"=="ntsdnodbg"
+NTDEBUG=
+!endif
+
+!ifndef NTDEBUG
+NTDEBUG=retail
+!endif

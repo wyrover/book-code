@@ -1,0 +1,25 @@
+TARGETNAME=WdfRamdisk
+TARGETTYPE=DRIVER
+TARGETPATH=obj
+
+
+
+KMDF_VERSION_MAJOR=1
+
+INF_NAME=ramdisk
+
+TARGETLIBS=$(TARGETLIBS) \
+           $(DDK_LIB_PATH)\ntstrsafe.lib
+
+NTTARGETFILES=$(OBJ_PATH)\$(O)\$(INF_NAME).inf
+
+
+
+MISCFILES=$(NTTARGETFILES)
+
+
+C_DEFINES= 
+
+SOURCES=ramdisk.c \
+        ramdisk.rc
+

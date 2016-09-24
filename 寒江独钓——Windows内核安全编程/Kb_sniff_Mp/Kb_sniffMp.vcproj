@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="7.10"
+	Name="Kb_sniffMp"
+	ProjectGUID="{5482DCA1-DD2C-4C35-B687-925F9EE42FD8}">
+	<Platforms>
+		<Platform
+			Name="Win32"/>
+	</Platforms>
+	<Configurations>
+		<Configuration
+			Name="Win32 Checked|Win32"
+			OutputDirectory=".\objchk/i386"
+			IntermediateDirectory=".\objchk/i386"
+			ConfigurationType="0"
+			CharacterSet="1">
+			<Tool
+				Name="VCNMakeTool"
+				BuildCommandLine="my_build chk WNET Kb_SniffMp"
+				ReBuildCommandLine="my_build chk WNET Kb_SniffMp /a"
+				CleanCommandLine="my_clean chk WNET Kb_SniffMp"
+				Output="Kb_SniffMp.sys"/>
+		</Configuration>
+		<Configuration
+			Name="Win32 Free|Win32"
+			OutputDirectory=".\objfre/i386"
+			IntermediateDirectory=".\objfre/i386"
+			ConfigurationType="0"
+			CharacterSet="1">
+			<Tool
+				Name="VCNMakeTool"
+				BuildCommandLine="my_build fre WNET Kb_SniffMp"
+				ReBuildCommandLine="my_build fre WNET Kb_SniffMp /a"
+				CleanCommandLine="my_clean fre WNET Kb_SniffMp"
+				Output="Kb_SniffMp.sys"/>
+		</Configuration>
+	</Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter
+			Name="Source Files"
+			Filter=".c;.cpp">
+			<File
+				RelativePath=".\Kb_sniffMp.c">
+			</File>
+			<File
+				RelativePath=".\KbRelated.c">
+			</File>
+		</Filter>
+		<Filter
+			Name="Header Files"
+			Filter=".h">
+			<File
+				RelativePath=".\Kb_sniffMp.h">
+			</File>
+			<File
+				RelativePath=".\KbRelated.h">
+			</File>
+		</Filter>
+		<Filter
+			Name="Resource Files"
+			Filter=".rc">
+		</Filter>
+		<File
+			RelativePath=".\sources">
+		</File>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

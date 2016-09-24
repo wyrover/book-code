@@ -1,0 +1,65 @@
+Protection Options for Software: WLx (Input File: notepad2.exe)
+----------------------------------
+
+Macros Information
+------------------
+VM Macros: 0
+CodeReplace Macros: 0
+ENCRYPT Macros: 0
+CLEAR Macros: 0
+CHECK_PROTECTION Macros: 0
+CHECK_CODE_INTEGRITY Macros: 0
+CHECK_REGISTRATION Macros: 0
+CHECK_VIRTUAL_PC Macros: 0
+
+
+Protection Options
+------------------
+Anti-Debugger: Advanced
+Anti-Dumpers: ENABLED
+Entry Point Obfuscation: ENABLED
+Resource Encryption: ENABLED
+VMWare compatible: ENABLED
+API-Wrapping Level: Level 2
+Anti-Patching: File Patching
+Metamorph Security: ENABLED
+Memory Guard: ENABLED
+When Debugger Found: Display Message
+Application compression: ENABLED
+Resources compression: ENABLED
+SecureEngine compression: ENABLED
+Anti-File Monitor: ENABLED
+Anti-Registry Monitor: ENABLED
+Delphi/BCB form protection: ENABLED
+Ring-0 Protection: DISABLED
+
+
+Virtual Machine Settings
+------------------------
+Number of Virtual APIs wrapped: 31
+API Virtualization Level: 3
+Entry Point Virtualization: 15 instructions
+Multi Branch Technology: ENABLED
+Virtual Machine Processor: Mutable CISC processor
+Number of CPUs: 1
+Opcode Type: Metamorphic - Level 2
+Dynamic Opcode: 20% Dynamic
+
+
+Advanced Protection Options
+---------------------------
+Encrypt Application: ENABLED
+DLL plugin: DISABLED
+Export Generators: ENABLED
+Keep Trial Running: DISABLED
+Hide from PE scanners: Type 3
+.NET assemblies: ENABLED
+Active Context: DISABLED
+Custom Event: 
+Add Manifest: Don't add manifest
+Launch Application: 
+
+
+XBundler files
+--------------
+No files to bundle

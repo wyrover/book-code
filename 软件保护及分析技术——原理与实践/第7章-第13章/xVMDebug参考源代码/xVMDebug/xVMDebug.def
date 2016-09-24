@@ -1,0 +1,8 @@
+LIBRARY xVMDebug
+EXPORTS
+    ODBG2_Pluginquery
+    ODBG2_Pluginmainloop
+    ODBG2_Pluginreset
+    ODBG2_Pluginmenu
+    ODBG2_Pluginclose
+    ODBG2_Plugindestroy

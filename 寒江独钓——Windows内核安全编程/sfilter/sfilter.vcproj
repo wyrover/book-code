@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="gb2312"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="7.10"
+	Name="sfilter"
+	ProjectGUID="{F0A10C37-22C4-4F5F-B696-5165D941AF40}"
+	SccProjectName=""
+	SccLocalPath=""
+	Keyword="MakeFileProj">
+	<Platforms>
+		<Platform
+			Name="Win32"/>
+	</Platforms>
+	<Configurations>
+		<Configuration
+			Name="Debug|Win32"
+			OutputDirectory=".\sfilter___Win32_win2003_chk"
+			IntermediateDirectory=".\sfilter___Win32_win2003_chk"
+			ConfigurationType="0"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="FALSE">
+			<Tool
+				Name="VCNMakeTool"
+				BuildCommandLine="my_build chk WNET"
+				ReBuildCommandLine="my_build chk WNET /a"
+				CleanCommandLine="my_clean chk WNET"
+				Output="sfilter.lib"/>
+		</Configuration>
+		<Configuration
+			Name="Release|Win32"
+			OutputDirectory=".\sfilter___Win32_win2003_fre"
+			IntermediateDirectory=".\sfilter___Win32_win2003_fre"
+			ConfigurationType="0"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="FALSE">
+			<Tool
+				Name="VCNMakeTool"
+				BuildCommandLine="my_build fre WNET"
+				ReBuildCommandLine="my_build fre WNET /a"
+				CleanCommandLine="my_clean fre WNET"
+				Output="sfilter.lib"/>
+		</Configuration>
+	</Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter
+			Name="Source Files"
+			Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat">
+			<File
+				RelativePath=".\my_build.bat">
+			</File>
+			<File
+				RelativePath=".\my_clean.bat">
+			</File>
+			<File
+				RelativePath="sfilter.c">
+			</File>
+		</Filter>
+		<Filter
+			Name="Header Files"
+			Filter="h;hpp;hxx;hm;inl">
+			<File
+				RelativePath="sfilter.h">
+			</File>
+		</Filter>
+		<Filter
+			Name="Resource Files"
+			Filter="ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe">
+		</Filter>
+		<File
+			RelativePath=".\makefile">
+		</File>
+		<File
+			RelativePath=".\sources">
+		</File>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

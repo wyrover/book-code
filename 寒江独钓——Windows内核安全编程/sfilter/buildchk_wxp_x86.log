@@ -1,0 +1,14 @@
+BUILD: Computing Include file dependencies:
+BUILD: Examining f:\work\dep\windriv\sfilter directory for files to compile.
+Compiling f:\work\dep\windriv\sfilter directory ********************
+'nmake.exe /c BUILDMSG=Stop. -i NTTEST= UMTEST= NOLINK=1 NOPASS0=1 386=1'
+1>BUILDMSG: Processing f:\work\dep\windriv\sfilter
+1>cl -nologo -Ii386\ -I. -Ic:\winddk\3790\inc\mfc42 -Iobjchk_wxp_x86\i386 -Ic:\winddk\3790\inc\wxp -Ic:\winddk\3790\inc\wxp -Ic:\winddk\3790\inc\ddk\wxp -Ic:\winddk\3790\inc\ifs\wxp -Ic:\winddk\3790\inc\crt -D_X86_=1 -Di386=1  -DSTD_CALL -DCONDITION_HANDLING=1   -DNT_INST=0 -DWIN32=100 -D_NT1X_=100 -DWINNT=1 -D_WIN32_WINNT=0x0501 /DWINVER=0x0501 -D_WIN32_IE=0x0600    -DWIN32_LEAN_AND_MEAN=1 -DDEVL=1 -DDBG=1 -D__BUILDMACHINE__=WinDDK -DFPO=0  -DNDEBUG      /c /Zel /Zp8 /Gy /Gi- /Gm-  /W3 /WX /Gz  /QIfdiv- /QIf /G6 /GX-  /GR- /GF  -Z7 /Od /Oi  /Oy-   -FIc:\winddk\3790\inc\wxp\warning.h   .\sfilter.c 
+1>sfilter.c
+1>	lib -out:objchk_wxp_x86\i386\sfilter.lib -IGNORE:4198,4010,4037,4039,4065,4070,4078,4087,4089,4221  /WX -nodefaultlib -machine:ix86 @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\nm4FF.tmp
+1>Microsoft (R) Library Manager Version 7.10.2179
+1>Copyright (C) Microsoft Corporation.  All rights reserved.
+1>
+1>objchk_wxp_x86\i386\sfilter.obj 
+1>
+1>Stop.

@@ -1,0 +1,6 @@
+BUILD: Computing Include file dependencies:
+BUILD: Examining d:\work\pln\º®½­¶Àµö\source_code\tdifw_smpl directory for files to compile.
+Linking d:\work\pln\º®½­¶Àµö\source_code\tdifw_smpl directory ********************
+'nmake.exe /c BUILDMSG=Stop. -i LINKONLY=1 NOPASS0=1 NTTEST= UMTEST= 386=1'
+1>
+1>Stop.

@@ -1,0 +1,30 @@
+<RCC>
+    <qresource prefix="/ico">
+        <file>images/open.ico</file>
+        <file>images/Options.ico</file>
+        <file>images/Continue.ico</file>
+        <file>images/pause.ico</file>
+        <file>images/stop.ico</file>
+        <file>images/func.png</file>
+        <file>images/dataptr.png</file>
+        <file>images/module.png</file>
+        <file>images/redirect.png</file>
+        <file>images/log.ico</file>
+        <file>images/clear.ico</file>
+        <file>images/Save.ico</file>
+        <file>images/step.ico</file>
+        <file>images/break.ico</file>
+        <file>images/Eye.ico</file>
+        <file>images/snapshot.ico</file>
+        <file>images/Eye1.ico</file>
+        <file>images/Eye2.ico</file>
+        <file>images/main.ico</file>
+        <file>images/Breakpoint.ico</file>
+        <file>images/export.ico</file>
+    </qresource>
+    <qresource prefix="/ico/rsrc">
+        <file>images/rsrc/folder.ico</file>
+        <file>images/rsrc/node.ico</file>
+        <file>images/rsrc/data.ico</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,99 @@
+; 文件：V-ASIO.inf
+; 描述：V-ASIO驱动安装/卸载文件
+; Copyright (c) 《竹林蹊径》 张佩 
+;
+; 联系：zhang.mibox@gmail.com
+;
+; Last modified: 10/26/2010
+
+[Version]
+Signature="$Windows NT$"
+Class=MEDIA
+ClassGUID={4d36e96c-e325-11ce-bfc1-08002be10318}
+Provider=ZhuLinXiJin
+DriverVer=09/30/2004,1.0.0.0
+
+[ControlFlags]
+ExcludeFromSelect=*
+
+[SourceDisksNames]
+1 = %cdname%,,,
+
+[SourceDisksFiles]
+Spliter.sys = 1,\i386
+
+[DestinationDirs]
+Spliter.CopyFiles=12
+
+;-------------------------------------------------------------------------------
+
+[DefaultInstall]
+AddReg=Spliter.RunOnce.AddReg
+
+[Spliter.RunOnce.AddReg]
+HKLM,%RunOnce%,"Spliter.Install",,"rundll32.exe streamci,StreamingDeviceSetup %Spliter.DeviceId%,%KSSTRING_Filter%,%KSCATEGORY_DATATRANSFORM%,%01%\Spliter.inf,Spliter.Install"
+
+;-------------------------------------------------------------------------------
+
+[Manufacturer]
+%Manufacture%=AVSSpliterSample
+
+[AVSSpliterSample]
+%Spliter.DeviceDesc%=Spliter,SW\{20698827-7099-4c4e-861A-4879D639A350}
+
+[AVSSpliterSample.NTamd64]
+%Spliter.DeviceDesc%=Spliter,SW\{20698827-7099-4c4e-861A-4879D639A350}
+
+[Spliter.NT]
+include=ks.inf
+needs=KS.Registration
+CopyFiles=Spliter.CopyFiles
+
+[Spliter.CopyFiles]
+Spliter.sys
+
+[Spliter.Install]
+AddReg=Spliter.Install.AddReg
+
+[Spliter.Install.AddReg]
+HKR,,CLSID,,%Proxy.CLSID%
+HKR,,FriendlyName,,%Spliter.Splitter.FriendlyName%
+
+[Spliter.NT.Services]
+AddService=Spliter, 0x00000002, Spliter.ServiceInstall
+
+[Spliter.ServiceInstall]
+DisplayName=%Spliter.DeviceDesc%
+ServiceType=%SERVICE_KERNEL_DRIVER%
+StartType=%SERVICE_DEMAND_START%
+ErrorControl=%SERVICE_ERROR_NORMAL%
+ServiceBinary=%12%\Spliter.sys
+LoadOrderGroup=ExtendedBase
+
+
+[Strings]
+; non-localizeable
+RunOnce="SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce"
+Proxy.CLSID="{17CCA71B-ECD7-11D0-B908-00A0C9223196}"
+Spliter.DeviceId="{20698827-7099-4c4e-861A-4879D639A350}"
+
+KSCATEGORY_AUDIO         = "{6994AD04-93EF-11D0-A3CC-00A0C9223196}"
+KSCATEGORY_DATATRANSFORM = "{2EB07EA0-7E70-11D0-A5D6-28DB04C10000}"
+KSCATEGORY_SPLITTER="{0A4252A0-7E70-11D0-A5D6-28DB04C10000}"
+KSSTRING_Filter="{9B365890-165F-11D0-A195-0020AFD156E4}"
+
+AudioSplitterPinGUID="{BA1184B9-1FE6-488a-AE78-6E997B02CAE0}"
+AudioSplitterPinName="Spliter Splitter Pin"
+
+SERVICE_KERNEL_DRIVER=1
+SERVICE_DEMAND_START=3
+SERVICE_ERROR_NORMAL=1
+REG_EXPAND_SZ=0x00020000
+REG_DWORD=0x00010001
+
+;localizeable
+Manufacture="ZhangPei"
+Spliter.DeviceDesc="Spliter by ZhangPei"
+Spliter.Splitter.FriendlyName="AVstream Spliter"
+
+cdname="Disk 1"

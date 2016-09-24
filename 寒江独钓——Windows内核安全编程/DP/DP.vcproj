@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="gb2312"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="7.10"
+	Name="DP"
+	ProjectGUID="{24F0CEB3-B124-45A7-B449-31497733AF6F}"
+	RootNamespace="DiskShield.VOLUMEFLT"
+	Keyword="MakeFileProj">
+	<Platforms>
+		<Platform
+			Name="Win32"/>
+	</Platforms>
+	<Configurations>
+		<Configuration
+			Name="Debug|Win32"
+			OutputDirectory="$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="0">
+			<Tool
+				Name="VCNMakeTool"
+				BuildCommandLine="my_build chk WNET"
+				ReBuildCommandLine="my_build chk WNET /a"
+				CleanCommandLine="my_clean chk WNET"/>
+		</Configuration>
+		<Configuration
+			Name="Release|Win32"
+			OutputDirectory="$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="0">
+			<Tool
+				Name="VCNMakeTool"
+				BuildCommandLine="my_build fre WNET"
+				ReBuildCommandLine="my_build fre WNET /a"
+				CleanCommandLine="my_clean fre WNET"
+				Output="dp.sys"/>
+		</Configuration>
+	</Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter
+			Name="Source Files"
+			Filter="cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx"
+			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}">
+			<File
+				RelativePath=".\DPBitmap.c">
+			</File>
+			<File
+				RelativePath=".\DPMain.c">
+			</File>
+			<File
+				RelativePath=".\my_build.bat">
+			</File>
+			<File
+				RelativePath=".\my_clean.bat">
+			</File>
+		</Filter>
+		<Filter
+			Name="Header Files"
+			Filter="h;hpp;hxx;hm;inl;inc;xsd"
+			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}">
+			<File
+				RelativePath=".\DPBitmap.h">
+			</File>
+			<File
+				RelativePath=".\DPMain.h">
+			</File>
+		</Filter>
+		<Filter
+			Name="Resource Files"
+			Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav"
+			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}">
+		</Filter>
+		<File
+			RelativePath=".\sources">
+		</File>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

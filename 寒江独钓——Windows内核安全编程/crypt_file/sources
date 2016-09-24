@@ -1,0 +1,31 @@
+!IF 0
+
+Copyright (C) Microsoft Corporation, 1997 - 1999
+
+Module Name:
+
+    sources.
+
+!ENDIF
+
+TARGETNAME=crypt_file
+TARGETPATH=obj
+TARGETTYPE=DRIVER
+DRIVERTYPE=FS
+SOURCES=cf_sfilter.c cf_file_irp.c cf_list.c cf_proc.c cf_modify_irp.c cf_create.c
+
+LIB_POST_FIX=WNET
+
+!if "$(DDK_TARGET_OS)"=="WinXP"
+LIB_POST_FIX=WXP
+!endif
+
+!if "$(DDK_TARGET_OS)"=="Win2K"
+LIB_POST_FIX=W2K
+!endif
+
+TARGETLIBS=	$(DDK_LIB_PATH)\wdmsec.lib \
+						$(DDK_LIB_PATH)\ntstrsafe.lib \
+						..\lib\sfilter_$(DDKBUILDENV)_$(LIB_POST_FIX).lib
+						
+

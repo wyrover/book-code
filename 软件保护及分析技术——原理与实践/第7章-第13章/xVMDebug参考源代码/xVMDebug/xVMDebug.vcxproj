@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{586AF8AC-2073-4FDB-8E67-B876DD62DA88}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120_xp</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120_xp</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;_UNICODE;UNICODE;_DEBUG;_WINDOWS;_USRDLL;XVMDEBUG_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>./../../xHooklib/vcpu/backend/bochs-2.6.2/;./../../xHooklib/vcpu/backend/bochs-2.6.2/instrument/stubs/;./../../xHooklib/vcpu/backend/bochs-2.6.2/cpu/;../../../3rdparty/;../../../3rdparty/yasm/;../../../3rdparty/yasm/libyasm/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <BasicRuntimeChecks>UninitializedLocalUsageCheck</BasicRuntimeChecks>
+      <OmitFramePointers>true</OmitFramePointers>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <ModuleDefinitionFile>$(ProjectName).def</ModuleDefinitionFile>
+      <OutputFile>$(OutDir)$(TargetName)32$(TargetExt)</OutputFile>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;_UNICODE;UNICODE;NDEBUG;_WINDOWS;_USRDLL;XVMDEBUG_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <AdditionalIncludeDirectories>./../../xHooklib/vcpu/backend/bochs-2.6.2/;./../../xHooklib/vcpu/backend/bochs-2.6.2/instrument/stubs/;./../../xHooklib/vcpu/backend/bochs-2.6.2/cpu/;../../../3rdparty/;../../../3rdparty/yasm/;../../../3rdparty/yasm/libyasm/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ModuleDefinitionFile>$(ProjectName).def</ModuleDefinitionFile>
+      <OutputFile>$(OutDir)$(TargetName)32$(TargetExt)</OutputFile>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\3rdparty\libudis86\decode.c" />
+    <ClCompile Include="..\..\..\3rdparty\libudis86\itab.c" />
+    <ClCompile Include="..\..\..\3rdparty\libudis86\syn-att.c" />
+    <ClCompile Include="..\..\..\3rdparty\libudis86\syn-intel.c" />
+    <ClCompile Include="..\..\..\3rdparty\libudis86\syn.c" />
+    <ClCompile Include="..\..\..\3rdparty\libudis86\udis86.c" />
+    <ClCompile Include="..\..\..\3rdparty\nedmalloc\nedmalloc.cpp" />
+    <ClCompile Include="..\..\..\nCom\nexpress.cpp" />
+    <ClCompile Include="..\..\..\nCom\npacketbase.cpp" />
+    <ClCompile Include="..\..\..\nCom\PipeBase.cpp" />
+    <ClCompile Include="..\..\..\nNetLib\npipeclient.cpp" />
+    <ClCompile Include="..\..\..\nSRK\nSRK_CC\nasm\base\nasm_base.cpp" />
+    <ClCompile Include="..\..\..\nSRK\nSRK_CC\nasm\i386\nasm_i386.cpp" />
+    <ClCompile Include="bypassanti.cpp" />
+    <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="NativeSysCallID.cpp" />
+    <ClCompile Include="ollydbg2_plugin.cpp" />
+    <ClCompile Include="patternAsm.cpp" />
+    <ClCompile Include="virtualdebug\VirtualDebug.cpp" />
+    <ClCompile Include="virtualdebug\VirtualDebugApiLayer.cpp" />
+    <ClCompile Include="xApiWatch.cpp" />
+    <ClCompile Include="xdynamic_ollydbg.cpp" />
+    <ClCompile Include="xvmblockframe.cpp" />
+    <ClCompile Include="xvmdebug.cpp" />
+    <ClCompile Include="xvmdebugcpu.cpp" />
+    <ClCompile Include="xvmdebugframe.cpp" />
+    <ClCompile Include="xvmiatcallframe.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="xVMDebug.def" />
+    <None Include="xVMDebug.rc2" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\nCom\nexpress.h" />
+    <ClInclude Include="..\..\..\nCom\npacketbase.h" />
+    <ClInclude Include="..\..\..\nCom\PipeBase.h" />
+    <ClInclude Include="..\..\..\nSRK\nSRK_CC\nasm\base\nasm_base.h" />
+    <ClInclude Include="..\..\..\nSRK\nSRK_CC\nasm\i386\nasm_i386.h" />
+    <ClInclude Include="bypassanti.h" />
+    <ClInclude Include="NativeSysCallID.h" />
+    <ClInclude Include="ollydbg2\plugin.h" />
+    <ClInclude Include="ollydbg2_plugin.h" />
+    <ClInclude Include="patternAsm.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="virtualdebug\VirtualDebug.h" />
+    <ClInclude Include="virtualdebug\VirtualDebugApiLayer.h" />
+    <ClInclude Include="xApiWatch.h" />
+    <ClInclude Include="xdynamic_ollydbg.h" />
+    <ClInclude Include="xvmblockframe.h" />
+    <ClInclude Include="xvmdebug.h" />
+    <ClInclude Include="xvmdebugcpu.h" />
+    <ClInclude Include="xvmdebugframe.h" />
+    <ClInclude Include="xvmiatcallframe.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="xVMDebug.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\3rdparty\yasm\Mkfiles\vc10\libyasm\libyasm.vcxproj">
+      <Project>{29fe7874-1256-4ad6-b889-68e399dc9608}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\3rdparty\yasm\Mkfiles\vc10\modules\modules.vcxproj">
+      <Project>{d715a3d4-efaa-442e-ad8b-5b4ff64e1dd6}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\ncvm\ncasm\ncasm.vcxproj">
+      <Project>{d6f45e51-8a58-4845-b529-e991e028a144}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\xHooklib\vcpu\bochs.vcxproj">
+      <Project>{25329d5b-fcdd-4c0a-95c8-a3682fb9681b}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\xHooklib\vcpu\vcpu.vcxproj">
+      <Project>{16e9f69e-ffe5-4c54-b76f-8d3d14e9cec2}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\xHooklib\xHooklib.vcxproj">
+      <Project>{5e2d06ac-dc68-4efb-aafe-2798f17716ed}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\xHooklib\xhook_vmexec.vcxproj">
+      <Project>{0582068f-5b9a-49cc-9440-02a8c655823f}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="gb2312"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="7.10"
+	Name="ramdisk_wdf"
+	ProjectGUID="{3803F1BA-68AF-4463-B953-E1C2D5A72D28}"
+	Keyword="MakeFileProj">
+	<Platforms>
+		<Platform
+			Name="Win32"/>
+	</Platforms>
+	<Configurations>
+		<Configuration
+			Name="Debug|Win32"
+			OutputDirectory="Debug"
+			IntermediateDirectory="Debug"
+			ConfigurationType="0">
+			<Tool
+				Name="VCNMakeTool"
+				BuildCommandLine="my_build chk WNET"
+				ReBuildCommandLine="my_build chk WNET /a"
+				CleanCommandLine="my_clean chk WNET"
+				Output="ramdisk_wdf.sys"/>
+		</Configuration>
+		<Configuration
+			Name="Release|Win32"
+			OutputDirectory="Release"
+			IntermediateDirectory="Release"
+			ConfigurationType="0">
+			<Tool
+				Name="VCNMakeTool"
+				BuildCommandLine="my_build fre WNET"
+				ReBuildCommandLine="my_build fre WNET /a"
+				CleanCommandLine="my_clean fre WNET"
+				Output="ramdisk_wdf.sys"/>
+		</Configuration>
+	</Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter
+			Name="Source Files"
+			Filter="cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx"
+			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}">
+			<File
+				RelativePath=".\my_build.bat">
+			</File>
+			<File
+				RelativePath=".\my_clean.bat">
+			</File>
+			<File
+				RelativePath=".\ramdisk.c">
+			</File>
+		</Filter>
+		<Filter
+			Name="Header Files"
+			Filter="h;hpp;hxx;hm;inl;inc;xsd"
+			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}">
+			<File
+				RelativePath=".\makefile.inc">
+			</File>
+			<File
+				RelativePath=".\ramdisk.h">
+			</File>
+		</Filter>
+		<Filter
+			Name="Resource Files"
+			Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx"
+			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}">
+			<File
+				RelativePath=".\ramdisk.rc">
+			</File>
+		</Filter>
+		<File
+			RelativePath=".\readme.txt">
+		</File>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

@@ -1,0 +1,162 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: Driver - Win32 Debug--------------------
+</h3>
+
+OSR DDKBUILD.BAT V5.0 - Copyright 1995-2002 OSR, Open Systems Resources, Inc.
+
+E:\PROJECTS\MASON\Driver>rem // 
+
+E:\PROJECTS\MASON\Driver>rem // Check for NT 4 Build 
+
+E:\PROJECTS\MASON\Driver>rem // 
+
+E:\PROJECTS\MASON\Driver>if /I -WNETXP NEQ -NT4 goto NoNT4Base 
+
+E:\PROJECTS\MASON\Driver>rem // 
+
+E:\PROJECTS\MASON\Driver>rem // Check for WNET Windows 2000 Build using WNET DDK 
+
+E:\PROJECTS\MASON\Driver>rem // 
+
+E:\PROJECTS\MASON\Driver>if /I -WNETXP NEQ -WNET2K goto NoWNET2KBase 
+
+E:\PROJECTS\MASON\Driver>rem // 
+
+E:\PROJECTS\MASON\Driver>rem // Check for WXP Build using WNET DDK 
+
+E:\PROJECTS\MASON\Driver>rem // 
+
+E:\PROJECTS\MASON\Driver>if /I -WNETXP NEQ -WNETXP goto NoWNETXPBase 
+WXP BUILD using WNET DDK
+
+E:\PROJECTS\MASON\Driver>set BASEDIR=D:\WINDDK\3615 
+
+E:\PROJECTS\MASON\Driver>shift
+
+E:\PROJECTS\MASON\Driver>if "D:\WINDDK\3615" == "" goto ErrNoBASEDIR 
+
+E:\PROJECTS\MASON\Driver>set path=D:\WINDDK\3615\bin;F:\MSSDK\bin\winnt;F:\MSSDK\bin;d:\MVS\Common\MSDev98\Bin;d:\MVS\VC98\BIN;d:\MVS\Common\TOOLS;d:\MVS\Common\TOOLS\WINNT;c:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem 
+
+E:\PROJECTS\MASON\Driver>set mode= 
+
+E:\PROJECTS\MASON\Driver>for %f in (free FREE fre FRE) do if %f == chk set mode=fre 
+
+E:\PROJECTS\MASON\Driver>if free == chk set mode=fre 
+
+E:\PROJECTS\MASON\Driver>if FREE == chk set mode=fre 
+
+E:\PROJECTS\MASON\Driver>if fre == chk set mode=fre 
+
+E:\PROJECTS\MASON\Driver>if FRE == chk set mode=fre 
+
+E:\PROJECTS\MASON\Driver>for %f in (checked CHECKED chk CHK) do if %f == chk set mode=chk 
+
+E:\PROJECTS\MASON\Driver>if checked == chk set mode=chk 
+
+E:\PROJECTS\MASON\Driver>if CHECKED == chk set mode=chk 
+
+E:\PROJECTS\MASON\Driver>if chk == chk set mode=chk 
+
+E:\PROJECTS\MASON\Driver>if CHK == chk set mode=chk 
+
+E:\PROJECTS\MASON\Driver>if chk == "" goto ErrBadMode 
+
+E:\PROJECTS\MASON\Driver>if . == "" goto ErrNoDir 
+
+E:\PROJECTS\MASON\Driver>if not exist . goto ErrNoDir 
+
+E:\PROJECTS\MASON\Driver>pushd . 
+
+E:\PROJECTS\MASON\Driver>call D:\WINDDK\3615\bin\setenv.bat D:\WINDDK\3615 chk WXP  
+
+E:\Projects\mason\driver>goto RegularBuild 
+
+E:\Projects\mason\driver>set mpFlag=-M 
+
+E:\Projects\mason\driver>if "chk_wxp_x86" == "" goto NT4 
+
+E:\Projects\mason\driver>rem win2k sets this! 
+
+E:\Projects\mason\driver>set W2kEXT=chk_wxp_x86 
+
+E:\Projects\mason\driver>set mpFlag=-MI 
+
+E:\Projects\mason\driver>if "2" == "" set mpFlag= 
+
+E:\Projects\mason\driver>if "2" == "1" set mpFlag= 
+build in directory . with arguments -cZ (basedir D:\WINDDK\3615)
+
+E:\Projects\mason\driver>cd . 
+
+E:\Projects\mason\driver>set bflags=-Ze 
+
+E:\Projects\mason\driver>set bscFlags="" 
+
+E:\Projects\mason\driver>if "-cZ" == "" goto done 
+
+E:\Projects\mason\driver>if "-cZ" == "/a" goto rebuildall 
+
+E:\Projects\mason\driver>set bscFlags=/n 
+
+E:\Projects\mason\driver>set bflags=-cZ -e 
+
+E:\Projects\mason\driver>goto done 
+
+E:\Projects\mason\driver>if EXIST buildchk_wxp_x86.err erase buildchk_wxp_x86.err 
+
+E:\Projects\mason\driver>if EXIST buildchk_wxp_x86.wrn erase buildchk_wxp_x86.wrn 
+
+E:\Projects\mason\driver>if EXIST buildchk_wxp_x86.log erase buildchk_wxp_x86.log 
+run build -cZ -e -MI for chk version in .
+
+E:\Projects\mason\driver>pushd . 
+
+E:\Projects\mason\driver>build  -cZ -e -MI 
+BUILD: Adding /Y to COPYCMD so xcopy ops won't hang.
+BUILD: Using 2 child processes
+BUILD: Object root set to: ==> objchk_wxp_x86
+BUILD: Compile and Link for i386
+BUILD: Examining e:\projects\mason\driver directory for files to compile.
+    e:\projects\mason\driver 
+BUILD: Compiling e:\projects\mason\driver directory
+Compiling - comm.cpp for i386
+Building Browse File - comm.cpp for all platforms
+BUILD: Linking e:\projects\mason\driver directory
+Linking Executable - objchk_wxp_x86\i386\comm.sys for i386
+BUILD: Done
+
+    2 files compiled
+    1 executable built
+    1 browse database built
+
+E:\Projects\mason\driver>popd
+
+E:\Projects\mason\driver>rem assume that the onscreen errors are complete! 
+=============== build warnings ======================
+
+E:\Projects\mason\driver>if exist buildchk_wxp_x86.log findstr "warning.*[CLU][0-9]*" buildchk_wxp_x86.log 
+ 
+ 
+build complete
+building browse information files
+
+E:\Projects\mason\driver>if EXIST buildbrowse.cmd goto doBrowsescript 
+
+E:\Projects\mason\driver>set sbrlist=sbrList.txt 
+
+E:\Projects\mason\driver>if not EXIST sbrListx86.txt goto sbrDefault 
+
+E:\Projects\mason\driver>if not EXIST sbrList.txt goto end 
+ddkbuild complete
+
+
+
+<h3>Results</h3>
+Driver.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

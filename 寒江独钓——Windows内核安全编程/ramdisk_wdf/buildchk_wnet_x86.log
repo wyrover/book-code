@@ -1,0 +1,8 @@
+BUILD: Computing Include file dependencies:
+BUILD: Examining d:\work\pln\skipping post pass 0 command
+Compiling d:\work\pln\'nmake.exe /nologo BUILDMSG=Stop. -i BUILD_PASS=PASS1 NOLINK=1 NOPASS0=1 MAKEDIR_RELATIVE_TO_BASEDIR='
+d:\work\pln\????\source_code\ramdisk_wdf: TARGETPATH is obj
+BUILDMSG: _NT_TARGET_VERSION SET TO WS03
+Linking for d:\work\pln\'nmake.exe /nologo BUILDMSG=Stop. -i BUILD_PASS=PASS2 LINKONLY=1 NOPASS0=1 MAKEDIR_RELATIVE_TO_BASEDIR='
+d:\work\pln\????\source_code\ramdisk_wdf: TARGETPATH is obj
+BUILDMSG: _NT_TARGET_VERSION SET TO WS03

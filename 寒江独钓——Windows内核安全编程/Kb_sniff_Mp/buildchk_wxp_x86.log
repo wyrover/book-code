@@ -1,0 +1,104 @@
+BUILD: Examining d:\kb_sni~2 directory for files to compile.
+skipping post pass 0 command
+Compiling and Linking d:\kb_sni~2 *************
+'nmake.exe /nologo BUILDMSG=Stop. -i BUILD_PASS=PASS2 LINKONLY=1 NOPASS0=1 MAKEDIR_RELATIVE_TO_BASEDIR='
+d:\kb_sni~2: TARGETPATH is OBJ
+BUILDMSG: _NT_TARGET_VERSION SET TO WINXP
+Rebuilding d:\kb_sni~2\objchk_wxp_x86\i386\_objects.mac .\sources.
+BUILD: Compile and Link for x86
+d:\kb_sni~2\objchk_wxp_x86\i386\_objects.mac was rebuilt, please reinvoke NMAKE
+ cl.exe @d:\kb_sni~2\objchk_wxp_x86\i386\cl.rsp
+Microsoft (R) 32-bit C/C++ Optimizing Compiler Version 14.00.50727.278 for 80x86
+Copyright (C) Microsoft Corporation.  All rights reserved.
+cl /Fo"d:\kb_sni~2\objchk_wxp_x86\i386/"
+ /FC
+ /Ii386
+ /I.
+ /Id:\kb_sni~2\objchk_wxp_x86\i386
+ /IE:\WinDDK\6001.18001\inc\api
+ /IE:\WinDDK\6001.18001\inc\api
+ /IE:\WinDDK\6001.18001\inc\ddk
+ /IE:\WinDDK\6001.18001\inc\ddk
+ /IE:\WinDDK\6001.18001\inc\crt
+ /D_X86_=1
+ /Di386=1
+ /DSTD_CALL
+ /DCONDITION_HANDLING=1
+ /DNT_INST=0
+ /DWIN32=100
+ /D_NT1X_=100
+ /DWINNT=1
+ /D_WIN32_WINNT=0x0501
+ /DWINVER=0x0501
+ /D_WIN32_IE=0x0603
+ /DWIN32_LEAN_AND_MEAN=1
+ /DDEVL=1
+ /DDBG=1
+ /D__BUILDMACHINE__=WinDDK
+ /DFPO=0
+ /D_DLL=1
+ /DNDEBUG
+ /DDEPRECATE_DDK_FUNCTIONS=1
+ /DMSC_NOOPT
+ /DNTDDI_VERSION=0x05010000
+ /c
+ /Zc:wchar_t-
+ /Zl
+ /Zp8
+ /Gy
+ /Gm-
+ -cbstring
+ /W3
+ /Gz
+ /hotpatch
+ /EHs-c-
+ /GR-
+ /GF
+ /GS
+ /Zi
+ /Od
+ /Oi
+ /Oy-
+ /Zi
+ /Fdd:\kb_sni~2\objchk_wxp_x86\i386\
+ /DKMDF_MAJOR_VERSION=01
+ /DKMDF_MINOR_VERSION=007
+ /FIE:\WinDDK\6001.18001\inc\api\warning.h
+ .\kb_sniffmp.c .\kbrelated.c 
+kb_sniffmp.c
+kbrelated.c
+Generating Code...
+ link.exe /out:d:\kb_sni~2\objchk_wxp_x86\i386\Kb_sniffMp.sys /machine:ix86 @d:\kb_sni~2\objchk_wxp_x86\i386\lnk.rsp
+Microsoft (R) Incremental Linker Version 8.00.50727.278
+Copyright (C) Microsoft Corporation.  All rights reserved.
+/MERGE:_PAGE=PAGE 
+/MERGE:_TEXT=.text 
+/SECTION:INIT,d 
+/OPT:REF 
+/OPT:ICF 
+/IGNORE:4198,4010,4037,4039,4065,4070,4078,4087,4089,4221 
+/INCREMENTAL:NO 
+/release 
+/NODEFAULTLIB 
+/WX 
+/debug 
+/debugtype:cv,fixup,pdata 
+/version:6.0 
+/osversion:6.0 
+/functionpadmin:5 
+/safeseh 
+/pdbcompress 
+/STACK:0x40000,0x1000 
+/driver 
+/base:0x10000 
+/align:0x80 /stub:e:\winddk\6001.18001\lib\wxp\stub512.com 
+/subsystem:native,5.01 
+/entry:GsDriverEntry@8 
+/out:d:\kb_sni~2\objchk_wxp_x86\i386\Kb_sniffMp.sys 
+d:\kb_sni~2\objchk_wxp_x86\i386\kb_sniffmp.obj 
+d:\kb_sni~2\objchk_wxp_x86\i386\kbrelated.obj 
+e:\winddk\6001.18001\lib\wxp\i386\BufferOverflowK.lib 
+e:\winddk\6001.18001\lib\wxp\i386\ntoskrnl.lib 
+e:\winddk\6001.18001\lib\wxp\i386\hal.lib 
+e:\winddk\6001.18001\lib\wxp\i386\wmilib.lib 
+e:\winddk\6001.18001\lib\wxp\i386\sehupd.lib 

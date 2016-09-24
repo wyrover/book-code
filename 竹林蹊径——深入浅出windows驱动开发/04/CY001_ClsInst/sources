@@ -1,0 +1,23 @@
+TARGETNAME=CY001_ClsInst
+TARGETTYPE=DYNLINK
+
+MSC_WARNING_LEVEL=/W4 /WX 
+
+DLLENTRY=_DllMainCRTStartup
+
+INCLUDES=$(DDK_INC_PATH); 
+
+USE_MSVCRT=1
+
+SOURCES=classinst_CY001.c \
+        classinst_CY001.rc
+
+TARGETLIBS= $(SDK_LIB_PATH)\setupapi.lib \
+            $(SDK_LIB_PATH)\kernel32.lib \
+            $(SDK_LIB_PATH)\advapi32.lib \
+            $(SDK_LIB_PATH)\user32.lib \
+            $(SDK_LIB_PATH)\comctl32.lib     
+
+DLLBASE=0x2000000
+
+_NT_TARGET_VERSION=$(_NT_TARGET_VERSION_WINXP)

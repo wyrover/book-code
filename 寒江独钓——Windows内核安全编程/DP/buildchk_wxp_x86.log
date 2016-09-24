@@ -1,0 +1,7 @@
+BUILD: Examining c:\work\work2\app\test\dp directory for files to compile.
+skipping post pass 0 command
+Compiling and Linking c:\work\work2\app\test\dp *************
+'nmake.exe /nologo BUILDMSG=Stop. -i BUILD_PASS=PASS2 LINKONLY=1 NOPASS0=1 MAKEDIR_RELATIVE_TO_BASEDIR='
+BUILDMSG: _NT_TARGET_VERSION SET TO WINXP
+ cl.exe @c:\work\work2\app\test\dp\objchk_wxp_x86\i386\cl.rsp
+ link.exe /out:c:\work\work2\app\test\dp\objchk_wxp_x86\i386\DP.sys /machine:ix86 @c:\work\work2\app\test\dp\objchk_wxp_x86\i386\lnk.rsp
