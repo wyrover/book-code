@@ -1,0 +1,3 @@
+VMWARE：https://my.vmware.com/cn/web/vmware/details?downloadGroup=WKST-1001-WIN&productId=362&rPId=4548（序列号请自行利用谷歌搜索）
+WINDBG：无需下载，在安装WDK时就会自带。
+VirtualKD：http://virtualkd.sysprogs.org 

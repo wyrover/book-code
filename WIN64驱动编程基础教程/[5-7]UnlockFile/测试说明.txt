@@ -1,0 +1,5 @@
+测试方法：
+1.用『lockfile.exe』锁定文件『lockfile.xxx』
+2.删除『lockfile.xxx』，会提示无法删除
+3.加载『UnlockFile.sys』
+4.再次删除『lockfile.xxx』则会成功

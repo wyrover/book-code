@@ -1,0 +1,7 @@
+两年前测试的版本：
+http://bbs.ggsafe.com/thread-99182-1-1.html
+
+现在测试的版本：
+http://bbs.ggsafe.com/thread-144791-1-1.html
+
+代码一行未改，效果一模一样。悲剧，悲剧～

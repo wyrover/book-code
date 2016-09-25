@@ -1,0 +1,2 @@
+用LoadDrv.exe（注意程序名字不能改）加载hookssdt_x64.sys后，可以发现TaskMgr无法结束LoadDrv.exe了。
+运行计算器（calc.exe），可以发现TaskMgr也无法结束calc.exe了。

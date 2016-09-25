@@ -1,0 +1,7 @@
+0>Bad Path string: L'i:\sellcode\win64 F '
+
+BUILD: corrupt database (bad entry type)
+BUILD: Computing Include file dependencies:
+BUILD: Examining i:\sellcode\win64oacr invalidate root:amd64fre /autocleanqueue
+1>Compiling and Linking i:\sellcode\win641>'nmake.exe /nologo BUILDMSG=Stop. -i BUILD_PASS=PASS2 LINKONLY=1 NOPASS0=1 MAKEDIR_RELATIVE_TO_BASEDIR='
+1>i:\sellcode\win64

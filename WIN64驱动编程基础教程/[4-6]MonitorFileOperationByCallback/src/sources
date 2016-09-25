@@ -1,0 +1,10 @@
+TARGETNAME=file_monitor_x64
+TARGETTYPE=DRIVER
+
+MSC_WARNING_LEVEL=/W4 /WX
+
+#pragma warning( disable: 4201 ) // nonstandard extension used : nameless struct/union
+#pragma warning( disable: 4214 ) // nonstandard extension used : bit field types other than int
+MSC_WARNING_LEVEL=$(MSC_WARNING_LEVEL) /wd4201 /wd4214
+
+SOURCES=main.c

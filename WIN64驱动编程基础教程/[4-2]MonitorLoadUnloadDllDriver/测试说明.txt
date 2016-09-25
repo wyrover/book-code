@@ -1,0 +1,2 @@
+加载此驱动后，会打印出此后加载的驱动的ImageBase和DriverEntry。
+同时禁止的名为win64ast.sys的驱动的加载。

@@ -1,0 +1,4 @@
+在测试签名模式下，DSE不会被严格执行，可以加载自定义签名的驱动程序。
+
+打开测试签名模式：bcdedit -testsigning on
+关闭测试签名模式：bcdedit -testsigning off

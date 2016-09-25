@@ -1,0 +1,7 @@
+TARGETNAME=EnumRemoveObCallback
+TARGETTYPE=DRIVER
+TARGETPATH=obj
+
+INCLUDES=.\
+
+SOURCES = MyDriver.c

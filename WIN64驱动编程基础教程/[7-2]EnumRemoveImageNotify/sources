@@ -1,0 +1,7 @@
+TARGETNAME=EnumRemoveImageNotify
+TARGETTYPE=DRIVER
+TARGETPATH=obj
+
+INCLUDES=.\
+
+SOURCES = MyDriver.c

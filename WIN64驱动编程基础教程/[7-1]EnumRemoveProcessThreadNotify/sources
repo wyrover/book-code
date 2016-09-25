@@ -1,0 +1,7 @@
+TARGETNAME=EnumProcessThreadNotify64
+TARGETTYPE=DRIVER
+TARGETPATH=obj
+
+INCLUDES=.\
+
+SOURCES = MyDriver.c
