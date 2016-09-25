@@ -331,6 +331,44 @@ workspace "3rdparty"
                 "3rdparty/jsoncpp/include"
             }
 
+    group "bzip2"
+
+        project "bzip2"            
+            kind "StaticLib"        
+            defines { "BZ_NO_STDIO2" }                       
+            files
+            {
+                "3rdparty/bzip2/*.h",
+                "3rdparty/bzip2/*.c"                              
+            } 
+            removefiles
+            {   
+                "3rdparty/bzip2/bzip2recover.c",
+                "3rdparty/bzip2/dlltest.c",
+                "3rdparty/bzip2/mk251.c",
+                "3rdparty/bzip2/spewG.c",
+                "3rdparty/bzip2/unzcrash.c"
+            }
+            
+        project "bzip2_mt"            
+            kind "StaticLib"     
+            defines { "BZ_NO_STDIO2" }
+            flags { "StaticRuntime" }
+            files
+            {
+                "3rdparty/bzip2/*.h",
+                "3rdparty/bzip2/*.c"      
+                               
+            }
+            removefiles
+            {   
+                "3rdparty/bzip2/bzip2recover.c",
+                "3rdparty/bzip2/dlltest.c",
+                "3rdparty/bzip2/mk251.c",
+                "3rdparty/bzip2/spewG.c",
+                "3rdparty/bzip2/unzcrash.c"
+            }
+
     group "zlib"
 
         project "zlib"            
@@ -519,7 +557,59 @@ workspace "3rdparty"
             includedirs
             {          
                 "3rdparty/unrar"
-            }   
+            } 
+            
+    group "libiconv"
+
+        project "libiconv"            
+            kind "StaticLib"        
+                       
+            files
+            {
+                "3rdparty/libiconv/**.h",
+                "3rdparty/libiconv/**.c",
+                "3rdparty/libiconv/**.rc"
+                               
+            } 
+            
+        project "libiconv_mt"            
+            kind "StaticLib"     
+            
+            flags { "StaticRuntime" }
+            files
+            {
+                "3rdparty/libiconv/**.h",
+                "3rdparty/libiconv/**.c",
+                "3rdparty/libiconv/**.rc"
+                               
+            }
+
+        project "libiconv_dll"    
+            targetname "libiconv" 
+            kind "SharedLib"           
+            defines { "_USRDLL", "LIBICONV_EXPORTS", "BUILDING_LIBICONV", "BUILDING_LIBCHARSET" }
+            flags { "NoManifest" }
+            files
+            {
+                "3rdparty/libiconv/**.h",
+                "3rdparty/libiconv/**.c",
+                "3rdparty/libiconv/**.rc"
+                
+                               
+            }
+
+        project "libiconv_dll_mt"  
+            targetname "libiconv"    
+            implibname "libiconv_mt"
+            kind "SharedLib"            
+            defines { "_USRDLL", "LIBICONV_EXPORTS", "BUILDING_LIBICONV", "BUILDING_LIBCHARSET" }
+            flags { "StaticRuntime", "NoManifest" }
+            files
+            {
+                "3rdparty/libiconv/**.h",
+                "3rdparty/libiconv/**.c",
+                "3rdparty/libiconv/**.rc"                           
+            }
     
     group "lua"
 
