@@ -255,6 +255,154 @@ workspace "3rdparty"
                 
             }
 
+    group "pugixml"
+
+        project "pugixml"                     
+            kind "StaticLib"                    
+            files
+            {
+                "3rdparty/pugixml/**.hpp",
+                "3rdparty/pugixml/**.cpp"                
+            }             
+
+        project "pugixml_mt"              
+            kind "StaticLib"          
+            flags { "StaticRuntime" }           
+            files
+            {
+                "3rdparty/pugixml/**.hpp",
+                "3rdparty/pugixml/**.cpp"                      
+            }  
+
+    group "libpng"    
+
+        project "libpng"                     
+            kind "StaticLib"                    
+            files
+            {
+                "3rdparty/libpng-libpng16/*.h",
+                "3rdparty/libpng-libpng16/*.c",   
+                "3rdparty/libpng-libpng16/scripts/pngwin.rc"   
+            }             
+            removefiles
+            {   
+                "3rdparty/libpng-libpng16/example.c",
+
+            }
+            includedirs
+            {
+                "3rdparty/zlib"
+            }
+
+        project "libpng_mt"              
+            kind "StaticLib"          
+            flags { "StaticRuntime" }           
+            files
+            {
+                "3rdparty/libpng-libpng16/*.h",
+                "3rdparty/libpng-libpng16/*.c",
+                "3rdparty/libpng-libpng16/scripts/pngwin.rc"  
+            }  
+            removefiles
+            {   
+                "3rdparty/libpng-libpng16/example.c",
+
+            }
+            includedirs
+            {
+                "3rdparty/zlib"
+            }
+
+        project "libpng_dll"         
+            targetname "libpng"    
+            kind "SharedLib"             
+            defines { "PNG_BUILD_DLL", "ZLIB_DLL" }
+            flags { "NoManifest" }
+            files
+            {
+                "3rdparty/libpng-libpng16/*.h",
+                "3rdparty/libpng-libpng16/*.c",
+                "3rdparty/libpng-libpng16/scripts/pngwin.rc"  
+            }  
+            removefiles
+            {   
+                "3rdparty/libpng-libpng16/example.c",
+
+            }
+            includedirs
+            {
+                "3rdparty/zlib"
+            }
+            links
+            {
+                "zlib1_impl.lib"
+            }
+
+        project "libpng_dll_mt"  
+            targetname "libpng"    
+            implibname "libpng_mt"
+            kind "SharedLib"                  
+            flags { "StaticRuntime", "NoManifest" }
+            files
+            {
+                "3rdparty/libpng-libpng16/*.h",
+                "3rdparty/libpng-libpng16/*.c",
+                "3rdparty/libpng-libpng16/scripts/pngwin.rc"  
+            }  
+            removefiles
+            {   
+                "3rdparty/libpng-libpng16/example.c",
+
+            }
+            includedirs
+            {
+                "3rdparty/zlib"
+            }
+            links
+            {
+                "zlib1_mt_impl.lib"
+            }
+
+    group "tidylib"    
+
+        project "tidylib"                     
+            kind "StaticLib"                    
+            files
+            {
+                "3rdparty/tidylib/**.h",
+                "3rdparty/tidylib/**.c",   
+                 
+            }             
+            removefiles
+            {   
+                --"3rdparty/libpng-libpng16/example.c",
+
+            }
+            includedirs
+            {
+                "3rdparty/tidylib/include"
+            }
+            
+
+        project "tidylib_mt"              
+            kind "StaticLib"          
+            flags { "StaticRuntime" }           
+            files
+            {
+                "3rdparty/tidylib/**.h",
+                "3rdparty/tidylib/**.c", 
+            }  
+            removefiles
+            {   
+                --"3rdparty/libpng-libpng16/example.c",
+
+            }
+            includedirs
+            {
+                "3rdparty/tidylib/include"
+            }
+            
+            
     group "tracetool"
 
         project "tracetool"
@@ -275,7 +423,7 @@ workspace "3rdparty"
             {
                 "3rdparty/tracetool/**.h",
                 "3rdparty/tracetool/**.cpp"                
-            }           
+            }
 
     group "getopt"
 
@@ -417,6 +565,39 @@ workspace "3rdparty"
                 "3rdparty/zlib/win32/*.def",
                 "3rdparty/zlib/win32/*.rc"                               
             }
+
+    group "unzip"
+
+        project "unzip"            
+            kind "StaticLib"        
+                       
+            files
+            {
+                "3rdparty/unzip101e/*.h",
+                "3rdparty/unzip101e/*.c"      
+                               
+            } 
+            includedirs
+            {
+                "3rdparty/zlib"
+            }
+            
+            
+        project "unzip_mt"            
+            kind "StaticLib"     
+            
+            flags { "StaticRuntime" }
+            files
+            {
+                "3rdparty/unzip101e/*.h",
+                "3rdparty/unzip101e/*.c"      
+                               
+            }
+            includedirs
+            {
+                "3rdparty/zlib"
+            }
+            
 
 
     group "unrar"
@@ -610,6 +791,154 @@ workspace "3rdparty"
                 "3rdparty/libiconv/**.c",
                 "3rdparty/libiconv/**.rc"                           
             }
+
+    group "libxml2"
+
+        project "libxml2"            
+            kind "StaticLib"        
+                       
+            files
+            {
+                "3rdparty/libxml2/**.h",
+                "3rdparty/libxml2/**.c",
+                "3rdparty/libxml2/**.rc"
+                               
+            } 
+            removefiles
+            {
+                "3rdparty/libxml2/run*.c",
+                "3rdparty/libxml2/test*.c",
+                "3rdparty/libxml2/trio.c",
+                "3rdparty/libxml2/trionan.c",
+                "3rdparty/libxml2/triostr.c",
+                "3rdparty/libxml2/xmlcatalog.c",
+                "3rdparty/libxml2/xmllint.c",
+                "3rdparty/libxml2/xzlib.c",
+                
+            }  
+            includedirs
+            {
+                "3rdparty/libxml2/include",
+                "3rdparty/libiconv/include"
+            }
+            
+        project "libxml2_mt"            
+            kind "StaticLib"     
+            
+            flags { "StaticRuntime" }
+            files
+            {
+                "3rdparty/libxml2/**.h",
+                "3rdparty/libxml2/**.c",
+                "3rdparty/libxml2/**.rc"
+                               
+            }
+            removefiles
+            {
+                "3rdparty/libxml2/run*.c",
+                "3rdparty/libxml2/test*.c",
+                "3rdparty/libxml2/trio.c",
+                "3rdparty/libxml2/trionan.c",
+                "3rdparty/libxml2/triostr.c",
+                "3rdparty/libxml2/xmlcatalog.c",
+                "3rdparty/libxml2/xmllint.c",
+                "3rdparty/libxml2/xzlib.c",
+                
+            }  
+            includedirs
+            {
+                "3rdparty/libxml2/include",
+                "3rdparty/libiconv/include"
+            }
+
+    group "libmobi"
+
+        project "libmobi"            
+            kind "StaticLib"        
+                       
+            files
+            {
+                "3rdparty/libmobi/src/*.h",
+                "3rdparty/libmobi/src/*.c"      
+                               
+            } 
+            removefiles
+            {
+                "3rdparty/libmobi/src/miniz.c"
+            }
+            includedirs
+            {
+                "3rdparty/include",
+                "3rdparty/zlib",
+                "3rdparty/libiconv/include",
+                "3rdparty/libxml2/include",
+                "3rdparty/unzip101e",
+                "3rdparty/tidylib/include"
+            }
+            
+            
+        project "libmobi_mt"            
+            kind "StaticLib"     
+            
+            flags { "StaticRuntime" }
+            files
+            {
+                "3rdparty/libmobi/src/*.h",
+                "3rdparty/libmobi/src/*.c"      
+                               
+            }
+            removefiles
+            {
+                "3rdparty/libmobi/src/miniz.c"
+            }
+            includedirs
+            {
+                "3rdparty/include",
+                "3rdparty/zlib",
+                "3rdparty/libiconv/include",
+                "3rdparty/libxml2/include",
+                "3rdparty/unzip101e",
+                "3rdparty/tidylib/include"
+            }
+
+    group "libcnary"
+
+        project "libcnary"            
+            kind "StaticLib"        
+                       
+            files
+            {
+                "3rdparty/libcnary/**.h",
+                "3rdparty/libcnary/**.c"      
+                               
+            }             
+            includedirs
+            {
+                "3rdparty/libcnary/include"
+                
+            }
+            
+            
+        project "libcnary_mt"            
+            kind "StaticLib"     
+            
+            flags { "StaticRuntime" }
+            files
+            {
+                "3rdparty/libcnary/**.h",
+                "3rdparty/libcnary/**.c"      
+                               
+            }             
+            includedirs
+            {
+                "3rdparty/libcnary/include"
+                
+            }
+            
+
+            
+            
+
     
     group "lua"
 
