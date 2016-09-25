@@ -1,0 +1,114 @@
+2015-11-02: Update docs
+2015-11-02: Feature: add helper functions to find resources by flow id
+2015-11-02: Feature: export MOBI_NOTSET macro
+2015-11-02: Feature: give more options to parse rawml function
+2015-10-24: Restore travis.yml
+2015-10-24: Fix OSX travis build
+2015-10-24: Fix OSX travis build
+2015-10-24: Fix multiline inline script
+2015-10-24: Enable multi-OS feature
+2015-10-24: Fix: unique temporary name for parallel tests
+2015-10-24: Fix: decoding video resources falsely reported as failed
+2015-10-24: Fix: tests, some md5sum implementations insert double spaces
+2015-10-24: Fix for automake < 1.13
+2015-10-23: Add simple tests framework
+2015-10-23: Fix: increase max index entries per record count, as some rare samples fail
+2015-10-22: Fix: incorrectly decoded video/audio resources
+2015-10-22: Feature: add option to specify output path
+2015-10-14: Add some internal functions to public API: mobi_get_flow_by_uid, mobi_get_resource_by_uid, mobi_get_part_by_uid, mobi_get_exthrecord_by_tag
+2015-06-13: update changelog
+2015-06-13: fix: various invalid memory access
+2015-06-13: don't quit on invalid input, instead substitute with replacement character
+2015-06-12: fix typo
+2015-06-12: update changelog
+2015-06-12: fix: reconstruction failed when there were gaps between fragments
+2015-06-12: add EXTH tags
+2015-06-12: prevent return of garbage value check return value in case of failed malloc
+2015-06-12: fix invalid memory access
+2015-04-12: Fix reconstruction of "kindle:embed" links without mime type (regression)
+2015-04-12: Add sanity checks to link reconstruction functions, allow skipping some malformed patterns
+2015-04-12: Fix infinite loop in guide build while unknown tag was found
+2015-04-12: Increase max recursion level for huffman decompression
+2015-03-28: update docs
+2015-03-28: fix solaris studio compiler warnings
+2015-03-28: fix solaris studio compiler build
+2015-02-18: Fix "more than one: -compatibility_version specified" error on powerpc
+2014-11-24: improve docs
+2014-11-24: simplify public header
+2014-11-21: changelog update [ci skip]
+2014-11-21: README
+2014-11-21: fix: add sanity checks
+2014-11-21: Fix: add sanity checks
+2014-11-21: add sanity check to huffcdic indices count
+2014-11-21: fix number of leaks and other minor issues (by coverity scan)
+2014-11-20: missing notification email kills coverity scan
+2014-11-20: update travis.yml
+2014-11-20: upgrade travis.ml with covert scan
+2014-11-20: update README.md
+2014-11-20: add .travis.yml
+2014-11-20: update REAME.md
+2014-11-20: update README.md
+2014-11-20: update docs
+2014-11-20: feature: add decryption support
+2014-11-20: mkdir cleanup
+2014-11-17: documentation
+2014-11-17: strip unneeded <aid/> tags
+2014-11-16: fix: potential leak
+2014-11-16: fix: regression, some image tags were not reconstructed
+2014-11-16: fix: improve ligatures handling
+2014-11-16: override darwin linker default versioning
+2014-11-15: fix: get proper LIGT entries count from index header
+2014-11-15: feature: unpack records into new folder
+2014-11-14: make README readable on github
+2014-11-14: add README for mobitool
+2014-11-14: fix: dictionaries with large inflection rules failed
+2014-11-14: feature: support encoded ligatures in index entry labels
+2014-11-14: readme
+2014-11-14: update changelog
+2014-11-13: Merge remote-tracking branch 'origin/public' into public
+2014-11-13: feature: support for older inflections scheme
+2014-11-13: bug: files with short tagx header won't open
+2014-11-13: cleanup unneeded include
+2014-11-13: use strdup on linux/glibc
+2014-11-13: debugging cleanup
+2014-11-13: reorganize source files
+2014-11-13: Merge branch 'public' of /home/baf/libmobi into public
+2014-11-13: use strdup on linux/glibc
+2014-11-11: update changelog
+2014-11-11: update changeling
+2014-11-11: fix: documents with text record size > 4096 failed to load
+2014-11-11: add: function to decode flat index entries
+2014-11-11: debug: add functions for debugging indices
+2014-11-11: cleanup
+2014-11-11: fix: variable length value wrongly calculated when going backwards
+2014-11-08: Merge remote-tracking branch 'origin/public' into public
+2014-11-08: update documentation
+2014-11-08: update changelog
+2014-11-08: add support for reconstructing inflections index entries
+2014-11-08: parsing of exth header failed in some cases
+2014-11-08: fix: some links reconstruction in kf7 failed
+2014-11-08: improve debug info
+2014-11-08: failed malloc false reports
+2014-11-03: fix problem with uncompressed documents
+2014-11-03: fix broken locales
+2014-11-03: remove obsolete includes
+2014-11-03: git log > changelog
+2014-11-03: improved buffer handling
+2014-11-03: improved OPF for dictionaries
+2014-11-03: proper rawml->orth initialization and freeing
+2014-11-03: fix subject field in opf
+2014-11-03: handle UTF-16 surrogates, make ORDT lookups locale independent
+2014-11-01: move dict reconstruction to separate function
+2014-11-01: cleanup
+2014-11-01: quiet gcc warning on printf format
+2014-11-01: reconstruction of orth dictionary entries
+2014-09-27: use mobi_list_del_all()
+2014-09-25: postpone conversion to utf8 after all source reconstructions
+2014-09-24: comment
+2014-09-24: comments
+2014-09-12: doxygen comment
+2014-09-12: data size in comment
+2014-09-05: MOBIArray data type fix
+2014-09-05: config.h fixes
+2014-06-29: merge master
+2014-04-11: initial commit

@@ -1,0 +1,13 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@
+
+Name: libmobi
+Description: MOBI ebook format handling library
+URL: http://www.fabiszewski.net/libmobi
+Version: @VERSION@
+Requires:
+Libs: -L${libdir} -lmobi
+Libs.private: @LIBZ_LDFLAGS@ @LIBXML2_LDFLAGS@
+Cflags: -I${includedir}
