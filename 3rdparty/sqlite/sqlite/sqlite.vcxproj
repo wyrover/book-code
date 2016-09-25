@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>SQLite3</ProjectName>
+    <ProjectGuid>{0637EB24-7B2D-4B4A-9D95-7C72E7B48D5C}</ProjectGuid>
+    <RootNamespace>SQLite</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v120_xp</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <CharacterSet>Unicode</CharacterSet>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v120_xp</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <CharacterSet>Unicode</CharacterSet>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\props\common.props" />
+    <Import Project="..\..\..\props\dll.props" />
+    <Import Project="..\..\..\props\release.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\props\common_x64.props" />
+    <Import Project="..\..\..\props\dll.props" />
+    <Import Project="..\..\..\props\release.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\props\common.props" />
+    <Import Project="..\..\..\props\dll.props" />
+    <Import Project="..\..\..\props\debug.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\props\common_x64.props" />
+    <Import Project="..\..\..\props\dll.props" />
+    <Import Project="..\..\..\props\debug.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectName)_debug</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectName)_debug</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/D_LIB /DSQLITE_THREADSAFE=2 /DSQLITE_DEFAULT_MEMSTATUS=0 /DNO_TCL /D_HAVE_SQLITE_CONFIG_H /DSQLITE_THREAD_OVERRIDE_LOCK=-1 /DSQLITE_OMIT_LOAD_EXTENSION=1 /DSQLITE_TEMP_STORE=1 %(AdditionalOptions)</AdditionalOptions>
+      <PreprocessorDefinitions>SQLITE_EXPORTS;THREADSAFE=1;SQLITE_THREADSAFE=2;SQLITE_ENABLE_COLUMN_METADATA;SQLITE_DEFAULT_CACHE_SIZE=500;SQLITE_DEFAULT_WAL_SAFETYLEVEL=2;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <CompileAs>CompileAsC</CompileAs>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\includes\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ExceptionHandling>false</ExceptionHandling>
+      <OpenMPSupport>false</OpenMPSupport>
+    </ClCompile>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\includes\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalOptions>/DYNAMICBASE /NXCOMPAT /SAFESEH %(AdditionalOptions)</AdditionalOptions>
+      <ModuleDefinitionFile>..\sqlite3.def</ModuleDefinitionFile>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+    <PostBuildEvent>
+      <Command>mkdir "$(SolutionDir)include\SQLite"
+xcopy /Y /R "$(ProjectDir)..\sqlite3.h" "$(SolutionDir)include\SQLite"
+xcopy /Y /R "$(ProjectDir)..\sqlite3ext.h" "$(SolutionDir)include\SQLite"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalOptions>/D_LIB /DSQLITE_THREADSAFE=2 /DSQLITE_DEFAULT_MEMSTATUS=0 /DNO_TCL /D_HAVE_SQLITE_CONFIG_H /DSQLITE_THREAD_OVERRIDE_LOCK=-1 /DSQLITE_OMIT_LOAD_EXTENSION=1 /DSQLITE_TEMP_STORE=1 %(AdditionalOptions)</AdditionalOptions>
+      <PreprocessorDefinitions>SQLITE_EXPORTS;THREADSAFE;SQLITE_ENABLE_COLUMN_METADATA;SQLITE_DEFAULT_CACHE_SIZE=500;SQLITE_DEFAULT_WAL_SAFETYLEVEL=2;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <CompileAs>CompileAsC</CompileAs>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\includes\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ExceptionHandling>false</ExceptionHandling>
+    </ClCompile>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\includes\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalOptions>/DYNAMICBASE /NXCOMPAT %(AdditionalOptions)</AdditionalOptions>
+      <ModuleDefinitionFile>..\sqlite3.def</ModuleDefinitionFile>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+    <PostBuildEvent>
+      <Command>mkdir "$(SolutionDir)include\SQLite"
+xcopy /Y /R "$(ProjectDir)..\sqlite3.h" "$(SolutionDir)include\SQLite"
+xcopy /Y /R "$(ProjectDir)..\sqlite3ext.h" "$(SolutionDir)include\SQLite"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/D_LIB /DSQLITE_THREADSAFE=2 /DSQLITE_DEFAULT_MEMSTATUS=0 /DNO_TCL /D_HAVE_SQLITE_CONFIG_H /DSQLITE_THREAD_OVERRIDE_LOCK=-1 /DSQLITE_OMIT_LOAD_EXTENSION=1 /DSQLITE_TEMP_STORE=1 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\includes\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>SQLITE_EXPORTS;THREADSAFE=1;SQLITE_THREADSAFE=2;SQLITE_ENABLE_COLUMN_METADATA;SQLITE_DEFAULT_CACHE_SIZE=500;SQLITE_DEFAULT_WAL_SAFETYLEVEL=2;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <CompileAs>CompileAsC</CompileAs>
+      <ExceptionHandling>false</ExceptionHandling>
+      <OpenMPSupport>false</OpenMPSupport>
+    </ClCompile>
+    <ResourceCompile />
+    <Link>
+      <AdditionalOptions>/DYNAMICBASE /NXCOMPAT /SAFESEH %(AdditionalOptions)</AdditionalOptions>
+      <ModuleDefinitionFile>..\sqlite3.def</ModuleDefinitionFile>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\includes\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <PostBuildEvent>
+      <Command>mkdir "$(SolutionDir)include\SQLite"
+xcopy /Y /R "$(ProjectDir)..\sqlite3.h" "$(SolutionDir)include\SQLite"
+xcopy /Y /R "$(ProjectDir)..\sqlite3ext.h" "$(SolutionDir)include\SQLite"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalOptions>/D_LIB /DSQLITE_THREADSAFE=2 /DSQLITE_DEFAULT_MEMSTATUS=0 /DNO_TCL /D_HAVE_SQLITE_CONFIG_H /DSQLITE_THREAD_OVERRIDE_LOCK=-1 /DSQLITE_OMIT_LOAD_EXTENSION=1 /DSQLITE_TEMP_STORE=1 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\includes\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>SQLITE_EXPORTS;THREADSAFE;SQLITE_ENABLE_COLUMN_METADATA;SQLITE_DEFAULT_CACHE_SIZE=500;SQLITE_DEFAULT_WAL_SAFETYLEVEL=2;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <CompileAs>CompileAsC</CompileAs>
+      <ExceptionHandling>false</ExceptionHandling>
+    </ClCompile>
+    <ResourceCompile />
+    <Link>
+      <AdditionalOptions>/DYNAMICBASE /NXCOMPAT %(AdditionalOptions)</AdditionalOptions>
+      <ModuleDefinitionFile>..\sqlite3.def</ModuleDefinitionFile>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\includes\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <PostBuildEvent>
+      <Command>mkdir "$(SolutionDir)include\SQLite"
+xcopy /Y /R "$(ProjectDir)..\sqlite3.h" "$(SolutionDir)include\SQLite"
+xcopy /Y /R "$(ProjectDir)..\sqlite3ext.h" "$(SolutionDir)include\SQLite"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\shell.c" />
+    <ClCompile Include="..\sqlite3.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\sqlite3.def" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\includes\autoversion.h" />
+    <ClInclude Include="..\resource.h" />
+    <ClInclude Include="..\sqlite3.h" />
+    <ClInclude Include="..\sqlite3ext.h" />
+    <ClInclude Include="..\win_config.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\SQLite3.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
