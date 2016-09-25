@@ -1,0 +1,5 @@
+megs: 16
+romimage: file=..\bochs\BIOS-bochs-latest, address=0x00000
+vgaromimage: file=..\bochs\VGABIOS-lgpl-latest
+floppya: 1_44=ASR.img, status=inserted
+boot: floppy

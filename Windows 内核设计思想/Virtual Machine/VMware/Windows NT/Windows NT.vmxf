@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<Foundry>
+<VM>
+<VMId type="string">52 49 d3 98 4f 0a 3f 8e-24 8a b6 83 5e 6e bd 4a</VMId>
+<ClientMetaData>
+<clientMetaDataAttributes/>
+<HistoryEventList/></ClientMetaData>
+<vmxPathName type="string">Windows NT.vmx</vmxPathName></VM></Foundry>

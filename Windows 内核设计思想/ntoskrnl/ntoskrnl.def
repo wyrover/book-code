@@ -1,0 +1,1621 @@
+
+EXPORTS
+
+    CcCanIWrite
+    CcCopyRead
+    CcCopyWrite
+    CcDeferWrite
+    CcFastCopyRead
+    CcFastCopyWrite
+    CcFastMdlReadWait CONSTANT          
+    CcFastReadNotPossible CONSTANT      
+    CcFastReadWait CONSTANT             
+    CcFlushCache
+    CcGetDirtyPages
+    CcGetFileObjectFromBcb
+    CcGetFileObjectFromSectionPtrs
+    CcGetFlushedValidData
+    CcGetLsnForFileObject
+    CcInitializeCacheMap
+    CcIsThereDirtyData
+    CcMapData
+    CcMdlRead
+    CcMdlReadComplete
+    CcMdlWriteAbort
+    CcMdlWriteComplete
+    CcPinMappedData
+    CcPinRead
+    CcPrepareMdlWrite
+    CcPreparePinWrite
+    CcPurgeCacheSection
+    CcRemapBcb
+    CcRepinBcb
+    CcScheduleReadAhead
+    CcSetAdditionalCacheAttributes
+    CcSetBcbOwnerPointer
+    CcSetDirtyPageThreshold
+    CcSetDirtyPinnedData
+    CcSetFileSizes
+    CcSetLogHandleForFile
+    CcSetReadAheadGranularity
+    CcUninitializeCacheMap
+    CcUnpinData
+    CcUnpinDataForThread
+    CcUnpinRepinnedBcb
+    CcWaitForCurrentLazyWriterActivity
+    CcZeroData
+    CmRegisterCallback
+    CmUnRegisterCallback
+    
+    DbgBreakPoint
+    DbgBreakPointWithStatus
+    DbgCommandString
+    DbgLoadImageSymbols
+    DbgPrint
+    DbgPrintEx
+    vDbgPrintEx
+    vDbgPrintExWithPrefix
+    DbgPrintReturnControlC
+    DbgPrompt
+    DbgQueryDebugFilterState
+    DbgSetDebugFilterState
+    
+    ExAcquireFastMutexUnsafe
+    ExEnterCriticalRegionAndAcquireFastMutexUnsafe
+    ExAcquireResourceExclusiveLite
+    ExEnterCriticalRegionAndAcquireResourceExclusive
+    ExAcquireResourceSharedLite
+    ExEnterCriticalRegionAndAcquireResourceShared
+    ExAcquireSharedStarveExclusive
+    ExAcquireSharedWaitForExclusive
+    ExEnterCriticalRegionAndAcquireSharedWaitForExclusive
+    ExAcquireRundownProtection=ExfAcquireRundownProtection
+    ExAllocateCacheAwareRundownProtection
+    ExAcquireRundownProtectionCacheAware = ExfAcquireRundownProtectionCacheAware
+    ExAcquireRundownProtectionCacheAwareEx = ExfAcquireRundownProtectionCacheAwareEx
+    ExAcquireRundownProtectionEx = ExfAcquireRundownProtectionEx
+    ExFreeCacheAwareRundownProtection
+    ExInitializeRundownProtectionCacheAware
+    ExReleaseRundownProtection = ExfReleaseRundownProtection
+    ExReleaseRundownProtectionCacheAware = ExfReleaseRundownProtectionCacheAware
+    ExReleaseRundownProtectionCacheAwareEx = ExfReleaseRundownProtectionCacheAwareEx
+    ExReleaseRundownProtectionEx = ExfReleaseRundownProtectionEx
+    ExSizeOfRundownProtectionCacheAware
+    ExWaitForRundownProtectionRelease = ExfWaitForRundownProtectionRelease
+    ExWaitForRundownProtectionReleaseCacheAware = ExfWaitForRundownProtectionReleaseCacheAware
+    ExInitializeRundownProtection=ExfInitializeRundownProtection
+    ExReInitializeRundownProtection=ExfReInitializeRundownProtection
+    ExReInitializeRundownProtectionCacheAware = ExfReInitializeRundownProtectionCacheAware
+    ExRundownCompleted=ExfRundownCompleted
+    ExRundownCompletedCacheAware = ExfRundownCompletedCacheAware
+    ExfAcquirePushLockExclusive
+    ExfAcquirePushLockShared
+    ExfReleasePushLock
+    ExfReleasePushLockShared
+    ExfReleasePushLockExclusive
+    ExfUnblockPushLock
+    ExfTryToWakePushLock
+    ExiAcquireFastMutex=ExAcquireFastMutex
+    ExiReleaseFastMutex=ExReleaseFastMutex
+    ExiTryToAcquireFastMutex = ExTryToAcquireFastMutex
+    ExAllocatePool
+    ExAllocatePoolWithQuota
+    ExAllocatePoolWithQuotaTag
+    ExAllocatePoolWithTag
+    ExAllocatePoolWithTagPriority
+    ExConvertExclusiveToSharedLite
+    ExCreateCallback
+    ExDeleteNPagedLookasideList
+    ExDeletePagedLookasideList
+    ExDeleteResourceLite
+    ExDesktopObjectType CONSTANT        
+    ExDisableResourceBoostLite
+    ExEnumHandleTable
+    ExEventObjectType = _ExEventObjectType CONSTANT          
+    ExExtendZone
+    ExFreePool
+    ExFreePoolWithTag
+    ExGetCurrentProcessorCounts
+    ExGetCurrentProcessorCpuUsage
+    ExGetExclusiveWaiterCount
+    ExGetPreviousMode
+    ExGetSharedWaiterCount
+    ExInitializeNPagedLookasideList
+    ExInitializePagedLookasideList
+    ExInitializeResourceLite
+    ExInitializeZone
+    ExInterlockedAddLargeInteger
+    ExInterlockedAddLargeStatistic = _ExInterlockedAddLargeStatistic
+    ExInterlockedAddUlong
+    ExInterlockedDecrementLong
+    ExInterlockedExchangeUlong
+    ExInterlockedExtendZone
+    ExInterlockedIncrementLong
+    ExInterlockedInsertHeadList
+    ExInterlockedInsertTailList
+    ExInterlockedPopEntryList
+    ExInterlockedPushEntryList
+    ExInterlockedRemoveHeadList
+    ExIsProcessorFeaturePresent
+    ExIsResourceAcquiredExclusiveLite
+    ExIsResourceAcquiredSharedLite
+    ExLocalTimeToSystemTime
+    ExNotifyCallback
+    ExQueryPoolBlockSize
+    ExQueueWorkItem
+    ExRaiseAccessViolation
+    ExRaiseDatatypeMisalignment
+    ExRaiseHardError
+    ExRaiseException = RtlRaiseException
+    ExRaiseStatus = RtlRaiseStatus
+    ExRegisterCallback
+    ExReinitializeResourceLite
+    ExReleaseFastMutexUnsafe
+    ExReleaseFastMutexUnsafeAndLeaveCriticalRegion
+    ExReleaseResourceForThreadLite
+    ExReleaseResourceLite
+    ExReleaseResourceAndLeaveCriticalRegion
+    ExSemaphoreObjectType = _ExSemaphoreObjectType CONSTANT      
+    ExSetResourceOwnerPointer
+    ExSetTimerResolution
+    ExSystemExceptionFilter
+    ExSystemTimeToLocalTime
+    ExUnregisterCallback
+    ExUuidCreate
+    ExVerifySuite
+    ExWindowStationObjectType CONSTANT
+    
+    FsRtlAcquireFileExclusive
+    FsRtlAddBaseMcbEntry
+    FsRtlAddLargeMcbEntry
+    FsRtlAddMcbEntry
+    FsRtlAddToTunnelCache
+    FsRtlAllocateFileLock
+    FsRtlAllocatePool
+    FsRtlAllocatePoolWithQuota
+    FsRtlAllocatePoolWithQuotaTag
+    FsRtlAllocatePoolWithTag
+    FsRtlAllocateResource
+    FsRtlAreNamesEqual
+    FsRtlBalanceReads
+    FsRtlCreateSectionForDataScan
+    FsRtlCheckLockForReadAccess
+    FsRtlCheckLockForWriteAccess
+    FsRtlCheckOplock
+    FsRtlCopyRead
+    FsRtlCopyWrite
+    FsRtlCurrentBatchOplock
+    FsRtlDeleteKeyFromTunnelCache
+    FsRtlDeleteTunnelCache
+    FsRtlDeregisterUncProvider
+    FsRtlDissectDbcs
+    FsRtlDissectName
+    FsRtlDoesDbcsContainWildCards
+    FsRtlDoesNameContainWildCards
+    FsRtlFastCheckLockForRead
+    FsRtlFastCheckLockForWrite
+    FsRtlFastUnlockAll
+    FsRtlFastUnlockAllByKey
+    FsRtlFastUnlockSingle
+    FsRtlFindInTunnelCache
+    FsRtlFreeFileLock
+    FsRtlGetFileSize
+    FsRtlGetNextBaseMcbEntry
+    FsRtlGetNextFileLock
+    FsRtlGetNextLargeMcbEntry
+    FsRtlGetNextMcbEntry
+    FsRtlIncrementCcFastReadNotPossible
+    FsRtlIncrementCcFastReadNoWait
+    FsRtlIncrementCcFastReadResourceMiss
+    FsRtlIncrementCcFastReadWait
+    FsRtlInitializeBaseMcb
+    FsRtlInitializeFileLock
+    FsRtlInitializeLargeMcb
+    FsRtlInitializeMcb
+    FsRtlInitializeOplock
+    FsRtlInitializeTunnelCache
+    FsRtlInsertPerStreamContext
+    FsRtlInsertPerFileObjectContext
+    FsRtlIsDbcsInExpression
+    FsRtlIsFatDbcsLegal
+    FsRtlIsHpfsDbcsLegal
+    FsRtlIsNameInExpression
+    FsRtlIsNtstatusExpected
+    FsRtlIsPagingFile
+    FsRtlIsTotalDeviceFailure
+    FsRtlLegalAnsiCharacterArray = _FsRtlLegalAnsiCharacterArray CONSTANT 
+    FsRtlLookupBaseMcbEntry
+    FsRtlLookupLargeMcbEntry
+    FsRtlLookupLastBaseMcbEntry
+    FsRtlLookupLastBaseMcbEntryAndIndex
+    FsRtlLookupLastLargeMcbEntry
+    FsRtlLookupLastLargeMcbEntryAndIndex
+    FsRtlLookupLastMcbEntry
+    FsRtlLookupMcbEntry
+    FsRtlLookupPerStreamContextInternal
+    FsRtlLookupPerFileObjectContext
+    FsRtlMdlRead
+    FsRtlMdlReadComplete
+    FsRtlMdlReadCompleteDev
+    FsRtlMdlReadDev
+    FsRtlMdlWriteComplete
+    FsRtlMdlWriteCompleteDev
+    FsRtlNormalizeNtstatus
+    FsRtlNotifyChangeDirectory
+    FsRtlNotifyCleanup
+    FsRtlNotifyFullChangeDirectory
+    FsRtlNotifyFullReportChange
+    FsRtlNotifyFilterChangeDirectory
+    FsRtlNotifyFilterReportChange
+    FsRtlNotifyInitializeSync
+    FsRtlNotifyReportChange
+    FsRtlNotifyUninitializeSync
+    FsRtlNotifyVolumeEvent
+    FsRtlNumberOfRunsInBaseMcb
+    FsRtlNumberOfRunsInLargeMcb
+    FsRtlNumberOfRunsInMcb
+    FsRtlOplockFsctrl
+    FsRtlOplockIsFastIoPossible
+    FsRtlPostPagingFileStackOverflow
+    FsRtlPostStackOverflow
+    FsRtlPrepareMdlWrite
+    FsRtlPrepareMdlWriteDev
+    FsRtlPrivateLock
+    FsRtlProcessFileLock
+    FsRtlRegisterUncProvider
+    FsRtlRegisterFileSystemFilterCallbacks
+    FsRtlReleaseFile
+    FsRtlRemovePerStreamContext
+    FsRtlRemovePerFileObjectContext
+    FsRtlRemoveBaseMcbEntry
+    FsRtlRemoveLargeMcbEntry
+    FsRtlRemoveMcbEntry
+    FsRtlResetBaseMcb
+    FsRtlResetLargeMcb
+    FsRtlSplitBaseMcb
+    FsRtlSplitLargeMcb
+    FsRtlSyncVolumes
+    FsRtlTeardownPerStreamContexts
+    FsRtlTruncateBaseMcb
+    FsRtlTruncateLargeMcb
+    FsRtlTruncateMcb
+    FsRtlUninitializeBaseMcb
+    FsRtlUninitializeFileLock
+    FsRtlUninitializeLargeMcb
+    FsRtlUninitializeMcb
+    FsRtlUninitializeOplock
+    
+    HalDispatchTable = _HalDispatchTable CONSTANT           
+    HalExamineMBR
+    HalPrivateDispatchTable CONSTANT
+    HeadlessDispatch
+  
+    InbvCheckDisplayOwnership
+    InbvNotifyDisplayOwnershipLost
+    InbvAcquireDisplayOwnership
+    InbvDisplayString
+    InbvEnableBootDriver
+    InbvEnableDisplayString
+    InbvInstallDisplayStringFilter
+    InbvIsBootDriverInstalled
+    InbvResetDisplay
+    InbvSetScrollRegion
+    InbvSetTextColor
+    InbvSolidColorFill
+    InitSafeBootMode CONSTANT           
+    IoAcquireCancelSpinLock
+    IoAcquireRemoveLockEx
+    IoAcquireVpbSpinLock
+    IoAdapterObjectType     CONSTANT    
+    IoAllocateAdapterChannel
+    IoAllocateController
+    IoAllocateDriverObjectExtension
+    IoAllocateErrorLogEntry
+    IoAllocateIrp
+    IoAllocateMdl
+    IoAllocateWorkItem
+    IoAssignDriveLetters
+    IoAssignResources
+    IoAttachDevice
+    IoAttachDeviceByPointer
+    IoAttachDeviceToDeviceStack
+    IoAttachDeviceToDeviceStackSafe
+    IoBuildAsynchronousFsdRequest
+    IoBuildDeviceIoControlRequest
+    IoBuildPartialMdl
+    IoBuildSynchronousFsdRequest
+    IoCallDriver
+    IoCancelIrp
+    IoCancelFileOpen
+    IoCheckDesiredAccess
+    IoCheckEaBufferValidity
+    IoCheckFunctionAccess
+    IoCheckQuerySetFileInformation
+    IoCheckQuerySetVolumeInformation
+    IoCheckQuotaBufferValidity
+    IoCheckShareAccess
+    IoCompleteRequest
+    IoConnectInterrupt
+    IoCreateController
+    IoCreateDevice
+    IoCreateDisk
+    IoCreateDriver
+    IoCreateFile
+    IoCreateFileSpecifyDeviceObjectHint
+    IoCreateNotificationEvent
+    IoCreateStreamFileObject
+    IoCreateStreamFileObjectEx
+    IoCreateStreamFileObjectLite
+    IoCreateSymbolicLink
+    IoCreateSynchronizationEvent
+    IoCreateUnprotectedSymbolicLink
+    IoCsqInitialize
+    IoCsqInitializeEx
+    IoCsqInsertIrp
+    IoCsqInsertIrpEx
+    IoCsqRemoveIrp
+    IoCsqRemoveNextIrp
+    IoDeleteController
+    IoDeleteDevice
+    IoDeleteDriver
+    IoDeleteSymbolicLink
+    IoDetachDevice
+    IoDeviceHandlerObjectSize CONSTANT  
+    IoDeviceHandlerObjectType CONSTANT  
+    IoDeviceObjectType CONSTANT         
+    IoDisconnectInterrupt
+    IoDriverObjectType CONSTANT         
+    IoEnqueueIrp
+    IoFastQueryNetworkAttributes
+    IoFileObjectType = _IoFileObjectType CONSTANT           
+    IoForwardIrpSynchronously
+    IoForwardAndCatchIrp=IoForwardIrpSynchronously
+    IoFreeController
+    IoFreeErrorLogEntry
+    IoFreeIrp
+    IoFreeMdl
+    IoFreeWorkItem
+    IoGetAttachedDevice
+    IoGetAttachedDeviceReference
+    IoGetBaseFileSystemDeviceObject
+    IoGetBootDiskInformation
+    IoGetConfigurationInformation
+    IoGetCurrentProcess
+    IoGetDeviceInterfaceAlias
+    IoGetDeviceInterfaces
+    IoGetDeviceObjectPointer
+    IoGetDeviceProperty
+    IoGetDeviceToVerify
+    IoEnumerateDeviceObjectList
+    IoEnumerateRegisteredFiltersList
+    IoGetDeviceAttachmentBaseRef
+    IoGetDiskDeviceObject
+    IoGetPagingIoPriority
+    IoGetLowerDeviceObject 
+    IoGetDmaAdapter
+    IoGetDriverObjectExtension
+    IoGetFileObjectGenericMapping
+    IoGetInitialStack
+    IoGetRelatedDeviceObject
+    IoGetRequestorProcess
+    IoGetRequestorProcessId
+    IoGetRequestorSessionId
+    IoGetStackLimits
+    IoGetTopLevelIrp
+    IoInitializeIrp
+    IoInitializeRemoveLockEx
+    IoInitializeTimer
+    IoInvalidateDeviceRelations
+    IoInvalidateDeviceState
+    IoIsFileOriginRemote
+    IoIsOperationSynchronous
+    IoIsSystemThread
+    IoIsValidNameGraftingBuffer
+    IoIsWdmVersionAvailable
+    IoMakeAssociatedIrp
+    IoOpenDeviceInterfaceRegistryKey
+    IoOpenDeviceRegistryKey
+    IoPageRead
+    IoQueryDeviceDescription
+    IoQueryFileDosDeviceName
+    IoQueryFileInformation
+    IoQueryVolumeInformation
+    IoQueueThreadIrp
+    IoQueueWorkItem
+    IoRaiseHardError
+    IoRaiseInformationalHardError
+    IoReadDiskSignature
+    IoReadOperationCount CONSTANT       
+    IoReadPartitionTable
+    IoReadPartitionTableEx
+    IoReadTransferCount CONSTANT        
+    IoRegisterBootDriverReinitialization
+    IoRegisterDeviceInterface
+    IoRegisterDriverReinitialization
+    IoRegisterFileSystem
+    IoRegisterFsRegistrationChange
+    IoRegisterLastChanceShutdownNotification
+    IoRegisterPlugPlayNotification
+    IoRegisterShutdownNotification
+    IoReleaseCancelSpinLock
+    IoReleaseRemoveLockEx
+    IoReleaseRemoveLockAndWaitEx
+    IoReleaseVpbSpinLock
+    IoReuseIrp
+    IoRemoveShareAccess
+    IoReportDetectedDevice
+    IoReportHalResourceUsage
+    IoReportResourceUsage
+    IoReportResourceForDetection
+    IoReportTargetDeviceChange
+    IoReportTargetDeviceChangeAsynchronous
+    IoRequestDeviceEject
+    IoPnPDeliverServicePowerNotification
+    IoSetCompletionRoutineEx
+    IoSetDeviceInterfaceState
+    IoSetDeviceToVerify
+    IoSetHardErrorOrVerifyDevice
+    IoSetInformation
+    IoSetIoCompletion
+    IoSetPartitionInformation
+    IoSetPartitionInformationEx
+    IoSetShareAccess
+    IoSetStartIoAttributes
+    IoSetThreadHardErrorMode
+    IoSetTopLevelIrp
+    IoSetSystemPartition
+    IoSetFileOrigin
+    IoStartNextPacket
+    IoStartNextPacketByKey
+    IoStartPacket
+    IoStartTimer
+    IoStatisticsLock CONSTANT           
+    IoStopTimer
+    IoSynchronousInvalidateDeviceRelations
+    IoSynchronousPageWrite
+    IoThreadToProcess
+    IoTranslateBusAddress
+    IoUnregisterFileSystem
+    IoUnregisterFsRegistrationChange
+    IoUnregisterPlugPlayNotification
+    IoUnregisterShutdownNotification
+    IoValidateDeviceIoControlAccess
+    IoUpdateShareAccess
+    IoVerifyVolume
+    IoVerifyPartitionTable
+    IoVolumeDeviceToDosName
+    IoWMIAllocateInstanceIds
+    IoWMIDeviceObjectToInstanceName
+    IoWMIExecuteMethod
+    IoWMIHandleToInstanceName
+    IoWMIOpenBlock
+    IoWMIRegistrationControl
+    IoWMIQueryAllData
+    IoWMIQueryAllDataMultiple
+    IoWMIQuerySingleInstance
+    IoWMIQuerySingleInstanceMultiple
+    IoWMISetNotificationCallback
+    IoWMISetSingleInstance
+    IoWMISetSingleItem
+    IoWMISuggestInstanceName
+    IoWMIWriteEvent
+    IoWriteErrorLogEntry
+    IoWriteOperationCount CONSTANT      
+    IoWritePartitionTable
+    IoWritePartitionTableEx
+    IoWriteTransferCount CONSTANT       
+    IofCallDriver
+    IofCompleteRequest
+    
+    KdChangeOption
+    KdDebuggerEnabled = _KdDebuggerEnabled CONSTANT       
+    KdDebuggerNotPresent = _KdDebuggerNotPresent CONSTANT       
+    KdDisableDebugger
+    KdEnableDebugger
+    KdEnteredDebugger CONSTANT       
+    KdPollBreakIn
+    KdPowerTransition
+    KdRefreshDebuggerNotPresent
+    KdSystemDebugControl
+    KeInitializeSpinLock = KeInitializeSpinLockEx
+    KeAcquireInterruptSpinLock
+    KeReleaseInterruptSpinLock
+    KeAcquireInStackQueuedSpinLockAtDpcLevel
+    KeReleaseInStackQueuedSpinLockFromDpcLevel
+    KeAcquireInStackQueuedSpinLockForDpc
+    KeReleaseInStackQueuedSpinLockForDpc
+    KeAcquireSpinLockAtDpcLevel
+    KeReleaseSpinLockFromDpcLevel
+    KeAcquireSpinLockForDpc
+    KeReleaseSpinLockForDpc
+    KiAcquireSpinLock
+    KiReleaseSpinLock
+    KeTestSpinLock
+    KeTryToAcquireSpinLockAtDpcLevel
+    KeAddSystemServiceTable
+    KeAcquireGuardedMutex
+    KeAcquireGuardedMutexUnsafe
+    KeAreAllApcsDisabled
+    KeAreApcsDisabled
+    KeAttachProcess
+    KeStackAttachProcess
+    KeBugCheck
+    KeBugCheckEx
+    KeCancelTimer
+    KeClearEvent
+    KeConnectInterrupt
+    KeDelayExecutionThread
+    KeDeregisterBugCheckCallback
+    KeDeregisterBugCheckReasonCallback
+    KeDeregisterNmiCallback
+    KeDetachProcess
+    KeUnstackDetachProcess
+    KeDisconnectInterrupt
+    KeEnterCriticalRegion = KeEnterCriticalRegionEx
+    KeEnterGuardedRegion = KeEnterGuardedRegionEx
+    KeEnterKernelDebugger
+    KeFindConfigurationEntry
+    KeFindConfigurationNextEntry
+    KeFlushEntireTb
+    KeFlushQueuedDpcs
+    KeGenericCallDpc
+    KeGetRecommendedSharedDataAlignment
+    KeInitializeApc
+    KeInitializeCrashDumpHeader
+    KeInitializeDeviceQueue
+    KeInitializeDpc
+    KeInitializeGuardedMutex
+    KeInitializeThreadedDpc
+    KeInitializeEvent
+    KeInitializeInterrupt
+    KeInitializeMutant
+    KeInitializeMutex
+    KeInitializeQueue
+    KeInitializeSemaphore
+    KeInitializeTimer
+    KeInitializeTimerEx
+    KeInsertByKeyDeviceQueue
+    KeInsertDeviceQueue
+    KeInsertHeadQueue
+    KeInsertQueue
+    KeInsertQueueApc
+    KeInsertQueueDpc
+    KeIpiGenericCall
+    KeIsAttachedProcess
+    KeIsWaitListEmpty
+    KeLeaveCriticalRegion = KeLeaveCriticalRegionEx
+    KeLeaveGuardedRegion = KeLeaveGuardedRegionEx
+    KeLoaderBlock CONSTANT              
+    KeNumberProcessors = _KeNumberProcessors CONSTANT
+    KeProfileInterrupt
+    KeProfileInterruptWithSource
+    KePulseEvent
+    KeQueryActiveProcessors
+    KeQueryInterruptTime
+    KeQuerySystemTime
+    KeQueryPriorityThread
+    KeQueryRuntimeThread
+    KeQueryTimeIncrement
+    KeRaiseUserException
+    KeReadStateEvent
+    KeReadStateMutant
+    KeReadStateMutex=KeReadStateMutant
+    KeReadStateQueue
+    KeReadStateSemaphore
+    KeReadStateTimer
+    KeRegisterBugCheckCallback
+    KeRegisterBugCheckReasonCallback
+    KeRegisterNmiCallback
+    KeReleaseGuardedMutex
+    KeReleaseGuardedMutexUnsafe
+    KeReleaseMutant
+    KeReleaseMutex
+    KeReleaseSemaphore
+    KeRemoveByKeyDeviceQueue
+    KeRemoveByKeyDeviceQueueIfBusy
+    KeRemoveDeviceQueue
+    KeRemoveEntryDeviceQueue
+    KeRemoveQueue
+    KeRemoveQueueDpc
+    KeRemoveSystemServiceTable
+    KeResetEvent
+    KeRevertToUserAffinityThread
+    KeRundownQueue
+    KeSaveStateForHibernate
+    KeServiceDescriptorTable   
+    KeSetAffinityThread
+    KeSetBasePriorityThread
+    KeSetDmaIoCoherency
+    KeSetEvent
+    KeSetEventBoostPriority
+    KeSetIdealProcessorThread
+    KeSetImportanceDpc
+    KeSetKernelStackSwapEnable
+    KeSetPriorityThread
+    KeSetSystemAffinityThread
+    KeSetTargetProcessorDpc
+    KeSetTimeIncrement
+    KeSetTimer
+    KeSetTimerEx
+    KeSignalCallDpcDone
+    KeSignalCallDpcSynchronize
+    KeSynchronizeExecution
+    KeTerminateThread
+    KeTickCount  CONSTANT               
+    KeQueryTickCount
+    KeTryToAcquireGuardedMutex
+    KeUpdateRunTime
+    KeUpdateSystemTime
+    KeUserModeCallback
+    KeWaitForMultipleObjects
+    KeWaitForMutexObject=KeWaitForSingleObject
+    KeWaitForSingleObject
+    KiBugCheckData      CONSTANT        
+    KiEnableTimerWatchdog       
+    KiCheckForKernelApcDelivery
+    
+    LdrAccessResource
+    LdrEnumResources
+    LdrFindResourceDirectory_U
+    LdrFindResource_U
+    LpcPortObjectType CONSTANT           
+    LpcRequestPort
+    LpcRequestWaitReplyPort
+    LsaCallAuthenticationPackage
+    LsaDeregisterLogonProcess
+    LsaFreeReturnBuffer
+    LsaLogonUser
+    LsaLookupAuthenticationPackage
+    LsaRegisterLogonProcess
+    
+    MmIsIoSpaceActive
+    MmIsVerifierEnabled
+    MmAddVerifierThunks
+    MmAdvanceMdl
+    Mm64BitPhysicalAddress CONSTANT           
+    MmAddPhysicalMemory
+    MmAdjustWorkingSetSize
+    MmAllocateContiguousMemory
+    MmAllocateContiguousMemorySpecifyCache
+    MmAllocateNonCachedMemory
+    MmAllocatePagesForMdl
+    MmAllocatePagesForMdlEx
+    MmBuildMdlForNonPagedPool
+    MmCanFileBeTruncated
+    MmCreateMdl
+    MmCreateMirror
+    MmCreateSection
+    MmDisableModifiedWriteOfSection
+    MmFlushImageSection
+    MmForceSectionClosed
+    MmFreeContiguousMemory
+    MmFreeContiguousMemorySpecifyCache
+    MmFreeNonCachedMemory
+    MmFreePagesFromMdl
+    MmGetPhysicalAddress
+    MmGetPhysicalMemoryRanges
+    MmGetSystemRoutineAddress
+    MmGetVirtualForPhysical
+    MmGrowKernelStack
+    MmIsAddressValid
+    MmIsDriverVerifying
+    MmIsNonPagedSystemAddressValid
+    MmIsRecursiveIoFault
+    MmIsThisAnNtAsSystem
+    MmLockPageableDataSection
+    MmLockPageableSectionByHandle
+    MmLockPagableDataSection=MmLockPageableDataSection
+    MmLockPagableSectionByHandle=MmLockPageableSectionByHandle
+    MmMapIoSpace
+    MmMapLockedPages
+    MmMapLockedPagesSpecifyCache
+    MmAllocateMappingAddress
+    MmFreeMappingAddress
+    MmMapLockedPagesWithReservedMapping
+    MmUnmapReservedMapping
+    MmMapMemoryDumpMdl
+    MmMapUserAddressesToPage
+    MmMapVideoDisplay
+    MmMapViewOfSection
+    MmMapViewInSessionSpace
+    MmMapViewInSystemSpace
+    MmCommitSessionMappedView
+    MmMarkPhysicalMemoryAsBad
+    MmMarkPhysicalMemoryAsGood
+    MmPageEntireDriver
+    MmPrefetchPages
+    MmProbeAndLockPages
+    MmProbeAndLockSelectedPages
+    MmProbeAndLockProcessPages
+    MmProtectMdlSystemAddress
+    MmQuerySystemSize
+    MmRemovePhysicalMemory
+    MmResetDriverPaging
+    MmSectionObjectType CONSTANT
+    MmSecureVirtualMemory
+    MmSetAddressRangeModified
+    MmSetBankedSection
+    MmSizeOfMdl
+    MmTrimAllSystemPageableMemory
+    MmUnlockPageableImageSection
+    MmTrimAllSystemPagableMemory=MmTrimAllSystemPageableMemory
+    MmUnlockPagableImageSection=MmUnlockPageableImageSection
+    MmUnlockPages
+    MmUnmapIoSpace
+    MmUnmapLockedPages
+    MmUnmapVideoDisplay
+    MmUnmapViewOfSection
+    MmUnmapViewInSystemSpace
+    MmUnmapViewInSessionSpace
+    MmUnsecureVirtualMemory
+    
+    NlsAnsiCodePage CONSTANT            
+    NlsOemCodePage CONSTANT             
+    NlsLeadByteInfo CONSTANT            
+    NlsOemLeadByteInfo = _NlsOemLeadByteInfo CONSTANT         
+    NlsMbCodePageTag CONSTANT           
+    NlsMbOemCodePageTag CONSTANT        
+    NtAddAtom
+    NtAdjustPrivilegesToken
+    NtAllocateLocallyUniqueId
+    NtAllocateUuids
+    NtAllocateVirtualMemory
+    NtBuildNumber CONSTANT
+    NtClose
+    NtConnectPort
+    NtCreateEvent
+    NtCreateFile
+    NtCreateSection
+    NtDeleteAtom
+    NtDeleteFile
+    NtDeviceIoControlFile
+    NtDuplicateObject
+    NtDuplicateToken
+    NtFindAtom
+    NtFreeVirtualMemory
+    NtFsControlFile
+    NtGlobalFlag CONSTANT               
+    NtLockFile
+    NtMakePermanentObject
+    NtMapViewOfSection
+    NtNotifyChangeDirectoryFile
+    NtOpenFile
+    NtOpenProcess
+    NtOpenProcessToken
+    NtOpenProcessTokenEx
+    NtOpenThread
+    NtOpenThreadToken
+    NtOpenThreadTokenEx
+    NtQueryDirectoryFile
+    NtQueryEaFile
+    NtQueryInformationAtom
+    NtQueryInformationFile
+    NtQueryInformationProcess
+    NtQueryInformationThread
+    NtQueryInformationToken
+    NtQueryQuotaInformationFile
+    NtQuerySecurityObject
+    NtQuerySystemInformation
+    NtQueryVolumeInformationFile
+    NtReadFile
+    NtRequestPort
+    NtRequestWaitReplyPort
+    NtSetEaFile
+    NtSetEvent
+    NtSetInformationFile
+    NtSetInformationProcess
+    NtSetInformationThread
+    NtSetQuotaInformationFile
+    NtSetVolumeInformationFile
+    NtSetSecurityObject
+    NtShutdownSystem
+    NtTraceEvent
+    NtUnlockFile
+    NtVdmControl
+    NtWaitForSingleObject
+    NtWriteFile
+    
+    ObAssignSecurity
+    ObCheckCreateObjectAccess
+    ObCheckObjectAccess
+    ObCreateObject
+    ObCreateObjectType
+    ObDeleteCapturedInsertInfo
+    ObDereferenceObject
+    ObfDereferenceObject
+    ObFindHandleForObject
+    ObGetObjectSecurity
+    ObInsertObject
+    ObLogSecurityDescriptor
+    ObReferenceSecurityDescriptor
+    ObDereferenceSecurityDescriptor
+    ObMakeTemporaryObject
+    ObOpenObjectByName
+    ObOpenObjectByPointer
+    ObQueryObjectAuditingByHandle
+    ObQueryNameString
+    ObReferenceObjectByHandle
+    ObReferenceObjectByName
+    ObReferenceObjectByPointer
+    ObReleaseObjectSecurity
+    ObSetSecurityDescriptorInfo
+    ObSetSecurityObjectByPointer
+    ObfReferenceObject
+    ObSetHandleAttributes
+    ObCloseHandle
+    
+    PfxFindPrefix
+    PfxInitialize
+    PfxInsertPrefix
+    PfxRemovePrefix
+    PoCallDriver
+    PoCancelDeviceNotify
+    PoQueueShutdownWorkItem
+    PoRegisterDeviceForIdleDetection
+    PoRegisterDeviceNotify
+    PoRegisterSystemState
+    PoRequestPowerIrp
+    PoRequestShutdownEvent
+    PoSetHiberRange
+    PoSetPowerState
+    PoSetSystemState
+    PoStartNextPowerIrp
+    PoShutdownBugCheck
+    PoUnregisterSystemState
+    ProbeForRead
+    ProbeForWrite
+    PsAssignImpersonationToken
+    PsChargePoolQuota
+    PsChargeProcessPoolQuota
+    PsChargeProcessNonPagedPoolQuota
+    PsChargeProcessPagedPoolQuota
+    PsCreateSystemProcess
+    PsCreateSystemThread
+    PsDisableImpersonation
+    PsGetCurrentProcess = IoGetCurrentProcess
+    PsGetContextThread
+    PsSetContextThread
+    PsGetCurrentProcessId
+    PsGetCurrentProcessSessionId
+    PsGetCurrentThread = PsGetCurrentThreadEx
+    PsGetCurrentThreadId
+    PsGetCurrentThreadStackBase
+    PsGetCurrentThreadStackLimit
+    PsGetCurrentThreadPreviousMode
+    PsGetJobLock
+    PsGetJobSessionId
+    PsGetJobUIRestrictionsClass
+    PsGetProcessCreateTimeQuadPart
+    PsGetProcessDebugPort
+    PsGetProcessExitProcessCalled
+    PsGetProcessExitStatus
+    PsGetProcessExitTime
+    PsGetProcessId
+    PsGetProcessImageFileName
+    PsGetProcessInheritedFromUniqueProcessId
+    PsGetProcessJob
+    PsGetProcessPeb
+    PsGetProcessPriorityClass
+    PsGetProcessSectionBaseAddress
+    PsGetProcessSecurityPort
+    PsGetProcessSessionId
+    PsGetProcessSessionIdEx = PsGetProcessSessionId
+    PsGetProcessWin32WindowStation
+    PsGetProcessWin32Process
+    PsGetCurrentProcessWin32Process
+    PsGetThreadId
+    PsGetThreadFreezeCount
+    PsGetThreadHardErrorsAreDisabled
+    PsGetThreadProcess
+    PsGetThreadProcessId
+    PsGetThreadSessionId
+    PsGetThreadTeb
+    PsGetThreadWin32Thread
+    PsGetCurrentThreadProcess
+    PsGetCurrentThreadProcessId
+    PsGetCurrentThreadTeb
+    PsGetCurrentThreadWin32Thread
+    PsGetCurrentThreadWin32ThreadAndEnterCriticalRegion
+    PsGetVersion
+    PsImpersonateClient
+    PsInitialSystemProcess CONSTANT
+    PsIsProcessBeingDebugged
+    PsIsThreadTerminating
+    PsIsSystemThread
+    PsIsSystemProcess
+    PsIsThreadImpersonating
+    PsJobType CONSTANT
+    PsEstablishWin32Callouts
+    PsLookupProcessThreadByCid
+    PsLookupProcessByProcessId
+    PsLookupThreadByThreadId
+    PsProcessType = _PsProcessType CONSTANT
+    PsReferenceImpersonationToken
+    PsReferencePrimaryToken
+    PsDereferenceImpersonationToken
+    PsDereferencePrimaryToken
+    PsRestoreImpersonation
+    PsReturnPoolQuota
+    PsReturnProcessNonPagedPoolQuota
+    PsReturnProcessPagedPoolQuota
+    PsRevertToSelf
+    PsRevertThreadToSelf
+    PsSetCreateProcessNotifyRoutine
+    PsSetCreateThreadNotifyRoutine
+    PsRemoveCreateThreadNotifyRoutine
+    PsSetJobUIRestrictionsClass
+    PsSetBBTNotifyRoutine
+    PsSetLoadImageNotifyRoutine
+    PsRemoveLoadImageNotifyRoutine
+    PsSetProcessPriorityClass
+    PsSetProcessPriorityByClass
+    PsSetProcessSecurityPort
+    PsSetProcessWin32Process
+    PsSetProcessWindowStation
+    PsSetThreadHardErrorsAreDisabled
+    PsSetThreadWin32Thread
+    PsTerminateSystemThread
+    PsThreadType = _PsThreadType CONSTANT
+    PsWrapApcWow64Thread
+    
+    RtlAbsoluteToSelfRelativeSD
+    RtlAddAccessAllowedAce
+    RtlAddAccessAllowedAceEx
+    RtlAddAce
+    RtlAddAtomToAtomTable
+    RtlAddRange
+    RtlAllocateHeap
+    RtlAnsiCharToUnicodeChar
+    RtlAnsiStringToUnicodeSize=RtlxAnsiStringToUnicodeSize
+    RtlAnsiStringToUnicodeString
+    RtlAppendAsciizToString
+    RtlAppendStringToString
+    RtlAppendUnicodeStringToString
+    RtlAppendUnicodeToString
+    RtlAreAllAccessesGranted
+    RtlAreAnyAccessesGranted
+    RtlAreBitsClear
+    RtlAreBitsSet
+    RtlAssert
+    RtlCaptureStackBackTrace
+    RtlCharToInteger
+    RtlCheckRegistryKey
+    RtlClearAllBits
+    RtlClearBit
+    RtlClearBits
+    RtlCompareMemory
+    RtlCompareMemoryUlong
+    RtlCompareString
+    RtlCompareUnicodeString
+    RtlCompressBuffer
+    RtlCompressChunks
+    RtlConvertLongToLargeInteger = RtlConvertLongToLargeInteger2
+    RtlConvertUlongToLargeInteger = RtlConvertUlongToLargeInteger2
+    RtlConvertSidToUnicodeString
+    RtlCopyLuid
+    RtlCopyRangeList
+    RtlCopySid
+    RtlCopyString
+    RtlCopyUnicodeString
+    RtlCreateAcl
+    RtlCreateAtomTable
+    RtlCreateHeap
+    RtlCreateRegistryKey
+    RtlCreateSecurityDescriptor
+    RtlCreateSystemVolumeInformationFolder
+    RtlCreateUnicodeString
+    RtlCustomCPToUnicodeN
+    RtlDecompressBuffer
+    RtlDecompressChunks
+    RtlDecompressFragment
+    RtlDelete
+    RtlDeleteAce
+    RtlDeleteAtomFromAtomTable
+    RtlDeleteElementGenericTable
+    RtlDeleteElementGenericTableAvl
+    RtlDeleteNoSplay
+    RtlDeleteOwnersRanges
+    RtlDeleteRange
+    RtlDeleteRegistryValue
+    RtlDescribeChunk
+    RtlDestroyAtomTable
+    RtlDestroyHeap
+    RtlDowncaseUnicodeString
+    RtlEmptyAtomTable
+    RtlEnlargedIntegerMultiply  = RtlEnlargedIntegerMultiply2
+    RtlEnlargedUnsignedDivide   = RtlEnlargedUnsignedDivide2
+    RtlEnlargedUnsignedMultiply = RtlEnlargedUnsignedMultiply2
+    RtlEnumerateGenericTable
+    RtlEnumerateGenericTableAvl
+    RtlEnumerateGenericTableLikeADirectory
+    RtlEnumerateGenericTableWithoutSplaying
+    RtlEnumerateGenericTableWithoutSplayingAvl
+    RtlEqualLuid
+    RtlEqualSid
+    RtlEqualString
+    RtlEqualUnicodeString
+    RtlExtendedIntegerMultiply
+    RtlExtendedLargeIntegerDivide
+    RtlExtendedMagicDivide
+    RtlFillMemory = memset
+    RtlFillMemoryUlong
+    RtlFindClearBits
+    RtlFindClearBitsAndSet
+    RtlFindClearRuns
+    RtlFindFirstRunClear
+    RtlFindLastBackwardRunClear
+    RtlFindLeastSignificantBit
+    RtlFindLongestRunClear
+    RtlFindMessage
+    RtlFindMostSignificantBit
+    RtlFindNextForwardRunClear
+    RtlFindRange
+    RtlFindSetBits
+    RtlFindSetBitsAndClear
+    RtlFindUnicodePrefix
+    RtlFormatCurrentUserKeyPath
+    RtlFreeAnsiString
+    RtlFreeHeap
+    RtlFreeOemString
+    RtlFreeRangeList
+    RtlFreeUnicodeString
+    RtlGUIDFromString
+    RtlGenerate8dot3Name
+    RtlGetAce
+    RtlGetCallersAddress
+    RtlGetCompressionWorkSpaceSize
+    RtlGetDaclSecurityDescriptor
+    RtlGetDefaultCodePage
+    RtlGetElementGenericTable
+    RtlGetElementGenericTableAvl
+    RtlGetFirstRange
+    RtlGetGroupSecurityDescriptor
+    RtlGetNextRange
+    RtlGetNtGlobalFlags
+    RtlGetOwnerSecurityDescriptor
+    RtlGetSaclSecurityDescriptor
+    RtlGetVersion
+    RtlHashUnicodeString
+    RtlImageNtHeader
+    RtlImageDirectoryEntryToData
+    RtlInitAnsiString
+    RtlInitAnsiStringEx
+    RtlInitCodePageTable
+    RtlInitString
+    RtlInitUnicodeString
+    RtlInitUnicodeStringEx
+    RtlInitializeBitMap
+    RtlInitializeGenericTable
+    RtlInitializeGenericTableAvl
+    RtlInitializeRangeList
+    RtlInitializeSid
+    RtlInitializeUnicodePrefix
+    RtlInsertElementGenericTable
+    RtlInsertElementGenericTableAvl
+    RtlInsertElementGenericTableFull
+    RtlInsertElementGenericTableFullAvl
+    RtlInsertUnicodePrefix
+    RtlInt64ToUnicodeString
+    RtlIntegerToChar
+    RtlIntegerToUnicode
+    RtlIntegerToUnicodeString
+    RtlInvertRangeList
+    RtlIpv4AddressToStringA
+    RtlIpv4AddressToStringW
+    RtlIpv4AddressToStringExA
+    RtlIpv4AddressToStringExW
+    RtlIpv4StringToAddressA
+    RtlIpv4StringToAddressW
+    RtlIpv4StringToAddressExA
+    RtlIpv4StringToAddressExW
+    RtlIpv6AddressToStringA
+    RtlIpv6AddressToStringW
+    RtlIpv6AddressToStringExA
+    RtlIpv6AddressToStringExW
+    RtlIpv6StringToAddressA
+    RtlIpv6StringToAddressW
+    RtlIpv6StringToAddressExA
+    RtlIpv6StringToAddressExW
+    RtlIsGenericTableEmpty
+    RtlIsGenericTableEmptyAvl
+    RtlIsNameLegalDOS8Dot3
+    RtlIsRangeAvailable
+    RtlIsValidOemCharacter
+    RtlLargeIntegerAdd = RtlLargeIntegerAdd2
+    RtlLargeIntegerArithmeticShift = RtlLargeIntegerArithmeticShift2
+    RtlLargeIntegerDivide
+    RtlLargeIntegerNegate = RtlLargeIntegerNegate2
+    RtlLargeIntegerShiftLeft = RtlLargeIntegerShiftLeft2
+    RtlLargeIntegerShiftRight = RtlLargeIntegerShiftRight2
+    RtlLargeIntegerSubtract = RtlLargeIntegerSubtract2
+
+    RtlLengthRequiredSid
+    RtlLengthSecurityDescriptor
+    RtlLengthSid
+    RtlLookupAtomInAtomTable
+    RtlLookupElementGenericTable
+    RtlLookupElementGenericTableAvl
+    RtlLookupElementGenericTableFull
+    RtlLookupElementGenericTableFullAvl
+    RtlMapGenericMask
+    RtlMapSecurityErrorToNtStatus
+    RtlMergeRangeLists
+    RtlMoveMemory = memmove
+    RtlMultiByteToUnicodeN
+    RtlMultiByteToUnicodeSize
+    RtlNextUnicodePrefix
+    RtlNtStatusToDosError
+    RtlNtStatusToDosErrorNoTeb
+    RtlNumberGenericTableElements
+    RtlNumberGenericTableElementsAvl
+    RtlNumberOfClearBits
+    RtlNumberOfSetBits
+    RtlOemStringToCountedUnicodeString
+    RtlOemStringToUnicodeSize=RtlxOemStringToUnicodeSize
+    RtlOemStringToUnicodeString
+    RtlOemToUnicodeN
+    RtlPinAtomInAtomTable
+    RtlPrefetchMemoryNonTemporal
+    RtlPrefixString
+    RtlPrefixUnicodeString
+    RtlQueryAtomInAtomTable
+    RtlQueryRegistryValues
+    RtlQueryTimeZoneInformation
+    RtlRaiseException
+    RtlRandom
+    RtlRandomEx
+    RtlRealPredecessor
+    RtlRealSuccessor
+    RtlRemoveUnicodePrefix
+    RtlReserveChunk
+    RtlSecondsSince1970ToTime
+    RtlSecondsSince1980ToTime
+    RtlSelfRelativeToAbsoluteSD
+    RtlSelfRelativeToAbsoluteSD2
+    RtlSetAllBits
+    RtlSetBit
+    RtlSetBits
+    RtlSetDaclSecurityDescriptor
+    RtlSetGroupSecurityDescriptor
+    RtlSetOwnerSecurityDescriptor
+    RtlSetSaclSecurityDescriptor
+    RtlSetTimeZoneInformation
+    RtlSizeHeap
+    RtlSplay
+    RtlStringFromGUID
+    RtlSubAuthorityCountSid
+    RtlSubAuthoritySid
+    RtlSubtreePredecessor
+    RtlSubtreeSuccessor
+    RtlTestBit
+    RtlTimeFieldsToTime
+    RtlTimeToSecondsSince1970
+    RtlTimeToSecondsSince1980
+    RtlTimeToTimeFields
+    RtlTimeToElapsedTimeFields
+    ;RtlTraceDatabaseCreate
+    ;RtlTraceDatabaseDestroy
+    ;RtlTraceDatabaseValidate
+    ;RtlTraceDatabaseAdd
+    ;RtlTraceDatabaseFind
+    ;RtlTraceDatabaseEnumerate
+    ;RtlTraceDatabaseLock
+    ;RtlTraceDatabaseUnlock
+    RtlLockBootStatusData
+    RtlUnlockBootStatusData
+    RtlGetSetBootStatusData
+    RtlUlongByteSwap
+    RtlUlonglongByteSwap
+    RtlUnicodeStringToAnsiSize=RtlxUnicodeStringToAnsiSize
+    RtlUnicodeStringToAnsiString
+    RtlUnicodeStringToCountedOemString
+    RtlUnicodeStringToInteger
+    RtlUnicodeStringToOemSize=RtlxUnicodeStringToOemSize
+    RtlUnicodeStringToOemString
+    RtlUnicodeToCustomCPN
+    RtlUnicodeToMultiByteN
+    RtlUnicodeToMultiByteSize
+    RtlUnicodeToOemN
+    RtlUnwind
+    RtlUpcaseUnicodeChar
+    RtlUpcaseUnicodeString
+    RtlUpcaseUnicodeStringToAnsiString
+    RtlUpcaseUnicodeStringToCountedOemString
+    RtlUpcaseUnicodeStringToOemString
+    RtlUpcaseUnicodeToCustomCPN
+    RtlUpcaseUnicodeToMultiByteN
+    RtlUpcaseUnicodeToOemN
+    RtlUpperChar
+    RtlUpperString
+    RtlUshortByteSwap
+    RtlValidSecurityDescriptor
+    RtlValidRelativeSecurityDescriptor
+    RtlValidSid
+    RtlVerifyVersionInfo
+    RtlVolumeDeviceToDosName=IoVolumeDeviceToDosName
+    RtlWalkFrameChain
+    RtlWriteRegistryValue
+    RtlZeroHeap
+    RtlZeroMemory = memset
+    RtlxAnsiStringToUnicodeSize
+    RtlxOemStringToUnicodeSize
+    RtlxUnicodeStringToAnsiSize
+    RtlxUnicodeStringToOemSize
+    
+    SeAccessCheck
+    SeAppendPrivileges
+    SeAssignSecurity
+    SeAssignSecurityEx
+    SeAuditingFileEvents
+    SeAuditingFileEventsWithContext
+    SeAuditingFileOrGlobalEvents
+    SeAuditingHardLinkEvents
+    SeAuditingHardLinkEventsWithContext
+    SeAuditHardLinkCreation
+    SeCaptureSecurityDescriptor
+    SeCaptureSubjectContext
+    SeCloseObjectAuditAlarm
+    SeCreateAccessState
+    SeCreateClientSecurity
+    SeCreateClientSecurityFromSubjectContext
+    SeDeassignSecurity
+    SeDeleteAccessState
+    SeDeleteObjectAuditAlarm
+    SeExports DATA
+    SeFilterToken
+    SeFreePrivileges
+    SeImpersonateClient
+    SeImpersonateClientEx
+    SeLockSubjectContext
+    SeMarkLogonSessionForTerminationNotification
+    SeOpenObjectAuditAlarm
+    SeOpenObjectForDeleteAuditAlarm
+    SePrivilegeCheck
+    SePrivilegeObjectAuditAlarm
+    SePublicDefaultDacl CONSTANT
+    SeQueryAuthenticationIdToken
+    SeQueryInformationToken
+    SeQuerySecurityDescriptorInfo
+    SeQuerySessionIdToken
+    SeRegisterLogonSessionTerminatedRoutine
+    SeReleaseSecurityDescriptor
+    SeReleaseSubjectContext
+    ;SeReportSecurityEvent
+    SeSetAccessStateGenericMapping
+    ;SeSetAuditParameter
+    SeSetSecurityDescriptorInfo
+    SeSetSecurityDescriptorInfoEx
+    SeSinglePrivilegeCheck
+    SeSystemDefaultDacl CONSTANT
+    SeTokenImpersonationLevel
+    SeTokenIsAdmin
+    SeTokenIsRestricted
+    SeTokenObjectType CONSTANT        
+    SeTokenType
+    SeUnlockSubjectContext
+    SeUnregisterLogonSessionTerminatedRoutine
+    SeValidSecurityDescriptor
+    
+    VerSetConditionMask
+    VfFailDeviceNode
+    ;VfFailDriver
+    VfFailSystemBIOS
+    VfIsVerificationEnabled
+    
+    ;WmiFlushTrace
+    ;WmiGetClock
+    ;WmiQueryTrace
+    WmiQueryTraceInformation
+    ;WmiStartTrace
+    ;WmiStopTrace
+    ;WmiTraceFastEvent
+    WmiTraceMessage
+    WmiTraceMessageVa
+    ;WmiUpdateTrace
+    
+    ZwAccessCheckAndAuditAlarm = NtAccessCheckAndAuditAlarm
+    ZwAddBootEntry = NtAddBootEntry
+    ZwAddDriverEntry = NtAddDriverEntry
+    ZwAdjustPrivilegesToken = NtAdjustPrivilegesToken
+    ZwAlertThread = NtAlertThread
+    ZwAllocateVirtualMemory = NtAllocateVirtualMemory
+    ZwAssignProcessToJobObject = NtAssignProcessToJobObject
+    
+    ZwCancelIoFile = NtCancelIoFile
+    ZwCancelTimer = NtCancelTimer
+    ZwClearEvent = NtClearEvent
+    ZwClose
+    ZwCloseObjectAuditAlarm = NtCloseObjectAuditAlarm
+    ZwConnectPort = NtConnectPort
+    ZwCreateDirectoryObject = NtCreateDirectoryObject
+    ZwCreateEvent = NtCreateEvent
+    ZwCreateFile = NtCreateFile
+    ZwCreateJobObject = NtCreateJobObject
+    NtCreateKey
+    ZwCreateKey = NtCreateKey
+    ZwCreateSection = NtCreateSection
+    ZwCreateSymbolicLinkObject = NtCreateSymbolicLinkObject
+    ZwCreateTimer = NtCreateTimer
+    
+    ZwDeleteBootEntry = NtDeleteBootEntry
+    ZwDeleteDriverEntry = NtDeleteDriverEntry
+    ZwDeleteFile = NtDeleteFile
+    ZwDeleteKey = NtDeleteKey
+    ZwDeleteValueKey = NtDeleteValueKey
+    ZwDeviceIoControlFile = NtDeviceIoControlFile
+    ZwDisplayString = NtDisplayString
+    ZwDuplicateObject = NtDuplicateObject
+    ZwDuplicateToken = NtDuplicateToken
+    
+    ZwEnumerateBootEntries = NtEnumerateBootEntries
+    ZwEnumerateDriverEntries = NtEnumerateDriverEntries
+    ZwEnumerateKey = NtEnumerateKey
+    NtEnumerateValueKey
+    ZwEnumerateValueKey = NtEnumerateValueKey
+    ZwFlushInstructionCache = NtFlushInstructionCache
+    ZwFlushKey = NtFlushKey
+    ZwFlushVirtualMemory = NtFlushVirtualMemory
+    ZwFreeVirtualMemory = NtFreeVirtualMemory
+    ZwFsControlFile = NtFsControlFile
+    ZwInitiatePowerAction = NtInitiatePowerAction
+    ZwIsProcessInJob = NtIsProcessInJob
+    ZwLoadDriver = NtLoadDriver
+    ZwLoadKey = NtLoadKey
+    ZwMakeTemporaryObject = NtMakeTemporaryObject
+    ZwMapViewOfSection = NtMapViewOfSection
+    ZwModifyBootEntry = NtModifyBootEntry
+    ZwModifyDriverEntry = NtModifyDriverEntry
+    ZwNotifyChangeKey = NtNotifyChangeKey
+    
+    ZwOpenDirectoryObject = NtOpenDirectoryObject
+    ZwOpenEvent = NtOpenEvent
+    ZwOpenFile = NtOpenFile
+    ZwOpenJobObject = NtOpenJobObject
+    NtOpenKey
+    ZwOpenKey = NtOpenKey
+    ZwOpenProcess = NtOpenProcess
+    ZwOpenProcessToken = NtOpenProcessToken
+    ZwOpenProcessTokenEx = NtOpenProcessTokenEx
+    ZwOpenSection = NtOpenSection
+    ZwOpenSymbolicLinkObject = NtOpenSymbolicLinkObject
+    ZwOpenThread = NtOpenThread
+    ZwOpenThreadToken = NtOpenThreadToken
+    ZwOpenThreadTokenEx = NtOpenThreadTokenEx
+    ZwOpenTimer = NtOpenTimer
+    ZwPowerInformation = NtPowerInformation
+    ZwPulseEvent = NtPulseEvent
+    
+    ZwQueryBootEntryOrder = NtQueryBootEntryOrder
+    ZwQueryBootOptions = NtQueryBootOptions
+    ZwQueryDefaultLocale = NtQueryDefaultLocale
+    ZwQueryDefaultUILanguage = NtQueryDefaultUILanguage
+    ZwQueryDriverEntryOrder = NtQueryDriverEntryOrder
+    ZwQueryInstallUILanguage = NtQueryInstallUILanguage
+    ZwQueryDirectoryFile = NtQueryDirectoryFile
+    ZwQueryDirectoryObject = NtQueryDirectoryObject
+    ZwQueryEaFile = NtQueryEaFile
+    ZwQueryFullAttributesFile = NtQueryFullAttributesFile
+    ZwQueryInformationFile = NtQueryInformationFile
+    ZwQueryInformationJobObject = NtQueryInformationJobObject
+    ZwQueryInformationProcess = NtQueryInformationProcess
+    ZwQueryInformationThread = NtQueryInformationThread
+    ZwQueryInformationToken = NtQueryInformationToken
+    ZwQueryInformationToken = NtQueryInformationToken
+    NtQueryKey
+    ZwQueryKey = NtQueryKey
+    ZwQueryObject = NtQueryObject
+    ZwQuerySection = NtQuerySection
+    ZwQuerySecurityObject = NtQuerySecurityObject
+    ZwQuerySymbolicLinkObject = NtQuerySymbolicLinkObject
+    ZwQuerySystemInformation = NtQuerySystemInformation
+    NtQueryValueKey
+    ZwQueryValueKey = NtQueryValueKey
+    ZwQueryVolumeInformationFile = NtQueryVolumeInformationFile
+    
+    ZwReadFile = NtReadFile
+    ZwReplaceKey = NtReplaceKey
+    ZwRequestWaitReplyPort = NtRequestWaitReplyPort
+    ZwResetEvent = NtResetEvent
+    ZwRestoreKey = NtRestoreKey
+    ZwSaveKey = NtSaveKey
+    ZwSaveKeyEx = NtSaveKeyEx
+    ZwSecureConnectPort = NtSecureConnectPort
+    ZwSetBootEntryOrder = NtSetBootEntryOrder
+    ZwSetBootOptions = NtSetBootOptions
+    ZwSetDefaultLocale = NtSetDefaultLocale
+    ZwSetDefaultUILanguage = NtSetDefaultUILanguage
+    ZwSetDriverEntryOrder = NtSetDriverEntryOrder
+    ZwSetEaFile = NtSetEaFile
+    ZwSetEvent = NtSetEvent
+    ZwSetInformationFile = NtSetInformationFile
+    ZwSetInformationJobObject = NtSetInformationJobObject
+    ZwSetInformationObject = NtSetInformationObject
+    ZwSetInformationProcess = NtSetInformationProcess
+    ZwSetInformationThread = NtSetInformationThread
+    ZwSetSecurityObject = NtSetSecurityObject
+    ZwSetSystemInformation = NtSetSystemInformation
+    ZwSetSystemTime = NtSetSystemTime
+    ZwSetTimer = NtSetTimer
+    NtSetValueKey
+    ZwSetValueKey = NtSetValueKey
+    ZwSetVolumeInformationFile = NtSetVolumeInformationFile
+    ZwTerminateJobObject = NtTerminateJobObject
+    ZwTerminateProcess = NtTerminateProcess
+    ZwTranslateFilePath = NtTranslateFilePath
+    ZwUnloadDriver = NtUnloadDriver
+    ZwUnloadKey = NtUnloadKey
+    ZwUnmapViewOfSection = NtUnmapViewOfSection
+    ZwWaitForMultipleObjects = NtWaitForMultipleObjects
+    ZwWaitForSingleObject = NtWaitForSingleObject
+    ZwWriteFile = NtWriteFile
+    ZwYieldExecution = NtYieldExecution
+    
+    _alloca_probe
+    _itoa
+    _itow
+    _purecall
+    _snprintf
+    _snwprintf
+    _stricmp
+    _strlwr
+    _strnicmp
+    _strnset
+    _strrev
+    _strset
+    _strupr
+    _vsnprintf
+    _vsnwprintf
+    _wcsicmp
+    _wcslwr
+    _wcsnicmp
+    _wcsnset
+    _wcsrev
+    _wcsupr
+    isdigit
+    islower
+    isprint
+    isspace
+    isupper
+    isxdigit
+    mbstowcs
+    mbtowc
+    memchr
+    qsort
+    rand
+    sprintf
+    srand
+    strcat
+    strchr
+    strcmp
+    strcpy
+    strlen
+    strncat
+    strncmp
+    strncpy
+    strrchr
+    strspn
+    strstr
+    swprintf
+    tolower
+    towlower
+    toupper
+    towupper
+    vsprintf
+    wcscat
+    wcschr
+    wcscmp
+    wcscpy
+    wcscspn
+    wcslen
+    wcsncat
+    wcsncmp
+    wcsncpy
+    wcsrchr
+    wcsspn
+    wcsstr
+    wcstombs
+    wctomb
+    atol
+    atoi
+    
+    KeCapturePersistentThreadState
+    Exi386InterlockedDecrementLong
+    Exi386InterlockedIncrementLong
+    Exi386InterlockedExchangeUlong
+    ExfInterlockedAddUlong
+    ExfInterlockedInsertHeadList
+    ExfInterlockedInsertTailList
+    ExfInterlockedRemoveHeadList
+    ExfInterlockedPopEntryList
+    ExfInterlockedPushEntryList
+    Exfi386InterlockedDecrementLong
+    Exfi386InterlockedIncrementLong
+    Exfi386InterlockedExchangeUlong
+    ExInterlockedCompareExchange64
+    ExfInterlockedCompareExchange64
+    ExInterlockedFlushSList
+    ExInterlockedPopEntrySList = InterlockedPopEntrySList
+    ExInterlockedPushEntrySList = InterlockedPushEntrySList
+    InterlockedPopEntrySList
+    InterlockedPushEntrySList
+    ExAllocateFromPagedLookasideList = ExAllocateFromPagedLookasideListEx
+    ExFreeToPagedLookasideList = ExFreeToPagedLookasideListEx
+    InterlockedIncrement = __InterlockedIncrement
+    InterlockedDecrement = __InterlockedDecrement
+    InterlockedExchange = Exfi386InterlockedExchangeUlong
+    InterlockedCompareExchange = __InterlockedCompareExchange
+    InterlockedExchangeAdd = __InterlockedExchangeAdd
+    RtlCaptureContext = RtlCaptureContext
+    KeInvalidateAllCaches
+    KeSetProfileIrql
+    KeIsExecutingDpc ;= __KeIsExecutingDpc
+    KeI386MachineType CONSTANT
+    KeI386SetGdtSelector
+    ;KeI386Call16BitFunction
+    ;KeI386Call16BitCStyleFunction
+    KefAcquireSpinLockAtDpcLevel
+    KefReleaseSpinLockFromDpcLevel
+    Kii386SpinOnSpinLock                
+    MmLockPageableImageSection=MmLockPageableDataSection
+    MmLockPagableImageSection=MmLockPageableDataSection
+    MmLockPagableDataSection=MmLockPageableDataSection
+    MmHighestUserAddress CONSTANT       
+    MmSystemRangeStart CONSTANT         
+    MmUserProbeAddress CONSTANT         
+    
+    KeGetCurrentThread
+    KeGetPreviousMode
+    READ_REGISTER_UCHAR
+    READ_REGISTER_ULONG
+    READ_REGISTER_USHORT
+    READ_REGISTER_BUFFER_UCHAR
+    READ_REGISTER_BUFFER_ULONG
+    READ_REGISTER_BUFFER_USHORT
+    WRITE_REGISTER_UCHAR
+    WRITE_REGISTER_ULONG
+    WRITE_REGISTER_USHORT
+    WRITE_REGISTER_BUFFER_UCHAR
+    WRITE_REGISTER_BUFFER_ULONG
+    WRITE_REGISTER_BUFFER_USHORT
+    KiIpiServiceRoutine
+    KiCoprocessorError
+    KiDeliverApc
+    KiDispatchInterrupt
+    KiUnexpectedInterrupt
+    Kei386EoiHelper
+    Ke386IoSetAccessProcess
+    Ke386QueryIoAccessMap
+    Ke386SetIoAccessMap
+    ;KeI386AbiosCall
+    KeI386AllocateGdtSelectors
+    KeI386ReleaseGdtSelectors
+    KeI386FlatToGdtSelector
+    ;KeI386GetLid
+    ;KeI386ReleaseLid
+    Ke386CallBios
+    KeSaveFloatingPointState
+    KeRestoreFloatingPointState
+
+    memcpy
+    memmove
+    memset
+    _abnormal_termination = __abnormal_termination
+    _except_handler2 = __except_handler2
+    _except_handler3 = _except_handler3
+    _global_unwind2 = __global_unwind2
+    _local_unwind2 = __local_unwind2
+    _aullrem
+    _aulldiv
+    _aullshr
+    _allshr
+    _allshl
+    _allrem
+    _allmul
+    _alldiv
+    _CIsin
+    _CIcos
+    _CIsqrt
+    _aulldvrm
+    _alldvrm
+    
+    KiEoiHelper

@@ -1,0 +1,79 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 中文(中华人民共和国) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BOOT_LOGO           BITMAP                  "inbv\\logo\\1.bmp"
+IDB_HIBERNATE_LOGO      BITMAP                  "inbv\\logo\\2.bmp"
+IDB_SHUTDOWN_LOGO       BITMAP                  "inbv\\logo\\3.bmp"
+IDB_BAR_SERVER          BITMAP                  "inbv\\logo\\4.bmp"
+IDB_LOGO                BITMAP                  "inbv\\logo\\5.bmp"
+IDB_LOGO_HEADER         BITMAP                  "inbv\\logo\\6.bmp"
+IDB_LOGO_BAND           BITMAP                  "inbv\\logo\\7.bmp"
+IDB_BAR_PRO             BITMAP                  "inbv\\logo\\8.bmp"
+IDB_SERVER_HEADER       BITMAP                  "inbv\\logo\\14.bmp"
+IDB_SERVER_BAND         BITMAP                  "inbv\\logo\\15.bmp"
+#endif    // 中文(中华人民共和国) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

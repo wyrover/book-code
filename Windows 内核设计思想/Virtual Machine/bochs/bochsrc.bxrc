@@ -1,0 +1,7 @@
+megs: 256
+romimage: file=..\bochs\BIOS-bochs-latest, address=0x00000
+vgaromimage: file=..\bochs\VGABIOS-lgpl-latest
+com1: enabled=1, mode=pipe-server, dev=\\.\pipe\com_1
+ata0: enabled=1, ioaddr1=0x1f0, ioaddr2=0x3f0, irq=14
+ata0-master: type=disk, path=..\..\Debug\ntos.img, cylinders=0, heads=4, spt=16
+boot: c

@@ -14,8 +14,10 @@ workspace "3rdparty"
         targetdir "lib/x64/%{_ACTION}" 
     filter { "kind:SharedLib", "platforms:Win32" }
         implibdir "lib/x86/%{_ACTION}" 
+        implibsuffix  "_impl"
     filter { "kind:SharedLib", "platforms:x64" }
         implibdir "lib/x64/%{_ACTION}" 
+        implibsuffix  "_impl"
     filter { "kind:ConsoleApp or WindowedApp or SharedLib", "platforms:Win32" }
         targetdir "bin/x86/%{_ACTION}"         
     filter { "kind:ConsoleApp or WindowedApp or SharedLib", "platforms:x64" }
@@ -297,6 +299,58 @@ workspace "3rdparty"
                 "3rdparty/getopt/**.c"      
                                
             } 
+
+    group "zlib"
+
+        project "zlib"            
+            kind "StaticLib"         
+            --defines { "STATIC_GETOPT" }            
+            files
+            {
+                "3rdparty/zlib/*.h",
+                "3rdparty/zlib/*.c"      
+                               
+            } 
+            
+        project "zlib_mt"            
+            kind "StaticLib"      
+            --defines { "STATIC_GETOPT" }
+            flags { "StaticRuntime" }
+            files
+            {
+                "3rdparty/zlib/*.h",
+                "3rdparty/zlib/*.c"      
+                               
+            }
+
+        project "zlib_dll"         
+            targetname "zlib1"    
+            kind "SharedLib"      
+            --defines { "STATIC_GETOPT" }
+            flags { "StaticRuntime" }
+            files
+            {
+                "3rdparty/zlib/*.h",
+                "3rdparty/zlib/*.c",
+                "3rdparty/zlib/win32/*.def",
+                "3rdparty/zlib/win32/*.rc"
+                               
+            }
+
+        project "zlib_dll_mt"  
+            targetname "zlib1"    
+            implibname "zlib1_mt"
+            kind "SharedLib"      
+            --defines { "STATIC_GETOPT" }
+            flags { "StaticRuntime" }
+            files
+            {
+                "3rdparty/zlib/*.h",
+                "3rdparty/zlib/*.c",
+                "3rdparty/zlib/win32/*.def",
+                "3rdparty/zlib/win32/*.rc"
+                               
+            }
     
     group "lua"
 
