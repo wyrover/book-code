@@ -300,11 +300,42 @@ workspace "3rdparty"
                                
             } 
 
+
+    group "jsoncpp"
+
+        project "jsoncpp"            
+            kind "StaticLib"                     
+            files
+            {
+                "3rdparty/jsoncpp/include/**.h",
+                "3rdparty/jsoncpp/**.cpp"      
+                               
+            } 
+            includedirs
+            {          
+                "3rdparty/jsoncpp/include"
+            }   
+            
+        project "jsoncpp_mt"            
+            kind "StaticLib"      
+           
+            flags { "StaticRuntime" }
+            files
+            {
+                "3rdparty/jsoncpp/include/**.h",
+                "3rdparty/jsoncpp/**.cpp"      
+                               
+            } 
+            includedirs
+            {          
+                "3rdparty/jsoncpp/include"
+            }
+
     group "zlib"
 
         project "zlib"            
-            kind "StaticLib"         
-            --defines { "STATIC_GETOPT" }            
+            kind "StaticLib"        
+                       
             files
             {
                 "3rdparty/zlib/*.h",
@@ -313,8 +344,8 @@ workspace "3rdparty"
             } 
             
         project "zlib_mt"            
-            kind "StaticLib"      
-            --defines { "STATIC_GETOPT" }
+            kind "StaticLib"     
+            
             flags { "StaticRuntime" }
             files
             {
@@ -325,9 +356,8 @@ workspace "3rdparty"
 
         project "zlib_dll"         
             targetname "zlib1"    
-            kind "SharedLib"      
-            --defines { "STATIC_GETOPT" }
-            flags { "StaticRuntime" }
+            kind "SharedLib"                  
+            flags { "NoManifest" }
             files
             {
                 "3rdparty/zlib/*.h",
@@ -340,17 +370,156 @@ workspace "3rdparty"
         project "zlib_dll_mt"  
             targetname "zlib1"    
             implibname "zlib1_mt"
-            kind "SharedLib"      
-            --defines { "STATIC_GETOPT" }
-            flags { "StaticRuntime" }
+            kind "SharedLib"                  
+            flags { "StaticRuntime", "NoManifest" }
             files
             {
                 "3rdparty/zlib/*.h",
                 "3rdparty/zlib/*.c",
                 "3rdparty/zlib/win32/*.def",
-                "3rdparty/zlib/win32/*.rc"
-                               
+                "3rdparty/zlib/win32/*.rc"                               
             }
+
+
+    group "unrar"
+
+        project "unrar"            
+            kind "StaticLib"        
+            defines { "UNRAR" }
+            files
+            {
+                "3rdparty/unrar/rar.hpp",
+                "3rdparty/unrar/**.cpp"      
+                               
+            } 
+            removefiles
+            {
+                "3rdparty/unrar/arccmt.cpp",
+                "3rdparty/unrar/beosea.cpp",
+                "3rdparty/unrar/coder.cpp",
+                "3rdparty/unrar/dll.cpp",
+                "3rdparty/unrar/log.cpp",
+                "3rdparty/unrar/model.cpp",
+                "3rdparty/unrar/os2ea.cpp",
+                "3rdparty/unrar/rarvmtbl.cpp",
+                "3rdparty/unrar/suballoc.cpp",
+                "3rdparty/unrar/unios2.cpp",
+                "3rdparty/unrar/unpack15.cpp",
+                "3rdparty/unrar/unpack20.cpp",
+                "3rdparty/unrar/uowners.cpp",
+                "3rdparty/unrar/win32acl.cpp",
+                "3rdparty/unrar/win32stm.cpp",
+
+            }     
+            includedirs
+            {          
+                "3rdparty/unrar"
+            }   
+
+        project "unrar_mt"            
+            kind "StaticLib"        
+            defines { "UNRAR" }
+            flags { "StaticRuntime" }
+            files
+            {
+                "3rdparty/unrar/rar.hpp",
+                "3rdparty/unrar/**.cpp"      
+                               
+            } 
+            removefiles
+            {
+                "3rdparty/unrar/arccmt.cpp",
+                "3rdparty/unrar/beosea.cpp",
+                "3rdparty/unrar/coder.cpp",
+                "3rdparty/unrar/dll.cpp",
+                "3rdparty/unrar/log.cpp",
+                "3rdparty/unrar/model.cpp",
+                "3rdparty/unrar/os2ea.cpp",
+                "3rdparty/unrar/rarvmtbl.cpp",
+                "3rdparty/unrar/suballoc.cpp",
+                "3rdparty/unrar/unios2.cpp",
+                "3rdparty/unrar/unpack15.cpp",
+                "3rdparty/unrar/unpack20.cpp",
+                "3rdparty/unrar/uowners.cpp",
+                "3rdparty/unrar/win32acl.cpp",
+                "3rdparty/unrar/win32stm.cpp",
+
+            }     
+            includedirs
+            {          
+                "3rdparty/unrar"
+            }   
+
+        project "unrar_dll"         
+            targetname "unrar"                
+            kind "SharedLib"        
+            defines { "RARDLL", "UNRAR", "SILENT" }   
+            flags { "NoManifest" }
+            files
+            {
+                "3rdparty/unrar/rar.hpp",
+                "3rdparty/unrar/**.cpp",
+                "3rdparty/unrar/**.rc"  
+                               
+            } 
+            removefiles
+            {
+                "3rdparty/unrar/arccmt.cpp",
+                "3rdparty/unrar/beosea.cpp",
+                "3rdparty/unrar/coder.cpp",                
+                "3rdparty/unrar/log.cpp",
+                "3rdparty/unrar/model.cpp",
+                "3rdparty/unrar/os2ea.cpp",
+                "3rdparty/unrar/rarvmtbl.cpp",
+                "3rdparty/unrar/suballoc.cpp",
+                "3rdparty/unrar/unios2.cpp",
+                "3rdparty/unrar/unpack15.cpp",
+                "3rdparty/unrar/unpack20.cpp",
+                "3rdparty/unrar/uowners.cpp",
+                "3rdparty/unrar/win32acl.cpp",
+                "3rdparty/unrar/win32stm.cpp",
+
+            }     
+            includedirs
+            {          
+                "3rdparty/unrar"
+            }   
+            
+        project "unrar_dll_mt"     
+            targetname "unrar"    
+            implibname "unrar_mt"
+            kind "SharedLib"        
+            defines { "RARDLL", "UNRAR", "SILENT" }
+            flags { "StaticRuntime", "NoManifest" }
+            files
+            {
+                "3rdparty/unrar/rar.hpp",
+                "3rdparty/unrar/**.cpp",
+                "3rdparty/unrar/**.rc"  
+                               
+            } 
+            removefiles
+            {
+                "3rdparty/unrar/arccmt.cpp",
+                "3rdparty/unrar/beosea.cpp",
+                "3rdparty/unrar/coder.cpp",                
+                "3rdparty/unrar/log.cpp",
+                "3rdparty/unrar/model.cpp",
+                "3rdparty/unrar/os2ea.cpp",
+                "3rdparty/unrar/rarvmtbl.cpp",
+                "3rdparty/unrar/suballoc.cpp",
+                "3rdparty/unrar/unios2.cpp",
+                "3rdparty/unrar/unpack15.cpp",
+                "3rdparty/unrar/unpack20.cpp",
+                "3rdparty/unrar/uowners.cpp",
+                "3rdparty/unrar/win32acl.cpp",
+                "3rdparty/unrar/win32stm.cpp",
+
+            }     
+            includedirs
+            {          
+                "3rdparty/unrar"
+            }   
     
     group "lua"
 
