@@ -1,0 +1,23 @@
+HKCR
+{
+	Chapter10.FreeMath.1 = s 'Math Class'
+	{
+		CLSID = s '{F7435682-6868-11D1-8012-000000000000}'
+	}
+	Chapter10.FreeMath = s 'Math Class'
+	{
+		CurVer = s 'Chapter10.FreeMath.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {F7435682-6868-11D1-8012-000000000000} = s 'Math Class'
+		{
+			ProgID = s 'Chapter10.FreeMath.1'
+			VersionIndependentProgID = s 'Chapter10.FreeMath'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Free'
+			}
+		}
+	}
+}

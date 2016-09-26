@@ -1,0 +1,24 @@
+HKCR
+{
+	Chapter5.Aggregate.1 = s 'AdvancedMath Class'
+	{
+		CLSID = s '{380F79FA-4098-11D1-883A-444553540000}'
+	}
+	Chapter5.Aggregate = s 'AdvancedMath Class'
+	{
+		CurVer = s 'Chapter5.Aggregate.1'
+		CLSID = s '{380F79FA-4098-11D1-883A-444553540000}'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {380F79FA-4098-11D1-883A-444553540000} = s 'AdvancedMath Class'
+		{
+			ProgID = s 'Chapter5.Aggregate.1'
+			VersionIndependentProgID = s 'Chapter5.Aggregate'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+		}
+	}
+}

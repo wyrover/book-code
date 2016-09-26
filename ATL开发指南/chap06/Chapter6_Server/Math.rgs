@@ -1,0 +1,25 @@
+HKCR
+{
+	Chapter6.Math.1 = s 'Math Class'
+	{
+		CLSID = s '{DCA4F88F-4952-11D1-883A-444553540000}'
+	}
+	Chapter6.Math = s 'Math Class'
+	{
+		CurVer = s 'Chapter6.Math.1'
+		CLSID = s '{DCA4F88F-4952-11D1-883A-444553540000}'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {DCA4F88F-4952-11D1-883A-444553540000} = s 'Math Class'
+		{
+			ProgID = s 'Chapter6.Math.1'
+			VersionIndependentProgID = s 'Chapter6.Math'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+		}
+	}
+}

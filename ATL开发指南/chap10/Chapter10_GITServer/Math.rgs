@@ -1,0 +1,23 @@
+HKCR
+{
+	Chapter10_GTI.Math.1 = s 'Math Class'
+	{
+		CLSID = s '{C2C66745-C012-11D1-B619-0004ACFF171C}'
+	}
+	Chapter10_GTI.Math = s 'Math Class'
+	{
+		CurVer = s 'Chapter10_GTI.Math.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {C2C66745-C012-11D1-B619-0004ACFF171C} = s 'Math Class'
+		{
+			ProgID = s 'Chapter10_GTI.Math.1'
+			VersionIndependentProgID = s 'Chapter10_GTI.Math'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+		}
+	}
+}

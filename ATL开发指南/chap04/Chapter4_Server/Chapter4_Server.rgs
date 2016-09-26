@@ -1,0 +1,11 @@
+HKCR
+{
+	NoRemove AppID
+	{
+		{5FB0C222-3343-11D1-883A-444553540000} = s 'Chapter4_Server'
+		'Chapter4_Server.EXE'
+		{
+			val AppID = s {5FB0C222-3343-11D1-883A-444553540000}
+		}
+	}
+}

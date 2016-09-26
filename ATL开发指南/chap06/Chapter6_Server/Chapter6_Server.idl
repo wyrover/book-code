@@ -1,0 +1,75 @@
+// Chapter6_Server.idl : IDL source for Chapter6_Server.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (Chapter6_Server.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+	[
+		object,
+		uuid(DCA4F88E-4952-11D1-883A-444553540000),
+		dual,
+		helpstring("IMath Interface"),
+		pointer_default(unique)
+	]
+	interface IMath : IDispatch
+	{
+		[id(1), helpstring("method Add")] HRESULT Add([in] VARIANT varOp1,[in] VARIANT varOp2, [out,retval] VARIANT* pvarResult);
+		[id(2), helpstring("method Subtract")] HRESULT Subtract([in] VARIANT varOp1, [in] VARIANT varOp2, [out, retval] VARIANT* pvarResult);
+		[id(3), helpstring("method Multiply")] HRESULT Multiply([in] VARIANT varOp1, [in] VARIANT varOp2, [out, retval] VARIANT* pvarResult);
+		[id(4), helpstring("method Divide")] HRESULT Divide([in] VARIANT varOp1, [in] VARIANT varOp2, [out, retval] VARIANT* pvarResult);
+	};
+
+	[
+		object,
+		uuid(9F21BD41-4E25-11d1-883A-444553540000),
+		dual,
+		helpstring("IMath2 Interface"),
+		pointer_default(unique)
+	]
+	interface IMath2 : IDispatch
+	{
+		[id(1), helpstring("method Add")] HRESULT Add([in] VARIANT varOp1,[in] VARIANT varOp2, [out,retval] VARIANT* pvarResult);
+		[id(2), helpstring("method Subtract")] HRESULT Subtract([in] VARIANT varOp1, [in] VARIANT varOp2, [out, retval] VARIANT* pvarResult);
+		[id(3), helpstring("method Multiply")] HRESULT Multiply([in] VARIANT varOp1, [in] VARIANT varOp2, [out, retval] VARIANT* pvarResult);
+		[id(4), helpstring("method Divide")] HRESULT Divide([in] VARIANT varOp1, [in] VARIANT varOp2, [out, retval] VARIANT* pvarResult);
+		// Our new method (Sum)
+		[id(5), helpstring("method Sum")] HRESULT Sum([in] VARIANT varOp1, [out, retval] long* plResult);
+	};
+
+	[
+		object,
+		uuid(9F21BD45-4E25-11d1-883A-444553540000),
+		dual,
+		helpstring("IAdvancedMath Interface"),
+		pointer_default(unique)
+	]
+	interface IAdvancedMath : IDispatch
+	{
+		[id(1), helpstring("method Factorial")] HRESULT Factorial([in] short sOp, [out,retval] long* plResult);
+		[id(2), helpstring("method Fibonacci")] HRESULT Fibonacci([in] short sOp, [out, retval] long* plResult);
+	}	
+
+[
+	uuid(DCA4F881-4952-11D1-883A-444553540000),
+	version(1.0),
+	helpstring("Chapter6_Server 1.0 Type Library")
+]
+library CHAPTER6_SERVERLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(DCA4F88F-4952-11D1-883A-444553540000),
+		helpstring("Math Class")
+	]
+	coclass Math
+	{
+		[default] interface IMath;
+		interface IAdvancedMath;
+		interface IMath2;
+	};
+};

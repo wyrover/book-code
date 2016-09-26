@@ -1,0 +1,4 @@
+customer id:integer,order id:integer,order date:date,Amount:float:2
+1,1,02/12/1999,24.11
+1,2,02/13/1999,55.43
+2,3,02/19/1999,84.13

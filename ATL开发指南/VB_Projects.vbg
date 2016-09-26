@@ -1,0 +1,5 @@
+VBGROUP 5.0
+Project=chap06\Chapter6_VBClient\Chapter6_VBClient.vbp
+Project=chap04\Chapter4_VBClient\Chapter4_VBClient.vbp
+StartupProject=chap07\Chapter7_VBCP_Client\Chapter7_VBCP_Client.vbp
+Project=chap07\Chapter7_VBImplements_Client\Chapter7_VBImplements_Client.vbp

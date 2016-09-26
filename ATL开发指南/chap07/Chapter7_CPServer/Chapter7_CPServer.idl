@@ -1,0 +1,54 @@
+// Chapter7_CPServer.idl : IDL source for Chapter7_CPServer.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (Chapter7_CPServer.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+	[
+		object,
+		uuid(99D952C7-99E6-11D3-8366-0060081AEB5F),
+		dual,
+		helpstring("IMath Interface"),
+		pointer_default(unique)
+	]
+	interface IMath : IDispatch
+	{
+		[id(1), helpstring("method Add")] HRESULT Add([in] long lOp1, [in] long lOp2, [out,retval] long* plResult);
+		[id(2), helpstring("method Subtract")] HRESULT Subtract([in] long lOp1, [in] long lOp2, [out,retval] long* plResult);
+		[id(3), helpstring("method Multiply")] HRESULT Multiply([in] long lOp1, [in] long lOp2, [out,retval] long* plResult);
+		[id(4), helpstring("method Divide")] HRESULT Divide([in] long lOp1, [in] long lOp2, [out,retval] long* plResult);
+	};
+
+[
+	uuid(99D952BB-99E6-11D3-8366-0060081AEB5F),
+	version(1.0),
+	helpstring("Chapter7_CPServer 1.0 Type Library")
+]
+library CHAPTER7_CPSERVERLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(99D952C8-99E6-11D3-8366-0060081AEB5F),
+		helpstring("_IMathEvents Interface")
+	]
+	dispinterface _IMathEvents
+	{
+		properties:
+		methods:
+		[id(1), helpstring("method ComputationComplete")] HRESULT ComputationComplete([in] long lResult);
+	};
+
+	[
+		uuid(A4FA55EE-B221-11D2-97C1-00104BF7DE35),
+		helpstring("Math Class")
+	]
+	coclass Math
+	{
+		[default] interface IMath;
+		[default, source] dispinterface _IMathEvents;
+	};
+};

@@ -1,0 +1,41 @@
+//
+// DualServer.IDL
+//
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+   object,
+   uuid(D6F16BC1-4B83-11d1-883A-444553540000),
+   dual,
+   helpstring("IMath Dual Interface"),
+   pointer_default(unique)
+]
+interface IMath : IDispatch
+{
+   [id(1)] HRESULT Add( [in] long lOp1, [in]long lOp2, [out,retval] long* plResult );
+   [id(2)] HRESULT Subtract( [in]long lOp1, [in]long lOp2, [out,retval] long* plResult );
+   [id(3)] HRESULT Multiply( [in]long lOp1, [in]long lOp2, [out,retval] long* plResult );
+   [id(4)] HRESULT Divide( [in]long lOp1, [in]long lOp2, [out,retval] long* plResult );
+}
+
+[
+	uuid(D6F16BC2-4B83-11d1-883A-444553540000),
+	version(1.0),
+	helpstring("Chapter6_DualServer 1.0 Type Library")
+]
+library DualServerLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(D6F16BC4-4B83-11d1-883A-444553540000),
+		helpstring("Dual Math Class")
+	]
+	coclass Math
+	{
+		[default] interface IMath;
+	};
+};

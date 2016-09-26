@@ -1,0 +1,23 @@
+HKCR
+{
+	Chapter5.SimpleMath.1 = s 'SimpleMath Class'
+	{
+		CLSID = s '{380F79EB-4098-11D1-883A-444553540000}'
+	}
+	Chapter5.SimpleMath = s 'SimpleMath Class'
+	{
+		CurVer = s 'Chapter5.SimpleMath.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {380F79EB-4098-11D1-883A-444553540000} = s 'SimpleMath Class'
+		{
+			ProgID = s 'Chapter5.SimpleMath.1'
+			VersionIndependentProgID = s 'Chapter5.SimpleMath'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+		}
+	}
+}

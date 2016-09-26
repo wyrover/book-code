@@ -1,0 +1,26 @@
+HKCR
+{
+	Chapter9_Collection.Application.1 = s 'Application Class'
+	{
+		CLSID = s '{56E642D0-EA5F-11D3-83D5-0060081AEB5F}'
+	}
+	Chapter9_Collection.Application = s 'Application Class'
+	{
+		CLSID = s '{56E642D0-EA5F-11D3-83D5-0060081AEB5F}'
+		CurVer = s 'Chapter9_Collection.Application.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {56E642D0-EA5F-11D3-83D5-0060081AEB5F} = s 'Application Class'
+		{
+			ProgID = s 'Chapter9_Collection.Application.1'
+			VersionIndependentProgID = s 'Chapter9_Collection.Application'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{56E642C3-EA5F-11D3-83D5-0060081AEB5F}'
+		}
+	}
+}

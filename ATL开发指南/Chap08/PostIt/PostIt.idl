@@ -1,0 +1,88 @@
+// PostIt.idl : IDL source for PostIt.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (PostIt.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+#include "olectl.h"
+	
+
+	[
+		object,
+		uuid(BF31419D-B661-11D3-8391-0060081AEB5F),
+		dual,
+		helpstring("IPostItCtl Interface"),
+		pointer_default(unique)
+	]
+	interface IPostItCtl : IDispatch
+	{
+		[propput, id(DISPID_BACKCOLOR)]
+		HRESULT BackColor([in]OLE_COLOR clr);
+		[propget, id(DISPID_BACKCOLOR)]
+		HRESULT BackColor([out,retval]OLE_COLOR* pclr);
+		[propput, id(DISPID_BORDERSTYLE)]
+		HRESULT BorderStyle([in]long style);
+		[propget, id(DISPID_BORDERSTYLE)]
+		HRESULT BorderStyle([out, retval]long* pstyle);
+		[propputref, id(DISPID_FONT)]
+		HRESULT Font([in]IFontDisp* pFont);
+		[propput, id(DISPID_FONT)]
+		HRESULT Font([in]IFontDisp* pFont);
+		[propget, id(DISPID_FONT)]
+		HRESULT Font([out, retval]IFontDisp** ppFont);
+		[propput, id(DISPID_FORECOLOR)]
+		HRESULT ForeColor([in]OLE_COLOR clr);
+		[propget, id(DISPID_FORECOLOR)]
+		HRESULT ForeColor([out,retval]OLE_COLOR* pclr);
+		[propput, id(DISPID_TEXT)]
+		HRESULT Text([in]BSTR strText);
+		[propget, id(DISPID_TEXT)]
+		HRESULT Text([out, retval]BSTR* pstrText);
+		[propput, id(DISPID_APPEARANCE)]
+		HRESULT Appearance([in]short appearance);
+		[propget, id(DISPID_APPEARANCE)]
+		HRESULT Appearance([out, retval]short* pappearance);
+	};
+
+[
+	uuid(BF314191-B661-11D3-8391-0060081AEB5F),
+	version(1.0),
+	helpstring("PostIt 1.0 Type Library")
+]
+library POSTITLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(BF31419F-B661-11D3-8391-0060081AEB5F),
+		helpstring("_IPostItCtlEvents Interface")
+	]
+	dispinterface _IPostItCtlEvents
+	{
+		properties:
+		methods:
+            [id(DISPID_CLICK)] void Click();
+	};
+
+	[
+		uuid(BF31419E-B661-11D3-8391-0060081AEB5F),
+		helpstring("PostItCtl Class")
+	]
+	coclass PostItCtl
+	{
+		[default] interface IPostItCtl;
+		[default, source] dispinterface _IPostItCtlEvents;
+	};
+
+	[
+		uuid(BF3141A2-B661-11D3-8391-0060081AEB5F),
+		helpstring("PostItPpg Class")
+	]
+	coclass PostItPpg
+	{
+		interface IUnknown;
+	};
+};

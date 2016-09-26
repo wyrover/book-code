@@ -1,0 +1,52 @@
+// Chapter5_Contain.idl : IDL source for Chapter5_Contain.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (Chapter5_Contain.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+	[	
+		uuid(380F79EA-4098-11D1-883A-444553540000),	
+		helpstring("IMath Interface"),
+		pointer_default(unique)
+	]
+	interface IMath : IUnknown
+	{
+		[helpstring("method Add")] HRESULT Add(long lOp1, long lOp2, long* plResult);
+		[helpstring("method Subtract")] HRESULT Subtract(long lOp1, long lOp2, long* plResult);
+		[helpstring("method Multiply")] HRESULT Multiply(long lOp1, long lOp2, long* plResult);
+		[helpstring("method Divide")] HRESULT Divide(long lOp1, long lOp2, long* plResult);
+	};
+
+	[
+		uuid(380F79F9-4098-11D1-883A-444553540000),	
+		helpstring("IAdvancedMath Interface"),
+		pointer_default(unique)
+	]
+	interface IAdvancedMath : IUnknown
+	{
+		[helpstring("method Factorial")] HRESULT Factorial( short sOp, long* plResult );
+		[helpstring("method Fibonacci")] HRESULT Fibonacci( short sOp, long* plResult );
+	};
+[
+	uuid(380F79FD-4098-11D1-883A-444553540000),
+	version(1.0),
+	helpstring("Chapter5_Contain 1.0 Type Library")
+]
+library CHAPTER5_CONTAINLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(380F7A0B-4098-11D1-883A-444553540000),
+		helpstring("AdvancedMath Class")
+	]
+	coclass AdvancedMath
+	{
+		[default] interface IAdvancedMath;
+		interface IMath;
+	};
+};

@@ -1,0 +1,11 @@
+; NativeServer.def : Declares the module parameters for the DLL.
+
+LIBRARY      "Chapter6_NativeServer"
+DESCRIPTION  'Chapter6_NativeServer Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+
+	DllGetClassObject PRIVATE
+	DllCanUnloadNow   PRIVATE
+

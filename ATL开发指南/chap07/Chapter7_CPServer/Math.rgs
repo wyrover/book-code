@@ -1,0 +1,26 @@
+HKCR
+{
+	Chapter7.CPMath.1 = s 'Math Class'
+	{
+		CLSID = s '{A4FA55EE-B221-11D2-97C1-00104BF7DE35}'
+	}
+	Chapter7.CPMath = s 'Math Class'
+	{
+		CLSID = s '{A4FA55EE-B221-11D2-97C1-00104BF7DE35}'
+		CurVer = s 'Chapter7.CPMath.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {A4FA55EE-B221-11D2-97C1-00104BF7DE35} = s 'Math Class'
+		{
+			ProgID = s 'Chapter7.CPMath.1'
+			VersionIndependentProgID = s 'Chapter7.CPMath'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{99D952BB-99E6-11D3-8366-0060081AEB5F}'
+		}
+	}
+}

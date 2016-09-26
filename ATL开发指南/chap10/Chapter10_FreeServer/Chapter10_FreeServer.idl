@@ -1,0 +1,42 @@
+// Chapter10_FreeServer.idl : IDL source for Chapter10_FreeServer.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (Chapter10_FreeServer.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+	[
+	
+		uuid(F7435681-6868-11D1-8012-000000000000),
+	
+		helpstring("IMath Interface"),
+		pointer_default(unique)
+	]
+	interface IMath : IUnknown
+	{
+		[helpstring("method Add")] HRESULT Add([in] long lOp1, [in] long lOp2, [out,retval] long *plResult);
+		[helpstring("method Subtract")] HRESULT Subtract([in] long lOp1, [in] long lOp2, [out,retval] long *plResult);
+		[helpstring("method Multiply")] HRESULT Multiply([in] long lOp1, [in] long lOp2, [out,retval] long *plResult);
+		[helpstring("method Divide")] HRESULT Divide([in] long lOp1, [in] long lOp2, [out,retval] long *plResult);
+	};
+[
+	uuid(F7435674-6868-11D1-8012-000000000000),
+	version(1.0),
+	helpstring("Chapter10_FreeServer 1.0 Type Library")
+]
+library CHAPTER10_FREESERVERLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(F7435682-6868-11D1-8012-000000000000),
+		helpstring("Math Class")
+	]
+	coclass Math
+	{
+		[default] interface IMath;
+	};
+};
