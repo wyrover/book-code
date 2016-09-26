@@ -1,0 +1,38 @@
+#
+# Makefile for TESTFCI
+#
+
+CL = cl.exe
+
+LINK = link.exe
+
+CFLAGS = /nologo /ML /W3 /O2 /c 
+
+LINK_FLAGS = /nologo /incremental:no
+
+
+#
+# Targets
+#
+
+all: testfci.exe
+
+clean: 
+    -@if exist testfci.obj erase testfci.obj
+    -@if exist testfci.exe erase testfci.exe
+
+
+#
+# Linking
+#
+
+testfci.exe: testfci.obj ..\..\lib\fci.lib
+    $(LINK) $(LINK_FLAGS) testfci.obj ..\..\lib\fci.lib /out:testfci.exe
+
+
+#
+# Object files
+#
+
+testfci.obj: testfci.c ..\..\include\fci.h
+    $(CL) $(CFLAGS) $*.c

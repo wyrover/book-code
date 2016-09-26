@@ -1,0 +1,19 @@
+// Created by Microsoft (R) C/C++ Compiler Version 12.00.8168.0 (5f8049b4).
+//
+// ADOSamp.tli
+//
+// Wrapper implementations for Win32 type library ..\myADOSamp\ADOSamp.tlb
+// compiler-generated file created 09/04/00 at 22:27:01 - DO NOT EDIT!
+
+#pragma once
+
+//
+// interface IAccount wrapper method implementations
+//
+
+inline _bstr_t IAccount::Post ( long lAccount, long lAmount ) {
+    BSTR _result;
+    HRESULT _hr = raw_Post(lAccount, lAmount, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}

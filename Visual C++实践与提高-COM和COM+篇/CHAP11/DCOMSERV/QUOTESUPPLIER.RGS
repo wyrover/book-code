@@ -1,0 +1,24 @@
+HKCR
+{
+	DCOMServ.QuoteSupplier.1 = s 'QuoteSupplier Class'
+	{
+		CLSID = s '{53437B42-6DD0-42D9-AF06-20E5F45AC2B8}'
+	}
+	DCOMServ.QuoteSupplier = s 'QuoteSupplier Class'
+	{
+		CLSID = s '{53437B42-6DD0-42D9-AF06-20E5F45AC2B8}'
+		CurVer = s 'DCOMServ.QuoteSupplier.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {53437B42-6DD0-42D9-AF06-20E5F45AC2B8} = s 'QuoteSupplier Class'
+		{
+			ProgID = s 'DCOMServ.QuoteSupplier.1'
+			VersionIndependentProgID = s 'DCOMServ.QuoteSupplier'
+			ForceRemove 'Programmable'
+			LocalServer32 = s '%MODULE%'
+			val AppID = s '{CD9359FA-658F-48EC-A139-AB61EA684338}'
+			'TypeLib' = s '{15EECD55-80FA-49A7-9D97-A89C08F7AA8A}'
+		}
+	}
+}

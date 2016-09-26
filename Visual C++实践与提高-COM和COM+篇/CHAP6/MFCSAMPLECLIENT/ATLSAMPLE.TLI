@@ -1,0 +1,31 @@
+// Created by Microsoft (R) C/C++ Compiler Version 12.00.8168.0 (ba166809).
+//
+// ATLSample.tli
+//
+// Wrapper implementations for Win32 type library ..\ATLSample\ATLSample.tlb
+// compiler-generated file created 09/02/00 at 15:28:02 - DO NOT EDIT!
+
+#pragma once
+
+//
+// interface IAccount wrapper method implementations
+//
+
+inline long IAccount::GetBalance ( ) {
+    long _result;
+    HRESULT _hr = get_Balance(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IAccount::PutBalance ( long pVal ) {
+    HRESULT _hr = put_Balance(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _bstr_t IAccount::Post ( long lAmount ) {
+    BSTR _result;
+    HRESULT _hr = raw_Post(lAmount, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}

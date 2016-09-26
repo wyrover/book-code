@@ -1,0 +1,57 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: ASPComSamp - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x804 /fo"Debug/ASPComSamp.res" /d "_DEBUG" "E:\1YY\NEWBOOK\chap10 Internet COM\ASPComSamp\ASPComSamp.rc"" 
+Creating temporary file "C:\WIN98\TEMP\RSP13B5.TMP" with contents
+[
+/nologo /MTd /W3 /Gm /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /Fp"Debug/ASPComSamp.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"E:\1YY\NEWBOOK\chap10 Internet COM\ASPComSamp\ASPComp.cpp"
+"E:\1YY\NEWBOOK\chap10 Internet COM\ASPComSamp\ASPComSamp.cpp"
+]
+Creating command line "cl.exe @C:\WIN98\TEMP\RSP13B5.TMP" 
+Creating temporary file "C:\WIN98\TEMP\RSP13B6.TMP" with contents
+[
+/nologo /MTd /W3 /Gm /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /Fp"Debug/ASPComSamp.pch" /Yc"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"E:\1YY\NEWBOOK\chap10 Internet COM\ASPComSamp\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\WIN98\TEMP\RSP13B6.TMP" 
+Creating temporary file "C:\WIN98\TEMP\RSP13B7.TMP" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib mtx.lib mtxguid.lib /nologo /subsystem:windows /dll /incremental:yes /pdb:"Debug/ASPComSamp.pdb" /debug /machine:I386 /def:".\ASPComSamp.def" /out:"Debug/ASPComSamp.dll" /implib:"Debug/ASPComSamp.lib" /pdbtype:sept 
+".\Debug\ASPComp.obj"
+".\Debug\ASPComSamp.obj"
+".\Debug\StdAfx.obj"
+".\Debug\ASPComSamp.res"
+]
+Creating command line "link.exe @C:\WIN98\TEMP\RSP13B7.TMP"
+Creating temporary file "C:\WIN98\TEMP\RSP13B8.BAT" with contents
+[
+@echo off
+regsvr32 /s /c ".\Debug\ASPComSamp.dll"
+echo regsvr32 exec. time > ".\Debug\regsvr32.trg"
+]
+Creating command line "C:\WIN98\TEMP\RSP13B8.BAT"
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+ASPComp.cpp
+ASPComSamp.cpp
+Generating Code...
+Linking...
+   Creating library Debug/ASPComSamp.lib and object Debug/ASPComSamp.exp
+<h3>Output Window</h3>
+Performing registration
+
+
+
+<h3>Results</h3>
+ASPComSamp.dll - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

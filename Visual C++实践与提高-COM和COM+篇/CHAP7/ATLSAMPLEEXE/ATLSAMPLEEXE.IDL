@@ -1,0 +1,41 @@
+// ATLSampleExe.idl : IDL source for ATLSampleExe.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (ATLSampleExe.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+	[
+		object,
+		uuid(6EA21C2C-D1C4-11D4-A239-503748C10000),
+		dual,
+		helpstring("IAccount Interface"),
+		pointer_default(unique)
+	]
+	interface IAccount : IDispatch
+	{
+		[propget, id(1), helpstring("property Balance")] HRESULT Balance([out, retval] long *pVal);
+		[propput, id(1), helpstring("property Balance")] HRESULT Balance([in] long newVal);
+		[id(2), helpstring("method Post")] HRESULT Post([in]long lAmount, [out,retval]BSTR *pbstrResult);
+	};
+
+[
+	uuid(6EA21C20-D1C4-11D4-A239-503748C10000),
+	version(1.0),
+	helpstring("ATLSampleExe 1.0 Type Library")
+]
+library ATLSAMPLEEXELib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(6EA21C2D-D1C4-11D4-A239-503748C10000),
+		helpstring("Account Class")
+	]
+	coclass Account
+	{
+		[default] interface IAccount;
+	};
+};

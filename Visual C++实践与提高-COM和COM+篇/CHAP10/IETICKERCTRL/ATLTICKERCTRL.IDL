@@ -1,0 +1,86 @@
+// AtlTickerCtrl.idl : IDL source for AtlTickerCtrl.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (AtlTickerCtrl.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+#include "olectl.h"
+	
+
+	[
+		object,
+		uuid(48727BC4-B815-4EBB-9718-84EFF6D59505),
+		dual,
+		helpstring("ITicker Interface"),
+		pointer_default(unique)
+	]
+	interface ITicker : IDispatch
+	{
+		[propput, id(DISPID_BACKCOLOR)]
+		HRESULT BackColor([in]OLE_COLOR clr);
+		[propget, id(DISPID_BACKCOLOR)]
+		HRESULT BackColor([out,retval]OLE_COLOR* pclr);
+		[propput, id(DISPID_BORDERCOLOR)]
+		HRESULT BorderColor([in]OLE_COLOR clr);
+		[propget, id(DISPID_BORDERCOLOR)]
+		HRESULT BorderColor([out, retval]OLE_COLOR* pclr);
+		[propputref, id(DISPID_FONT)]
+		HRESULT Font([in]IFontDisp* pFont);
+		[propput, id(DISPID_FONT)]
+		HRESULT Font([in]IFontDisp* pFont);
+		[propget, id(DISPID_FONT)]
+		HRESULT Font([out, retval]IFontDisp** ppFont);
+		[propput, id(DISPID_FORECOLOR)]
+		HRESULT ForeColor([in]OLE_COLOR clr);
+		[propget, id(DISPID_FORECOLOR)]
+		HRESULT ForeColor([out,retval]OLE_COLOR* pclr);
+		[id(1), helpstring("Starts the scrolling of ticker symbols")] HRESULT StartScroll();
+		[id(2), helpstring("Stops the scrolling of ticker symbols")] HRESULT StopScroll();
+		[id(3), helpstring("Retrieves Quotes From Server")] HRESULT GetQuotes([out,retval] VARIANT_BOOL *pbSuccess);
+		[propget, id(4), helpstring("The ticker scrolling speed")] HRESULT Speed([out, retval] long *pVal);
+		[propput, id(4), helpstring("The ticker scrolling speed")] HRESULT Speed([in] long newVal);
+	};
+
+[
+	uuid(B3002585-04C1-49D0-B0F0-B13E6999F13E),
+	version(1.0),
+	helpstring("AtlTickerCtrl 1.0 Type Library")
+]
+library ATLTICKERCTRLLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(43401211-FF77-41E0-B659-17636F119F57),
+		helpstring("_ITickerEvents Interface")
+	]
+	dispinterface _ITickerEvents
+	{
+		properties:
+		methods:
+		[id(1), helpstring("Called when the control receives new quotes")] HRESULT GotQuotes([in] BSTR NewQuotes);
+		[id(2), helpstring("Called when the left mouse button is clicked on the control")] HRESULT Click([in] long x, [in] long y);
+	};
+
+	[
+		uuid(CB9E8D82-BC1E-4865-ADD3-7CC1678EA712),
+		helpstring("Ticker Class")
+	]
+	coclass Ticker
+	{
+		[default] interface ITicker;
+		[default, source] dispinterface _ITickerEvents;
+	};
+
+	[
+		uuid(A5ACC474-4C00-4988-B215-09541C5740C8),
+		helpstring("TickerPP Class")
+	]
+	coclass TickerPP
+	{
+		interface IUnknown;
+	};
+};

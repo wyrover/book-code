@@ -1,0 +1,113 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: DCOMServ - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "midl.exe /tlb ".\DCOMServ.tlb" /h "DCOMServ.h" /iid "DCOMServ_i.c" /Oicf "E:\Software\BookCode\VCCOM\CHAP11\DCOMSERV\DCOMServ.idl""
+Creating command line "rc.exe /l 0x804 /fo"Debug/DCOMServ.res" /d "_DEBUG" "E:\Software\BookCode\VCCOM\CHAP11\DCOMSERV\DCOMServ.rc"" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP173.tmp" with contents
+[
+/nologo /MTd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /FR"Debug/" /Fp"Debug/DCOMServ.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"E:\Software\BookCode\VCCOM\CHAP11\DCOMSERV\DCOMServ.cpp"
+"E:\Software\BookCode\VCCOM\CHAP11\DCOMSERV\QuoteSupplier.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP173.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP174.tmp" with contents
+[
+/nologo /MTd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /FR"Debug/" /Fp"Debug/DCOMServ.pch" /Yc"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"E:\Software\BookCode\VCCOM\CHAP11\DCOMSERV\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP174.tmp" 
+Creating command line "link.exe /nologo /subsystem:windows /incremental:yes /pdb:"Debug/DCOMServ.pdb" /debug /machine:I386 /out:"Debug/DCOMServ.exe" /pdbtype:sept  .\Debug\DCOMServ.obj .\Debug\QuoteSupplier.obj .\Debug\StdAfx.obj .\Debug\DCOMServ.res "
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP175.bat" with contents
+[
+@echo off
+".\Debug\DCOMServ.exe" /RegServer
+echo regsvr32 exec. time > ".\Debug\regsvr32.trg"
+echo Server registration done!
+]
+Creating command line "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP175.bat"
+Creating Type Library...
+Microsoft (R) 32b/64b MIDL Compiler Version 6.00.0361 
+Copyright (c) Microsoft Corporation 1991-2002. All rights reserved.
+Processing E:\Software\BookCode\VCCOM\CHAP11\DCOMSERV\DCOMServ.idl
+DCOMServ.idl
+Processing C:\Program Files\Microsoft SDK\include\oaidl.idl
+oaidl.idl
+Processing C:\Program Files\Microsoft SDK\include\objidl.idl
+objidl.idl
+Processing C:\Program Files\Microsoft SDK\include\unknwn.idl
+unknwn.idl
+Processing C:\Program Files\Microsoft SDK\include\wtypes.idl
+wtypes.idl
+Processing C:\Program Files\Microsoft SDK\include\basetsd.h
+basetsd.h
+Processing C:\Program Files\Microsoft SDK\include\guiddef.h
+guiddef.h
+Processing C:\Program Files\Microsoft SDK\include\ocidl.idl
+ocidl.idl
+Processing C:\Program Files\Microsoft SDK\include\oleidl.idl
+oleidl.idl
+Processing C:\Program Files\Microsoft SDK\include\servprov.idl
+servprov.idl
+Processing C:\Program Files\Microsoft SDK\include\urlmon.idl
+urlmon.idl
+Processing C:\Program Files\Microsoft SDK\include\msxml.idl
+msxml.idl
+Processing C:\Program Files\Microsoft SDK\include\oaidl.acf
+oaidl.acf
+Processing C:\Program Files\Microsoft SDK\include\ocidl.acf
+ocidl.acf
+64 bit Processing E:\Software\BookCode\VCCOM\CHAP11\DCOMSERV\DCOMServ.idl
+DCOMServ.idl
+64 bit Processing C:\Program Files\Microsoft SDK\include\oaidl.idl
+oaidl.idl
+64 bit Processing C:\Program Files\Microsoft SDK\include\objidl.idl
+objidl.idl
+64 bit Processing C:\Program Files\Microsoft SDK\include\unknwn.idl
+unknwn.idl
+64 bit Processing C:\Program Files\Microsoft SDK\include\wtypes.idl
+wtypes.idl
+64 bit Processing C:\Program Files\Microsoft SDK\include\basetsd.h
+basetsd.h
+64 bit Processing C:\Program Files\Microsoft SDK\include\guiddef.h
+guiddef.h
+64 bit Processing C:\Program Files\Microsoft SDK\include\ocidl.idl
+ocidl.idl
+64 bit Processing C:\Program Files\Microsoft SDK\include\oleidl.idl
+oleidl.idl
+64 bit Processing C:\Program Files\Microsoft SDK\include\servprov.idl
+servprov.idl
+64 bit Processing C:\Program Files\Microsoft SDK\include\urlmon.idl
+urlmon.idl
+64 bit Processing C:\Program Files\Microsoft SDK\include\msxml.idl
+msxml.idl
+64 bit Processing C:\Program Files\Microsoft SDK\include\oaidl.acf
+oaidl.acf
+64 bit Processing C:\Program Files\Microsoft SDK\include\ocidl.acf
+ocidl.acf
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+DCOMServ.cpp
+QuoteSupplier.cpp
+Generating Code...
+Linking...
+<h3>Output Window</h3>
+Performing registration
+Server registration done!
+Creating command line "bscmake.exe /nologo /o"Debug/DCOMServ.bsc"  .\Debug\StdAfx.sbr .\Debug\DCOMServ.sbr .\Debug\QuoteSupplier.sbr"
+Creating browse info file...
+<h3>Output Window</h3>
+
+
+
+<h3>Results</h3>
+DCOMServ.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

@@ -1,0 +1,67 @@
+// $$root$$.odl : type library source for ActiveX Control project.
+
+// This file will be processed by the Make Type Library (mktyplib) tool to
+// produce the type library ($$root$$.tlb) that will become a resource in
+// FormX.ocx.
+
+#include <olectl.h>
+#include <idispids.h>
+
+[ uuid(AFDC1584-F993-11D1-96ED-F05F03C10000), version(1.0),
+  helpfile("$$root$$.hlp"),
+  helpstring("FormX ActiveX Control module"),
+  control ]
+library FORMXLib
+{
+	importlib(STDOLE_TLB);
+	importlib(STDTYPE_TLB);
+
+	//  Primary dispatch interface for CFormXCtrl
+
+	[ uuid(AFDC1585-F993-11D1-96ED-F05F03C10000),
+	  helpstring("Dispatch interface for FormX Control"), hidden ]
+	dispinterface _DFormX
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CFormXCtrl)
+			//}}AFX_ODL_PROP
+
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CFormXCtrl)
+			//}}AFX_ODL_METHOD
+	};
+
+	//  Event dispatch interface for CFormXCtrl
+
+	[ uuid(AFDC1586-F993-11D1-96ED-F05F03C10000),
+	  helpstring("Event interface for FormX Control") ]
+	dispinterface _DFormXEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			// NOTE - ClassWizard will maintain event information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_EVENT(CFormXCtrl)
+			//}}AFX_ODL_EVENT
+	};
+
+	//  Class information for CFormXCtrl
+
+	[ uuid(AFDC1587-F993-11D1-96ED-F05F03C10000),
+	  helpstring("FormX Control"), control ]
+	coclass $$Safe_root$$
+	{
+		[default] dispinterface _DFormX;
+		[default, source] dispinterface _DFormXEvents;
+	};
+
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

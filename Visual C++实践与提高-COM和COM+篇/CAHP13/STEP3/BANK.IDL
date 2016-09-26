@@ -1,0 +1,39 @@
+// Bank.idl : IDL source for Bank.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (Bank.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+	[
+		object,
+		uuid(5939F230-7B5F-11D4-8BEC-348FBB000000),
+		dual,
+		helpstring("IAccount Interface"),
+		pointer_default(unique)
+	]
+	interface IAccount : IDispatch
+	{
+		[id(1), helpstring("method Post")] HRESULT Post([in]long lAccount,[in]long lAmount, [out,retval]BSTR *pbstrResult);
+	};
+
+[
+	uuid(5939F221-7B5F-11D4-8BEC-348FBB000000),
+	version(1.0),
+	helpstring("Bank 1.0 Type Library")
+]
+library BANKLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(5939F232-7B5F-11D4-8BEC-348FBB000000),
+		helpstring("Account Class")
+	]
+	coclass Account
+	{
+		[default] interface IAccount;
+	};
+};

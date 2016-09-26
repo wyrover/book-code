@@ -1,0 +1,47 @@
+// MFCSampleExe.odl : type library source for MFCSampleExe.exe
+
+// This file will be processed by the MIDL compiler to produce the
+// type library (MFCSampleExe.tlb).
+
+[ uuid(CDB6A4DA-819B-11D4-A23D-02608CACEDBB), version(1.0) ]
+library MFCSampleExe
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+
+
+
+
+	//  Primary dispatch interface for CAccount
+	
+	[ uuid(CDB6A4ED-819B-11D4-A23D-02608CACEDBB) ]
+	dispinterface IAccount
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CAccount)
+			[id(1)] long Balance;
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CAccount)
+			[id(2)] BSTR Post(long lAmount);
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CAccount
+
+	[ uuid(CDB6A4CF-819B-11D4-A23D-02608CACEDBB) ]
+	coclass Account
+	{
+		[default] dispinterface IAccount;
+	};
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

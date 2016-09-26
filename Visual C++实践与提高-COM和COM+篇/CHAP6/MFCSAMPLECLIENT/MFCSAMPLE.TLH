@@ -1,0 +1,68 @@
+// Created by Microsoft (R) C/C++ Compiler Version 12.00.8168.0 (1d620f72).
+//
+// MFCSample.tlh
+//
+// C++ source equivalent of Win32 type library ..\MFCSample\debug\MFCSample.tlb
+// compiler-generated file created 09/02/00 at 15:25:13 - DO NOT EDIT!
+
+#pragma once
+#pragma pack(push, 8)
+
+#include <comdef.h>
+
+namespace AccountDriver {
+
+//
+// Forward references and typedefs
+//
+
+struct __declspec(uuid("657f06d0-80d5-11d4-a23d-02608cacedbb"))
+/* dispinterface */ IAccount;
+struct /* coclass */ Account;
+
+//
+// Smart pointer typedef declarations
+//
+
+_COM_SMARTPTR_TYPEDEF(IAccount, __uuidof(IDispatch));
+
+//
+// Type library items
+//
+
+struct __declspec(uuid("657f06d0-80d5-11d4-a23d-02608cacedbb"))
+IAccount : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetBalance,put=PutBalance))
+    long Balance;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    // Methods:
+    _bstr_t Post (
+        long lAmount );
+
+    // Properties:
+    long GetBalance ( );
+    void PutBalance ( long _val );
+};
+
+struct __declspec(uuid("657f06d1-80d5-11d4-a23d-02608cacedbb"))
+Account;
+    // [ default ] dispinterface IAccount
+
+//
+// Wrapper method implementations
+//
+
+#include "MFCSample.tli"
+
+} // namespace AccountDriver
+
+#pragma pack(pop)

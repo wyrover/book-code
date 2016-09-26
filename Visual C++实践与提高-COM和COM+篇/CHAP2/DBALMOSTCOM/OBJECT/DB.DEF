@@ -1,0 +1,4 @@
+EXPORTS
+          ;WEP @1 RESIDENTNAME
+					DllGetClassObject
+					

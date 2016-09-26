@@ -1,0 +1,60 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: Container - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x409 /fo".\Debug/Contain.res" /d "_DEBUG" /d "_AFXDLL" "C:\VCCOM\CHAP8\Container\Contain.rc"" 
+Creating temporary file "C:\WIN98\TEMP\RSPA141.TMP" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp".\Debug/contain.pch" /Yu"stdafx.h" /Fo".\Debug/" /Fd".\Debug/" /FD /c 
+"C:\VCCOM\CHAP8\Container\ChildFrm.cpp"
+"C:\VCCOM\CHAP8\Container\CntrItem.cpp"
+"C:\VCCOM\CHAP8\Container\Contain.cpp"
+"C:\VCCOM\CHAP8\Container\ContrDoc.cpp"
+"C:\VCCOM\CHAP8\Container\ContrVw.cpp"
+"C:\VCCOM\CHAP8\Container\MainFrm.cpp"
+]
+Creating command line "cl.exe @C:\WIN98\TEMP\RSPA141.TMP" 
+Creating temporary file "C:\WIN98\TEMP\RSPA142.TMP" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp".\Debug/contain.pch" /Yc"stdafx.h" /Fo".\Debug/" /Fd".\Debug/" /FD /c 
+"C:\VCCOM\CHAP8\Container\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\WIN98\TEMP\RSPA142.TMP" 
+Creating temporary file "C:\WIN98\TEMP\RSPA143.TMP" with contents
+[
+/nologo /subsystem:windows /incremental:yes /pdb:".\Debug/contain.pdb" /debug /machine:I386 /out:".\Debug/contain.exe" 
+.\Debug\ChildFrm.obj
+.\Debug\CntrItem.obj
+.\Debug\Contain.obj
+.\Debug\ContrDoc.obj
+.\Debug\ContrVw.obj
+.\Debug\MainFrm.obj
+.\Debug\StdAfx.obj
+.\Debug\Contain.res
+]
+Creating command line "link.exe @C:\WIN98\TEMP\RSPA143.TMP"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+ChildFrm.cpp
+CntrItem.cpp
+Contain.cpp
+ContrDoc.cpp
+ContrVw.cpp
+MainFrm.cpp
+Generating Code...
+Linking...
+
+
+
+<h3>Results</h3>
+contain.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

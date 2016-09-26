@@ -1,0 +1,26 @@
+HKCR
+{
+	ASPComSamp.ASPComp.1 = s 'ASPComp Class'
+	{
+		CLSID = s '{1474A2EE-951F-11D4-896A-FD2AD650DB79}'
+	}
+	ASPComSamp.ASPComp = s 'ASPComp Class'
+	{
+		CLSID = s '{1474A2EE-951F-11D4-896A-FD2AD650DB79}'
+		CurVer = s 'ASPComSamp.ASPComp.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {1474A2EE-951F-11D4-896A-FD2AD650DB79} = s 'ASPComp Class'
+		{
+			ProgID = s 'ASPComSamp.ASPComp.1'
+			VersionIndependentProgID = s 'ASPComSamp.ASPComp'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{1474A2E1-951F-11D4-896A-FD2AD650DB79}'
+		}
+	}
+}

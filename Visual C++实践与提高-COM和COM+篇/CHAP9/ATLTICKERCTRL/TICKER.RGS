@@ -1,0 +1,34 @@
+HKCR
+{
+	AtlTickerCtrl.Ticker.1 = s 'Ticker Class'
+	{
+		CLSID = s '{CB9E8D82-BC1E-4865-ADD3-7CC1678EA712}'
+	}
+	AtlTickerCtrl.Ticker = s 'Ticker Class'
+	{
+		CLSID = s '{CB9E8D82-BC1E-4865-ADD3-7CC1678EA712}'
+		CurVer = s 'AtlTickerCtrl.Ticker.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {CB9E8D82-BC1E-4865-ADD3-7CC1678EA712} = s 'Ticker Class'
+		{
+			ProgID = s 'AtlTickerCtrl.Ticker.1'
+			VersionIndependentProgID = s 'AtlTickerCtrl.Ticker'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			ForceRemove 'Control'
+			ForceRemove 'Insertable'
+			ForceRemove 'ToolboxBitmap32' = s '%MODULE%, 101'
+			'MiscStatus' = s '0'
+			{
+			    '1' = s '131473'
+			}
+			'TypeLib' = s '{B3002585-04C1-49D0-B0F0-B13E6999F13E}'
+			'Version' = s '1.0'
+		}
+	}
+}

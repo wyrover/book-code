@@ -1,0 +1,9 @@
+// DOMCtrl.cpp : Implementation of CDOMCtrl
+
+#include "stdafx.h"
+#include "DOMSamp.h"
+#include "DOMCtrl.h"
+
+/////////////////////////////////////////////////////////////////////////////
+// CDOMCtrl
+

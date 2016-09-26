@@ -1,0 +1,47 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: Scribble - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\WIN98\TEMP\RSPC305.TMP" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp".\Debug/scribble.pch" /Yu"stdafx.h" /Fo".\Debug/" /Fd".\Debug/" /FD /c 
+"C:\VCCOM\CHAP8\ScribbleOle\scribble.cpp"
+"C:\VCCOM\CHAP8\ScribbleOle\scribdoc.cpp"
+"C:\VCCOM\CHAP8\ScribbleOle\scribvw.cpp"
+]
+Creating command line "cl.exe @C:\WIN98\TEMP\RSPC305.TMP" 
+Creating temporary file "C:\WIN98\TEMP\RSPC306.TMP" with contents
+[
+/nologo /subsystem:windows /incremental:yes /pdb:".\Debug/scribble.pdb" /debug /machine:I386 /out:".\Debug/scribble.exe" 
+.\Debug\childfrm.obj
+.\Debug\IpFrame.obj
+.\Debug\mainfrm.obj
+.\Debug\pendlg.obj
+.\Debug\scribble.obj
+.\Debug\scribdoc.obj
+.\Debug\ScribItm.obj
+.\Debug\scribvw.obj
+.\Debug\stdafx.obj
+.\Debug\scribble.res
+]
+Creating command line "link.exe @C:\WIN98\TEMP\RSPC306.TMP"
+<h3>Output Window</h3>
+Compiling...
+scribvw.cpp
+Generating Code...
+Skipping... (no relevant changes detected)
+scribble.cpp
+scribdoc.cpp
+Linking...
+
+
+
+<h3>Results</h3>
+scribble.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

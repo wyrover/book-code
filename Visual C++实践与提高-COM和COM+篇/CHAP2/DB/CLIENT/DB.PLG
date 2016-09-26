@@ -1,0 +1,21 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: DB - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x804 /fo"Debug/DB.res" /d "_DEBUG" /d "_AFXDLL" "D:\sample\chap2\db\client\DB.rc"" 
+Creating command line "link.exe /nologo /subsystem:windows /incremental:yes /pdb:"Debug/DB.pdb" /debug /machine:I386 /out:"Debug/DB.exe" /pdbtype:sept  .\Debug\DB.obj .\Debug\StdAfx.obj .\Debug\MainFrm.obj .\Debug\DBDoc.obj .\Debug\DBView.obj .\Debug\DB.res .\Debug\Dbsrv.obj "
+<h3>Output Window</h3>
+Compiling resources...
+Linking...
+
+
+
+<h3>Results</h3>
+DB.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

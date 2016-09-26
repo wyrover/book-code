@@ -1,0 +1,39 @@
+// ADOSamp.idl : IDL source for ADOSamp.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (ADOSamp.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+	[
+		object,
+		uuid(031A067F-825B-11D4-8C0E-446260000000),
+		dual,
+		helpstring("IAccount Interface"),
+		pointer_default(unique)
+	]
+	interface IAccount : IDispatch
+	{
+		[id(1), helpstring("method Post")] HRESULT Post([in]long lAccount,[in]long lAmount,[out,retval]BSTR *pbstrResult);
+	};
+
+[
+	uuid(031A0671-825B-11D4-8C0E-446260000000),
+	version(1.0),
+	helpstring("ADOSamp 1.0 Type Library")
+]
+library ADOSAMPLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(031A0680-825B-11D4-8C0E-446260000000),
+		helpstring("Account Class")
+	]
+	coclass Account
+	{
+		[default] interface IAccount;
+	};
+};

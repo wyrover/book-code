@@ -1,0 +1,60 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: ContainerActiveX - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x804 /fo"Debug/ContainerActiveX.res" /d "_DEBUG" /d "_AFXDLL" "C:\Vccom\Chap8\ContainerActiveX\ContainerActiveX.rc"" 
+Creating temporary file "C:\WIN98\TEMP\RSPA292.TMP" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Debug/ContainerActiveX.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ   /c 
+"C:\Vccom\Chap8\ContainerActiveX\ContainerActiveX.cpp"
+"C:\Vccom\Chap8\ContainerActiveX\MainFrm.cpp"
+"C:\Vccom\Chap8\ContainerActiveX\ChildFrm.cpp"
+"C:\Vccom\Chap8\ContainerActiveX\ContainerActiveXDoc.cpp"
+"C:\Vccom\Chap8\ContainerActiveX\ContainerActiveXView.cpp"
+"C:\Vccom\Chap8\ContainerActiveX\CntrItem.cpp"
+]
+Creating command line "cl.exe @C:\WIN98\TEMP\RSPA292.TMP" 
+Creating temporary file "C:\WIN98\TEMP\RSPA293.TMP" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Debug/ContainerActiveX.pch" /Yc"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ   /c 
+"C:\Vccom\Chap8\ContainerActiveX\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\WIN98\TEMP\RSPA293.TMP" 
+Creating temporary file "C:\WIN98\TEMP\RSPA294.TMP" with contents
+[
+/nologo /subsystem:windows /incremental:yes /pdb:"Debug/ContainerActiveX.pdb" /debug /machine:I386 /out:"Debug/ContainerActiveX.exe" /pdbtype:sept 
+.\Debug\ContainerActiveX.obj
+.\Debug\StdAfx.obj
+.\Debug\MainFrm.obj
+.\Debug\ChildFrm.obj
+.\Debug\ContainerActiveXDoc.obj
+.\Debug\ContainerActiveXView.obj
+.\Debug\CntrItem.obj
+.\Debug\ContainerActiveX.res
+]
+Creating command line "link.exe @C:\WIN98\TEMP\RSPA294.TMP"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+ContainerActiveX.cpp
+MainFrm.cpp
+ChildFrm.cpp
+ContainerActiveXDoc.cpp
+ContainerActiveXView.cpp
+CntrItem.cpp
+Generating Code...
+Linking...
+
+
+
+<h3>Results</h3>
+ContainerActiveX.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

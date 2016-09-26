@@ -1,0 +1,83 @@
+// Bank.idl : IDL source for Bank.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (Bank.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+	[
+		object,
+		uuid(5939F230-7B5F-11D4-8BEC-348FBB000000),
+		dual,
+		helpstring("IAccount Interface"),
+		pointer_default(unique)
+	]
+	interface IAccount : IDispatch
+	{
+		[id(1), helpstring("method Post")] HRESULT Post([in]long lAccount,[in]long lAmount, [out,retval]BSTR *pbstrResult);
+	};
+	[
+		object,
+		uuid(8D7F75C3-7BCE-11D4-8BF0-F6B5E8000000),
+		dual,
+		helpstring("IMoveMoney Interface"),
+		pointer_default(unique)
+	]
+	interface IMoveMoney : IDispatch
+	{
+		[id(1), helpstring("method Perform")] 
+		HRESULT Perform(
+			[in]long lPrimeAccount, 
+			[in]long lSecondAccount, 
+			[in]long lAmount,
+			[in] long lTranType,
+			[out, retval] BSTR* pbstrResult);
+	};
+	[
+		object,
+		uuid(FA1CAAD3-7CAB-11D4-8BF1-02A54B000000),
+		dual,
+		helpstring("IReceipt Interface"),
+		pointer_default(unique)
+	]
+	interface IReceipt : IDispatch
+	{
+		[id(1), helpstring("method GetNextReceipt")] HRESULT GetNextReceipt([out,retval] long* plReceiptNo);
+	};
+
+[
+	uuid(5939F221-7B5F-11D4-8BEC-348FBB000000),
+	version(1.0),
+	helpstring("Bank 1.0 Type Library")
+]
+library BANKLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(5939F232-7B5F-11D4-8BEC-348FBB000000),
+		helpstring("Account Class")
+	]
+	coclass Account
+	{
+		[default] interface IAccount;
+	};
+	[
+		uuid(8D7F75C4-7BCE-11D4-8BF0-F6B5E8000000),
+		helpstring("MoveMoney Class")
+	]
+	coclass MoveMoney
+	{
+		[default] interface IMoveMoney;
+	};
+	[
+		uuid(FA1CAAD4-7CAB-11D4-8BF1-02A54B000000),
+		helpstring("Receipt Class")
+	]
+	coclass Receipt
+	{
+		[default] interface IReceipt;
+	};
+};

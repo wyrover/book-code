@@ -1,0 +1,26 @@
+HKCR
+{
+	Bank.Receipt.1 = s 'Receipt Class'
+	{
+		CLSID = s '{FA1CAAD4-7CAB-11D4-8BF1-02A54B000000}'
+	}
+	Bank.Receipt = s 'Receipt Class'
+	{
+		CLSID = s '{FA1CAAD4-7CAB-11D4-8BF1-02A54B000000}'
+		CurVer = s 'Bank.Receipt.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {FA1CAAD4-7CAB-11D4-8BF1-02A54B000000} = s 'Receipt Class'
+		{
+			ProgID = s 'Bank.Receipt.1'
+			VersionIndependentProgID = s 'Bank.Receipt'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{5939F221-7B5F-11D4-8BEC-348FBB000000}'
+		}
+	}
+}

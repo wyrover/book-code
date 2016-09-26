@@ -1,0 +1,6 @@
+EXPORTS
+          ;WEP @1 RESIDENTNAME
+					DllGetClassObject
+					DllCanUnloadNow
+					DllRegisterServer
+					DllUnregisterServer

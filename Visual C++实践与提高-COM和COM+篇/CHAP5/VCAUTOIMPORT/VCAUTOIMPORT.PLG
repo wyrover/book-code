@@ -1,0 +1,40 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: VCAutoImport - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x804 /fo"Debug/VCAutoImport.res" /d "_DEBUG" /d "_AFXDLL" "C:\VCCOM\chap5\VCAutoImport\VCAutoImport.rc"" 
+Creating temporary file "C:\WIN98\TEMP\RSP20E5.TMP" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Debug/VCAutoImport.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\VCCOM\chap5\VCAutoImport\VCAutoImport.cpp"
+"C:\VCCOM\chap5\VCAutoImport\VCAutoImportDlg.cpp"
+]
+Creating command line "cl.exe @C:\WIN98\TEMP\RSP20E5.TMP" 
+Creating temporary file "C:\WIN98\TEMP\RSP20E6.TMP" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Debug/VCAutoImport.pch" /Yc"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\VCCOM\chap5\VCAutoImport\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\WIN98\TEMP\RSP20E6.TMP" 
+Creating command line "link.exe /nologo /subsystem:windows /incremental:yes /pdb:"Debug/VCAutoImport.pdb" /debug /machine:I386 /out:"Debug/VCAutoImport.exe" /pdbtype:sept  .\Debug\StdAfx.obj .\Debug\VCAutoImport.obj .\Debug\VCAutoImportDlg.obj .\Debug\VCAutoImport.res "
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+VCAutoImport.cpp
+VCAutoImportDlg.cpp
+Generating Code...
+Linking...
+
+
+
+<h3>Results</h3>
+VCAutoImport.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

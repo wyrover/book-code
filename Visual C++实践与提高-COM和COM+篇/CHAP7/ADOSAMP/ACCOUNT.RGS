@@ -1,0 +1,26 @@
+HKCR
+{
+	ADOSamp.Account.1 = s 'Account Class'
+	{
+		CLSID = s '{031A0680-825B-11D4-8C0E-446260000000}'
+	}
+	ADOSamp.Account = s 'Account Class'
+	{
+		CLSID = s '{031A0680-825B-11D4-8C0E-446260000000}'
+		CurVer = s 'ADOSamp.Account.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {031A0680-825B-11D4-8C0E-446260000000} = s 'Account Class'
+		{
+			ProgID = s 'ADOSamp.Account.1'
+			VersionIndependentProgID = s 'ADOSamp.Account'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{031A0671-825B-11D4-8C0E-446260000000}'
+		}
+	}
+}

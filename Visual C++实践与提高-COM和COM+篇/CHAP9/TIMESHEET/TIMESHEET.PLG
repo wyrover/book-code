@@ -1,0 +1,73 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: timesheet - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP152.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_WINDLL" /D "_AFXDLL" /D "_MBCS" /D "_USRDLL" /FR"Debug/" /Fp"Debug/timesheet.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"E:\VCCOM\CHAP9\TIMESHEET\font.cpp"
+"E:\VCCOM\CHAP9\TIMESHEET\Formctrl.cpp"
+"E:\VCCOM\CHAP9\TIMESHEET\FormXCtl.cpp"
+"E:\VCCOM\CHAP9\TIMESHEET\FormXPpg.cpp"
+"E:\VCCOM\CHAP9\TIMESHEET\msflexgrid.cpp"
+"E:\VCCOM\CHAP9\TIMESHEET\picture.cpp"
+"E:\VCCOM\CHAP9\TIMESHEET\rowcursor.cpp"
+"E:\VCCOM\CHAP9\TIMESHEET\timesheet.cpp"
+"E:\VCCOM\CHAP9\TIMESHEET\Wnd2.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP152.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP153.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_WINDLL" /D "_AFXDLL" /D "_MBCS" /D "_USRDLL" /FR"Debug/" /Fp"Debug/timesheet.pch" /Yc"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"E:\VCCOM\CHAP9\TIMESHEET\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP153.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP154.tmp" with contents
+[
+/nologo /subsystem:windows /dll /incremental:yes /pdb:"Debug/timesheet.pdb" /debug /machine:I386 /def:".\timesheet.def" /out:"Debug/timesheet.dll" /implib:"Debug/timesheet.lib" /pdbtype:sept 
+.\Debug\font.obj
+.\Debug\Formctrl.obj
+.\Debug\FormXCtl.obj
+.\Debug\FormXPpg.obj
+.\Debug\msflexgrid.obj
+.\Debug\picture.obj
+.\Debug\rowcursor.obj
+.\Debug\StdAfx.obj
+.\Debug\timesheet.obj
+.\Debug\Wnd2.obj
+.\Debug\timesheet.res
+]
+Creating command line "link.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP154.tmp"
+<h3>Output Window</h3>
+Compiling...
+StdAfx.cpp
+Compiling...
+font.cpp
+Formctrl.cpp
+E:\VCCOM\CHAP9\TIMESHEET\Formctrl.cpp(65) : fatal error C1083: Cannot open include file: 'AfxImpl.h': No such file or directory
+FormXCtl.cpp
+FormXPpg.cpp
+msflexgrid.cpp
+picture.cpp
+rowcursor.cpp
+timesheet.cpp
+Wnd2.cpp
+Generating Code...
+Error executing cl.exe.
+Creating command line "bscmake.exe /nologo /o"Debug/timesheet.bsc"  .\Debug\StdAfx.sbr .\Debug\font.sbr .\Debug\Formctrl.sbr .\Debug\FormXCtl.sbr .\Debug\FormXPpg.sbr .\Debug\msflexgrid.sbr .\Debug\picture.sbr .\Debug\rowcursor.sbr .\Debug\timesheet.sbr .\Debug\Wnd2.sbr"
+Creating browse info file...
+BSCMAKE: error BK1506 : cannot open file '.\Debug\Formctrl.sbr': No such file or directory
+Error executing bscmake.exe.
+<h3>Output Window</h3>
+
+
+
+<h3>Results</h3>
+timesheet.dll - 2 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

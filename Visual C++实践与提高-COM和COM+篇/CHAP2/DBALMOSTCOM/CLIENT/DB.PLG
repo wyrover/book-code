@@ -1,0 +1,57 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: DB - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x804 /fo"Debug/DB.res" /d "_DEBUG" /d "_AFXDLL" "E:\Software\BookCode\VCCOM\CHAP2\DBALMOSTCOM\CLIENT\DB.rc"" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP55.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /FR"Debug/" /Fp"Debug/DB.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"E:\Software\BookCode\VCCOM\CHAP2\DBALMOSTCOM\CLIENT\DB.cpp"
+"E:\Software\BookCode\VCCOM\CHAP2\DBALMOSTCOM\CLIENT\DBDoc.cpp"
+"E:\Software\BookCode\VCCOM\CHAP2\DBALMOSTCOM\CLIENT\DBView.cpp"
+"E:\Software\BookCode\VCCOM\CHAP2\DBALMOSTCOM\CLIENT\MainFrm.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP55.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP56.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /FR"Debug/" /Fp"Debug/DB.pch" /Yc"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"E:\Software\BookCode\VCCOM\CHAP2\DBALMOSTCOM\CLIENT\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP56.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP57.tmp" with contents
+[
+..\object\Debug\db.lib /nologo /subsystem:windows /incremental:yes /pdb:"Debug/DB.pdb" /debug /machine:I386 /out:"Debug/DB.exe" /pdbtype:sept 
+.\Debug\DB.obj
+.\Debug\DBDoc.obj
+.\Debug\DBView.obj
+.\Debug\MainFrm.obj
+.\Debug\StdAfx.obj
+.\Debug\DB.res
+]
+Creating command line "link.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP57.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+DB.cpp
+DBDoc.cpp
+DBView.cpp
+MainFrm.cpp
+Generating Code...
+Linking...
+Creating command line "bscmake.exe /nologo /o"Debug/DB.bsc"  .\Debug\StdAfx.sbr .\Debug\DB.sbr .\Debug\DBDoc.sbr .\Debug\DBView.sbr .\Debug\MainFrm.sbr"
+Creating browse info file...
+<h3>Output Window</h3>
+
+
+
+<h3>Results</h3>
+DB.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

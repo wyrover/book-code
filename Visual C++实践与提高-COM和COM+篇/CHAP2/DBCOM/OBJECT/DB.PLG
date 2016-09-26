@@ -1,0 +1,41 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: DB - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\WINDOWS.000\TEMP\RSP8071.TMP" with contents
+[
+/nologo /MTd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /D "DB_EXPORTS" /Fp"Debug/DB.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"D:\sample\chap2\dbcom\Object\Dbsrv.cpp"
+"D:\sample\chap2\dbcom\Object\DBSrvFact.CPP"
+]
+Creating command line "cl.exe @C:\WINDOWS.000\TEMP\RSP8071.TMP" 
+Creating temporary file "C:\WINDOWS.000\TEMP\RSP8072.TMP" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /dll /incremental:no /pdb:"Debug/DB.pdb" /debug /machine:I386 /def:".\db.def" /out:"Debug/DB.dll" /implib:"Debug/DB.lib" /pdbtype:sept 
+.\Debug\Dbsrv.obj
+.\Debug\DBSrvFact.obj
+]
+Creating command line "link.exe @C:\WINDOWS.000\TEMP\RSP8072.TMP"
+<h3>Output Window</h3>
+Compiling...
+Dbsrv.cpp
+DBSrvFact.CPP
+Linking...
+LINK : warning LNK4075: ignoring /EDITANDCONTINUE due to /INCREMENTAL:NO specification
+.\db.def : warning LNK4104: export of symbol "DllGetClassObject" should be PRIVATE
+.\db.def : warning LNK4104: export of symbol "DllCanUnloadNow" should be PRIVATE
+.\db.def : warning LNK4104: export of symbol "DllRegisterServer" should be PRIVATE
+.\db.def : warning LNK4104: export of symbol "DllUnregisterServer" should be PRIVATE
+   Creating library Debug/DB.lib and object Debug/DB.exp
+
+
+
+<h3>Results</h3>
+DB.dll - 0 error(s), 5 warning(s)
+</pre>
+</body>
+</html>

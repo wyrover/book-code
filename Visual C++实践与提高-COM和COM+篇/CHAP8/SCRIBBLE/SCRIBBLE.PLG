@@ -1,0 +1,72 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: Scribble - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP29.bat" with contents
+[
+@echo off
+makehelp.bat
+]
+Creating command line "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP29.bat"
+Creating command line "rc.exe /l 0x409 /fo".\Debug/scribble.res" /d "_DEBUG" /d "_AFXDLL" "C:\VCCOM\chap8\Scribble\scribble.rc"" 
+Building help file...
+Building Win32 Help files
+
+        1 file(s) copied.
+        1 file(s) copied.
+
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP2A.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp".\Debug/scribble.pch" /Yu"stdafx.h" /Fo".\Debug/" /Fd".\Debug/" /FD /c 
+"C:\VCCOM\chap8\Scribble\childfrm.cpp"
+"C:\VCCOM\chap8\Scribble\mainfrm.cpp"
+"C:\VCCOM\chap8\Scribble\pendlg.cpp"
+"C:\VCCOM\chap8\Scribble\scribble.cpp"
+"C:\VCCOM\chap8\Scribble\scribdoc.cpp"
+"C:\VCCOM\chap8\Scribble\scribvw.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP2A.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP2B.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp".\Debug/scribble.pch" /Yc"stdafx.h" /Fo".\Debug/" /Fd".\Debug/" /FD /c 
+"C:\VCCOM\chap8\Scribble\stdafx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP2B.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP2C.tmp" with contents
+[
+/nologo /subsystem:windows /incremental:yes /pdb:".\Debug/scribble.pdb" /debug /machine:I386 /out:".\Debug/scribble.exe" 
+.\Debug\childfrm.obj
+.\Debug\mainfrm.obj
+.\Debug\pendlg.obj
+.\Debug\scribble.obj
+.\Debug\scribdoc.obj
+.\Debug\scribvw.obj
+.\Debug\stdafx.obj
+.\Debug\scribble.res
+]
+Creating command line "link.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP2C.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+stdafx.cpp
+Compiling...
+childfrm.cpp
+mainfrm.cpp
+pendlg.cpp
+scribble.cpp
+scribdoc.cpp
+scribvw.cpp
+Generating Code...
+Linking...
+
+
+
+<h3>Results</h3>
+scribble.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

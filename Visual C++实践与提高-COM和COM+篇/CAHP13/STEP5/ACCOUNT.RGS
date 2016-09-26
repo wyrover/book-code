@@ -1,0 +1,26 @@
+HKCR
+{
+	Bank.Account.1 = s 'Account Class'
+	{
+		CLSID = s '{5939F232-7B5F-11D4-8BEC-348FBB000000}'
+	}
+	Bank.Account = s 'Account Class'
+	{
+		CLSID = s '{5939F232-7B5F-11D4-8BEC-348FBB000000}'
+		CurVer = s 'Bank.Account.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {5939F232-7B5F-11D4-8BEC-348FBB000000} = s 'Account Class'
+		{
+			ProgID = s 'Bank.Account.1'
+			VersionIndependentProgID = s 'Bank.Account'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{5939F221-7B5F-11D4-8BEC-348FBB000000}'
+		}
+	}
+}

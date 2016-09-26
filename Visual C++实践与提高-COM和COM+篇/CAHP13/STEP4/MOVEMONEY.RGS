@@ -1,0 +1,26 @@
+HKCR
+{
+	Bank.MoveMoney.1 = s 'MoveMoney Class'
+	{
+		CLSID = s '{8D7F75C4-7BCE-11D4-8BF0-F6B5E8000000}'
+	}
+	Bank.MoveMoney = s 'MoveMoney Class'
+	{
+		CLSID = s '{8D7F75C4-7BCE-11D4-8BF0-F6B5E8000000}'
+		CurVer = s 'Bank.MoveMoney.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {8D7F75C4-7BCE-11D4-8BF0-F6B5E8000000} = s 'MoveMoney Class'
+		{
+			ProgID = s 'Bank.MoveMoney.1'
+			VersionIndependentProgID = s 'Bank.MoveMoney'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{5939F221-7B5F-11D4-8BEC-348FBB000000}'
+		}
+	}
+}

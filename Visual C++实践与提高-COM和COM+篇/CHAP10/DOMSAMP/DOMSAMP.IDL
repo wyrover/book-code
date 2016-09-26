@@ -1,0 +1,41 @@
+// DOMSamp.idl : IDL source for DOMSamp.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (DOMSamp.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+#include "olectl.h"
+	
+
+	[
+		object,
+		uuid(63D6A83B-94C4-11D4-896A-80FF100AAD79),
+		dual,
+		helpstring("IDOMCtrl Interface"),
+		pointer_default(unique)
+	]
+	interface IDOMCtrl : IDispatch
+	{
+	};
+
+[
+	uuid(63D6A82F-94C4-11D4-896A-80FF100AAD79),
+	version(1.0),
+	helpstring("DOMSamp 1.0 Type Library")
+]
+library DOMSAMPLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(63D6A83C-94C4-11D4-896A-80FF100AAD79),
+		helpstring("DOMCtrl Class")
+	]
+	coclass DOMCtrl
+	{
+		[default] interface IDOMCtrl;
+	};
+};
