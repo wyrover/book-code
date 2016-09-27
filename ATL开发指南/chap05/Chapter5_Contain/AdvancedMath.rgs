@@ -1,0 +1,24 @@
+HKCR
+{
+	Chapter5.Containment.1 = s 'AdvancedMath Class'
+	{
+		CLSID = s '{380F7A0B-4098-11D1-883A-444553540000}'
+	}
+	Chapter5.Containment = s 'AdvancedMath Class'
+	{
+		CurVer = s 'Chapter5.Containment.1'
+		CLSID = s '{380F7A0B-4098-11D1-883A-444553540000}'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {380F7A0B-4098-11D1-883A-444553540000} = s 'AdvancedMath Class'
+		{
+			ProgID = s 'Chapter5.Containment.1'
+			VersionIndependentProgID = s 'Chapter5.Containment'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+		}
+	}
+}

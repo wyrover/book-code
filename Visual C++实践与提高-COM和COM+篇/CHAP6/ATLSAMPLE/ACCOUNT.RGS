@@ -1,0 +1,26 @@
+HKCR
+{
+	ATLSample.Account.1 = s 'Account Class'
+	{
+		CLSID = s '{3B4F8E7B-80C1-11D4-A23D-02608CACEDBB}'
+	}
+	ATLSample.Account = s 'Account Class'
+	{
+		CLSID = s '{3B4F8E7B-80C1-11D4-A23D-02608CACEDBB}'
+		CurVer = s 'ATLSample.Account.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {3B4F8E7B-80C1-11D4-A23D-02608CACEDBB} = s 'Account Class'
+		{
+			ProgID = s 'ATLSample.Account.1'
+			VersionIndependentProgID = s 'ATLSample.Account'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{3B4F8E6E-80C1-11D4-A23D-02608CACEDBB}'
+		}
+	}
+}

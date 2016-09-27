@@ -1,0 +1,34 @@
+// Created by Microsoft (R) C/C++ Compiler Version 12.00.8168.0 (3157fa6b).
+//
+// ex25a.tli
+//
+// Wrapper implementations for Win32 type library d:\yy\test\ex25a\debug\ex25a.tlb
+// compiler-generated file created 09/02/00 at 12:55:51 - DO NOT EDIT!
+
+#pragma once
+
+//
+// dispinterface IBank wrapper method implementations
+//
+
+inline double IBank::Withdrawal ( double dAount ) {
+    double _result;
+    _com_dispatch_method(this, 0x2, DISPATCH_METHOD, VT_R8, (void*)&_result, 
+        L"\x0005", dAount);
+    return _result;
+}
+
+inline HRESULT IBank::Deposit ( double dAmount ) {
+    return _com_dispatch_method(this, 0x3, DISPATCH_METHOD, VT_EMPTY, NULL, 
+        L"\x0005", dAmount);
+}
+
+inline double IBank::GetBalance ( ) {
+    double _result;
+    _com_dispatch_propget(this, 0x1, VT_R8, (void*)&_result);
+    return _result;
+}
+
+inline void IBank::PutBalance ( double _val ) {
+    _com_dispatch_propput(this, 0x1, VT_R8, _val);
+}

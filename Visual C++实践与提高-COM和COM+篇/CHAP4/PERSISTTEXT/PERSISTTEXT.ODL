@@ -1,0 +1,45 @@
+// PersistText.odl : type library source for PersistText.dll
+
+// This file will be processed by the MIDL compiler to produce the
+// type library (PersistText.tlb).
+
+[ uuid(5310B2F6-76A5-11D4-8BDA-0EB916000000), version(1.0) ]
+library PersistText
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+
+
+
+	//  Primary dispatch interface for CText
+	
+	[ uuid(5310B303-76A5-11D4-8BDA-0EB916000000) ]
+	dispinterface IText
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CText)
+			[id(1)] VARIANT Text;
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CText)
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CText
+
+	[ uuid(5310B304-76A5-11D4-8BDA-0EB916000000) ]
+	coclass Text
+	{
+		[default] dispinterface IText;
+	};
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

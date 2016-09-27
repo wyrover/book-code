@@ -1,0 +1,39 @@
+$$// newproj.inf = template for list of template files
+$$//  format is 'sourceResName' \t 'destFileName'
+$$//    The source res name may be preceded by any combination of '=', '-',  '!', '?', ':', '#', and/or '*'
+$$//       '=' => the resource is binary
+$$//       '-' => the file should not be added to the project (all files are added to the project by default)
+$$//       '!' => the file should be marked exclude from build
+$$//       '?' => the file should be treated as a help file
+$$//       ':' => the file should be treated as a resource
+$$//       '#' => the file should be treated as a template (implies '!')
+$$//       '*' => bypass the custom AppWizard's resources when loading
+$$//	if name starts with / => create new subdir
+
+
+
+
+
+README.TXT	ReadMe.txt
+STDAFX.CPP	StdAfx.cpp
+STDAFX.H	StdAfx.h
+ROOT.CPP	$$root$$.cpp
+ROOT.H	$$root$$.h
+ROOT.DEF	$$root$$.def
+ROOT.CLW	$$root$$.clw
+RESOURCE.H	resource.h
+ROOT.RC	$$root$$.rc
+ROOT.ODL	$$root$$.odl
+FORMXCTL.CPP	FormXCtl.cpp
+FORMXCTL.H	FormXCtl.h
+FORMXPPG.CPP	FormXPpg.cpp
+FORMXPPG.H	FormXPpg.h
+=:FORMXCTL.BMP	FormXCtl.bmp
+USERDIALOG.H	UserDialog.h
+USERDIALOG.CPP	UserDialog.cpp
+FORMCTRL.CPP	FORMCTRL.CPP
+FORMCTRL.H	FORMCTRL.H
+WND2.CPP	WND2.CPP
+=WND2.H	WND2.H
+
+

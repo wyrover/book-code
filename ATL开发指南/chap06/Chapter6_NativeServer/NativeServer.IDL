@@ -1,0 +1,65 @@
+//
+// NativeServer.IDL
+//
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+//
+// Old Method (ODL Syntax)
+//
+//[
+//   uuid( B8721602-4A3D-11d1-883A-444553540000),
+//   helpstring("IMath dispinterface")
+//]
+//dispinterface DMath
+//{
+//   properties:
+//   methods:
+//      [id(1)] long Add( long lOp1, long lOp2 );
+//      [id(2)] long Subtract( long lOp1, long lOp2 );
+//      [id(3)] long Multiply( long lOp1, long lOp2 );
+//      [id(4)] long Divide( long lOp1, long lOp2 );
+//}
+
+[
+   uuid( B8721602-4A3D-11d1-883A-444553540000),
+   helpstring("IMath dispinterface")
+]
+interface IMath : IDispatch
+{
+   [id(1)] HRESULT Add( [in] long lOp1,
+                        [in] long lOp2,
+                        [out,retval] long* plResult );
+   [id(2)] HRESULT Subtract( [in] long lOp1,
+                             [in] long lOp2,
+                             [out,retval] long* plResult);
+   [id(3)] HRESULT Multiply( [in] long lOp1,
+                             [in] long lOp2,
+                             [out,retval] long* plResult );
+   [id(4)] HRESULT Divide( [in] long lOp1,
+                           [in]long lOp2,
+                           [out,retval] long* plResult );
+}
+
+
+[
+	uuid(B8721600-4A3D-11d1-883A-444553540000),
+	version(1.0),
+	helpstring("Chapter6_NativeServer 1.0 Type Library")
+]
+library NativeServerLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(B8721601-4A3D-11d1-883A-444553540000),
+		helpstring("Native Math Class")
+	]
+	coclass Math
+	{
+		//[default] dispinterface DMath;
+		[default] interface IMath;
+	};
+};

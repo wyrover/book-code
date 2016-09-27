@@ -1,0 +1,13 @@
+REGEDIT
+; This .REG file may be used by your SETUP program.
+;   If a SETUP program is not available, the entries below will be
+;   registered in your InitInstance automatically with a call to
+;   CWinApp::RegisterShellFileTypes and COleObjectFactory::UpdateRegistryAll.
+
+
+HKEY_CLASSES_ROOT\MFCSampleExe.Application = MFCSampleExe Application
+HKEY_CLASSES_ROOT\MFCSampleExe.Application\CLSID = {CDB6A4D9-819B-11D4-A23D-02608CACEDBB}
+
+HKEY_CLASSES_ROOT\CLSID\{CDB6A4D9-819B-11D4-A23D-02608CACEDBB} = MFCSampleExe Application
+HKEY_CLASSES_ROOT\CLSID\{CDB6A4D9-819B-11D4-A23D-02608CACEDBB}\ProgId = MFCSampleExe.Application
+HKEY_CLASSES_ROOT\CLSID\{CDB6A4D9-819B-11D4-A23D-02608CACEDBB}\LocalServer32 = MFCSAMPLEEXE.EXE

@@ -1,0 +1,11 @@
+HKCR
+{
+	NoRemove AppID
+	{
+		{CD9359FA-658F-48EC-A139-AB61EA684338} = s 'DCOMServ'
+		'DCOMServ.EXE'
+		{
+			val AppID = s {CD9359FA-658F-48EC-A139-AB61EA684338}
+		}
+	}
+}

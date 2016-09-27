@@ -1,0 +1,10 @@
+REGEDIT
+HKEY_CLASSES_ROOT\Chapter6.NativeMath.1 = Chapter 6 Native Math Component
+HKEY_CLASSES_ROOT\Chapter6.NativeMath.1\CurVer = Chapter6.NativeMath.1
+HKEY_CLASSES_ROOT\Chapter6.NativeMath.1\CLSID = {a988bd40-9f1a-11ce-8b9f-10005afb7d30}
+
+HKEY_CLASSES_ROOT\CLSID\{a988bd40-9f1a-11ce-8b9f-10005afb7d30} = Chapter 6 Native Math Component
+HKEY_CLASSES_ROOT\CLSID\{a988bd40-9f1a-11ce-8b9f-10005afb7d30}\ProgID = Chapter6.NativeMath.1
+HKEY_CLASSES_ROOT\CLSID\{a988bd40-9f1a-11ce-8b9f-10005afb7d30}\VersionIndependentProgID = Chapter6.NativeMath
+HKEY_CLASSES_ROOT\CLSID\{a988bd40-9f1a-11ce-8b9f-10005afb7d30}\InprocServer32 = c:\projects\books\atl\ATL_Examples\chap06\Chapter6_NativeServer\Debug\Chapter6_NativeServer.dll
+HKEY_CLASSES_ROOT\CLSID\{a988bd40-9f1a-11ce-8b9f-10005afb7d30}\NotInsertable

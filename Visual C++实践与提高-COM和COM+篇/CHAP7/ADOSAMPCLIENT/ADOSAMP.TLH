@@ -1,0 +1,66 @@
+// Created by Microsoft (R) C/C++ Compiler Version 12.00.8168.0 (5f8049b4).
+//
+// ADOSamp.tlh
+//
+// C++ source equivalent of Win32 type library ..\myADOSamp\ADOSamp.tlb
+// compiler-generated file created 09/04/00 at 22:27:01 - DO NOT EDIT!
+
+#pragma once
+#pragma pack(push, 8)
+
+#include <comdef.h>
+
+namespace AccountDriver {
+
+//
+// Forward references and typedefs
+//
+
+struct /* coclass */ Account;
+struct __declspec(uuid("031a067f-825b-11d4-8c0e-446260000000"))
+/* dual interface */ IAccount;
+
+//
+// Smart pointer typedef declarations
+//
+
+_COM_SMARTPTR_TYPEDEF(IAccount, __uuidof(IAccount));
+
+//
+// Type library items
+//
+
+struct __declspec(uuid("031a0680-825b-11d4-8c0e-446260000000"))
+Account;
+    // [ default ] interface IAccount
+
+struct __declspec(uuid("031a067f-825b-11d4-8c0e-446260000000"))
+IAccount : IDispatch
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    _bstr_t Post (
+        long lAccount,
+        long lAmount );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall raw_Post (
+        long lAccount,
+        long lAmount,
+        BSTR * pbstrResult ) = 0;
+};
+
+//
+// Wrapper method implementations
+//
+
+#include "ADOSamp.tli"
+
+} // namespace AccountDriver
+
+#pragma pack(pop)

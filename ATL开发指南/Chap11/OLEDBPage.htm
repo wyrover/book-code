@@ -1,0 +1,135 @@
+<html>
+
+<head>
+<title>Using OLE DB Providers in HTML Pages</title>
+</head>
+<script language=vbscript>
+sub GetData_OnClick()
+	Call LoadDataFromSelectedTable
+end sub
+
+sub LoadDataFromSelectedTable
+	dim conn
+	dim rs
+	dim strHTML
+	dim txtRangeObj
+
+	' Initialize the text range object to point to our span tag below
+	set txtRangeObj = document.body.CreateTextRange()
+	txtRangeObj.MoveToElementText(tableData)
+
+	' Open the Server File
+	set conn = CreateObject("ADODB.Connection")
+	conn.Open "Provider=CarusoeProv OLE DB Provider;LOCATION=d:\my documents\serverfile.txt", "rpatton", "password"
+
+	' This will be the table name selected from the list box
+	set rs = conn.Execute(tables.value)
+
+	' Build an HTML String that will contain the complete table of data
+	strHTML = "<h2 align=center>Table: " & tables.value & "</h2>"
+	
+	' Put the results in a table
+	strHTML = strHTML & "<table border=1 align=center>"
+	strHTML = strHTML & "<tr>"
+	
+	' Create a heading column for each field in the record
+	for each field in rs.Fields
+		strHTML = strHTML & "<th>" & field.Name & "</th>"
+	next
+	
+	strHTML = strHTML & "</tr>"
+	
+	while not rs.EOF
+		strHTML = strHTML & "<tr>"
+		
+		for each field in rs.Fields
+			strHTML = strHTML & "<td"
+			
+			' We want to align all numbers and dates to the right
+			' 200 is adVarChar which is the type our strings will return as
+			if field.type <> 200 then
+				strHTML = strHTML & " align=right>"
+			else
+				strHTML = strHTML & ">"
+			end if
+			
+			' Put the contents of the field for this record into the table
+			strHTML = strHTML & field.Value
+			strHTML = strHTML & "</td>"
+		next
+		
+		strHTML = strHTML & "</tr>"
+		rs.MoveNext
+	wend
+
+	
+	strHTML = strHTML & "</table>"	
+	document.all("tableData").innerHTML =  strHTML
+	
+	set txtRangeObj = nothing
+	set rs = nothing
+	set conn = nothing
+end sub
+</script>
+
+<body bgcolor="#D5CCBB">
+<h1 align="center">Defined Tables in ServerFile.txt Data Source</h1>
+<center>
+<SCRIPT LANGUAGE=VBScript>
+
+	' We are going to dynamically discover the tables
+	' of a data source. This is accomplished by getting
+	' the tables schema from the data source. At that
+	' point it is a recordset and information provided
+	' by the provider for the table is available
+	
+	dim conn
+	dim rs
+	dim bSelected
+	
+	bSelected = false
+	
+	set conn = CreateObject("ADODB.Connection")	
+	conn.Open "Provider=CarusoeProv OLE DB Provider;LOCATION=d:\my documents\serverfile.txt", "rpatton", "password"
+
+	' adSchemaTables = 20; Opens the Tables Schema Rowset
+	set rs = conn.OpenSchema(20)
+	
+	document.write "<select size=5 name=tables id=tables>"
+	while not rs.EOF
+		document.write "<option value=""" & rs("TABLE_NAME")
+		
+		' Select the first table in the set
+		if not bSelected then
+			document.write """ selected>"
+			bSelected = true
+		else
+			document.write """>"
+		end if
+		
+		document.write rs("TABLE_NAME")
+		document.write "</option>"
+		rs.MoveNext
+	wend
+	
+	document.write "</select>"	
+	
+	set rs = nothing
+	set conn = nothing
+	
+</SCRIPT>
+<br><br>
+<input type=button id=GetData name=GetData value="Get Data">
+</center>
+<br><br>
+
+<span id=tableData name=tableData>
+<SCRIPT LANGUAGE=VBScript>
+	' Load the data from the selected table above
+	Call LoadDataFromSelectedTable
+</SCRIPT>
+</table>
+</span>
+</body>
+
+</html>

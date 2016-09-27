@@ -1,0 +1,29 @@
+// Created by Microsoft (R) C/C++ Compiler Version 12.00.8168.0 (1d620f72).
+//
+// MFCSample.tli
+//
+// Wrapper implementations for Win32 type library ..\MFCSample\debug\MFCSample.tlb
+// compiler-generated file created 09/02/00 at 15:25:13 - DO NOT EDIT!
+
+#pragma once
+
+//
+// dispinterface IAccount wrapper method implementations
+//
+
+inline _bstr_t IAccount::Post ( long lAmount ) {
+    BSTR _result;
+    _com_dispatch_method(this, 0x2, DISPATCH_METHOD, VT_BSTR, (void*)&_result, 
+        L"\x0003", lAmount);
+    return _bstr_t(_result, false);
+}
+
+inline long IAccount::GetBalance ( ) {
+    long _result;
+    _com_dispatch_propget(this, 0x1, VT_I4, (void*)&_result);
+    return _result;
+}
+
+inline void IAccount::PutBalance ( long _val ) {
+    _com_dispatch_propput(this, 0x1, VT_I4, _val);
+}

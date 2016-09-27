@@ -1,0 +1,26 @@
+HKCR
+{
+	Chapter9_EnumServer.BasicEnum.1 = s 'BasicEnum Class'
+	{
+		CLSID = s '{DBD4D8F0-DCD4-11D3-83C0-0060081AEB5F}'
+	}
+	Chapter9_EnumServer.BasicEnum = s 'BasicEnum Class'
+	{
+		CLSID = s '{DBD4D8F0-DCD4-11D3-83C0-0060081AEB5F}'
+		CurVer = s 'Chapter9_EnumServer.BasicEnum.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {DBD4D8F0-DCD4-11D3-83C0-0060081AEB5F} = s 'BasicEnum Class'
+		{
+			ProgID = s 'Chapter9_EnumServer.BasicEnum.1'
+			VersionIndependentProgID = s 'Chapter9_EnumServer.BasicEnum'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{DBD4D8E3-DCD4-11D3-83C0-0060081AEB5F}'
+		}
+	}
+}

@@ -1,0 +1,39 @@
+// ASPComSamp.idl : IDL source for ASPComSamp.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (ASPComSamp.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+	[
+		object,
+		uuid(1474A2ED-951F-11D4-896A-FD2AD650DB79),
+		dual,
+		helpstring("IASPComp Interface"),
+		pointer_default(unique)
+	]
+	interface IASPComp : IDispatch
+	{
+		[id(1), helpstring("method ProcessRequest")] HRESULT ProcessRequest();
+	};
+
+[
+	uuid(1474A2E1-951F-11D4-896A-FD2AD650DB79),
+	version(1.0),
+	helpstring("ASPComSamp 1.0 Type Library")
+]
+library ASPCOMSAMPLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(1474A2EE-951F-11D4-896A-FD2AD650DB79),
+		helpstring("ASPComp Class")
+	]
+	coclass ASPComp
+	{
+		[default] interface IASPComp;
+	};
+};

@@ -1,0 +1,534 @@
+{\rtf1\ansi \deff4\deflang1033{\fonttbl{\f4\froman\fcharset0\fprq2 Times New Roman{\*\falt Times};}{\f5\fswiss\fcharset0\fprq2 Arial{\*\falt Arial};}{\f11\fmodern\fcharset0\fprq1 Courier New;}}{\colortbl;\red0\green0\blue0;
+\red0\green0\blue255;\red0\green255\blue255;\red0\green255\blue0;\red255\green0\blue255;\red255\green0\blue0;\red255\green255\blue0;\red255\green255\blue255;\red0\green0\blue128;\red0\green128\blue128;\red0\green128\blue0;\red128\green0\blue128;
+\red128\green0\blue0;\red128\green128\blue0;\red128\green128\blue128;\red192\green192\blue192;}{\stylesheet{\widctlpar \f4\fs20 \snext0 Normal;}{\s1\fi-432\li432\sb240\sa60\keepn\widctlpar\tx432 \b\f5\fs28\kerning28 \sbasedon0\snext0 heading 1;}{
+\s2\fi-576\li576\sb240\sa60\keepn\widctlpar\tx576 \b\i\f5 \sbasedon0\snext0 heading 2;}{\s3\fi-720\li720\sb240\sa60\keepn\widctlpar\tx720 \f5 \sbasedon0\snext0 heading 3;}{\s4\fi-864\li864\sb240\sa60\keepn\widctlpar\tx864 \b\f5 \sbasedon0\snext0 
+heading 4;}{\s5\fi-1008\li1008\sb240\sa60\widctlpar\tx1008 \f4\fs22 \sbasedon0\snext0 heading 5;}{\s6\fi-1152\li1152\sb240\sa60\widctlpar\tx1152 \i\f4\fs22 \sbasedon0\snext0 heading 6;}{\s7\fi-1296\li1296\sb240\sa60\widctlpar\tx1296 \f5\fs20 
+\sbasedon0\snext0 heading 7;}{\s8\fi-1440\li1440\sb240\sa60\widctlpar\tx1440 \i\f5\fs20 \sbasedon0\snext0 heading 8;}{\s9\fi-1584\li1584\sb240\sa60\widctlpar\tx1584 \b\i\f5\fs18 \sbasedon0\snext0 heading 9;}{\*\cs10 \additive Default Paragraph Font;}{
+\s15\widctlpar \f11\fs20 \sbasedon0\snext15 Plain Text;}{\s16\widctlpar\tqc\tx4320\tqr\tx8640 \f4\fs20 \sbasedon0\snext16 header;}{\s17\widctlpar\tqc\tx4320\tqr\tx8640 \f4\fs20 \sbasedon0\snext17 footer;}{\*\cs18 \additive\sbasedon10 page number;}{
+\s19\qj\widctlpar \f4\fs20 \sbasedon0\snext19 Body Text;}{\*\cs20 \additive\i \sbasedon10 Emphasis;}{\s21\widctlpar\tqr\tx8640 \b\f11\fs20 \sbasedon15\snext22 Field;}{\s22\fi-360\li360\widctlpar \f4\fs20 \sbasedon0\snext22 List;}{\s23\qj\li720\widctlpar 
+\f4\fs20 \sbasedon0\snext21 Field Description;}}{\info{\title Microsoft Cabinet File Format Specification}{\author Microsoft}{\operator Microsoft}{\creatim\yr1997\mo3\dy20\hr3\min25}{\revtim\yr1997\mo3\dy26\hr1\min45}{\printim\yr1997\mo3\dy20\hr4\min2}
+{\version2}{\edmins1}{\nofpages16}{\nofwords3289}{\nofchars18749}{\*\company MSFT}{\vern57443}}\widowctrl\ftnbj\aenddoc\hyphcaps0\formshade \fet0\sectd \linex0\endnhere\titlepg {\header \pard\plain \s16\widctlpar\tqc\tx4320\tqr\tx8640 \f4\fs20 \tab 
+Microsoft Cabinet File Format
+\par }{\footer \pard\plain \s17\widctlpar\tqc\tx4320\tqr\tx8640 \f4\fs20 \tab Page {\field{\*\fldinst {\cs18  PAGE }}{\fldrslt {\cs18\lang1024 2}}} of {\field{\*\fldinst {\cs18  NUMPAGES }}{\fldrslt {\cs18\lang1024 1}}}{\cs18 \tab March 20, 1997}
+\par }{\footerf \pard\plain \s17\widctlpar\tqc\tx4320\tqr\tx8640 \f4\fs20 {\i \tab }{\b\i Abstract
+\par }{\i 
+\par }\pard \s17\qj\widctlpar\tqc\tx4320\tqr\tx8640 {\i 
+This document defines the internal format of a Microsoft Cabinet File.  This information may be used to build cabinet file creation or extraction tools, or other cabinet-enabled applications.  The actual data compression formats, if used, are described in
+ other documents.
+\par }\pard \s17\widctlpar\tqc\tx4320\tqr\tx8640 {\i 
+\par 
+\par 
+\par }
+\par }{\*\pnseclvl1\pnucrm\pnstart1\pnindent720\pnhang{\pntxta .}}{\*\pnseclvl2\pnucltr\pnstart1\pnindent720\pnhang{\pntxta .}}{\*\pnseclvl3\pndec\pnstart1\pnindent720\pnhang{\pntxta .}}{\*\pnseclvl4\pnlcltr\pnstart1\pnindent720\pnhang{\pntxta )}}{\*\pnseclvl5
+\pndec\pnstart1\pnindent720\pnhang{\pntxtb (}{\pntxta )}}{\*\pnseclvl6\pnlcltr\pnstart1\pnindent720\pnhang{\pntxtb (}{\pntxta )}}{\*\pnseclvl7\pnlcrm\pnstart1\pnindent720\pnhang{\pntxtb (}{\pntxta )}}{\*\pnseclvl8\pnlcltr\pnstart1\pnindent720\pnhang
+{\pntxtb (}{\pntxta )}}{\*\pnseclvl9\pnlcrm\pnstart1\pnindent720\pnhang{\pntxtb (}{\pntxta )}}\pard\plain \qj\widctlpar \f4\fs20 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par \pard \qc\widctlpar {\b\f5\fs36 Microsoft Cabinet File Format
+\par }\pard \qj\widctlpar 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par \pard \qc\widctlpar Copyright \'a9 1997 Microsoft Corporation.  All rights reserved.
+\par \pard\plain \s1\fi-432\li432\sb240\sa60\keepn\widctlpar\tx432 \b\f5\fs28\kerning28 \page 1\tab Introduction
+\par \pard\plain \s23\qj\li720\widctlpar \f4\fs20 
+This specification defines the Microsoft cabinet file format. Cabinet files are compressed packages containing a number of related files. The format of a cabinet file is optimized for maximum compression.  Cabinet files support a number of compression for
+mats, including MSZIP, LZX, or uncompressed.  This document does not define these internal compression formats.  For data compression formats, refer to the documents titled {\i Microsoft MSZIP Data Compression Format} and {\i 
+Microsoft LZX Data Compression Format}.
+\par \pard\plain \s1\qj\fi-432\li432\sb240\sa60\keepn\widctlpar\tx432 \b\f5\fs28\kerning28 2\tab Specification
+\par \pard\plain \s2\qj\fi-576\li576\sb240\sa60\keepn\widctlpar\tx576 \b\i\f5 2.1\tab Conventions 
+\par \pard\plain \s23\qj\li720\widctlpar \f4\fs20 The types {\f11 u1}, {\f11 u2}, and {\f11 u4}
+ are used to represent unsigned 8-, 16-, and 32-bit integer values, respectively. All multi-byte quantities are stored in little-endian order, where the least significant byte comes first. 
+\par 
+\par The cabinet file format is described here using a C-like structure notation, where successive fields appear in the structure sequentially without padding or alignment. Header fields followed by (optional) may or may not be present, depending on the values
+ in the {\f11 CFHEADER} flags byte.
+\par \pard\plain \s2\qj\fi-576\li576\sb240\sa60\keepn\widctlpar\tx576 \b\i\f5 2.2\tab Overview
+\par \pard\plain \s23\qj\li720\widctlpar \f4\fs20 
+Each file stored in a cabinet is stored completely within a single folder.  A cabinet file may contain one or more folders, or portions of a folder.  A folder can span across multiple cabinets.  Such a series of cabinet files form a set.  Each cabinet fil
+e contains name information for the logically adjacent cabinet files.  Each folder contains one or more files.
+\par 
+\par Throughout this discussion, cabinets are said to contain \ldblquote files\rdblquote .  This is for semantic purposes only.  Cabinet f
+iles actually store streams of bytes, each with a name and some other common attributes.  Whether these byte streams are actually files or some other kind of data is application-defined.
+\par 
+\par A cabinet file contains a cabinet header ({\f11 CFHEADER}), followed by one or more cabinet folder ({\f11 CFFOLDER}) entries, a series of one or more cabinet file ({\f11 CFFILE}) entries, and the actual compressed file data in {\f11 CFDATA}
+ entries. The compressed file data in the {\f11 CFDATA} entry is stored in one of several compression formats, as indicated in the corresponding {\f11 CFFOLDER} structure.  The compression encoding formats used are detailed in separate documents.
+\par \pard\plain \qj\widctlpar \f4\fs20 
+\par \pard\plain \s2\qj\fi-576\li576\sb240\sa60\keepn\widctlpar\tx576 \b\i\f5 2.3\tab \page Detailed structure specification 
+\par \pard\plain \s3\qj\fi-720\li720\sb240\sa60\keepn\widctlpar\tx720 \f5 2.3.1\tab CFHEADER 
+\par \pard\plain \s23\qj\li720\widctlpar \f4\fs20 The {\f11 CFHEADER} structure provides information about this cabinet file.
+\par \pard\plain \qj\widctlpar \f4\fs20 
+\par \pard\plain \s15\qj\li720\widctlpar\tx3960 \f11\fs20 struct CFHEADER
+\par \{
+\par     u1  signature[4];\tab {\f4 /* cabinet file signature */}
+\par     u4  reserved1;\tab {\f4 /* reserved */}
+\par     u4  cbCabinet;\tab {\f4 /* size of this cabinet file in bytes */}
+\par     u4  reserved2;\tab {\f4 /* reserved */}
+\par     u4  coffFiles;\tab {\f4 /* offset of the first }CFFILE{\f4  entry */}
+\par     u4  reserved3;\tab {\f4 /* reserved */}
+\par     u1  versionMinor;\tab {\f4 /* cabinet file format version, minor */}
+\par     u1  versionMajor;\tab {\f4 /* cabinet file format version, major */}
+\par     u2  cFolders;\tab {\f4 /* number of }CFFOLDER{\f4  entries in this cabinet */}
+\par     u2  cFiles;\tab {\f4 /* number of }CFFILE{\f4  entries in this cabinet */}
+\par     u2  flags;\tab {\f4 /* cabinet file option indicators */}
+\par     u2  setID;\tab {\f4 /* must be the same for all cabinets in a set */}
+\par     u2  iCabinet;\tab {\f4 /* number of this cabinet file in a set */}
+\par     u2  cbCFHeader; \tab {\f4 /* (optional) size of per-cabinet reserved area */}
+\par     u1  cbCFFolder; \tab {\f4 /* (optional) size of per-folder reserved area */}
+\par     u1  cbCFData; \tab {\f4 /* (optional) size of per-datablock reserved area */
+\par }    u1  abReserve[];{\f4 \tab /* (optional) per-cabinet reserved area */}
+\par     u1  szCabinetPrev[];\tab {\f4 /* (optional) name of previous cabinet file */}
+\par     u1  szDiskPrev[];\tab {\f4 /* (optional) name of previous disk */}
+\par     u1  szCabinetNext[];\tab {\f4 /* (optional) name of next cabinet file */}
+\par     u1  szDiskNext[];\tab {\f4 /* (optional) name of next disk */}
+\par \};
+\par \pard\plain \qj\widctlpar \f4\fs20 
+\par 
+\par \pard\plain \s21\widctlpar\tqr\tx8640 \b\f11\fs20 u1 signature[4]
+\par \pard\plain \qj\widctlpar \f4\fs20 
+\par \pard\plain \s23\qj\li720\widctlpar \f4\fs20 Contains the characters 'M','S','C','F' (bytes 0x4D, 0x53, 0x43, 0x46).  This field is used to assure that the file is a cabinet file.
+\par \pard\plain \qj\widctlpar \f4\fs20 
+\par 
+\par \pard\plain \s21\widctlpar\tqr\tx8640 \b\f11\fs20 u4 reserved1
+\par \pard\plain \qj\widctlpar \f4\fs20 
+\par \pard\plain \s23\qj\li720\widctlpar \f4\fs20 Reserved field, set to zero.
+\par \pard\plain \qj\widctlpar \f4\fs20 
+\par 
+\par \pard\plain \s15\qj\widctlpar \f11\fs20 {\b u4 cbCabinet
+\par }\pard\plain \qj\widctlpar \f4\fs20 
+\par \pard\plain \s23\qj\li720\widctlpar \f4\fs20 Total size of this cabinet file in bytes.
+\par \pard\plain \qj\widctlpar \f4\fs20 
+\par 
+\par \pard\plain \s21\widctlpar\tqr\tx8640 \b\f11\fs20 u4 reserved2
+\par \pard\plain \qj\widctlpar \f4\fs20 
+\par \pard\plain \s23\qj\li720\widctlpar \f4\fs20 Reserved field, set to zero.
+\par \pard\plain \s15\qj\widctlpar \f11\fs20 
+\par 
+\par \pard\plain \s21\widctlpar\tqr\tx8640 \b\f11\fs20 u4 coffFiles
+\par \pard\plain \qj\widctlpar \f4\fs20 
+\par \pard\plain \s23\qj\li720\widctlpar \f4\fs20 Absolute file offset of first {\f11 CFFILE} entry.
+\par \pard\plain \qj\widctlpar \f4\fs20 
+\par 
+\par \pard\plain \s21\widctlpar\tqr\tx8640 \b\f11\fs20 u4 reserved3
+\par \pard\plain \qj\widctlpar \f4\fs20 
+\par \pard\plain \s23\qj\li720\widctlpar \f4\fs20 Reserved field, set to zero.
+\par \pard\plain \qj\widctlpar \f4\fs20 
+\par 
+\par \pard\plain \s21\widctlpar\tqr\tx8640 \b\f11\fs20 u1 versionMinor
+\par u1 versionMajor
+\par \pard\plain \s16\qj\widctlpar \f4\fs20 
+\par \pard\plain \s23\qj\li720\widctlpar \f4\fs20 Cabinet file format version.  Currently, {\f11 versionMajor} = 1 and {\f11 versionMinor} = 3.
+\par \pard\plain \qj\widctlpar \f4\fs20 
+\par 
+\par \pard\plain \s21\widctlpar\tqr\tx8640 \b\f11\fs20 u2 cFolders
+\par \pard\plain \qj\widctlpar \f4\fs20 
+\par \pard\plain \s23\qj\li720\widctlpar \f4\fs20 The number of {\f11 CFFOLDER} entries in this cabinet file.
+\par \pard\plain \qj\widctlpar \f4\fs20 
+\par 
+\par \pard\plain \s21\widctlpar\tqr\tx8640 \b\f11\fs20 u2 cFiles
+\par \pard\plain \qj\widctlpar \f4\fs20 
+\par \pard\plain \s23\qj\li720\widctlpar \f4\fs20 The number of {\f11 CFFILE} entries in this cabinet file.
+\par \pard\plain \qj\widctlpar \f4\fs20 
+\par 
+\par \pard\plain \s21\widctlpar\tqr\tx8640 \b\f11\fs20 u2 flags
+\par \pard\plain \qj\widctlpar \f4\fs20 
+\par \pard\plain \s23\qj\li720\widctlpar \f4\fs20 Bit-mapped values which indicate the presence of optional data:
+\par 
+\par \pard\plain \s15\li720\widctlpar \f11\fs20 #define cfhdrPREV_CABINET       0x0001
+\par #define cfhdrNEXT_CABINET       0x0002
+\par #define cfhdrRESERVE_PRESENT    0x0004
+\par \pard\plain \s23\qj\li720\widctlpar \f4\fs20 
+\par {\f11 flags.cfhdrPREV_CABINET} is set if this cabinet file is not the first in a set of cabinet files.  When this bit is set, the {\f11 szCabinetPrev} and {\f11 szDiskPrev} fields are present in this {\f11 CFHEADER}.
+\par 
+\par {\f11 flags.cfhdrNEXT_CABINET} is set if this cabinet file is not the last in a set of cabinet files.  When this bit is set, the {\f11 szCabinetNext} and {\f11 szDiskNext} fields are present in this {\f11 CFHEADER}.
+\par 
+\par {\f11 flags.cfhdrRESERVE_PRESENT} is set if this cabinet file contains any reserved fields.  When this bit is set, the {\f11 cbCFHeader}, {\f11 cbCFFolder}, and {\f11 cbCFData} fields are present in this {\f11 CFHEADER}.
+\par 
+\par Other bit positions in the {\f11 flags} field are reserved. 
+\par \pard\plain \qj\widctlpar \f4\fs20 
+\par 
+\par \pard\plain \s21\widctlpar\tqr\tx8640 \b\f11\fs20 u2 setID
+\par \pard\plain \qj\widctlpar \f4\fs20 
+\par \pard\plain \s23\qj\li720\widctlpar \f4\fs20 An arbitrarily-derived (random) value which binds a collection of linked cabinet files together.  All cabinet files in a set will contain the same {\f11 setID}
+.  This field is used by cabinet file extractors to assure that cabinet files are not inadvertently mixed.  This value has no meaning in a cabinet file that is not in a set.
+\par \pard\plain \qj\widctlpar \f4\fs20 
+\par 
+\par \pard\plain \s21\widctlpar\tqr\tx8640 \b\f11\fs20 u2 iCabinet
+\par \pard\plain \qj\widctlpar \f4\fs20 
+\par \pard\plain \s23\qj\li720\widctlpar \f4\fs20 Sequential number of this cabinet in a multi-cabinet set.  The first cabinet has {\f11 iCabinet}=0.  This field, along with {\f11 setID}, is used by cabinet file extractors to assure th
+at this cabinet is the correct continuation cabinet when spanning cabinet files.
+\par \pard\plain \qj\widctlpar \f4\fs20 
+\par 
+\par \pard\plain \s21\widctlpar\tqr\tx8640 \b\f11\fs20 u2 cbCFHeader{\b0 \tab }{\b0\f4 (optional)}{\b0 
+\par }\pard\plain \qj\widctlpar \f4\fs20 
+\par \pard\plain \s23\qj\li720\widctlpar \f4\fs20 If {\f11 flags.cfhdrRESERVE_PRESENT} is not set, this field is not present, and the value of {\f11 cbCFHeader} defaults to zero.  Indicates the size in bytes of the {\f11 abReserve} field in this {\f11 CFHEADER
+}.  Values for {\f11 cbCFHeader} range from 0 to 60,000.
+\par \pard\plain \widctlpar \f4\fs20 
+\par \pard \qj\widctlpar 
+\par \pard\plain \s21\widctlpar\tqr\tx8640 \b\f11\fs20 u1 cbCFFolder{\b0\f4 \tab (optional)}{\b0 
+\par }\pard\plain \qj\widctlpar \f4\fs20 
+\par \pard\plain \s23\qj\li720\widctlpar \f4\fs20 If {\f11 flags.cfhdrRESERVE_PRESENT} is not set, then this field is not present, and the value of {\f11 cbCFFolder} defaults to zero.  Indicates the size in bytes of the {\f11 abReserve} field in each {\f11 
+CFFOLDER} entry.  Values for {\f11 cbCFFolder} range from 0 to 255.
+\par \pard\plain \qj\widctlpar \f4\fs20 
+\par 
+\par \pard\plain \s21\widctlpar\tqr\tx8640 \b\f11\fs20 u1 cbCFData{\b0\f4 \tab (optional)
+\par }\pard\plain \qj\widctlpar \f4\fs20 
+\par \pard\plain \s23\qj\li720\widctlpar \f4\fs20 If {\f11 flags.cfhdrRESERVE_PRESENT} is set, then this field is not present, and the value for {\f11 cbCFData} defaults to zero.  Indicates the size in bytes of the {\f11 abReserve} field in each {\f11 CFDATA}
+ entry.  Values for {\f11 cbCFData} range from 0 to 255.
+\par \pard\plain \qj\widctlpar \f4\fs20 
+\par 
+\par \pard\plain \s21\widctlpar\tqr\tx8640 \b\f11\fs20 u1 abReserve[cbCFHeader]{\b0\f4 \tab (optional)}
+\par \pard\plain \widctlpar \f4\fs20 
+\par \pard\plain \s23\qj\li720\widctlpar \f4\fs20 If {\f11 flags.cfhdrRESERVE_PRESENT} is set and {\f11 cbCFHeader} is non-zero, then this fi
+eld contains per-cabinet-file application information.  This field is defined by the application and used for application-defined purposes.
+\par \pard\plain \qj\widctlpar \f4\fs20 
+\par 
+\par \pard\plain \s21\widctlpar\tqr\tx8640 \b\f11\fs20 u1 szCabinetPrev[]{\b0\f4 \tab (optional)}
+\par \pard\plain \qj\widctlpar \f4\fs20 
+\par \pard\plain \s23\qj\li720\widctlpar \f4\fs20 If {\f11 flags.cfhdrPREV_CABINET}
+ is not set, then this field is not present.  NUL-terminated ASCII string containing the file name of the logically-previous cabinet file.  May contain up to 255 bytes plus the NUL byte.  Note that this gives the name of the most-recently-preceding cabine
+t file that contains the initial instance of a file entry.
+  This might not be the immediately previous cabinet file, when the most recent file spans multiple cabinet files.  If searching in reverse for a specific file entry, or trying to extract a file which is reported to begin in the \ldblquote 
+previous cabinet\rdblquote , {\f11 szCabinetPrev} would give the name of the cabinet to examine.
+\par \pard\plain \qj\widctlpar \f4\fs20 
+\par \pard\plain \s21\widctlpar\tqr\tx8640 \b\f11\fs20 u1 szDiskPrev[]{\b0\f4 \tab (optional)}
+\par \pard\plain \qj\widctlpar \f4\fs20 
+\par \pard\plain \s23\qj\li720\widctlpar \f4\fs20 If {\f11 flags.cfhdrPREV_CABINET} is not set, then this field is not present.  NUL-terminated ASCII string containing a descriptive name for the media containing the file named in {\f11 szCabinetPrev}
+, such as the text on the diskette label.  This string can be used when prompting the user to insert a diskette.  May contain up to 255 bytes plus the NUL byte.
+\par \pard\plain \qj\widctlpar \f4\fs20 
+\par 
+\par \pard\plain \s21\widctlpar\tqr\tx8640 \b\f11\fs20 u1 szCabinetNext[]{\b0\f4 \tab (optional)}
+\par \pard\plain \qj\widctlpar \f4\fs20 
+\par \pard\plain \s23\qj\li720\widctlpar \f4\fs20 If {\f11 flags.cfhdrNEXT_CABINET} is not set, then this field is not present.  NUL-terminated ASCII string containing the file name of 
+the next cabinet file in a set.  May contain up to 255 bytes plus the NUL byte.  Files extending beyond the end of the current cabinet file are continued in the named cabinet file.
+\par \pard\plain \qj\widctlpar \f4\fs20 
+\par \pard\plain \s21\widctlpar\tqr\tx8640 \b\f11\fs20 u1 szDiskNext[]{\b0\f4 \tab (optional)}
+\par \pard\plain \qj\widctlpar \f4\fs20 
+\par \pard\plain \s23\qj\li720\widctlpar \f4\fs20 If {\f11 flags.cfhdrNEXT_CABINET} is not set, then this field is not present.  NUL-terminated ASCII string containing a descriptive name for the media containing the file named in {\f11 szCabinetNext}
+, such as the text on the diskette label.  May contain up to 255 bytes plus the NUL byte.  This string can be used when prompting the user to insert a diskette.
+\par \pard\plain \s3\fi-720\li720\sb240\sa60\keepn\widctlpar\tx720 \f5 2.3.2\tab \page CFFOLDER
+\par \pard\plain \s23\qj\li720\widctlpar \f4\fs20 Each {\f11 CFFOLDER} structure contains information about one of the folders or partial folders stored in this cabinet file.  The first {\f11 CFFOLDER} entry immediately follows the {\f11 CFHEADER} entry.  {
+\f11 CFHEADER.cFolders} indicates how many {\f11 CFFOLDER} entries are present.
+\par 
+\par Folders may start in one cabinet, and continue on to one or more succeeding cabinets.  When the cabinet file creator detects that a folder has been continued into another cabinet, it will complete t
+hat folder as soon as the current file has been completely compressed.  Any additional files will be placed in the next folder.  Generally, this means that a folder would span at most two cabinets, but if the file is large enough, it could span more than 
+two cabinets.
+\par 
+\par {\f11 CFFOLDER} entries actually refer to folder fragments, not necessarily complete folders. A {\f11 CFFOLDER} structure is the beginning of a folder if the {\f11 iFolder}
+ value in the first file referencing the folder does not indicate the folder is continued from the previous cabinet file.
+\par 
+\par The {\f11 typeCompress} field may vary from one folder to the next, unless the folder is continued from a previous cabinet file.
+\par \pard\plain \s16\widctlpar \f4\fs20 
+\par \pard\plain \s15\qj\li720\widctlpar\tx3960 \f11\fs20 struct CFFOLDER
+\par \{
+\par     u4  coffCabStart;\tab {\f4 /* offset of the first CFDATA block in this folder */}
+\par     u2  cCFData;\tab {\f4 /* number of CFDATA blocks in this folder */}
+\par     u2  typeCompress;\tab {\f4 /* compression type indicator */}
+\par     u1  abReserve[];\tab {\f4 /* (optional) per-folder reserved area */}
+\par \};
+\par \pard\plain \widctlpar \f4\fs20 
+\par 
+\par \pard\plain \s21\widctlpar\tqr\tx8640 \b\f11\fs20 u4 coffCabStart
+\par \pard\plain \widctlpar \f4\fs20 
+\par \pard\plain \s23\qj\li720\widctlpar \f4\fs20 Absolute file offset of first {\f11 CFDATA} block for this folder.
+\par \pard\plain \widctlpar \f4\fs20 
+\par 
+\par \pard\plain \s21\widctlpar\tqr\tx8640 \b\f11\fs20 u2 cCFData
+\par \pard\plain \widctlpar \f4\fs20 
+\par \pard\plain \s23\qj\li720\widctlpar \f4\fs20 Number of {\f11 CFDATA} structures for this folder that are actually in this cabinet. A folder can continue into another cabinet and have more {\f11 CFDATA}
+ blocks in that cabinet, and a folder may have started in a previous cabinet. This number represents only the {\f11 CFDATA} structures for this folder that are at least partially recorded in this cabinet.
+\par \pard\plain \widctlpar \f4\fs20 
+\par 
+\par \pard\plain \s21\widctlpar\tqr\tx8640 \b\f11\fs20 u2 typeCompress
+\par \pard\plain \widctlpar \f4\fs20 
+\par \pard\plain \s23\qj\li720\widctlpar \f4\fs20 Indicates the compression method used for all {\f11 CFDATA} entries in this folder. The valid values are defined in each compression format\rquote s specification.
+\par \pard\plain \widctlpar \f4\fs20 
+\par 
+\par \pard\plain \s21\widctlpar\tqr\tx8640 \b\f11\fs20 u1 abReserve[CFHEADER.cbCFFolder]{\b0\f4 \tab (optional)}
+\par \pard\plain \widctlpar \f4\fs20 
+\par \pard\plain \s23\qj\li720\widctlpar \f4\fs20 If {\f11 CFHEADER.flags.cfhdrRESERVE_PRESENT} is set and {\f11 cbCFFolder}
+ is non-zero, then this field contains per-folder application information.  This field is defined by the application and used for application-defined purposes.
+\par \pard\plain \s3\fi-720\li720\sb240\sa60\keepn\widctlpar\tx720 \f5 2.3.3\tab CFFILE
+\par \pard\plain \s23\qj\li720\widctlpar \f4\fs20 Each {\f11 CFFILE} entry contains information about one of the files stored (or at least partially stored) in this cabinet.  The first {\f11 CFFILE} entry in each cabinet is found at absolute offset {\f11 
+CFHEADER.coffFiles}.  {\f11 CFHEADER.cFiles} indicates how many of these entries are in the cabinet.  The {\f11 CFFILE} entries in a cabinet are ordered by {\f11 iFolder} value, then by {\f11 uoffFolderStart}
+.  Entries for files continued from the previous cabinet will be first, and entries for files continued to the next cabinet will be last.
+\par \pard\plain \widctlpar \f4\fs20 
+\par \pard\plain \s15\li720\widctlpar\tx3960 \f11\fs20 struct CFFILE
+\par \{
+\par     u4  cbFile;\tab {\f4 /* uncompressed size of this file in bytes */}
+\par     u4  uoffFolderStart;\tab {\f4 /* uncompressed offset of this file in the folder */}
+\par     u2  iFolder;\tab {\f4 /* index into the CFFOLDER area */}
+\par     u2  date;\tab {\f4 /* date stamp for this file */
+\par }    u2  time;\tab {\f4 /* time stamp for this file */
+\par }    u2  attribs;\tab {\f4 /* attribute flags for this file */
+\par }    u1  szName[];\tab {\f4 /* name of this file */
+\par }\};
+\par \pard\plain \widctlpar \f4\fs20 
+\par \pard\plain \s15\widctlpar \f11\fs20 {\b 
+\par }\pard\plain \s21\widctlpar\tqr\tx8640 \b\f11\fs20 u4 cbFile
+\par \pard\plain \widctlpar \f4\fs20 
+\par \pard\plain \s23\qj\li720\widctlpar \f4\fs20 Uncompressed size of this file in bytes.
+\par \pard\plain \widctlpar \f4\fs20 
+\par 
+\par \pard\plain \s21\widctlpar\tqr\tx8640 \b\f11\fs20 u4 uoffFolderStart
+\par \pard\plain \widctlpar \f4\fs20 
+\par \pard\plain \s23\qj\li720\widctlpar \f4\fs20 
+Uncompressed byte offset of the start of this file's data.  For the first file in each folder, this value will usually be zero.  Subsequent files in the folder will have offsets that are typically the running sum of the {\f11 cbFile} values. 
+\par \pard\plain \widctlpar \f4\fs20 
+\par 
+\par \pard\plain \s21\widctlpar\tqr\tx8640 \b\f11\fs20 u2 iFolder
+\par \pard\plain \widctlpar \f4\fs20 
+\par \pard\plain \s23\li720\widctlpar \f4\fs20 Index of the folder containing this file\rquote s data. A value of zero indicates this is the first folder in this cabinet file.  The special {\f11 iFolder} values {\f11 ifoldCONTINUED_FROM_PREV} and {\f11 
+ifoldCONTINUED_PREV_AND_NEXT} indicate that the folder index is actually zero, but that extraction of this file would have to begin with the cabinet named in {\f11 CFHEADER.szCabinetPrev}.  The special {\f11 iFolder} values {\f11 
+ifoldCONTINUED_PREV_AND_NEXT} and {\f11 ifoldCONTINUED_TO_NEXT} indicate that the folder index is actually one less than {\f11 CFHEADER.cFolders}, and that extraction of this file will require continuation to the cabinet named in {\f11 
+CFHEADER.szCabinetNext}.
+\par \pard \s23\qj\li720\widctlpar 
+\par \pard\plain \s15\li720\widctlpar \f11\fs20 #define ifoldCONTINUED_FROM_PREV      (0xFFFD)
+\par #define ifoldCONTINUED_TO_NEXT        (0xFFFE)
+\par #define ifoldCONTINUED_PREV_AND_NEXT  (0xFFFF)
+\par \pard\plain \widctlpar \f4\fs20 
+\par 
+\par \pard\plain \s21\widctlpar\tqr\tx8640 \b\f11\fs20 u2 date
+\par \pard\plain \widctlpar \f4\fs20 
+\par \pard\plain \s23\qj\li720\widctlpar \f4\fs20 Date of this file, in the format {\f11 ((year\endash 1980) << 9)+(month << 5)+(day)}, where {\f11 month}=\{1..12\} and {\f11 day}=\{1..31\}.  This \ldblquote date\rdblquote  is typically considered the 
+\ldblquote last modified\rdblquote  date in local time, but the actual definition is application-defined.
+\par \pard\plain \widctlpar \f4\fs20 
+\par \pard\plain \s15\widctlpar \f11\fs20 {\b 
+\par }\pard\plain \s21\widctlpar\tqr\tx8640 \b\f11\fs20 u2 time
+\par \pard\plain \s23\qj\li720\widctlpar \f4\fs20 
+\par Time of this file, in the format {\f11 (hour << 11)+(minute << 5)+(seconds/2)}, where {\f11 hour}=\{0..23\}.  This \ldblquote time\rdblquote  is typically considered the \ldblquote last modified\rdblquote 
+ time in local time, but the actual definition is application-defined.
+\par \pard\plain \widctlpar \f4\fs20 
+\par 
+\par \pard\plain \s21\widctlpar\tqr\tx8640 \b\f11\fs20 u2 attribs
+\par \pard\plain \s16\widctlpar \f4\fs20 
+\par \pard\plain \s23\qj\li720\widctlpar \f4\fs20 Attributes of this file; may be used in any combination:
+\par \pard\plain \widctlpar \f4\fs20 
+\par \pard \li720\widctlpar\tx4320 {\f11 #define _A_RDONLY      (0x01)}\tab /* file is read-only */
+\par {\f11 #define _A_HIDDEN      (0x02)}\tab /* file is hidden */
+\par {\f11 #define _A_SYSTEM      (0x04)}\tab /* file is a system file */
+\par {\f11 #define _A_ARCH        (0x20)}\tab /* file modified since last backup */
+\par {\f11 #define _A_EXEC        (0x40)}\tab /* run after extraction */
+\par {\f11 #define _A_NAME_IS_UTF (0x80)}\tab /* {\f11 szName[]} contains UTF */
+\par \pard \widctlpar 
+\par \pard\plain \s23\qj\li720\widctlpar \f4\fs20 All other attribute bit values are reserved.
+\par \pard\plain \widctlpar \f4\fs20 
+\par 
+\par \pard\plain \s21\widctlpar\tqr\tx8640 \b\f11\fs20 char szName[]
+\par \pard\plain \s23\qj\li720\widctlpar \f4\fs20 
+\par NUL-terminated name of this file.  Note that this string may include path separator characters.  When {\f11 attribs._A_NAME_IS_UTF} is set, this string can be converted directly to Unicode, avoiding locale-specific dependencies.  See \ldblquote 
+UTF Encoding\rdblquote  for more information.  When {\f11 attribs._A_NAME_IS_UTF} is not set, this string is subject to interpretation depending on locale.
+\par \pard\plain \s3\fi-720\li720\sb240\sa60\keepn\widctlpar\tx720 \f5 2.3.4\tab \page CFDATA 
+\par \pard\plain \s23\qj\li720\widctlpar \f4\fs20 Each {\f11 CFDATA} record describes some amount of compressed data.  The first {\f11 CFDATA} entry for each folder is located using {\f11 CFFOLDER.coffCabStart}.  Subsequent {\f11 CFDATA}
+ records for this folder are contiguous.
+\par \pard\plain \widctlpar \f4\fs20 
+\par \pard\plain \s15\li720\widctlpar\tx3960 \f11\fs20 struct CFDATA
+\par \{
+\par     u4  csum;\tab {\f4 /* checksum of this CFDATA entry */}
+\par     u2  cbData;\tab {\f4 /* number of compressed bytes in this block */}
+\par     u2  cbUncomp;\tab {\f4 /* number of uncompressed bytes in this block */}
+\par     u1  abReserve[];\tab {\f4 /* (optional) per-datablock reserved area */}
+\par     u1  ab[cbData];\tab {\f4 /* compressed data bytes */}
+\par \};
+\par \pard\plain \widctlpar \f4\fs20 
+\par \pard\plain \s15\widctlpar \f11\fs20 {\b 
+\par }\pard\plain \s21\widctlpar\tqr\tx8640 \b\f11\fs20 u4 csum
+\par \pard\plain \widctlpar \f4\fs20 
+\par \pard\plain \s23\qj\li720\widctlpar \f4\fs20 Checksum of this {\f11 CFDATA} structure, from {\f11 CFDATA.cbData} through {\f11 CFDATA.ab[cbData}-1{\f11 ]}. See \ldblquote Checksum Method\rdblquote 
+ for more information.  May be set to zero if the checksum is not supplied.
+\par \pard\plain \widctlpar \f4\fs20 
+\par 
+\par \pard\plain \s21\widctlpar\tqr\tx8640 \b\f11\fs20 u2 cbData
+\par \pard\plain \widctlpar \f4\fs20 
+\par \pard\plain \s23\qj\li720\widctlpar \f4\fs20 Number of bytes of compressed data in this {\f11 CFDATA} record.  When {\f11 cbUncomp} is zero, this field indicates only the number of bytes which fit into this cabinet file. 
+\par \pard\plain \widctlpar \f4\fs20 
+\par 
+\par \pard\plain \s21\widctlpar\tqr\tx8640 \b\f11\fs20 u2 cbUncomp
+\par \pard\plain \widctlpar \f4\fs20 
+\par \pard\plain \s23\qj\li720\widctlpar \f4\fs20 The uncompressed size of the data in this {\f11 CFDATA} entry.  When this {\f11 CFDATA} entry is continued in the next cabinet file, {\f11 cbUncomp} will be zero, and {\f11 cbUncomp} in the first {\f11 CFDATA}
+ entry in the next cabinet file will report the total uncompressed size of the data from both {\f11 CFDATA} blocks.
+\par \pard\plain \widctlpar \f4\fs20 
+\par 
+\par \pard\plain \s21\widctlpar\tqr\tx8640 \b\f11\fs20 u1 abReserve[CFHEADER.cbCFData]{\b0\f4 \tab (optional)}
+\par \pard\plain \widctlpar \f4\fs20 
+\par \pard\plain \s23\qj\li720\widctlpar \f4\fs20 If {\f11 CFHEADER.flags.cfhdrRESERVE_PRESENT} is set and {\f11 cbCFHeader} is non-zero, then this field contains per-datablock application information.  This field is defined by the application and used f
+or application-defined purposes.
+\par \pard\plain \widctlpar \f4\fs20 
+\par 
+\par \pard\plain \s21\widctlpar\tqr\tx8640 \b\f11\fs20 u1 ab[cbData]
+\par \pard\plain \widctlpar \f4\fs20 
+\par \pard\plain \s23\qj\li720\widctlpar \f4\fs20 The compressed data bytes, compressed using the {\f11 CFFOLDER.typeCompress} method.  When {\f11 cbUncomp} is zero, these data bytes must be combined with the data bytes from the next cabinet\rquote s first {
+\f11 CFDATA} entry before decompression.
+\par \pard\plain \s21\widctlpar\tqr\tx8640 \b\f11\fs20 
+\par \pard\plain \s23\qj\li720\widctlpar \f4\fs20 When {\f11 CFFOLDER.typeCompress} indicates that the data is not compressed, this field contains the uncompressed data bytes.  In this case, {\f11 cbData} and {\f11 cbUncomp}
+ will be equal unless this CFDATA entry crosses a cabinet file boundary.
+\par \pard\plain \s1\fi-432\li432\sb240\sa60\keepn\widctlpar\tx432 \b\f5\fs28\kerning28 3\tab \page A Sample Cabinet File
+\par \pard\plain \s15\li720\widctlpar \f11\fs20 {\fs16        0  1  2  3  4  5  6  7  8  9  A  B  C  D  E  F
+\par 000   4D 53 43 46 00 00 00 00-FD 00 00 00 00 00 00 00   MSCF
+\par 010   2C 00 00 00 00 00 00 00-03 01 01 00 02 00 00 00
+\par 020   22 06 00 00 5E 00 00 00-01 00 00 00 4D 00 00 00
+\par 030   00 00 00 00 00 00 6C 22-BA 59 20 00 68 65 6C 6C               hell
+\par 040   6F 2E 63 00 4A 00 00 00-4D 00 00 00 00 00 6C 22   o.c
+\par 050   E7 59 20 00 77 65 6C 63-6F 6D 65 2E 63 00 BD 5A       welcome.c
+\par 060   A6 30 97 00 97 00 23 69-6E 63 6C 75 64 65 20 3C         #include <
+\par 070   73 74 64 69 6F 2E 68 3E-0D 0A 0D 0A 76 6F 69 64   stdio.h>    void
+\par 080   20 6D 61 69 6E 28 76 6F-69 64 29 0D 0A 7B 0D 0A    main(void)  \{
+\par 090   20 20 20 20 70 72 69 6E-74 66 28 22 48 65 6C 6C       printf("Hell
+\par 0A0   6F 2C 20 77 6F 72 6C 64-21 5C 6E 22 29 3B 0D 0A   o, world!\\n");
+\par 0B0   7D 0D 0A 23 69 6E 63 6C-75 64 65 20 3C 73 74 64   \}  #include <std
+\par 0C0   69 6F 2E 68 3E 0D 0A 0D-0A 76 6F 69 64 20 6D 61   io.h>    void ma
+\par 0D0   69 6E 28 76 6F 69 64 29-0D 0A 7B 0D 0A 20 20 20   in(void)  \{
+\par 0E0   20 70 72 69 6E 74 66 28-22 57 65 6C 63 6F 6D 65    printf("Welcome
+\par 0F0   21 5C 6E 22 29 3B 0D 0A-7D 0D 0A 0D 0A            !\\n");  \}
+\par }\pard \s15\widctlpar 
+\par \pard\plain \widctlpar \f4\fs20 This is a very simple example of a cabinet file which contains two small text files, stored uncompressed for clarity.
+\par 
+\par \pard \widctlpar\tx1080\tx2160 {\f11      Offset\tab Description
+\par }\pard\plain \s16\widctlpar\tx1080\tx2160 \f4\fs20 {\f11 00..23\tab \tab CFHEADER
+\par }\pard\plain \widctlpar\tx1080\tx2160 \f4\fs20 {\f11 \tab 00..03\tab signature = 0x4D, 0x53, 0x43, 0x46
+\par \tab 04..07\tab reserved1
+\par \tab 08..0B\tab cbCabinet = 0x000000FD (253)
+\par \tab 0C..0F\tab reserved2
+\par \tab 10..13\tab coffFiles = 0x0000002C
+\par \tab 14..17\tab reserved3
+\par \tab 18..19\tab versionMinor, Major = 1.3
+\par \tab 1A..1B\tab cFolders = 1
+\par \tab 1C..1D\tab cFiles = 2
+\par \tab 1E..1F\tab flags = 0 (no reserve, no previous or next cabinet)
+\par \tab 20..21\tab setID = 0x0622
+\par \tab 22..23\tab iCabinet = 0
+\par 
+\par 24..2B\tab \tab CFFOLDER[0]
+\par \tab 24..27\tab coffCabStart = 0x0000005E
+\par \tab 28..29\tab cCFData = 1
+\par \tab 2A..2B\tab typeCompress = 0 (none)
+\par 
+\par 2C..43\tab \tab CFFILE[0]
+\par \tab 2C..2F\tab cbFile = 0x0000004D (77 bytes)
+\par \tab 30..33\tab uoffFolderStart = 0x00000000
+\par \tab 34..35\tab iFolder = 0
+\par \tab 36..37\tab date = 0x226C = 0010001 0011 01100 = March 12, 1997
+\par \tab 38..39\tab time = 0x59BA = 01011 001101 11010 = 11:13:52 AM
+\par \tab 3A..3B\tab attribs = 0x0020 = _A_ARCHIVE
+\par \tab 3C..43\tab szName = \ldblquote hello.c\rdblquote  + NUL
+\par 
+\par 44..5D\tab \tab CFFILE[1]
+\par \tab 44..47\tab cbFile = 0x0000004A (74 bytes)
+\par \tab 48..4B\tab uoffFolderStart = 0x0000004D
+\par \tab 4C..4D\tab iFolder = 0
+\par \tab 4E..4F\tab date = 0x226C = 0010001 0011 01100 = March 12, 1997
+\par \tab 50..51\tab time = 0x59E7 = 01011 001111 00111 = 11:15:14 AM
+\par \tab 52..53\tab attribs = 0x0020 = _A_ARCHIVE
+\par \tab 54..5D\tab szName = \ldblquote welcome.c\rdblquote  + NUL
+\par }\pard\plain \s16\widctlpar\tx1080\tx2160 \f4\fs20 {\f11 
+\par }\pard\plain \widctlpar\tx1080\tx2160 \f4\fs20 {\f11 5E..FD\tab \tab CFDATA[0]
+\par \tab 5E..61\tab csum = 0x30A65ABD
+\par \tab 62..63\tab cbData = 0x0097 (151 bytes)
+\par \tab 64..65\tab cbUncomp = 0x0097 (151 bytes)
+\par \tab 66..FD\tab ab[0x0097] = uncompressed file data
+\par }\pard\plain \s1\fi-432\li432\sb240\sa60\keepn\widctlpar\tx432 \b\f5\fs28\kerning28 4\tab \page Notes
+\par \pard\plain \widctlpar \f4\fs20 
+\par \pard\plain \s2\fi-576\li576\sb240\sa60\keepn\widctlpar\tx576 \b\i\f5 4.1\tab Checksum Method
+\par \pard\plain \qj\widctlpar \f4\fs20 The computation and verification of checksums found in {\f11 CFDATA} entries cabinet files is done using a function named {\f11 CSUMCompute}
+. Its actual source code is provided for reference.  When checksums are not supplied by the cabinet file creating application, the checksum field is set to zero.  Cabinet extracting applications do not compute or verify the checksum if the field is set to
+ zero.
+\par \pard \widctlpar 
+\par \pard\plain \s15\li720\widctlpar \f11\fs20 {\fs16 CHECKSUM CSUMCompute(void *pv, UINT cb, CHECKSUM seed)
+\par \{
+\par     int         cUlong;                 // Number of ULONGs in block
+\par     CHECKSUM    csum;                   // Checksum accumulator
+\par     BYTE       *pb;
+\par     ULONG       ul;
+\par 
+\par     cUlong = cb / 4;                    // Number of ULONGs
+\par     csum = seed;                        // Init checksum
+\par     pb = pv;                            // Start at front of data block
+\par 
+\par     //** Checksum integral multiple of ULONGs
+\par     while (cUlong-- > 0) \{
+\par         //** NOTE: Build ULONG in big/little-endian independent manner
+\par         ul = *pb++;                     // Get low-order byte
+\par         ul |= (((ULONG)(*pb++)) <<  8); // Add 2nd byte
+\par         ul |= (((ULONG)(*pb++)) << 16); // Add 3nd byte
+\par         ul |= (((ULONG)(*pb++)) << 24); // Add 4th byte
+\par 
+\par         csum ^= ul;                     // Update checksum
+\par     \}
+\par 
+\par     //** Checksum remainder bytes
+\par     ul = 0;
+\par     switch (cb % 4) \{
+\par         case 3:
+\par             ul |= (((ULONG)(*pb++)) << 16); // Add 3nd byte
+\par         case 2:
+\par             ul |= (((ULONG)(*pb++)) <<  8); // Add 2nd byte
+\par         case 1:
+\par             ul |= *pb++;                    // Get low-order byte
+\par         default:
+\par             break;
+\par     \}
+\par     csum ^= ul;                         // Update checksum
+\par 
+\par     //** Return computed checksum
+\par     return csum;
+\par \}
+\par }\pard\plain \widctlpar \f4\fs20 
+\par \pard \qj\widctlpar The checksums for non-split {\f11 CFDATA} blocks are computed first on the compressed data bytes, then on the {\f11 CFDATA} header area, starting at the {\f11 CFDATA.cbData} field:
+\par \pard \widctlpar 
+\par \pard\plain \s15\li720\widctlpar \f11\fs20 {\fs16 CFDATA.cbData = cbCompressed;
+\par CFDATA.cbUncomp = cbUncompressed;
+\par csumPartial = CSUMCompute(&CFDATA.ab[0],CFDATA.cbData,0);
+\par CFDATA.csum = CSUMCompute(&CFDATA.cbData,sizeof(CFDATA) \endash 
+\par }\pard \s15\fi720\li2160\widctlpar {\fs16 sizeof(CFDATA.csum),csumPartial);
+\par }\pard\plain \widctlpar \f4\fs20 
+\par \pard\plain \s19\qj\widctlpar \f4\fs20 When blocks are split across cabinet file boundaries, the checksum for the partial block at the end of a cabinet file is computed first on the partial field of compressed data bytes, then on the header:
+\par \pard\plain \widctlpar \f4\fs20 
+\par \pard\plain \s15\li720\widctlpar \f11\fs20 {\fs16 CFDATA.cbData = cbPartialData;
+\par CFDATA.cbUncomp = 0;
+\par csumPartial = CSUMCompute(&CFDATA.ab[0],cbPartialData,0);
+\par CFDATA.csum = CSUMCompute(&CFDATA.cbData,sizeof(CFDATA) \endash 
+\par }\pard \s15\fi720\li2160\widctlpar {\fs16 sizeof(CFDATA.csum),csumPartial);
+\par }\pard\plain \widctlpar \f4\fs20 
+\par The checksum for the residual block in the next cabinet file is computed first on the remainder of the field of compressed data bytes, then on the header:
+\par 
+\par \pard\plain \s15\li720\widctlpar \f11\fs20 {\fs16 CFDATA.cbData = cbResidualData;
+\par CFDATA.cbUncomp = cbUncompressed;
+\par csumPartial = CSUMCompute(&CFDATA.ab[cbPartialData],cbResidualData,0);
+\par CFDATA.csum = CSUMCompute(&CFDATA.cbData,sizeof(CFDATA) \endash 
+\par }\pard \s15\fi720\li2160\widctlpar {\fs16 sizeof(CFDATA.csum),csumPartial);
+\par }\pard\plain \s2\fi-576\li576\sb240\sa60\keepn\widctlpar\tx576 \b\i\f5 4.2\tab \page UTF Encoding Method
+\par \pard\plain \qj\widctlpar \f4\fs20 UTF (universal text format) is used to compactly represent a broad range of Unicode characters while favoring size
+ for the most common characters.  Unicode characters are translated to sequences of one, two, or three bytes per character.
+\par 
+\par When a string containing Unicode characters larger than 0x007F are encoded in the {\f11 CFFILE.szName} field, the {\f11 _A_NAME_IS_UTF} attribute should be included in the file\rquote 
+s attributes.  When no characters larger than 0x007F are in the name, the {\f11 _A_NAME_IS_UTF} attribute should not be set.  If byte values larger than 0x7F are found in {\f11 CFFILE.szName}, but the {\f11 _A_NAME_IS_UTF} attribute is not set, 
+the characters should be interpreted according to the current locale.
+\par 
+\par Unicode characters with values 0x0000 through 0x007F are represented by a single byte of the same value.
+\par 
+\par The first byte emitted for Unicode characters 0x0080 through 0x07FF is {\f11 0xC0+(unicodevalue >> 6)}, and the second byte is {\f11 0x80+(unicodevalue & 0x003F)}.
+\par 
+\par Unicode characters 0x0800 through 0xFFFF are represented by byte1 = {\f11 0xE0+(unicodevalue >> 12)}, byte2 = {\f11 0x80+((unicodevalue >> 6) & 0x3F)}, and byte3 = {\f11 0x80+(unicodevalue & 0x3F)}.
+\par 
+\par }

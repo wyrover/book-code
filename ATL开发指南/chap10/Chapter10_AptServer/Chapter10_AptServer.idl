@@ -1,0 +1,42 @@
+// Chapter10_AptServer.idl : IDL source for Chapter10_AptServer.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (Chapter10_AptServer.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+	[
+	
+		uuid(55219411-6956-11D1-8014-000000000000),
+	
+		helpstring("IMath Interface"),
+		pointer_default(unique)
+	]
+	interface IMath : IUnknown
+	{
+		[helpstring("method Add")] HRESULT Add([in] long lOp1, [in] long lOp2, [out,retval] long* plResult);
+		[helpstring("method Subtract")] HRESULT Subtract([in] long lOp1, [in] long lOp2, [out,retval] long* plResult);
+		[helpstring("method Multiply")] HRESULT Multiply([in] long lOp1, [in] long lOp2, [out,retval] long* plResult);
+		[helpstring("method Divide")] HRESULT Divide([in] long lOp1, [in] long lOp2, [out,retval] long* plResult);
+	};
+[
+	uuid(55219404-6956-11D1-8014-000000000000),
+	version(1.0),
+	helpstring("Chapter10_AptServer 1.0 Type Library")
+]
+library CHAPTER10_APTSERVERLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(55219412-6956-11D1-8014-000000000000),
+		helpstring("Math Class")
+	]
+	coclass Math
+	{
+		[default] interface IMath;
+	};
+};

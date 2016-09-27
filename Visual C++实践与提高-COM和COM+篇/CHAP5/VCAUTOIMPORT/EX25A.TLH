@@ -1,0 +1,70 @@
+// Created by Microsoft (R) C/C++ Compiler Version 12.00.8168.0 (3157fa6b).
+//
+// ex25a.tlh
+//
+// C++ source equivalent of Win32 type library d:\yy\test\ex25a\debug\ex25a.tlb
+// compiler-generated file created 09/02/00 at 12:55:51 - DO NOT EDIT!
+
+#pragma once
+#pragma pack(push, 8)
+
+#include <comdef.h>
+
+namespace yytt {
+
+//
+// Forward references and typedefs
+//
+
+struct __declspec(uuid("a9515ab6-5b85-11d0-848f-00400526305b"))
+/* dispinterface */ IBank;
+struct /* coclass */ Bank;
+
+//
+// Smart pointer typedef declarations
+//
+
+_COM_SMARTPTR_TYPEDEF(IBank, __uuidof(IDispatch));
+
+//
+// Type library items
+//
+
+struct __declspec(uuid("a9515ab6-5b85-11d0-848f-00400526305b"))
+IBank : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetBalance,put=PutBalance))
+    double Balance;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    // Methods:
+    double Withdrawal (
+        double dAount );
+    HRESULT Deposit (
+        double dAmount );
+
+    // Properties:
+    double GetBalance ( );
+    void PutBalance ( double _val );
+};
+
+struct __declspec(uuid("632b1e4c-f287-11ce-b5e3-00aa005b1574"))
+Bank;
+    // [ default ] dispinterface IBank
+
+//
+// Wrapper method implementations
+//
+
+#include "ex25a.tli"
+
+} // namespace yytt
+
+#pragma pack(pop)

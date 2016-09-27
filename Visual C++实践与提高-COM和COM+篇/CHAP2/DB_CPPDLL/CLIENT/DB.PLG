@@ -1,0 +1,29 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: DB - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\WINDOWS.000\TEMP\RSP5362.TMP" with contents
+[
+..\object\Debug\db.lib /nologo /subsystem:windows /incremental:yes /pdb:"Debug/DB.pdb" /debug /machine:I386 /out:"Debug/DB.exe" /pdbtype:sept 
+.\Debug\DB.obj
+.\Debug\DBDoc.obj
+.\Debug\DBView.obj
+.\Debug\MainFrm.obj
+.\Debug\StdAfx.obj
+.\Debug\DB.res
+]
+Creating command line "link.exe @C:\WINDOWS.000\TEMP\RSP5362.TMP"
+<h3>Output Window</h3>
+Linking...
+
+
+
+<h3>Results</h3>
+DB.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

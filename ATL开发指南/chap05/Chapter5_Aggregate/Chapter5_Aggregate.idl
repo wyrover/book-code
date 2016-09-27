@@ -1,0 +1,38 @@
+// Chapter5_Aggregate.idl : IDL source for Chapter5_Aggregate.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (Chapter5_Aggregate.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+	[
+		uuid(380F79F9-4098-11D1-883A-444553540000),	
+		helpstring("IAdvancedMath Interface"),
+		pointer_default(unique)
+	]
+	interface IAdvancedMath : IUnknown
+	{
+		[helpstring("method Factorial")] HRESULT Factorial( short sOp, long* plResult );
+		[helpstring("method Fibonacci")] HRESULT Fibonacci( short sOp, long* plResult );
+	};
+[
+	uuid(380F79EC-4098-11D1-883A-444553540000),
+	version(1.0),
+	helpstring("Chapter5_Aggregate 1.0 Type Library")
+]
+library CHAPTER5_AGGREGATELib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(380F79FA-4098-11D1-883A-444553540000),
+		helpstring("AdvancedMath Class")
+	]
+	coclass AdvancedMath
+	{
+		[default] interface IAdvancedMath;
+	};
+};

@@ -1,0 +1,116 @@
+// Chapter4_Server.idl : IDL source for Chapter4_Server.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (Chapter4_Server.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+   typedef 
+   [
+      uuid(984D09A4-3379-11d1-883A-444553540000),	
+      helpstring("Operation Type"),
+   ]
+   enum mathOPERATION
+   {
+      [helpstring("Add")]       mathAdd      = 0x0001,
+	  [helpstring("Subtract")]  mathSubtract = 0x0002,
+	  [helpstring("Multiply")]  mathMultiply = 0x0003,
+	  [helpstring("Divide")]    mathDivide   = 0x0004
+   } mathOPERATION;       
+
+   [	
+      uuid(5FB0C22E-3343-11D1-883A-444553540000),	
+      helpstring("IMath Interface"),
+      pointer_default(unique)
+   ]
+   interface IMath : IUnknown
+   {
+      [helpstring("method Add")] HRESULT Add([in] long lOp1,[in] long lOp2, [out,retval] long* plResult);
+      [helpstring("method Subtract")] HRESULT Subtract([in] long lOp1,[in] long lOp2, [out,retval] long* plResult);
+      [helpstring("method Multiply")] HRESULT Multiply([in] long lOp1,[in] long lOp2, [out,retval] long* plResult);
+      [helpstring("method Divide")] HRESULT Divide([in] long lOp1,[in] long lOp2, [out,retval] long* plResult);
+   };
+
+   [	
+     uuid(984D09A1-3379-11d1-883A-444553540000),
+     helpstring("IAdvancedMath Interface"),
+	 pointer_default(unique)
+   ]
+   interface IAdvancedMath : IUnknown
+   {
+      [helpstring("method Factorial")] HRESULT Factorial( [in] short sFact, [out, retval] long* pResult );
+      [helpstring("method Fibonacci")] HRESULT Fibonacci( [in] short sFib, [out, retval] long* pResult );
+   };
+
+typedef struct COMPONENT_INFO
+{
+   [string] char*		pstrAuthor;
+   short				sMajor;
+   short				sMinor;
+   BSTR				    bstrName;
+} COMPONENT_INFO;
+
+   [	
+     uuid(1E405AA0-3396-11d1-883A-444553540000),
+     helpstring("IComponentInfo Interface"),
+	 pointer_default(unique)
+   ]
+   interface IComponentInfo : IUnknown
+   {
+      [helpstring("method get_Info")] HRESULT get_Info( [out] COMPONENT_INFO** pInfo );
+      [helpstring("method get_Name")] HRESULT get_Name( [out] BSTR* bstrName );
+   };
+
+   [	
+     uuid(984D09A2-3379-11d1-883A-444553540000),
+     helpstring("IMath2 Interface"),
+	 pointer_default(unique)
+   ]
+   interface IMath2 : IUnknown
+   {
+      [helpstring("method Add")] HRESULT Add([in] long lOp1,[in] long lOp2, [out,retval] long* plResult);
+      [helpstring("method Subtract")] HRESULT Subtract([in] long lOp1,[in] long lOp2, [out,retval] long* plResult);
+      [helpstring("method Multiply")] HRESULT Multiply([in] long lOp1,[in] long lOp2, [out,retval] long* plResult);
+      [helpstring("method Divide")] HRESULT Divide([in] long lOp1,[in] long lOp2, [out,retval] long* plResult);
+
+	  [helpstring("method Sum" )]
+      HRESULT Sum( [in] short sArraySize,
+                   [in, size_is( sArraySize )] short sArray[],
+                   [out, retval] long* lResult );
+
+      [helpstring("method Compute")] 
+	  HRESULT Compute( [in] mathOPERATION enumOp, 
+	                   [in] long lOp1,
+					   [in] long lOp2,
+					   [out,retval] long* plResult);
+
+      [propget, helpstring("property AdvancedMath")] 
+	  HRESULT AdvancedMath([out, retval] IAdvancedMath **ppVal);
+
+   };
+
+
+[
+	uuid(5FB0C221-3343-11D1-883A-444553540000),
+	version(1.0),
+	helpstring("Chapter4_Server 1.0 Type Library")
+]
+library CHAPTER4_SERVERLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(5FB0C22F-3343-11D1-883A-444553540000),
+		helpstring("Math Class")
+	]
+	coclass Math
+	{
+		[default] interface IMath;
+		interface IMath2;
+		interface IAdvancedMath;
+		interface IComponentInfo;
+	};
+};

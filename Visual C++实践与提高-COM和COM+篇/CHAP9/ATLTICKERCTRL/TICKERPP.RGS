@@ -1,0 +1,23 @@
+HKCR
+{
+	AtlTickerCtrl.TickerPP.1 = s 'TickerPP Class'
+	{
+		CLSID = s '{A5ACC474-4C00-4988-B215-09541C5740C8}'
+	}
+	AtlTickerCtrl.TickerPP = s 'TickerPP Class'
+	{
+		CLSID = s '{A5ACC474-4C00-4988-B215-09541C5740C8}'
+		CurVer = s 'AtlTickerCtrl.TickerPP.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {A5ACC474-4C00-4988-B215-09541C5740C8} = s 'TickerPP Class'
+		{
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+		}
+	}
+}

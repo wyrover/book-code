@@ -1,0 +1,33 @@
+HKCR
+{
+	DOMSamp.DOMCtrl.1 = s 'DOMCtrl Class'
+	{
+		CLSID = s '{63D6A83C-94C4-11D4-896A-80FF100AAD79}'
+	}
+	DOMSamp.DOMCtrl = s 'DOMCtrl Class'
+	{
+		CLSID = s '{63D6A83C-94C4-11D4-896A-80FF100AAD79}'
+		CurVer = s 'DOMSamp.DOMCtrl.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {63D6A83C-94C4-11D4-896A-80FF100AAD79} = s 'DOMCtrl Class'
+		{
+			ProgID = s 'DOMSamp.DOMCtrl.1'
+			VersionIndependentProgID = s 'DOMSamp.DOMCtrl'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			ForceRemove 'Control'
+			ForceRemove 'ToolboxBitmap32' = s '%MODULE%, 101'
+			'MiscStatus' = s '0'
+			{
+			    '1' = s '131473'
+			}
+			'TypeLib' = s '{63D6A82F-94C4-11D4-896A-80FF100AAD79}'
+			'Version' = s '1.0'
+		}
+	}
+}

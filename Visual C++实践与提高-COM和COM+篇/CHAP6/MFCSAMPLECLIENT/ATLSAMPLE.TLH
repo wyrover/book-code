@@ -1,0 +1,78 @@
+// Created by Microsoft (R) C/C++ Compiler Version 12.00.8168.0 (ba166809).
+//
+// ATLSample.tlh
+//
+// C++ source equivalent of Win32 type library ..\ATLSample\ATLSample.tlb
+// compiler-generated file created 09/02/00 at 15:28:02 - DO NOT EDIT!
+
+#pragma once
+#pragma pack(push, 8)
+
+#include <comdef.h>
+
+namespace AccountDriver {
+
+//
+// Forward references and typedefs
+//
+
+struct /* coclass */ Account;
+struct __declspec(uuid("3b4f8e7a-80c1-11d4-a23d-02608cacedbb"))
+/* dual interface */ IAccount;
+
+//
+// Smart pointer typedef declarations
+//
+
+_COM_SMARTPTR_TYPEDEF(IAccount, __uuidof(IAccount));
+
+//
+// Type library items
+//
+
+struct __declspec(uuid("3b4f8e7b-80c1-11d4-a23d-02608cacedbb"))
+Account;
+    // [ default ] interface IAccount
+
+struct __declspec(uuid("3b4f8e7a-80c1-11d4-a23d-02608cacedbb"))
+IAccount : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetBalance,put=PutBalance))
+    long Balance;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    long GetBalance ( );
+    void PutBalance (
+        long pVal );
+    _bstr_t Post (
+        long lAmount );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_Balance (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_Balance (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall raw_Post (
+        long lAmount,
+        BSTR * pbstrResult ) = 0;
+};
+
+//
+// Wrapper method implementations
+//
+
+#include "ATLSample.tli"
+
+} // namespace AccountDriver
+
+#pragma pack(pop)

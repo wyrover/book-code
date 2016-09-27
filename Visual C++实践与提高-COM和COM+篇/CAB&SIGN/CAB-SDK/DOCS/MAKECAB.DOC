@@ -1,0 +1,1569 @@
+{\rtf1\ansi \deff4\deflang1033{\fonttbl{\f0\froman\fcharset0\fprq2 Tms Rmn;}{\f1\froman\fcharset2\fprq2 Symbol;}{\f2\fswiss\fcharset0\fprq2 Helv;}{\f3\fmodern\fcharset0\fprq1 Courier;}
+{\f4\froman\fcharset0\fprq2 Times New Roman;}{\f5\fswiss\fcharset0\fprq2 Arial;}{\f6\froman\fcharset0\fprq2 MS Serif;}{\f7\fswiss\fcharset0\fprq2 MS Sans Serif;}{\f8\froman\fcharset0\fprq2 Times;}{\f9\fswiss\fcharset0\fprq2 Helvetica;}
+{\f10\fswiss\fcharset0\fprq2 System;}{\f11\fmodern\fcharset0\fprq1 Courier New;}{\f12\froman\fcharset0\fprq2 New York;}{\f13\fswiss\fcharset0\fprq2 Geneva;}{\f14\fnil\fcharset2\fprq2 Marlett;}{\f15\fnil\fcharset2\fprq2 Wingdings;}
+{\f16\fmodern\fcharset0\fprq1 Lucida Console;}{\f17\fswiss\fcharset0\fprq2 Arial Rounded MT Bold;}{\f18\froman\fcharset0\fprq2 Book Antiqua;}{\f19\fswiss\fcharset0\fprq2 Century Gothic;}{\f20\froman\fcharset0\fprq2 Century Schoolbook;}
+{\f21\fswiss\fcharset0\fprq2 Haettenschweiler;}{\f22\fdecor\fcharset0\fprq2 Algerian;}{\f23\fdecor\fcharset0\fprq2 Braggadocio;}{\f24\fswiss\fcharset0\fprq2 Britannic Bold;}{\f25\fscript\fcharset0\fprq2 Brush Script MT;}
+{\f26\fdecor\fcharset0\fprq2 Colonna MT;}{\f27\fdecor\fcharset0\fprq2 Desdemona;}{\f28\froman\fcharset0\fprq2 Footlight MT Light;}{\f29\fdecor\fcharset0\fprq2 Kino MT;}{\f30\froman\fcharset0\fprq2 Wide Latin;}
+{\f31\fscript\fcharset0\fprq2 Matura MT Script Capitals;}{\f32\fdecor\fcharset0\fprq2 Playbill;}{\f33\fmodern\fcharset2\fprq1 MS LineDraw;}{\f34\fswiss\fcharset0\fprq2 Verdana;}{\f35\fnil\fcharset2\fprq2 Microsoft Logo 95;}
+{\f36\fswiss\fcharset2\fprq2 Arial Special G1;}{\f37\fswiss\fcharset2\fprq2 Arial Special G2;}{\f38\fswiss\fcharset2\fprq2 Arial Narrow Special G1;}{\f39\fswiss\fcharset2\fprq2 Arial Narrow Special G2;}
+{\f40\froman\fcharset2\fprq2 Times New Roman Special G1;}{\f41\froman\fcharset2\fprq2 Times New Roman Special G2;}{\f42\fswiss\fcharset0\fprq2 Tahoma;}{\f43\fswiss\fcharset2\fprq2 Bookshelf Symbol 1;}{\f44\fnil\fcharset2\fprq2 Bookshelf Symbol 2;}
+{\f45\froman\fcharset2\fprq2 Bookshelf Symbol 3;}{\f46\fswiss\fcharset0\fprq2 Franklin Gothic Heavy;}{\f47\fswiss\fcharset0\fprq2 Franklin Gothic Book;}{\f48\fswiss\fcharset0\fprq2 Franklin Gothic Demi;}
+{\f49\fswiss\fcharset0\fprq2 Franklin Gothic Demi Cond;}{\f50\fswiss\fcharset0\fprq2 Franklin Gothic Medium;}{\f51\fswiss\fcharset0\fprq2 Franklin Gothic Medium Cond;}{\f52\fnil\fcharset0\fprq2 Microsoft Logo;}{\f53\fscript\fcharset0\fprq2 Comic Sans MS;}
+{\f54\fswiss\fcharset0\fprq2 Arial Narrow;}{\f55\fswiss\fcharset0\fprq2 Arial Black;}{\f56\froman\fcharset0\fprq2 Bookman Old Style;}{\f57\froman\fcharset0\fprq2 Garamond;}{\f58\fswiss\fcharset0\fprq2 Impact;}{\f59\fnil\fcharset2\fprq2 Monotype Sorts;}
+{\f60\fnil\fcharset2\fprq2 MS Outlook;}{\f61\fmodern\fcharset0\fprq1 LinePrinter;}{\f62\fswiss\fcharset0\fprq2 CG Omega (W1);}{\f63\froman\fcharset0\fprq2 Clarendon Cd (W1);}{\f64\fscript\fcharset0\fprq2 Marigold (W1);}
+{\f65\fswiss\fcharset0\fprq2 Albertus (W1);}{\f66\fswiss\fcharset0\fprq2 Albertus Xb (W1);}{\f67\fswiss\fcharset0\fprq2 Antique Olv (W1);}{\f68\froman\fcharset0\fprq2 CG Times (W1);}{\f69\fscript\fcharset0\fprq2 Coronet (W1);}
+{\f70\fmodern\fcharset0\fprq1 Letter Gothic (W1);}{\f71\fswiss\fcharset0\fprq2 Univers (W1);}{\f72\fswiss\fcharset0\fprq2 Univers Cd (W1);}{\f73\fmodern\fcharset255\fprq2 Modern;}{\f74\fswiss\fcharset0\fprq1 MS Dialog;}}{\colortbl;\red0\green0\blue0;
+\red0\green0\blue255;\red0\green255\blue255;\red0\green255\blue0;\red255\green0\blue255;\red255\green0\blue0;\red255\green255\blue0;\red255\green255\blue255;\red0\green0\blue128;\red0\green128\blue128;\red0\green128\blue0;\red128\green0\blue128;
+\red128\green0\blue0;\red128\green128\blue0;\red128\green128\blue128;\red192\green192\blue192;}{\stylesheet{\widctlpar \f4\fs20 \snext0 Normal;}{\s1\sb240\widctlpar\box\brdrs\brdrw15\brsp20 \b\f5 \sbasedon0\snext0 heading 1;}{\s2\sb120\widctlpar \b\f5 
+\sbasedon0\snext0 heading 2;}{\s3\sb120\widctlpar \b\f4 \sbasedon0\snext15 heading 3;}{\s4\sb240\sa60\keepn\widctlpar \b\i\f4 \sbasedon0\snext0 heading 4;}{\*\cs10 \additive Default Paragraph Font;}{\s15\li720\widctlpar \f4\fs20 \sbasedon0\snext15 
+Normal Indent;}{\*\cs16 \additive\super \sbasedon10 endnote reference;}{\s17\widctlpar\tx360\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960 \f11\fs18 \sbasedon0\snext17 codeC;}{\s18\li360\widctlpar \f4\fs20 \sbasedon0\snext18 
+Indent1;}{\s19\sb240\widctlpar\brdrb\brdrs\brdrw15\brsp20 \b\f4\fs20 \sbasedon0\snext19 glossItem;}{\s20\li360\widctlpar \f4\fs20 \sbasedon18\snext20 glossDesc;}{\s21\fi-360\li720\widctlpar\tx360 \f4\fs20 \sbasedon20\snext21 ordlist1;}{
+\s22\li360\widctlpar \f4\fs20\ul \sbasedon20\snext22 glossExample;}{\s23\li360\widctlpar \f4\fs20 \sbasedon20\snext23 glossDefault;}{\s24\li720\widctlpar \f11\fs20 \sbasedon22\snext24 glossExampleC;}{\s25\fi-720\li1080\widctlpar\tx1080 \f4\fs20 
+\sbasedon18\snext25 glossNote;}{\s26\widctlpar \v\f4\fs20\cf2 \sbasedon0\snext26 patent;}{\s27\fi-900\li900\widctlpar\tx900 \i\f4\fs20 \sbasedon0\snext27 issue;}{\s28\fi-720\li720\widctlpar\tx720 \f4\fs20 \sbasedon0\snext28 note;}{
+\s29\li400\widctlpar\tqr\tx9360 \f4\fs20 \sbasedon0\snext0 toc 3;}{\s30\li202\widctlpar\tqr\tx9360 \b\f4\fs20 \sbasedon0\snext0 toc 2;}{\s31\widctlpar\tqr\tx9360 \b\caps\f5 \sbasedon0\snext0 toc 1;}{\*\cs32 \additive\fs16\up6 \sbasedon10 
+footnote reference;}{\s33\widctlpar \f4\fs20 \sbasedon0\snext33 footnote text;}{\s34\widctlpar\tqc\tx4320\tqr\tx8640 \f4\fs20 \sbasedon0\snext34 header;}{\s35\widctlpar\tqc\tx4320\tqr\tx8640 \f4\fs20 \sbasedon0\snext35 footer;}{\*\cs36 \additive
+\sbasedon10 page number;}{\s37\sb120\sa120\widctlpar \b\f4\fs20 \sbasedon0\snext0 caption;}{\s38\li600\widctlpar\tqr\tx9360 \f4\fs20 \sbasedon0\snext0 toc 4;}{\s39\li800\widctlpar\tqr\tx9360 \f4\fs20 \sbasedon0\snext0 toc 5;}{
+\s40\li1000\widctlpar\tqr\tx9360 \f4\fs20 \sbasedon0\snext0 toc 6;}{\s41\li1200\widctlpar\tqr\tx9360 \f4\fs20 \sbasedon0\snext0 toc 7;}{\s42\li1400\widctlpar\tqr\tx9360 \f4\fs20 \sbasedon0\snext0 toc 8;}{\s43\li1600\widctlpar\tqr\tx9360 \f4\fs20 
+\sbasedon0\snext0 toc 9;}{\s44\li360\widctlpar\box\brdrsh\brdrs\brdrw15\brsp20 \shading1000 \b\f4\fs20 \sbasedon20\snext44 notImplemented;}{\s45\sa120\widctlpar \f4\fs20 \sbasedon0\snext45 Body Text;}}{\*\revtbl {Unknown;}}{\info
+{\title Diamond: A compression scheme for setup programs}{\author .}{\operator Microsoft}{\creatim\yr1996\mo7\dy15\hr13\min31}{\revtim\yr1997\mo3\dy26\hr1\min51}{\printim\yr1994\mo8\dy6\min31}{\version7}{\edmins41}{\nofpages35}{\nofwords12067}
+{\nofchars68786}{\*\company Microsoft}{\vern57443}}\margl1440\margr1440 \widowctrl\ftnbj\aenddoc\noextrasprl\prcolbl\cvmme\sprsspbf\brkfrm\swpbdr\hyphcaps0\fracwidth \fet0\sectd \psz1\linex0\endnhere\titlepg {\header \pard\plain 
+\s34\widctlpar\tqc\tx4320\tqr\tx8640 \f4\fs20 \tab Microsoft MakeCAB User\rquote s Guide
+\par }{\footer \pard\plain \s35\widctlpar\tqc\tx4320\tqr\tx9360 \f4\fs20 \tab Page {\field{\*\fldinst {\cs36  PAGE }}{\fldrslt {\cs36\lang1024 35}}}{\cs36 \tab March 20, 1997}
+\par }{\footerf \pard\plain \s35\qc\widctlpar\tqc\tx4320\tqr\tx8640 \f4\fs20 {\b\i Abstract
+\par }\pard \s35\widctlpar\tqc\tx4320\tqr\tx8640 {\i 
+\par This document describes the Microsoft MakeCAB program, including detailed example applications, and the Microsoft Extract program.  MakeCAB can create cabinet files, including sets cabinet files which span multiple cabinets or multiple diskettes.  Extract
+ can view or retrieve the files which are stored inside cabinet files.
+\par }}{\*\pnseclvl1\pnucrm\pnstart1\pnindent720\pnhang{\pntxta .}}{\*\pnseclvl2\pnucltr\pnstart1\pnindent720\pnhang{\pntxta .}}{\*\pnseclvl3\pndec\pnstart1\pnindent720\pnhang{\pntxta .}}{\*\pnseclvl4\pnlcltr\pnstart1\pnindent720\pnhang{\pntxta )}}
+{\*\pnseclvl5\pndec\pnstart1\pnindent720\pnhang{\pntxtb (}{\pntxta )}}{\*\pnseclvl6\pnlcltr\pnstart1\pnindent720\pnhang{\pntxtb (}{\pntxta )}}{\*\pnseclvl7\pnlcrm\pnstart1\pnindent720\pnhang{\pntxtb (}{\pntxta )}}{\*\pnseclvl8
+\pnlcltr\pnstart1\pnindent720\pnhang{\pntxtb (}{\pntxta )}}{\*\pnseclvl9\pnlcrm\pnstart1\pnindent720\pnhang{\pntxtb (}{\pntxta )}}\pard\plain \widctlpar \f4\fs20 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par \pard \qc\widctlpar {\b\f5\fs36 Microsoft MakeCAB User\rquote s Guide
+\par }\pard \widctlpar 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par \pard \qc\widctlpar Copyright \'a9 1997 Microsoft Corporation.  All rights reserved.
+\par \pard \widctlpar \page 
+\par \pard \qc\widctlpar {\b\fs24\ul Table of Contents
+\par }\pard\plain \s31\widctlpar\tqr\tx9360 \b\caps\f5 {\*\bkmkstart _Toc289487593}{\field\fldedit{\*\fldinst {\b0\caps0  TOC \\o "1-3" }}{\fldrslt {\lang1024 1. Overview\tab }{\field{\*\fldinst {\lang1024  GOTOBUTTON _Toc362068464  }{\field{\*\fldinst {
+\lang1024  PAGEREF _Toc362068464 }}{\fldrslt {\lang1024 3}}}}}{\lang1024 
+\par }\pard\plain \s30\li202\widctlpar\tqr\tx9360 \b\f4\fs20 {\lang1024 1.1. Case 1: MakeCAB for Setup Programs\tab }{\field{\*\fldinst {\lang1024  GOTOBUTTON _Toc362068465  }{\field{\*\fldinst {\lang1024  PAGEREF _Toc362068465 }}{\fldrslt {\lang1024 3}}}}}{
+\lang1024 
+\par }\pard\plain \s29\li400\widctlpar\tqr\tx9360 \f4\fs20 {\lang1024 Characteristics of a Setup Program\tab }{\field{\*\fldinst {\lang1024  GOTOBUTTON _Toc362068466  }{\field{\*\fldinst {\lang1024  PAGEREF _Toc362068466 }}{\fldrslt {\lang1024 3}}}}}{
+\lang1024 
+\par }\pard \s29\li400\widctlpar\tqr\tx9360 {\lang1024 MakeCAB Application\tab }{\field{\*\fldinst {\lang1024  GOTOBUTTON _Toc362068467  }{\field{\*\fldinst {\lang1024  PAGEREF _Toc362068467 }}{\fldrslt {\lang1024 3}}}}}{\lang1024 
+\par }\pard\plain \s30\li202\widctlpar\tqr\tx9360 \b\f4\fs20 {\lang1024 1.2. Case 2: MakeCAB for a 200Mb Source Code Archive\tab }{\field{\*\fldinst {\lang1024  GOTOBUTTON _Toc362068468  }{\field{\*\fldinst {\lang1024  PAGEREF _Toc362068468 }}{\fldrslt {
+\lang1024 5}}}}}{\lang1024 
+\par }\pard\plain \s29\li400\widctlpar\tqr\tx9360 \f4\fs20 {\lang1024 Characteristics of a Source Code Archive\tab }{\field{\*\fldinst {\lang1024  GOTOBUTTON _Toc362068469  }{\field{\*\fldinst {\lang1024  PAGEREF _Toc362068469 }}{\fldrslt {\lang1024 5}}}}}{
+\lang1024 
+\par }\pard \s29\li400\widctlpar\tqr\tx9360 {\lang1024 MakeCAB Application\tab }{\field{\*\fldinst {\lang1024  GOTOBUTTON _Toc362068470  }{\field{\*\fldinst {\lang1024  PAGEREF _Toc362068470 }}{\fldrslt {\lang1024 5}}}}}{\lang1024 
+\par }\pard\plain \s30\li202\widctlpar\tqr\tx9360 \b\f4\fs20 {\lang1024 1.3. Case 3: Self-extracting Cabinet File(s)\tab }{\field{\*\fldinst {\lang1024  GOTOBUTTON _Toc362068471  }{\field{\*\fldinst {\lang1024  PAGEREF _Toc362068471 }}{\fldrslt {\lang1024 5}}}
+}}{\lang1024 
+\par }\pard \s30\li202\widctlpar\tqr\tx9360 {\lang1024 1.4. MakeCAB Deliverables\tab }{\field{\*\fldinst {\lang1024  GOTOBUTTON _Toc362068472  }{\field{\*\fldinst {\lang1024  PAGEREF _Toc362068472 }}{\fldrslt {\lang1024 6}}}}}{\lang1024 
+\par 1.5. MakeCAB Goals\tab }{\field{\*\fldinst {\lang1024  GOTOBUTTON _Toc362068473  }{\field{\*\fldinst {\lang1024  PAGEREF _Toc362068473 }}{\fldrslt {\lang1024 6}}}}}{\lang1024 
+\par }\pard\plain \s31\widctlpar\tqr\tx9360 \b\caps\f5 {\lang1024 2. MakeCAB Optimizing and Tuning\tab }{\field{\*\fldinst {\lang1024  GOTOBUTTON _Toc362068474  }{\field{\*\fldinst {\lang1024  PAGEREF _Toc362068474 }}{\fldrslt {\lang1024 6}}}}}{\lang1024 
+
+\par }\pard\plain \s30\li202\widctlpar\tqr\tx9360 \b\f4\fs20 {\lang1024 2.1. Saving Diskettes\tab }{\field{\*\fldinst {\lang1024  GOTOBUTTON _Toc362068475  }{\field{\*\fldinst {\lang1024  PAGEREF _Toc362068475 }}{\fldrslt {\lang1024 6}}}}}{\lang1024 
+\par }\pard \s30\li202\widctlpar\tqr\tx9360 {\lang1024 2.2. Tuning Access Time vs. Compression Ratio\tab }{\field{\*\fldinst {\lang1024  GOTOBUTTON _Toc362068476  }{\field{\*\fldinst {\lang1024  PAGEREF _Toc362068476 }}{\fldrslt {\lang1024 6}}}}}{\lang1024 
+
+\par 2.3. Piecemeal DDFs for Localization and Different Disk Sizes\tab }{\field{\*\fldinst {\lang1024  GOTOBUTTON _Toc362068477  }{\field{\*\fldinst {\lang1024  PAGEREF _Toc362068477 }}{\fldrslt {\lang1024 7}}}}}{\lang1024 
+\par }\pard\plain \s31\widctlpar\tqr\tx9360 \b\caps\f5 {\lang1024 3. MakeCAB Concepts\tab }{\field{\*\fldinst {\lang1024  GOTOBUTTON _Toc362068478  }{\field{\*\fldinst {\lang1024  PAGEREF _Toc362068478 }}{\fldrslt {\lang1024 8}}}}}{\lang1024 
+\par }\pard\plain \s30\li202\widctlpar\tqr\tx9360 \b\f4\fs20 {\lang1024 3.1. Decoupling File Layout and INF Layout\tab }{\field{\*\fldinst {\lang1024  GOTOBUTTON _Toc362068479  }{\field{\*\fldinst {\lang1024  PAGEREF _Toc362068479 }}{\fldrslt {\lang1024 8}}}}}
+{\lang1024 
+\par }\pard\plain \s31\widctlpar\tqr\tx9360 \b\caps\f5 {\lang1024 4. MAKECAB.EXE\tab }{\field{\*\fldinst {\lang1024  GOTOBUTTON _Toc362068480  }{\field{\*\fldinst {\lang1024  PAGEREF _Toc362068480 }}{\fldrslt {\lang1024 12}}}}}{\lang1024 
+\par }\pard\plain \s30\li202\widctlpar\tqr\tx9360 \b\f4\fs20 {\lang1024 4.1. MAKECAB.EXE Syntax\tab }{\field{\*\fldinst {\lang1024  GOTOBUTTON _Toc362068481  }{\field{\*\fldinst {\lang1024  PAGEREF _Toc362068481 }}{\fldrslt {\lang1024 12}}}}}{\lang1024 
+\par }\pard \s30\li202\widctlpar\tqr\tx9360 {\lang1024 4.2. MAKECAB.EXE Directive File Syntax\tab }{\field{\*\fldinst {\lang1024  GOTOBUTTON _Toc362068482  }{\field{\*\fldinst {\lang1024  PAGEREF _Toc362068482 }}{\fldrslt {\lang1024 13}}}}}{\lang1024 
+\par }\pard\plain \s29\li400\widctlpar\tqr\tx9360 \f4\fs20 {\lang1024 4.2.1. Command Summary\tab }{\field{\*\fldinst {\lang1024  GOTOBUTTON _Toc362068483  }{\field{\*\fldinst {\lang1024  PAGEREF _Toc362068483 }}{\fldrslt {\lang1024 14}}}}}{\lang1024 
+\par }\pard \s29\li400\widctlpar\tqr\tx9360 {\lang1024 4.2.2. Variable Summary\tab }{\field{\*\fldinst {\lang1024  GOTOBUTTON _Toc362068484  }{\field{\*\fldinst {\lang1024  PAGEREF _Toc362068484 }}{\fldrslt {\lang1024 14}}}}}{\lang1024 
+\par 4.2.3. InfDisk/Cabinet/FileLineFormat Syntax and Semantics\tab }{\field{\*\fldinst {\lang1024  GOTOBUTTON _Toc362068485  }{\field{\*\fldinst {\lang1024  PAGEREF _Toc362068485 }}{\fldrslt {\lang1024 15}}}}}{\lang1024 
+\par 4.2.4. INF Parameters\tab }{\field{\*\fldinst {\lang1024  GOTOBUTTON _Toc362068486  }{\field{\*\fldinst {\lang1024  PAGEREF _Toc362068486 }}{\fldrslt {\lang1024 15}}}}}{\lang1024 
+\par 4.2.5. Command Details\tab }{\field{\*\fldinst {\lang1024  GOTOBUTTON _Toc362068487  }{\field{\*\fldinst {\lang1024  PAGEREF _Toc362068487 }}{\fldrslt {\lang1024 16}}}}}{\lang1024 
+\par 4.2.6. Variable Details\tab }{\field{\*\fldinst {\lang1024  GOTOBUTTON _Toc362068488  }{\field{\*\fldinst {\lang1024  PAGEREF _Toc362068488 }}{\fldrslt {\lang1024 21}}}}}{\lang1024 
+\par }\pard\plain \s31\widctlpar\tqr\tx9360 \b\caps\f5 {\lang1024 5. EXTRACT.EXE\tab }{\field{\*\fldinst {\lang1024  GOTOBUTTON _Toc362068489  }{\field{\*\fldinst {\lang1024  PAGEREF _Toc362068489 }}{\fldrslt {\lang1024 35}}}}}{\lang1024 
+\par }\pard\plain \widctlpar \f4\fs20 }}\pard\plain \widctlpar \f4\fs20 \page 
+\par \pard\plain \s1\sb240\widctlpar\box\brdrs\brdrw15\brsp20 \b\f5 {\*\bkmkstart _Toc291583686}{\*\bkmkstart _Toc291583732}{\*\bkmkstart _Toc292524235}{\*\bkmkstart _Toc362068464}{\field\flddirty{\*\fldinst autonumlgl }{\fldrslt }}\tab Overview
+{\*\bkmkend _Toc289487593}{\*\bkmkend _Toc291583686}{\*\bkmkend _Toc291583732}{\*\bkmkend _Toc292524235}{\*\bkmkend _Toc362068464}
+\par \pard\plain \widctlpar \f4\fs20 
+MakeCAB is a lossless data compression tool that can be used for a wide variety of purposes.  Although it was originally designed for use by setup programs, it can also be used in almost any situation where lossless data compression is required.
+\par \pard \widctlpar 
+\par \pard \widctlpar MakeCAB has three key features: 1) storing multiple files in a single {\i cabinet (\ldblquote CAB\rdblquote ) }file, 2) performing compression  {\b across}
+ file boundaries, and 3) permitting files to span cabinets.  While existing products such as PKZIP, LHARC, and ARJ, support some of these features, combining all three does not appear to be common practice.   MakeCAB also supports self-extracting archives
+, by simply concatenating a cabinet file to EXTRACT.EXE.
+\par \pard \widctlpar 
+\par \pard \widctlpar Depending upon the number of files to be compressed, and the  access patterns expected (sequential or random access; whether most of the files will be requested a
+t once or only a small portion of them), MakeCAB can be instructed to build cabinet files in different ways. One key concept in MakeCAB is the {\i folder}.  A {\i folder }
+is a collection of one or more files which are compressed together, as a single entity. 
+\par \pard \widctlpar 
+\par \pard \widctlpar The cabinet file format is capable of supporting multiple forms of compression. At this time, MSZIP and LZX are the compression formats supported by Microsoft.  Other compression formats are possible in the future.
+\par \pard \widctlpar 
+\par \pard \widctlpar The following sections provide case studies of several {\i possible} ways that MakeCAB might be used.  These are only provided to stimulate your imagination -- they are not the only ways in which MakeCAB can be used!
+\par \pard\plain \s2\sb120\widctlpar \b\f5 {\*\bkmkstart _Toc289487594}{\*\bkmkstart _Toc291583733}{\*\bkmkstart _Toc292524236}{\*\bkmkstart _Toc362068465}{\field\flddirty{\*\fldinst autonumlgl }{\fldrslt }}\tab Case 1: MakeCAB for Setup Programs
+{\*\bkmkend _Toc289487594}{\*\bkmkend _Toc291583733}{\*\bkmkend _Toc292524236}{\*\bkmkend _Toc362068465}
+\par \pard\plain \widctlpar \f4\fs20 
+Since MakeCAB was designed with setup programs in mind, it has a great deal of power and flexibility to tradeoff compressed size against speed of random access to files. The primary impact of MakeCAB is to minimize the number of diskettes required to dist
+ribute a product, thereby minimizing the Cost of Goods Sold (COGS). 
+\par \pard \widctlpar 
+\par \pard \widctlpar In order for MakeCAB to build the disk images for a product, a {\i directive file}, or DDF, which specifies the list of files in a product, and any constraints on which disks certain files should be located, must be created. The same {\i 
+ }directive file can even be used for all the various localized versions of a product, since directive files support parameterization.
+\par \pard\plain \s3\sb120\widctlpar \b\f4 {\*\bkmkstart _Toc289487595}{\*\bkmkstart _Toc362068466}Characteristics of a Setup Program{\*\bkmkend _Toc289487595}{\*\bkmkend _Toc362068466}
+\par {\pntext\pard\plain\fs20 1)\tab}\pard\plain \fi-360\li360\widctlpar{\*\pn \pnlvlbody\pndec\pnstart1\pnindent360\pnhang{\pntxta )}}\f4\fs20 Minimizing disk count is very important, since it saves money in production costs
+\par {\pntext\pard\plain\fs20 2)\tab}Files are accessed sequentially
+\par {\pntext\pard\plain\fs20 3)\tab}Most files are accessed
+\par \pard\plain \s3\sb120\widctlpar \b\f4 {\*\bkmkstart _Toc289487596}{\*\bkmkstart _Toc362068467}MakeCAB Application{\*\bkmkend _Toc289487596}{\*\bkmkend _Toc362068467}
+\par \pard\plain \widctlpar \f4\fs20 The distribution disks for a typical application product produced by MakeCAB might look similar to the following:
+\par 
+\par \pard\plain \s37\qc\sb120\sa120\keepn\widctlpar \b\f4\fs20 Figure {\field{\*\fldinst  SEQ Figure \\* ARABIC }{\fldrslt {\lang1024 1}}}: Distribution disk layout
+\par \pard\plain \qc\widctlpar \f4\fs20 {\pard\plain \qc\widctlpar \f4\fs20 {\object\objemb\objw2777\objh4357{\*\objclass MSDraw}{\*\objdata 0105000002000000070000004d5344726177000000000000000000c0050000
+08002313061e010009000003bd02000004005a00000000001500000026060f001f00ffffffff0400150000004d7245640f004d6963726f736f6674204472617700005a00000026060f00a9004d72456402009f0000009d000100160016001c03100200000000000001000300000000000000000000000000ffffff000100
+000100000000000000000001000000000000010c0054696d6573204e657720526f6d616e00ffc01ff07ff07fe03ffdffc01f0000e0100000000000ffffff00c0c0c00080808000ff00000080000000ffff00008080000000ff00000080000000ffff00008080000000ff0000008000ff00ff0080008000000e0000002606
+0f0012004d72456403000800000090004801e7041708050000000b0248019000050000000c02cf065704030000001e000400000003010800050000000102ffffff000500000009020000000004000000070103000400000004010d0004000000060101000400000002010200030000001e000e00000026060f0012004d72
+4564030008000000e0015001df04ff0207000000fc020000ffffff00ffff040000002d01000008000000fa0206000800080000000000040000002d010100090000001c06900090000303e3044c01dc01040000002e011800040000000201010015000000fb02a0ff000000000000bc02010000000000001254696d657320
+4e657720526f6d616e00ff00040000002d0102000a000000320ab0019000060000004469736b203115000000fb02a0ff0000000000009001000000000000001254696d6573204e657720526f6d616e000000040000002d01030004000000f00102000c000000320ae00140020900000053455455502e455845000c000000
+320a400240020900000053455455502e494e46000b000000320aa002400207000000455843454c2e31000e00000026060f0012004d724564030008000000e0016003df040f050400000002010200090000001c06900090001305e3045c03dc01040000000201010015000000fb02a0ff000000000000bc02010000000000
+001254696d6573204e657720526f6d616e00ff00040000002d01020004000000f00103000a000000320ac0039000060000004469736b203215000000fb02a0ff0000000000009001000000000000001254696d6573204e657720526f6d616e00487d040000002d01030004000000f00102000b000000320af00340020700
+0000455843454c2e32000e00000026060f0012004d724564030008000000e0016006df040f080400000002010200090000001c06900090001308e3045c06dc01040000000201010015000000fb02a0ff000000000000bc02010000000000001254696d6573204e657720526f6d616e00ff00040000002d01020004000000
+f00103000a000000320ac0069000060000004469736b204e15000000fb02a0ff0000000000009001000000000000001254696d6573204e657720526f6d616e00487d040000002d01030004000000f00102000b000000320af006400207000000455843454c2e4e000e00000026060f0012004d7245640300080000004803
+64054d03690507000000fc02000000000000ffff040000002d01020004000000f001000004000000020102000700000018046d055103600544030e00000026060f0012004d7245640300080000004903a3054e03a805070000001804ac0552039f0545030e00000026060f0012004d7245640300080000004a03e2054f03
+e705070000001804eb055303de05460310000000fb021000070000000000bc02000000000102022253797374656d0004040000002d01000004000000f001030008000000fa02050000000000ffffff00040000002d01030004000000f001010007000000fc020100000000000000040000002d01010004000000f0010200
+040000002701ffff040000002701ffff0300000000000200c888170132290800749c0180c60638003c290800749c0280ce060c0005800500c888170138003c290800749c0280ce060c0005800500c8881701c888170101050000050000000d0000004d45544146494c45504943540023130000fae1ffff82050000
+08002313061e0000
+010009000003bd02000004005a00000000001500000026060f001f00ffffffff0400150000004d7245640f004d6963726f736f6674204472617700005a00000026060f00a9004d72456402009f0000009d000100160016001c03100200000000000001000300000000000000000000000000ffffff000100000100000000
+000000000001000000000000010c0054696d6573204e657720526f6d616e00ffc01ff07ff07fe03ffdffc01f0000e0100000000000ffffff00c0c0c00080808000ff00000080000000ffff00008080000000ff00000080000000ffff00008080000000ff0000008000ff00ff0080008000000e00000026060f0012004d72
+456403000800000090004801e7041708050000000b0248019000050000000c02cf065704030000001e000400000003010800050000000102ffffff000500000009020000000004000000070103000400000004010d0004000000060101000400000002010200030000001e000e00000026060f0012004d72456403000800
+0000e0015001df04ff0207000000fc020000ffffff00ffff040000002d01000008000000fa0206000800080000000000040000002d010100090000001c06900090000303e3044c01dc01040000002e011800040000000201010015000000fb02a0ff000000000000bc02010000000000001254696d6573204e657720526f
+6d616e00ff00040000002d0102000a000000320ab0019000060000004469736b203115000000fb02a0ff0000000000009001000000000000001254696d6573204e657720526f6d616e000000040000002d01030004000000f00102000c000000320ae00140020900000053455455502e455845000c000000320a40024002
+0900000053455455502e494e46000b000000320aa002400207000000455843454c2e31000e00000026060f0012004d724564030008000000e0016003df040f050400000002010200090000001c06900090001305e3045c03dc01040000000201010015000000fb02a0ff000000000000bc02010000000000001254696d65
+73204e657720526f6d616e00ff00040000002d01020004000000f00103000a000000320ac0039000060000004469736b203215000000fb02a0ff0000000000009001000000000000001254696d6573204e657720526f6d616e00487d040000002d01030004000000f00102000b000000320af00340020700000045584345
+4c2e32000e00000026060f0012004d724564030008000000e0016006df040f080400000002010200090000001c06900090001308e3045c06dc01040000000201010015000000fb02a0ff000000000000bc02010000000000001254696d6573204e657720526f6d616e00ff00040000002d01020004000000f00103000a00
+0000320ac0069000060000004469736b204e15000000fb02a0ff0000000000009001000000000000001254696d6573204e657720526f6d616e00487d040000002d01030004000000f00102000b000000320af006400207000000455843454c2e4e000e00000026060f0012004d724564030008000000480364054d036905
+07000000fc02000000000000ffff040000002d01020004000000f001000004000000020102000700000018046d055103600544030e00000026060f0012004d7245640300080000004903a3054e03a805070000001804ac0552039f0545030e00000026060f0012004d7245640300080000004a03e2054f03e70507000000
+1804eb055303de05460310000000fb021000070000000000bc02000000000102022253797374656d0004040000002d01000004000000f001030008000000fa02050000000000ffffff00040000002d01030004000000f001010007000000fc020100000000000000040000002d01010004000000f0010200040000002701
+ffff040000002701ffff030000000000}{\result {{\pict\wmetafile8\picw4899\pich7686\picwgoal2777\pichgoal4357 
+010009000003bd02000004005a00000000001500000026060f001f00ffffffff0400150000004d7245640f004d6963726f736f6674204472617700005a00000026060f00a9004d72456402009f0000009d000100160016001c03100200000000000001000300000000000000000000000000ffffff00010000010000000000
+0000000001000000000000010c0054696d6573204e657720526f6d616e00ffc01ff07ff07fe03ffdffc01f0000e0100000000000ffffff00c0c0c00080808000ff00000080000000ffff00008080000000ff00000080000000ffff00008080000000ff0000008000ff00ff0080008000000e00000026060f0012004d724564
+03000800000090004801e7041708050000000b0248019000050000000c02cf065704030000001e000400000003010800050000000102ffffff000500000009020000000004000000070103000400000004010d0004000000060101000400000002010200030000001e000e00000026060f0012004d724564030008000000e0
+015001df04ff0207000000fc020000ffffff00ffff040000002d01000008000000fa0206000800080000000000040000002d010100090000001c06900090000303e3044c01dc01040000002e011800040000000201010015000000fb02a0ff000000000000bc02010000000000001254696d6573204e657720526f6d616e00
+ff00040000002d0102000a000000320ab0019000060000004469736b203115000000fb02a0ff0000000000009001000000000000001254696d6573204e657720526f6d616e000000040000002d01030004000000f00102000c000000320ae00140020900000053455455502e455845000c000000320a400240020900000053
+455455502e494e46000b000000320aa002400207000000455843454c2e31000e00000026060f0012004d724564030008000000e0016003df040f050400000002010200090000001c06900090001305e3045c03dc01040000000201010015000000fb02a0ff000000000000bc02010000000000001254696d6573204e657720
+526f6d616e00ff00040000002d01020004000000f00103000a000000320ac0039000060000004469736b203215000000fb02a0ff0000000000009001000000000000001254696d6573204e657720526f6d616e00487d040000002d01030004000000f00102000b000000320af003400207000000455843454c2e32000e0000
+0026060f0012004d724564030008000000e0016006df040f080400000002010200090000001c06900090001308e3045c06dc01040000000201010015000000fb02a0ff000000000000bc02010000000000001254696d6573204e657720526f6d616e00ff00040000002d01020004000000f00103000a000000320ac0069000
+060000004469736b204e15000000fb02a0ff0000000000009001000000000000001254696d6573204e657720526f6d616e00487d040000002d01030004000000f00102000b000000320af006400207000000455843454c2e4e000e00000026060f0012004d724564030008000000480364054d03690507000000fc02000000
+000000ffff040000002d01020004000000f001000004000000020102000700000018046d055103600544030e00000026060f0012004d7245640300080000004903a3054e03a805070000001804ac0552039f0545030e00000026060f0012004d7245640300080000004a03e2054f03e705070000001804eb055303de054603
+10000000fb021000070000000000bc02000000000102022253797374656d0004040000002d01000004000000f001030008000000fa02050000000000ffffff00040000002d01030004000000f001010007000000fc020100000000000000040000002d01010004000000f0010200040000002701ffff040000002701ffff03
+00000000000200c888170132290800749c0180c60638003c290800749c0280ce060c0005800500c8881701}}}}}
+\par \pard \widctlpar 
+\par \pard \widctlpar 
+SETUP.EXE is the setup program, and SETUP.INF is a file generated by MakeCAB which guides the operation of the setup program (which files are needed for which options, and on which disk and in which cabinet file a file is contained).  All of t
+he remaining product files are contained in the cabinet files EXCEL.1 through EXCEL.N (N might be 7, for example).
+\par \pard \widctlpar 
+\par \pard \widctlpar 
+To produce this disk layout with MakeCAB, a DDF is prepared which lists all of the files forthe product, along with some optional MakeCAB settings to control parameters such as: 1) the capacity of the disks which are being used, 2) the naming convention o
+f the cabinet files , 3) the visible (user-readable) labels on each disk, 4) how much random access is desired for files within a cabinet.  The following is an example of a DDF that might be appropriate:
+\par \pard \widctlpar 
+\par \pard\plain \s17\li720\widctlpar\tx360\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960 \f11\fs18 ;*** MakeCAB Directive file example
+\par ;
+\par .OPTION EXPLICIT\tab \tab \tab \tab \tab \tab \tab ; Generate errors on variable typos
+\par 
+\par .Set DiskLabel1=Setup\tab \tab \tab \tab \tab ; Label of first disk
+\par .Set DiskLabel2=Program      \tab \tab \tab ; Label of second disk
+\par .Set DiskLabel3="Program Continued"\tab ; Label of third disk
+\par .Set CabinetNameTemplate=EXCEL.* \tab ; EXCEL.1, EXCEL.2, etc.
+\par .set DiskDirectoryTemplate=Disk*\tab \tab ; disk1, disk2, etc.
+\par .Set MaxDiskSize=1.44M\tab        \tab \tab ; 3.5" disks
+\par 
+\par ;** Setup.exe and setup.inf are placed uncompressed in the first disk
+\par .Set Cabinet=off
+\par .Set Compress=off
+\par .Set InfAttr=\tab \tab \tab \tab \tab \tab \tab ; Turn off read-only, etc. attrs
+\par bin\\setup.exe\tab \tab        \tab \tab \tab ; Just copy SETUP.EXE as is
+\par bin\\setup.inf\tab \tab        \tab \tab \tab ; Just copy SETUP.INF as is
+\par 
+\par ;** The rest of the files are stored, compressed, in cabinet files
+\par .Set Cabinet=on
+\par .Set Compress=on
+\par bin\\excel.exe\tab \tab        \tab \tab \tab ; Big EXE, will span cabinets
+\par bin\\excel.hlp
+\par bin\\olecli.dll
+\par bin\\olesrv.dll
+\par ;...\tab \tab \tab \tab \tab \tab \tab \tab \tab \tab ; Many more files
+\par ;*** <the end>\tab \tab \tab \tab \tab \tab \tab ; That\rquote s it
+\par \pard \s17\widctlpar\tx360\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960 
+\par \pard\plain \widctlpar \f4\fs20 Now, you run MakeCAB to create the disk layout:
+\par \pard\plain \s17\li720\widctlpar\tx360\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960 \f11\fs18 MakeCAB /f excel.ddf
+\par 
+\par \pard\plain \widctlpar \f4\fs20 
+MakeCAB will create directories Disk1, Disk2, etc. to hold the files for each disk, and will copy uncompressed files or create cabinet files (as appropriate) in each directory.  The file SETUP.RPT will be written to the current directory (this can be over
+ridden) with a summary of what MakeCAB did, and the file SETUP.INF will contain details on every disk and cabinet created, including a list of where each file was placed.
+\par \pard\plain \s2\sb120\widctlpar \b\f5 {\*\bkmkstart _Toc289487597}{\*\bkmkstart _Toc291583734}{\*\bkmkstart _Toc292524237}{\*\bkmkstart _Toc362068468}{\field\flddirty{\*\fldinst autonumlgl }{\fldrslt }}\tab Case 2: MakeCAB for a 200Mb Source Code Archive
+{\*\bkmkend _Toc289487597}{\*\bkmkend _Toc291583734}{\*\bkmkend _Toc292524237}{\*\bkmkend _Toc362068468}
+\par \pard\plain \widctlpar \f4\fs20 
+The Microsoft Developers Network (MSDN) CD includes over 200Mb of source code.  While uncompressed this is only 1/3rd of the CD, that is still too much space, so tight compression is desired. This is slightly different from the Setup case, however, since 
+there is a front-end tool that allows users to select sample programs and expand them onto the hard disk.
+\par \pard\plain \s3\sb120\widctlpar \b\f4 {\*\bkmkstart _Toc289487598}{\*\bkmkstart _Toc362068469}Characteristics of a Source Code Archive{\*\bkmkend _Toc289487598}{\*\bkmkend _Toc362068469}
+\par {\pntext\pard\plain\fs20 1)\tab}\pard\plain \fi-360\li360\widctlpar{\*\pn \pnlvlbody\pndec\pnstart1\pnindent360\pnhang{\pntxta )}}\f4\fs20 Minimizing space usage is slightly less important
+\par {\pntext\pard\plain\fs20 2)\tab}Files are accessed somewhat randomly, though in groups
+\par {\pntext\pard\plain\fs20 3)\tab}Only a small portion of the files will be accessed at any one time
+\par \pard\plain \s3\sb120\widctlpar \b\f4 {\*\bkmkstart _Toc289487599}{\*\bkmkstart _Toc362068470}MakeCAB Application{\*\bkmkend _Toc289487599}{\*\bkmkend _Toc362068470}
+\par \pard\plain \widctlpar \f4\fs20 
+The cabinet files produced for the source archive need to be big enough to provide good compression, but not so big that random access speed is sacrificed.  The challenge is to obtain a good tradeoff between compression and access time.
+\par \pard \widctlpar 
+\par \pard\plain \s17\li720\widctlpar\tx360\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960 \f11\fs18 ;*** MSDN Sample Source Code MakeCAB Directive file example
+\par ;
+\par .OPTION EXPLICIT\tab \tab \tab \tab \tab \tab \tab ; Generate errors on variable typos
+\par 
+\par .Set CabinetNameTemplate=MSDN.* \tab \tab ; MSDN.1, MSDN.2, etc.
+\par .set DiskDirectoryTemplate=CDROM\tab \tab ; All cabinets go in a single directory
+\par .Set MaxDiskFileCount=1000      \tab \tab ; Limit file count per cabinet, so that
+\par \tab \tab \tab \tab \tab \tab \tab \tab \tab \tab \tab ; scanning is not too slow
+\par .Set FolderSizeThreshold=200000\tab \tab ; Aim for ~200K per folder
+\par .Set CompressionType=MSZIP\tab \tab 
+\par 
+\par ;** All files are compressed in cabinet files
+\par .Set Cabinet=on
+\par .Set Compress=on
+\par foo.c
+\par foo.h
+\par ....
+\par ;*** <the end>\tab \tab \tab \tab \tab \tab \tab ; That\rquote s it
+\par 
+\par \pard\plain \widctlpar \f4\fs20 
+\par \pard\plain \s2\sb120\widctlpar \b\f5 {\*\bkmkstart _Toc289487601}{\*\bkmkstart _Toc291583736}{\*\bkmkstart _Toc292524239}{\*\bkmkstart _Toc362068471}{\field\flddirty{\*\fldinst autonumlgl }{\fldrslt }}\tab Case 3: {\*\bkmkend _Toc362068471}
+MakeCAB over a network
+\par \pard\plain \widctlpar \f4\fs20 
+\par \pard \widctlpar Many times, a software developer will
+ want to ship executables, libraries, or the like across an Intranet or the Internet. They need a small package and an easy way for users to extract data. For example, Java[TM] developers may want to ship large libraries of classes, so that home and busin
+ess developers can use those classes in their software. 
+\par \pard \widctlpar 
+\par \pard \widctlpar EXTRACT.EXE, which extracts files from CAB files, recognizes when it has been copied to the front of a cabinet file, and will automatically extract the files in that cabinet file (and any continuatio
+n cabinet files).  Here is how this is accomplished:
+\par \pard \widctlpar 
+\par {\pntext\pard\plain\fs20 1)\tab}\pard \fi-360\li360\widctlpar{\*\pn \pnlvlbody\pndec\pnstart1\pnindent360\pnhang{\pntxta )}}Create a cabinet file (or set of cabinet files)
+\par {\pntext\pard\plain\fs20 2)\tab}\pard \fi-360\li360\widctlpar{\*\pn \pnlvlbody\pndec\pnstart1\pnindent360\pnhang{\pntxta )}}Prepend EXTRACT.EXE to the first cabinet file (do not prepend EXTRACT.EXE to any other cabinet files in the set)
+\par {\pntext\pard\plain\fs20 3)\tab}\pard \fi-360\li360\widctlpar{\*\pn \pnlvlbody\pndec\pnstart1\pnindent360\pnhang{\pntxta )}}Distribute the self-extracting cabinet (and any subsequent cabinets)
+\par \pard \widctlpar 
+\par Example 1:
+\par \pard\plain \s17\li720\widctlpar\tx360\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960 \f11\fs18 MakeCAB /f self.ddf\tab \tab ; Build cabinet file set self1.cab, self2.cab
+\par copy /b extract.exe+self1.cab self.exe  ; self.exe is self-extracting
+\par 
+\par \pard\plain \s2\sb120\widctlpar \b\f5 {\*\bkmkstart _Toc362068472}{\field\flddirty{\*\fldinst autonumlgl }{\fldrslt }}\tab MakeCAB Deliverables{\*\bkmkend _Toc289487601}{\*\bkmkend _Toc291583736}{\*\bkmkend _Toc292524239}{\*\bkmkend _Toc362068472}
+\par \pard\plain \widctlpar \f4\fs20 The following table is a list of all the libraries and programs that are part of MakeCAB:
+\par 
+\par 
+\par \trowd \trgaph108\trleft-108\trkeep \clbrdrb\brdrs\brdrw30 \cellx1800\clbrdrl\brdrs\brdrw15 \clbrdrb\brdrs\brdrw30 \cellx9360 \pard \widctlpar\intbl File\cell \pard \widctlpar\intbl Contents\cell \pard \widctlpar\intbl \row \trowd 
+\trgaph108\trleft-108\trkeep \cellx1800\clbrdrl\brdrs\brdrw15 \cellx9360 \pard \widctlpar\intbl MAKECAB.EXE\cell \pard \widctlpar\intbl Command-line tool to perform disk layout (uses FCI.LIB)\cell \pard \widctlpar\intbl \row \pard \widctlpar\intbl FDI.LIB
+\cell \pard \widctlpar\intbl File Decompression Interface library.\cell \pard \widctlpar\intbl \row \pard \widctlpar\intbl EXTRACT.EXE\cell \pard \widctlpar\intbl Command-line tool to expand files (uses FDI.LIB)\cell \pard \widctlpar\intbl \row \trowd 
+\trgaph108\trleft-108\trkeep \cellx1800\clbrdrl\brdrs\brdrw15 \cellx9360 \pard \widctlpar\intbl FCI.LIB\cell \pard \widctlpar\intbl File Compression Interface library.\cell \pard \widctlpar\intbl \row \pard\plain \s2\sb120\widctlpar \b\f5 
+{\*\bkmkstart _Toc289487602}{\*\bkmkstart _Toc291583737}{\*\bkmkstart _Toc292524240}{\*\bkmkstart _Toc362068473}{\field\flddirty{\*\fldinst autonumlgl }{\fldrslt }}\tab MakeCAB Goals{\*\bkmkend _Toc289487602}{\*\bkmkend _Toc291583737}
+{\*\bkmkend _Toc292524240}{\*\bkmkend _Toc362068473}
+\par \pard\plain \widctlpar \f4\fs20 o\tab Provide excellent compression ratio and decompression speed
+\par o\tab Simplify production of disk layouts for products
+\par o\tab Provide command-line tools and link libraries for all Microsoft platforms
+\par \pard\plain \s1\sb240\widctlpar\box\brdrs\brdrw15\brsp20 \b\f5 {\*\bkmkstart _Toc289487603}{\*\bkmkstart _Toc291583687}{\*\bkmkstart _Toc291583738}{\*\bkmkstart _Toc292524241}{\*\bkmkstart _Toc362068474}{\field\flddirty{\*\fldinst autonumlgl }{\fldrslt }}
+\tab MakeCAB Optimizing and Tuning{\*\bkmkend _Toc362068474}
+\par \pard\plain \s20\li360\widctlpar \f4\fs20 
+\par \pard\plain \s2\sb120\widctlpar \b\f5 {\*\bkmkstart _Toc362068475}{\field\flddirty{\*\fldinst autonumlgl }{\fldrslt }}\tab Saving Diskettes{\*\bkmkend _Toc362068475}
+\par \pard\plain \widctlpar \f4\fs20 
+For a product shipped on floppy disks, it is very important to minimize the number of disks shipped per product!  As a back-of-the-envelope calculation, if each disk cost a dollar and one million units were shipped, then each disk saved would save $1 mill
+ion. The following pseudo-code suggests a process you might follow as you strive to keep your Cost of Goods Sold (COGS) to a minimum:
+\par \pard \widctlpar 
+\par \pard\plain \s17\widctlpar\tx360\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960 \f11\fs18 \tab get initial product files;
+\par \tab while (have not yet shipped)
+\par \tab \tab Compress file set using:
+\par \tab \tab \tab CompressionType=LZX
+\par \tab \tab \tab CompressionMemory=21
+\par \tab \tab If near a disk boundary
+\par \tab \tab \tab Consider tossing files to save a disk (especially clipart & samples!)
+\par \tab \tab If near shipping
+\par \tab \tab \tab Relax FolderSizeThreshold to
+\par \tab \tab \tab \tab improve access time\tab at decompress.
+\par \tab end-while
+\par \tab Ship it!
+\par \pard\plain \widctlpar \f4\fs20 
+\par \pard\plain \s2\sb120\widctlpar \b\f5 {\*\bkmkstart _Toc362068476}{\field\flddirty{\*\fldinst autonumlgl }{\fldrslt }}\tab Tuning Access Time vs. Compression Ratio{\*\bkmkend _Toc362068476}
+\par \pard\plain \widctlpar \f4\fs20 MakeCAB introduces the concept of a {\i folder }to refer to a contiguous set of compressed bytes.  To decompress a file from a cabinet, FDI.LIB (called by your SETUP.EXE and
+ EXTRACT.EXE) finds the folder that the file starts in, and then must {\b read and decompress }all the bytes in that folder from the start up through and including the desired file.  
+\par \pard \widctlpar 
+\par \pard \widctlpar 
+For example, if the file FOO.EXE is at the end of a 1.44Mb folder on a 1.44M diskette, then FDI.LIB must read the entire diskette and decompress all the data.  This is about the worst access time possible.  By contrast, if FOO.EXE  were at the start of a 
+folder (regardless of how large the folder is), then it would be read and decompressed with no extra overhead.
+\par \pard \widctlpar 
+\par \pard \widctlpar 
+So, why would one not always Set FolderFileCountThreshold=1?  Because doing so would reset the compression history after each file, resulting in a poor compression ratio.  MakeCAB provides several variables and directives to provide very fine control over
+ these issues:
+\par \pard \widctlpar 
+\par \trowd \trgaph108\trleft630 \clbrdrt\brdrs\brdrw30\brdrcf15 \clbrdrb\brdrs\brdrw15\brdrcf15 \cellx3216\clbrdrt\brdrs\brdrw30\brdrcf15 \clbrdrb\brdrs\brdrw15\brdrcf15 \cellx6210\clbrdrt\brdrs\brdrw30\brdrcf15 \clbrdrb\brdrs\brdrw15\brdrcf15 \cellx9468 
+\pard \widctlpar\intbl Variable/Directive\cell \pard \widctlpar\intbl More Compression;
+\par Slower Access Time\cell \pard \widctlpar\intbl Less Compression;
+\par Faster Access Time\cell \pard \widctlpar\intbl \row \trowd \trgaph108\trleft630 \cellx3216\cellx6210\cellx9468 \pard \widctlpar\intbl \cell \pard \widctlpar\intbl \cell \pard \widctlpar\intbl \cell \pard \widctlpar\intbl \row \pard \widctlpar\intbl 
+CabinetFileCountThreshold\cell \pard \widctlpar\intbl Bigger numbers\cell \pard \widctlpar\intbl Lower numbers\cell \pard \widctlpar\intbl \row \pard \widctlpar\intbl FolderFileCountThreshold\cell \pard \widctlpar\intbl Bigger numbers\cell \pard 
+\widctlpar\intbl Lower numbers\cell \pard \widctlpar\intbl \row \pard \widctlpar\intbl FolderSizeThreshold\cell \pard \widctlpar\intbl Bigger numbers\cell \pard \widctlpar\intbl Lower numbers\cell \pard \widctlpar\intbl \row \pard \widctlpar\intbl 
+MaxCabinetSize\cell \pard \widctlpar\intbl Bigger numbers\cell \pard \widctlpar\intbl Lower numbers\cell \pard \widctlpar\intbl \row \pard \widctlpar\intbl .New Folder\cell \pard \widctlpar\intbl Don\rquote t use\cell \pard \widctlpar\intbl Use often
+\cell \pard \widctlpar\intbl \row \trowd \trgaph108\trleft630 \clbrdrb\brdrs\brdrw30\brdrcf15 \cellx3216\clbrdrb\brdrs\brdrw30\brdrcf15 \cellx6210\clbrdrb\brdrs\brdrw30\brdrcf15 \cellx9468 \pard \widctlpar\intbl .New Cabinet\cell \pard \widctlpar\intbl 
+Don\rquote t use\cell \pard \widctlpar\intbl Use often\cell \pard \widctlpar\intbl \row \pard \widctlpar 
+\par \pard \widctlpar The MakeCAB defaults are configured for a floppy disk layout, with the assumption that the most common scenario is a full setup that will extract most of the files, so these are the settings:
+\par \pard \widctlpar 
+\par \trowd \trgaph108\trleft630 \clbrdrt\brdrs\brdrw30\brdrcf15 \clbrdrb\brdrs\brdrw15\brdrcf15 \cellx3216\clbrdrt\brdrs\brdrw30\brdrcf15 \clbrdrb\brdrs\brdrw15\brdrcf15 \cellx6210 \pard \widctlpar\intbl Variable/Directive\cell \pard \widctlpar\intbl Value
+\cell \pard \widctlpar\intbl \row \trowd \trgaph108\trleft630 \cellx3216\cellx6210 \pard \widctlpar\intbl \cell \pard \widctlpar\intbl \cell \pard \widctlpar\intbl \row \pard \widctlpar\intbl CabinetFileCountThreshold\cell \pard \widctlpar\intbl Unlimited
+\cell \pard \widctlpar\intbl \row \pard \widctlpar\intbl FolderFileCountThreshold\cell \pard \widctlpar\intbl Unlimited\cell \pard \widctlpar\intbl \row \pard \widctlpar\intbl FolderSizeThreshold\cell \pard \widctlpar\intbl Same as MaxCabinetSize\cell 
+\pard \widctlpar\intbl \row \trowd \trgaph108\trleft630 \cellx3216\cellx6210 \pard \widctlpar\intbl MaxCabinetSize\cell \pard \widctlpar\intbl Same as MaxDiskSize\cell \pard \widctlpar\intbl \row \pard \widctlpar 
+\par \pard \widctlpar For the MSDN source archive (>200Mb of sample source code, >30,000 files) that ships on a CD-ROM, the following values might be a reasonable tradeoff between compression and access time:
+\par \pard \widctlpar 
+\par \trowd \trgaph108\trleft630 \clbrdrt\brdrs\brdrw30\brdrcf15 \clbrdrb\brdrs\brdrw15\brdrcf15 \cellx3216\clbrdrt\brdrs\brdrw30\brdrcf15 \clbrdrb\brdrs\brdrw15\brdrcf15 \cellx9450 \pard \widctlpar\intbl Variable/Directive\cell \pard \widctlpar\intbl Value
+\cell \pard \widctlpar\intbl \row \trowd \trgaph108\trleft630 \cellx3216\cellx9450 \pard \widctlpar\intbl \cell \pard \widctlpar\intbl \cell \pard \widctlpar\intbl \row \pard \widctlpar\intbl CabinetFileCountThreshold\cell \pard \widctlpar\intbl 
+2000 (Since we have to call FDICopy() on a cabinet and walk through all the FILE headers, we want this small enough so that isn\rquote t too much overhead, but large enough to keep the number of cabinets down.)\cell \pard \widctlpar\intbl \row \pard 
+\widctlpar\intbl FolderFileCountThreshold\cell \pard \widctlpar\intbl Unlimited (Let FolderSizeThreshold control folder size!)\cell \pard \widctlpar\intbl \row \pard \widctlpar\intbl FolderSizeThreshold\cell \pard \widctlpar\intbl 
+200K (Represents 600K-800K of source (assuming 3:1 or 4:1 compression ratio)\cell \pard \widctlpar\intbl \row \trowd \trgaph108\trleft630 \cellx3216\cellx9450 \pard \widctlpar\intbl MaxCabinetSize\cell \pard \widctlpar\intbl 
+Unlimited (Let CabinetFileCountThreshold control the cabinet size!)\cell \pard \widctlpar\intbl \row \pard \widctlpar 
+\par \pard \widctlpar Of course, if you are tight for space on your CD-ROM, you\rquote ll probably boost the {\b FolderSizeThreshold} and {\b CompressionMemory} settings!
+\par \pard\plain \s2\sb120\widctlpar \b\f5 {\*\bkmkstart _Toc362068477}{\field\flddirty{\*\fldinst autonumlgl }{\fldrslt }}\tab Piecemeal DDFs for Localization and Different Disk Sizes{\*\bkmkend _Toc362068477}
+\par \pard\plain \widctlpar \f4\fs20 MAKECAB.EXE was designed to minimize the amount of duplicate information need
+ed to generate product layouts for different languages and disk sizes.  A key feature is the ability to specify more than one DDF on the MAKECAB.EXE command line.  For example:
+\par \pard \widctlpar 
+\par \trowd \trgaph108\trleft-108 \cellx1158\cellx9468 \pard \widctlpar\intbl acme.ddf\cell \pard \widctlpar\intbl Some standard  definitions to control the format of the output INF file\cell \pard \widctlpar\intbl \row \trowd \trgaph108\trleft-108 \cellx1158
+\cellx9468 \pard \widctlpar\intbl lang.ddf\cell \pard \widctlpar\intbl Sets language-specific settings (SourceDir, for example)\cell \pard \widctlpar\intbl \row \pard \widctlpar\intbl disk.ddf\cell \pard \widctlpar\intbl 
+Sets the diskette sizes (CDROM, 1.2M, 1.44M, etc.)\cell \pard \widctlpar\intbl \row \trowd \trgaph108\trleft-108 \cellx1158\cellx9468 \pard \widctlpar\intbl product.ddf\cell \pard \widctlpar\intbl 
+Lists all the files in the product, and uses variables set in the previous DDFs to customize its operation\cell \pard \widctlpar\intbl \row \pard \widctlpar 
+\par The following command line would be used to process this set of DDFs:
+\par 
+\par \pard\plain \s17\widctlpar\tx360\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960 \f11\fs18 \tab MakeCAB /f acme.ddf /f lang.ddf /f disk.ddf /f product.ddf
+\par \pard\plain \s1\sb240\widctlpar\box\brdrs\brdrw15\brsp20 \b\f5 {\*\bkmkstart _Toc362068478}{\field\flddirty{\*\fldinst autonumlgl }{\fldrslt }}\tab MakeCAB Concepts{\*\bkmkend _Toc289487603}{\*\bkmkend _Toc291583687}{\*\bkmkend _Toc291583738}
+{\*\bkmkend _Toc292524241}{\*\bkmkend _Toc362068478}
+\par \pard\plain \widctlpar \f4\fs20 The key feature of MakeCAB is that it takes a set of files and produces a {\i disk layout }
+while at the same time attempting to minimize the number of disks required.  In order to understand how MakeCAB does this, three terms need to be defined: {\i cabinet}, {\i folder}, and {\i file}.  MakeCAB takes all of the {\i files}
+ in the product or application being compressed, lays the bytes down as one continuous byte stream, compresses the entire stream, chopping it up into {\i folders} as appropriate, and then fills up one or more {\i cabinets }with the {\i folders}.
+\par \pard \widctlpar 
+\par \pard \fi-1080\li1080\widctlpar\tx1080 {\i Cabinet\tab }A normal file that contains pieces of one or more files, usually compressed.  Also known as a \ldblquote CAB file\rdblquote .
+\par \pard \fi-1080\li1080\widctlpar\tx1080 {\i 
+\par }\pard \fi-1080\li1080\widctlpar\tx1080 {\i Folder\tab }
+A decompression boundary.  Large folders enable higher compression, because the compressor can refer back to more data in finding patterns.  However, to retrieve a file at the end of a folder, the entire folder m
+ust be decompressed.  So there is a tradeoff between achieved compression and the quickness of random access to individual files.
+\par \pard \fi-1080\li1080\widctlpar\tx1080 
+\par {\i File\tab }A file to be placed in the layout..
+\par \pard\plain \s2\sb120\widctlpar \b\f5 {\*\bkmkstart _Toc292524242}{\*\bkmkstart _Toc362068479}{\field\flddirty{\*\fldinst autonumlgl }{\fldrslt }}\tab Decoupling File Layout and INF Layout{\*\bkmkend _Toc292524242}{\*\bkmkend _Toc362068479}
+\par \pard\plain \widctlpar \f4\fs20 MakeCAB has two \ldblquote modes\rdblquote  for generating the INF file; {\i unified mode} and {\i relational mode}.  In {\i unified mode}
+, the INF file is generated as file copy commands are processed in the DDF file.  This is the default, and minimizes the amount of effort needed to construct a DDF file.  However, this 
+forces the INF file to list the files in the layout in exactly the same order as they are placed on disks/cabinets.
+\par \pard \widctlpar 
+\par {\b Example of a Unified DDF:
+\par }
+\par \pard\plain \s17\widctlpar\tx360\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960 \f11\fs18     ;** Set up INF formats before we do the disk layout, because MakeCAB
+\par     ;   writes Disk and Cabinet information out as it is generated.
+\par     .OPTION EXPLICIT                      ; Generate errors for undefined variables
+\par 
+\par     .Set InfDiskHeader="[disk list]"
+\par     .Set InfDiskHeader1=";<disk number>,<disk label>"
+\par     .Set InfDiskLineFormat="*disk#*,*label*"
+\par 
+\par     .Set InfCabinetHeader="[cabinet list]"
+\par     .Set InfCabinetHeader1=";<cabinet number>,<disk number>,<cabinet file name>"
+\par     .Set InfCabinetLineFormat="*cab#*,*disk#*,*cabfile*"
+\par 
+\par     .Set InfFileHeader=";*** File List ***"
+\par     .Set InfFileHeader1=";<disk number>,<cabinet number>,<filename>,<size>"
+\par     .Set InfFileHeader2=";Note: File is not in a cabinet if cab# is 0"
+\par     .Set InfFileHeader3=""
+\par     .Set InfFileLineFormat="*disk#*,*cab#*,*file*,*date*,*size*"
+\par 
+\par 
+\par     .set GenerateInf=ON        ; Unified mode - create the INF file as we go
+\par 
+\par     ;** Setup files.  These don't need to be in the INF file, so we put
+\par     ;   /inf=NO on these lines so that MakeCAB won't generate an error when
+\par     ;   it finds that these files are not mentioned in the INF portion of
+\par     ;   the DDF.
+\par 
+\par     .set Compress=OFF
+\par     .set Cabinet=OFF
+\par     setup.exe /inf=NO           ; This file doesn't show up in INF
+\par     setup.inf /inf=NO           ; This file doesn't show up in INF
+\par 
+\par     ;** Files in cabinets
+\par     .set Compress=ON
+\par     .set Cabinet=ON
+\par 
+\par     ;* Put all bitmaps together to help compression
+\par     a1.bmp                      ; Bitmap for client1.exe
+\par     b1.bmp                      ; Bitmap for client1.exe
+\par     c1.bmp                      ; Bitmap for client1.exe
+\par     d1.bmp                      ; Bitmap for client1.exe
+\par     a2.bmp                      ; Bitmap for client1.exe
+\par     b2.bmp                      ; Bitmap for client2.exe
+\par     c2.bmp                      ; Bitmap for client2.exe
+\par     d2.bmp                      ; Bitmap for client2.exe
+\par     shared.dll  /date=10/12/93  ; File needed by client1.exe and client2.exe
+\par     client1.exe                 ; needs shared.dll
+\par     client2.exe                 ; needs shared.dll
+\par 
+\par     ;*** The End
+\par \pard\plain \widctlpar \f4\fs20 
+\par 
+\par \pard \widctlpar In {\i relational mode} the DDF has {\i file reference}
+ lines to specify the exact placement of file information lines, including the ability to list the same file multiple times.  This feature is important for INF structures which use section headers (e.g. \ldblquote [clipart]\rdblquote , \ldblquote 
+[screen savers]\rdblquote ) to identify sets of files for parti
+cular functionality, and for which the same file may need to be included in more than one section.  For example, a product may have several optional features, all of which require a DLL file named \ldblquote shared.dll\rdblquote .  Rather than having 
+\ldblquote shared.dll\rdblquote  stored multiple times (once for each section which uses the file), a waste of disk space, a single copy of the file can be stored, and then referenced by all of the sections which require it.
+\par \pard \widctlpar 
+\par \pard \widctlpar A relational mode DDF is similar to a unified mode DDF, with the exception that a \ldblquote .set GenerateInf=OFF\rdblquote  line must be inserted before the product\rquote 
+s files are listed (as shown below).  Once all of the files have been listed, the INF file generating portion of the DDF begins, and a \ldblquote .set GenerateInf=ON\rdblquote  line must be inserted, followed by the section definitions.
+\par \pard \widctlpar 
+\par {\b Example of a Relational DDF:
+\par }
+\par \pard\plain \s17\widctlpar\tx360\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960 \f11\fs18     ;** Set up INF formats before we do the disk layout, because MakeCAB
+\par     ;   writes Disk and Cabinet information out as it is generated.
+\par     .OPTION EXPLICIT                      ; Generate errors for undefined variables
+\par 
+\par     .Set InfDiskHeader="[disk list]"
+\par     .Set InfDiskHeader1=";<disk number>,<disk label>"
+\par     .Set InfDiskLineFormat="*disk#*,*label*"
+\par 
+\par     .Set InfCabinetHeader="[cabinet list]"
+\par     .Set InfCabinetHeader1=";<cabinet number>,<disk number>,<cabinet file name>"
+\par     .Set InfCabinetLineFormat="*cab#*,*disk#*,*cabfile*"
+\par 
+\par     .Set InfFileHeader=";*** File List ***"
+\par     .Set InfFileHeader1=";<disk number>,<cabinet number>,<filename>,<size>"
+\par     .Set InfFileHeader2=";Note: File is not in a cabinet if cab# is 0"
+\par     .Set InfFileHeader3=""
+\par     .Set InfFileLineFormat="*disk#*,*cab#*,*file*,*date*,*size*"
+\par 
+\par 
+\par ;
+\par ; *** Here is where we list all the files
+\par ;
+\par     .set GenerateInf=OFF        ; RELATIONAL MODE - Do disk layout first
+\par 
+\par     ;** Setup files.  These don't need to be in the INF file, so we put
+\par     ;   /inf=NO on these lines so that MakeCAB won't generate an error when
+\par     ;   it finds that these files are not mentioned in the INF portion of
+\par     ;   the DDF.
+\par 
+\par     .set Compress=OFF
+\par     .set Cabinet=OFF
+\par     setup.exe /inf=NO           ; This file doesn't show up in INF
+\par     setup.inf /inf=NO           ; This file doesn't show up in INF
+\par 
+\par     ;** Files in cabinets
+\par     ;
+\par     .set Compress=ON
+\par     .set Cabinet=ON
+\par 
+\par     ;* Put all bitmaps together to help compression
+\par     a1.bmp                      ; Bitmap for client1.exe
+\par     b1.bmp                      ; Bitmap for client1.exe
+\par     c1.bmp                      ; Bitmap for client1.exe
+\par     d1.bmp                      ; Bitmap for client1.exe
+\par     a2.bmp                      ; Bitmap for client1.exe
+\par     b2.bmp                      ; Bitmap for client2.exe
+\par     c2.bmp                      ; Bitmap for client2.exe
+\par     d2.bmp                      ; Bitmap for client2.exe
+\par     shared.dll  /date=10/12/93  ; File needed by client1.exe and client2.exe
+\par     client1.exe                 ; needs shared.dll
+\par     client2.exe                 ; needs shared.dll
+\par 
+\par 
+\par ;
+\par ; *** Now we\rquote re generating the INF file
+\par ;
+\par     .set GenerateInf=ON         
+\par 
+\par     ;** Feature One files
+\par     .InfBegin File
+\par     [feature One]
+\par     ;Files for feature one
+\par     .InfEnd
+\par     client1.exe
+\par     shared.dll  /date=04/01/94  ; Override date
+\par     a1.bmp
+\par     b1.bmp
+\par     c1.bmp
+\par     d1.bmp
+\par 
+\par     ;** Feature Two files
+\par     .InfBegin File
+\par 
+\par     [feature Two]
+\par     ;Files for feature Two
+\par     ;Note that shared.dll is also required by Feature One
+\par     .InfEnd
+\par     client1.exe
+\par     shared.dll
+\par     a2.bmp
+\par     b2.bmp
+\par     c2.bmp
+\par     d2.bmp
+\par 
+\par     ;*** The End
+\par \pard\plain \widctlpar \f4\fs20 
+\par {\b The generated INF file would look something like this:
+\par }\pard\plain \s17\widctlpar\tx360\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960 \f11\fs18 \tab [disk list]
+\par     ;<disk number>,<disk label>
+\par     1,"Disk 1"
+\par 
+\par     [cabinet list]
+\par     ;<cabinet number>,<disk number>,<cabinet file name>
+\par     1,1,cabinet.1
+\par 
+\par     ;*** File List ***
+\par     ;<disk number>,<cabinet number>,<filename>,<size>
+\par     ;Note: File is not in a cabinet if cab# is 0
+\par 
+\par     [feature One]
+\par     ;Files for feature one
+\par     1,1,client1.exe,12/12/93,1234
+\par     1,1,shared.dll,04/01/94,1234
+\par     1,1,a1.bmp,12/12/93,573
+\par     1,1,b1.bmp,12/12/93,573
+\par     1,1,c1.bmp,12/12/93,573
+\par     1,1,d1.bmp,12/12/93,573
+\par 
+\par     [feature Two]
+\par     ;Files for feature Two
+\par     ;Note that shared.dll is also required by Feature One
+\par     1,1,client1.exe,12/12/93,1234
+\par     1,1,shared.dll,10/12/93,1234
+\par     1,1,a2.bmp,12/12/93,643
+\par     1,1,b2.bmp,12/12/93,643
+\par     1,1,c2.bmp,12/12/93,643
+\par     1,1,d2.bmp,12/12/93,643
+\par 
+\par \pard\plain \widctlpar \f4\fs20 Notes:
+\par \pard\plain \s21\fi-360\li720\widctlpar\tx360 \f4\fs20 (1)\tab In "relational" mode, only the last setting of a particular {\b Inf}Xxx default parameter variable (both standard parameters like {\b InfDate}, {\b InfTime}
+, etc. and custom parameters) in the layout portion (i.e. the first part) of the DDF is respected.
+\par \pard \s21\fi-360\li720\widctlpar\tx360 {\b \tab Example:
+\par }\pard \s21\fi-360\li720\widctlpar\tx360 \tab If you did ".set {\b InfDate}=12/05/92" at the start of the layout portion, and then did ".set {\b InfDate}
+=01/01/94" in the middle of the layout portion, the latter value would be used for the entire INF file.
+\par \pard\plain \widctlpar \f4\fs20 
+\par \pard\plain \s21\fi-360\li720\widctlpar\tx360 \f4\fs20 (2) Any parameters on a reference line will override parameters on the corresponding file copy line.
+\par {\b \tab Example:
+\par }\pard\plain \s17\widctlpar\tx360\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960 \f11\fs18 \tab \tab ;* layout portion
+\par \tab \tab bar /x=1
+\par \tab \tab ...
+\par \tab \tab ;* INF portion
+\par \tab \tab bar /x=2            ; INF file will have value 2
+\par \pard\plain \widctlpar \f4\fs20 
+\par \pard\plain \s21\fi-360\li720\widctlpar\tx360 \f4\fs20 (3)\tab In "relational" mode, each file copy command in the layout portion of the DDF must b
+e referenced at least once in a reference command in the INF portion of the DDF.  Any files that are not referenced will cause an error during pass 1.  The {\b /inf}={\b no}
+ parameter must be specified on any file copy commands for files which are going to be omitted from the INF file (such as SETUP.EXE and SETUP.INF).
+\par \pard \s21\fi-360\li720\widctlpar\tx360 
+\par \pard \s21\fi-360\li720\widctlpar\tx360 (4)\tab In "relational" mode, {\b UniqueFiles} must be {\b ON}, because the destination file name is used in the INF portion of the DDF to refer back to file information.
+\par \pard\plain \s17\widctlpar\tx360\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960 \f11\fs18 
+\par \pard\plain \s1\sb240\widctlpar\box\brdrs\brdrw15\brsp20 \b\f5 {\*\bkmkstart _Toc289487604}{\*\bkmkstart _Toc291583688}{\*\bkmkstart _Toc291583739}{\*\bkmkstart _Toc292524243}{\*\bkmkstart _Toc362068480}{\field\flddirty{\*\fldinst autonumlgl }{\fldrslt }}
+\tab MAKECAB.EXE{\*\bkmkend _Toc289487604}{\*\bkmkend _Toc291583688}{\*\bkmkend _Toc291583739}{\*\bkmkend _Toc292524243}{\*\bkmkend _Toc362068480}
+\par \pard\plain \widctlpar \f4\fs20 MAKECAB.EXE is designed to produce the final distribution files and cabinets for an entire product in a single run. The most common way to use MAKECAB.EXE is to supply a {\i directives file }
+that controls how files are compressed and stored into one or more cabinets.  
+\par \pard\plain \s2\sb120\widctlpar \b\f5 {\*\bkmkstart _Toc289487605}{\*\bkmkstart _Toc291583740}{\*\bkmkstart _Toc292524244}{\*\bkmkstart _Toc362068481}{\field\flddirty{\*\fldinst autonumlgl }{\fldrslt }}\tab MAKECAB.EXE Syntax{\*\bkmkend _Toc289487605}
+{\*\bkmkend _Toc291583740}{\*\bkmkend _Toc292524244}{\*\bkmkend _Toc362068481}
+\par \pard\plain \widctlpar \f4\fs20 There two primary forms of MAKECAB.EXE usage.  The first is used for compressing a single file, while the second is used for compressing multiple files.
+\par \pard \widctlpar 
+\par \pard\plain \s18\li360\widctlpar\tx1440 \f4\fs20 {\b\f11 MAKECAB\tab }{\f11 [}{\b\f11 /V}{\f11 n] [}{\b\f11 /D }{\f11 variable=value ...] [}{\b\f11 /L}{\f11  directory] source [destination]
+\par }{\b\f11 MAKECAB}{\f11 \tab [}{\b\f11 /V}{\f11 n] [}{\b\f11 /D }{\f11 variable=value ] }{\b\f11 /F}{\f11  directives_file [...]
+\par \tab 
+\par }\pard\plain \widctlpar \f4\fs20 the parameters are described below
+\par \pard\plain \s18\li360\widctlpar \f4\fs20 
+\par \trowd \trgaph108\trleft252\trkeep \clbrdrt\brdrs\brdrw30 \clbrdrl\brdrs\brdrw30 \clbrdrb\brdrs\brdrw30 \clbrdrr\brdrs\brdrw15 \cellx1923\clbrdrt\brdrs\brdrw30 \clbrdrl\brdrs\brdrw15 \clbrdrb\brdrs\brdrw30 \clbrdrr\brdrs\brdrw30 \cellx7333 \pard\plain 
+\widctlpar\intbl \f4\fs20 {\b Parameter}\cell \pard \widctlpar\intbl {\b Description}\cell \pard \widctlpar\intbl \row \trowd \trgaph108\trleft252\trkeep \clbrdrl\brdrs\brdrw30 \clbrdrb\brdrs\brdrw15 \clbrdrr\brdrs\brdrw15 \cellx1923\clbrdrl
+\brdrs\brdrw15 \clbrdrb\brdrs\brdrw15 \clbrdrr\brdrs\brdrw30 \cellx7333 \pard \widctlpar\intbl {\i source}\cell \pard \widctlpar\intbl A file to be compressed.\cell \pard \widctlpar\intbl \row \trowd \trgaph108\trleft252\trkeep \clbrdrt\brdrs\brdrw15 
+\clbrdrl\brdrs\brdrw30 \clbrdrb\brdrs\brdrw15 \clbrdrr\brdrs\brdrw15 \cellx1923\clbrdrt\brdrs\brdrw15 \clbrdrl\brdrs\brdrw15 \clbrdrb\brdrs\brdrw15 \clbrdrr\brdrs\brdrw30 \cellx7333 \pard \widctlpar\intbl {\i destination}\cell \pard \widctlpar\intbl 
+The name of the file to receive the compressed version of the source file.  If not supplied, a default destination name is constructed from the source file name according to the rules defined by the {\b CompressedFileExtensionChar} variable on page 
+{\field{\*\fldinst  PAGEREF CompressedFileExtensionChar  \\* MERGEFORMAT }{\fldrslt {\lang1024 23}}}.  You can use /D CompressedFileExtensionChar=c on the command line to change the appended character.\cell \pard \widctlpar\intbl \row \trowd 
+\trgaph108\trleft252\trkeep \clbrdrt\brdrs\brdrw15 \clbrdrl\brdrs\brdrw30 \clbrdrb\brdrs\brdrw30 \clbrdrr\brdrs\brdrw15 \cellx1923\clbrdrt\brdrs\brdrw15 \clbrdrl\brdrs\brdrw15 \clbrdrb\brdrs\brdrw30 \clbrdrr\brdrs\brdrw30 \cellx7333 \pard 
+\widctlpar\intbl {\b /D }{\i variable}={\i value}\cell \pard \widctlpar\intbl Set {\i variable} to be equal to {\i value}.  Equivalent to using the {\b .Set }
+command in the directives file.  For example, a single directive file could be used to produce layouts for different disk sizes by running MakeCAB once with different values of {\b MaxDiskSize}
+ defined: /D MaxDiskSize=1.44M.  Both standard MakeCAB variables and custom variables may be defined in this way.  If {\b .Option Explicit }is specified in a directive file, then {\i variable }must be defined with a {\b .Define }
+command in a directive file.\cell \pard \widctlpar\intbl \row \pard \widctlpar\intbl {\b /L }{\i directory}{\b \cell }\pard \widctlpar\intbl Specifies an output directory where the compressed file will be placed (most useful when {\i destination}
+ is not supplied).\cell \pard \widctlpar\intbl \row \pard \widctlpar\intbl {\b /F} {\i directives}_file\cell \pard \widctlpar\intbl 
+A file containing commands for MAKECAB.EXE to execute.  If more than one directive file is specified (/F file1 /F file2 ...), they are processed in the order (left to right) specified on the command line.  Variable settings, open cabinets, open disks, etc
+. are all carried forward from one directive 
+file to the next (just as if all of the files had been concatenated together and presented as a single file to MakeCAB).  For example, this is intended to simplify the work for a product shipped in multiple languages.  There would be a short, language-spe
+cific directives file, and then a single, large master directives file that covers the bulk of the product.\cell \pard \widctlpar\intbl \row \trowd \trgaph108\trleft252\trkeep \clbrdrt\brdrs\brdrw15 \clbrdrl\brdrs\brdrw30 \clbrdrb\brdrs\brdrw30 \clbrdrr
+\brdrs\brdrw15 \cellx1923\clbrdrt\brdrs\brdrw15 \clbrdrl\brdrs\brdrw15 \clbrdrb\brdrs\brdrw30 \clbrdrr\brdrs\brdrw30 \cellx7333 \pard \widctlpar\intbl {\b /V}n{\b \cell }\pard \widctlpar\intbl Set debugging verbosity level (0=none,...,3=full)\cell \pard 
+\widctlpar\intbl \row \pard\plain \s2\sb120\widctlpar \b\f5 {\*\bkmkstart _Toc289487606}{\*\bkmkstart _Toc291583741}{\*\bkmkstart _Toc292524245}{\*\bkmkstart _Toc362068482}{\field\flddirty{\*\fldinst autonumlgl }{\fldrslt }}\tab 
+MAKECAB.EXE Directive File Syntax{\*\bkmkend _Toc289487606}{\*\bkmkend _Toc291583741}{\*\bkmkend _Toc292524245}{\*\bkmkend _Toc362068482}
+\par \pard\plain \widctlpar \f4\fs20 Before diving into the details of the syntax of the directives file, provided here is an example of what the Excel directives file might look like:
+\par \pard \widctlpar 
+\par \pard\plain \s17\li720\widctlpar\tx360\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960 \f11\fs18 ;*** EXCEL MAKECAB Directive file
+\par ;
+\par .Set DiskLabel1=Setup\tab \tab \tab \tab \tab ; Label of first disk
+\par .Set DiskLabel2=Program      \tab \tab \tab ; Label of second disk
+\par .Set DiskLabel3="Program Continued"\tab ; Label of third disk
+\par .Set CabinetNameTemplate=EXCEL*.CAB \tab ; EXCEL1.CAB, EXCEL2.CAB, etc.
+\par .Set MaxDiskSize=1.44M\tab        \tab \tab ; 3.5" disks
+\par 
+\par ;** Setup.exe and setup.inf are placed uncompressed in the first disk
+\par .Set Cabinet=off
+\par .Set Compress=off
+\par bin\\setup.exe\tab \tab        \tab \tab \tab ; Just copy SETUP.EXE as is
+\par bin\\setup.inf\tab \tab        \tab \tab \tab ; Just copy SETUP.INF as is
+\par ;** The rest of the files are stored, compressed, in cabinet files
+\par .Set Cabinet=on
+\par .Set Compress=on
+\par bin\\excel.exe\tab \tab        \tab \tab \tab ; Big EXE, will span cabinets
+\par bin\\excel.hlp
+\par bin\\olecli.dll
+\par bin\\olesrv.dll
+\par ...
+\par \pard\plain \widctlpar \f4\fs20 
+\par Here are some additional notes on the general syntax and behavior of MakeCAB Directive Files
+\par {\pntext\pard\plain\fs20 1.\tab}\pard \fi-360\li360\widctlpar{\*\pn \pnlvlbody\pndec\pnstart1\pnindent360\pnhang{\pntxta .}}MakeCAB will place files on disks (and in cabinets) in the order they are specified in the directive file(s).
+\par {\pntext\pard\plain\fs20 2.\tab}\pard \fi-360\li360\widctlpar{\*\pn \pnlvlbody\pndec\pnstart1\pnindent360\pnhang{\pntxta .}}When ever a filename or directory is called for, you may supply either a relative (e.g., foo\\bar, ..\\
+foo) or an absolute (e.g., c:\\banana, x:\\slm\\src\\bin) path.
+\par {\pntext\pard\plain\fs20 3.\tab}\pard \fi-360\li360\widctlpar{\*\pn \pnlvlbody\pndec\pnstart1\pnindent360\pnhang{\pntxta .}}Optimal compression is achieved when files with similar types of data are grouped together.
+\par {\pntext\pard\plain\fs20 4.\tab}\pard \fi-360\li360\widctlpar{\*\pn \pnlvlbody\pndec\pnstart1\pnindent360\pnhang{\pntxta .}}MakeCAB is controlled in large part by setting {\i variables}
+.  MakeCAB has many predefined variables, all of which have default values chosen to represent the most common case.  You can modify these variables, and you can define your own variables as well.
+\par {\pntext\pard\plain\fs20 5.\tab}
+The value of a variable is retrieved by enclosing the variable name in percent (%) signs.  If the variable is not defined, an error is generated.  If you want an explicit percent sign, use two adjacent percent signs (%%).  MakeCAB will collapse this to a 
+single percent sign (%).
+\par {\pntext\pard\plain\fs20 6.\tab}\pard \fi-360\li360\widctlpar{\*\pn \pnlvlbody\pndec\pnstart1\pnindent360\pnhang{\pntxta .}}Variable substitution is only done once.  For example, .Set A=One [A is \ldblquote One\rdblquote ]; .Set B=%%A%% (B is \ldblquote 
+%A%\rdblquote ); .Set C=%B% (C is \ldblquote %A%\rdblquote , {\b not }\ldblquote One\rdblquote ).
+\par {\pntext\pard\plain\fs20 7.\tab}\pard \fi-360\li360\widctlpar{\*\pn \pnlvlbody\pndec\pnstart1\pnindent360\pnhang{\pntxta .}}Variable substitution is done before any other line parsing, so variables can be used anywhere.
+\par {\pntext\pard\plain\fs20 8.\tab}\pard \fi-360\li360\widctlpar{\*\pn \pnlvlbody\pndec\pnstart1\pnindent360\pnhang{\pntxta .}}Variables values may include blanks.  Quote (\ldblquote ) or apostrophe(\lquote 
+) marks may be used in .Set statements to capture blanks.  If you want an explicit quote(\ldblquote ) or apostrophe(\lquote ), you can intermix these two marks (use one for bracketing so that you may specify t
+he other), or, as with the percent sign above, you can specify two adjacent marks (\ldblquote \rdblquote ) and MakeCAB will collapse this to a single mark(\ldblquote ).
+\par {\pntext\pard\plain\fs20 9.\tab}\pard \fi-360\li360\widctlpar{\*\pn \pnlvlbody\pndec\pnstart1\pnindent360\pnhang{\pntxta .}}All sizes are specified in bytes.
+\par {\pntext\pard\plain\fs20 10.\tab}\pard \fi-360\li360\widctlpar{\*\pn \pnlvlbody\pndec\pnstart1\pnindent360\pnhang{\pntxta .}}There are a few special values for common disks sizes (CDROM, 1.44M, 1.2M,
+ 720K, 360K) that can be used for any of the predefined MakeCAB variables that describe the attributes of a disk ({\b MaxDiskSize}, {\b ClusterSize}, {\b MaxDiskFileCount}
+).  MakeCAB has built-in knowledge about the correct values of these attributes for these common disk sizes.
+\par {\pntext\pard\plain\fs20 11.\tab}\pard \fi-360\li360\widctlpar{\*\pn \pnlvlbody\pndec\pnstart1\pnindent360\pnhang{\pntxta .}}
+MakeCAB does not check for 8.3 filename limitations directly, but rather depends upon the underlying operating system to do filename validity checking (this will allow MakeCAB to work with long file names.)
+\par {\pntext\pard\plain\fs20 12.\tab}\pard \fi-360\li360\widctlpar{\*\pn \pnlvlbody\pndec\pnstart1\pnindent360\pnhang{\pntxta .}}MakeCAB makes two passes of the directiv
+e file(s).  On the first pass, MakeCAB checks for syntax errors and makes sure that all of the files can be found.  This is very fast, and reduces the chance that the second pass, where the actual data compression occurs, will have any problems.  This is 
+important because compression is very time consuming, so MakeCAB wants to avoid, for example, spending an hour compressing files only to find that a file toward the end of the directive file(s) cannot be found.
+\par \pard\plain \s3\sb120\widctlpar \b\f4 {\*\bkmkstart _Toc289487607}{\*\bkmkstart _Toc362068483}{\field\flddirty{\*\fldinst autonumlgl }{\fldrslt }}\tab Command Summary{\*\bkmkend _Toc289487607}{\*\bkmkend _Toc362068483}
+\par \pard\plain \widctlpar \f4\fs20 The following table provides a summary of the MakeCAB Directive File syntax.  Directives begin with a period (\ldblquote .\rdblquote 
+), followed by a command name, and possibly by blank delimited arguments.  Note that a File Copy command is distinguished from a File Reference command by the setting of the {\b GenerateInf} variable.
+\par \trowd \trgaph108\trleft-108\trkeep \clbrdrb\brdrs\brdrw15 \cellx4263\clbrdrb\brdrs\brdrw15 \cellx9279 \pard \widctlpar\intbl Syntax\cell \pard \widctlpar\intbl Description\cell \pard \widctlpar\intbl \row \trowd \trgaph108\trleft-108\trkeep \cellx4263
+\cellx9279 \pard \widctlpar\intbl {\b ;}\cell \pard \widctlpar\intbl Comment (anywhere on a DDF line)\cell \pard \widctlpar\intbl \row \pard \widctlpar\intbl src [dest] [{\b /inf}={\b yes}|{\b no}] [{\b /unique}={\b yes}|{\b no}] [/x=y ...]{\b \cell 
+}\pard \widctlpar\intbl File Copy command\cell \pard \widctlpar\intbl \row \pard \widctlpar\intbl dest  [/x=y ...]{\b \cell }\pard \widctlpar\intbl File Reference command\cell \pard \widctlpar\intbl \row \pard \widctlpar\intbl {\b .Define }
+variable=[value]{\b \cell }\pard \widctlpar\intbl Define {\i variable} to be equal to {\i value }(see {\b .Option Explicit})\cell \pard \widctlpar\intbl \row \pard \widctlpar\intbl {\b .Delete }variable{\b \cell }\pard \widctlpar\intbl 
+Delete a variable definition\cell \pard \widctlpar\intbl \row \pard \widctlpar\intbl {\b .Dump\cell }\pard \widctlpar\intbl Display all variable definitions\cell \pard \widctlpar\intbl \row \pard \widctlpar\intbl {\b .InfBegin} {\b Disk }| {\b 
+Cabinet | Folder\cell }\pard \widctlpar\intbl Copy lines to specified INF file section\cell \pard \widctlpar\intbl \row \pard \widctlpar\intbl {\b .InfEnd\cell }\pard \widctlpar\intbl End an {\b .InfBegin} section\cell \pard \widctlpar\intbl \row \pard 
+\widctlpar\intbl {\b .InfWrite} string{\b \cell }\pard \widctlpar\intbl Write \ldblquote string\rdblquote  to file section of INF file\cell \pard \widctlpar\intbl \row \pard \widctlpar\intbl {\b .InfWriteCabinet} string{\b \cell }\pard \widctlpar\intbl 
+Write \ldblquote string\rdblquote  to cabinet section of INF file\cell \pard \widctlpar\intbl \row \pard \widctlpar\intbl {\b .InfWriteDisk} string{\b \cell }\pard \widctlpar\intbl Write \ldblquote string\rdblquote  to disk section of INF file\cell \pard 
+\widctlpar\intbl \row \pard \widctlpar\intbl {\b .New Disk }| {\b Cabinet | Folder\cell }\pard \widctlpar\intbl Start a new Disk, Cabinet, or Folder\cell \pard \widctlpar\intbl \row \pard \widctlpar\intbl {\b .Option Explicit\cell }\pard \widctlpar\intbl 
+Require {\b .Define} first time for user-defined variables\cell \pard \widctlpar\intbl \row \pard \widctlpar\intbl {\b .Set }variable{\b =}[value]{\b \cell }\pard \widctlpar\intbl Set {\i variable} to be equal to {\i value}\cell \pard \widctlpar\intbl 
+\row \pard \widctlpar\intbl %variable%\cell \pard \widctlpar\intbl Substitute value of {\i variable}\cell \pard \widctlpar\intbl \row \trowd \trgaph108\trleft-108\trkeep \cellx4263\cellx9279 \pard \widctlpar\intbl {\i <blank line>}\cell \pard 
+\widctlpar\intbl Blank lines are ignored\cell \pard \widctlpar\intbl \row \pard\plain \s3\sb120\widctlpar \b\f4 {\*\bkmkstart _Toc289487608}{\*\bkmkstart _Toc362068484}{\field\flddirty{\*\fldinst autonumlgl }{\fldrslt }}\tab Variable Summary
+{\*\bkmkend _Toc289487608}{\*\bkmkend _Toc362068484}
+\par \trowd \trgaph108\trleft-108\trkeep \clbrdrb\brdrs\brdrw15 \cellx3618\clbrdrb\brdrs\brdrw15 \cellx9246 \pard\plain \widctlpar\intbl \f4\fs20 Standard Variables\cell \pard \ri-18\widctlpar\intbl Description\cell \pard \widctlpar\intbl \row \trowd 
+\trgaph108\trleft-108\trkeep \cellx3618\cellx9246 \pard \widctlpar\intbl {\b Cabinet}={\b ON }|{\b  OFF}\cell \pard \ri-18\widctlpar\intbl Turns Cabinet Mode on or off\cell \pard \widctlpar\intbl \row \pard \widctlpar\intbl {\b CabinetFileCountThreshold}
+=count{\b \cell }\pard \ri-18\widctlpar\intbl Threshold count of files per Cabinet\cell \pard \widctlpar\intbl \row \pard \widctlpar\intbl {\b CabinetName}{\i n}=filename{\b \cell }\pard \ri-18\widctlpar\intbl Cabinet file name for cabinet number {\i n}
+\cell \pard \widctlpar\intbl \row \pard \widctlpar\intbl {\b CabinetNameTemplate}=template{\b \cell }\pard \ri-18\widctlpar\intbl Cabinet file name template; * is replaced by Cabinet number\cell \pard \widctlpar\intbl \row \pard \widctlpar\intbl {\b 
+ChecksumWidth}={\b 1} | {\b 2} | ... | {\b 8\cell }\pard \ri-18\widctlpar\intbl Max low-order hex digits displayed by INF {\b csum} parameter\cell \pard \widctlpar\intbl \row \pard \widctlpar\intbl {\b ClusterSize=}bytesPerCluster\cell \pard 
+\ri-18\widctlpar\intbl Cluster size on diskette (default is 512 bytes)\cell \pard \widctlpar\intbl \row \pard \widctlpar\intbl {\b Compress}={\b ON }|{\b  OFF\cell }\pard \ri-18\widctlpar\intbl Turns compression on or off\cell \pard \widctlpar\intbl \row 
+\pard \widctlpar\intbl {\b CompressedFileExtensionChar}=char{\b \cell }\pard \ri-18\widctlpar\intbl Last character of the file extension for compressed files\cell \pard \widctlpar\intbl \row \pard \widctlpar\intbl {\b \cell }\pard \ri-18\widctlpar\intbl 
+\cell \pard \widctlpar\intbl \row \pard \widctlpar\intbl {\b \cell }\pard \ri-18\widctlpar\intbl \cell \pard \widctlpar\intbl \row \pard \widctlpar\intbl {\b CompressionType}={\b MSZIP\cell }\pard \ri-18\widctlpar\intbl Compression engine\cell \pard 
+\widctlpar\intbl \row \pard \widctlpar\intbl {\b DestinationDir=}path{\b \cell }\pard \ri-18\widctlpar\intbl Default path for destination files (stored in cabinet file)\cell \pard \widctlpar\intbl \row \pard \widctlpar\intbl {\b DiskDirectory}{\i n}
+=directory{\b \cell }\pard \ri-18\widctlpar\intbl Output directory name for disk {\i n}\cell \pard \widctlpar\intbl \row \pard \widctlpar\intbl {\b DiskDirectoryTemplate}=template{\b \cell }\pard \ri-18\widctlpar\intbl 
+Output directory name template; * is replaced by disk number\cell \pard \widctlpar\intbl \row \pard \widctlpar\intbl {\b DiskLabel}{\i n}=label{\b \cell }\pard \ri-18\widctlpar\intbl Printed disk label name for disk {\i n}\cell \pard \widctlpar\intbl 
+\row \pard \widctlpar\intbl {\b DiskLabelTemplate}=template{\b \cell }\pard \ri-18\widctlpar\intbl Printed disk label name template; * is replaced by disk number\cell \pard \widctlpar\intbl \row \pard \widctlpar\intbl {\b DoNotCopyFiles}={\b  ON} | {\b 
+OFF\cell }\pard \ri-18\widctlpar\intbl Controls whether files are actually copied (ACME ADMIN.INF)\cell \pard \widctlpar\intbl \row \pard \widctlpar\intbl {\b FolderFileCountThreshold}=count{\b \cell }\pard \ri-18\widctlpar\intbl 
+Threshold count of files per Folder\cell \pard \widctlpar\intbl \row \pard \widctlpar\intbl {\b FolderSizeThreshold}=size{\b \cell }\pard \ri-18\widctlpar\intbl Threshold folder size for current folder\cell \pard \widctlpar\intbl \row \pard 
+\widctlpar\intbl {\b GenerateInf}={\b ON} | {\b OFF\cell }\pard \ri-18\widctlpar\intbl Control Unified vs. Relation INF generation mode\cell \pard \widctlpar\intbl \row \pard \widctlpar\intbl {\b Inf}{\i Xxx}=string{\b \cell }\pard \ri-18\widctlpar\intbl 
+Set default value for INF Parameter Xxx\cell \pard \widctlpar\intbl \row \pard \widctlpar\intbl {\b InfCabinetHeader}[{\i n}]=string\cell \pard \ri-18\widctlpar\intbl INF cabinet section header text\cell \pard \widctlpar\intbl \row \pard \widctlpar\intbl 
+{\b InfCabinetLineFormat}[{\i n}]=format string\cell \pard \ri-18\widctlpar\intbl INF cabinet section detail line format\cell \pard \widctlpar\intbl \row \pard \widctlpar\intbl {\b InfCommentString}=string\cell \pard \ri-18\widctlpar\intbl 
+INF comment string\cell \pard \widctlpar\intbl \row \pard \widctlpar\intbl {\b InfDateFormat}={\b yyyy-mm-dd} | {\b mm/dd/yy}\cell \pard \ri-18\widctlpar\intbl INF date format\cell \pard \widctlpar\intbl \row \pard \widctlpar\intbl {\b InfDiskHeader}[{\i 
+n}]=string\cell \pard \ri-18\widctlpar\intbl INF disk section header text\cell \pard \widctlpar\intbl \row \pard \widctlpar\intbl {\b InfDiskLineFormat}[{\i n}]=format string\cell \pard \ri-18\widctlpar\intbl INF disk section detail line format\cell 
+\pard \widctlpar\intbl \row \pard \widctlpar\intbl {\b InfFileHeader}[{\i n}]=string\cell \pard \ri-18\widctlpar\intbl INF file section header text\cell \pard \widctlpar\intbl \row \pard \widctlpar\intbl {\b InfFileLineFormat}[{\i n}]=format string\cell 
+\pard \ri-18\widctlpar\intbl INF file section detail line format\cell \pard \widctlpar\intbl \row \pard \widctlpar\intbl {\b InfFileName}=filename{\b \cell }\pard \ri-18\widctlpar\intbl Name of INF file\cell \pard \widctlpar\intbl \row \pard 
+\widctlpar\intbl {\b InfFooter}[{\i n}]=string\cell \pard \ri-18\widctlpar\intbl INF footer text\cell \pard \widctlpar\intbl \row \pard \widctlpar\intbl {\b InfHeader}[{\i n}]=string\cell \pard \ri-18\widctlpar\intbl INF header text\cell \pard 
+\widctlpar\intbl \row \pard \widctlpar\intbl {\b InfSectionOrder}=[{\b D }| {\b C }| {\b F}]*{\b \cell }\pard \ri-18\widctlpar\intbl INF section order (disk, cabinet, file)\cell \pard \widctlpar\intbl \row \pard \widctlpar\intbl {\b MaxCabinetSize}=size{
+\b \cell }\pard \ri-18\widctlpar\intbl Maximum cabinet file size for current cabinet\cell \pard \widctlpar\intbl \row \pard \widctlpar\intbl {\b MaxDiskFileCount}=count{\b \cell }\pard \ri-18\widctlpar\intbl Maximum count of files per Disk\cell \pard 
+\widctlpar\intbl \row \pard \widctlpar\intbl {\b MaxDiskSize}[{\i n}]=size{\b \cell }\pard \ri-18\widctlpar\intbl Maximum disk size\cell \pard \widctlpar\intbl \row \pard \widctlpar\intbl {\b MaxErrors}=count{\b \cell }\pard \ri-18\widctlpar\intbl 
+Maximum errors allowed before pass 1 terminates\cell \pard \widctlpar\intbl \row \pard \widctlpar\intbl {\b ReservePerCabinetSize}=size{\b \cell }\pard \ri-18\widctlpar\intbl Base amount of space to reserve for FCRESERVE data\cell \pard \widctlpar\intbl 
+\row \pard \widctlpar\intbl {\b ReservePerDataBlockSize}=size{\b \cell }\pard \ri-18\widctlpar\intbl Amount of space to reserve in each data block\cell \pard \widctlpar\intbl \row \pard \widctlpar\intbl {\b ReservePerFolderSize}=size{\b \cell }\pard 
+\ri-18\widctlpar\intbl Amount of additional space in FCRESERVE for each folder\cell \pard \widctlpar\intbl \row \pard \widctlpar\intbl {\b RptFileName}=filename{\b \cell }\pard \ri-18\widctlpar\intbl Name of RPT file\cell \pard \widctlpar\intbl \row 
+\pard \widctlpar\intbl {\b SourceDir}=path\cell \pard \widctlpar\intbl Default path for source files\cell \pard \widctlpar\intbl \row \trowd \trgaph108\trleft-108\trkeep \cellx3618\cellx9246 \pard \widctlpar\intbl {\b UniqueFiles}={\b ON | OFF}{\b\ul 
+\cell }\pard \widctlpar\intbl Control whether duplicate desintation file names are allowed{\b \cell }\pard \widctlpar\intbl {\b \row }\pard\plain \s3\sb120\widctlpar \b\f4 {\*\bkmkstart _Toc289487609}{\*\bkmkstart _Toc362068485}
+{\field\flddirty{\*\fldinst autonumlgl }{\fldrslt }}\tab {\*\bkmkstart InfXxxLineFormat_Syntax}InfDisk/Cabinet/FileLineFormat Syntax and Semantics{\*\bkmkend InfXxxLineFormat_Syntax}{\*\bkmkend _Toc362068485}
+\par \pard\plain \widctlpar \f4\fs20 The {\b InfDiskLineFormat}, {\b InfCabinetLineFormat}, and {\b InfFileLineFormat }variables are used to control the formatting of the \ldblquote detail\rdblquote 
+ lines in the INF file.  The syntax of the values assigned to these variables is as follows:
+\par \pard \widctlpar 
+\par \pard\plain \s21\fi-360\li720\widctlpar\tx360 \f4\fs20 1)\tab The \ldblquote *\rdblquote  character is used to bracket replaceable parameters.
+\par 2)\tab Two  \ldblquote *\rdblquote  characters in a row (\ldblquote **\rdblquote ) are replaced by a single  \ldblquote *\rdblquote .
+\par \pard \s21\fi-360\li720\widctlpar\tx360 3)\tab A replaceable parameter name may be one of the standard ones defined by MakeCAB, or it may be a custom parameter.  The value used for a parameter is found in the following order:
+\par {\pntext\pard\plain\fs20 a)\tab}\pard \s21\fi-360\li1080\widctlpar\tx360{\*\pn \pnlvlbody\pnlcltr\pnstart1\pnindent360\pnhang{\pntxta )}}If a parameter is specified on a File Copy or File Reference command, the specified value is used.
+\par {\pntext\pard\plain\fs20 b)\tab}If a variable InfXxxx is defined for this parameter, its value is used.
+\par {\pntext\pard\plain\fs20 c)\tab}The parameter is a standard paramater, and its defined value is used.
+\par \pard \s21\fi-360\li720\widctlpar\tx360 4)\tab Braces "\{\}" may be used to indicate portions of text plus {\ul exactly one parameter} that are omitted if the parameter value is blank.  For example, \ldblquote \{*id*,\}*file*,*size*\rdblquote 
+ will generate the following strings, depending upon the values of id, file, and size:
+\par \pard\plain \widctlpar \f4\fs20 
+\par \trowd \trgaph108\trleft1170 \clbrdrb\brdrs\brdrw30\brdrcf1 \cellx1606\clbrdrb\brdrs\brdrw30\brdrcf1 \cellx2381\clbrdrb\brdrs\brdrw30\brdrcf1 \cellx2921\clbrdrb\brdrs\brdrw30\brdrcf1 \cellx4500 \pard \widctlpar\intbl id\cell \pard \widctlpar\intbl file
+\cell \pard \widctlpar\intbl size\cell \pard \widctlpar\intbl Output String\cell \pard \widctlpar\intbl \row \trowd \trgaph108\trleft1170 \cellx1606\cellx2381\cellx2921\cellx4500 \pard \widctlpar\intbl \cell \pard \widctlpar\intbl foo.dat\cell \pard 
+\widctlpar\intbl 23\cell \pard \widctlpar\intbl foo.dat,23\cell \pard \widctlpar\intbl \row \pard \widctlpar\intbl 17\cell \pard \widctlpar\intbl foo.dat\cell \pard \widctlpar\intbl 23\cell \pard \widctlpar\intbl 17,foo.dat,23\cell \pard \widctlpar\intbl 
+\row \trowd \trgaph108\trleft1170 \cellx1606\cellx2381\cellx2921\cellx4500 \pard \widctlpar\intbl 17\cell \pard \widctlpar\intbl \cell \pard \widctlpar\intbl 23\cell \pard \widctlpar\intbl 17,,23\cell \pard \widctlpar\intbl \row \pard\plain 
+\s3\sb120\widctlpar \b\f4 {\*\bkmkstart _Toc362068486}{\field\flddirty{\*\fldinst autonumlgl }{\fldrslt }}\tab {\*\bkmkstart INF_Parameters}INF Parameters{\*\bkmkend INF_Parameters}{\*\bkmkend _Toc362068486}
+\par \pard\plain \widctlpar \f4\fs20 The following table lists the standard parameters that may be specified in INF line formats and on File Copy and File Reference commands.  The Disk, Cab, and File columns indicate which parameters are supported in the {\b 
+InfDiskLineFormat}, {\b InfCabinetLineFormat}, and {\b InfFileLineFormat}, respectively.  In addition, the File column also indicates which parameters may be specified on the File Copy and File Reference commands.
+\par \pard \widctlpar 
+\par \trowd \trgaph108\trleft-108\trkeep \clbrdrb\brdrs\brdrw15 \cellx1023\clbrdrb\brdrs\brdrw15 \cellx1686\clbrdrb\brdrs\brdrw15 \cellx2214\clbrdrb\brdrs\brdrw15 \cellx2766\clbrdrb\brdrs\brdrw15 \cellx9444 \pard \widctlpar\intbl Parameter\cell \pard 
+\ri-18\widctlpar\intbl Disk\cell \pard \ri-18\widctlpar\intbl Cab\cell \pard \ri-18\widctlpar\intbl File\cell \pard \ri-18\widctlpar\intbl Description\cell \pard \widctlpar\intbl \row \trowd \trgaph108\trleft-108 \cellx1023\cellx1686\cellx2214\cellx2766
+\cellx9444 \pard \widctlpar\intbl {\b attr\cell }\pard \widctlpar\intbl \cell \pard \widctlpar\intbl \cell \pard \widctlpar\intbl Yes\cell \pard \widctlpar\intbl File attributes (A=archive, R=read-only, H=hidden, S=system)\cell \pard \widctlpar\intbl 
+\row \pard \widctlpar\intbl {\b cab#\tab \cell }\pard \widctlpar\intbl \cell \pard \widctlpar\intbl Yes\cell \pard \widctlpar\intbl Yes\cell \pard \widctlpar\intbl Cabinet number (0 means not in cabinet, 1 or higher is cabinet number)\cell \pard 
+\widctlpar\intbl \row \pard \widctlpar\intbl {\b cabfile \cell }\pard \widctlpar\intbl \cell \pard \widctlpar\intbl Yes\cell \pard \widctlpar\intbl \cell \pard \widctlpar\intbl Cabinet file name\cell \pard \widctlpar\intbl \row \pard \widctlpar\intbl {\b 
+csum    \cell }\pard \widctlpar\intbl \cell \pard \widctlpar\intbl \cell \pard \widctlpar\intbl Yes\cell \pard \widctlpar\intbl Checksum\cell \pard \widctlpar\intbl \row \pard \widctlpar\intbl {\b date    \cell }\pard \widctlpar\intbl \cell \pard 
+\widctlpar\intbl \cell \pard \widctlpar\intbl Yes\cell \pard \widctlpar\intbl File date (mm/dd/yy or yyyy-mm-dd, depending upon {\b InfDateFormat})\cell \pard \widctlpar\intbl \row \pard \widctlpar\intbl {\b disk#\tab \cell }\pard \widctlpar\intbl Yes
+\cell \pard \widctlpar\intbl Yes\cell \pard \widctlpar\intbl Yes\cell \pard \widctlpar\intbl Disk number (1-based)\cell \pard \widctlpar\intbl \row \pard \widctlpar\intbl {\b file    \cell }\pard \widctlpar\intbl \cell \pard \widctlpar\intbl \cell \pard 
+\widctlpar\intbl Yes\cell \pard \widctlpar\intbl Destination file name in layout (in cabinet or on a disk)\cell \pard \widctlpar\intbl \row \pard \widctlpar\intbl {\b file#    \cell }\pard \widctlpar\intbl \cell \pard \widctlpar\intbl \cell \pard 
+\widctlpar\intbl Yes\cell \pard \widctlpar\intbl Destination file number in layout (first file is 1, second file is 2, ...); the order of File Copy 
+Commands controls the file number, so in relational INF mode the order of File Reference Commands has no affect on the file number.\cell \pard \widctlpar\intbl \row \pard \widctlpar\intbl {\b label   \cell }\pard \widctlpar\intbl Yes\cell \pard 
+\widctlpar\intbl \cell \pard \widctlpar\intbl \cell \pard \widctlpar\intbl Disk user-readable label (value comes from {\b DiskLabel}{\i n}, if defined, and otherwise is constructed from {\b DiskLabelTemplate}).\cell \pard \widctlpar\intbl \row \pard 
+\widctlpar\intbl {\b lang    \cell }\pard \widctlpar\intbl \cell \pard \widctlpar\intbl \cell \pard \widctlpar\intbl Yes\cell \pard \widctlpar\intbl Language (i.e., VER.DLL info) in base 10, blank separated if multiple values \cell \pard \widctlpar\intbl 
+\row \pard \widctlpar\intbl {\b size    \cell }\pard \widctlpar\intbl \cell \pard \widctlpar\intbl \cell \pard \widctlpar\intbl Yes\cell \pard \widctlpar\intbl File size (only affects value written to INF file)\cell \pard \widctlpar\intbl \row \pard 
+\widctlpar\intbl {\b time\cell }\pard \widctlpar\intbl \cell \pard \widctlpar\intbl \cell \pard \widctlpar\intbl Yes\cell \pard \widctlpar\intbl File time (hh:mm:ss[a|p])\cell \pard \widctlpar\intbl \row \pard \widctlpar\intbl {\b ver\cell }\pard 
+\widctlpar\intbl \cell \pard \widctlpar\intbl \cell \pard \widctlpar\intbl Yes\cell \pard \widctlpar\intbl Binary File version (n.n.n.n base 10 format)\cell \pard \widctlpar\intbl \row \trowd \trgaph108\trleft-108 \cellx1023\cellx1686\cellx2214\cellx2766
+\cellx9444 \pard \widctlpar\intbl {\b vers\cell }\pard \widctlpar\intbl \cell \pard \widctlpar\intbl \cell \pard \widctlpar\intbl Yes\cell \pard \widctlpar\intbl String File version  -- can be different from {\b ver}!\cell \pard \widctlpar\intbl \row 
+\pard \widctlpar 
+\par \pard \widctlpar Just as custom INF parameters can be defined by using the {\b .Define} and {\b .Set} command (e.g., {\b .Set }InfCustom=default value), the {\b .Set}
+ command can also be used to override the values of these parameters.  This is most obviously useful for the {\b date }and {\b time }parameters, as it provides a simple way to \ldblquote date stamp\rdblquote  all the files in a layout; and for the {\b 
+attr }parameter, this provides a way to force a consistent set of file attributes (commonly used to clear the read-only and archive attribute bits).
+\par \pard\plain \s3\sb120\widctlpar \b\f4 {\*\bkmkstart _Toc362068487}{\field\flddirty{\*\fldinst autonumlgl }{\fldrslt }}\tab Command Details{\*\bkmkend _Toc289487609}{\*\bkmkend _Toc362068487}
+\par \pard\plain \s19\sb240\widctlpar\brdrb\brdrs\brdrw15\brsp20 \b\f4\fs20 ;
+\par \pard\plain \s20\li360\widctlpar \f4\fs20 A comment line.  
+\par \pard \s20\li360\widctlpar A comment may appear anywhere in a directive file.  In addition, any line may include a comment at the end.  Any text on the line following the comment is ignored.
+\par \pard\plain \s19\sb240\widctlpar\brdrb\brdrs\brdrw15\brsp20 \b\f4\fs20 {\b0 source [destination] [}/INF{\b0 =} YES{\b0  | }NO{\b0 ] [}/UNIQUE{\b0 =}YES{\b0  | }NO{\b0 ] [}/x{\b0 =}y{\b0  [}/x{\b0 =}y{\b0  ...]]
+\par }\pard\plain \s20\li360\widctlpar \f4\fs20 A File Copy Command; specifies a file to be placed onto a disk or cabinet.  If {\b GenerateInf} is {\b OFF}, then lines without leading periods are interpreted as File Copy Commands.
+\par \pard \s20\li360\widctlpar {\i 
+\par }\pard \s20\li360\widctlpar {\i source }is a file name, and may include a relative or absolute path specification.  The {\b SourceDir }variable is applied first, if specified.
+\par \pard \s20\li360\widctlpar 
+\par \pard \s20\li360\widctlpar {\i destination }is the name to store in the cabinet file (if {\b Cabinet }is {\b On}), or the name for the destination file (if {\b Cabinet }is {\b Off}).  The {\b DestinationDir }variable is used as a prefix.
+\par \pard \s20\li360\widctlpar 
+\par \pard \s20\li360\widctlpar {\b /INF}={\b YES }| {\b NO} controls whether {\i destination} must specified in a Reference command in the INF section of the DDF.  If {\b YES} is specified (the default), then {\i destination }must be specifi
+ed in at least one Reference command.  If {\b NO }is specified, then {\i destination }does not have to be specified in any Reference command.  This paramter is used only if Relational INF mode is selected (see the {\b GenerateInf}
+ variable), as Unified mode does not support Reference commands.
+\par \pard \s20\li360\widctlpar 
+\par \pard \s20\li360\widctlpar {\b /UNIQUE}={\b YES }| {\b NO} controls whether {\i destination} must be unique throughout the layout.  Specifiying this parameter on the file copy command overrides the default setting controlled by the {\b UniqueFiles}
+ variable (which defaults to YES).  If Relational INF mode is selected (see the {\b GenerateInf} variable), then {\b UniqueFiles} must be {\b YES}.
+\par \pard \s20\li360\widctlpar 
+\par \pard \s20\li360\widctlpar {\b /x}={\b y }
+permits standard and custom INF parameters to be applied to a file copy command.  These parameters are carried along with the file by MakeCAB and used to format file detail lines in the INF file.  In addition, the {\b /Date}, {\b /Time}, and {\b /Attr}
+ parameters also control the values that are placed in the cabinet files or on the disk layout (for files outside of a cabinet).  This permits a great deal of flexibility in customizing the INF file format.  A parameter \ldblquote x\rdblquote 
+ is defined to have the value \ldblquote y\rdblquote  (which may be empty).  Quotes can be used in \ldblquote y\rdblquote  to include blanks or other special characters.  If a parameter \ldblquote x\rdblquote 
+ is also defined on a File Reference command, that setting overrides any setting for \ldblquote x\rdblquote  specified on the referred to File Copy command.  See \ldblquote {\field{\*\fldinst  REF INF_Parameters \\* MERGEFORMAT }{\fldrslt INF Parameters}}
+\rdblquote  on page {\field{\*\fldinst  PAGEREF INF_Parameters }{\fldrslt {\lang1024 15}}} for a list of standard parameters.
+\par \pard \s20\li360\widctlpar 
+\par \pard \s20\fi-720\li1080\widctlpar\box\brdrs\brdrw30\brsp20 {\b NOTE:\tab You must define a variable InfX if you are going to use /X=y on a File Copy (or File Reference) command.}
+  If no such variable is defined, then /X=y will generate an error.  This behavior ensures that there is a default value for every parameter, and makes it easier to catch inadvertent typing errors.
+\par \pard \s20\li360\widctlpar 
+\par \pard \s20\li360\widctlpar If the {\i destination }is not specified, its default value depends upon the {\b Cabinet} and {\b Compress} variables, as indicated by the following table, using BIN\\
+EXCEL.EXE as a sample source file name.  Note that the variable {\b CompressedFileExtensionChar }controls the actual character used to indicate a compressed file.  Note also that the {\b DestinationDir }
+variable is prefixed to the destination name before it is stored in the cabinet file.
+\par \pard \s20\li360\widctlpar 
+\par \trowd \trgaph108\trleft900\trkeep \cellx2740\clbrdrt\brdrs\brdrw30 \clbrdrl\brdrs\brdrw30 \clbrdrb\brdrs\brdrw30 \clbrdrr\brdrs\brdrw15 \cellx5580\clbrdrt\brdrs\brdrw30 \clbrdrl\brdrs\brdrw15 \clbrdrb\brdrs\brdrw30 \clbrdrr\brdrs\brdrw30 \cellx9630 
+\pard\plain \keepn\widctlpar\intbl \f4\fs20 {\*\bkmkstart default_destination_naming}\cell \pard \keepn\widctlpar\intbl {\b Compress = OFF}\cell \pard \keepn\widctlpar\intbl {\b Compress = ON}\cell \pard \widctlpar\intbl \row \trowd 
+\trgaph108\trleft900\trkeep \clbrdrt\brdrs\brdrw30 \clbrdrl\brdrs\brdrw30 \clbrdrb\brdrs\brdrw15 \cellx2740\clbrdrl\brdrs\brdrw30 \clbrdrb\brdrs\brdrw15 \clbrdrr\brdrs\brdrw15 \cellx5580\clbrdrl\brdrs\brdrw15 \clbrdrb\brdrs\brdrw15 \clbrdrr\brdrs\brdrw30 
+\cellx9630 \pard \keepn\widctlpar\intbl {\b Cabinet = OFF}\cell \pard \keepn\widctlpar\intbl EXCEL.EXE -- uncompressed, not in a cabinet.\cell \pard \keepn\widctlpar\intbl 
+EXCEL.EX_ -- compressed, not in cabinet (actually, this is a cabinet with a single file!){\cs32\fs16\up6 \chftn {\footnote \pard\plain \s33\widctlpar \f4\fs20 {\cs32\fs16\up6 \chftn }
+ Compressing a single file is generally not a good idea, as better compression is achieved by compressing across file boundaries (hence cabinet files).  However, MakeCAB supports this in case clients used to the old way of writing a setup program need thi
+s feature.  Instead of having two different file formats, though, we simple create a cabinet that has just the one file in it.}}\cell \pard \widctlpar\intbl \row \trowd \trgaph108\trleft900\trkeep \clbrdrt\brdrs\brdrw15 \clbrdrl\brdrs\brdrw30 \clbrdrb
+\brdrs\brdrw30 \cellx2740\clbrdrt\brdrs\brdrw15 \clbrdrl\brdrs\brdrw30 \clbrdrb\brdrs\brdrw30 \clbrdrr\brdrs\brdrw15 \cellx5580\clbrdrt\brdrs\brdrw15 \clbrdrl\brdrs\brdrw15 \clbrdrb\brdrs\brdrw30 \clbrdrr\brdrs\brdrw30 \cellx9630 \pard 
+\keepn\widctlpar\intbl {\b Cabinet = ON}\cell \pard \keepn\widctlpar\intbl EXCEL.EXE -- uncompressed, in a cabinet.\cell \pard \keepn\widctlpar\intbl EXCEL.EXE -- compressed, in a cabinet\cell \pard \widctlpar\intbl \row \pard\plain \s20\li360\widctlpar 
+\f4\fs20 {\*\bkmkend default_destination_naming}
+\par \pard\plain \s22\li360\widctlpar \f4\fs20\ul Examples:
+\par \pard\plain \s24\li720\widctlpar \f11\fs20 .Set Compress=OFF\tab \tab \tab ; Turn off compression
+\par .Set Cabinet=OFF\tab \tab \tab ; No cabinet file
+\par setup.exe /inf=no\tab \tab \tab ; Setup is put on disk 1, won\rquote t be in INF
+\par setup.inf\tab \tab \tab \tab ; Classic chicken & the egg problem
+\par 
+\par .Set Compress=ON\tab \tab \tab ; Turn compression on
+\par readme.txt\tab \tab \tab \tab ; Placed on disk 1 as README.TX_
+\par .Set Cabinet=ON\tab \tab \tab ; Turn cabinet file creation on
+\par bin\\excel.exe\tab \tab \tab ; Placed in cabinet as EXCEL.EXE
+\par msdraw.exe msapps\\msdraw.exe  ; Placed in cabinet as MSAPPS\\MSDRAW.EXE
+\par a.txt dup.txt /unique=no\tab ; Another dup.txt is allowed
+\par b.txt dup.txt /unique=no\tab ; And here it is
+\par \pard\plain \s19\sb240\widctlpar\brdrb\brdrs\brdrw15\brsp20 \b\f4\fs20 {\b0 destination [}/x{\b0 =}y{\b0  [}/x{\b0 =}y{\b0  ...]]
+\par }\pard\plain \s20\li360\widctlpar \f4\fs20 
+A File Reference Command; specifies that information for a file (previously specified in a File Copy command) is to be written to the File section of the INF file.  This command is only supported in Relational INF mode. If {\b GenerateInf} is {\b ON}
+, then lines without leading periods are interpreted as File Reference Commands.
+\par \pard \s20\li360\widctlpar 
+\par \pard \s20\li360\widctlpar {\i destination }is the name of a file previously specified in a File Copy command as the {\b destination }in the layout (not the source!).  Therefore, {\b UniqueFiles} is required to be {\b ON}.
+\par \pard \s20\li360\widctlpar 
+\par \pard \s20\li360\widctlpar {\b /x}={\b y }
+permits standard and custom INF parameters to be applied to a file reference command.  These parameters are merged with any parameters specified on the referenced File Copy command, with parameters on the File Reference command taking precedence.
+\par \pard \s20\li360\widctlpar 
+\par \pard \s20\li360\widctlpar A parameter \ldblquote x\rdblquote  is defined to have the value \ldblquote y\rdblquote  (which may be empty).  Quotes can be used in \ldblquote y\rdblquote  to include blanks or other special characters. .  See \ldblquote 
+{\field{\*\fldinst  REF INF_Parameters \\* MERGEFORMAT }{\fldrslt INF Parameters}}\rdblquote  on page {\field{\*\fldinst  PAGEREF INF_Parameters }{\fldrslt {\lang1024 15}}} for a list of standard parameters.
+\par \pard \s20\li360\widctlpar 
+\par \pard \s20\fi-720\li1080\widctlpar\box\brdrs\brdrw30\brsp20 {\b NOTE:\tab You must define a variable InfX if you are going to use /X=y on a File Reference (or File Copy) command.}
+  If no such variable is defined, then /X=y will generate an error.  This behavior ensures that there is a default value for every parameter, and makes it easier to catch inadvertent typing errors.
+\par \pard\plain \s22\li360\widctlpar \f4\fs20\ul 
+\par Examples:
+\par \pard\plain \s24\li720\widctlpar \f11\fs20 .Set GenerateInf=OFF\tab \tab ; Relational INF mode; file layout
+\par setup.exe /inf=no\tab \tab \tab ; Setup is put on disk 1, won\rquote t be in INF
+\par readme.txt
+\par shared.dll /special=yes\tab \tab ; Custom parameter
+\par 
+\par .Set GenerateInf=ON\tab \tab ; INF section of DDF
+\par .InfWrite [Common]
+\par readme.txt
+\par .InfWrite [One]
+\par shared.dll /special=no\tab \tab ; Override parm on file copy command
+\par .InfWrite [Two]
+\par shared.dll\tab \tab \tab \tab ; Use /special value from file copy
+\par \pard\plain \s19\sb240\widctlpar\brdrb\brdrs\brdrw15\brsp20 \b\f4\fs20 .Define {\b0 variable}={\b0 [value]}
+\par \pard\plain \s20\li360\widctlpar \f4\fs20 Define {\i variable }to be equal to {\i value}.
+\par 
+\par To use {\i variable}, surround it with percent signs (%) -- %variable%.
+\par Using an undefined variable is an error, and will cause MakeCAB to stop before pass 2.
+\par {\i value }may include references to other variables.
+\par Leading and trailing blanks in {\i value }are discarded.
+\par Blanks may be enclose in quote (\ldblquote ) or apostrophe (\lquote ) marks.
+\par Explicit percent signs (%), quotes (\ldblquote ), or apostrophes (\lquote ) must be specified twice.
+\par 
+\par \pard \s20\fi-900\li1260\widctlpar\tx1260 {\b NOTE:}\tab If {\b .Option Explicit }is specified, then you must first use {\b .Define }to define any user-defined variables before you can use {\b .Set }to modify them.  For standard MakeCAB variables, {\b 
+.Define }is not permitted, and only {\b .Set }may be used on.  If {\b .Option Explicit }is not specified, then {\b .Define }is equivalent to {\b .Set}.
+\par \pard\plain \s22\li360\widctlpar \f4\fs20\ul 
+\par Examples
+\par \pard\plain \s24\li720\widctlpar \f11\fs20 .Define lang=ENGLISH\tab \tab \tab ; Set language
+\par .Define country=USA\tab \tab \tab ; Set country
+\par .Define SourceDir=%lang%\\%country%\tab ; SourceDir = [ENGLISH\\USA]
+\par .Define join=%lang%%country%\tab \tab ; join = [ENGLISHUSA]
+\par .Define success=100%%\tab \tab \tab ; success = [100%]
+\par .Define SourceDir=\tab \tab \tab ; SourceDir = []
+\par .Define contraction=\ldblquote don\rquote t\rdblquote \tab \tab ; contraction = [don\rquote t]
+\par .Define contraction=don\rquote \rquote t\tab \tab ; contraction = [don\rquote t]
+\par .Define someSpaces=  hi there\tab \tab ; someSpaces = [hi there]
+\par .Define someMore=\ldblquote   blue dog  \ldblquote \tab ; someMore = [  blue dog  ]
+\par \pard\plain \s19\sb240\widctlpar\brdrb\brdrs\brdrw15\brsp20 \b\f4\fs20 .Delete {\b0 variable}
+\par \pard\plain \s20\li360\widctlpar \f4\fs20 Delete a variable definition.
+\par 
+\par \pard \s20\li360\widctlpar You may only delete variables that have been created by {\b .Define }or {\b .Set }commands.  Standard MakeCAB variables may not be deleted.
+\par \pard\plain \s22\li360\widctlpar \f4\fs20\ul 
+\par Examples:
+\par \pard\plain \s24\li720\widctlpar \f11\fs20 .Set myVariable=raisin
+\par .Delete myVariable\tab \tab ; Delete myVariable
+\par \pard\plain \s19\sb240\widctlpar\brdrb\brdrs\brdrw15\brsp20 \b\f4\fs20 .Dump
+\par \pard\plain \s20\li360\widctlpar \f4\fs20 Display the entire MakeCAB variable table.
+\par 
+\par \pard \s20\li360\widctlpar This command can be used to aid debugging of complicated (or not so complicated) MakeCAB directive files.  Note that the dump will be displayed during pass 1 and again during pass 2.
+\par \pard\plain \s22\li360\widctlpar \f4\fs20\ul 
+\par Examples:
+\par \pard\plain \s24\li720\widctlpar \f11\fs20 .Dump\tab \tab \tab \tab \tab ; Dump variable table to stdout
+\par \pard\plain \s19\sb240\widctlpar\brdrb\brdrs\brdrw15\brsp20 \b\f4\fs20 .InfBegin DISK | CABINET | FILE
+\par \pard\plain \s20\li360\widctlpar \f4\fs20 Start a block of one or more lines to write to the specified area of the INF file.
+\par 
+\par \pard \s20\li360\widctlpar The lines in the block will be copied unmodified to the specified section of the INF file, so no MakeCAB variable substitution will be performed.  Similarly, MakeCAB will not strip comments.
+\par \pard \s20\li360\widctlpar 
+\par Use {\b .InfWrite}, {\b .InfWriteCabinet}, or {\b .InfWriteDisk} if you need variable substitution.
+\par \pard\plain \s22\li360\widctlpar \f4\fs20\ul 
+\par Examples:
+\par \pard\plain \s24\li720\widctlpar \f11\fs20 .InfBegin disk\tab \tab \tab ; Text for disk section of INF file
+\par ;This is a comment for the disk section.  MakeCAB will not process
+\par ;this line, so, for example, %var% will not be substituted.
+\par .InfEnd
+\par \pard\plain \s19\sb240\widctlpar\brdrb\brdrs\brdrw15\brsp20 \b\f4\fs20 .InfEnd
+\par \pard\plain \s20\li360\widctlpar \f4\fs20 Terminate an .InfBegin block.
+\par \pard\plain \s22\li360\widctlpar \f4\fs20\ul 
+\par Examples:
+\par \pard\plain \s24\li720\widctlpar \f11\fs20 .InfEnd\tab \tab \tab \tab ; Close an .InfBegin block
+\par \pard\plain \s19\sb240\widctlpar\brdrb\brdrs\brdrw15\brsp20 \b\f4\fs20 .InfWrite  string
+\par \pard\plain \s20\li360\widctlpar \f4\fs20 Write {\i string} to the file area of the INF file.
+\par 
+\par \pard \s20\li360\widctlpar Note that lines will have MakeCAB comments removed and variable values substituted.  If you want to avoid this processing, use the {\b .InfBegin File}
+ command.  Leading whitespace is normally removed, but you can override this by placing whitespace in quotes (see examples below)
+\par \pard\plain \s22\li360\widctlpar \f4\fs20\ul 
+\par Examples:
+\par \pard\plain \s24\li720\widctlpar \f11\fs20 .InfWrite [A Section Header]\tab ; Text for file section, this comment
+\par \tab \tab \tab \tab \tab ; \tab will not appear.
+\par 
+\par .InfWrite ;<disk>,<file>\tab ; MakeCAB strips off the comments, so this
+\par \tab \tab \tab \tab \tab ; \tab command just writes a blank line!
+\par 
+\par .InfWrite \ldblquote ;<disk>,<file>\ldblquote \tab ; Get that comment in the INF file
+\par 
+\par .InfWrite \ldblquote   \ldblquote %someVar%\tab \tab ; Get leading space on the INF line
+\par \pard\plain \s19\sb240\widctlpar\brdrb\brdrs\brdrw15\brsp20 \b\f4\fs20 .InfWriteCabinet  string
+\par \pard\plain \s20\li360\widctlpar \f4\fs20 Write {\i string} to the cabinet area of the INF file.
+\par 
+\par \pard \s20\li360\widctlpar Note that lines will have MakeCAB comments removed and variable values substituted.  If you want to avoid this processing, use the {\b .InfBegin Cabinet} command.
+\par \pard\plain \s22\li360\widctlpar \f4\fs20\ul 
+\par Examples:
+\par \pard\plain \s24\li720\widctlpar \f11\fs20 .InfWriteCabinet 40%% off your favorite furniture ; %% collapse down to
+\par \tab \tab \tab \tab \tab ; one %, because MakeCAB does variable
+\par \tab \tab \tab \tab \tab ; substitution on the string.
+\par \pard\plain \s19\sb240\widctlpar\brdrb\brdrs\brdrw15\brsp20 \b\f4\fs20 .InfWriteDisk  string
+\par \pard\plain \s20\li360\widctlpar \f4\fs20 Write {\i string} to the disk area of the INF file.
+\par 
+\par \pard \s20\li360\widctlpar Note that lines will have MakeCAB comments removed and variable values substituted.  If you want to avoid this processing, use the {\b .InfBegin Disk} command.
+\par \pard\plain \s22\li360\widctlpar \f4\fs20\ul 
+\par Examples:
+\par \pard\plain \s24\li720\widctlpar \f11\fs20 .InfWriteDisk The Rain in Spain falls Mainly on the Plain
+\par \pard\plain \s19\sb240\widctlpar\brdrb\brdrs\brdrw15\brsp20 \b\f4\fs20 .New Disk {\b0 | }Cabinet | Folder
+\par \pard\plain \s20\li360\widctlpar \f4\fs20 Force a disk, cabinet, or folder break.
+\par 
+\par This is used to complete the current disk, cabinet, or folder, and start a new one.
+\par 
+\par \pard\plain \s22\li360\widctlpar \f4\fs20\ul Examples:
+\par \pard\plain \s24\li720\widctlpar \f11\fs20 .New Disk\tab \tab \tab ; Start a new disk
+\par .New Cabinet\tab \tab ; Start a new cabinet
+\par .New Folder\tab \tab \tab ; Start a new folder
+\par \pard\plain \s19\sb240\widctlpar\brdrb\brdrs\brdrw15\brsp20 \b\f4\fs20 .Set {\b0 variable}={\b0 value}
+\par \pard\plain \s20\li360\widctlpar \f4\fs20 Set {\i variable }to be equal to {\i value}.
+\par 
+\par To use {\i variable}, surround it with percent signs (%) -- %variable%.
+\par Using an undefined variable is an error, and will cause MakeCAB to stop before pass 2.
+\par {\i value }may include references to other variables.
+\par {\i value }may be empty, in which case {\i variable }is set to the empty string.
+\par Leading and trailing blanks in {\i value }are discarded.
+\par Blanks may be enclose in quote (\ldblquote ) or apostrophe (\lquote ) marks.
+\par Explicit percent signs (%), quotes (\ldblquote ), or apostrophes (\lquote ) must be specified twice.
+\par 
+\par \pard \s20\fi-900\li1260\widctlpar\tx1260 {\b NOTE:}\tab If {\b .Option Explicit }is specified, then you must first use {\b .Define }to define any user-defined variables before you can use {\b .Set }to modify them.  For standard MakeCAB variables, {\b 
+.Define }is not permitted, and only {\b .Set }may be used on.
+\par \pard\plain \s22\li360\widctlpar \f4\fs20\ul 
+\par Examples
+\par \pard\plain \s24\li720\widctlpar \f11\fs20 .Set lang=ENGLISH\tab \tab \tab \tab ; Set language
+\par .Set country=USA\tab \tab \tab \tab ; Set country
+\par .Set SourceDir=%lang%\\%country%\tab ; SourceDir = [ENGLISH\\USA]
+\par .Set join=%lang%%country%\tab \tab ; join = [ENGLISHUSA]
+\par .Set success=100%%\tab \tab \tab ; success = [100%]
+\par .Set SourceDir=\tab \tab \tab \tab ; SourceDir = []
+\par .Set contraction=\ldblquote don\rquote t\rdblquote \tab \tab ; contraction = [don\rquote t]
+\par .Set contraction=don\rquote \rquote t\tab \tab \tab ; contraction = [don\rquote t]
+\par .Set someSpaces=  hi there\tab \tab ; someSpaces = [hi there]
+\par .Set someMore=\ldblquote   blue dog  \ldblquote \tab \tab ; someMore = [  blue dog  ]
+\par \pard\plain \s3\sb120\widctlpar \b\f4 {\*\bkmkstart _Toc289487610}{\*\bkmkstart _Toc362068488}{\field\flddirty{\*\fldinst autonumlgl }{\fldrslt }}\tab Variable Details{\*\bkmkend _Toc289487610}{\*\bkmkend _Toc362068488}
+\par \pard\plain \widctlpar \f4\fs20 
+The standard MakeCAB variables are listed below.  These variables are predefined, and each of them have default value, which is used if you do not set the variable from the command line (/D var=value) or prior to the time you explicitly set the variable w
+ith a {\b .Define} or {\b .Set} command in a directive file.  
+\par \pard \widctlpar You can create your own variables as well, using the {\b .Define }command if you specify {\b .Option Explict}, and the {\b .Set }command otherwise.
+\par \pard\plain \s19\sb240\widctlpar\brdrb\brdrs\brdrw15\brsp20 \b\f4\fs20 Cabinet{\b0 =}On{\b0  | }Off{\b0 
+\par }\pard\plain \s20\li360\widctlpar \f4\fs20 Turns {\i cabinet mode }on or off.
+\par \pard\plain \s23\li360\widctlpar \f4\fs20 {\ul Default:}\tab .Set Cabinet=On\tab \tab ; Cabinet mode is ON
+\par \pard\plain \s20\li360\widctlpar \f4\fs20 
+\par When cabinet mode is {\b On}, the following applies:
+\par \pard\plain \s21\fi-360\li720\widctlpar\tx360 \f4\fs20 1)\tab Files are stored in a cabinet, whose name is taken from the {\b CabinetNameTemplate} variable{\b 
+\par }\pard \s21\fi-360\li720\widctlpar\tx360 2)\tab If the compressed size of a file would cause the current Cabinet to exceed the current {\b MaxCabinetSize }
+variable, then as much of the compressed file as possible is stored in the current Cabinet, that Cabinet is closed, and a new Cabinet is created.  Note that it is possible for a large file to span multiple Cabinets!
+\par \pard \s21\fi-360\li720\widctlpar\tx360 3)\tab If the compressed size of a file (or set of files, if the files are small) would cause the current Folder to exceed the current {\b MinFolderSize}
+ variable, these files are the last ones added to the current Folder, a new Folder is started for any subsequent files.{\cs32\fs16\up6 \chftn {\footnote \pard\plain \s33\widctlpar \f4\fs20 {\cs32\fs16\up6 \chftn }
+ The motivation here is that a Folder is a decompression boundary, and so is advisory.  To access a file in a Folder, you must start decompressing from the beginning of a Folder, potentially decompressing (and discarding) many files until you arrive at th
+e desired file.  If we made the current folder larger, then this file just added would take longer to access.  In general, the {\b MinFolderSize} variable should be several times larger than 32K, to be of any utility.}}
+  Note that if the current Folder cannot fit in the current Cabinet, as much as possible of the Folder is stored in the current Cabinet, and the remainder of the Folder is stored in the next Cabinet.  This means that it is possible for {\i several }
+files to be continued from one Cabinet file to the next Cabinet file!
+\par \pard\plain \s20\li360\widctlpar \f4\fs20 
+\par When cabinet mode is {\b Off}, the following applies:
+\par \pard\plain \s21\fi-360\li720\widctlpar\tx360 \f4\fs20 1)\tab Files are stored in individual files{\b 
+\par }\pard \s21\fi-360\li720\widctlpar\tx360 2)\tab If the destination file is not supplied, the default name is controlled by the {\i compression mode} (see the {\b Compress }variable)
+\par \pard\plain \s22\li360\widctlpar \f4\fs20\ul 
+\par Examples
+\par \pard\plain \s24\li720\widctlpar \f11\fs20 .Set Cabinet=OFF\tab \tab \tab ; Files not in cabinets...
+\par .Set Compress=OFF\tab \tab \tab ; ...and no compression.
+\par setup.exe\tab \tab \tab \tab ; Setup program is simply copied to disk.
+\par .Set Cabinet=ON\tab \tab \tab ; Use a cabinet...
+\par .SET Compress=ON\tab \tab \tab ; ...and compress remaining files.
+\par \pard\plain \s19\sb240\widctlpar\brdrb\brdrs\brdrw15\brsp20 \b\f4\fs20 CabinetFileCountThreshold{\b0 =count
+\par }\pard\plain \s20\li360\widctlpar \f4\fs20 Sets a goal for the maximum number of files in a cabinet.
+\par \pard\plain \s23\li360\widctlpar \f4\fs20 {\ul Default:}\tab .Set CabinetFileCountThreshold=0\tab ; Default is no threshold
+\par \pard\plain \s20\li360\widctlpar \f4\fs20 
+\par \pard \s20\li360\widctlpar {\i count}
+ is a threshold for the number of files to store in a cabinet.  Once this count has been reached, MakeCAB will close the current cabinet as soon as possible.  Due to the blocking of files for compression purposes, it is possible that the cabinet will cont
+ain more files than specified by this variable.
+\par \pard \s20\li360\widctlpar 
+\par If {\i count }is 0, then there is no limit on the number files per cabinet.
+\par 
+\par \pard\plain \s22\li360\widctlpar \f4\fs20\ul Examples:
+\par \pard\plain \s24\li720\widctlpar \f11\fs20 .Set CabinetFileCountThreshold=100\tab ; Shoot for 100 files per cabinet
+\par \pard\plain \s19\sb240\widctlpar\brdrb\brdrs\brdrw15\brsp20 \b\f4\fs20 CabinetName{\b0 n=filename}
+\par \pard\plain \s20\li360\widctlpar \f4\fs20 The cabinet file name for the specified cabinet.
+\par \pard\plain \s23\li360\widctlpar \f4\fs20 {\ul Default:}\tab \tab \tab ; By default none of these variables are defined
+\par \pard\plain \s20\li360\widctlpar \f4\fs20 
+\par \pard \s20\li360\widctlpar If this variable is not defined for a particular disk, then MakeCAB uses the {\b CabinetNameTemplate} to construct the cabinet name.
+\par \pard\plain \s18\li360\widctlpar \f4\fs20 
+\par \pard\plain \s22\li360\widctlpar \f4\fs20\ul Examples:
+\par \pard\plain \s24\li720\widctlpar \f11\fs20 .Set CabinetName1=one.cab
+\par \pard\plain \s19\sb240\widctlpar\brdrb\brdrs\brdrw15\brsp20 \b\f4\fs20 CabinetNameTemplate{\b0 =template}
+\par \pard\plain \s20\li360\widctlpar \f4\fs20 Sets the cabinet file name template.
+\par \pard\plain \s23\li360\widctlpar \f4\fs20 {\ul Default:}\tab .Set CabinetNameTemplate=*.CAB\tab ; 1.CAB, 2.CAB, ...
+\par \pard\plain \s20\li360\widctlpar \f4\fs20 
+\par \pard \s20\li360\widctlpar This template is used to construct the file name of each cabinet.  The "*" in this template is replaced by the cabinet number (1, 2, etc.). This variable is used only if no variable {\b CabinetName}{\b\i n}{\i  }
+exists for cabinet {\i n}.
+\par \pard \s20\li360\widctlpar 
+\par \pard \s20\fi-720\li1080\widctlpar\box\brdrs\brdrw30\brsp20 {\b NOTE:\tab Be sure that the expanded cabinet name does not exceed the limits for your file system!  }For example, if you used \ldblquote CABINET*.CAB\rdblquote 
+, and MakeCAB had to create 10 or more cabinets, then you would have cabinet names like CABINET10.CAB, which is 9.3, which is an invalid name in the FAT file system.  Unfortunately, MakeCAB would not detect this until it had already created 9 cabinets!
+
+\par \pard\plain \s22\li360\widctlpar \f4\fs20\ul 
+\par Examples:
+\par \pard\plain \s24\li720\widctlpar \f11\fs20 .Set CabinetNameTemplate=EXCEL*.DIA ; EXCEL1.DIA, EXCEL2.DIA, etc.
+\par .Set CabinetNameTemplate=*.         ; 1, 2, 3, etc.
+\par \pard\plain \s19\sb240\widctlpar\brdrb\brdrs\brdrw15\brsp20 \b\f4\fs20 ChecksumWidth{\b0 =}1{\b0  | }2{\b0  | ... | }8{\b0 
+\par }\pard\plain \s20\li360\widctlpar \f4\fs20 Sets the maximum number of low-order hex digits displayed by {\b InfFileLineFormat} {\b csum} parameter.
+\par \pard\plain \s23\li360\widctlpar \f4\fs20 {\ul Default:}\tab .Set ChecksumWidth=8\tab \tab ; Default is all 8 hex digits (csum is a 32-bit value)
+\par \pard\plain \s20\li360\widctlpar \f4\fs20 
+\par \pard \s20\li360\widctlpar The presence of the {\b csum }parameter in the {\b InfFileLineFormat }v
+ariable causes MakeCAB to compute a 32-bit CRC for each file and write that checksum to the INF file.  While leading zeros are not written out, the presence of these checksums can significantly increase the size of the INF file.  You can use {\b 
+ChecksumWidth }
+to restrict the size of the checksum written to the INF file.  If a value less than 8 is specified, then MakeCAB will mask off the high-order bits of the 32-bit checksum to produce a value for the INF file that is at most the number of hex digits specifie
+d.
+\par \pard\plain \s22\li360\widctlpar \f4\fs20\ul 
+\par Examples:
+\par \pard\plain \s24\li720\widctlpar \f11\fs20 .Set ChecksumWidth=4\tab \tab ; Only display the low order 4 hex digits
+\par \pard\plain \s19\sb240\widctlpar\brdrb\brdrs\brdrw15\brsp20 \b\f4\fs20 ClusterSize{\b0 =bytesPerCluster}
+\par \pard\plain \s20\li360\widctlpar \f4\fs20 The cluster size of the distribution media.
+\par \pard\plain \s23\li360\widctlpar \f4\fs20 {\ul Default:}\tab .Set ClusterSize=512\tab ; 1.44M and 1.2M floppies have 512-byte clusters
+\par \pard\plain \s20\li360\widctlpar \f4\fs20 
+\par \pard \s20\li360\widctlpar This is used by MakeCAB to round up the sizes of files and cabinets to a cluster boundary, so it can determine when to switch to the next disk.
+\par \pard \s20\li360\widctlpar 
+\par \pard \s20\li360\widctlpar You can use a standard disk size from the following list, and MakeCAB will supply the known cluster size for that disk size:
+\par \pard \s20\li360\widctlpar {\b 
+\par \tab 1.44M
+\par \tab 1.25M} (Japanese NEC 3.5\rdblquote  drive capacity){\b 
+\par \tab 1.2M
+\par \tab 720K
+\par \tab 360K
+\par \tab CDROM
+\par }\pard\plain \s22\li360\widctlpar \f4\fs20\ul 
+\par Examples:
+\par \pard\plain \s24\li720\widctlpar \f11\fs20 .Set ClusterSize=1.44M \tab \tab \tab ; Use known 1.44M floppy info
+\par \pard\plain \s19\sb240\widctlpar\brdrb\brdrs\brdrw15\brsp20 \b\f4\fs20 Compress{\b0 =}ON{\b0  | }OFF{\b0 
+\par }\pard\plain \s20\li360\widctlpar \f4\fs20 Turn file compression on or off.
+\par \pard\plain \s23\li360\widctlpar \f4\fs20 {\ul Default:}\tab .Set Compress=On\tab ; Compression is on
+\par \pard\plain \s20\li360\widctlpar \f4\fs20 
+\par \pard \s20\li360\widctlpar While compression is usually on, you generally turn if off for the first few files on disk 1 (SETUP.EXE, for example).  This applies regardless of the {\b Cabinet }
+setting, so it is valid to store one or more uncompressed files in a Cabinet File.
+\par \pard\plain \s22\li360\widctlpar \f4\fs20\ul 
+\par Examples:
+\par \pard\plain \s24\li720\widctlpar \f11\fs20 .Set Cabinet=OFF\tab \tab \tab ; Files not in cabinets...
+\par .Set Compress=OFF\tab \tab \tab ; ...and no compression.
+\par setup.exe\tab \tab \tab \tab ; Setup program is simply copied to disk.
+\par .Set Cabinet=ON\tab \tab \tab ; Use a cabinet...
+\par .SET Compress=ON\tab \tab \tab ; ...and compress remaining files.
+\par \pard\plain \s19\sb240\widctlpar\brdrb\brdrs\brdrw15\brsp20 \b\f4\fs20 {\*\bkmkstart CompressedFileExtensionChar}CompressedFileExtensionChar{\b0 =char
+\par }\pard\plain \s20\li360\widctlpar \f4\fs20 {\*\bkmkend CompressedFileExtensionChar}Last character in file name used when compressing an individual file.
+\par \pard\plain \s23\li360\widctlpar \f4\fs20 {\ul Default:}\tab .Set CompressedFileExtensionChar=_\tab ; Default is an underscore ("_")
+\par \pard\plain \s20\li360\widctlpar \f4\fs20 
+\par \pard \s20\li360\widctlpar If {\b Cabinet}={\b OFF }and {\b Compress}={\b ON }, then MakeCAB will compress an individual file.  While the compressed files is stored in a Cab
+inet File, it has only a single file.  To maintain some consistency with existing setup compression products, the default compressed file name is constructed by taking the source file name and replacing the last character of the file extension with the se
+tting of this variable.
+\par \pard\plain \s22\li360\widctlpar \f4\fs20\ul 
+\par Examples:
+\par \pard\plain \s24\li720\widctlpar \f11\fs20 .Set CompressedFileExtensionChar=$\tab ; SAMPLE.EXE => SAMPLE.EX$
+\par \tab \tab \tab \tab \tab \tab ; SAMPLE.EX  => SAMPLE.EX$
+\par \tab \tab \tab \tab \tab \tab ; SAMPLE.E   => SAMPLE.E$
+\par \tab \tab \tab \tab \tab \tab ; SAMPLE.    => SAMPLE.$
+\par \tab \tab \tab \tab \tab \tab ; SAMPLE     => SAMPLE.$
+\par \pard\plain \s19\sb240\widctlpar\brdrb\brdrs\brdrw15\brsp20 \b\f4\fs20 CompressionType{\b0 =}MSZIP{\b0  
+\par }\pard\plain \s20\li360\widctlpar \f4\fs20 Select compression engine.
+\par \pard\plain \s23\li360\widctlpar \f4\fs20 {\ul Default:}\tab .Set CompressionType=MSZIP\tab ; Default is MSZIP compressor
+\par \pard\plain \s20\li360\widctlpar \f4\fs20 
+\par \pard \s20\li360\widctlpar MSZIP is the default compression type supported by Microsoft.  This version of MakeCAB.EXE also supports the LZX compression method, which can achieve higher compressions ratios.
+\par \pard \s20\li360\widctlpar 
+\par \pard \s20\li360\widctlpar Using MSZIP compression and FolderSizeThreshold=1 will generate a cabinet file approximately the same size as a PKZIP-compatible compression engine.  LZX compression requires more time, but LZX decompression is typically faster.
+
+\par \pard\plain \s22\li360\widctlpar \f4\fs20\ul 
+\par Examples:
+\par \pard\plain \s24\li720\widctlpar \f11\fs20 .Set CompressionType=MSZIP\tab ; MSZIP compressor
+\par \pard\plain \s19\sb240\widctlpar\brdrb\brdrs\brdrw15\brsp20 \b\f4\fs20 DestinationDir{\b0 =path
+\par }\pard\plain \s20\li360\widctlpar \f4\fs20 Path prefix to store in cabinet file for each file in the cabinet.
+\par \pard\plain \s23\li360\widctlpar \f4\fs20 {\ul Default:}\tab .Set DestinationDir=\tab \tab ; Default is no path prefix
+\par \pard\plain \s20\li360\widctlpar \f4\fs20 
+\par \pard \s20\li360\widctlpar {\i path } is concatenated with a path separator (\ldblquote \\\rdblquote 
+) and the target file name on File Copy Commands to produce the file name that is stored in cabinet file.  EXTRACT.EXE will use this file name as the default name when the file is extracted.
+\par \pard \s20\li360\widctlpar 
+\par \pard\plain \s22\li360\widctlpar \f4\fs20\ul Examples:
+\par \pard\plain \s24\li720\widctlpar \f11\fs20 .Set DestinationDir=SYSTEM\tab ; Following files get SYSTEM prefix
+\par bin\\ARIAL.TTF\tab \tab \tab ; Name in cabinet is SYSTEM\\ARIAL.TTF
+\par .Set DestinationDir=\tab \tab ; No prefix
+\par bin\\ARIAL.TTF\tab \tab \tab ; Name in cabinet is ARIAL.TTF
+\par \pard\plain \s19\sb240\widctlpar\brdrb\brdrs\brdrw15\brsp20 \b\f4\fs20 DiskDirectory{\b0 n=directory}
+\par \pard\plain \s20\li360\widctlpar \f4\fs20 The output directory name for the specified disk.
+\par \pard\plain \s23\li360\widctlpar \f4\fs20 {\ul Default:}\tab \tab \tab ; By default none of these variables are defined
+\par \pard\plain \s20\li360\widctlpar \f4\fs20 
+\par \pard \s20\li360\widctlpar If this variable is not defined for a particular disk, then MakeCAB uses the {\b DiskDirectoryTemplate} to construct the disk directory.
+\par \pard\plain \s18\li360\widctlpar \f4\fs20 
+\par \pard\plain \s22\li360\widctlpar \f4\fs20\ul Examples:
+\par \pard\plain \s24\li720\widctlpar \f11\fs20 .Set DiskDirectory1=disk.one
+\par \pard\plain \s19\sb240\widctlpar\brdrb\brdrs\brdrw15\brsp20 \b\f4\fs20 DiskDirectoryTemplate{\b0 =template
+\par }\pard\plain \s20\li360\widctlpar \f4\fs20 Set the output directory name template.  One directory is created for each disk of the layout.
+\par \pard\plain \s23\li360\widctlpar \f4\fs20 {\ul Default:}\tab .Set DiskDirectoryTemplate=DISK* ; Default is DISK1, DISK2, etc.
+\par \pard\plain \s20\li360\widctlpar \f4\fs20 
+\par \pard \s20\li360\widctlpar As MakeCAB processes a directive file, it will create one or more disk \ldblquote images\rdblquote 
+.  Rather than using some specific disk format, however, MakeCAB simply creates one subdirectory for each disk and places the files for each disk in the appropriate directory.  If a \ldblquote *\rdblquote 
+ exists in this variable, then it is replaced with the disk number.  If no \ldblquote *\rdblquote  is specified, then all files are placed in the single directory specified by this variable. 
+\par \pard \s20\li360\widctlpar 
+\par This variable is used only if no variable {\b DiskDirectory}{\b\i n}{\i  }exists for disk {\i n}.
+\par 
+\par \pard\plain \s22\li360\widctlpar \f4\fs20\ul Examples:
+\par \pard\plain \s24\li720\widctlpar \f11\fs20 .Set DiskDirectoryTemplate=C:\\EXCEL6\\DISK*  ; Put files in separate dirs
+\par .Set DiskDirectoryTemplate=C:\\EXCEL6\tab ; Put all files in C:\\EXCEL6
+\par .Set DiskDirectoryTemplate=\tab \tab \tab ; Put all files in current dir
+\par \pard\plain \s19\sb240\widctlpar\brdrb\brdrs\brdrw15\brsp20 \b\f4\fs20 DiskLabel{\b0 n=label}
+\par \pard\plain \s20\li360\widctlpar \f4\fs20 The user-readable text string for the specified disk.
+\par \pard\plain \s23\li360\widctlpar \f4\fs20 {\ul Default:}\tab \tab \tab ; By default none of these variables are defined
+\par \pard\plain \s20\li360\widctlpar \f4\fs20 
+\par \pard \s20\li360\widctlpar This {\i label} is stored in cabinet files that contain
+ files that are split across disk boundaries, to simplify prompting for the appropriate disk to insert into the drive.  For example, if EXCEL.EXE started in 1.CAB and finished in 2.CAB, and a user asked to extract EXCEL.EXE from 2.CAB, EXTRACT.EXE can ret
+rieve the printed label for the disk containing 1.CAB (say, Excel Program Disk 1) and tell the user to insert that disk and try again.
+\par \pard \s20\li360\widctlpar 
+\par \pard \s20\li360\widctlpar If this variable is not defined for a particular disk, then MakeCAB uses the {\b DiskLabelTemplate} to construct the disk label.
+\par \pard\plain \s18\li360\widctlpar \f4\fs20 
+\par \pard\plain \s22\li360\widctlpar \f4\fs20\ul Examples:
+\par \pard\plain \s24\li720\widctlpar \f11\fs20 .Set DiskLabel1=\rdblquote Excel Setup Disk 1\rdblquote 
+\par .Set DiskLabel2=\rdblquote Excel Setup Disk 2\rdblquote 
+\par \pard\plain \s19\sb240\widctlpar\brdrb\brdrs\brdrw15\brsp20 \b\f4\fs20 DiskLabelTemplate{\b0 =template
+\par }\pard\plain \s20\li360\widctlpar \f4\fs20 Set the printed disk label.  Used if individual {\b DiskLabel}n variables are not defined
+\par \pard\plain \s23\li360\widctlpar \f4\fs20 {\ul Default:}\tab .Set DiskLabelTemplate=\ldblquote Disk *\rdblquote  ; Default is \ldblquote Disk 1\rdblquote , \ldblquote Disk 2\rdblquote , etc.
+\par \pard\plain \s20\li360\widctlpar \f4\fs20 
+\par \pard \s20\li360\widctlpar Sets the default user-readable disk label.  If a \ldblquote *\rdblquote  exists in this variable, then it is replaced with the disk number.  This variable is used only if no variable {\b DiskLabel}{\b\i n}{\i  }exists for disk {
+\i n}.
+\par \pard \s20\li360\widctlpar 
+\par \pard\plain \s22\li360\widctlpar \f4\fs20\ul Examples:
+\par \pard\plain \s24\li720\widctlpar \f11\fs20 .Set DiskLabelTemplate=\ldblquote Excel Disk *\rdblquote 
+\par \pard\plain \s19\sb240\widctlpar\brdrb\brdrs\brdrw15\brsp20 \b\f4\fs20 DoNotCopyFiles{\b0 =}On{\b0  | }Off{\b0 
+\par }\pard\plain \s20\li360\widctlpar \f4\fs20 Controls whether File Copy Commands actually copy files.
+\par \pard\plain \s23\li360\widctlpar \f4\fs20 {\ul Default:}\tab .Set DoNotCopyFiles=Off\tab \tab ; Files {\i are }copied
+\par \pard\plain \s20\li360\widctlpar \f4\fs20 
+\par \pard \s20\li360\widctlpar This option is intended to be used when Cabinet is OFF and Compress is OFF, as a means of generating an INF file very quickly.  It has no affect when Cabinet is ON or Compress is ON.
+\par \pard\plain \s22\li360\widctlpar \f4\fs20\ul 
+\par Examples
+\par \pard\plain \s24\li720\widctlpar \f11\fs20 .Set DoNotCopyFiles=ON\tab \tab ; Make MakeCAB create the INF file quickly
+\par \pard\plain \s19\sb240\widctlpar\brdrb\brdrs\brdrw15\brsp20 \b\f4\fs20 FolderFileCountThreshold{\b0 =count}
+\par \pard\plain \s20\li360\widctlpar \f4\fs20 Set the threshold on the number of files to store in a folder.
+\par \pard\plain \s23\li360\widctlpar \f4\fs20 {\ul Default:}\tab .Set FolderFileCountThreshold=0\tab ; Default to no limit on count of files in a folder
+\par \pard\plain \s20\li360\widctlpar \f4\fs20 
+\par \pard \s20\li360\widctlpar Sets the threshold file count for the current folder.  When this threshold is exceeded, then the current folder is closed.  If any more files are to be processed, they will go into a new folder.
+\par \pard \s20\li360\widctlpar 
+\par If {\b Cabinet }is {\b OFF}, this variable is ignored.
+\par 
+\par If {\i count }is 0, then there is no limit on the count of files in a folder.
+\par 
+\par \pard\plain \s22\li360\widctlpar \f4\fs20\ul Examples:
+\par \pard\plain \s24\li720\widctlpar \f11\fs20 .Set FolderFileCountThreshold=50\tab ; No more than 50 files per folder
+\par \pard\plain \s19\sb240\widctlpar\brdrb\brdrs\brdrw15\brsp20 \b\f4\fs20 FolderSizeThreshold{\b0 =size}
+\par \pard\plain \s20\li360\widctlpar \f4\fs20 Set the threshold size for the current folder.
+\par \pard\plain \s23\li360\widctlpar \f4\fs20 {\ul Default:}\tab .Set MinMaxFolderSize=0\tab ; Default to the maximum cabinet size
+\par \pard\plain \s20\li360\widctlpar \f4\fs20 
+\par \pard \s20\li360\widctlpar 
+Sets the threshold size for the current folder.  When this threshold is exceeded, then the current folder is closed.  If any more files are to be processed, they will go into a new folder.  MakeCAB attempts to limit folders to the size specified by this v
+ariable, but in most cases folders will be a bit larger than this threshold.
+\par \pard \s20\li360\widctlpar 
+\par If {\b Cabinet }is {\b OFF}, this variable is ignored.
+\par 
+\par If {\i size }is 0, then the threshold is the same as the maximum cabinet size.
+\par 
+\par \pard \s20\li360\widctlpar Folders are compression/encryption boundaries.  The state of the compressor and cryptosystem are reset at folder boundaries.  To access a file in a folder, the folder must be decrypted and decompressed starting from the {\b 
+front }of the folder and continuing through to the desired file.  Thus, smaller folder thresholds are appropriate for a layout where a small number of files needs to be randomly accessed quickly from a cabinet.  On the other hand, larger folder
+ thresholds permit the compressor to examine more data, and so generally yield better compression results.  For a layout where the files will be accessed sequentially and most of the files will be accessed, a larger folder threshold is best.
+\par \pard \s20\li360\widctlpar 
+\par \pard\plain \s22\li360\widctlpar \f4\fs20\ul Examples:
+\par \pard\plain \s24\li720\widctlpar \f11\fs20 .Set FolderSizeThreshold=1M\tab ; Aim for 1Mb folders
+\par \pard\plain \s19\sb240\widctlpar\brdrb\brdrs\brdrw15\brsp20 \b\f4\fs20 GenerateInf=ON | OFF
+\par \pard\plain \s20\li360\widctlpar \f4\fs20 Controls Unified vs. Relational INF generation mode.
+\par {\ul Default:}    .Set GenerateInf=ON     ; Default to "unified" INF mode
+\par 
+\par \pard \s20\li360\widctlpar If {\b GenerateInf} is {\b ON }when the first file copy command is encounter
+ed, then Unified INF mode is selected.  In this mode, file detail lines are written to the INF file as file copy commands are processed, so the order of file lines in the INF is exactly the same as the order of the files in the layout.
+\par \pard \s20\li360\widctlpar 
+\par \pard \s20\li360\widctlpar If {\b GenerateInf} is {\b OFF} when the first file copy command is encountered, then Relational INF mode is selected.  In this mode, file copy commands are processed, but INF file generation is delayed until {\b GenerateInf}
+ is set to {\b ON}, and File Reference commands are used to select information on files in the layout to be placed in the INF file.
+\par \pard \s20\li360\widctlpar 
+\par \pard \s20\li360\widctlpar {\i Unified mode} is easier to use, since each file is specifed only once, and is most appropriate for quick usage of MakeCAB.
+\par \pard \s20\li360\widctlpar 
+\par \pard \s20\li360\widctlpar {\i Relational mode} is more complicated, since each file must be specified (at least) twice, but it provides very fine control of both the disk layout {\b and }
+the format of the INF file.  In particular, some INF files want to have sections to list the files associated with a certain feature, there may be many such sections, and some
+ files may be required in more than one section.  Unified mode does not provide any method to generate such an INF file, but Relational mode does via the File Reference command.  
+\par \pard \s20\li360\widctlpar 
+\par \pard \s20\li360\widctlpar By separating the disk layout order from the INF file order, MakeCAB permits optimization of the file layout for compression vs. access time.  The {\i layout section }of the DDF contains file copy commands that control
+\par \pard \s20\li360\widctlpar precisely where files are in the layout.  The {\i INF section }of the DDF contains INF formatting information, including F
+ile Reference commands to pull in information about specific files from earlier File Copy commands in the layout section.
+\par \pard \s20\li360\widctlpar 
+\par {\ul Notes:
+\par }\pard\plain \s21\fi-360\li720\widctlpar\tx360 \f4\fs20 (1)\tab Once {\b GenerateInf} is set to {\b ON }and at least one File Copy command has been processed, {\b GenerateInf} may not be set to {\b OFF}
+ (i.e., in Relational Mode, all File Copy commands must be processed before any File Reference commands)
+\par \pard\plain \s20\li360\widctlpar \f4\fs20 
+\par \pard\plain \s22\li360\widctlpar \f4\fs20\ul Examples:
+\par \pard\plain \s24\li720\widctlpar \f11\fs20 ;** Layout section - File Copy commands
+\par .Set GenerateInf=OFF
+\par foo.exe
+\par bar.exe other.exe
+\par foo.exe foo1.exe
+\par ....
+\par 
+\par ;** INF section -- File Reference commands
+\par .Set GenerateInf=ON
+\par .WriteInf "[a section]"
+\par foo.exe
+\par other.exe
+\par foo1.exe /rename=sys\\foo.exe\tab ; pass custom parameter
+\par ....
+\par \pard\plain \s19\sb240\widctlpar\brdrb\brdrs\brdrw15\brsp20 \b\f4\fs20 Inf{\b0\i Xxx}{\b0 =string}
+\par \pard\plain \s20\li360\widctlpar \f4\fs20 Sets the default value for an INF parameter.{\ul 
+\par Default:}\tab [Not applicable]
+\par \pard\plain \s22\li360\widctlpar \f4\fs20\ul {\ulnone 
+\par Variables of this form (other than the standard ones in this list) can be used for two purposes:
+\par {\pntext\pard\plain\fs20 a)\tab}}\pard \s22\fi-360\li720\widctlpar{\*\pn \pnlvlbody\pnlcltr\pnstart1\pnindent360\pnhang{\pntxta )}}{\ulnone To override the usual value of a standard INF parameter (like }{\b\ulnone date}{\ulnone , }{\b\ulnone time}{
+\ulnone , }{\b\ulnone attr}{\ulnone , etc.) for all the files (or a set of files) in the layout.
+\par {\pntext\pard\plain\fs20 b)\tab}}\pard \s22\fi-360\li720\widctlpar{\*\pn \pnlvlbody\pnlcltr\pnstart1\pnindent360\pnhang{\pntxta )}}{\ulnone To define a custom INF parameter, and specify its default value.
+\par }\pard \s22\li360\widctlpar 
+\par \pard\plain \s20\li360\widctlpar \f4\fs20 {\ul Notes:
+\par }\pard\plain \s21\fi-360\li720\widctlpar\tx360 \f4\fs20 (1)\tab When in Relation INF mode, only the {\b last value} for a particular {\b Inf}{\i Xxx}
+ variable will be carried over from the layout section to the INF section of the DDF.  In the following example:
+\par \pard\plain \s24\li720\widctlpar \f11\fs20 \tab ;** Layout section - File Copy commands
+\par \tab .Set GenerateInf=OFF\tab ; Select Relational INF
+\par \tab .Set InfCustom=apple
+\par \tab file.1
+\par \tab .Set InfCustom=pear
+\par \tab file.2
+\par \tab ;** INF section - File Reference commands
+\par \tab .Set GenerateInf=ON
+\par \tab file.1\tab \tab \tab ; *custom* value is \ldblquote pear\rdblquote , not \ldblquote apple\rdblquote !
+\par \tab file.2
+\par \pard\plain \s21\fi-360\li720\widctlpar\tx360 \f4\fs20 
+\par \pard\plain \s22\li360\widctlpar \f4\fs20\ul Examples:
+\par \pard\plain \s24\li720\widctlpar \f11\fs20 .Set InfDate=05/02/94\tab \tab ; Date stamp all files
+\par .Set InfTime=06:00:00a\tab \tab ; Time stamp all files
+\par .Set InfAttr=\tab \tab \tab ; Turn off all attributes (esp. read-only)
+\par .Set InfCustom=yes\tab \tab ; Define custom INF parameter
+\par \pard\plain \s19\sb240\widctlpar\brdrb\brdrs\brdrw15\brsp20 \b\f4\fs20 InfCabinetHeader{\b0 [}{\b0\i n}{\b0 ]=string}
+\par \pard\plain \s20\li360\widctlpar \f4\fs20 Sets the header text for the cabinet section of the INF file.{\ul 
+\par Default:}\tab .Set InfCabinetHeader="[cabinet list]"
+\par 
+\par \pard \s20\li360\widctlpar This string is written to the INF prior to any cabinet detail lines. MakeCAB will also use any variables of the form {\b InfCabinetHeader}{\i n} where {\i n }is an integer with no leading zeros (0).  These additional lin
+es will be printed out in increasing order after the {\b InfCabinetHeader} line.  Any {\b .InfBegin} {\b Cabinet}/{\b .InfEnd} lines will be printed as they are encountered, but in any event after all of these header lines.
+\par \pard\plain \s22\li360\widctlpar \f4\fs20\ul 
+\par Examples:
+\par \pard\plain \s24\li720\widctlpar \f11\fs20 .Set InfCabinetHeader=\ldblquote ;Lots o\rquote  cabinets\rdblquote 
+\par 
+\par .Set InfCabinetHeader=\tab \tab ; No cabinet header
+\par 
+\par .Set InfCabinetHeader=\ldblquote ;Line 1 of cabinets\rdblquote 
+\par .Set InfCabinetHeader1=\ldblquote ;Line 2 of cabinets\rdblquote 
+\par .Set InfCabinetHeader2=\ldblquote ;Line 3 of cabinets\rdblquote 
+\par \pard\plain \s19\sb240\widctlpar\brdrb\brdrs\brdrw15\brsp20 \b\f4\fs20 InfCabinetLineFormat{\b0 [}{\b0\i n}{\b0 ]=format string}
+\par \pard\plain \s20\li360\widctlpar \f4\fs20 Sets the detail line format for the cabinet section of the INF file.{\ul 
+\par Default:}\tab .Set InfCabinetLineFormat=*cab#*,*disk#*,*cabfile*
+\par 
+\par \pard \s20\li360\widctlpar This format is used to generate a line in the "cabinet" section of the INF.  If a numeric suffix {\i n }is specified in the variable name, then the specified format is used for cabinet number {\i n}
+.  If no such cabinet number-specific format is defined, then the value of the {\b InfCabinetLineFormat} variable is used.
+\par \pard \s20\li360\widctlpar See \ldblquote {\field{\*\fldinst  REF InfXxxLineFormat_Syntax  \\* MERGEFORMAT }{\fldrslt InfDisk/Cabinet/FileLineFormat Syntax and Semantics}}\rdblquote  on page {\field{\*\fldinst  PAGEREF InfXxxLineFormat_Syntax \\
+* MERGEFORMAT }{\fldrslt {\lang1024 15}}} for details on the format string..
+\par See \ldblquote {\field{\*\fldinst  REF INF_Parameters  \\* MERGEFORMAT }{\fldrslt INF Parameters}}\rdblquote  on page {\field{\*\fldinst  PAGEREF INF_Parameters  \\* MERGEFORMAT }{\fldrslt {\lang1024 15}}} for a list of the allowed parameter names.
+\par \pard\plain \s19\sb240\widctlpar\brdrb\brdrs\brdrw15\brsp20 \b\f4\fs20 InfCommentString{\b0 =string}
+\par \pard\plain \s20\li360\widctlpar \f4\fs20 Sets the line comment string for the INF file.{\ul 
+\par Default:}\tab .Set InfCommentString=";"
+\par 
+\par \pard \s20\li360\widctlpar This is the string MakeCAB will use to prefix comment lines that it generates in the INF (the autogenerated MakeCAB version/date/time lines, for example). 
+\par \pard\plain \s19\sb240\widctlpar\brdrb\brdrs\brdrw15\brsp20 \b\f4\fs20 InfDateFormat{\b0 =YYYY-MM-DD | MM/DD/YY}
+\par \pard\plain \s20\li360\widctlpar \f4\fs20 Sets the date format used for dates written to the INF file.{\ul 
+\par Default:}\tab .Set InfDateFormat=MM/DD/YY\tab ; Default to normal US convention
+\par 
+\par \pard \s20\li360\widctlpar This format is used to format the {\b date }parameter for the {\b InfFileLineFormat }used to write file detail lines to the INF file.
+\par \pard\plain \s22\li360\widctlpar \f4\fs20\ul 
+\par Examples:
+\par \pard\plain \s24\li720\widctlpar \f11\fs20 .Set InfDateFormat=YYYY-MM-DD\tab \tab ; Use the preferred ACME format
+\par \pard\plain \s19\sb240\widctlpar\brdrb\brdrs\brdrw15\brsp20 \b\f4\fs20 InfDiskHeader{\b0 [}{\b0\i n}{\b0 ]=string}
+\par \pard\plain \s20\li360\widctlpar \f4\fs20 Sets the header text for the disk section of the INF file.{\ul 
+\par Default:}\tab .Set InfDiskHeader="[disk list]"
+\par 
+\par \pard \s20\li360\widctlpar This string is written to the INF prior to any disk detail lines. MakeCAB will also use any variables of the form {\b InfDiskHeader}{\i n} where {\i n }
+is an integer with no leading zeros (0).  These additional lines will be printed out in increasing order after the {\b InfDiskHeader} line.  Any {\b .InfBegin} {\b Disk}/{\b .InfEnd}
+ lines will be printed as they are encountered, but in any event after all of these header lines.
+\par \pard\plain \s22\li360\widctlpar \f4\fs20\ul 
+\par Examples:
+\par \pard\plain \s24\li720\widctlpar \f11\fs20 .Set InfDiskHeader=\ldblquote ;Lots o\rquote  Disks\rdblquote 
+\par 
+\par .Set InfDiskHeader=\tab \tab ; No Disk header
+\par 
+\par .Set InfDiskHeader=\ldblquote ;Line 1 of Disks\rdblquote 
+\par .Set InfDiskHeader1=\ldblquote ;Line 2 of Disks\rdblquote 
+\par .Set InfDiskHeader2=\ldblquote ;Line 3 of Disks\rdblquote 
+\par \pard\plain \s19\sb240\widctlpar\brdrb\brdrs\brdrw15\brsp20 \b\f4\fs20 InfDiskLineFormat{\b0 [}{\b0\i n}{\b0 ]=format string}
+\par \pard\plain \s20\li360\widctlpar \f4\fs20 Sets the detail line format for the disk section of the INF file.{\ul 
+\par Default:}\tab .Set InfDiskLineFormat=*disk#*,*label*
+\par 
+\par \pard \s20\li360\widctlpar This format is used to generate a line in the "disks" section of the INF.  If a numeric suffix {\i n }is specified in the variable name, then the specified format is used for disk number {\i n}
+.  If no such disk number-specific format is defined, then the value of the {\b InfDiskLineFormat} variable is used.
+\par \pard \s20\li360\widctlpar See \ldblquote {\field{\*\fldinst  REF InfXxxLineFormat_Syntax  \\* MERGEFORMAT }{\fldrslt InfDisk/Cabinet/FileLineFormat Syntax and Semantics}}\rdblquote  on page {\field{\*\fldinst  PAGEREF InfXxxLineFormat_Syntax \\
+* MERGEFORMAT }{\fldrslt {\lang1024 15}}} for details on the format string..
+\par See \ldblquote {\field{\*\fldinst  REF INF_Parameters  \\* MERGEFORMAT }{\fldrslt INF Parameters}}\rdblquote  on page {\field{\*\fldinst  PAGEREF INF_Parameters  \\* MERGEFORMAT }{\fldrslt {\lang1024 15}}} for a list of the allowed parameter names.
+\par \pard\plain \s19\sb240\widctlpar\brdrb\brdrs\brdrw15\brsp20 \b\f4\fs20 InfFileHeader{\b0 [}{\b0\i n}{\b0 ]=string}
+\par \pard\plain \s20\li360\widctlpar \f4\fs20 Sets the header text for the file section of the INF file.{\ul 
+\par Default:}\tab .Set InfFileHeader="[file list]"
+\par 
+\par \pard \s20\li360\widctlpar This string is written to the INF prior to any file detail lines. MakeCAB will also use any variables of the form {\b InfFileHeader}{\i n} where {\i n }
+is an integer with no leading zeros (0).  These additional lines will be printed out in increasing order after the {\b InfFileHeader} line.  Any {\b .InfBegin} {\b File}/{\b .InfEnd}
+ lines will be printed as they are encountered, but in any event after all of these header lines.
+\par \pard\plain \s19\sb240\widctlpar\brdrb\brdrs\brdrw15\brsp20 \b\f4\fs20 InfFileLineFormat{\b0 [}{\b0\i n}{\b0 ]=format string}
+\par \pard\plain \s20\li360\widctlpar \f4\fs20 Sets the detail line format for the file section of the INF file.{\ul 
+\par Default:}\tab .Set InfFileLineFormat=*disk#*,*cab#*,*file*,*size*
+\par 
+\par \pard \s20\li360\widctlpar This format is used to generate a line in the "file" section of the INF. If a numeric suffix {\i n }is specified in the variable name, then the specified format is used for file number {\i n }
+(file numbers start at 1, and are based on the File Copy Commands, not the File Reference Commands).  If no such file number-specific format is defined, then the value of the {\b InfFileLineFormat} variable is used.
+\par \pard \s20\li360\widctlpar See \ldblquote {\field{\*\fldinst  REF InfXxxLineFormat_Syntax  \\* MERGEFORMAT }{\fldrslt InfDisk/Cabinet/FileLineFormat Syntax and Semantics}}\rdblquote  on page {\field{\*\fldinst  PAGEREF InfXxxLineFormat_Syntax \\
+* MERGEFORMAT }{\fldrslt {\lang1024 15}}} for details on the format string..
+\par See \ldblquote {\field{\*\fldinst  REF INF_Parameters  \\* MERGEFORMAT }{\fldrslt INF Parameters}}\rdblquote  on page {\field{\*\fldinst  PAGEREF INF_Parameters  \\* MERGEFORMAT }{\fldrslt {\lang1024 15}}} for a list of the allowed parameter names.
+\par \pard\plain \s19\sb240\widctlpar\brdrb\brdrs\brdrw15\brsp20 \b\f4\fs20 InfFileName{\b0 =filename
+\par }\pard\plain \s20\li360\widctlpar \f4\fs20 Sets the name of the INF output file.
+\par \pard\plain \s23\li360\widctlpar \f4\fs20 {\ul Default:}\tab .Set InfFileName=SETUP.INF\tab ; Default file name is SETUP.INF
+\par \pard\plain \s20\li360\widctlpar \f4\fs20 
+\par \pard \s20\li360\widctlpar Defines the file name for the INF file.  This file has disk, cabinet, and file information that is intended for use by a setup program during the setup process.
+\par \pard \s20\li360\widctlpar 
+\par \pard\plain \s22\li360\widctlpar \f4\fs20\ul Examples:
+\par \pard\plain \s24\li720\widctlpar \f11\fs20 .Set InfFileName=EXCEL.INF
+\par \pard\plain \s19\sb240\widctlpar\brdrb\brdrs\brdrw15\brsp20 \b\f4\fs20 InfFooter{\b0 [}{\b0\i n}{\b0 ]=string}
+\par \pard\plain \s20\li360\widctlpar \f4\fs20 Sets the footer text for beginning of the INF file.{\ul 
+\par Default:}\tab // Run MakeCAB and use the .Dump command to see the default footer
+\par 
+\par \pard \s20\li360\widctlpar These strings are written to the INF file after all other information.  To disable this footer text, set InfFooter to the empty string (.Set InfFooter=).  MakeCAB will also use any variables of the form {\b InfFooter}{\i n}
+ where {\i n }is an integer with no leading zeros (0).  These additional lines will be printed out in increasing order after the {\b InfFooter} line, starting with {\b InfFooter1}.
+\par \pard \s20\li360\widctlpar The following special strings may be specified in InfFooter[n] values (note that the two percent signs are required, so that MakeCAB does not interpret these as variable references):
+\par \pard \s20\li360\widctlpar 
+\par \trowd \trgaph108\trleft1170 \clbrdrb\brdrs\brdrw30 \cellx1986\clbrdrb\brdrs\brdrw30 \cellx8712 \pard \s20\widctlpar\intbl String\cell \pard \s20\widctlpar\intbl Description\cell \pard\plain \widctlpar\intbl \f4\fs20 \row \trowd \trgaph108\trleft1170 
+\cellx1986\cellx8712 \pard\plain \s20\widctlpar\intbl \f4\fs20 %%1\cell \pard \s20\widctlpar\intbl The comment string -- each InfFooter[n] line should probably start with %%1.\cell \pard\plain \widctlpar\intbl \f4\fs20 \row \pard\plain 
+\s20\widctlpar\intbl \f4\fs20 %%2\cell \pard \s20\widctlpar\intbl The date and time MakeCAB was run to produce the INF file.\cell \pard\plain \widctlpar\intbl \f4\fs20 \row \trowd \trgaph108\trleft1170 \cellx1986\cellx8712 \pard\plain 
+\s20\widctlpar\intbl \f4\fs20 %%3\cell \pard \s20\widctlpar\intbl The version of MakeCAB use to produce the INF file.\cell \pard\plain \widctlpar\intbl \f4\fs20 \row \pard\plain \s20\li360\widctlpar \f4\fs20 
+\par \pard\plain \s22\li360\widctlpar \f4\fs20\ul Examples:
+\par \pard\plain \s24\li720\widctlpar \f11\fs20 .Set InfFooter=\tab \tab \tab ; Disable INF footer text
+\par .Set InfFooter=\ldblquote %%1 %2 %3\rdblquote \tab ; Short footer
+\par .Set InfFooter=\ldblquote %%1*****\rdblquote \tab ; Long footer
+\par .Set InfFooter1=\ldblquote %%1* %2\rdblquote \tab ; Long footer continued
+\par .Set InfFooter2=\ldblquote %%1* %3\rdblquote \tab ; Long footer continued
+\par .Set InfFooter3=\ldblquote %%1*****\rdblquote \tab ; Long footer continued
+\par \pard\plain \s19\sb240\widctlpar\brdrb\brdrs\brdrw15\brsp20 \b\f4\fs20 InfHeader{\b0 [}{\b0\i n}{\b0 ]=string}
+\par \pard\plain \s20\li360\widctlpar \f4\fs20 Sets the header text for beginning of the INF file.{\ul 
+\par Default:}\tab // Run MakeCAB and use the .Dump command to see the default header.
+\par 
+\par \pard \s20\li360\widctlpar These strings are written to the INF file prior to any other information.  To disable this header text, set InfHeader to the empty string (.Set InfHeader=).  MakeCAB will also use any variables of the form {\b InfHeader}{\i n}
+ where {\i n }is an integer with no leading zeros (0).  These additional lines will be printed out in increasing order after the {\b InfHeader} line, starting with {\b InfHeader1}.
+\par \pard \s20\li360\widctlpar The following special strings may be specified in InfHeader[n] values (note that the two percent signs are required, so that MakeCAB does not interpret these as variable references):
+\par \pard \s20\li360\widctlpar 
+\par \trowd \trgaph108\trleft1170 \clbrdrb\brdrs\brdrw30 \cellx1986\clbrdrb\brdrs\brdrw30 \cellx8712 \pard \s20\widctlpar\intbl String\cell \pard \s20\widctlpar\intbl Description\cell \pard\plain \widctlpar\intbl \f4\fs20 \row \trowd \trgaph108\trleft1170 
+\cellx1986\cellx8712 \pard\plain \s20\widctlpar\intbl \f4\fs20 %%1\cell \pard \s20\widctlpar\intbl The comment string -- each InfHeader[n] line should probably start with %%1.\cell \pard\plain \widctlpar\intbl \f4\fs20 \row \pard\plain 
+\s20\widctlpar\intbl \f4\fs20 %%2\cell \pard \s20\widctlpar\intbl The date and time MakeCAB was run to produce the INF file.\cell \pard\plain \widctlpar\intbl \f4\fs20 \row \trowd \trgaph108\trleft1170 \cellx1986\cellx8712 \pard\plain 
+\s20\widctlpar\intbl \f4\fs20 %%3\cell \pard \s20\widctlpar\intbl The version of MakeCAB use to produce the INF file.\cell \pard\plain \widctlpar\intbl \f4\fs20 \row \pard\plain \s20\li360\widctlpar \f4\fs20 
+\par \pard\plain \s22\li360\widctlpar \f4\fs20\ul Examples:
+\par \pard\plain \s24\li720\widctlpar \f11\fs20 .Set InfHeader=\tab \tab \tab ; Disable INF header text
+\par .Set InfHeader=\ldblquote %%1 %2 %3\rdblquote \tab ; Short header
+\par .Set InfHeader=\ldblquote %%1*****\rdblquote \tab ; Long header
+\par .Set InfHeader1=\ldblquote %%1* %2\rdblquote \tab ; Long header continued
+\par .Set InfHeader2=\ldblquote %%1* %3\rdblquote \tab ; Long header continued
+\par \pard\plain \s19\sb240\widctlpar\brdrb\brdrs\brdrw15\brsp20 \b\f4\fs20 .Set InfHeader3=\ldblquote %%1*****\rdblquote \tab ; Long header continuedInfSectionOrder=[D | C | F]*\tab 
+\par \pard\plain \s20\li360\widctlpar \f4\fs20 Set the generation and relative order of the Disk, Cabinet, and File sections in the INF file.
+\par \pard\plain \s23\li360\widctlpar \f4\fs20 {\ul Default:}\tab .Set InfSectionOrder=DCF  ; Disk, then Cabinet, and then File
+\par \pard\plain \s20\li360\widctlpar \f4\fs20 
+\par \pard \s20\li360\widctlpar This variable controls what sections of the INF file are generated, and the order in which they appear.  Each of the letters \ldblquote C\rdblquote  (cabinet), \ldblquote D\rdblquote  (disk), and \ldblquote F\rdblquote 
+ (file) may be used at most once.   Any or all of these letters may be omitted, and the corresponding section of the INF file will not be generated.
+\par \pard\plain \s22\li360\widctlpar \f4\fs20\ul 
+\par Examples:
+\par \pard\plain \s24\li720\widctlpar \f11\fs20 .Set InfSectionOrder=DF\tab ; Disks, then files, omit the cabinet section
+\par \pard\plain \s19\sb240\widctlpar\brdrb\brdrs\brdrw15\brsp20 \b\f4\fs20 MaxCabinetSize{\b0 =size}
+\par \pard\plain \s20\li360\widctlpar \f4\fs20 Set the maximum size for the current cabinet.
+\par \pard\plain \s23\li360\widctlpar \f4\fs20 {\ul Default:}\tab .Set MaxCabinetSize=0\tab \tab ; No limit, except MaxDiskSize
+\par \pard\plain \s20\li360\widctlpar \f4\fs20 
+\par \pard \s20\li360\widctlpar {\i size} is the maximum size for the current cabinet. If {\b Cabinet }is {\b ON} when this maximum is exceeded, then the current folder being processed will be split between the current cabinet and the next cabinet.  If {\b 
+Cabinet }is {\b OFF}, then this variable is ignored.
+\par \pard \s20\li360\widctlpar 
+\par \pard \s20\li360\widctlpar Note that {\b MaxDiskSize }(or {\b MaxDiskSize}{\i n}, if specified) takes precedence over this varia
+ble.  MakeCAB never splits a cabinet file across a disk boundary, so a cabinet file will be no larger than the amount of free space available on the disk at the time the cabinet is created, even if this size is less than {\b MaxCabinetSize}.
+\par \pard \s20\li360\widctlpar 
+\par If {\i size }is 0, then the cabinet size is limited only by the disk size ({\b MaxDiskSize or MaxDiskSize}{\i n}).
+\par 
+\par \pard\plain \s22\li360\widctlpar \f4\fs20\ul Examples:
+\par \pard\plain \s24\li720\widctlpar \f11\fs20 .Set MaxCabinetSize=0\tab \tab ; Use disk size as limit
+\par \pard\plain \s19\sb240\widctlpar\brdrb\brdrs\brdrw15\brsp20 \b\f4\fs20 MaxDiskFileCount{\b0 =count
+\par }\pard\plain \s20\li360\widctlpar \f4\fs20 Sets the maximum number of files that can be stored on a disk.
+\par \pard\plain \s23\li360\widctlpar \f4\fs20 {\ul Default:}\tab .Set MaxDiskFileCount=0\tab ; Default is no limit
+\par \pard\plain \s20\li360\widctlpar \f4\fs20 
+\par \pard \s20\li360\widctlpar {\i count}
+ is the maximum number of files to store on a disk.  Once this count has been reached, MakeCAB will close the current disk, even if space remains on the disk.  This variable is most useful when cabinet files are not being used (say, to simulate the old st
+yle setup where each file is indivdually compressed), and MakeCAB needs to understand the limit of the number of files that can be stored in the root directory of a floppy.
+\par \pard \s20\li360\widctlpar 
+\par If {\i count }is 0, then there is no limit on the number files per disk.
+\par 
+\par \pard \s20\li360\widctlpar You can use a standard disk size from the following list, and MakeCAB will supply the known FAT root directory limits for that disk size:
+\par \pard \s20\li360\widctlpar {\b 
+\par 
+\par \tab 1.44M
+\par \tab 1.25M} (Japanese NEC 3.5\rdblquote  drive capacity){\b 
+\par \tab 1.2M
+\par \tab 720K
+\par \tab 360K
+\par 
+\par \tab CDROM
+\par }
+\par \pard \s20\li360\widctlpar The file count does {\b not }include any files inside cabinets.  Each cabinet counts as a single file for purposes of this count.
+\par \pard \s20\li360\widctlpar 
+\par \pard\plain \s22\li360\widctlpar \f4\fs20\ul Examples:
+\par \pard\plain \s24\li720\widctlpar \f11\fs20 .Set DiskFileCountMax=256\tab ; Limit of 256 files per disk
+\par .Set DiskFileCountMax=1.44M\tab ; Use limit for 1.44M FAT floppy disk
+\par \pard\plain \s19\sb240\widctlpar\brdrb\brdrs\brdrw15\brsp20 \b\f4\fs20 MaxDiskSize{\b0 [}{\b0\i n}{\b0 ]=size}
+\par \pard\plain \s20\li360\widctlpar \f4\fs20 Set the maximum default size for a disk.
+\par \pard\plain \s23\li360\widctlpar \f4\fs20 {\ul Default:}\tab .Set MaxDiskSize=1.44M\tab \tab ; Default is 1.44M floppy
+\par \pard\plain \s20\li360\widctlpar \f4\fs20 
+\par \pard \s20\li360\widctlpar {\i size} is the maximum default size for a disk.  This variable is used only for disks for which a variable {\b MaxDiskSize}{\i n} is not defined.
+\par \pard \s20\li360\widctlpar 
+\par \pard \s20\li360\widctlpar If {\b Cabinet }is {\b OFF}, and the next file to be layed out cannot fit on the current disk, then MakeCAB will move to the next disk.  If {\b Cabinet }is {\b ON}
+, then the current cabinet will use as much space on the current disk as possible.
+\par \pard \s20\li360\widctlpar 
+\par If {\i size }is 0, then the disk size is unlimited.
+\par 
+\par \pard \s20\li360\widctlpar You can use a standard disk size from the following list, and MakeCAB will use the correct disk size, down to the byte:
+\par \pard \s20\li360\widctlpar {\b 
+\par 
+\par \tab 1.44M
+\par \tab 1.25M} (Japanese NEC 3.5\rdblquote  drive capacity){\b 
+\par \tab 1.2M
+\par \tab 720K
+\par \tab 360K
+\par 
+\par \tab CDROM
+\par 
+\par }\pard\plain \s22\li360\widctlpar \f4\fs20\ul Examples:
+\par \pard\plain \s24\li720\widctlpar \f11\fs20 .Set MaxDiskSize=0\tab \tab ; No limit
+\par .Set MaxDiskSize=CDROM\tab \tab ; All files are being placed on a CD-ROM
+\par 
+\par .Set MaxDiskSize1=720K\tab \tab ; First disk is 720K
+\par .Set MaxDiskSize=1.44M\tab \tab ; ... rest are 1.44M
+\par \pard\plain \s19\sb240\widctlpar\brdrb\brdrs\brdrw15\brsp20 \b\f4\fs20 MaxErrors{\b0 =count}
+\par \pard\plain \s20\li360\widctlpar \f4\fs20 Set the maximum number of errors allowed before pass 1 terminates.
+\par \pard\plain \s23\li360\widctlpar \f4\fs20 {\ul Default:}\tab .Set MaxErrors=20\tab \tab ; Default is 20 errors
+\par \pard\plain \s20\li360\widctlpar \f4\fs20 
+\par {\i count }is the maximum number of errors to permit before terminating pass 1.
+\par 
+\par If {\i count }is 0, then an unlimited number of errors is allowed.
+\par 
+\par \pard\plain \s22\li360\widctlpar \f4\fs20\ul Examples:
+\par \pard\plain \s24\li720\widctlpar \f11\fs20 .Set MaxErrors=0\tab \tab ; No limit
+\par .Set MaxErrors=5\tab \tab ; Limit to just a few
+\par \pard\plain \s19\sb240\widctlpar\brdrb\brdrs\brdrw15\brsp20 \b\f4\fs20 ReservePerCabinetSize{\b0 =size
+\par }\pard\plain \s20\li360\widctlpar \f4\fs20 Sets a fixed size to reserve in a cabinet for the FCRESERVE structure.
+\par \pard\plain \s23\li360\widctlpar \f4\fs20 {\ul Default:}\tab .Set ReservePerCabinetSize=0\tab ; Default is to reserve no space
+\par \pard\plain \s20\li360\widctlpar \f4\fs20 
+\par \pard \s20\li360\widctlpar {\i size }is the amount of space to reserve in a cabinet for the FCRESERVE structure.  The total size of the FCRESERVE structure is the value of this variable plus the number of folders in the cabinet times the value of the {\b 
+ReservePerFolderSize }variable.
+\par \pard \s20\li360\widctlpar 
+\par {\i size }must be a multiple of 4 (to ensure memory alignment on certain systems).
+\par 
+\par \pard \s20\li360\widctlpar 
+A common use for this variable is to reserve space to store per-folder cryptosystem information, in the case where the cabinet is encrypted.  For example, some sort of checksum value might be stored here to permit validation that the key being used to dec
+rypt the cabinet is actually the one that was used to encrypt the cabinet.
+\par \pard \s20\li360\widctlpar 
+\par MakeCAB fills this reserved section with zeros.
+\par 
+\par \pard\plain \s22\li360\widctlpar \f4\fs20\ul Examples:
+\par \pard\plain \s24\li720\widctlpar \f11\fs20 .Set ReservePerCabinetSize=8\tab ; For use as a cryptosystem key checksum
+\par \pard\plain \s19\sb240\widctlpar\brdrb\brdrs\brdrw15\brsp20 \b\f4\fs20 ReservePerDataBlockSize{\b0 =size
+\par }\pard\plain \s20\li360\widctlpar \f4\fs20 Sets the amount of space to reserve in each Data Block header.
+\par \pard\plain \s23\li360\widctlpar \f4\fs20 {\ul Default:}\tab .Set ReservePerDataBlockSize=0\tab ; Default is to reserve no space
+\par \pard\plain \s20\li360\widctlpar \f4\fs20 
+\par \pard \s20\li360\widctlpar {\i size }is the amount of space to reserve in each Data Block header.  This space is located after the standard Data Block header and before the data for the data block.
+\par \pard \s20\li360\widctlpar 
+\par {\i size }must be a multiple of 4 (to ensure memory alignment on certain systems).
+\par 
+\par \pard \s20\li360\widctlpar One possible use for this variable is to reserve space to store a per-data block cryptosystem information, in the case where the cabinet is encrypted.{\cs32\fs16\up6 \chftn {\footnote \pard\plain \s33\widctlpar \f4\fs20 {
+\cs32\fs16\up6 \chftn } [6/6/94] Ali Baba is not using this value, so even though it has been implemented and tested, there are no known customers.}}
+\par \pard \s20\li360\widctlpar 
+\par MakeCAB fills this reserved section with zeros.
+\par 
+\par \pard\plain \s22\li360\widctlpar \f4\fs20\ul Examples:
+\par \pard\plain \s24\li720\widctlpar \f11\fs20 .Set ReservePerCabinetSize=4\tab ; Reserve 4 bytes per data block
+\par \pard\plain \s19\sb240\widctlpar\brdrb\brdrs\brdrw15\brsp20 \b\f4\fs20 ReservePerFolderSize{\b0 =size
+\par }\pard\plain \s20\li360\widctlpar \f4\fs20 Sets the amount of additional space to reserve in the FCRESERVE structure for each folder in the cabinet.
+\par \pard\plain \s23\li360\widctlpar \f4\fs20 {\ul Default:}\tab .Set ReservePerFolderSize=0\tab ; Default is to reserve no space
+\par \pard\plain \s20\li360\widctlpar \f4\fs20 
+\par \pard \s20\li360\widctlpar {\i size }
+is the amount of space to reserve in the FCRESERVE structure for each folder in the cabinet.  The total size of the FCRESERVE structure is the value of this variable times the value of the number of folders in the cabinet, plus the value of the {\b 
+ReservePerCabinetSize }variable.
+\par \pard \s20\li360\widctlpar 
+\par {\i size }must be a multiple of 4 (to ensure memory alignment on certain systems).
+\par 
+\par \pard \s20\li360\widctlpar A common use for this variable is to reserve space to store a per-folder cryptosystem key, in the case where the cabinet is encrypted.
+\par \pard \s20\li360\widctlpar 
+\par MakeCAB fills this reserved section with zeros.
+\par 
+\par \pard\plain \s22\li360\widctlpar \f4\fs20\ul Examples:
+\par \pard\plain \s24\li720\widctlpar \f11\fs20 .Set ReservePerCabinetSize=8\tab ; Size of an RC4 cryptosystem key
+\par \pard\plain \s19\sb240\widctlpar\brdrb\brdrs\brdrw15\brsp20 \b\f4\fs20 RptFileName{\b0 =filename
+\par }\pard\plain \s20\li360\widctlpar \f4\fs20 Sets the name of the RPT output file.
+\par \pard\plain \s23\li360\widctlpar \f4\fs20 {\ul Default:}\tab .Set RptFileName=SETUP.RPT\tab ; Default file name is SETUP.RPT
+\par \pard\plain \s20\li360\widctlpar \f4\fs20 
+\par Defines the file name for the RPT file.  This file has summary information on the MakeCAB run.
+\par 
+\par \pard\plain \s22\li360\widctlpar \f4\fs20\ul Examples:
+\par \pard\plain \s24\li720\widctlpar \f11\fs20 .Set RptFileName=EXCEL.RPT
+\par \pard\plain \s19\sb240\widctlpar\brdrb\brdrs\brdrw15\brsp20 \b\f4\fs20 SourceDir{\b0 =path
+\par }\pard\plain \s20\li360\widctlpar \f4\fs20 The default path used to locate source files specified in File Copy Commands.
+\par \pard\plain \s23\li360\widctlpar \f4\fs20 {\ul Default:}\tab .Set SourceDir=\tab \tab ; Default is to look in the current directory
+\par \pard\plain \s20\li360\widctlpar \f4\fs20 
+\par \pard \s20\li360\widctlpar {\i path } is concatenated with a path separator (\ldblquote \\\rdblquote ) and the source file name on the File Copy Command to produce the file name used to find the source file.
+\par \pard \s20\li360\widctlpar 
+\par If {\i path }is empty, then the source file name specified on the File Copy Command is not modified.
+\par 
+\par \pard\plain \s22\li360\widctlpar \f4\fs20\ul Examples:
+\par \pard\plain \s24\li720\widctlpar \f11\fs20 .Set SourceDir=C:\\PROJECT  \tab ; Find all source files in c:\\project
+\par \pard\plain \s19\sb240\widctlpar\brdrb\brdrs\brdrw15\brsp20 \b\f4\fs20 {\*\bkmkstart _Toc289487611}{\*\bkmkstart _Toc291583689}{\*\bkmkstart _Toc291583742}UniqueFiles{\b0 =}ON {\b0 |} OFF
+\par \pard\plain \s20\li360\widctlpar \f4\fs20 Controls whether destination file names in a layout must be unique..{\ul 
+\par Default:}\tab .Set UniqueFiles="ON"\tab ; File names must be unique
+\par 
+\par \pard \s20\li360\widctlpar If {\b UniqueFiles} is {\b ON}, MakeCAB checks that all destination file names (names stored on disks or in cabinets) are unique, and generates an error (during pass 1) if they are not.  {\b ON}
+ is the default, since using the same filename twice usually means that the same file was accidentaly included twice, and this would be a waste of disk space.
+\par \pard \s20\li360\widctlpar 
+\par If {\b UniqueFiles} is {\b OFF}, MakeCAB permits duplicate destination file names.
+\par 
+\par \pard \s20\li360\widctlpar The {\b /UNIQUE} parameter may be specified on individual File Copy commands to override the value of {\b UniqueFiles}.
+\par \pard \s20\li360\widctlpar 
+\par \pard \s20\li360\widctlpar If the {\b GenerateInf} variable is used to select Relational INF generation, then {\b UniqueFiles} must always be {\b ON}
+, since MakeCAB uses the destination filename as the unique key to link File Reference commands back to File Copy commands.\page 
+\par \pard\plain \s1\sb240\widctlpar\box\brdrs\brdrw15\brsp20 \b\f5 {\*\bkmkstart _Toc292524246}{\*\bkmkstart _Toc362068489}{\field\flddirty{\*\fldinst autonumlgl }{\fldrslt }}\tab EXTRACT.EXE{\*\bkmkend _Toc289487611}{\*\bkmkend _Toc291583689}
+{\*\bkmkend _Toc291583742}{\*\bkmkend _Toc292524246}{\*\bkmkend _Toc362068489}
+\par \pard\plain \widctlpar \f4\fs20 Extract supports command-line extraction of files from cabinet files.
+\par 
+\par \pard\plain \s18\li360\widctlpar \f4\fs20 {\b\f11 
+\par extract }{\f11 [}{\b\f11 /y}{\f11 ] [}{\b\f11 /A}{\f11 ] [}{\b\f11 /D}{\f11  |}{\b\f11  /E}{\f11 ] [}{\b\f11 /L }{\i\f11 location}{\f11 ] }{\i\f11 cabinet_file}{\f11  [}{\i\f11 file_spec}{\f11  ...]
+\par }{\b\f11 extract}{\f11  [}{\b\f11 /y}{\f11 ] }{\i\f11 compressed_file}{\f11  [}{\i\f11 destination_file}{\f11 ]
+\par }\pard\plain \widctlpar \f4\fs20 
+\par Switches:
+\par \pard \fi-900\li1620\widctlpar\tx1620 {\b /A\tab }Process {\b all }files in a cabinet set, starting with the {\i\f11 cabinet_file.
+\par }\pard \fi-900\li1620\widctlpar\tx1620 {\b /D\tab }Only produce a directory listing (do not extract).{\b 
+\par /E\tab }Force extraction.{\b 
+\par }\pard \fi-900\li1620\widctlpar\tx1620 {\b /L}\tab Use the directory specified by {\i location}, instead of the current directory, as the default location to place extracted files.
+\par \pard \fi-900\li1620\widctlpar\tx1620 {\b /Y}\tab 
+Overwrite destination without prompting.  The default is to prompt if the destination file already exists, and allow the customer to: a) overwrite the file, b) skip the file, c) overwrite this file and all subsequent files that may already exist, or
+ d) exit.
+\par \pard \widctlpar 
+\par Parameters:
+\par \pard \fi-1440\li2160\widctlpar {\i compressed_file}\tab This is a cabinet file that contains a single file (example, FOO.EX_ containing FOO.EXE).  If {\i destination_file }
+is not specified, then the file is extracted and given its original name in the current directory.
+\par \pard \fi-1440\li2160\widctlpar {\i destination_file}\tab 
+This can be either a relative path (".:, "..", "c:foo", etc.) or a fully qualified path, and may specify either a file (or files, if wild cards are included) or a directory.  If a directory is specified, then the file name stored in the cabinet i
+s used.  Otherwise, {\i destination_file} is used as the complete file name for the extracted file.
+\par {\i cabinet_file\tab }This is a cabinet file that contains two or more files.  If no {\i file_spec }parameter is specified, then a list of the files in the cabinet is displayed.  If one or more {\i file_spec }
+parameters are specified, then these are used to select which files are to be extracted from the cabinet (or cabinets).  Wild cards are allowed to specify multiple cabinets.
+\par \pard \fi-1440\li2160\widctlpar {\i location\tab }Specifies the directory where extracted files should be placed.
+\par \pard \fi-1440\li2160\widctlpar {\i file_spec}\tab Specifies files to be extracted from the cabinet(s).  May contain ? and * wild cards.  Multiple file_specs may be supplied.
+\par \pard \fi-900\li1620\widctlpar\tx1620 
+\par \pard \widctlpar Examples:
+\par 
+\par \trowd \trgaph108\trleft-108\trbrdrt\brdrs\brdrw15 \trbrdrb\brdrs\brdrw15 \trbrdrh\brdrs\brdrw15 \trbrdrv\brdrs\brdrw15 \clbrdrb\brdrs\brdrw15 \clbrdrr\brdrs\brdrw15 \cellx2610\clbrdrl\brdrs\brdrw15 \clbrdrb\brdrs\brdrw15 \cellx9468 \pard 
+\widctlpar\intbl {\b Command}\cell \pard \widctlpar\intbl {\b Behavior}\cell \pard \widctlpar\intbl \row \trowd \trgaph108\trleft-108\trbrdrt\brdrs\brdrw15 \trbrdrb\brdrs\brdrw15 \trbrdrh\brdrs\brdrw15 \trbrdrv\brdrs\brdrw15 \clbrdrt\brdrs\brdrw15 
+\clbrdrb\brdrs\brdrw15 \clbrdrr\brdrs\brdrw15 \cellx2610\clbrdrt\brdrs\brdrw15 \clbrdrl\brdrs\brdrw15 \clbrdrb\brdrs\brdrw15 \cellx9468 \pard \widctlpar\intbl EXTRACT foo.ex_\cell \pard \widctlpar\intbl 
+Assuming foo.ex_ contained just the single file foo.exe, then foo.exe would be extracted and placed in the current directory.\cell \pard \widctlpar\intbl \row \pard \widctlpar\intbl EXTRACT foo.ex_ bar.exe\cell \pard \widctlpar\intbl 
+Assuming foo.ex_ contained just the single file foo.exe, then foo.exe would be extracted and placed in the current directory in the file bar.exe.\cell \pard \widctlpar\intbl \row \pard \widctlpar\intbl EXTRACT cabinet.1\cell \pard \widctlpar\intbl 
+Assuming cabinet.1 contains multiple files, then a list of the files stored in the cabinet would be displayed.\cell \pard \widctlpar\intbl \row \trowd \trgaph108\trleft-108\trbrdrt\brdrs\brdrw15 \trbrdrb\brdrs\brdrw15 \trbrdrh\brdrs\brdrw15 \trbrdrv
+\brdrs\brdrw15 \clbrdrt\brdrs\brdrw15 \clbrdrb\brdrs\brdrw15 \clbrdrr\brdrs\brdrw15 \cellx2610\clbrdrt\brdrs\brdrw15 \clbrdrl\brdrs\brdrw15 \clbrdrb\brdrs\brdrw15 \cellx9468 \pard \widctlpar\intbl EXTRACT cabinet.1 *.exe\cell \pard \widctlpar\intbl 
+Extract all *.EXE files from cabinet.1 and place them in the current directory\cell \pard \widctlpar\intbl \row \pard \widctlpar 
+\par 
+\par }

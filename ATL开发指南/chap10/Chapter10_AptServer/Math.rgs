@@ -1,0 +1,23 @@
+HKCR
+{
+	Chapter10.AptMath.1 = s 'Math Class'
+	{
+		CLSID = s '{55219412-6956-11D1-8014-000000000000}'
+	}
+	Chapter10.AptMath = s 'Math Class'
+	{
+		CurVer = s 'Chapter10.AptMath.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {55219412-6956-11D1-8014-000000000000} = s 'Math Class'
+		{
+			ProgID = s 'Chapter10.AptMath.1'
+			VersionIndependentProgID = s 'Chapter10.AptMath'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+		}
+	}
+}

@@ -1,0 +1,34 @@
+HKCR
+{
+	PostIt.PostItCtl.1 = s 'PostItCtl Class'
+	{
+		CLSID = s '{BF31419E-B661-11D3-8391-0060081AEB5F}'
+	}
+	PostIt.PostItCtl = s 'PostItCtl Class'
+	{
+		CLSID = s '{BF31419E-B661-11D3-8391-0060081AEB5F}'
+		CurVer = s 'PostIt.PostItCtl.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {BF31419E-B661-11D3-8391-0060081AEB5F} = s 'PostItCtl Class'
+		{
+			ProgID = s 'PostIt.PostItCtl.1'
+			VersionIndependentProgID = s 'PostIt.PostItCtl'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			ForceRemove 'Control'
+			ForceRemove 'Insertable'
+			ForceRemove 'ToolboxBitmap32' = s '%MODULE%, 101'
+			'MiscStatus' = s '0'
+			{
+			    '1' = s '131473'
+			}
+			'TypeLib' = s '{BF314191-B661-11D3-8391-0060081AEB5F}'
+			'Version' = s '1.0'
+		}
+	}
+}

@@ -1,0 +1,39 @@
+// DCOMServ.idl : IDL source for DCOMServ.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (DCOMServ.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+	[
+		object,
+		uuid(03A51633-854E-4942-9C28-6A3C9435B542),
+		dual,
+		helpstring("IQuoteSupplier Interface"),
+		pointer_default(unique)
+	]
+	interface IQuoteSupplier : IDispatch
+	{
+		[id(1), helpstring("Returns stock price for the specified stock ticker")] HRESULT GetQuote([in] BSTR Ticker, [out, retval] double * Price);
+	};
+
+[
+	uuid(15EECD55-80FA-49A7-9D97-A89C08F7AA8A),
+	version(1.0),
+	helpstring("DCOMServ 1.0 Type Library")
+]
+library DCOMSERVLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(53437B42-6DD0-42D9-AF06-20E5F45AC2B8),
+		helpstring("QuoteSupplier Class")
+	]
+	coclass QuoteSupplier
+	{
+		[default] interface IQuoteSupplier;
+	};
+};

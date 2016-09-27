@@ -1,0 +1,60 @@
+// Chapter7_CallBackServer.idl : IDL source for Chapter7_CallBackServer.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (Chapter7_CallBackServer.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+	[
+		object,
+		uuid(48CD3740-50A3-11d1-B5EC-0004ACFF171C),
+		helpstring("ICallBack Interface"),
+	]
+	interface ICallBack : IUnknown
+	{
+		[helpstring("method ComputationComplete")] 
+		   HRESULT ComputationComplete( long lResult );
+	};
+
+	[	
+		uuid(DB5CCD8E-5489-11D1-883A-444553540000),	
+		helpstring("IMath Interface"),
+		pointer_default(unique)
+	]
+	interface IMath : IUnknown
+	{
+		[helpstring("method Add")] 
+		   HRESULT Add([in] long lOp1,[in] long lOp2);
+		[helpstring("method Subtract")] 
+		   HRESULT Subtract([in] long lOp1,[in] long lOp2);
+		[helpstring("method Multiply")] 
+		   HRESULT Multiply([in] long lOp1,[in] long lOp2);
+		[helpstring("method Divide")] 
+		   HRESULT Divide([in] long lOp1,[in] long lOp2);
+		[helpstring("method Advise")] 
+		   HRESULT Advise([in] ICallBack* pCallBack);
+		[helpstring("method UnAdvise")] 
+		   HRESULT UnAdvise();
+	};
+[
+	uuid(DB5CCD81-5489-11D1-883A-444553540000),
+	version(1.0),
+	helpstring("Chapter7_CallBackServer 1.0 Type Library")
+]
+library CHAPTER7_CALLBACKSERVERLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(DB5CCD8F-5489-11D1-883A-444553540000),
+		helpstring("Math Class")
+	]
+	coclass Math
+	{
+		[default] interface IMath;
+		/* [source, default] */ interface ICallBack;
+	};
+};

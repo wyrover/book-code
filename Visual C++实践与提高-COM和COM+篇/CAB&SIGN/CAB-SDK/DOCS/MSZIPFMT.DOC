@@ -1,0 +1,76 @@
+{\rtf1\ansi \deff4\deflang1033{\fonttbl{\f4\froman\fcharset0\fprq2 Times New Roman{\*\falt Times};}{\f5\fswiss\fcharset0\fprq2 Arial{\*\falt Arial};}{\f11\fmodern\fcharset0\fprq1 Courier New;}}{\colortbl;\red0\green0\blue0;
+\red0\green0\blue255;\red0\green255\blue255;\red0\green255\blue0;\red255\green0\blue255;\red255\green0\blue0;\red255\green255\blue0;\red255\green255\blue255;\red0\green0\blue128;\red0\green128\blue128;\red0\green128\blue0;\red128\green0\blue128;
+\red128\green0\blue0;\red128\green128\blue0;\red128\green128\blue128;\red192\green192\blue192;}{\stylesheet{\widctlpar \f4\fs20 \snext0 Normal;}{\s1\sb240\sa60\keepn\widctlpar \b\f5\fs28\kerning28 \sbasedon0\snext0 heading 1;}{
+\s2\sb240\sa60\keepn\widctlpar \b\f5 \sbasedon0\snext0 heading 2;}{\s3\sb240\sa60\keepn\widctlpar \b\f5\fs20 \sbasedon0\snext0 heading 3;}{\*\cs10 \additive Default Paragraph Font;}{\s15\sb120\sa120\widctlpar \b\f4\fs20 \sbasedon0\snext0 caption;}{
+\s16\widctlpar \b\f5 \sbasedon0\snext16 Glossary;}{\*\cs17 \additive\super \sbasedon10 footnote reference;}{\s18\widctlpar \f4\fs20 \sbasedon0\snext18 footnote text;}{\s19\sb120\sa120\widctlpar\tqr\tldot\tx8640 \b\caps\f4\fs20 \sbasedon0\snext0 toc 1;}{
+\s20\widctlpar\tqr\tldot\tx8640 \scaps\f4\fs20 \sbasedon0\snext0 toc 2;}{\s21\li200\widctlpar\tqr\tldot\tx8640 \i\f4\fs20 \sbasedon0\snext0 toc 3;}{\s22\li400\widctlpar\tqr\tldot\tx8640 \f4\fs18 \sbasedon0\snext0 toc 4;}{
+\s23\li600\widctlpar\tqr\tldot\tx8640 \f4\fs18 \sbasedon0\snext0 toc 5;}{\s24\li800\widctlpar\tqr\tldot\tx8640 \f4\fs18 \sbasedon0\snext0 toc 6;}{\s25\li1000\widctlpar\tqr\tldot\tx8640 \f4\fs18 \sbasedon0\snext0 toc 7;}{
+\s26\li1200\widctlpar\tqr\tldot\tx8640 \f4\fs18 \sbasedon0\snext0 toc 8;}{\s27\li1400\widctlpar\tqr\tldot\tx8640 \f4\fs18 \sbasedon0\snext0 toc 9;}{\s28\fi-200\li200\widctlpar\tqr\tx8640 \f4\fs18 \sbasedon0\snext0 index 1;}{
+\s29\fi-200\li400\widctlpar\tqr\tx8640 \f4\fs18 \sbasedon0\snext0 index 2;}{\s30\fi-200\li600\widctlpar\tqr\tx8640 \f4\fs18 \sbasedon0\snext0 index 3;}{\s31\fi-200\li800\widctlpar\tqr\tx8640 \f4\fs18 \sbasedon0\snext0 index 4;}{
+\s32\fi-200\li1000\widctlpar\tqr\tx8640 \f4\fs18 \sbasedon0\snext0 index 5;}{\s33\fi-200\li1200\widctlpar\tqr\tx8640 \f4\fs18 \sbasedon0\snext0 index 6;}{\s34\fi-200\li1400\widctlpar\tqr\tx8640 \f4\fs18 \sbasedon0\snext0 index 7;}{
+\s35\fi-200\li1600\widctlpar\tqr\tx8640 \f4\fs18 \sbasedon0\snext0 index 8;}{\s36\fi-200\li1800\widctlpar\tqr\tx8640 \f4\fs18 \sbasedon0\snext0 index 9;}{\s37\qc\sb240\sa120\widctlpar \b\f4\fs26 \sbasedon0\snext28 index heading;}{\s38\widctlpar \f11\fs18 
+\sbasedon0\snext38 Body Text;}{\*\cs39 \additive\i \sbasedon10 Emphasis;}{\s40\widctlpar\tqc\tx4320\tqr\tx8640 \f4\fs20 \sbasedon0\snext40 header;}{\s41\widctlpar\tqc\tx4320\tqr\tx8640 \f4\fs20 \sbasedon0\snext41 footer;}{\*\cs42 \additive\sbasedon10 
+page number;}}{\info{\title match}{\author Microsoft}{\operator Microsoft}{\creatim\yr1997\mo3\dy18\hr17\min45}{\revtim\yr1997\mo3\dy26\hr13\min44}{\printim\yr1997\mo3\dy26\hr1\min48}{\version2}{\edmins0}{\nofpages2}{\nofwords324}{\nofchars1787}
+{\*\company Microsoft}{\vern57443}}\widowctrl\ftnbj\aenddoc\hyphcaps0\formshade \fet0\sectd \linex0\endnhere\titlepg {\header \pard\plain \s40\widctlpar\tqc\tx4320\tqr\tx8640 \f4\fs20 \tab Microsoft MSZIP Data Compression Format
+\par }{\footer \pard\plain \s41\widctlpar\tqc\tx4320\tqr\tx8640 \f4\fs20 \tab Page {\field{\*\fldinst {\cs42  PAGE }}{\fldrslt {\cs42\lang1024 2}}}{\cs42  of }{\field{\*\fldinst {\cs42  NUMPAGES }}{\fldrslt {\cs42\lang1024 1}}}{\cs42 \tab March 20, 1997}
+
+\par }{\footerf \pard\plain \s41\qc\widctlpar\tqc\tx4320\tqr\tx8640 \f4\fs20 {\b\i Abstract
+\par }\pard \s41\widctlpar\tqc\tx4320\tqr\tx8640 {\i 
+\par }\pard \s41\qj\widctlpar\tqc\tx4320\tqr\tx8640 {\i 
+This document explains how to encode or decode MSZIP data compression format, as used in Microsoft cabinet files, using publicly-available code from the zlib library.  This information may be used to create or extract Microsoft cabinet files which utilize
+ MSZIP compression.  The format of a cabinet file is described in other documents.
+\par }\pard \s41\widctlpar\tqc\tx4320\tqr\tx8640 {\i 
+\par 
+\par }
+\par }{\*\pnseclvl1\pnucrm\pnstart1\pnindent720\pnhang{\pntxta .}}{\*\pnseclvl2\pnucltr\pnstart1\pnindent720\pnhang{\pntxta .}}{\*\pnseclvl3\pndec\pnstart1\pnindent720\pnhang{\pntxta .}}{\*\pnseclvl4\pnlcltr\pnstart1\pnindent720\pnhang{\pntxta )}}{\*\pnseclvl5
+\pndec\pnstart1\pnindent720\pnhang{\pntxtb (}{\pntxta )}}{\*\pnseclvl6\pnlcltr\pnstart1\pnindent720\pnhang{\pntxtb (}{\pntxta )}}{\*\pnseclvl7\pnlcrm\pnstart1\pnindent720\pnhang{\pntxtb (}{\pntxta )}}{\*\pnseclvl8\pnlcltr\pnstart1\pnindent720\pnhang
+{\pntxtb (}{\pntxta )}}{\*\pnseclvl9\pnlcrm\pnstart1\pnindent720\pnhang{\pntxtb (}{\pntxta )}}\pard\plain \widctlpar \f4\fs20 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par \pard \qc\widctlpar {\b\f5\fs36 Microsoft MSZIP Data Compression Format
+\par }\pard \widctlpar {\f5\fs36 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par }\pard \qc\widctlpar Copyright \'a9 1997 Microsoft Corporation.  All rights reserved.{\f5\fs36 
+\par }\pard\plain \s1\sb240\sa60\keepn\widctlpar \b\f5\fs28\kerning28 {\b0\fs36 \page }Introduction
+\par \pard\plain \widctlpar \f4\fs20 
+\par This document describes the format of MSZIP compressed data as used in the MSZIP compression mode of Microsoft\rquote s cabinet files.  The purpose of this document is to allow anyone to encode or decode MSZIP compressed data.
+\par 
+\par \pard\plain \s1\sb240\sa60\keepn\widctlpar \b\f5\fs28\kerning28 Implementation Details
+\par \pard\plain \widctlpar \f4\fs20 
+\par MSZIP compression has only minor variations from Phil Katz\rquote s \lquote deflate\rquote  method.  Rather than re-document this method, this document will explain these variations and refer the reader to publicly-available \lquote deflate\rquote 
+ documents.  Some \lquote deflate\rquote  implementations may contain extensions to the original specifications, but MSZIP uses only the three basic modes of deflate: stored, fixed Huffman tree, and dynamic Huffman tree.
+\par 
+\par Each MSZIP data block is the result of a complete \lquote deflate\rquote  compression operation. Each block is flushed out of the compressor before the next block begins, so the last sub-block in each block will be marked as the \lquote end\rquote 
+ of the stream. Any decoding trees are discarded after each block, with only the history buffer surviving from one block to the next.  Each data block represents 32k uncompressed, except that the 
+last block in a folder may be smaller. A two-byte MSZIP signature precedes the compressed encoding in each block, consisting of the bytes 0x43, 0x4B.
+\par 
+\par The maximum compressed size of each MSZIP block is 32k + 12 bytes.  This allows for the data to be passed as two separate \ldblquote stored\rdblquote 
+ sub-blocks, which each have a 5-byte overhead, plus the 2-byte signature.  The Microsoft MSZIP compressor will emit \ldblquote stored\rdblquote  sub-blocks with a length of exactly 32k, while some implementations do not exceed 32k-1.
+\par 
+\par Whenever a cabinet folder boundary is reached, the compression history is discarded, so that decoding any  folder does not require any prior data.
+\par 
+\par \pard\plain \s1\sb240\sa60\keepn\widctlpar \b\f5\fs28\kerning28 Where to find the \lquote deflate\rquote  Specifications
+\par \pard\plain \widctlpar \f4\fs20 
+\par The \lquote deflate\rquote  algorithm was original documented by Phil Katz in APPNOTE.TXT, which accompanied the PKZip software.  It\rquote 
+s most-recent description can be found in RFC 1951.  (Try ftp://ftp.uu.net/graphics/png/documents/zlib/zdoc-index.html for pointers to obtain this RFC.)
+\par 
+\par }

@@ -1,0 +1,15 @@
+City:string:25,High:integer,Low:integer,Precipitation:float:2
+Daytona,88,73,0.00
+Fort Myers,91,75,0.00
+Ft. Lauderdale,90,75,0.00
+Homestead,90,73,0.04
+Jacksonville,88,70,0.00
+Key West,89,77,0.00
+Lakeland,91,71,0.00
+Miami,91,76,0.13
+Orlando,91,73,0.00
+Pensacola,89,70,0.00
+Sarasota,89,73,0.00
+Tallahassee,92,70,0.00
+Tampa,90,74,0.00
+West Palm Beach,90,74,0.03

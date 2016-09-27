@@ -1,0 +1,23 @@
+HKCR
+{
+	PostIt.PostItPpg.1 = s 'PostItPpg Class'
+	{
+		CLSID = s '{BF3141A2-B661-11D3-8391-0060081AEB5F}'
+	}
+	PostIt.PostItPpg = s 'PostItPpg Class'
+	{
+		CLSID = s '{BF3141A2-B661-11D3-8391-0060081AEB5F}'
+		CurVer = s 'PostIt.PostItPpg.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {BF3141A2-B661-11D3-8391-0060081AEB5F} = s 'PostItPpg Class'
+		{
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+		}
+	}
+}

@@ -1,0 +1,19 @@
+
+	// ATL_OLEDB_Consumer.idl : IDL source for ATL_OLEDB_Consumer.exe
+//
+// This file will be processed by the MIDL tool to
+// produce the type library (ATL_OLEDB_Consumer.tlb) and marshalling code.
+import "oaidl.idl";
+import "ocidl.idl";
+[
+	uuid(E4658771-97AE-11D3-851B-00400530CFB7),
+	version(1.0),
+	helpstring("ATL_OLEDB_Consumer 1.0 Type Library")
+]
+library ATL_OLEDB_ConsumerLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+};
+
+	

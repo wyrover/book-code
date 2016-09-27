@@ -1,0 +1,31 @@
+Microsoft (R) Help Compiler
+HCRTF 4.03.0002
+Copyright (c) Microsoft Corp 1990 - 1995. All rights reserved.
+Scribble.hpj
+    HC1002: Note: 
+	Using existing phrase table: Scribble.ph.
+    HC3025: Warning: topic #1 of C:\VCCOM\CHAP8\ScribbleActiveX\hlp\.\afxcore.rtf : 
+	Jump to undefined Topic ID: "menu_record".
+    HC3025: Warning: topic #3 of C:\VCCOM\CHAP8\ScribbleActiveX\hlp\.\afxcore.rtf : 
+	Jump to undefined Topic ID: "HID_OLE_EDIT_LINKS".
+    HC3025: Warning: topic #3 of C:\VCCOM\CHAP8\ScribbleActiveX\hlp\.\afxcore.rtf : 
+	Jump to undefined Topic ID: "HID_EDIT_PASTE_LINK".
+    HC3025: Warning: topic #3 of C:\VCCOM\CHAP8\ScribbleActiveX\hlp\.\afxcore.rtf : 
+	Jump to undefined Topic ID: "HID_OLE_INSERT_NEW".
+    HC1010: Note: 
+	The following mapped Topic IDs were not used in any topic:
+	HID_CANCEL_EDIT_SRVR
+	HIDR_SCRIBBTYPE_SRVR_EMB
+	HIDD_PEN_WIDTHS
+	HIDR_SCRIBBTYPE_SRVR_IP
+79	Topics
+56	Jumps
+19	Keywords
+21	Bitmaps
+
+
+Created C:\VCCOM\CHAP8\ScribbleActiveX\hlp\Scribble.hlp, 40,349 bytes
+Bitmaps: 5,348 bytes
+Phrase+Zeck compression decreased help file by 15,213 bytes.
+Compile time: 0 minutes, 1 second
+2 notes, 4 warnings

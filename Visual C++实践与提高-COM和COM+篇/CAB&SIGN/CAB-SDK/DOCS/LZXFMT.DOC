@@ -1,0 +1,1072 @@
+{\rtf1\ansi\ansicpg1252\uc1 \deff0\deflang1033\deflangfe1033{\fonttbl{\f0\froman\fcharset0\fprq2{\*\panose 02020603050405020304}Times New Roman{\*\falt Times};}{\f1\fswiss\fcharset0\fprq2{\*\panose 020b0604020202020204}Arial{\*\falt Arial};}
+{\f2\fmodern\fcharset0\fprq1{\*\panose 02070309020205020404}Courier New;}{\f3\froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol{\*\falt Bookshelf Symbol 3};}{\f4\froman\fcharset0\fprq2{\*\panose 02020603050405020304}TIMES;}
+{\f5\fswiss\fcharset0\fprq2{\*\panose 020b0604020202020204}HELVETICA;}{\f6\fmodern\fcharset0\fprq1{\*\panose 00000000000000000000}Courier;}{\f7\fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}Geneva;}
+{\f8\froman\fcharset0\fprq2{\*\panose 00000000000000000000}Tms Rmn;}{\f9\fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}Helv;}{\f10\froman\fcharset0\fprq2{\*\panose 00000000000000000000}MS Serif;}
+{\f11\fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}MS Sans Serif{\*\falt Arial};}{\f12\froman\fcharset0\fprq2{\*\panose 00000000000000000000}New York;}{\f13\fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}System;}
+{\f14\fnil\fcharset2\fprq2{\*\panose 05000000000000000000}Wingdings;}{\f15\fswiss\fcharset0\fprq2{\*\panose 020b0604030504040204}Tahoma;}{\f16\fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}Helvetica-Narrow;}
+{\f17\fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}AvantGarde;}{\f18\froman\fcharset0\fprq2{\*\panose 00000000000000000000}ITC Bookman;}{\f19\froman\fcharset0\fprq2{\*\panose 00000000000000000000}NewCenturySchlbk;}
+{\f20\froman\fcharset0\fprq2{\*\panose 00000000000000000000}Palatino;}{\f21\froman\fcharset0\fprq2{\*\panose 00000000000000000000}ZapfChancery;}{\f22\fdecor\fcharset2\fprq2{\*\panose 00000000000000000000}ZapfDingbats;}
+{\f23\fnil\fcharset2\fprq2{\*\panose 00000000000000000000}Marlett;}{\f24\fmodern\fcharset0\fprq1{\*\panose 020b0609040504020204}Lucida Console;}{\f25\fswiss\fcharset0\fprq2{\*\panose 020b0602030504020204}Lucida Sans Unicode;}
+{\f26\fswiss\fcharset0\fprq2{\*\panose 020b0506020202030204}Arial Narrow;}{\f27\fswiss\fcharset0\fprq2{\*\panose 020b0a04020102020204}Arial Black;}{\f28\froman\fcharset0\fprq2{\*\panose 02050604050505020204}Bookman Old Style;}
+{\f29\fnil\fcharset2\fprq2{\*\panose 01010601010101010101}Monotype Sorts;}{\f30\froman\fcharset0\fprq2{\*\panose 02020404030301010803}Garamond;}{\f31\fswiss\fcharset0\fprq2{\*\panose 020b0806030902050204}Impact;}
+{\f32\fnil\fcharset2\fprq2{\*\panose 05000000000000000000}MS Outlook;}{\f33\fscript\fcharset0\fprq2{\*\panose 030f0702030302020204}Comic Sans MS;}{\f34\fswiss\fcharset0\fprq2{\*\panose 020b0604030504040204}Verdana;}
+{\f35\froman\fcharset0\fprq2{\*\panose 00000000000000000000}Century Schoolbook{\*\falt NewCenturySchlbk};}{\f36\fmodern\fcharset255\fprq2{\*\panose 00000000000000000000}Modern;}{\f37\fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}Antique Olive;}
+{\f38\fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}Maiandra GD;}{\f39\froman\fcharset0\fprq2{\*\panose 00000000000000000000}Book Antiqua;}{\f40\fswiss\fcharset0\fprq0{\*\panose 00000000000000000000}MS Shell Dlg;}
+{\f41\fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}Arial Rounded MT Bold;}{\f42\fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}Century Gothic;}{\f43\fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}Haettenschweiler;}
+{\f44\fdecor\fcharset0\fprq2{\*\panose 00000000000000000000}Algerian;}{\f45\fdecor\fcharset0\fprq2{\*\panose 00000000000000000000}Braggadocio;}{\f46\fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}Britannic Bold;}
+{\f47\fscript\fcharset0\fprq2{\*\panose 00000000000000000000}Brush Script MT;}{\f48\fdecor\fcharset0\fprq2{\*\panose 00000000000000000000}Colonna MT;}{\f49\fdecor\fcharset0\fprq2{\*\panose 00000000000000000000}Desdemona;}
+{\f50\froman\fcharset0\fprq2{\*\panose 00000000000000000000}Footlight MT Light;}{\f51\fdecor\fcharset0\fprq2{\*\panose 00000000000000000000}Kino MT;}{\f52\froman\fcharset0\fprq2{\*\panose 00000000000000000000}Wide Latin;}
+{\f53\fscript\fcharset0\fprq2{\*\panose 00000000000000000000}Matura MT Script Capitals;}{\f54\fdecor\fcharset0\fprq2{\*\panose 00000000000000000000}Playbill;}{\f55\fmodern\fcharset2\fprq1{\*\panose 00000000000000000000}MS LineDraw;}
+{\f56\fnil\fcharset2\fprq2{\*\panose 00000000000000000000}Microsoft Logo 95;}{\f57\fswiss\fcharset2\fprq2{\*\panose 00000000000000000000}Arial Special G1;}{\f58\fswiss\fcharset2\fprq2{\*\panose 00000000000000000000}Arial Special G2;}
+{\f59\fswiss\fcharset2\fprq2{\*\panose 00000000000000000000}Arial Narrow Special G1;}{\f60\fswiss\fcharset2\fprq2{\*\panose 00000000000000000000}Arial Narrow Special G2;}
+{\f61\froman\fcharset2\fprq2{\*\panose 00000000000000000000}Times New Roman Special G1;}{\f62\froman\fcharset2\fprq2{\*\panose 00000000000000000000}Times New Roman Special G2;}
+{\f63\fswiss\fcharset2\fprq2{\*\panose 00000000000000000000}Bookshelf Symbol 1;}{\f64\fnil\fcharset2\fprq2{\*\panose 00000000000000000000}Bookshelf Symbol 2;}{\f65\froman\fcharset2\fprq2{\*\panose 00000000000000000000}Bookshelf Symbol 3;}
+{\f66\fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}Franklin Gothic Heavy;}{\f67\fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}Franklin Gothic Book;}{\f68\fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}Franklin Gothic Demi;}
+{\f69\fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}Franklin Gothic Demi Cond;}{\f70\fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}Franklin Gothic Medium;}
+{\f71\fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}Franklin Gothic Medium Cond;}{\f72\fnil\fcharset0\fprq2{\*\panose 00000000000000000000}Microsoft Logo;}{\f73\fmodern\fcharset0\fprq1{\*\panose 00000000000000000000}LinePrinter;}
+{\f74\fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}CG Omega (W1);}{\f75\froman\fcharset0\fprq2{\*\panose 00000000000000000000}Clarendon Cd (W1);}{\f76\fscript\fcharset0\fprq2{\*\panose 00000000000000000000}Marigold (W1);}
+{\f77\fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}Albertus (W1);}{\f78\fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}Albertus Xb (W1);}{\f79\fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}Antique Olv (W1);}
+{\f80\froman\fcharset0\fprq2{\*\panose 00000000000000000000}CG Times (W1);}{\f81\fscript\fcharset0\fprq2{\*\panose 00000000000000000000}Coronet (W1);}{\f82\fmodern\fcharset0\fprq1{\*\panose 00000000000000000000}Letter Gothic (W1);}
+{\f83\fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}Univers (W1);}{\f84\fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}Univers Cd (W1);}{\f85\fswiss\fcharset0\fprq1{\*\panose 00000000000000000000}MS Dialog;}
+{\f86\fnil\fcharset0\fprq0{\*\panose 00000000000000000000}Courier (W1);}{\f87\fswiss\fcharset186\fprq2{\*\panose 00000000000000000000}Franklin Gothic Demi Cond Balti;}
+{\f88\fswiss\fcharset161\fprq2{\*\panose 00000000000000000000}Franklin Gothic Medium Cond Gre;}{\f89\fswiss\fcharset186\fprq2{\*\panose 00000000000000000000}Franklin Gothic Medium Cond Bal;}
+{\f90\fnil\fcharset0\fprq1{\*\panose 00000000000000000000}Small Fonts;}{\f91\fswiss\fcharset238\fprq2{\*\panose 00000000000000000000}Franklin Gothic Heavy CE;}{\f92\fswiss\fcharset204\fprq2{\*\panose 00000000000000000000}Franklin Gothic Heavy Cyr;}
+{\f93\fswiss\fcharset161\fprq2{\*\panose 00000000000000000000}Franklin Gothic Heavy Greek;}{\f94\fswiss\fcharset162\fprq2{\*\panose 00000000000000000000}Franklin Gothic Heavy Tur;}
+{\f95\fswiss\fcharset186\fprq2{\*\panose 00000000000000000000}Franklin Gothic Heavy Baltic;}{\f96\fswiss\fcharset238\fprq2{\*\panose 00000000000000000000}Franklin Gothic Book CE;}
+{\f97\fswiss\fcharset204\fprq2{\*\panose 00000000000000000000}Franklin Gothic Book Cyr;}{\f98\fswiss\fcharset161\fprq2{\*\panose 00000000000000000000}Franklin Gothic Book Greek;}
+{\f99\fswiss\fcharset162\fprq2{\*\panose 00000000000000000000}Franklin Gothic Book Tur;}{\f100\fswiss\fcharset186\fprq2{\*\panose 00000000000000000000}Franklin Gothic Book Baltic;}
+{\f101\fswiss\fcharset238\fprq2{\*\panose 00000000000000000000}Franklin Gothic Demi CE;}{\f102\fswiss\fcharset204\fprq2{\*\panose 00000000000000000000}Franklin Gothic Demi Cyr;}
+{\f103\fswiss\fcharset161\fprq2{\*\panose 00000000000000000000}Franklin Gothic Demi Greek;}{\f104\fswiss\fcharset162\fprq2{\*\panose 00000000000000000000}Franklin Gothic Demi Tur;}
+{\f105\fswiss\fcharset186\fprq2{\*\panose 00000000000000000000}Franklin Gothic Demi Baltic;}{\f106\fswiss\fcharset238\fprq2{\*\panose 00000000000000000000}Franklin Gothic Demi Cond CE;}
+{\f107\fswiss\fcharset204\fprq2{\*\panose 00000000000000000000}Franklin Gothic Demi Cond Cyr;}{\f108\fswiss\fcharset161\fprq2{\*\panose 00000000000000000000}Franklin Gothic Demi Cond Greek;}
+{\f109\fswiss\fcharset162\fprq2{\*\panose 00000000000000000000}Franklin Gothic Demi Cond Tur;}{\f110\fswiss\fcharset238\fprq2{\*\panose 00000000000000000000}Franklin Gothic Medium CE;}
+{\f111\fswiss\fcharset204\fprq2{\*\panose 00000000000000000000}Franklin Gothic Medium Cyr;}{\f112\fswiss\fcharset161\fprq2{\*\panose 00000000000000000000}Franklin Gothic Medium Greek;}
+{\f113\fswiss\fcharset162\fprq2{\*\panose 00000000000000000000}Franklin Gothic Medium Tur;}{\f114\fswiss\fcharset186\fprq2{\*\panose 00000000000000000000}Franklin Gothic Medium Baltic;}
+{\f115\fswiss\fcharset238\fprq2{\*\panose 00000000000000000000}Franklin Gothic Medium Cond CE;}{\f116\fswiss\fcharset204\fprq2{\*\panose 00000000000000000000}Franklin Gothic Medium Cond Cyr;}
+{\f117\fswiss\fcharset162\fprq2{\*\panose 00000000000000000000}Franklin Gothic Medium Cond Tur;}{\f118\froman\fcharset0\fprq2{\*\panose 00000000000000000000}Rockwell;}{\f119\froman\fcharset0\fprq2{\*\panose 00000000000000000000}CG Times;}
+{\f120\fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}Univers;}{\f121\fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}Univers Condensed;}{\f122\fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}CG Omega;}
+{\f123\fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}Albertus Medium;}{\f124\fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}Albertus Extra Bold;}{\f125\froman\fcharset0\fprq2{\*\panose 00000000000000000000}Clarendon Condensed;}
+{\f126\fscript\fcharset0\fprq2{\*\panose 00000000000000000000}Coronet;}{\f127\fmodern\fcharset0\fprq1{\*\panose 00000000000000000000}Letter Gothic;}{\f128\fscript\fcharset0\fprq2{\*\panose 00000000000000000000}Marigold;}
+{\f129\fswiss\fcharset0\fprq0{\*\panose 00000000000000000000}Copperplate Gothic Light;}{\f130\fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}Copperplate Gothic Bold;}{\f131\froman\fcharset238\fprq2 Times New Roman CE{\*\falt Times};}
+{\f132\froman\fcharset204\fprq2 Times New Roman Cyr{\*\falt Times};}{\f134\froman\fcharset161\fprq2 Times New Roman Greek{\*\falt Times};}{\f135\froman\fcharset162\fprq2 Times New Roman Tur{\*\falt Times};}
+{\f136\froman\fcharset186\fprq2 Times New Roman Baltic{\*\falt Times};}{\f137\fswiss\fcharset238\fprq2 Arial CE{\*\falt Arial};}{\f138\fswiss\fcharset204\fprq2 Arial Cyr{\*\falt Arial};}{\f140\fswiss\fcharset161\fprq2 Arial Greek{\*\falt Arial};}
+{\f141\fswiss\fcharset162\fprq2 Arial Tur{\*\falt Arial};}{\f142\fswiss\fcharset186\fprq2 Arial Baltic{\*\falt Arial};}{\f143\fmodern\fcharset238\fprq1 Courier New CE;}{\f144\fmodern\fcharset204\fprq1 Courier New Cyr;}
+{\f146\fmodern\fcharset161\fprq1 Courier New Greek;}{\f147\fmodern\fcharset162\fprq1 Courier New Tur;}{\f148\fmodern\fcharset186\fprq1 Courier New Baltic;}{\f155\froman\fcharset238\fprq2 TIMES CE;}{\f156\froman\fcharset204\fprq2 TIMES Cyr;}
+{\f158\froman\fcharset161\fprq2 TIMES Greek;}{\f159\froman\fcharset162\fprq2 TIMES Tur;}{\f160\froman\fcharset186\fprq2 TIMES Baltic;}{\f161\fswiss\fcharset238\fprq2 HELVETICA CE;}{\f162\fswiss\fcharset204\fprq2 HELVETICA Cyr;}
+{\f164\fswiss\fcharset161\fprq2 HELVETICA Greek;}{\f165\fswiss\fcharset162\fprq2 HELVETICA Tur;}{\f166\fswiss\fcharset186\fprq2 HELVETICA Baltic;}{\f221\fswiss\fcharset238\fprq2 Tahoma CE;}{\f222\fswiss\fcharset204\fprq2 Tahoma Cyr;}
+{\f224\fswiss\fcharset161\fprq2 Tahoma Greek;}{\f225\fswiss\fcharset162\fprq2 Tahoma Tur;}{\f226\fswiss\fcharset186\fprq2 Tahoma Baltic;}{\f275\fmodern\fcharset238\fprq1 Lucida Console CE;}{\f276\fmodern\fcharset204\fprq1 Lucida Console Cyr;}
+{\f278\fmodern\fcharset161\fprq1 Lucida Console Greek;}{\f279\fmodern\fcharset162\fprq1 Lucida Console Tur;}{\f281\fswiss\fcharset238\fprq2 Lucida Sans Unicode CE;}{\f282\fswiss\fcharset204\fprq2 Lucida Sans Unicode Cyr;}
+{\f284\fswiss\fcharset161\fprq2 Lucida Sans Unicode Greek;}{\f285\fswiss\fcharset162\fprq2 Lucida Sans Unicode Tur;}{\f287\fswiss\fcharset238\fprq2 Arial Narrow CE;}{\f288\fswiss\fcharset204\fprq2 Arial Narrow Cyr;}
+{\f290\fswiss\fcharset161\fprq2 Arial Narrow Greek;}{\f291\fswiss\fcharset162\fprq2 Arial Narrow Tur;}{\f292\fswiss\fcharset186\fprq2 Arial Narrow Baltic;}{\f293\fswiss\fcharset238\fprq2 Arial Black CE;}{\f294\fswiss\fcharset204\fprq2 Arial Black Cyr;}
+{\f296\fswiss\fcharset161\fprq2 Arial Black Greek;}{\f297\fswiss\fcharset162\fprq2 Arial Black Tur;}{\f298\fswiss\fcharset186\fprq2 Arial Black Baltic;}{\f299\froman\fcharset238\fprq2 Bookman Old Style CE;}
+{\f300\froman\fcharset204\fprq2 Bookman Old Style Cyr;}{\f302\froman\fcharset161\fprq2 Bookman Old Style Greek;}{\f303\froman\fcharset162\fprq2 Bookman Old Style Tur;}{\f304\froman\fcharset186\fprq2 Bookman Old Style Baltic;}
+{\f311\froman\fcharset238\fprq2 Garamond CE;}{\f312\froman\fcharset204\fprq2 Garamond Cyr;}{\f314\froman\fcharset161\fprq2 Garamond Greek;}{\f315\froman\fcharset162\fprq2 Garamond Tur;}{\f316\froman\fcharset186\fprq2 Garamond Baltic;}
+{\f317\fswiss\fcharset238\fprq2 Impact CE;}{\f318\fswiss\fcharset204\fprq2 Impact Cyr;}{\f320\fswiss\fcharset161\fprq2 Impact Greek;}{\f321\fswiss\fcharset162\fprq2 Impact Tur;}{\f322\fswiss\fcharset186\fprq2 Impact Baltic;}}{\colortbl;\red0\green0\blue0;
+\red0\green0\blue255;\red0\green255\blue255;\red0\green255\blue0;\red255\green0\blue255;\red255\green0\blue0;\red255\green255\blue0;\red255\green255\blue255;\red0\green0\blue128;\red0\green128\blue128;\red0\green128\blue0;\red128\green0\blue128;
+\red128\green0\blue0;\red128\green128\blue0;\red128\green128\blue128;\red192\green192\blue192;}{\stylesheet{\nowidctlpar\widctlpar\adjustright \fs20\cgrid \snext0 Normal;}{\s1\sb240\sa60\keepn\nowidctlpar\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\sbasedon0 \snext0 heading 1;}{\s2\sb240\sa60\keepn\nowidctlpar\widctlpar\adjustright \b\f1\cgrid \sbasedon0 \snext0 heading 2;}{\s3\sb240\sa60\keepn\nowidctlpar\widctlpar\adjustright \b\f1\fs20\cgrid \sbasedon0 \snext0 heading 3;}{
+\s4\qc\keepn\nowidctlpar\widctlpar\outlinelevel3\adjustright \b\f1\fs32\cgrid \sbasedon0 \snext0 heading 4;}{\*\cs10 \additive Default Paragraph Font;}{\s15\sb120\sa120\nowidctlpar\widctlpar\adjustright \b\fs20\cgrid \sbasedon0 \snext0 caption;}{
+\s16\nowidctlpar\widctlpar\adjustright \b\f1\cgrid \sbasedon0 \snext16 Glossary;}{\*\cs17 \additive \super \sbasedon10 footnote reference;}{\s18\nowidctlpar\widctlpar\adjustright \fs20\cgrid \sbasedon0 \snext18 footnote text;}{
+\s19\sb120\sa120\nowidctlpar\widctlpar\tqr\tldot\tx8640\adjustright \b\caps\fs20\cgrid \sbasedon0 \snext0 \sautoupd toc 1;}{\s20\nowidctlpar\widctlpar\tqr\tldot\tx8640\adjustright \scaps\fs20\cgrid \sbasedon0 \snext0 \sautoupd toc 2;}{
+\s21\li200\nowidctlpar\widctlpar\tqr\tldot\tx8640\adjustright \i\fs20\cgrid \sbasedon0 \snext0 \sautoupd toc 3;}{\s22\li400\nowidctlpar\widctlpar\tqr\tldot\tx8640\adjustright \fs18\cgrid \sbasedon0 \snext0 \sautoupd toc 4;}{
+\s23\li600\nowidctlpar\widctlpar\tqr\tldot\tx8640\adjustright \fs18\cgrid \sbasedon0 \snext0 \sautoupd toc 5;}{\s24\li800\nowidctlpar\widctlpar\tqr\tldot\tx8640\adjustright \fs18\cgrid \sbasedon0 \snext0 \sautoupd toc 6;}{\s25\li1000\nowidctlpar\widctlpar
+\tqr\tldot\tx8640\adjustright \fs18\cgrid \sbasedon0 \snext0 \sautoupd toc 7;}{\s26\li1200\nowidctlpar\widctlpar\tqr\tldot\tx8640\adjustright \fs18\cgrid \sbasedon0 \snext0 \sautoupd toc 8;}{\s27\li1400\nowidctlpar\widctlpar\tqr\tldot\tx8640\adjustright 
+\fs18\cgrid \sbasedon0 \snext0 \sautoupd toc 9;}{\s28\fi-200\li200\nowidctlpar\widctlpar\tqr\tx8640\adjustright \fs18\cgrid \sbasedon0 \snext0 \sautoupd index 1;}{\s29\fi-200\li400\nowidctlpar\widctlpar\tqr\tx8640\adjustright \fs18\cgrid 
+\sbasedon0 \snext0 \sautoupd index 2;}{\s30\fi-200\li600\nowidctlpar\widctlpar\tqr\tx8640\adjustright \fs18\cgrid \sbasedon0 \snext0 \sautoupd index 3;}{\s31\fi-200\li800\nowidctlpar\widctlpar\tqr\tx8640\adjustright \fs18\cgrid 
+\sbasedon0 \snext0 \sautoupd index 4;}{\s32\fi-200\li1000\nowidctlpar\widctlpar\tqr\tx8640\adjustright \fs18\cgrid \sbasedon0 \snext0 \sautoupd index 5;}{\s33\fi-200\li1200\nowidctlpar\widctlpar\tqr\tx8640\adjustright \fs18\cgrid 
+\sbasedon0 \snext0 \sautoupd index 6;}{\s34\fi-200\li1400\nowidctlpar\widctlpar\tqr\tx8640\adjustright \fs18\cgrid \sbasedon0 \snext0 \sautoupd index 7;}{\s35\fi-200\li1600\nowidctlpar\widctlpar\tqr\tx8640\adjustright \fs18\cgrid 
+\sbasedon0 \snext0 \sautoupd index 8;}{\s36\fi-200\li1800\nowidctlpar\widctlpar\tqr\tx8640\adjustright \fs18\cgrid \sbasedon0 \snext0 \sautoupd index 9;}{\s37\qc\sb240\sa120\nowidctlpar\widctlpar\adjustright \b\fs26\cgrid \sbasedon0 \snext28 
+index heading;}{\s38\nowidctlpar\widctlpar\adjustright \f2\fs18\cgrid \sbasedon0 \snext38 Body Text;}{\s39\nowidctlpar\widctlpar\tqc\tx4320\tqr\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext39 header;}{\s40\nowidctlpar\widctlpar
+\tqc\tx4320\tqr\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext40 footer;}{\*\cs41 \additive \sbasedon10 page number;}}{\*\listtable{\list\listtemplateid-1497179236\listsimple{\listlevel\levelnfc0\leveljc0\levelfollow0\levelstartat2\levelspace0
+\levelindent0{\leveltext\'01\'00;}{\levelnumbers\'01;}\fbias0 \fi-360\li360\jclisttab\tx360 }{\listname ;}\listid739865903}{\list\listtemplateid-1688962200\listsimple{\listlevel\levelnfc0\leveljc0\levelfollow0\levelstartat1\levelspace0\levelindent0
+{\leveltext\'02\'00.;}{\levelnumbers\'01;}\fbias0 \fi-720\li720\jclisttab\tx720 }{\listname ;}\listid1331567605}{\list\listtemplateid1922079064\listsimple{\listlevel\levelnfc0\leveljc0\levelfollow0\levelstartat1\levelspace0\levelindent0{\leveltext
+\'02\'00.;}{\levelnumbers\'01;}\fbias0 \fi-720\li720\jclisttab\tx720 }{\listname ;}\listid1880166652}}{\*\listoverridetable{\listoverride\listid739865903\listoverridecount0\ls1}{\listoverride\listid1331567605\listoverridecount0\ls2}
+{\listoverride\listid1880166652\listoverridecount0\ls3}}{\info{\title match}{\author Microsoft}{\operator Microsoft}{\creatim\yr1997\mo3\dy27\hr17\min46}{\revtim\yr1997\mo3\dy27\hr17\min50}{\printim\yr1997\mo1\dy23\hr17\min4}{\version3}{\edmins1}
+{\nofpages18}{\nofwords3848}{\nofchars21935}{\*\company Microsoft}{\nofcharsws0}{\vern71}}\widowctrl\ftnbj\aenddoc\lytprtmet\hyphcaps0\formshade\viewkind1\viewscale100\pgbrdrhead\pgbrdrfoot \fet0\sectd \psz1\linex0\endnhere\titlepg\sectdefaultcl {\header 
+\pard\plain \s39\qc\nowidctlpar\widctlpar\tqc\tx4320\tqr\tx8640\adjustright \fs20\cgrid {Microsoft LZX Data Compression Format
+\par }}{\footer \pard\plain \s40\nowidctlpar\widctlpar\tqc\tx4320\tqr\tx8640\adjustright \fs20\cgrid {\tab Page }{\field{\*\fldinst {\cs41  PAGE }}{\fldrslt {\cs41\lang1024 8}}}{\cs41  of }{\field{\*\fldinst {\cs41  NUMPAGES }}{\fldrslt {\cs41\lang1024 18}}}{
+\cs41 \tab March 20, 1997}{
+\par }}{\footerf \pard\plain \s40\qc\nowidctlpar\widctlpar\tqc\tx4320\tqr\tx8640\adjustright \fs20\cgrid {\b\i Abstract
+\par }\pard \s40\nowidctlpar\widctlpar\tqc\tx4320\tqr\tx8640\adjustright {\i 
+\par This document describes the Microsoft LZX data compression format, as used in Microsoft cabinet files.  This information may be used to create or extract from Microsoft cabinet files which utilize LZX data compression.  The format of the surrounding cabin
+et file is described in other documents.
+\par }}{\*\pnseclvl1\pnucrm\pnstart1\pnindent720\pnhang{\pntxta .}}{\*\pnseclvl2\pnucltr\pnstart1\pnindent720\pnhang{\pntxta .}}{\*\pnseclvl3\pndec\pnstart1\pnindent720\pnhang{\pntxta .}}{\*\pnseclvl4\pnlcltr\pnstart1\pnindent720\pnhang{\pntxta )}}
+{\*\pnseclvl5\pndec\pnstart1\pnindent720\pnhang{\pntxtb (}{\pntxta )}}{\*\pnseclvl6\pnlcltr\pnstart1\pnindent720\pnhang{\pntxtb (}{\pntxta )}}{\*\pnseclvl7\pnlcrm\pnstart1\pnindent720\pnhang{\pntxtb (}{\pntxta )}}{\*\pnseclvl8
+\pnlcltr\pnstart1\pnindent720\pnhang{\pntxtb (}{\pntxta )}}{\*\pnseclvl9\pnlcrm\pnstart1\pnindent720\pnhang{\pntxtb (}{\pntxta )}}\pard\plain \qc\nowidctlpar\widctlpar\adjustright \fs20\cgrid {
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par }\pard\plain \s4\qc\keepn\nowidctlpar\widctlpar\outlinelevel3\adjustright \b\f1\fs32\cgrid {Microsoft LZX Data Compression Format
+\par }\pard\plain \qc\nowidctlpar\widctlpar\adjustright \fs20\cgrid {
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par Copyright \'a9 1997 Microsoft Corporation.  All rights reserved.
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par }{\fs28 
+\par \page }{\b\f1\fs32 Table of Contents}{
+\par }\pard \nowidctlpar\widctlpar\adjustright {
+\par 
+\par 
+\par 
+\par }\pard\plain \s19\sb120\sa120\nowidctlpar\widctlpar\tqr\tldot\tx8640\adjustright \b\caps\fs20\cgrid {\field\fldedit{\*\fldinst { TOC \\o "1-3" }}{\fldrslt {\lang1024 Introduction\tab }{\field{\*\fldinst {\lang1024  PAGEREF _Toc378673311 \\h }{\lang1024 
+{\*\datafield 08d0c9ea79f9bace118c8200aa004ba90b02000000080000000e0000005f0054006f0063003300370038003600370033003300310031000000}}}{\fldrslt {\lang1024 3}}}{\lang1024 
+\par }\pard\plain \s20\nowidctlpar\widctlpar\tqr\tldot\tx8640\adjustright \scaps\fs20\cgrid {\lang1024 Concepts\tab }{\field{\*\fldinst {\lang1024  PAGEREF _Toc378673312 \\h }{\lang1024 {\*\datafield 
+08d0c9ea79f9bace118c8200aa004ba90b02000000080000000e0000005f0054006f0063003300370038003600370033003300310032000000}}}{\fldrslt {\lang1024 3}}}{\lang1024 
+\par }\pard\plain \s21\li200\nowidctlpar\widctlpar\tqr\tldot\tx8640\adjustright \i\fs20\cgrid {\lang1024 LZ77\tab }{\field{\*\fldinst {\lang1024  PAGEREF _Toc378673313 \\h }{\lang1024 {\*\datafield 
+08d0c9ea79f9bace118c8200aa004ba90b02000000080000000e0000005f0054006f0063003300370038003600370033003300310033000000}}}{\fldrslt {\lang1024 3}}}{\lang1024 
+\par Bitstream\tab }{\field{\*\fldinst {\lang1024  PAGEREF _Toc378673314 \\h }{\lang1024 {\*\datafield 08d0c9ea79f9bace118c8200aa004ba90b02000000080000000e0000005f0054006f0063003300370038003600370033003300310034000000}}}{\fldrslt {\lang1024 3}}}{\lang1024 
+
+\par Window size\tab }{\field{\*\fldinst {\lang1024  PAGEREF _Toc378673315 \\h }{\lang1024 {\*\datafield 08d0c9ea79f9bace118c8200aa004ba90b02000000080000000e0000005f0054006f0063003300370038003600370033003300310035000000}}}{\fldrslt {\lang1024 3}}}{\lang1024 
+
+\par Trees\tab }{\field{\*\fldinst {\lang1024  PAGEREF _Toc378673316 \\h }{\lang1024 {\*\datafield 08d0c9ea79f9bace118c8200aa004ba90b02000000080000000e0000005f0054006f0063003300370038003600370033003300310036000000}}}{\fldrslt {\lang1024 4}}}{\lang1024 
+\par Repeated offsets\tab }{\field{\*\fldinst {\lang1024  PAGEREF _Toc378673317 \\h }{\lang1024 {\*\datafield 08d0c9ea79f9bace118c8200aa004ba90b02000000080000000e0000005f0054006f0063003300370038003600370033003300310037000000}}}{\fldrslt {\lang1024 4}}}{
+\lang1024 
+\par Constants\tab }{\field{\*\fldinst {\lang1024  PAGEREF _Toc378673318 \\h }{\lang1024 {\*\datafield 08d0c9ea79f9bace118c8200aa004ba90b02000000080000000e0000005f0054006f0063003300370038003600370033003300310038000000}}}{\fldrslt {\lang1024 5}}}{\lang1024 
+
+\par }\pard\plain \s20\nowidctlpar\widctlpar\tqr\tldot\tx8640\adjustright \scaps\fs20\cgrid {\lang1024 LZX compressed data format\tab }{\field{\*\fldinst {\lang1024  PAGEREF _Toc378673319 \\h }{\lang1024 {\*\datafield 
+08d0c9ea79f9bace118c8200aa004ba90b02000000080000000e0000005f0054006f0063003300370038003600370033003300310039000000}}}{\fldrslt {\lang1024 6}}}{\lang1024 
+\par }\pard\plain \s21\li200\nowidctlpar\widctlpar\tqr\tldot\tx8640\adjustright \i\fs20\cgrid {\lang1024 Cabinet block size\tab }{\field{\*\fldinst {\lang1024  PAGEREF _Toc378673320 \\h }{\lang1024 {\*\datafield 
+08d0c9ea79f9bace118c8200aa004ba90b02000000080000000e0000005f0054006f0063003300370038003600370033003300320030000000}}}{\fldrslt {\lang1024 6}}}{\lang1024 
+\par Header structure\tab }{\field{\*\fldinst {\lang1024  PAGEREF _Toc378673321 \\h }{\lang1024 {\*\datafield 08d0c9ea79f9bace118c8200aa004ba90b02000000080000000e0000005f0054006f0063003300370038003600370033003300320031000000}}}{\fldrslt {\lang1024 6}}}{
+\lang1024 
+\par Encoder preprocessing\tab }{\field{\*\fldinst {\lang1024  PAGEREF _Toc378673322 \\h }{\lang1024 {\*\datafield 08d0c9ea79f9bace118c8200aa004ba90b02000000080000000e0000005f0054006f0063003300370038003600370033003300320032000000}}}{\fldrslt {\lang1024 7}}}{
+\lang1024 
+\par Block structure\tab }{\field{\*\fldinst {\lang1024  PAGEREF _Toc378673323 \\h }{\lang1024 {\*\datafield 08d0c9ea79f9bace118c8200aa004ba90b02000000080000000e0000005f0054006f0063003300370038003600370033003300320033000000}}}{\fldrslt {\lang1024 8}}}{
+\lang1024 
+\par Uncompressed block format\tab }{\field{\*\fldinst {\lang1024  PAGEREF _Toc378673324 \\h }{\lang1024 {\*\datafield 08d0c9ea79f9bace118c8200aa004ba90b02000000080000000e0000005f0054006f0063003300370038003600370033003300320034000000}}}{\fldrslt {\lang1024 8}
+}}{\lang1024 
+\par Verbatim block\tab }{\field{\*\fldinst {\lang1024  PAGEREF _Toc378673325 \\h }{\lang1024 {\*\datafield 08d0c9ea79f9bace118c8200aa004ba90b02000000080000000e0000005f0054006f0063003300370038003600370033003300320035000000}}}{\fldrslt {\lang1024 9}}}{
+\lang1024 
+\par Aligned offset block\tab }{\field{\*\fldinst {\lang1024  PAGEREF _Toc378673326 \\h }{\lang1024 {\*\datafield 08d0c9ea79f9bace118c8200aa004ba90b02000000080000000e0000005f0054006f0063003300370038003600370033003300320036000000}}}{\fldrslt {\lang1024 9}}}{
+\lang1024 
+\par Encoding the trees and pre-trees\tab }{\field{\*\fldinst {\lang1024  PAGEREF _Toc378673327 \\h }{\lang1024 {\*\datafield 08d0c9ea79f9bace118c8200aa004ba90b02000000080000000e0000005f0054006f0063003300370038003600370033003300320037000000}}}{\fldrslt {
+\lang1024 9}}}{\lang1024 
+\par Compressed literals\tab }{\field{\*\fldinst {\lang1024  PAGEREF _Toc378673328 \\h }{\lang1024 {\*\datafield 08d0c9ea79f9bace118c8200aa004ba90b02000000080000000e0000005f0054006f0063003300370038003600370033003300320038000000}}}{\fldrslt {\lang1024 10}}}{
+\lang1024 
+\par Match offset }{\lang1024 {\field{\*\fldinst SYMBOL 222 \\f "Symbol" \\s 10}{\fldrslt\f3\fs20}}}{\lang1024  Formatted offset\tab }{\field{\*\fldinst {\lang1024  PAGEREF _Toc378673329 \\h }{\lang1024 {\*\datafield 
+08d0c9ea79f9bace118c8200aa004ba90b02000000080000000e0000005f0054006f0063003300370038003600370033003300320039000000}}}{\fldrslt {\lang1024 12}}}{\lang1024 
+\par Formatted offset }{\lang1024 {\field{\*\fldinst SYMBOL 222 \\f "Symbol" \\s 10}{\fldrslt\f3\fs20}}}{\lang1024  Position slot, Position footer\tab }{\field{\*\fldinst {\lang1024  PAGEREF _Toc378673330 \\h }{\lang1024 {\*\datafield 
+08d0c9ea79f9bace118c8200aa004ba90b02000000080000000e0000005f0054006f0063003300370038003600370033003300330030000000}}}{\fldrslt {\lang1024 12}}}{\lang1024 
+\par Position footer }{\lang1024 {\field{\*\fldinst SYMBOL 222 \\f "Symbol" \\s 10}{\fldrslt\f3\fs20}}}{\lang1024  Verbatim bits, Aligned offset bits\tab }{\field{\*\fldinst {\lang1024  PAGEREF _Toc378673331 \\h }{\lang1024 {\*\datafield 
+08d0c9ea79f9bace118c8200aa004ba90b02000000080000000e0000005f0054006f0063003300370038003600370033003300330031000000}}}{\fldrslt {\lang1024 15}}}{\lang1024 
+\par Match length }{\lang1024 {\field{\*\fldinst SYMBOL 222 \\f "Symbol" \\s 10}{\fldrslt\f3\fs20}}}{\lang1024  Length header, Length footer\tab }{\field{\*\fldinst {\lang1024  PAGEREF _Toc378673332 \\h }{\lang1024 {\*\datafield 
+08d0c9ea79f9bace118c8200aa004ba90b02000000080000000e0000005f0054006f0063003300370038003600370033003300330032000000}}}{\fldrslt {\lang1024 16}}}{\lang1024 
+\par Length header, Position slot }{\lang1024 {\field{\*\fldinst SYMBOL 222 \\f "Symbol" \\s 10}{\fldrslt\f3\fs20}}}{\lang1024  Length/Position header\tab }{\field{\*\fldinst {\lang1024  PAGEREF _Toc378673333 \\h }{\lang1024 {\*\datafield 
+08d0c9ea79f9bace118c8200aa004ba90b02000000080000000e0000005f0054006f0063003300370038003600370033003300330033000000}}}{\fldrslt {\lang1024 16}}}{\lang1024 
+\par Encoding a match\tab }{\field{\*\fldinst {\lang1024  PAGEREF _Toc378673334 \\h }{\lang1024 {\*\datafield 08d0c9ea79f9bace118c8200aa004ba90b02000000080000000e0000005f0054006f0063003300370038003600370033003300330034000000}}}{\fldrslt {\lang1024 16}}}{
+\lang1024 
+\par Decoding a match or an uncompressed character\tab }{\field{\*\fldinst {\lang1024  PAGEREF _Toc378673335 \\h }{\lang1024 {\*\datafield 08d0c9ea79f9bace118c8200aa004ba90b02000000080000000e0000005f0054006f0063003300370038003600370033003300330035000000}}
+}{\fldrslt {\lang1024 17}}}{\lang1024 
+\par }\pard\plain \nowidctlpar\widctlpar\adjustright \fs20\cgrid }}\pard\plain \nowidctlpar\widctlpar\adjustright \fs20\cgrid {
+\par }\pard\plain \s1\sb240\sa60\keepn\nowidctlpar\widctlpar\outlinelevel0\adjustright \b\f1\fs28\kerning28\cgrid {\page {\*\bkmkstart _Toc354817148}{\*\bkmkstart _Toc361301993}{\*\bkmkstart _Toc378673311}Introduction{\*\bkmkend _Toc354817148}
+{\*\bkmkend _Toc361301993}{\*\bkmkend _Toc378673311}
+\par }\pard\plain \nowidctlpar\widctlpar\adjustright \fs20\cgrid {This document is a design specification for the format of LZX compressed data used in the LZX compression mode of Microsoft\rquote 
+s CAB file format.  The purpose of this document is to allow anyone to encode or decode LZX compressed data.  This document describes only the format of the output \endash 
+it does not provide any specific algorithms for match location, tree generation, etc.
+\par 
+\par Before proceeding with the design specification itself, a few important concepts are described in the following pages.
+\par 
+\par }\pard\plain \s2\sb240\sa60\keepn\nowidctlpar\widctlpar\outlinelevel1\adjustright \b\f1\cgrid {{\*\bkmkstart _Toc378673312}Concepts{\*\bkmkend _Toc378673312}
+\par }\pard\plain \s3\sb240\sa60\keepn\nowidctlpar\widctlpar\outlinelevel2\adjustright \b\f1\fs20\cgrid {{\*\bkmkstart _Toc378673313}LZ77{\*\bkmkend _Toc378673313}
+\par }\pard\plain \nowidctlpar\widctlpar\adjustright \fs20\cgrid {LZX is an LZ77 based compressor that uses static Huffman encoding and a sliding window of selectable size.  Data symbols are encoded either a
+s an uncompressed symbol, or as an (offset, length) pair indicating that }{\i length}{ symbols should be copied from a displacement of -}{\i offset}{ symbols from the current position in the output stream.  The value of }{\i offset}{
+ is constrained to be less than the size of the sliding window.
+\par }\pard\plain \s18\nowidctlpar\widctlpar\adjustright \fs20\cgrid {
+\par }\pard\plain \s3\sb240\sa60\keepn\nowidctlpar\widctlpar\outlinelevel2\adjustright \b\f1\fs20\cgrid {{\*\bkmkstart _Toc378673314}Bitstream{\*\bkmkend _Toc378673314}
+\par }\pard\plain \nowidctlpar\widctlpar\adjustright \fs20\cgrid {An LZX bitstream is a sequence of 16 bit integers stored in the order least-significant-byte most-significant-byte.  Given an input stream of bits named a, b, c, \'85
+, x, y, z, A, B, C, D, E, F, the output byte stream (with byte boundaries highlighted) would be as shown below.
+\par 
+\par }\pard\plain \s15\sb120\sa120\nowidctlpar\widctlpar\adjustright \b\fs20\cgrid {Output byte stream
+\par }\trowd \trgaph108\trrh264\trleft-12\trbrdrt\brdrs\brdrw10 \trbrdrl\brdrs\brdrw10 \trbrdrb\brdrs\brdrw10 \trbrdrr\brdrs\brdrw10 \trbrdrh\brdrs\brdrw10 \trbrdrv\brdrs\brdrw10 \clvertalt\clbrdrt\brdrs\brdrw45 \clbrdrl\brdrs\brdrw45 \clbrdrb\brdrs\brdrw45 
+\clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx270\clvertalt\clbrdrt\brdrs\brdrw45 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw45 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx540\clvertalt\clbrdrt\brdrs\brdrw45 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw45 \clbrdrr
+\brdrs\brdrw10 \cltxlrtb \cellx810\clvertalt\clbrdrt\brdrs\brdrw45 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw45 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx1080\clvertalt\clbrdrt\brdrs\brdrw45 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw45 \clbrdrr
+\brdrs\brdrw10 \cltxlrtb \cellx1350\clvertalt\clbrdrt\brdrs\brdrw45 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw45 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx1620\clvertalt\clbrdrt\brdrs\brdrw45 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw45 \clbrdrr
+\brdrs\brdrw10 \cltxlrtb \cellx1890\clvertalt\clbrdrt\brdrs\brdrw45 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw45 \clbrdrr\brdrs\brdrw45 \cltxlrtb \cellx2160\clvertalt\clbrdrt\brdrs\brdrw45 \clbrdrb\brdrs\brdrw45 \clbrdrr\brdrs\brdrw10 \cltxlrtb 
+\cellx2430\clvertalt\clbrdrt\brdrs\brdrw45 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw45 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx2700\clvertalt\clbrdrt\brdrs\brdrw45 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw45 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx2970
+\clvertalt\clbrdrt\brdrs\brdrw45 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw45 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx3240\clvertalt\clbrdrt\brdrs\brdrw45 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw45 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx3510\clvertalt
+\clbrdrt\brdrs\brdrw45 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw45 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx3780\clvertalt\clbrdrt\brdrs\brdrw45 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw45 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx4050\clvertalt\clbrdrt
+\brdrs\brdrw45 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw45 \clbrdrr\brdrs\brdrw45 \cltxlrtb \cellx4320\clvertalt\clbrdrt\brdrs\brdrw45 \clbrdrb\brdrs\brdrw45 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx4590\clvertalt\clbrdrt\brdrs\brdrw45 \clbrdrl
+\brdrs\brdrw10 \clbrdrb\brdrs\brdrw45 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx4860\clvertalt\clbrdrt\brdrs\brdrw45 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw45 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx5130\clvertalt\clbrdrt\brdrs\brdrw45 \clbrdrl
+\brdrs\brdrw10 \clbrdrb\brdrs\brdrw45 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx5400\clvertalt\clbrdrt\brdrs\brdrw45 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw45 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx5670\clvertalt\clbrdrt\brdrs\brdrw45 \clbrdrl
+\brdrs\brdrw10 \clbrdrb\brdrs\brdrw45 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx5940\clvertalt\clbrdrt\brdrs\brdrw45 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw45 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx6210\clvertalt\clbrdrt\brdrs\brdrw45 \clbrdrl
+\brdrs\brdrw10 \clbrdrb\brdrs\brdrw45 \clbrdrr\brdrs\brdrw45 \cltxlrtb \cellx6480\clvertalt\clbrdrt\brdrs\brdrw45 \clbrdrb\brdrs\brdrw45 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx6750\clvertalt\clbrdrt\brdrs\brdrw45 \clbrdrl\brdrs\brdrw10 \clbrdrb
+\brdrs\brdrw45 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx7020\clvertalt\clbrdrt\brdrs\brdrw45 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw45 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx7290\clvertalt\clbrdrt\brdrs\brdrw45 \clbrdrl\brdrs\brdrw10 \clbrdrb
+\brdrs\brdrw45 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx7560\clvertalt\clbrdrt\brdrs\brdrw45 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw45 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx7830\clvertalt\clbrdrt\brdrs\brdrw45 \clbrdrl\brdrs\brdrw10 \clbrdrb
+\brdrs\brdrw45 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx8100\clvertalt\clbrdrt\brdrs\brdrw45 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw45 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx8370\clvertalt\clbrdrt\brdrs\brdrw45 \clbrdrl\brdrs\brdrw10 \clbrdrb
+\brdrs\brdrw45 \clbrdrr\brdrs\brdrw45 \cltxlrtb \cellx8640\pard\plain \nowidctlpar\widctlpar\intbl\adjustright \fs20\cgrid {\f2 i\cell j\cell k\cell l\cell m\cell n\cell }\pard\plain \s18\nowidctlpar\widctlpar\intbl\adjustright \fs20\cgrid {\f2 o\cell 
+}\pard\plain \nowidctlpar\widctlpar\intbl\adjustright \fs20\cgrid {\f2 p\cell a\cell b\cell c\cell d\cell e\cell F\cell g\cell h\cell y\cell z\cell A\cell B\cell C\cell D\cell E\cell F\cell q\cell r\cell s\cell t\cell u\cell v\cell w\cell x\cell }\pard 
+\nowidctlpar\widctlpar\intbl\adjustright {\row }\pard \nowidctlpar\widctlpar\adjustright {
+\par }\pard\plain \s3\sb240\sa60\keepn\nowidctlpar\widctlpar\outlinelevel2\adjustright \b\f1\fs20\cgrid {{\*\bkmkstart _Toc378673315}{\*\bkmkstart _Toc354696106}{\*\bkmkstart _Toc354765934}{\*\bkmkstart _Toc354766127}{\*\bkmkstart _Toc354766320}
+{\*\bkmkstart _Toc354766366}{\*\bkmkstart _Toc354766602}{\*\bkmkstart _Toc354767021}{\*\bkmkstart _Toc354817169}{\*\bkmkstart _Toc361302014}Window size{\*\bkmkend _Toc378673315}
+\par }\pard\plain \nowidctlpar\widctlpar\adjustright \fs20\cgrid {The window size must be a power of 2, from 2}{\super 15}{ to 2}{\super 21}{
+.  The window size is not stored in the compressed data stream, and must instead be passed to the decoder before decoding begins.  
+\par 
+\par The window size determines the number of window subdivisions, or \ldblquote position slots\rdblquote , as shown in the following table:
+\par 
+\par }\pard\plain \s15\sb120\sa120\nowidctlpar\widctlpar\adjustright \b\fs20\cgrid {{\*\bkmkstart _Toc354766374}{\*\bkmkstart _Toc354766610}{\*\bkmkstart _Toc354767029}{\*\bkmkstart _Toc354817177}{\*\bkmkstart _Toc361302022}Window size / Position slot table
+{\*\bkmkend _Toc354766374}{\*\bkmkend _Toc354766610}{\*\bkmkend _Toc354767029}{\*\bkmkend _Toc354817177}{\*\bkmkend _Toc361302022}
+\par }\trowd \trgaph108\trleft-108\trbrdrt\brdrs\brdrw30\brdrcf1 \trbrdrl\brdrs\brdrw30\brdrcf1 \trbrdrb\brdrs\brdrw30\brdrcf1 \trbrdrr\brdrs\brdrw30\brdrcf1 \trbrdrh\brdrs\brdrw15\brdrcf1 \trbrdrv\brdrs\brdrw15\brdrcf1 \clvertalt\clbrdrt
+\brdrs\brdrw30\brdrcf1 \clbrdrl\brdrs\brdrw30\brdrcf1 \clbrdrb\brdrs\brdrw15\brdrcf1 \clbrdrr\brdrs\brdrw15\brdrcf1 \cltxlrtb \cellx2250\clvertalt\clbrdrt\brdrs\brdrw30\brdrcf1 \clbrdrl\brdrs\brdrw15\brdrcf1 \clbrdrb\brdrs\brdrw15\brdrcf1 \clbrdrr
+\brdrs\brdrw30\brdrcf1 \cltxlrtb \cellx4950\pard\plain \nowidctlpar\widctlpar\intbl\adjustright \fs20\cgrid {\b\f1\fs18 Window size\cell Position slots required\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\trowd \trgaph108\trleft-108
+\trbrdrt\brdrs\brdrw30\brdrcf1 \trbrdrl\brdrs\brdrw30\brdrcf1 \trbrdrb\brdrs\brdrw30\brdrcf1 \trbrdrr\brdrs\brdrw30\brdrcf1 \trbrdrh\brdrs\brdrw15\brdrcf1 \trbrdrv\brdrs\brdrw15\brdrcf1 \clvertalt\clbrdrt\brdrs\brdrw15\brdrcf1 \clbrdrl
+\brdrs\brdrw30\brdrcf1 \clbrdrb\brdrs\brdrw15\brdrcf1 \clbrdrr\brdrs\brdrw15\brdrcf1 \cltxlrtb \cellx2250\clvertalt\clbrdrt\brdrs\brdrw15\brdrcf1 \clbrdrl\brdrs\brdrw15\brdrcf1 \clbrdrb\brdrs\brdrw15\brdrcf1 \clbrdrr\brdrs\brdrw30\brdrcf1 \cltxlrtb 
+\cellx4950\pard \nowidctlpar\widctlpar\intbl\adjustright {32K\cell 30\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\pard \nowidctlpar\widctlpar\intbl\adjustright {64K\cell 32\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row 
+}\pard \nowidctlpar\widctlpar\intbl\adjustright {128K\cell 34\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\pard \nowidctlpar\widctlpar\intbl\adjustright {256K\cell 36\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\pard 
+\nowidctlpar\widctlpar\intbl\adjustright {512K\cell 38\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\pard \nowidctlpar\widctlpar\intbl\adjustright {1 MB\cell 40\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\trowd 
+\trgaph108\trleft-108\trbrdrt\brdrs\brdrw30\brdrcf1 \trbrdrl\brdrs\brdrw30\brdrcf1 \trbrdrb\brdrs\brdrw30\brdrcf1 \trbrdrr\brdrs\brdrw30\brdrcf1 \trbrdrh\brdrs\brdrw15\brdrcf1 \trbrdrv\brdrs\brdrw15\brdrcf1 \clvertalt\clbrdrt\brdrs\brdrw15\brdrcf1 
+\clbrdrl\brdrs\brdrw30\brdrcf1 \clbrdrb\brdrs\brdrw30\brdrcf1 \clbrdrr\brdrs\brdrw15\brdrcf1 \cltxlrtb \cellx2250\clvertalt\clbrdrt\brdrs\brdrw15\brdrcf1 \clbrdrl\brdrs\brdrw15\brdrcf1 \clbrdrb\brdrs\brdrw30\brdrcf1 \clbrdrr\brdrs\brdrw30\brdrcf1 
+\cltxlrtb \cellx4950\pard \nowidctlpar\widctlpar\intbl\adjustright {2 MB\cell 42\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\pard \nowidctlpar\widctlpar\adjustright { 
+\par 
+\par }\pard\plain \s3\sb240\sa60\keepn\nowidctlpar\widctlpar\outlinelevel2\adjustright \b\f1\fs20\cgrid {{\*\bkmkstart _Toc378673316}Trees{\*\bkmkend _Toc378673316}
+\par }\pard\plain \nowidctlpar\widctlpar\adjustright \fs20\cgrid {
+LZX uses canonical Huffman tree structures to represent elements.  Huffman trees are well known in data compression and are not described here.  Since an LZX decoder uses only the path lengths of the Huffman tree to reconstruct the identical tree, the fol
+lowing constraints are made on the tree structure:
+\par 
+\par {\pntext\pard\plain\fs20\cgrid \hich\af0\dbch\af0\loch\f0 1.\tab}}\pard \fi-720\li720\nowidctlpar\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec\pnstart1\pnindent720\pnhang{\pntxta .}}\ls3\adjustright {
+For any two elements with the same path length, the lower-numbered element must be further left on the tree than the higher numbered element.  An alternative way of stating this constraint is that lowe
+r-numbered elements must have lower path traversal values; for example, 0010 (left-left-right-left) is lower than 0011 (left-left-right-right).
+\par }\pard \nowidctlpar\widctlpar{\*\pn \pnlvlcont\ilvl0\ls0\pnrnot0\pndec }\adjustright {
+\par {\pntext\pard\plain\fs20\cgrid \hich\af0\dbch\af0\loch\f0 2.\tab}}\pard \fi-720\li720\nowidctlpar\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec\pnstart1\pnindent720\pnhang{\pntxta .}}\ls3\adjustright {
+For each level, starting at the deepest level of the tree and then moving upwards, leaf nodes must start as
+ far left as possible.  An alternative way of stating this constraint is that if any tree node has children then all tree nodes to the left of it with the same path length must also have children.
+\par }\pard \nowidctlpar\widctlpar{\*\pn \pnlvlcont\ilvl0\ls0\pnrnot0\pndec }\adjustright {
+\par {\pntext\pard\plain\fs20\cgrid \hich\af0\dbch\af0\loch\f0 3.\tab}}\pard \fi-720\li720\nowidctlpar\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec\pnstart1\pnindent720\pnhang{\pntxta .}}\ls3\adjustright {
+Zero length Huffman codes are not permitted, therefore
+ a tree must contain at least 2 elements.  In the case where all tree elements are zero frequency, or all but one tree element is zero frequency, the resulting tree must consist of the two Huffman codes \ldblquote 0\rdblquote  and \ldblquote 1\rdblquote 
+.  In the latter case, constraint #1 still applies.
+\par }\pard \nowidctlpar\widctlpar\adjustright {
+\par LZX uses several Huffman tree structures.  The most important tree is the }{\i main}{ tree, which comprises 256 elements corresponding to all possible ASCII characters, plus 8 * NUM_POSITION_SLOTS (see above) elements corresponding to matches.  The sec
+ond most important tree is the }{\i length}{ tree, which comprises 249 elements.
+\par 
+\par Other trees, such as the aligned offset tree (comprising 8 elements), and the pre-trees (comprising 20 elements each), have a smaller role.
+\par 
+\par }\pard\plain \s3\sb240\sa60\keepn\nowidctlpar\widctlpar\outlinelevel2\adjustright \b\f1\fs20\cgrid {{\*\bkmkstart _Toc332385454}{\*\bkmkstart _Toc332386712}{\*\bkmkstart _Toc332387410}{\*\bkmkstart _Toc354659895}{\*\bkmkstart _Toc354696096}
+{\*\bkmkstart _Toc354765931}{\*\bkmkstart _Toc354766124}{\*\bkmkstart _Toc354766317}{\*\bkmkstart _Toc354766355}{\*\bkmkstart _Toc354766592}{\*\bkmkstart _Toc354767011}{\*\bkmkstart _Toc354817159}{\*\bkmkstart _Toc361302004}{\*\bkmkstart _Toc378673317}
+Repeated offsets{\*\bkmkend _Toc332385454}{\*\bkmkend _Toc332386712}{\*\bkmkend _Toc332387410}{\*\bkmkend _Toc354659895}{\*\bkmkend _Toc354696096}{\*\bkmkend _Toc354765931}{\*\bkmkend _Toc354766124}{\*\bkmkend _Toc354766317}{\*\bkmkend _Toc354766355}
+{\*\bkmkend _Toc354766592}{\*\bkmkend _Toc354767011}{\*\bkmkend _Toc354817159}{\*\bkmkend _Toc361302004}{\*\bkmkend _Toc378673317}
+\par }\pard\plain \nowidctlpar\widctlpar\adjustright \fs20\cgrid {LZX extends the conventional LZ77 format in several ways, one of which is in the use of repeated offset codes.  Three match offset codes, named the }{\i repeated offset codes}{,
+ are reserved to indicate that the current match offset is the same as that of one of the three previous matches which is not itself a repeated offset.
+\par }\pard\plain \s18\nowidctlpar\widctlpar\adjustright \fs20\cgrid {
+\par }\pard\plain \nowidctlpar\widctlpar\adjustright \fs20\cgrid {The three special offset codes are encoded as offset values 0, 1, and 2 (i.e. encoding an offset of 0 means \ldblquote use the most recent non-repeated match offset\rdblquote 
+, an offset of 1 means \ldblquote use the second most recent non-repeated match offset\rdblquote , etc.).  All remaining offset values are displaced by +3, as is shown in the table below, which prevents matches at offsets WI
+NDOW_SIZE, WINDOW_SIZE-1, and WINDOW_SIZE-2.
+\par }\pard\plain \s18\nowidctlpar\widctlpar\adjustright \fs20\cgrid {
+\par }\pard\plain \s15\sb120\sa120\keepn\nowidctlpar\widctlpar\adjustright \b\fs20\cgrid {{\*\bkmkstart _Toc354766593}{\*\bkmkstart _Toc354767012}{\*\bkmkstart _Toc354817160}{\*\bkmkstart _Toc361302005}Correlation between encoded offset and real offset
+{\*\bkmkend _Toc354766593}{\*\bkmkend _Toc354767012}{\*\bkmkend _Toc354817160}{\*\bkmkend _Toc361302005}
+\par }\trowd \trgaph108\trleft-108\trbrdrt\brdrs\brdrw30\brdrcf1 \trbrdrl\brdrs\brdrw30\brdrcf1 \trbrdrb\brdrs\brdrw30\brdrcf1 \trbrdrr\brdrs\brdrw30\brdrcf1 \trbrdrh\brdrs\brdrw15\brdrcf1 \trbrdrv\brdrs\brdrw15\brdrcf1 \clvertalt\clbrdrt
+\brdrs\brdrw30\brdrcf1 \clbrdrl\brdrs\brdrw30\brdrcf1 \clbrdrb\brdrs\brdrw15\brdrcf1 \clbrdrr\brdrs\brdrw15\brdrcf1 \cltxlrtb \cellx1800\clvertalt\clbrdrt\brdrs\brdrw30\brdrcf1 \clbrdrl\brdrs\brdrw15\brdrcf1 \clbrdrb\brdrs\brdrw15\brdrcf1 \clbrdrr
+\brdrs\brdrw30\brdrcf1 \cltxlrtb \cellx5760\pard\plain \keepn\nowidctlpar\widctlpar\intbl\adjustright \fs20\cgrid {\b\f1\fs18 Encoded offset\cell Real offset\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\trowd \trgaph108\trleft-108\trbrdrt
+\brdrs\brdrw30\brdrcf1 \trbrdrl\brdrs\brdrw30\brdrcf1 \trbrdrb\brdrs\brdrw30\brdrcf1 \trbrdrr\brdrs\brdrw30\brdrcf1 \trbrdrh\brdrs\brdrw15\brdrcf1 \trbrdrv\brdrs\brdrw15\brdrcf1 \clvertalt\clbrdrl\brdrs\brdrw30\brdrcf1 \clbrdrb\brdrs\brdrw15\brdrcf1 
+\clbrdrr\brdrs\brdrw15\brdrcf1 \cltxlrtb \cellx1800\clvertalt\clbrdrl\brdrs\brdrw15\brdrcf1 \clbrdrb\brdrs\brdrw15\brdrcf1 \clbrdrr\brdrs\brdrw30\brdrcf1 \cltxlrtb \cellx5760\pard \keepn\nowidctlpar\widctlpar\intbl\adjustright {0\cell 
+Most recent non-repeated match offset\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\trowd \trgaph108\trleft-108\trbrdrt\brdrs\brdrw30\brdrcf1 \trbrdrl\brdrs\brdrw30\brdrcf1 \trbrdrb\brdrs\brdrw30\brdrcf1 \trbrdrr\brdrs\brdrw30\brdrcf1 
+\trbrdrh\brdrs\brdrw15\brdrcf1 \trbrdrv\brdrs\brdrw15\brdrcf1 \clvertalt\clbrdrt\brdrs\brdrw15\brdrcf1 \clbrdrl\brdrs\brdrw30\brdrcf1 \clbrdrb\brdrs\brdrw15\brdrcf1 \clbrdrr\brdrs\brdrw15\brdrcf1 \cltxlrtb \cellx1800\clvertalt\clbrdrt
+\brdrs\brdrw15\brdrcf1 \clbrdrl\brdrs\brdrw15\brdrcf1 \clbrdrb\brdrs\brdrw15\brdrcf1 \clbrdrr\brdrs\brdrw30\brdrcf1 \cltxlrtb \cellx5760\pard \keepn\nowidctlpar\widctlpar\intbl\adjustright {1\cell Second most recent non-repeated match offset\cell }\pard 
+\nowidctlpar\widctlpar\intbl\adjustright {\row }\pard \keepn\nowidctlpar\widctlpar\intbl\adjustright {2\cell Third most recent non-repeated match offset\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\pard 
+\keepn\nowidctlpar\widctlpar\intbl\adjustright {3\cell 1 (closest allowable)\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\pard \keepn\nowidctlpar\widctlpar\intbl\adjustright {4\cell 2\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {
+\row }\pard \keepn\nowidctlpar\widctlpar\intbl\adjustright {5\cell 3\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\pard \keepn\nowidctlpar\widctlpar\intbl\adjustright {6\cell 4\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row 
+}\pard \keepn\nowidctlpar\widctlpar\intbl\adjustright {7\cell 5\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\pard \keepn\nowidctlpar\widctlpar\intbl\adjustright {8\cell 6\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\pard 
+\keepn\nowidctlpar\widctlpar\intbl\adjustright {500\cell 498\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\pard \keepn\nowidctlpar\widctlpar\intbl\adjustright {x+2\cell x\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\trowd 
+\trgaph108\trleft-108\trbrdrt\brdrs\brdrw30\brdrcf1 \trbrdrl\brdrs\brdrw30\brdrcf1 \trbrdrb\brdrs\brdrw30\brdrcf1 \trbrdrr\brdrs\brdrw30\brdrcf1 \trbrdrh\brdrs\brdrw15\brdrcf1 \trbrdrv\brdrs\brdrw15\brdrcf1 \clvertalt\clbrdrt\brdrs\brdrw15\brdrcf1 
+\clbrdrl\brdrs\brdrw30\brdrcf1 \clbrdrb\brdrs\brdrw30\brdrcf1 \clbrdrr\brdrs\brdrw15\brdrcf1 \cltxlrtb \cellx1800\clvertalt\clbrdrt\brdrs\brdrw15\brdrcf1 \clbrdrl\brdrs\brdrw15\brdrcf1 \clbrdrb\brdrs\brdrw30\brdrcf1 \clbrdrr\brdrs\brdrw30\brdrcf1 
+\cltxlrtb \cellx5760\pard \keepn\nowidctlpar\widctlpar\intbl\adjustright {WINDOW_SIZE-1
+\par }{\i (maximum possible)}{\cell WIDOW_SIZE-3\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\pard \nowidctlpar\widctlpar\adjustright {
+\par 
+\par The three most recent non-repeated match offsets are kept in a list, the behavior of which explained below:
+\par 
+\par Let R0 be defined as the most recent non-repeated offset
+\par Let R1 be defined as the second most recent non-repeated offset
+\par Let R2 be defined as the third most recent non-repeated offset
+\par 
+\par The list is managed similarly to an LRU (least recently used) queue, with the exception of the cases when R1 or R2 is output.  In these cases, which are fairly uncommon, R1 or R2 is simply swapped with R0, which requir
+es fewer operations than would an LRU queue.  The compression penalty from doing so is essentially zero and it removes a small computational overhead from the decoder.
+\par 
+\par The initial state of R0, R1, R2 is (1, 1, 1).
+\par }\pard\plain \s18\nowidctlpar\widctlpar\adjustright \fs20\cgrid {
+\par }\pard\plain \s15\sb120\sa120\keepn\nowidctlpar\widctlpar\adjustright \b\fs20\cgrid {{\*\bkmkstart _Toc354766358}{\*\bkmkstart _Toc354766594}{\*\bkmkstart _Toc354767013}{\*\bkmkstart _Toc354817161}{\*\bkmkstart _Toc361302006}
+Management of the repeated offsets list{\*\bkmkend _Toc354766358}{\*\bkmkend _Toc354766594}{\*\bkmkend _Toc354767013}{\*\bkmkend _Toc354817161}{\*\bkmkend _Toc361302006}
+\par }\trowd \trgaph108\trleft-108\trbrdrt\brdrs\brdrw30\brdrcf1 \trbrdrl\brdrs\brdrw30\brdrcf1 \trbrdrb\brdrs\brdrw30\brdrcf1 \trbrdrr\brdrs\brdrw30\brdrcf1 \trbrdrh\brdrs\brdrw15\brdrcf1 \trbrdrv\brdrs\brdrw15\brdrcf1 \clvertalt\clbrdrt
+\brdrs\brdrw30\brdrcf1 \clbrdrl\brdrs\brdrw30\brdrcf1 \clbrdrb\brdrs\brdrw15\brdrcf1 \clbrdrr\brdrs\brdrw15\brdrcf1 \cltxlrtb \cellx3060\clvertalt\clbrdrt\brdrs\brdrw30\brdrcf1 \clbrdrl\brdrs\brdrw15\brdrcf1 \clbrdrb\brdrs\brdrw15\brdrcf1 \clbrdrr
+\brdrs\brdrw30\brdrcf1 \cltxlrtb \cellx4590\pard\plain \keepn\nowidctlpar\widctlpar\intbl\adjustright \fs20\cgrid {\b\f1\fs18 Match offset X where...\cell Operation\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\trowd \trgaph108\trleft-108
+\trbrdrt\brdrs\brdrw30\brdrcf1 \trbrdrl\brdrs\brdrw30\brdrcf1 \trbrdrb\brdrs\brdrw30\brdrcf1 \trbrdrr\brdrs\brdrw30\brdrcf1 \trbrdrh\brdrs\brdrw15\brdrcf1 \trbrdrv\brdrs\brdrw15\brdrcf1 \clvertalt\clbrdrl\brdrs\brdrw30\brdrcf1 \clbrdrb
+\brdrs\brdrw15\brdrcf1 \clbrdrr\brdrs\brdrw15\brdrcf1 \cltxlrtb \cellx3060\clvertalt\clbrdrl\brdrs\brdrw15\brdrcf1 \clbrdrb\brdrs\brdrw15\brdrcf1 \clbrdrr\brdrs\brdrw30\brdrcf1 \cltxlrtb \cellx4590\pard \keepn\nowidctlpar\widctlpar\intbl\adjustright {X }{
+{\field{\*\fldinst SYMBOL 185 \\f "Symbol" \\s 10}{\fldrslt\f3\fs20}}}{ R0 and X }{{\field{\*\fldinst SYMBOL 185 \\f "Symbol" \\s 10}{\fldrslt\f3\fs20}}}{ R1 and X }{{\field{\*\fldinst SYMBOL 185 \\f "Symbol" \\s 10}{\fldrslt\f3\fs20}}}{ R2\cell R2 }{
+{\field{\*\fldinst SYMBOL 172 \\f "Symbol" \\s 10}{\fldrslt\f3\fs20}}}{ R1
+\par R1 }{{\field{\*\fldinst SYMBOL 172 \\f "Symbol" \\s 10}{\fldrslt\f3\fs20}}}{ R0
+\par R0 }{{\field{\*\fldinst SYMBOL 172 \\f "Symbol" \\s 10}{\fldrslt\f3\fs20}}}{ X\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\trowd \trgaph108\trleft-108\trbrdrt\brdrs\brdrw30\brdrcf1 \trbrdrl\brdrs\brdrw30\brdrcf1 \trbrdrb
+\brdrs\brdrw30\brdrcf1 \trbrdrr\brdrs\brdrw30\brdrcf1 \trbrdrh\brdrs\brdrw15\brdrcf1 \trbrdrv\brdrs\brdrw15\brdrcf1 \clvertalt\clbrdrt\brdrs\brdrw15\brdrcf1 \clbrdrl\brdrs\brdrw30\brdrcf1 \clbrdrb\brdrs\brdrw15\brdrcf1 \clbrdrr\brdrs\brdrw15\brdrcf1 
+\cltxlrtb \cellx3060\clvertalt\clbrdrt\brdrs\brdrw15\brdrcf1 \clbrdrl\brdrs\brdrw15\brdrcf1 \clbrdrb\brdrs\brdrw15\brdrcf1 \clbrdrr\brdrs\brdrw30\brdrcf1 \cltxlrtb \cellx4590\pard \keepn\nowidctlpar\widctlpar\intbl\adjustright {X = R0\cell None\cell 
+}\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\pard \keepn\nowidctlpar\widctlpar\intbl\adjustright {X = R1\cell swap R0 }{{\field{\*\fldinst SYMBOL 219 \\f "Symbol" \\s 10}{\fldrslt\f3\fs20}}}{ R1\cell }\pard 
+\nowidctlpar\widctlpar\intbl\adjustright {\row }\trowd \trgaph108\trleft-108\trbrdrt\brdrs\brdrw30\brdrcf1 \trbrdrl\brdrs\brdrw30\brdrcf1 \trbrdrb\brdrs\brdrw30\brdrcf1 \trbrdrr\brdrs\brdrw30\brdrcf1 \trbrdrh\brdrs\brdrw15\brdrcf1 \trbrdrv
+\brdrs\brdrw15\brdrcf1 \clvertalt\clbrdrt\brdrs\brdrw15\brdrcf1 \clbrdrl\brdrs\brdrw30\brdrcf1 \clbrdrb\brdrs\brdrw30\brdrcf1 \clbrdrr\brdrs\brdrw15\brdrcf1 \cltxlrtb \cellx3060\clvertalt\clbrdrt\brdrs\brdrw15\brdrcf1 \clbrdrl\brdrs\brdrw15\brdrcf1 
+\clbrdrb\brdrs\brdrw30\brdrcf1 \clbrdrr\brdrs\brdrw30\brdrcf1 \cltxlrtb \cellx4590\pard \keepn\nowidctlpar\widctlpar\intbl\adjustright {X = R2\cell swap R0 }{{\field{\*\fldinst SYMBOL 219 \\f "Symbol" \\s 10}{\fldrslt\f3\fs20}}}{ R2\cell }\pard 
+\nowidctlpar\widctlpar\intbl\adjustright {\row }\pard \keepn\nowidctlpar\widctlpar\adjustright {
+\par }\pard\plain \s3\sb240\sa60\keepn\nowidctlpar\widctlpar\outlinelevel2\adjustright \b\f1\fs20\cgrid {{\*\bkmkstart _Toc378673318}Constants{\*\bkmkend _Toc378673318}
+\par }\pard\plain \nowidctlpar\widctlpar\adjustright \fs20\cgrid {The following named constants are used frequently in this document:
+\par }\pard\plain \s18\nowidctlpar\widctlpar\adjustright \fs20\cgrid {
+\par }\trowd \trgaph108\trrh240\trbrdrt\brdrs\brdrw10 \trbrdrl\brdrs\brdrw10 \trbrdrb\brdrs\brdrw10 \trbrdrr\brdrs\brdrw10 \trbrdrh\brdrs\brdrw10 \trbrdrv\brdrs\brdrw10 \clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr
+\brdrs\brdrw10 \cltxlrtb \cellx3060\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx6120\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr
+\brdrs\brdrw10 \cltxlrtb \cellx8730\pard\plain \keepn\nowidctlpar\widctlpar\intbl\adjustright \fs20\cgrid {MIN_MATCH\cell Smallest allowable match length\cell 2\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\trowd \trgaph108\trrh228\trbrdrt
+\brdrs\brdrw10 \trbrdrl\brdrs\brdrw10 \trbrdrb\brdrs\brdrw10 \trbrdrr\brdrs\brdrw10 \trbrdrh\brdrs\brdrw10 \trbrdrv\brdrs\brdrw10 \clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx3060
+\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx6120\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx8730\pard 
+\keepn\nowidctlpar\widctlpar\intbl\adjustright {MAX_MATCH\cell Largest allowable match length\cell 257\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\trowd \trgaph108\trrh264\trbrdrt\brdrs\brdrw10 \trbrdrl\brdrs\brdrw10 \trbrdrb
+\brdrs\brdrw10 \trbrdrr\brdrs\brdrw10 \trbrdrh\brdrs\brdrw10 \trbrdrv\brdrs\brdrw10 \clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx3060\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl
+\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx6120\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx8730\pard 
+\keepn\nowidctlpar\widctlpar\intbl\adjustright {NUM_CHARS\cell Number of uncompressed character types\cell 256\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\trowd \trgaph108\trrh240\trbrdrt\brdrs\brdrw10 \trbrdrl\brdrs\brdrw10 \trbrdrb
+\brdrs\brdrw10 \trbrdrr\brdrs\brdrw10 \trbrdrh\brdrs\brdrw10 \trbrdrv\brdrs\brdrw10 \clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx3060\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl
+\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx6120\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx8730\pard 
+\keepn\nowidctlpar\widctlpar\intbl\adjustright {WINDOW_SIZE\cell Window size\cell Varies\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\trowd \trgaph108\trrh252\trbrdrt\brdrs\brdrw10 \trbrdrl\brdrs\brdrw10 \trbrdrb\brdrs\brdrw10 \trbrdrr
+\brdrs\brdrw10 \trbrdrh\brdrs\brdrw10 \trbrdrv\brdrs\brdrw10 \clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx3060\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb
+\brdrs\brdrw10 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx6120\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx8730\pard \keepn\nowidctlpar\widctlpar\intbl\adjustright {NUM_POSITION_SLOTS
+\cell Number of window subdivisions\cell Dependent upon WINDOW_SIZE\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\pard \keepn\nowidctlpar\widctlpar\intbl\adjustright {MAIN_TREE_ELEMENTS\cell Number of elements in main tree\cell 
+NUM_CHARS + NUM_POSITION_SLOTS*8\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\trowd \trgaph108\trrh144\trbrdrt\brdrs\brdrw10 \trbrdrl\brdrs\brdrw10 \trbrdrb\brdrs\brdrw10 \trbrdrr\brdrs\brdrw10 \trbrdrh\brdrs\brdrw10 \trbrdrv
+\brdrs\brdrw10 \clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx3060\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr\brdrs\brdrw10 \cltxlrtb 
+\cellx6120\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx8730\pard \keepn\nowidctlpar\widctlpar\intbl\adjustright {NUM_SECONDARY_LENGTHS\cell Number of elements in length tree\cell 249
+\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\pard \nowidctlpar\widctlpar\adjustright {
+\par 
+\par }\pard\plain \s2\sb240\sa60\keepn\nowidctlpar\widctlpar\outlinelevel1\adjustright \b\f1\cgrid {{\*\bkmkstart _Toc378673319}LZX compressed data format{\*\bkmkend _Toc354696106}{\*\bkmkend _Toc354765934}{\*\bkmkend _Toc354766127}{\*\bkmkend _Toc354766320}
+{\*\bkmkend _Toc354766366}{\*\bkmkend _Toc354766602}{\*\bkmkend _Toc354767021}{\*\bkmkend _Toc354817169}{\*\bkmkend _Toc361302014}{\*\bkmkend _Toc378673319}
+\par }\pard\plain \nowidctlpar\widctlpar\adjustright \fs20\cgrid {LZX compressed data consists of a header indicating the file translation size (which 
+is described later), followed by a sequence of compressed blocks.  A stream of uncompressed input may be output as multiple compressed LZX blocks to improve compression, since each compressed block contains its own statistical tree structures.
+\par 
+\par }\trowd \trgaph108\trrh480\trleft12\trkeep\trbrdrt\brdrs\brdrw10 \trbrdrl\brdrs\brdrw10 \trbrdrb\brdrs\brdrw10 \trbrdrr\brdrs\brdrw10 \trbrdrh\brdrs\brdrw10 \trbrdrv\brdrs\brdrw10 \clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb
+\brdrs\brdrw10 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx810\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx1530\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb
+\brdrs\brdrw10 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx2250\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx2970\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb
+\brdrs\brdrw10 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx3690\pard \nowidctlpar\widctlpar\intbl\adjustright {Header\cell Block\cell Block\cell Block\cell }\pard \qc\nowidctlpar\widctlpar\intbl\adjustright {\'85\cell }\pard 
+\nowidctlpar\widctlpar\intbl\adjustright {\row }\pard \nowidctlpar\widctlpar\adjustright {
+\par }\pard\plain \s3\sb240\sa60\keepn\nowidctlpar\widctlpar\outlinelevel2\adjustright \b\f1\fs20\cgrid {{\*\bkmkstart _Toc378673320}Cabinet block size{\*\bkmkend _Toc378673320}
+\par }\pard\plain \nowidctlpar\widctlpar\adjustright \fs20\cgrid {The cabinet file format requires that for any particular CFDATA block, the indicated number of compressed in
+put bytes must represent exactly the indicated number of uncompressed output bytes.  Furthermore, each CFDATA block must represent 32768 uncompressed bytes, with the exception of the last CFDATA block in a folder, which may represent less than 32768 uncom
+pressed bytes.
+\par 
+\par The LZX block size is independent of the CFDATA block size; an LZX block can represent 200,000 uncompressed bytes, for example.  In order to ensure that an exact number of input bytes represent an exact number of output bytes, after each 32768}{\super th}
+{ uncompressed byte is represented, the output bit buffer is byte aligned on a 16-bit boundary by outputting 0-15 zero bits.  The bit buffer is flushed in an identical manner after the final CFDATA block in a folder.  Furthermore, the compressor may not
+ emit any matches that span a 32768-byte boundary in the input (for example, at position 65528 in the input, the compressor cannot emit a match with a length of 50; the maximum allowable match length at this point would be 6).
+\par 
+\par One additional constraint is that, for any given CFDATA block, the compressed size of a CFDATA block may not occupy more than 32768+6144 bytes (i.e. 32K of uncompressed input may not grow by more than 6K when compressed).
+\par 
+\par }\pard\plain \s3\sb240\sa60\keepn\nowidctlpar\widctlpar\outlinelevel2\adjustright \b\f1\fs20\cgrid {{\*\bkmkstart _Toc378673321}Header structure{\*\bkmkend _Toc378673321}
+\par }\pard\plain \nowidctlpar\widctlpar\adjustright \fs20\cgrid {The header consists of either a zero bit indicating no encoder preprocessing, or a one bit followed by a }{\i file translation size}{, a value which is used in encoder preprocessing.
+\par 
+\par }\trowd \trgaph108\trrh260\trleft36\trbrdrt\brdrs\brdrw10 \trbrdrl\brdrs\brdrw10 \trbrdrb\brdrs\brdrw10 \trbrdrr\brdrs\brdrw10 \trbrdrh\brdrs\brdrw10 \trbrdrv\brdrs\brdrw10 \clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 
+\clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx360\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx4932\pard \nowidctlpar\widctlpar\intbl\adjustright {0\cell \cell }\pard 
+\nowidctlpar\widctlpar\intbl\adjustright {\row }\trowd \trgaph108\trrh377\trleft36\trbrdrt\brdrs\brdrw10 \trbrdrl\brdrs\brdrw10 \trbrdrb\brdrs\brdrw10 \trbrdrr\brdrs\brdrw10 \trbrdrh\brdrs\brdrw10 \trbrdrv\brdrs\brdrw10 \clvertalt\clbrdrt\brdrs\brdrw10 
+\clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx360\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx2520\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl
+\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx4932\pard \nowidctlpar\widctlpar\intbl\adjustright {1\cell Most significant 16 bits of file translation size\cell Least significant 16 bits of file translation size\cell }\pard 
+\nowidctlpar\widctlpar\intbl\adjustright {\row }\pard \nowidctlpar\widctlpar\adjustright {
+\par }\pard\plain \s3\sb240\sa60\keepn\nowidctlpar\widctlpar\outlinelevel2\adjustright \b\f1\fs20\cgrid {{\*\bkmkstart _Toc354765945}{\*\bkmkstart _Toc354766138}{\*\bkmkstart _Toc354766331}{\*\bkmkstart _Toc354766394}{\*\bkmkstart _Toc354766630}
+{\*\bkmkstart _Toc354767049}{\*\bkmkstart _Toc354817197}{\*\bkmkstart _Toc361302042}{\*\bkmkstart _Toc378673322}Encoder preprocessin{\*\bkmkend _Toc354765945}{\*\bkmkend _Toc354766138}{\*\bkmkend _Toc354766331}{\*\bkmkend _Toc354766394}
+{\*\bkmkend _Toc354766630}{\*\bkmkend _Toc354767049}{\*\bkmkend _Toc354817197}{\*\bkmkend _Toc361302042}g{\*\bkmkend _Toc378673322}
+\par }\pard\plain \nowidctlpar\widctlpar\adjustright \fs20\cgrid {
+The encoder may optionally perform a preprocessing stage on all CFDATA input blocks (size <= 32K) which improves compression on 32-bit Intel 80x86 code.  The translation is performed before the data is passed to the compressor, and therefore 
+an appropriate reverse translation must be performed on the output of the decompressor.  A bit indicating whether preprocessing was used is stored in the compression header (see above).
+\par 
+\par The preprocessing stage translates 80x86 CALL instructions, which begin with the E8 (hex) opcode, to use absolute offsets instead of relative offsets. 
+\par 
+\par Preprocessing is disabled after the 32768}{\super th}{ CAB input frame in a folder (where a CAB input frame is 32768 bytes) in order to avoid signed/unsigned arithmetic complexity.  T
+his change can obviously occur only when a folder represents at least 1 gigabyte of uncompressed data.
+\par 
+\par }\pard\plain \s15\sb120\sa120\nowidctlpar\widctlpar\adjustright \b\fs20\cgrid {{\*\bkmkstart _Toc354766395}{\*\bkmkstart _Toc354766631}{\*\bkmkstart _Toc354767050}{\*\bkmkstart _Toc354817198}{\*\bkmkstart _Toc361302043}
+CALL byte sequence (E8 followed by 32 bit offset){\*\bkmkend _Toc354766395}{\*\bkmkend _Toc354766631}{\*\bkmkend _Toc354767050}{\*\bkmkend _Toc354817198}{\*\bkmkend _Toc361302043}
+\par }\pard\plain \nowidctlpar\widctlpar\adjustright \fs20\cgrid {E8 r}{\sub 0}{ r}{\sub 1}{ r}{\sub 2}{ r}{\sub 3}{
+\par 
+\par }\pard\plain \s15\sb120\sa120\nowidctlpar\widctlpar\adjustright \b\fs20\cgrid {{\*\bkmkstart _Toc354766396}{\*\bkmkstart _Toc354766632}{\*\bkmkstart _Toc354767051}{\*\bkmkstart _Toc354817199}{\*\bkmkstart _Toc361302044}
+Performing the relative-to-absolute conversion{\*\bkmkend _Toc354766396}{\*\bkmkend _Toc354766632}{\*\bkmkend _Toc354767051}{\*\bkmkend _Toc354817199}{\*\bkmkend _Toc361302044}
+\par }\pard\plain \nowidctlpar\widctlpar\adjustright \fs20\cgrid {relative_offset }{{\field{\*\fldinst SYMBOL 172 \\f "Symbol" \\s 10}{\fldrslt\f3\fs20}}}{ r}{\sub 0}{ + r}{\sub 1}{*2}{\super 8}{ + r}{\sub 2}{*2}{\super 16}{ + r}{\sub 3}{*2}{\super 24}{
+\par new_value }{{\field{\*\fldinst SYMBOL 172 \\f "Symbol" \\s 10}{\fldrslt\f3\fs20}}}{ conversion_function(current_location, relative_offset)
+\par a}{\sub 0}{ }{{\field{\*\fldinst SYMBOL 172 \\f "Symbol" \\s 10}{\fldrslt\f3\fs20}}}{ bits 0-7 of new_value
+\par a}{\sub 1}{ }{{\field{\*\fldinst SYMBOL 172 \\f "Symbol" \\s 10}{\fldrslt\f3\fs20}}}{ bits 8-15 of new_value
+\par a}{\sub 2}{ }{{\field{\*\fldinst SYMBOL 172 \\f "Symbol" \\s 10}{\fldrslt\f3\fs20}}}{ bits 16-23 of new_value
+\par a}{\sub 3}{ }{{\field{\*\fldinst SYMBOL 172 \\f "Symbol" \\s 10}{\fldrslt\f3\fs20}}}{ bits 24-31 of new_value
+\par 
+\par }\pard\plain \s15\sb120\sa120\nowidctlpar\widctlpar\adjustright \b\fs20\cgrid {{\*\bkmkstart _Toc354766397}{\*\bkmkstart _Toc354766633}{\*\bkmkstart _Toc354767052}{\*\bkmkstart _Toc354817200}{\*\bkmkstart _Toc361302045}Translated CALL byte sequence
+{\*\bkmkend _Toc354766397}{\*\bkmkend _Toc354766633}{\*\bkmkend _Toc354767052}{\*\bkmkend _Toc354817200}{\*\bkmkend _Toc361302045}
+\par }\pard\plain \nowidctlpar\widctlpar\adjustright \fs20\cgrid {E8 a}{\sub 0}{ a}{\sub 1}{ a}{\sub 2}{ a}{\sub 3}{
+\par 
+\par 
+\par The diagram below illustrates the relative-to-absolute conversion function, where }{\i curpos }{is the current offset within all uncompressed data seen in the current cabinet folder, and }{\i file_size}{ is the file translation size
+ from the compression header (}{\i file_size}{ is unrelated to the size of the actual file being decompressed).
+\par 
+\par The translation is performed \ldblquote in place\rdblquote  on the input data without using extra codes to indicate whether a translation occurred (i.e
+. there is a direct mapping from a 32-bit value to a 32-bit value), therefore there is a one-to-one correlation between pre- and post- translated values.
+\par }\pard\plain \s18\nowidctlpar\widctlpar\adjustright \fs20\cgrid {
+\par }\pard\plain \s15\sb120\sa120\keepn\nowidctlpar\widctlpar\adjustright \b\fs20\cgrid {{\*\bkmkstart _Toc354766398}{\*\bkmkstart _Toc354766634}{\*\bkmkstart _Toc354767053}{\*\bkmkstart _Toc354817201}{\*\bkmkstart _Toc361302046}Offset translation diagram
+{\*\bkmkend _Toc354766398}{\*\bkmkend _Toc354766634}{\*\bkmkend _Toc354767053}{\*\bkmkend _Toc354817201}{\*\bkmkend _Toc361302046}
+\par }\pard\plain \keepn\nowidctlpar\widctlpar\adjustright \fs20\cgrid {\lang1024 {\shpgrp{\*\shpinst\shpleft-360\shptop49\shpright8713\shpbottom2880\shpfhdr0\shpbxcolumn\shpbypara\shpwr3\shpwrk0\shpfblwtxt0\shpz1\shplid1026
+{\sp{\sn groupLeft}{\sv -2}}{\sp{\sn groupTop}{\sv 2}}{\sp{\sn groupRight}{\sv 20001}}{\sp{\sn groupBottom}{\sv 20000}}{\sp{\sn fFlipH}{\sv 0}}{\sp{\sn fFlipV}{\sv 0}}{\sp{\sn lidRegroup}{\sv 0}}{\shp{\*\shpinst\shplid1027{\sp{\sn relLeft}{\sv 9840}}
+{\sp{\sn relTop}{\sv 15931}}{\sp{\sn relRight}{\sv 15239}}{\sp{\sn relBottom}{\sv 20000}}{\sp{\sn fRelFlipH}{\sv 0}}{\sp{\sn fRelFlipV}{\sv 0}}{\sp{\sn shapeType}{\sv 1}}
+{\sp{\sn lTxid}{\sv 65536}}{\sp{\sn dxTextLeft}{\sv 12700}}{\sp{\sn dyTextTop}{\sv 12700}}{\sp{\sn dxTextRight}{\sv 12700}}{\sp{\sn dyTextBottom}{\sv 12700}}{\sp{\sn hspNext}{\sv 1027}}{\sp{\sn fFilled}{\sv 0}}{\sp{\sn fShadow}{\sv 0}}{\shptxt 
+\pard\plain \nowidctlpar\widctlpar\adjustright \fs20\cgrid {\fs18 [0x00000000 ... file size)
+\par }{\i\fs18 good translation}{
+\par }}}}{\shp{\*\shpinst\shplid1028{\sp{\sn relLeft}{\sv 15237}}{\sp{\sn relTop}{\sv 15931}}{\sp{\sn relRight}{\sv 20001}}{\sp{\sn relBottom}{\sv 20000}}{\sp{\sn fRelFlipH}{\sv 0}}
+{\sp{\sn fRelFlipV}{\sv 0}}{\sp{\sn shapeType}{\sv 1}}{\sp{\sn lTxid}{\sv 131072}}{\sp{\sn dxTextLeft}{\sv 12700}}{\sp{\sn dyTextTop}{\sv 12700}}{\sp{\sn dxTextRight}{\sv 12700}}
+{\sp{\sn dyTextBottom}{\sv 12700}}{\sp{\sn hspNext}{\sv 1028}}{\sp{\sn fFilled}{\sv 0}}{\sp{\sn fShadow}{\sv 0}}{\shptxt \pard\plain \nowidctlpar\widctlpar\adjustright \fs20\cgrid {\fs18 [file_size ... 0x7FFFFFFF]
+\par }{\i\fs18 no translation}{
+\par }}}}{\shp{\*\shpinst\shplid1029{\sp{\sn relLeft}{\sv 4443}}{\sp{\sn relTop}{\sv 6790}}{\sp{\sn relRight}{\sv 9842}}{\sp{\sn relBottom}{\sv 10866}}{\sp{\sn fRelFlipH}{\sv 0}}{\sp{\sn fRelFlipV}{\sv 0}}{\sp{\sn shapeType}{\sv 1}}{\sp{\sn lTxid}{\sv 196608}}
+{\sp{\sn dxTextLeft}{\sv 12700}}{\sp{\sn dyTextTop}{\sv 12700}}{\sp{\sn dxTextRight}{\sv 12700}}{\sp{\sn dyTextBottom}{\sv 12700}}{\sp{\sn hspNext}{\sv 1029}}{\sp{\sn fFilled}{\sv 0}}{\sp{\sn fShadow}{\sv 0}}{\shptxt \pard\plain 
+\nowidctlpar\widctlpar\adjustright \fs20\cgrid {\fs18 [-curpos ... file_size \endash  curpos)
+\par }{\i\fs18 good translation}{
+\par }}}}{\shp{\*\shpinst\shplid1030{\sp{\sn relLeft}{\sv 15237}}{\sp{\sn relTop}{\sv 6790}}{\sp{\sn relRight}{\sv 20001}}{\sp{\sn relBottom}{\sv 10866}}{\sp{\sn fRelFlipH}{\sv 0}}
+{\sp{\sn fRelFlipV}{\sv 0}}{\sp{\sn shapeType}{\sv 1}}{\sp{\sn lTxid}{\sv 262144}}{\sp{\sn dxTextLeft}{\sv 12700}}{\sp{\sn dyTextTop}{\sv 12700}}{\sp{\sn dxTextRight}{\sv 12700}}
+{\sp{\sn dyTextBottom}{\sv 12700}}{\sp{\sn hspNext}{\sv 1030}}{\sp{\sn fFilled}{\sv 0}}{\sp{\sn fShadow}{\sv 0}}{\shptxt \pard\plain \nowidctlpar\widctlpar\adjustright \fs20\cgrid {\fs18 [file_size .... 0x7FFFFFFF]
+\par }{\i\fs18 no translation}{
+\par }}}}{\shp{\*\shpinst\shplid1031{\sp{\sn relLeft}{\sv 6983}}{\sp{\sn relTop}{\sv 10845}}{\sp{\sn relRight}{\sv 12699}}{\sp{\sn relBottom}{\sv 15938}}{\sp{\sn fRelFlipH}{\sv 0}}
+{\sp{\sn fRelFlipV}{\sv 0}}{\sp{\sn shapeType}{\sv 20}}{\sp{\sn lineEndArrowhead}{\sv 1}}{\sp{\sn lineStartArrowWidth}{\sv 0}}{\sp{\sn lineStartArrowLength}{\sv 0}}{\sp{\sn lineEndArrowWidth}{\sv 0}}{\sp{\sn lineEndArrowLength}{\sv 0}}
+{\sp{\sn fShadow}{\sv 0}}}}{\shp{\*\shpinst\shplid1032{\sp{\sn relLeft}{\sv 9840}}{\sp{\sn relTop}{\sv 6790}}{\sp{\sn relRight}{\sv 15239}}{\sp{\sn relBottom}{\sv 10866}}{\sp{\sn fRelFlipH}{\sv 0}}
+{\sp{\sn fRelFlipV}{\sv 0}}{\sp{\sn shapeType}{\sv 1}}{\sp{\sn lTxid}{\sv 327680}}{\sp{\sn dxTextLeft}{\sv 12700}}{\sp{\sn dyTextTop}{\sv 12700}}{\sp{\sn dxTextRight}{\sv 12700}}
+{\sp{\sn dyTextBottom}{\sv 12700}}{\sp{\sn hspNext}{\sv 1032}}{\sp{\sn fFilled}{\sv 0}}{\sp{\sn fShadow}{\sv 0}}{\shptxt \pard\plain \nowidctlpar\widctlpar\adjustright \fs20\cgrid {\fs18 [file_size - curpos ... file_size)
+\par }{\i\fs18 compensating translation}{
+\par }}}}{\shp{\*\shpinst\shplid1033{\sp{\sn relLeft}{\sv 6665}}{\sp{\sn relTop}{\sv 10845}}{\sp{\sn relRight}{\sv 12699}}{\sp{\sn relBottom}{\sv 15938}}{\sp{\sn fRelFlipH}{\sv 1}}
+{\sp{\sn fRelFlipV}{\sv 0}}{\sp{\sn shapeType}{\sv 20}}{\sp{\sn lineEndArrowhead}{\sv 1}}{\sp{\sn lineStartArrowWidth}{\sv 0}}{\sp{\sn lineStartArrowLength}{\sv 0}}{\sp{\sn lineEndArrowWidth}{\sv 0}}{\sp{\sn lineEndArrowLength}{\sv 0}}
+{\sp{\sn fShadow}{\sv 0}}}}{\shp{\*\shpinst\shplid1034{\sp{\sn relLeft}{\sv -2}}{\sp{\sn relTop}{\sv 15931}}{\sp{\sn relRight}{\sv 4445}}{\sp{\sn relBottom}{\sv 20000}}{\sp{\sn fRelFlipH}{\sv 0}}
+{\sp{\sn fRelFlipV}{\sv 0}}{\sp{\sn shapeType}{\sv 1}}{\sp{\sn lTxid}{\sv 393216}}{\sp{\sn dxTextLeft}{\sv 12700}}{\sp{\sn dyTextTop}{\sv 12700}}{\sp{\sn dxTextRight}{\sv 12700}}
+{\sp{\sn dyTextBottom}{\sv 12700}}{\sp{\sn hspNext}{\sv 1034}}{\sp{\sn fFilled}{\sv 0}}{\sp{\sn fShadow}{\sv 0}}{\shptxt \pard\plain \nowidctlpar\widctlpar\adjustright \fs20\cgrid {\fs18 [0x80000000 to \endash curpos)
+\par }{\i\fs18 no translation}{
+\par }}}}{\shp{\*\shpinst\shplid1035{\sp{\sn relLeft}{\sv -2}}{\sp{\sn relTop}{\sv 6783}}{\sp{\sn relRight}{\sv 4445}}{\sp{\sn relBottom}{\sv 10859}}{\sp{\sn fRelFlipH}{\sv 0}}{\sp{\sn fRelFlipV}{\sv 0}}{\sp{\sn shapeType}{\sv 1}}{\sp{\sn lTxid}{\sv 458752}}
+{\sp{\sn dxTextLeft}{\sv 12700}}{\sp{\sn dyTextTop}{\sv 12700}}{\sp{\sn dxTextRight}{\sv 12700}}{\sp{\sn dyTextBottom}{\sv 12700}}{\sp{\sn hspNext}{\sv 1035}}{\sp{\sn fFilled}{\sv 0}}{\sp{\sn fShadow}{\sv 0}}{\shptxt \pard\plain 
+\nowidctlpar\widctlpar\adjustright \fs20\cgrid {\fs18 [0x80000000 to \endash curpos)
+\par }{\i\fs18 no translation}{
+\par }}}}{\shp{\*\shpinst\shplid1036{\sp{\sn relLeft}{\sv 4443}}{\sp{\sn relTop}{\sv 15931}}{\sp{\sn relRight}{\sv 9842}}{\sp{\sn relBottom}{\sv 20000}}{\sp{\sn fRelFlipH}{\sv 0}}
+{\sp{\sn fRelFlipV}{\sv 0}}{\sp{\sn shapeType}{\sv 1}}{\sp{\sn lTxid}{\sv 524288}}{\sp{\sn dxTextLeft}{\sv 12700}}{\sp{\sn dyTextTop}{\sv 12700}}{\sp{\sn dxTextRight}{\sv 12700}}
+{\sp{\sn dyTextBottom}{\sv 12700}}{\sp{\sn hspNext}{\sv 1036}}{\sp{\sn fFilled}{\sv 0}}{\sp{\sn fShadow}{\sv 0}}{\shptxt \pard\plain \nowidctlpar\widctlpar\tx180\adjustright \fs20\cgrid {\fs18 [-curpos to 0x00000000)
+\par }{\i\fs18 compensating translation}{
+\par }}}}{\shp{\*\shpinst\shplid1037{\sp{\sn relLeft}{\sv 2220}}{\sp{\sn relTop}{\sv 10845}}{\sp{\sn relRight}{\sv 2223}}{\sp{\sn relBottom}{\sv 15938}}{\sp{\sn fRelFlipH}{\sv 0}}
+{\sp{\sn fRelFlipV}{\sv 0}}{\sp{\sn shapeType}{\sv 20}}{\sp{\sn lineEndArrowhead}{\sv 1}}{\sp{\sn lineStartArrowWidth}{\sv 0}}{\sp{\sn lineStartArrowLength}{\sv 0}}{\sp{\sn lineEndArrowWidth}{\sv 0}}{\sp{\sn lineEndArrowLength}{\sv 0}}
+{\sp{\sn fShadow}{\sv 0}}}}{\shp{\*\shpinst\shplid1038{\sp{\sn relLeft}{\sv 17776}}{\sp{\sn relTop}{\sv 10845}}{\sp{\sn relRight}{\sv 17779}}{\sp{\sn relBottom}{\sv 15938}}{\sp{\sn fRelFlipH}{\sv 0}}
+{\sp{\sn fRelFlipV}{\sv 0}}{\sp{\sn shapeType}{\sv 20}}{\sp{\sn lineEndArrowhead}{\sv 1}}{\sp{\sn lineStartArrowWidth}{\sv 0}}{\sp{\sn lineStartArrowLength}{\sv 0}}{\sp{\sn lineEndArrowWidth}{\sv 0}}{\sp{\sn lineEndArrowLength}{\sv 0}}
+{\sp{\sn fShadow}{\sv 0}}}}{\shp{\*\shpinst\shplid1039{\sp{\sn relLeft}{\sv 6030}}{\sp{\sn relTop}{\sv 2043}}{\sp{\sn relRight}{\sv 8255}}{\sp{\sn relBottom}{\sv 4084}}{\sp{\sn fRelFlipH}{\sv 0}}
+{\sp{\sn fRelFlipV}{\sv 0}}{\sp{\sn shapeType}{\sv 1}}{\sp{\sn lTxid}{\sv 589824}}{\sp{\sn dxTextLeft}{\sv 12700}}{\sp{\sn dyTextTop}{\sv 12700}}{\sp{\sn dxTextRight}{\sv 12700}}
+{\sp{\sn dyTextBottom}{\sv 12700}}{\sp{\sn hspNext}{\sv 1039}}{\sp{\sn fFilled}{\sv 0}}{\sp{\sn fLine}{\sv 0}}{\sp{\sn fShadow}{\sv 0}}{\shptxt \pard\plain \qc\nowidctlpar\widctlpar\adjustright \fs20\cgrid {file_size
+\par }}}}{\shp{\*\shpinst\shplid1040{\sp{\sn relLeft}{\sv 4443}}{\sp{\sn relTop}{\sv 3046}}{\sp{\sn relRight}{\sv 6032}}{\sp{\sn relBottom}{\sv 3053}}{\sp{\sn fRelFlipH}{\sv 1}}
+{\sp{\sn fRelFlipV}{\sv 0}}{\sp{\sn shapeType}{\sv 20}}{\sp{\sn lineEndArrowhead}{\sv 1}}{\sp{\sn lineStartArrowWidth}{\sv 0}}{\sp{\sn lineStartArrowLength}{\sv 0}}{\sp{\sn lineEndArrowWidth}{\sv 0}}{\sp{\sn lineEndArrowLength}{\sv 0}}
+{\sp{\sn fShadow}{\sv 0}}}}{\shp{\*\shpinst\shplid1041{\sp{\sn relLeft}{\sv 8252}}{\sp{\sn relTop}{\sv 3046}}{\sp{\sn relRight}{\sv 9842}}{\sp{\sn relBottom}{\sv 3053}}{\sp{\sn fRelFlipH}{\sv 0}}
+{\sp{\sn fRelFlipV}{\sv 0}}{\sp{\sn shapeType}{\sv 20}}{\sp{\sn lineEndArrowhead}{\sv 1}}{\sp{\sn lineStartArrowWidth}{\sv 0}}{\sp{\sn lineStartArrowLength}{\sv 0}}{\sp{\sn lineEndArrowWidth}{\sv 0}}{\sp{\sn lineEndArrowLength}{\sv 0}}
+{\sp{\sn fShadow}{\sv 0}}}}{\shp{\*\shpinst\shplid1042{\sp{\sn relLeft}{\sv 11744}}{\sp{\sn relTop}{\sv 2043}}{\sp{\sn relRight}{\sv 13652}}{\sp{\sn relBottom}{\sv 4085}}{\sp{\sn fRelFlipH}{\sv 0}}
+{\sp{\sn fRelFlipV}{\sv 0}}{\sp{\sn shapeType}{\sv 1}}{\sp{\sn lTxid}{\sv 655360}}{\sp{\sn dxTextLeft}{\sv 12700}}{\sp{\sn dyTextTop}{\sv 12700}}{\sp{\sn dxTextRight}{\sv 12700}}
+{\sp{\sn dyTextBottom}{\sv 12700}}{\sp{\sn hspNext}{\sv 1042}}{\sp{\sn fFilled}{\sv 0}}{\sp{\sn fLine}{\sv 0}}{\sp{\sn fShadow}{\sv 0}}{\shptxt \pard\plain \nowidctlpar\widctlpar\adjustright \fs20\cgrid {curpos
+\par }}}}{\shp{\*\shpinst\shplid1043{\sp{\sn relLeft}{\sv 9840}}{\sp{\sn relTop}{\sv 3046}}{\sp{\sn relRight}{\sv 11429}}{\sp{\sn relBottom}{\sv 3053}}{\sp{\sn fRelFlipH}{\sv 1}}
+{\sp{\sn fRelFlipV}{\sv 0}}{\sp{\sn shapeType}{\sv 20}}{\sp{\sn lineEndArrowhead}{\sv 1}}{\sp{\sn lineStartArrowWidth}{\sv 0}}{\sp{\sn lineStartArrowLength}{\sv 0}}{\sp{\sn lineEndArrowWidth}{\sv 0}}{\sp{\sn lineEndArrowLength}{\sv 0}}
+{\sp{\sn fShadow}{\sv 0}}}}{\shp{\*\shpinst\shplid1044{\sp{\sn relLeft}{\sv 13332}}{\sp{\sn relTop}{\sv 3046}}{\sp{\sn relRight}{\sv 15239}}{\sp{\sn relBottom}{\sv 3053}}{\sp{\sn fRelFlipH}{\sv 0}}
+{\sp{\sn fRelFlipV}{\sv 0}}{\sp{\sn shapeType}{\sv 20}}{\sp{\sn lineEndArrowhead}{\sv 1}}{\sp{\sn lineStartArrowWidth}{\sv 0}}{\sp{\sn lineStartArrowLength}{\sv 0}}{\sp{\sn lineEndArrowWidth}{\sv 0}}{\sp{\sn lineEndArrowLength}{\sv 0}}
+{\sp{\sn fShadow}{\sv 0}}}}{\shp{\*\shpinst\shplid1045{\sp{\sn relLeft}{\sv 950}}{\sp{\sn relTop}{\sv 2043}}{\sp{\sn relRight}{\sv 1905}}{\sp{\sn relBottom}{\sv 4077}}{\sp{\sn fRelFlipH}{\sv 0}}
+{\sp{\sn fRelFlipV}{\sv 0}}{\sp{\sn shapeType}{\sv 1}}{\sp{\sn lTxid}{\sv 720896}}{\sp{\sn dxTextLeft}{\sv 12700}}{\sp{\sn dyTextTop}{\sv 12700}}{\sp{\sn dxTextRight}{\sv 12700}}
+{\sp{\sn dyTextBottom}{\sv 12700}}{\sp{\sn hspNext}{\sv 1045}}{\sp{\sn fFilled}{\sv 0}}{\sp{\sn fLine}{\sv 0}}{\sp{\sn fShadow}{\sv 0}}{\shptxt \pard\plain \nowidctlpar\widctlpar\adjustright \fs20\cgrid {-2}{\super 31}{
+\par }}}}{\shp{\*\shpinst\shplid1046{\sp{\sn relLeft}{\sv -2}}{\sp{\sn relTop}{\sv 3046}}{\sp{\sn relRight}{\sv 635}}{\sp{\sn relBottom}{\sv 3053}}{\sp{\sn fRelFlipH}{\sv 1}}
+{\sp{\sn fRelFlipV}{\sv 0}}{\sp{\sn shapeType}{\sv 20}}{\sp{\sn lineEndArrowhead}{\sv 1}}{\sp{\sn lineStartArrowWidth}{\sv 0}}{\sp{\sn lineStartArrowLength}{\sv 0}}{\sp{\sn lineEndArrowWidth}{\sv 0}}{\sp{\sn lineEndArrowLength}{\sv 0}}
+{\sp{\sn fShadow}{\sv 0}}}}{\shp{\*\shpinst\shplid1047{\sp{\sn relLeft}{\sv 18411}}{\sp{\sn relTop}{\sv 2036}}{\sp{\sn relRight}{\sv 19366}}{\sp{\sn relBottom}{\sv 4070}}{\sp{\sn fRelFlipH}{\sv 0}}
+{\sp{\sn fRelFlipV}{\sv 0}}{\sp{\sn shapeType}{\sv 1}}{\sp{\sn lTxid}{\sv 786432}}{\sp{\sn dxTextLeft}{\sv 12700}}{\sp{\sn dyTextTop}{\sv 12700}}{\sp{\sn dxTextRight}{\sv 12700}}
+{\sp{\sn dyTextBottom}{\sv 12700}}{\sp{\sn hspNext}{\sv 1047}}{\sp{\sn fFilled}{\sv 0}}{\sp{\sn fLine}{\sv 0}}{\sp{\sn fShadow}{\sv 0}}{\shptxt \pard\plain \nowidctlpar\widctlpar\adjustright \fs20\cgrid {+2}{\super 31}{
+\par }}}}{\shp{\*\shpinst\shplid1048{\sp{\sn relLeft}{\sv 19364}}{\sp{\sn relTop}{\sv 3046}}{\sp{\sn relRight}{\sv 20001}}{\sp{\sn relBottom}{\sv 3053}}{\sp{\sn fRelFlipH}{\sv 0}}
+{\sp{\sn fRelFlipV}{\sv 0}}{\sp{\sn shapeType}{\sv 20}}{\sp{\sn lineEndArrowhead}{\sv 1}}{\sp{\sn lineStartArrowWidth}{\sv 0}}{\sp{\sn lineStartArrowLength}{\sv 0}}{\sp{\sn lineEndArrowWidth}{\sv 0}}{\sp{\sn lineEndArrowLength}{\sv 0}}
+{\sp{\sn fShadow}{\sv 0}}}}{\shp{\*\shpinst\shplid1049{\sp{\sn relLeft}{\sv -2}}{\sp{\sn relTop}{\sv 1019}}{\sp{\sn relRight}{\sv 9207}}{\sp{\sn relBottom}{\sv 1026}}{\sp{\sn fRelFlipH}{\sv 0}}
+{\sp{\sn fRelFlipV}{\sv 0}}{\sp{\sn shapeType}{\sv 20}}{\sp{\sn lineStartArrowhead}{\sv 1}}{\sp{\sn lineStartArrowWidth}{\sv 0}}{\sp{\sn lineStartArrowLength}{\sv 0}}{\sp{\sn lineEndArrowWidth}{\sv 0}}{\sp{\sn lineEndArrowLength}{\sv 0}}
+{\sp{\sn fShadow}{\sv 0}}}}{\shp{\*\shpinst\shplid1050{\sp{\sn relLeft}{\sv 9522}}{\sp{\sn relTop}{\sv 2}}{\sp{\sn relRight}{\sv 10477}}{\sp{\sn relBottom}{\sv 2043}}{\sp{\sn fRelFlipH}{\sv 0}}
+{\sp{\sn fRelFlipV}{\sv 0}}{\sp{\sn shapeType}{\sv 1}}{\sp{\sn lTxid}{\sv 851968}}{\sp{\sn dxTextLeft}{\sv 12700}}{\sp{\sn dyTextTop}{\sv 12700}}{\sp{\sn dxTextRight}{\sv 12700}}
+{\sp{\sn dyTextBottom}{\sv 12700}}{\sp{\sn hspNext}{\sv 1050}}{\sp{\sn fFilled}{\sv 0}}{\sp{\sn fLine}{\sv 0}}{\sp{\sn fShadow}{\sv 0}}{\shptxt \pard\plain \nowidctlpar\widctlpar\adjustright \fs20\cgrid {2}{\super 32}{
+\par }}}}{\shp{\*\shpinst\shplid1051{\sp{\sn relLeft}{\sv 10475}}{\sp{\sn relTop}{\sv 1019}}{\sp{\sn relRight}{\sv 20001}}{\sp{\sn relBottom}{\sv 1026}}{\sp{\sn fRelFlipH}{\sv 0}}
+{\sp{\sn fRelFlipV}{\sv 0}}{\sp{\sn shapeType}{\sv 20}}{\sp{\sn lineEndArrowhead}{\sv 1}}{\sp{\sn lineStartArrowWidth}{\sv 0}}{\sp{\sn lineStartArrowLength}{\sv 0}}{\sp{\sn lineEndArrowWidth}{\sv 0}}{\sp{\sn lineEndArrowLength}{\sv 0}}
+{\sp{\sn fShadow}{\sv 0}}}}}{\shprslt{\*\do\dobxcolumn\dobypara\dodhgt8193\dppolygon\dppolycount4\dpptx0\dppty0\dpptx9073\dppty0\dpptx9073\dppty2831\dpptx0\dppty2831\dpx-360\dpy49\dpxsize9073\dpysize2831
+\dpfillfgcr255\dpfillfgcg255\dpfillfgcb255\dpfillbgcr255\dpfillbgcg255\dpfillbgcb255\dpfillpat1\dplinew15\dplinecor0\dplinecog0\dplinecob0}}}}{
+\par 
+\par 
+\par }{\b Pre-translation (relative offset value)}{
+\par 
+\par 
+\par 
+\par }\pard\plain \s18\keepn\nowidctlpar\widctlpar\adjustright \fs20\cgrid {
+\par }\pard\plain \keepn\nowidctlpar\widctlpar\adjustright \fs20\cgrid {
+\par 
+\par 
+\par 
+\par }{\b Post-translation (resulting value)}{
+\par }\pard \nowidctlpar\widctlpar\adjustright {
+\par From the diagram one can see that values in the range of }{\i 0x80000000 (-2}{\i\super 31}{\i ) }{to}{\i  -curpos}{, and }{\i file_size }{to}{\i  0x7FFFFFFFF (+2}{\i\super 31}{\i )}{ are left unchanged.  The translation algorithm op
+erates as follows on an input block of size }{\i input_size}{, where 0 <= }{\i input_size}{ <= 32768.  No translation may be performed on the last 6 bytes of the input block
+\par 
+\par }{\f2\fs18 if (input_size < 6)
+\par }\pard \fi720\nowidctlpar\widctlpar\adjustright {\f2\fs18 return /* don\rquote t perform translation if < 6 input bytes */
+\par 
+\par }\pard \nowidctlpar\widctlpar\adjustright {\f2\fs18 for (i = 0; i < input_size; i++)
+\par 
+\par \tab if (input_data[i] == 0xE8)
+\par \tab \tab if (i >= input_size-6)
+\par }\pard \fi720\li1440\nowidctlpar\widctlpar\adjustright {\f2\fs18 break;
+\par }\pard \nowidctlpar\widctlpar\adjustright {\f2\fs18 \tab \tab endif
+\par \tab \tab 
+\par \tab \tab \'85 perform translation illustrated above \'85
+\par \tab endif
+\par }{
+\par }\pard\plain \s3\sb240\sa60\keepn\nowidctlpar\widctlpar\outlinelevel2\adjustright \b\f1\fs20\cgrid {{\*\bkmkstart _Toc354696107}{\*\bkmkstart _Toc354765935}{\*\bkmkstart _Toc354766128}{\*\bkmkstart _Toc354766321}{\*\bkmkstart _Toc354766367}
+{\*\bkmkstart _Toc354766603}{\*\bkmkstart _Toc354767022}{\*\bkmkstart _Toc354817170}{\*\bkmkstart _Toc361302015}{\*\bkmkstart _Toc378673323}Block structure{\*\bkmkend _Toc354696107}{\*\bkmkend _Toc354765935}{\*\bkmkend _Toc354766128}
+{\*\bkmkend _Toc354766321}{\*\bkmkend _Toc354766367}{\*\bkmkend _Toc354766603}{\*\bkmkend _Toc354767022}{\*\bkmkend _Toc354817170}{\*\bkmkend _Toc361302015}{\*\bkmkend _Toc378673323}
+\par }\pard\plain \nowidctlpar\widctlpar\adjustright \fs20\cgrid {Each block of compressed data begins with a 3 bit header describing the block type, followed by the block itself.  The allowable block types are:
+\par 
+\par }\trowd \trgaph108\trrh240\trleft-12\trbrdrt\brdrs\brdrw10 \trbrdrl\brdrs\brdrw10 \trbrdrb\brdrs\brdrw10 \trbrdrr\brdrs\brdrw10 \trbrdrh\brdrs\brdrw10 \trbrdrv\brdrs\brdrw10 \clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 
+\clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx810\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx2880\pard \nowidctlpar\widctlpar\intbl\adjustright {0\cell Undefined\cell }\pard 
+\nowidctlpar\widctlpar\intbl\adjustright {\row }\trowd \trgaph108\trrh120\trleft-12\trbrdrt\brdrs\brdrw10 \trbrdrl\brdrs\brdrw10 \trbrdrb\brdrs\brdrw10 \trbrdrr\brdrs\brdrw10 \trbrdrh\brdrs\brdrw10 \trbrdrv\brdrs\brdrw10 \clvertalt\clbrdrt\brdrs\brdrw10 
+\clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx810\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx2880\pard 
+\nowidctlpar\widctlpar\intbl\adjustright {1\cell Verbatim block\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\pard \nowidctlpar\widctlpar\intbl\adjustright {2\cell Aligned offset block\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {
+\row }\trowd \trgaph108\trrh108\trleft-12\trbrdrt\brdrs\brdrw10 \trbrdrl\brdrs\brdrw10 \trbrdrb\brdrs\brdrw10 \trbrdrr\brdrs\brdrw10 \trbrdrh\brdrs\brdrw10 \trbrdrv\brdrs\brdrw10 \clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb
+\brdrs\brdrw10 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx810\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx2880\pard \nowidctlpar\widctlpar\intbl\adjustright {3\cell Uncompressed block
+\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\trowd \trgaph108\trrh108\trleft-12\trbrdrt\brdrs\brdrw10 \trbrdrl\brdrs\brdrw10 \trbrdrb\brdrs\brdrw10 \trbrdrr\brdrs\brdrw10 \trbrdrh\brdrs\brdrw10 \trbrdrv\brdrs\brdrw10 \clvertalt\clbrdrt
+\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx810\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx2880\pard 
+\nowidctlpar\widctlpar\intbl\adjustright {4-7\cell Undefined\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\pard \nowidctlpar\widctlpar\adjustright {
+\par }\pard\plain \s3\sb240\sa60\keepn\nowidctlpar\widctlpar\outlinelevel2\adjustright \b\f1\fs20\cgrid {{\*\bkmkstart _Toc378673324}Uncompressed block format{\*\bkmkend _Toc378673324}
+\par }\pard\plain \nowidctlpar\widctlpar\adjustright \fs20\cgrid {An uncompressed block begins with 1 to 16 bits of zero padding to align the bit buffer on a 16-bit boundary.  At this point, the bitstream ends, and a }{\i bytestream}{
+ begins.  The data that follows is encoded as bytes for performance.  Following the zero padding, new values for R0, R1, and R2 are output in little-endian form, followed by the uncompressed data bytes themselves.
+\par }\pard\plain \s18\nowidctlpar\widctlpar\adjustright \fs20\cgrid {
+\par }\trowd \trgaph108\trrh224\trleft12\trbrdrt\brdrs\brdrw10 \trbrdrl\brdrs\brdrw10 \trbrdrb\brdrs\brdrw10 \trbrdrr\brdrs\brdrw10 \trbrdrh\brdrs\brdrw10 \trbrdrv\brdrs\brdrw10 \clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 
+\clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx1350\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx2520\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr
+\brdrs\brdrw10 \cltxlrtb \cellx3690\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx4860\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr
+\brdrs\brdrw10 \cltxlrtb \cellx6660\pard\plain \keepn\nowidctlpar\widctlpar\intbl\adjustright \fs20\cgrid {1-16 bits \cell 4 bytes\cell 4 bytes\cell 4 bytes\cell n bytes\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\trowd 
+\trgaph108\trrh332\trleft12\trbrdrt\brdrs\brdrw10 \trbrdrl\brdrs\brdrw10 \trbrdrb\brdrs\brdrw10 \trbrdrr\brdrs\brdrw10 \trbrdrh\brdrs\brdrw10 \trbrdrv\brdrs\brdrw10 \clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr
+\brdrs\brdrw10 \cltxlrtb \cellx1350\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx2520\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr
+\brdrs\brdrw10 \cltxlrtb \cellx3690\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx4860\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr
+\brdrs\brdrw10 \cltxlrtb \cellx6660\pard \keepn\nowidctlpar\widctlpar\intbl\adjustright {zero padding\cell R0
+\par (LSB first)\cell R1
+\par (LSB first)\cell R2
+\par (LSB first)\cell Uncompressed data\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\pard \nowidctlpar\widctlpar\adjustright {
+\par }\pard\plain \s3\sb240\sa60\keepn\nowidctlpar\widctlpar\outlinelevel2\adjustright \b\f1\fs20\cgrid {{\*\bkmkstart _Toc378673325}Verbatim block{\*\bkmkend _Toc378673325}
+\par }\pard\plain \nowidctlpar\widctlpar\adjustright \fs20\cgrid {A verbatim block consists of the following:
+\par 
+\par }\trowd \trgaph108\trleft-108\trbrdrt\brdrs\brdrw15\brdrcf1 \trbrdrl\brdrs\brdrw15\brdrcf1 \trbrdrb\brdrs\brdrw15\brdrcf1 \trbrdrr\brdrs\brdrw15\brdrcf1 \trbrdrh\brdrs\brdrw15\brdrcf1 \trbrdrv\brdrs\brdrw15\brdrcf1 \clvertalt\clbrdrt
+\brdrs\brdrw30\brdrcf1 \clbrdrl\brdrs\brdrw30\brdrcf1 \clbrdrr\brdrs\brdrw15\brdrcf1 \cltxlrtb \cellx3960\clvertalt\clbrdrt\brdrs\brdrw30\brdrcf1 \clbrdrl\brdrs\brdrw15\brdrcf1 \clbrdrr\brdrs\brdrw15\brdrcf1 \cltxlrtb \cellx7830\clvertalt\clbrdrt
+\brdrs\brdrw30\brdrcf1 \clbrdrl\brdrs\brdrw15\brdrcf1 \clbrdrr\brdrs\brdrw30\brdrcf1 \cltxlrtb \cellx8748\pard \nowidctlpar\widctlpar\intbl\adjustright {\b\f1\fs18 Entry\cell Comments\cell Size\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row 
+}\trowd \trgaph108\trleft-108\trbrdrt\brdrs\brdrw15\brdrcf1 \trbrdrl\brdrs\brdrw15\brdrcf1 \trbrdrb\brdrs\brdrw15\brdrcf1 \trbrdrr\brdrs\brdrw15\brdrcf1 \trbrdrh\brdrs\brdrw15\brdrcf1 \trbrdrv\brdrs\brdrw15\brdrcf1 \clvertalt\clbrdrt
+\brdrs\brdrw15\brdrcf1 \clbrdrl\brdrs\brdrw30\brdrcf1 \clbrdrb\brdrs\brdrw15\brdrcf1 \clbrdrr\brdrs\brdrw15\brdrcf1 \cltxlrtb \cellx3960\clvertalt\clbrdrt\brdrs\brdrw15\brdrcf1 \clbrdrl\brdrs\brdrw15\brdrcf1 \clbrdrb\brdrs\brdrw15\brdrcf1 \clbrdrr
+\brdrs\brdrw15\brdrcf1 \cltxlrtb \cellx7830\clvertalt\clbrdrt\brdrs\brdrw15\brdrcf1 \clbrdrl\brdrs\brdrw15\brdrcf1 \clbrdrb\brdrs\brdrw15\brdrcf1 \clbrdrr\brdrs\brdrw30\brdrcf1 \cltxlrtb \cellx8748\pard \nowidctlpar\widctlpar\intbl\adjustright {
+Number of uncompressed bytes accounted for in this block\cell Range of 1...2}{\super 24}{\cell 24 bits\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\pard \nowidctlpar\widctlpar\intbl\adjustright {Pre-tree for first 256 elements of main tree
+\cell 20 elements, 4 bits each\cell 80 bits\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\pard \nowidctlpar\widctlpar\intbl\adjustright {Path lengths of first 256 elements of main tree\cell Encoded using pre-tree\cell Variable\cell }\pard 
+\nowidctlpar\widctlpar\intbl\adjustright {\row }\pard \nowidctlpar\widctlpar\intbl\adjustright {Pre-tree for remainder of main tree\cell 20 elements, 4 bits each\cell 80 bits\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\pard 
+\nowidctlpar\widctlpar\intbl\adjustright {Path lengths of remaining elements of main tree\cell Encoded using pre-tree\cell Variable\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\pard \nowidctlpar\widctlpar\intbl\adjustright {
+Pre-tree for length tree\cell 20 elements, 4 bits each\cell 80 bits\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\pard \nowidctlpar\widctlpar\intbl\adjustright {Path lengths of elements in length tree\cell Encoded using pre-tree\cell 
+Variable\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\trowd \trgaph108\trleft-108\trbrdrt\brdrs\brdrw15\brdrcf1 \trbrdrl\brdrs\brdrw15\brdrcf1 \trbrdrb\brdrs\brdrw15\brdrcf1 \trbrdrr\brdrs\brdrw15\brdrcf1 \trbrdrh\brdrs\brdrw15\brdrcf1 
+\trbrdrv\brdrs\brdrw15\brdrcf1 \clvertalt\clbrdrt\brdrs\brdrw15\brdrcf1 \clbrdrl\brdrs\brdrw30\brdrcf1 \clbrdrb\brdrs\brdrw30\brdrcf1 \clbrdrr\brdrs\brdrw15\brdrcf1 \cltxlrtb \cellx3960\clvertalt\clbrdrt\brdrs\brdrw15\brdrcf1 \clbrdrl
+\brdrs\brdrw15\brdrcf1 \clbrdrb\brdrs\brdrw30\brdrcf1 \clbrdrr\brdrs\brdrw15\brdrcf1 \cltxlrtb \cellx7830\clvertalt\clbrdrt\brdrs\brdrw15\brdrcf1 \clbrdrl\brdrs\brdrw15\brdrcf1 \clbrdrb\brdrs\brdrw30\brdrcf1 \clbrdrr\brdrs\brdrw30\brdrcf1 \cltxlrtb 
+\cellx8748\pard\plain \s18\nowidctlpar\widctlpar\intbl\adjustright \fs20\cgrid {Compressed literals\cell }\pard\plain \nowidctlpar\widctlpar\intbl\adjustright \fs20\cgrid {Described later\cell Variable\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright 
+{\row }\pard \nowidctlpar\widctlpar\adjustright {
+\par }\pard\plain \s3\sb240\sa60\keepn\nowidctlpar\widctlpar\outlinelevel2\adjustright \b\f1\fs20\cgrid {{\*\bkmkstart _Toc378673326}Aligned offset block{\*\bkmkend _Toc378673326}
+\par }\pard\plain \nowidctlpar\widctlpar\adjustright \fs20\cgrid {An aligned offset block consists of the following:
+\par 
+\par }\trowd \trgaph108\trleft-108\trbrdrt\brdrs\brdrw15\brdrcf1 \trbrdrl\brdrs\brdrw15\brdrcf1 \trbrdrb\brdrs\brdrw15\brdrcf1 \trbrdrr\brdrs\brdrw15\brdrcf1 \trbrdrh\brdrs\brdrw15\brdrcf1 \trbrdrv\brdrs\brdrw15\brdrcf1 \clvertalt\clbrdrt
+\brdrs\brdrw30\brdrcf1 \clbrdrl\brdrs\brdrw30\brdrcf1 \clbrdrr\brdrs\brdrw15\brdrcf1 \cltxlrtb \cellx3960\clvertalt\clbrdrt\brdrs\brdrw30\brdrcf1 \clbrdrl\brdrs\brdrw15\brdrcf1 \clbrdrr\brdrs\brdrw15\brdrcf1 \cltxlrtb \cellx7830\clvertalt\clbrdrt
+\brdrs\brdrw30\brdrcf1 \clbrdrl\brdrs\brdrw15\brdrcf1 \clbrdrr\brdrs\brdrw30\brdrcf1 \cltxlrtb \cellx8748\pard \nowidctlpar\widctlpar\intbl\adjustright {\b\f1\fs18 Entry\cell Comments\cell Size\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row 
+}\trowd \trgaph108\trleft-108\trbrdrt\brdrs\brdrw15\brdrcf1 \trbrdrl\brdrs\brdrw15\brdrcf1 \trbrdrb\brdrs\brdrw15\brdrcf1 \trbrdrr\brdrs\brdrw15\brdrcf1 \trbrdrh\brdrs\brdrw15\brdrcf1 \trbrdrv\brdrs\brdrw15\brdrcf1 \clvertalt\clbrdrt
+\brdrs\brdrw15\brdrcf1 \clbrdrl\brdrs\brdrw30\brdrcf1 \clbrdrb\brdrs\brdrw15\brdrcf1 \clbrdrr\brdrs\brdrw15\brdrcf1 \cltxlrtb \cellx3960\clvertalt\clbrdrt\brdrs\brdrw15\brdrcf1 \clbrdrl\brdrs\brdrw15\brdrcf1 \clbrdrb\brdrs\brdrw15\brdrcf1 \clbrdrr
+\brdrs\brdrw15\brdrcf1 \cltxlrtb \cellx7830\clvertalt\clbrdrt\brdrs\brdrw15\brdrcf1 \clbrdrl\brdrs\brdrw15\brdrcf1 \clbrdrb\brdrs\brdrw15\brdrcf1 \clbrdrr\brdrs\brdrw30\brdrcf1 \cltxlrtb \cellx8748\pard \nowidctlpar\widctlpar\intbl\adjustright {
+Number of uncompressed bytes accounted for in this block\cell Range of 1...2}{\super 24}{\cell 24 bits\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\pard \nowidctlpar\widctlpar\intbl\adjustright {Pre-tree for first 256 elements of main tree
+\cell 20 elements, 4 bits each\cell 80 bits\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\pard \nowidctlpar\widctlpar\intbl\adjustright {Path lengths of first 256 elements of main tree\cell Encoded using pre-tree\cell Variable\cell }\pard 
+\nowidctlpar\widctlpar\intbl\adjustright {\row }\pard \nowidctlpar\widctlpar\intbl\adjustright {Pre-tree for remainder of main tree\cell 20 elements, 4 bits each\cell 80 bits\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\pard 
+\nowidctlpar\widctlpar\intbl\adjustright {Path lengths of remaining elements of main tree\cell Encoded using pre-tree\cell Variable\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\pard \nowidctlpar\widctlpar\intbl\adjustright {
+Pre-tree for length tree\cell 20 elements, 4 bits each\cell 80 bits\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\pard \nowidctlpar\widctlpar\intbl\adjustright {Path lengths of elements in length tree\cell Encoded using pre-tree\cell 
+Variable\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\pard \nowidctlpar\widctlpar\intbl\adjustright {Aligned offset tree\cell 8 elements, 3 bits each\cell 24 bits\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\trowd 
+\trgaph108\trleft-108\trbrdrt\brdrs\brdrw15\brdrcf1 \trbrdrl\brdrs\brdrw15\brdrcf1 \trbrdrb\brdrs\brdrw15\brdrcf1 \trbrdrr\brdrs\brdrw15\brdrcf1 \trbrdrh\brdrs\brdrw15\brdrcf1 \trbrdrv\brdrs\brdrw15\brdrcf1 \clvertalt\clbrdrt\brdrs\brdrw15\brdrcf1 
+\clbrdrl\brdrs\brdrw30\brdrcf1 \clbrdrb\brdrs\brdrw30\brdrcf1 \clbrdrr\brdrs\brdrw15\brdrcf1 \cltxlrtb \cellx3960\clvertalt\clbrdrt\brdrs\brdrw15\brdrcf1 \clbrdrl\brdrs\brdrw15\brdrcf1 \clbrdrb\brdrs\brdrw30\brdrcf1 \clbrdrr\brdrs\brdrw15\brdrcf1 
+\cltxlrtb \cellx7830\clvertalt\clbrdrt\brdrs\brdrw15\brdrcf1 \clbrdrl\brdrs\brdrw15\brdrcf1 \clbrdrb\brdrs\brdrw30\brdrcf1 \clbrdrr\brdrs\brdrw30\brdrcf1 \cltxlrtb \cellx8748\pard\plain \s18\nowidctlpar\widctlpar\intbl\adjustright \fs20\cgrid {
+Compressed literals\cell }\pard\plain \nowidctlpar\widctlpar\intbl\adjustright \fs20\cgrid {Described later\cell Variable\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\pard \nowidctlpar\widctlpar\adjustright {
+\par The aligned offset tree comprises only 8 elements, each of which is encoded as a 3 bit path length.  Since the size of this tree is so small, no additional compression is performed on it.
+\par 
+\par }\pard\plain \s3\sb240\sa60\keepn\nowidctlpar\widctlpar\outlinelevel2\adjustright \b\f1\fs20\cgrid {{\*\bkmkstart _Toc378673327}Encoding the trees and pre-trees{\*\bkmkend _Toc378673327}
+\par }\pard\plain \nowidctlpar\widctlpar\adjustright \fs20\cgrid {Since al
+l trees used in LZX are created in the form of a canonical Huffman tree, the path length of each element in the tree is sufficient to reconstruct the original tree.  The main tree and the length tree are each encoded using the method described below.  How
+ever, the main tree is encoded in two components as if it were two separate trees, the first tree corresponding to the first 256 tree elements (uncompressed symbols), and the second tree corresponding to the remaining elements (matches).
+\par 
+\par Since trees are ou
+tput several times during compression of large amounts of data, LZX optimises compression by encoding only the delta path lengths between the current and previous trees.  In the case of the very first such tree, the delta is calculated against a tree in w
+hich all elements have a zero path length.
+\par 
+\par Each tree element may have a path length from 0 to 16 (inclusive) where a zero path length indicates that the element has a zero frequency and is not present in the tree.  Tree elements are output in sequential or
+der starting with the first element.  Elements may be encoded in one of two ways -if several consecutive elements have the same path length, then run length encoding is employed; otherwise the element is output by encoding the difference between the curre
+nt path length and the previous path length of the tree, mod 17.  These output methods are described below:
+\par }\pard\plain \s18\nowidctlpar\widctlpar\adjustright \fs20\cgrid {
+\par }\pard\plain \s15\sb120\sa120\keepn\nowidctlpar\widctlpar\adjustright \b\fs20\cgrid {Tree codes
+\par }\trowd \trgaph108\trrh228\trleft12\trbrdrt\brdrs\brdrw10 \trbrdrl\brdrs\brdrw10 \trbrdrb\brdrs\brdrw10 \trbrdrr\brdrs\brdrw10 \trbrdrh\brdrs\brdrw10 \trbrdrv\brdrs\brdrw10 \clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 
+\clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx852\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx9090\pard\plain \keepn\nowidctlpar\widctlpar\intbl\adjustright \fs20\cgrid {Code\cell Operation
+\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\trowd \trgaph108\trrh132\trleft12\trbrdrt\brdrs\brdrw10 \trbrdrl\brdrs\brdrw10 \trbrdrb\brdrs\brdrw10 \trbrdrr\brdrs\brdrw10 \trbrdrh\brdrs\brdrw10 \trbrdrv\brdrs\brdrw10 \clvertalt\clbrdrt
+\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx852\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx9090\pard 
+\keepn\nowidctlpar\widctlpar\intbl\adjustright {0-16\cell Len[x] = (prev_len[x] + code) mod 17\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\trowd \trgaph108\trrh108\trleft12\trbrdrt\brdrs\brdrw10 \trbrdrl\brdrs\brdrw10 \trbrdrb
+\brdrs\brdrw10 \trbrdrr\brdrs\brdrw10 \trbrdrh\brdrs\brdrw10 \trbrdrv\brdrs\brdrw10 \clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx852\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl
+\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx9090\pard \keepn\nowidctlpar\widctlpar\intbl\adjustright {17\cell Zeroes = getbits(4)
+\par Len[x] = 0 for next (4 + Zeroes) elements\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\trowd \trgaph108\trleft12\trbrdrt\brdrs\brdrw10 \trbrdrl\brdrs\brdrw10 \trbrdrb\brdrs\brdrw10 \trbrdrr\brdrs\brdrw10 \trbrdrh\brdrs\brdrw10 \trbrdrv
+\brdrs\brdrw10 \clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx852\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr\brdrs\brdrw10 \cltxlrtb 
+\cellx9090\pard \keepn\nowidctlpar\widctlpar\intbl\adjustright {18\cell Zeroes = getbits(5)
+\par Len[x] = 0 for next (20 + Zeroes) elements\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\trowd \trgaph108\trrh84\trleft12\trbrdrt\brdrs\brdrw10 \trbrdrl\brdrs\brdrw10 \trbrdrb\brdrs\brdrw10 \trbrdrr\brdrs\brdrw10 \trbrdrh\brdrs\brdrw10 
+\trbrdrv\brdrs\brdrw10 \clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx852\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr\brdrs\brdrw10 
+\cltxlrtb \cellx9090\pard \keepn\nowidctlpar\widctlpar\intbl\adjustright {19\cell Same = getbits(1)
+\par Decode new Code
+\par Value = (prev_len[x] + Code) mod 17
+\par Len[x] = Value for next (4 + Same) elements\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\pard \nowidctlpar\widctlpar\adjustright {
+\par Each of the 17 possible values of (}{\i len[x] - prev_len[x]) mod 17}{, plus three additional codes used for run-length encoding, are }{\i not}{ output directly as 5 bit numbers, but are instead encoded via a Huffman tree called the }{\i pre- tree}{
+.  The pre-tree is generated dynamically according to the frequencies of the 20 allowable t
+ree codes.  The structure of the pre-tree is encoded in a total of 80 bits by using 4 bits to output the path length of each of the 20 pre-tree elements.  Once again, a zero path length indicates a zero frequency element.
+\par 
+\par }\pard\plain \s15\sb120\sa120\keepn\nowidctlpar\widctlpar\adjustright \b\fs20\cgrid {Pre-tree
+\par }\trowd \trgaph108\trrh120\trleft-96\trbrdrt\brdrs\brdrw10 \trbrdrl\brdrs\brdrw10 \trbrdrb\brdrs\brdrw10 \trbrdrr\brdrs\brdrw10 \trbrdrh\brdrs\brdrw10 \trbrdrv\brdrs\brdrw10 \clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 
+\clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx1980\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx2688\pard\plain \keepn\nowidctlpar\widctlpar\intbl\adjustright \fs20\cgrid {
+Length of tree code 0\cell 4 bits\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\trowd \trgaph108\trrh204\trleft-96\trbrdrt\brdrs\brdrw10 \trbrdrl\brdrs\brdrw10 \trbrdrb\brdrs\brdrw10 \trbrdrr\brdrs\brdrw10 \trbrdrh\brdrs\brdrw10 \trbrdrv
+\brdrs\brdrw10 \clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx1980\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr\brdrs\brdrw10 \cltxlrtb 
+\cellx2688\pard \keepn\nowidctlpar\widctlpar\intbl\adjustright {Length of tree code 1\cell 4 bits\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\trowd \trgaph108\trrh72\trleft-96\trbrdrt\brdrs\brdrw10 \trbrdrl\brdrs\brdrw10 \trbrdrb
+\brdrs\brdrw10 \trbrdrr\brdrs\brdrw10 \trbrdrh\brdrs\brdrw10 \trbrdrv\brdrs\brdrw10 \clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx1980\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl
+\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx2688\pard \keepn\nowidctlpar\widctlpar\intbl\adjustright {Length of tree code 2\cell 4 bits\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\trowd 
+\trgaph108\trrh252\trleft-96\trbrdrt\brdrs\brdrw10 \trbrdrl\brdrs\brdrw10 \trbrdrb\brdrs\brdrw10 \trbrdrr\brdrs\brdrw10 \trbrdrh\brdrs\brdrw10 \trbrdrv\brdrs\brdrw10 \clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr
+\brdrs\brdrw10 \cltxlrtb \cellx1980\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx2688\pard \keepn\nowidctlpar\widctlpar\intbl\adjustright {\'85\cell \'85\cell }\pard 
+\nowidctlpar\widctlpar\intbl\adjustright {\row }\trowd \trgaph108\trrh168\trleft-96\trbrdrt\brdrs\brdrw10 \trbrdrl\brdrs\brdrw10 \trbrdrb\brdrs\brdrw10 \trbrdrr\brdrs\brdrw10 \trbrdrh\brdrs\brdrw10 \trbrdrv\brdrs\brdrw10 \clvertalt\clbrdrt\brdrs\brdrw10 
+\clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx1980\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx2688\pard 
+\keepn\nowidctlpar\widctlpar\intbl\adjustright {Length of tree code 18\cell 4 bits\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\trowd \trgaph108\trrh132\trleft-96\trbrdrt\brdrs\brdrw10 \trbrdrl\brdrs\brdrw10 \trbrdrb\brdrs\brdrw10 \trbrdrr
+\brdrs\brdrw10 \trbrdrh\brdrs\brdrw10 \trbrdrv\brdrs\brdrw10 \clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx1980\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb
+\brdrs\brdrw10 \clbrdrr\brdrs\brdrw10 \cltxlrtb \cellx2688\pard \keepn\nowidctlpar\widctlpar\intbl\adjustright {Length of tree code 19\cell 4 bits\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\pard \nowidctlpar\widctlpar\adjustright {
+
+\par The \ldblquote real\rdblquote  tree is then encoded using the pre-tree Huffman codes.
+\par 
+\par }\pard\plain \s3\sb240\sa60\keepn\nowidctlpar\widctlpar\outlinelevel2\adjustright \b\f1\fs20\cgrid {{\*\bkmkstart _Toc378673328}Compressed literals{\*\bkmkend _Toc378673328}
+\par }\pard\plain \nowidctlpar\widctlpar\adjustright \fs20\cgrid {
+The compressed literals that make up the bulk of either a verbatim block or an aligned offset block immediately follow the tree data (as shown in the diagram for each block type).  These literals, which comprise matches and unmatched characters, will, whe
+n decompressed, correspond to exactly the number of uncompressed bytes indicated in the block header.
+\par 
+\par The representation of an unmatched character in the output is simply the appropriate element 0\'85(NUM_CHARS-1) Huffman-encoded using the main tree.
+\par 
+\par The representation of a match in the output involves several transformations, as shown in the following diagram.  At the top of the diagram are the match length (MIN_MATCH\'85MAX_MATCH) and the match offset (0\'85
+WINDOW_SIZE-4).  The match offset and match length are split into sub-components and encoded separately.
+\par 
+\par As mentioned previously, in order to remain compatible with the cabinet file format, the compressor may not emit any matches that span a 32768-byte boundary in the input.
+\par \page 
+\par }\pard\plain \s15\sb120\sa120\nowidctlpar\widctlpar\adjustright \b\fs20\cgrid {{\*\bkmkstart _Toc354766370}{\*\bkmkstart _Toc354766606}{\*\bkmkstart _Toc354767025}{\*\bkmkstart _Toc354817173}{\*\bkmkstart _Toc361302018}Diagram of match sub-components
+{\*\bkmkend _Toc354766370}{\*\bkmkend _Toc354766606}{\*\bkmkend _Toc354767025}{\*\bkmkend _Toc354817173}{\*\bkmkend _Toc361302018}
+\par }\pard\plain \nowidctlpar\widctlpar\adjustright \fs20\cgrid {\lang1024 {\shpgrp{\*\shpinst\shpleft72\shptop183\shpright8713\shpbottom6664\shpfhdr0\shpbxcolumn\shpbypara\shpwr3\shpwrk0\shpfblwtxt0\shpz0\shplid1052
+{\sp{\sn groupLeft}{\sv 0}}{\sp{\sn groupTop}{\sv 0}}{\sp{\sn groupRight}{\sv 19998}}{\sp{\sn groupBottom}{\sv 19993}}{\sp{\sn fFlipH}{\sv 0}}{\sp{\sn fFlipV}{\sv 0}}{\shp{\*\shpinst\shplid1053
+{\sp{\sn relLeft}{\sv 0}}{\sp{\sn relTop}{\sv 0}}{\sp{\sn relRight}{\sv 4668}}{\sp{\sn relBottom}{\sv 1774}}{\sp{\sn fRelFlipH}{\sv 0}}{\sp{\sn fRelFlipV}{\sv 0}}{\sp{\sn shapeType}{\sv 1}}{\sp{\sn lTxid}{\sv 917504}}{\sp{\sn dxTextLeft}{\sv 12700}}
+{\sp{\sn dyTextTop}{\sv 12700}}{\sp{\sn dxTextRight}{\sv 12700}}{\sp{\sn dyTextBottom}{\sv 12700}}{\sp{\sn hspNext}{\sv 1053}}{\sp{\sn fFilled}{\sv 0}}{\sp{\sn fShadow}{\sv 0}}{\shptxt \pard\plain \qc\nowidctlpar\widctlpar\adjustright \fs20\cgrid {
+Match length
+\par }}}}{\shp{\*\shpinst\shplid1054{\sp{\sn relLeft}{\sv 7998}}{\sp{\sn relTop}{\sv 0}}{\sp{\sn relRight}{\sv 12666}}{\sp{\sn relBottom}{\sv 1780}}{\sp{\sn fRelFlipH}{\sv 0}}{\sp{\sn fRelFlipV}{\sv 0}}{\sp{\sn shapeType}{\sv 1}}{\sp{\sn lTxid}{\sv 983040}}
+{\sp{\sn dxTextLeft}{\sv 12700}}{\sp{\sn dyTextTop}{\sv 12700}}{\sp{\sn dxTextRight}{\sv 12700}}{\sp{\sn dyTextBottom}{\sv 12700}}{\sp{\sn hspNext}{\sv 1054}}{\sp{\sn fFilled}{\sv 0}}{\sp{\sn fShadow}{\sv 0}}{\shptxt \pard\plain 
+\qc\nowidctlpar\widctlpar\adjustright \fs20\cgrid {Match offset
+\par }}}}{\shp{\*\shpinst\shplid1055{\sp{\sn relLeft}{\sv 5332}}{\sp{\sn relTop}{\sv 10217}}{\sp{\sn relRight}{\sv 10000}}{\sp{\sn relBottom}{\sv 11997}}{\sp{\sn fRelFlipH}{\sv 0}}
+{\sp{\sn fRelFlipV}{\sv 0}}{\sp{\sn shapeType}{\sv 1}}{\sp{\sn lTxid}{\sv 1048576}}{\sp{\sn dxTextLeft}{\sv 12700}}{\sp{\sn dyTextTop}{\sv 12700}}{\sp{\sn dxTextRight}{\sv 12700}}
+{\sp{\sn dyTextBottom}{\sv 12700}}{\sp{\sn hspNext}{\sv 1055}}{\sp{\sn fFilled}{\sv 0}}{\sp{\sn fShadow}{\sv 0}}{\shptxt \pard\plain \qc\nowidctlpar\widctlpar\adjustright \fs20\cgrid {Length/Position header
+\par }}}}{\shp{\*\shpinst\shplid1056{\sp{\sn relLeft}{\sv 0}}{\sp{\sn relTop}{\sv 10217}}{\sp{\sn relRight}{\sv 4668}}{\sp{\sn relBottom}{\sv 11997}}{\sp{\sn fRelFlipH}{\sv 0}}{\sp{\sn fRelFlipV}{\sv 0}}{\sp{\sn shapeType}{\sv 1}}{\sp{\sn lTxid}{\sv 1114112}}
+{\sp{\sn dxTextLeft}{\sv 12700}}{\sp{\sn dyTextTop}{\sv 12700}}{\sp{\sn dxTextRight}{\sv 12700}}{\sp{\sn dyTextBottom}{\sv 12700}}{\sp{\sn hspNext}{\sv 1056}}{\sp{\sn fFilled}{\sv 0}}{\sp{\sn fShadow}{\sv 0}}{\shptxt \pard\plain 
+\qc\nowidctlpar\widctlpar\adjustright \fs20\cgrid {Length footer
+\par }}}}{\shp{\*\shpinst\shplid1057{\sp{\sn relLeft}{\sv 13330}}{\sp{\sn relTop}{\sv 6219}}{\sp{\sn relRight}{\sv 17665}}{\sp{\sn relBottom}{\sv 7999}}{\sp{\sn fRelFlipH}{\sv 0}}
+{\sp{\sn fRelFlipV}{\sv 0}}{\sp{\sn shapeType}{\sv 1}}{\sp{\sn lTxid}{\sv 1179648}}{\sp{\sn dxTextLeft}{\sv 12700}}{\sp{\sn dyTextTop}{\sv 12700}}{\sp{\sn dxTextRight}{\sv 12700}}
+{\sp{\sn dyTextBottom}{\sv 12700}}{\sp{\sn hspNext}{\sv 1057}}{\sp{\sn fFilled}{\sv 0}}{\sp{\sn fShadow}{\sv 0}}{\shptxt \pard\plain \qc\nowidctlpar\widctlpar\adjustright \fs20\cgrid {Position footer
+\par }}}}{\shp{\*\shpinst\shplid1058{\sp{\sn relLeft}{\sv 15663}}{\sp{\sn relTop}{\sv 10217}}{\sp{\sn relRight}{\sv 19998}}{\sp{\sn relBottom}{\sv 11997}}{\sp{\sn fRelFlipH}{\sv 0}}
+{\sp{\sn fRelFlipV}{\sv 0}}{\sp{\sn shapeType}{\sv 1}}{\sp{\sn lTxid}{\sv 1245184}}{\sp{\sn dxTextLeft}{\sv 12700}}{\sp{\sn dyTextTop}{\sv 12700}}{\sp{\sn dxTextRight}{\sv 12700}}
+{\sp{\sn dyTextBottom}{\sv 12700}}{\sp{\sn hspNext}{\sv 1058}}{\sp{\sn fFilled}{\sv 0}}{\sp{\sn fShadow}{\sv 0}}{\shptxt \pard\plain \qc\nowidctlpar\widctlpar\adjustright \fs20\cgrid {Aligned offset bits
+\par }}}}{\shp{\*\shpinst\shplid1059{\sp{\sn relLeft}{\sv 10331}}{\sp{\sn relTop}{\sv 4886}}{\sp{\sn relRight}{\sv 10333}}{\sp{\sn relBottom}{\sv 6225}}{\sp{\sn fRelFlipH}{\sv 0}}
+{\sp{\sn fRelFlipV}{\sv 0}}{\sp{\sn shapeType}{\sv 20}}{\sp{\sn lineEndArrowhead}{\sv 1}}{\sp{\sn lineStartArrowWidth}{\sv 0}}{\sp{\sn lineStartArrowLength}{\sv 0}}{\sp{\sn lineEndArrowWidth}{\sv 0}}{\sp{\sn lineEndArrowLength}{\sv 0}}
+{\sp{\sn fShadow}{\sv 0}}}}{\shp{\*\shpinst\shplid1060{\sp{\sn relLeft}{\sv 10998}}{\sp{\sn relTop}{\sv 4886}}{\sp{\sn relRight}{\sv 15332}}{\sp{\sn relBottom}{\sv 6225}}{\sp{\sn fRelFlipH}{\sv 0}}
+{\sp{\sn fRelFlipV}{\sv 0}}{\sp{\sn shapeType}{\sv 20}}{\sp{\sn lineEndArrowhead}{\sv 1}}{\sp{\sn lineStartArrowWidth}{\sv 0}}{\sp{\sn lineStartArrowLength}{\sv 0}}{\sp{\sn lineEndArrowWidth}{\sv 0}}{\sp{\sn lineEndArrowLength}{\sv 0}}
+{\sp{\sn fShadow}{\sv 0}}}}{\shp{\*\shpinst\shplid1061{\sp{\sn relLeft}{\sv 10664}}{\sp{\sn relTop}{\sv 10217}}{\sp{\sn relRight}{\sv 14999}}{\sp{\sn relBottom}{\sv 12000}}{\sp{\sn fRelFlipH}{\sv 0}}
+{\sp{\sn fRelFlipV}{\sv 0}}{\sp{\sn shapeType}{\sv 1}}{\sp{\sn lTxid}{\sv 1310720}}{\sp{\sn dxTextLeft}{\sv 12700}}{\sp{\sn dyTextTop}{\sv 12700}}{\sp{\sn dxTextRight}{\sv 12700}}
+{\sp{\sn dyTextBottom}{\sv 12700}}{\sp{\sn hspNext}{\sv 1061}}{\sp{\sn fFilled}{\sv 0}}{\sp{\sn fShadow}{\sv 0}}{\shptxt \pard\plain \qc\nowidctlpar\widctlpar\adjustright \fs20\cgrid {Verbatim position bits
+\par 3
+\par }}}}{\shp{\*\shpinst\shplid1062{\sp{\sn relLeft}{\sv 12664}}{\sp{\sn relTop}{\sv 7996}}{\sp{\sn relRight}{\sv 14999}}{\sp{\sn relBottom}{\sv 10220}}{\sp{\sn fRelFlipH}{\sv 1}}
+{\sp{\sn fRelFlipV}{\sv 0}}{\sp{\sn shapeType}{\sv 20}}{\sp{\sn lineEndArrowhead}{\sv 1}}{\sp{\sn lineStartArrowWidth}{\sv 0}}{\sp{\sn lineStartArrowLength}{\sv 0}}{\sp{\sn lineEndArrowWidth}{\sv 0}}{\sp{\sn lineEndArrowLength}{\sv 0}}
+{\sp{\sn fShadow}{\sv 0}}}}{\shp{\*\shpinst\shplid1063{\sp{\sn relLeft}{\sv 15997}}{\sp{\sn relTop}{\sv 7996}}{\sp{\sn relRight}{\sv 17998}}{\sp{\sn relBottom}{\sv 10220}}{\sp{\sn fRelFlipH}{\sv 0}}
+{\sp{\sn fRelFlipV}{\sv 0}}{\sp{\sn shapeType}{\sv 20}}{\sp{\sn lineEndArrowhead}{\sv 1}}{\sp{\sn lineStartArrowWidth}{\sv 0}}{\sp{\sn lineStartArrowLength}{\sv 0}}{\sp{\sn lineEndArrowWidth}{\sv 0}}{\sp{\sn lineEndArrowLength}{\sv 0}}
+{\sp{\sn fShadow}{\sv 0}}}}{\shp{\*\shpinst\shplid1064{\sp{\sn relLeft}{\sv 7998}}{\sp{\sn relTop}{\sv 3110}}{\sp{\sn relRight}{\sv 12666}}{\sp{\sn relBottom}{\sv 4889}}{\sp{\sn fRelFlipH}{\sv 0}}
+{\sp{\sn fRelFlipV}{\sv 0}}{\sp{\sn shapeType}{\sv 1}}{\sp{\sn lTxid}{\sv 1376256}}{\sp{\sn dxTextLeft}{\sv 12700}}{\sp{\sn dyTextTop}{\sv 12700}}{\sp{\sn dxTextRight}{\sv 12700}}
+{\sp{\sn dyTextBottom}{\sv 12700}}{\sp{\sn hspNext}{\sv 1064}}{\sp{\sn fFilled}{\sv 0}}{\sp{\sn fShadow}{\sv 0}}{\shptxt \pard\plain \qc\nowidctlpar\widctlpar\adjustright \fs20\cgrid {Formatted offset
+\par }}}}{\shp{\*\shpinst\shplid1065{\sp{\sn relLeft}{\sv 10331}}{\sp{\sn relTop}{\sv 1777}}{\sp{\sn relRight}{\sv 10333}}{\sp{\sn relBottom}{\sv 3116}}{\sp{\sn fRelFlipH}{\sv 0}}
+{\sp{\sn fRelFlipV}{\sv 0}}{\sp{\sn shapeType}{\sv 20}}{\sp{\sn lineEndArrowhead}{\sv 1}}{\sp{\sn lineStartArrowWidth}{\sv 0}}{\sp{\sn lineStartArrowLength}{\sv 0}}{\sp{\sn lineEndArrowWidth}{\sv 0}}{\sp{\sn lineEndArrowLength}{\sv 0}}
+{\sp{\sn fShadow}{\sv 0}}}}{\shp{\*\shpinst\shplid1066{\sp{\sn relLeft}{\sv 2666}}{\sp{\sn relTop}{\sv 6219}}{\sp{\sn relRight}{\sv 7334}}{\sp{\sn relBottom}{\sv 7999}}{\sp{\sn fRelFlipH}{\sv 0}}
+{\sp{\sn fRelFlipV}{\sv 0}}{\sp{\sn shapeType}{\sv 1}}{\sp{\sn lTxid}{\sv 1441792}}{\sp{\sn dxTextLeft}{\sv 12700}}{\sp{\sn dyTextTop}{\sv 12700}}{\sp{\sn dxTextRight}{\sv 12700}}
+{\sp{\sn dyTextBottom}{\sv 12700}}{\sp{\sn hspNext}{\sv 1066}}{\sp{\sn fFilled}{\sv 0}}{\sp{\sn fShadow}{\sv 0}}{\shptxt \pard\plain \qc\nowidctlpar\widctlpar\adjustright \fs20\cgrid {Length header
+\par }}}}{\shp{\*\shpinst\shplid1067{\sp{\sn relLeft}{\sv 7998}}{\sp{\sn relTop}{\sv 6219}}{\sp{\sn relRight}{\sv 12666}}{\sp{\sn relBottom}{\sv 7999}}{\sp{\sn fRelFlipH}{\sv 0}}
+{\sp{\sn fRelFlipV}{\sv 0}}{\sp{\sn shapeType}{\sv 1}}{\sp{\sn lTxid}{\sv 1507328}}{\sp{\sn dxTextLeft}{\sv 12700}}{\sp{\sn dyTextTop}{\sv 12700}}{\sp{\sn dxTextRight}{\sv 12700}}
+{\sp{\sn dyTextBottom}{\sv 12700}}{\sp{\sn hspNext}{\sv 1067}}{\sp{\sn fFilled}{\sv 0}}{\sp{\sn fShadow}{\sv 0}}{\shptxt \pard\plain \qc\nowidctlpar\widctlpar\adjustright \fs20\cgrid {Position slot
+\par }}}}{\shp{\*\shpinst\shplid1068{\sp{\sn relLeft}{\sv 7998}}{\sp{\sn relTop}{\sv 7996}}{\sp{\sn relRight}{\sv 10333}}{\sp{\sn relBottom}{\sv 10220}}{\sp{\sn fRelFlipH}{\sv 1}}
+{\sp{\sn fRelFlipV}{\sv 0}}{\sp{\sn shapeType}{\sv 20}}{\sp{\sn lineEndArrowhead}{\sv 1}}{\sp{\sn lineStartArrowWidth}{\sv 0}}{\sp{\sn lineStartArrowLength}{\sv 0}}{\sp{\sn lineEndArrowWidth}{\sv 0}}{\sp{\sn lineEndArrowLength}{\sv 0}}
+{\sp{\sn fShadow}{\sv 0}}}}{\shp{\*\shpinst\shplid1069{\sp{\sn relLeft}{\sv 4999}}{\sp{\sn relTop}{\sv 7996}}{\sp{\sn relRight}{\sv 7001}}{\sp{\sn relBottom}{\sv 10220}}{\sp{\sn fRelFlipH}{\sv 0}}
+{\sp{\sn fRelFlipV}{\sv 0}}{\sp{\sn shapeType}{\sv 20}}{\sp{\sn lineEndArrowhead}{\sv 1}}{\sp{\sn lineStartArrowWidth}{\sv 0}}{\sp{\sn lineStartArrowLength}{\sv 0}}{\sp{\sn lineEndArrowWidth}{\sv 0}}{\sp{\sn lineEndArrowLength}{\sv 0}}
+{\sp{\sn fShadow}{\sv 0}}}}{\shp{\*\shpinst\shplid1070{\sp{\sn relLeft}{\sv 2000}}{\sp{\sn relTop}{\sv 1777}}{\sp{\sn relRight}{\sv 2002}}{\sp{\sn relBottom}{\sv 10220}}{\sp{\sn fRelFlipH}{\sv 0}}
+{\sp{\sn fRelFlipV}{\sv 0}}{\sp{\sn shapeType}{\sv 20}}{\sp{\sn lineEndArrowhead}{\sv 1}}{\sp{\sn lineStartArrowWidth}{\sv 0}}{\sp{\sn lineStartArrowLength}{\sv 0}}{\sp{\sn lineEndArrowWidth}{\sv 0}}{\sp{\sn lineEndArrowLength}{\sv 0}}
+{\sp{\sn fShadow}{\sv 0}}}}{\shp{\*\shpinst\shplid1071{\sp{\sn relLeft}{\sv 2999}}{\sp{\sn relTop}{\sv 1777}}{\sp{\sn relRight}{\sv 4668}}{\sp{\sn relBottom}{\sv 6225}}{\sp{\sn fRelFlipH}{\sv 0}}
+{\sp{\sn fRelFlipV}{\sv 0}}{\sp{\sn shapeType}{\sv 20}}{\sp{\sn lineEndArrowhead}{\sv 1}}{\sp{\sn lineStartArrowWidth}{\sv 0}}{\sp{\sn lineStartArrowLength}{\sv 0}}{\sp{\sn lineEndArrowWidth}{\sv 0}}{\sp{\sn lineEndArrowLength}{\sv 0}}
+{\sp{\sn fShadow}{\sv 0}}}}{\shp{\*\shpinst\shplid1072{\sp{\sn relLeft}{\sv 5332}}{\sp{\sn relTop}{\sv 13771}}{\sp{\sn relRight}{\sv 10000}}{\sp{\sn relBottom}{\sv 15551}}{\sp{\sn fRelFlipH}{\sv 0}}
+{\sp{\sn fRelFlipV}{\sv 0}}{\sp{\sn shapeType}{\sv 2}}{\sp{\sn lTxid}{\sv 1572864}}{\sp{\sn dxTextLeft}{\sv 12700}}{\sp{\sn dyTextTop}{\sv 12700}}{\sp{\sn dxTextRight}{\sv 12700}}
+{\sp{\sn dyTextBottom}{\sv 12700}}{\sp{\sn hspNext}{\sv 1072}}{\sp{\sn fFilled}{\sv 0}}{\sp{\sn fShadow}{\sv 0}}{\shptxt \pard\plain \qc\nowidctlpar\widctlpar\adjustright \fs20\cgrid {Main tree
+\par 1
+\par }}}}{\shp{\*\shpinst\shplid1073{\sp{\sn relLeft}{\sv 7665}}{\sp{\sn relTop}{\sv 11994}}{\sp{\sn relRight}{\sv 7667}}{\sp{\sn relBottom}{\sv 13774}}{\sp{\sn fRelFlipH}{\sv 0}}
+{\sp{\sn fRelFlipV}{\sv 0}}{\sp{\sn shapeType}{\sv 20}}{\sp{\sn lineDashing}{\sv 2}}{\sp{\sn lineEndArrowhead}{\sv 1}}{\sp{\sn lineStartArrowWidth}{\sv 0}}{\sp{\sn lineStartArrowLength}{\sv 0}}{\sp{\sn lineEndArrowWidth}{\sv 0}}
+{\sp{\sn lineEndArrowLength}{\sv 0}}{\sp{\sn fShadow}{\sv 0}}}}{\shp{\*\shpinst\shplid1074{\sp{\sn relLeft}{\sv 0}}{\sp{\sn relTop}{\sv 13771}}{\sp{\sn relRight}{\sv 4668}}{\sp{\sn relBottom}{\sv 15551}}{\sp{\sn fRelFlipH}{\sv 0}}
+{\sp{\sn fRelFlipV}{\sv 0}}{\sp{\sn shapeType}{\sv 2}}{\sp{\sn lTxid}{\sv 1638400}}{\sp{\sn dxTextLeft}{\sv 12700}}{\sp{\sn dyTextTop}{\sv 12700}}{\sp{\sn dxTextRight}{\sv 12700}}
+{\sp{\sn dyTextBottom}{\sv 12700}}{\sp{\sn hspNext}{\sv 1074}}{\sp{\sn fFilled}{\sv 0}}{\sp{\sn fShadow}{\sv 0}}{\shptxt \pard\plain \qc\nowidctlpar\widctlpar\adjustright \fs20\cgrid {Length tree
+\par 2
+\par }}}}{\shp{\*\shpinst\shplid1075{\sp{\sn relLeft}{\sv 2333}}{\sp{\sn relTop}{\sv 11994}}{\sp{\sn relRight}{\sv 2335}}{\sp{\sn relBottom}{\sv 13774}}{\sp{\sn fRelFlipH}{\sv 0}}
+{\sp{\sn fRelFlipV}{\sv 0}}{\sp{\sn shapeType}{\sv 20}}{\sp{\sn lineDashing}{\sv 2}}{\sp{\sn lineEndArrowhead}{\sv 1}}{\sp{\sn lineStartArrowWidth}{\sv 0}}{\sp{\sn lineStartArrowLength}{\sv 0}}{\sp{\sn lineEndArrowWidth}{\sv 0}}
+{\sp{\sn lineEndArrowLength}{\sv 0}}{\sp{\sn fShadow}{\sv 0}}}}{\shp{\*\shpinst\shplid1076{\sp{\sn relLeft}{\sv 5332}}{\sp{\sn relTop}{\sv 17769}}{\sp{\sn relRight}{\sv 14999}}{\sp{\sn relBottom}{\sv 19993}}{\sp{\sn fRelFlipH}{\sv 0}}
+{\sp{\sn fRelFlipV}{\sv 0}}{\sp{\sn shapeType}{\sv 2}}{\sp{\sn lTxid}{\sv 1703936}}{\sp{\sn dxTextLeft}{\sv 12700}}{\sp{\sn dyTextTop}{\sv 12700}}{\sp{\sn dxTextRight}{\sv 12700}}
+{\sp{\sn dyTextBottom}{\sv 12700}}{\sp{\sn hspNext}{\sv 1076}}{\sp{\sn fFilled}{\sv 0}}{\sp{\sn fShadow}{\sv 0}}{\shptxt \pard\plain \qc\nowidctlpar\widctlpar\adjustright \fs20\cgrid {
+\par OUTPUT
+\par }}}}{\shp{\*\shpinst\shplid1077{\sp{\sn relLeft}{\sv 2333}}{\sp{\sn relTop}{\sv 15548}}{\sp{\sn relRight}{\sv 7334}}{\sp{\sn relBottom}{\sv 17772}}{\sp{\sn fRelFlipH}{\sv 0}}
+{\sp{\sn fRelFlipV}{\sv 0}}{\sp{\sn shapeType}{\sv 20}}{\sp{\sn lineDashing}{\sv 2}}{\sp{\sn lineEndArrowhead}{\sv 1}}{\sp{\sn lineStartArrowWidth}{\sv 0}}{\sp{\sn lineStartArrowLength}{\sv 0}}{\sp{\sn lineEndArrowWidth}{\sv 0}}
+{\sp{\sn lineEndArrowLength}{\sv 0}}{\sp{\sn fShadow}{\sv 0}}}}{\shp{\*\shpinst\shplid1078{\sp{\sn relLeft}{\sv 7665}}{\sp{\sn relTop}{\sv 15548}}{\sp{\sn relRight}{\sv 9334}}{\sp{\sn relBottom}{\sv 17772}}{\sp{\sn fRelFlipH}{\sv 0}}
+{\sp{\sn fRelFlipV}{\sv 0}}{\sp{\sn shapeType}{\sv 20}}{\sp{\sn lineDashing}{\sv 2}}{\sp{\sn lineEndArrowhead}{\sv 1}}{\sp{\sn lineStartArrowWidth}{\sv 0}}{\sp{\sn lineStartArrowLength}{\sv 0}}{\sp{\sn lineEndArrowWidth}{\sv 0}}
+{\sp{\sn lineEndArrowLength}{\sv 0}}{\sp{\sn fShadow}{\sv 0}}}}{\shp{\*\shpinst\shplid1079{\sp{\sn relLeft}{\sv 10998}}{\sp{\sn relTop}{\sv 11994}}{\sp{\sn relRight}{\sv 12666}}{\sp{\sn relBottom}{\sv 17772}}{\sp{\sn fRelFlipH}{\sv 1}}
+{\sp{\sn fRelFlipV}{\sv 0}}{\sp{\sn shapeType}{\sv 20}}{\sp{\sn lineDashing}{\sv 2}}{\sp{\sn lineEndArrowhead}{\sv 1}}{\sp{\sn lineStartArrowWidth}{\sv 0}}{\sp{\sn lineStartArrowLength}{\sv 0}}{\sp{\sn lineEndArrowWidth}{\sv 0}}
+{\sp{\sn lineEndArrowLength}{\sv 0}}{\sp{\sn fShadow}{\sv 0}}}}{\shp{\*\shpinst\shplid1080{\sp{\sn relLeft}{\sv 15663}}{\sp{\sn relTop}{\sv 13771}}{\sp{\sn relRight}{\sv 19998}}{\sp{\sn relBottom}{\sv 15551}}{\sp{\sn fRelFlipH}{\sv 0}}
+{\sp{\sn fRelFlipV}{\sv 0}}{\sp{\sn shapeType}{\sv 2}}{\sp{\sn lTxid}{\sv 1769472}}{\sp{\sn dxTextLeft}{\sv 12700}}{\sp{\sn dyTextTop}{\sv 12700}}{\sp{\sn dxTextRight}{\sv 12700}}
+{\sp{\sn dyTextBottom}{\sv 12700}}{\sp{\sn hspNext}{\sv 1080}}{\sp{\sn fFilled}{\sv 0}}{\sp{\sn fShadow}{\sv 0}}{\shptxt \pard\plain \qc\nowidctlpar\widctlpar\adjustright \fs20\cgrid {Aligned offset tree
+\par 4
+\par }}}}{\shp{\*\shpinst\shplid1081{\sp{\sn relLeft}{\sv 17663}}{\sp{\sn relTop}{\sv 11994}}{\sp{\sn relRight}{\sv 17665}}{\sp{\sn relBottom}{\sv 13774}}{\sp{\sn fRelFlipH}{\sv 0}}
+{\sp{\sn fRelFlipV}{\sv 0}}{\sp{\sn shapeType}{\sv 20}}{\sp{\sn lineDashing}{\sv 2}}{\sp{\sn lineEndArrowhead}{\sv 1}}{\sp{\sn lineStartArrowWidth}{\sv 0}}{\sp{\sn lineStartArrowLength}{\sv 0}}{\sp{\sn lineEndArrowWidth}{\sv 0}}
+{\sp{\sn lineEndArrowLength}{\sv 0}}{\sp{\sn fShadow}{\sv 0}}}}{\shp{\*\shpinst\shplid1082{\sp{\sn relLeft}{\sv 12664}}{\sp{\sn relTop}{\sv 15548}}{\sp{\sn relRight}{\sv 17665}}{\sp{\sn relBottom}{\sv 17772}}{\sp{\sn fRelFlipH}{\sv 1}}
+{\sp{\sn fRelFlipV}{\sv 0}}{\sp{\sn shapeType}{\sv 20}}{\sp{\sn lineDashing}{\sv 2}}{\sp{\sn lineEndArrowhead}{\sv 1}}{\sp{\sn lineStartArrowWidth}{\sv 0}}{\sp{\sn lineStartArrowLength}{\sv 0}}{\sp{\sn lineEndArrowWidth}{\sv 0}}
+{\sp{\sn lineEndArrowLength}{\sv 0}}{\sp{\sn fShadow}{\sv 0}}}}}{\shprslt{\*\do\dobxcolumn\dobypara\dodhgt8192\dppolygon\dppolycount4\dpptx0\dppty0\dpptx8641\dppty0\dpptx8641\dppty6481\dpptx0\dppty6481\dpx72\dpy183\dpxsize8641\dpysize6481
+\dpfillfgcr255\dpfillfgcg255\dpfillfgcb255\dpfillbgcr255\dpfillbgcg255\dpfillbgcb255\dpfillpat1\dplinew15\dplinecor0\dplinecog0\dplinecob0}}}}{
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par }\pard\plain \s3\sb240\sa60\keepn\nowidctlpar\widctlpar\outlinelevel2\adjustright \b\f1\fs20\cgrid {{\*\bkmkstart _Toc354659897}{\*\bkmkstart _Toc354696098}{\*\bkmkstart _Toc354765937}{\*\bkmkstart _Toc354766130}{\*\bkmkstart _Toc354766323}
+{\*\bkmkstart _Toc354766371}{\*\bkmkstart _Toc354766607}{\*\bkmkstart _Toc354767026}{\*\bkmkstart _Toc354817174}{\*\bkmkstart _Toc361302019}
+\par \page {\*\bkmkstart _Toc378673329}Match offset }{{\field{\*\fldinst SYMBOL 222 \\f "Symbol" \\s 10}{\fldrslt\f3\fs20}}}{ Formatted offset{\*\bkmkend _Toc354659897}{\*\bkmkend _Toc354696098}{\*\bkmkend _Toc354765937}{\*\bkmkend _Toc354766130}
+{\*\bkmkend _Toc354766323}{\*\bkmkend _Toc354766371}{\*\bkmkend _Toc354766607}{\*\bkmkend _Toc354767026}{\*\bkmkend _Toc354817174}{\*\bkmkend _Toc361302019}{\*\bkmkend _Toc378673329}
+\par }\pard\plain \nowidctlpar\widctlpar\adjustright \fs20\cgrid {The match offset, range 1\'85(WINDOW_SIZE-4), is converted into a }{\i formatted offset}{
+ by determining whether the offset can be encoded as a repeated offset, as shown below.  It is acceptable to not encode a match as a repeated offset even if it is possible to do so.
+\par 
+\par }\pard\plain \s15\sb120\sa120\nowidctlpar\widctlpar\adjustright \b\fs20\cgrid {{\*\bkmkstart _Toc354766372}{\*\bkmkstart _Toc354766608}{\*\bkmkstart _Toc354767027}{\*\bkmkstart _Toc354817175}{\*\bkmkstart _Toc361302020}
+Converting a match offset to a formatted offset{\*\bkmkend _Toc354766372}{\*\bkmkend _Toc354766608}{\*\bkmkend _Toc354767027}{\*\bkmkend _Toc354817175}{\*\bkmkend _Toc361302020}
+\par }\pard\plain \nowidctlpar\widctlpar\adjustright \fs20\cgrid {\f2\fs16 if offset == R0 then
+\par \tab formatted offset }{\f2\fs16 {\field{\*\fldinst SYMBOL 172 \\f "Symbol" \\s 8}{\fldrslt\f3\fs16}}}{\f2\fs16  0
+\par else if offset == R1 then
+\par \tab formatted offset }{\f2\fs16 {\field{\*\fldinst SYMBOL 172 \\f "Symbol" \\s 8}{\fldrslt\f3\fs16}}}{\f2\fs16  1
+\par else if offset == R2 then
+\par \tab formatted offset }{\f2\fs16 {\field{\*\fldinst SYMBOL 172 \\f "Symbol" \\s 8}{\fldrslt\f3\fs16}}}{\f2\fs16  2
+\par else
+\par \tab formatted offset }{\f2\fs16 {\field{\*\fldinst SYMBOL 172 \\f "Symbol" \\s 8}{\fldrslt\f3\fs16}}}{\f2\fs16  offset + 2
+\par endif
+\par }{
+\par }\pard\plain \s3\sb240\sa60\keepn\nowidctlpar\widctlpar\outlinelevel2\adjustright \b\f1\fs20\cgrid {{\*\bkmkstart _Toc354659898}{\*\bkmkstart _Toc354696099}{\*\bkmkstart _Toc354765938}{\*\bkmkstart _Toc354766131}{\*\bkmkstart _Toc354766324}
+{\*\bkmkstart _Toc354766373}{\*\bkmkstart _Toc354766609}{\*\bkmkstart _Toc354767028}{\*\bkmkstart _Toc354817176}{\*\bkmkstart _Toc361302021}{\*\bkmkstart _Toc378673330}Formatted offset }{{\field{\*\fldinst SYMBOL 222 \\f "Symbol" \\s 10}{\fldrslt
+\f3\fs20}}}{ Position slot, Position footer{\*\bkmkend _Toc354659898}{\*\bkmkend _Toc354696099}{\*\bkmkend _Toc354765938}{\*\bkmkend _Toc354766131}{\*\bkmkend _Toc354766324}{\*\bkmkend _Toc354766373}{\*\bkmkend _Toc354766609}{\*\bkmkend _Toc354767028}
+{\*\bkmkend _Toc354817176}{\*\bkmkend _Toc361302021}{\*\bkmkend _Toc378673330}
+\par }\pard\plain \nowidctlpar\widctlpar\adjustright \fs20\cgrid {The formatted offset is subdivided into a position slot and a position footer.  The position slot defines the most significant bits of the formatted offset in t
+he form of a base position as shown in the table on the following page.  The position footer defines the remaining least significant bits of the formatted offset.  As the table shows, the number of bits dedicated to the position footer grows as the format
+ted offset becomes larger, meaning that each position slot addresses a larger and larger range.
+\par 
+\par The number of position slots available depends on the window size.  The position slot table for the maximum window size of 2 megabytes, is shown in the table below.
+\par 
+\par 
+\par }\pard\plain \s15\sb120\sa120\nowidctlpar\widctlpar\adjustright \b\fs20\cgrid {{\*\bkmkstart _Toc354766375}{\*\bkmkstart _Toc354766611}{\*\bkmkstart _Toc354767030}{\*\bkmkstart _Toc354817178}{\*\bkmkstart _Toc361302023}\page The position slot
+{\*\bkmkend _Toc354766375}{\*\bkmkend _Toc354766611}{\*\bkmkend _Toc354767030}{\*\bkmkend _Toc354817178}{\*\bkmkend _Toc361302023} table
+\par }\trowd \trgaph108\trleft-108\trbrdrt\brdrs\brdrw30\brdrcf1 \trbrdrl\brdrs\brdrw30\brdrcf1 \trbrdrb\brdrs\brdrw30\brdrcf1 \trbrdrr\brdrs\brdrw30\brdrcf1 \trbrdrh\brdrs\brdrw15\brdrcf1 \trbrdrv\brdrs\brdrw15\brdrcf1 \clvertalt\clbrdrt
+\brdrs\brdrw30\brdrcf1 \clbrdrl\brdrs\brdrw30\brdrcf1 \clbrdrb\brdrs\brdrw15\brdrcf1 \clbrdrr\brdrdb\brdrw15\brdrcf1 \cltxlrtb \cellx1260\clvertalt\clbrdrt\brdrs\brdrw30\brdrcf1 \clbrdrb\brdrs\brdrw15\brdrcf1 \clbrdrr\brdrs\brdrw15\brdrcf1 \cltxlrtb 
+\cellx2250\clvertalt\clbrdrt\brdrs\brdrw30\brdrcf1 \clbrdrl\brdrs\brdrw15\brdrcf1 \clbrdrb\brdrs\brdrw15\brdrcf1 \clbrdrr\brdrs\brdrw15\brdrcf1 \cltxlrtb \cellx3420\clvertalt\clbrdrt\brdrs\brdrw30\brdrcf1 \clbrdrl\brdrs\brdrw15\brdrcf1 \clbrdrb
+\brdrs\brdrw15\brdrcf1 \clbrdrr\brdrs\brdrw30\brdrcf1 \cltxlrtb \cellx5040\pard\plain \nowidctlpar\widctlpar\intbl\adjustright \fs20\cgrid {\b\f1\fs18 Position slot number\cell Base position\cell Number of position footer bits\cell 
+Range of base position and position footer\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs16 \row }\trowd \trgaph108\trleft-108\trbrdrt\brdrs\brdrw30\brdrcf1 \trbrdrl\brdrs\brdrw30\brdrcf1 \trbrdrb\brdrs\brdrw30\brdrcf1 \trbrdrr
+\brdrs\brdrw30\brdrcf1 \trbrdrh\brdrs\brdrw15\brdrcf1 \trbrdrv\brdrs\brdrw15\brdrcf1 \clvertalt\clbrdrl\brdrs\brdrw30\brdrcf1 \clbrdrb\brdrs\brdrw15\brdrcf1 \clbrdrr\brdrdb\brdrw15\brdrcf1 \cltxlrtb \cellx1260\clvertalt\clbrdrb\brdrs\brdrw15\brdrcf1 
+\clbrdrr\brdrs\brdrw15\brdrcf1 \cltxlrtb \cellx2250\clvertalt\clbrdrl\brdrs\brdrw15\brdrcf1 \clbrdrb\brdrs\brdrw15\brdrcf1 \clbrdrr\brdrs\brdrw15\brdrcf1 \cltxlrtb \cellx3420\clvertalt\clbrdrl\brdrs\brdrw15\brdrcf1 \clbrdrb\brdrs\brdrw15\brdrcf1 \clbrdrr
+\brdrs\brdrw30\brdrcf1 \cltxlrtb \cellx5040\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs18 0\cell 0\cell 0\cell 0\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs16 \row }\trowd \trgaph108\trleft-108\trbrdrt\brdrs\brdrw30\brdrcf1 \trbrdrl
+\brdrs\brdrw30\brdrcf1 \trbrdrb\brdrs\brdrw30\brdrcf1 \trbrdrr\brdrs\brdrw30\brdrcf1 \trbrdrh\brdrs\brdrw15\brdrcf1 \trbrdrv\brdrs\brdrw15\brdrcf1 \clvertalt\clbrdrt\brdrs\brdrw15\brdrcf1 \clbrdrl\brdrs\brdrw30\brdrcf1 \clbrdrb\brdrs\brdrw15\brdrcf1 
+\clbrdrr\brdrdb\brdrw15\brdrcf1 \cltxlrtb \cellx1260\clvertalt\clbrdrt\brdrs\brdrw15\brdrcf1 \clbrdrb\brdrs\brdrw15\brdrcf1 \clbrdrr\brdrs\brdrw15\brdrcf1 \cltxlrtb \cellx2250\clvertalt\clbrdrt\brdrs\brdrw15\brdrcf1 \clbrdrl\brdrs\brdrw15\brdrcf1 \clbrdrb
+\brdrs\brdrw15\brdrcf1 \clbrdrr\brdrs\brdrw15\brdrcf1 \cltxlrtb \cellx3420\clvertalt\clbrdrt\brdrs\brdrw15\brdrcf1 \clbrdrl\brdrs\brdrw15\brdrcf1 \clbrdrb\brdrs\brdrw15\brdrcf1 \clbrdrr\brdrs\brdrw30\brdrcf1 \cltxlrtb \cellx5040\pard 
+\nowidctlpar\widctlpar\intbl\adjustright {\fs18 1\cell 1\cell 0\cell 1\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs16 \row }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs18 2\cell 2\cell 0\cell 2\cell }\pard 
+\nowidctlpar\widctlpar\intbl\adjustright {\fs16 \row }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs18 3\cell 3\cell 0\cell 3\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs16 \row }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs18 4
+\cell 4\cell 1\cell 4-5\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs16 \row }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs18 5\cell 6\cell 1\cell 6-7\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs16 \row }\pard 
+\nowidctlpar\widctlpar\intbl\adjustright {\fs18 6\cell 8\cell 2\cell 8-11\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs16 \row }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs18 7\cell 12\cell 2\cell 12-15\cell }\pard 
+\nowidctlpar\widctlpar\intbl\adjustright {\fs16 \row }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs18 8\cell 16\cell 3\cell 16-23\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs16 \row }\pard \nowidctlpar\widctlpar\intbl\adjustright {
+\fs18 9\cell 24\cell 3\cell 24-31\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs16 \row }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs18 10\cell 32\cell 4\cell 32-47\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs16 \row }\pard 
+\nowidctlpar\widctlpar\intbl\adjustright {\fs18 11\cell 48\cell 4\cell 48-63\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs16 \row }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs18 12\cell 64\cell 5\cell 64-95\cell }\pard 
+\nowidctlpar\widctlpar\intbl\adjustright {\fs16 \row }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs18 13\cell 96\cell 5\cell 96-127\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs16 \row }\pard \nowidctlpar\widctlpar\intbl\adjustright {
+\fs18 14\cell 128\cell 6\cell 128-191\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs16 \row }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs18 15\cell 192\cell 6\cell 192-255\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs16 \row 
+}\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs18 16\cell 256\cell 7\cell 256-383\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs16 \row }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs18 17\cell 384\cell 7\cell 384-511\cell }\pard 
+\nowidctlpar\widctlpar\intbl\adjustright {\fs16 \row }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs18 18\cell 512\cell 8\cell 512-767\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs16 \row }\pard \nowidctlpar\widctlpar\intbl\adjustright {
+\fs18 19\cell 768\cell 8\cell 768-1023\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs16 \row }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs18 20\cell 1024\cell 9\cell 1024-1535\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs16 
+\row }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs18 21\cell 1536\cell 9\cell 1536-2047\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs16 \row }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs18 22\cell 2048\cell 10\cell 2048-3071
+\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs16 \row }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs18 23\cell 3072\cell 10\cell 3072-4095\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs16 \row }\pard 
+\nowidctlpar\widctlpar\intbl\adjustright {\fs18 24\cell 4096\cell 11\cell 4096-6143\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs16 \row }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs18 25\cell 6144\cell 11\cell 6144-8191\cell }\pard 
+\nowidctlpar\widctlpar\intbl\adjustright {\fs16 \row }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs18 26\cell 8192\cell 12\cell 8192-12287\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs16 \row }\pard 
+\nowidctlpar\widctlpar\intbl\adjustright {\fs18 27\cell 12288\cell 12\cell 12288-16383\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs16 \row }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs18 28\cell 16384\cell 13\cell 16384-24575\cell 
+}\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs16 \row }\trowd \trgaph108\trleft-108\trbrdrt\brdrs\brdrw30\brdrcf1 \trbrdrl\brdrs\brdrw30\brdrcf1 \trbrdrb\brdrs\brdrw30\brdrcf1 \trbrdrr\brdrs\brdrw30\brdrcf1 \trbrdrh\brdrs\brdrw15\brdrcf1 \trbrdrv
+\brdrs\brdrw15\brdrcf1 \clvertalt\clbrdrt\brdrs\brdrw15\brdrcf1 \clbrdrl\brdrs\brdrw30\brdrcf1 \clbrdrr\brdrdb\brdrw15\brdrcf1 \cltxlrtb \cellx1260\clvertalt\clbrdrt\brdrs\brdrw15\brdrcf1 \clbrdrb\brdrs\brdrw15\brdrcf1 \clbrdrr\brdrs\brdrw15\brdrcf1 
+\cltxlrtb \cellx2250\clvertalt\clbrdrt\brdrs\brdrw15\brdrcf1 \clbrdrl\brdrs\brdrw15\brdrcf1 \clbrdrb\brdrs\brdrw15\brdrcf1 \clbrdrr\brdrs\brdrw15\brdrcf1 \cltxlrtb \cellx3420\clvertalt\clbrdrt\brdrs\brdrw15\brdrcf1 \clbrdrl\brdrs\brdrw15\brdrcf1 \clbrdrb
+\brdrs\brdrw15\brdrcf1 \clbrdrr\brdrs\brdrw30\brdrcf1 \cltxlrtb \cellx5040\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs18 29\cell 24576\cell 13\cell 24576-32767\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs16 \row }\trowd 
+\trgaph108\trleft-108\trbrdrt\brdrs\brdrw30\brdrcf1 \trbrdrl\brdrs\brdrw30\brdrcf1 \trbrdrb\brdrs\brdrw30\brdrcf1 \trbrdrr\brdrs\brdrw30\brdrcf1 \trbrdrh\brdrs\brdrw15\brdrcf1 \trbrdrv\brdrs\brdrw15\brdrcf1 \clvertalt\clbrdrt\brdrs\brdrw10\brdrcf1 
+\clbrdrl\brdrs\brdrw30\brdrcf1 \clbrdrb\brdrs\brdrw10\brdrcf1 \clbrdrr\brdrdb\brdrw15\brdrcf1 \cltxlrtb \cellx1260\clvertalt\clbrdrt\brdrs\brdrw15\brdrcf1 \clbrdrb\brdrs\brdrw15\brdrcf1 \clbrdrr\brdrs\brdrw15\brdrcf1 \cltxlrtb \cellx2250\clvertalt\clbrdrt
+\brdrs\brdrw15\brdrcf1 \clbrdrl\brdrs\brdrw15\brdrcf1 \clbrdrb\brdrs\brdrw15\brdrcf1 \clbrdrr\brdrs\brdrw15\brdrcf1 \cltxlrtb \cellx3420\clvertalt\clbrdrt\brdrs\brdrw15\brdrcf1 \clbrdrl\brdrs\brdrw15\brdrcf1 \clbrdrb\brdrs\brdrw15\brdrcf1 \clbrdrr
+\brdrs\brdrw30\brdrcf1 \cltxlrtb \cellx5040\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs18 30\cell 32768\cell 14\cell 32768-49151\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs16 \row }\pard \nowidctlpar\widctlpar\intbl\adjustright {
+\fs18 31\cell 49152\cell 14\cell 49152-65535\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs16 \row }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs18 32\cell 65536\cell 15\cell 65536-98303\cell }\pard 
+\nowidctlpar\widctlpar\intbl\adjustright {\fs16 \row }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs18 33\cell 98304\cell 15\cell 98304-131071\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs16 \row }\pard 
+\nowidctlpar\widctlpar\intbl\adjustright {\fs18 34\cell 131072\cell 16\cell 131072-196607\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs16 \row }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs18 35\cell 196608\cell 16\cell 196608-262143
+\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs16 \row }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs18 36\cell 262144\cell 17\cell 262144-393215\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs16 \row }\pard 
+\nowidctlpar\widctlpar\intbl\adjustright {\fs18 37\cell 393216\cell 17\cell 393216-524287\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs16 \row }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs18 38\cell 524288\cell 17\cell 524288-655359
+\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs16 \row }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs18 39\cell 655360\cell 17\cell 655360-786431\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs16 \row }\pard 
+\nowidctlpar\widctlpar\intbl\adjustright {\fs18 40\cell 786432\cell 17\cell 786432-917503\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs16 \row }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs18 41\cell 917504\cell 17\cell 917504-1048575
+\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs16 \row }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs18 42\cell 1048576\cell 17\cell 1048576-1179647\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs16 \row }\pard 
+\nowidctlpar\widctlpar\intbl\adjustright {\fs18 43\cell 1179648\cell 17\cell 1179648-1310719\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs16 \row }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs18 44\cell 1310720\cell 17\cell 
+1310720-1441791\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs16 \row }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs18 45\cell 1441792\cell 17\cell 1441792-1572863\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs16 \row }\pard 
+\nowidctlpar\widctlpar\intbl\adjustright {\fs18 46\cell 1572864\cell 17\cell 1572864-1703935\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs16 \row }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs18 47\cell 1703936\cell 17\cell 
+1703936-1835007\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs16 \row }\trowd \trgaph108\trleft-108\trbrdrt\brdrs\brdrw30\brdrcf1 \trbrdrl\brdrs\brdrw30\brdrcf1 \trbrdrb\brdrs\brdrw30\brdrcf1 \trbrdrr\brdrs\brdrw30\brdrcf1 \trbrdrh
+\brdrs\brdrw15\brdrcf1 \trbrdrv\brdrs\brdrw15\brdrcf1 \clvertalt\clbrdrt\brdrs\brdrw10\brdrcf1 \clbrdrl\brdrs\brdrw30\brdrcf1 \clbrdrr\brdrdb\brdrw15\brdrcf1 \cltxlrtb \cellx1260\clvertalt\clbrdrt\brdrs\brdrw15\brdrcf1 \clbrdrb\brdrs\brdrw15\brdrcf1 
+\clbrdrr\brdrs\brdrw15\brdrcf1 \cltxlrtb \cellx2250\clvertalt\clbrdrt\brdrs\brdrw15\brdrcf1 \clbrdrl\brdrs\brdrw15\brdrcf1 \clbrdrb\brdrs\brdrw15\brdrcf1 \clbrdrr\brdrs\brdrw15\brdrcf1 \cltxlrtb \cellx3420\clvertalt\clbrdrt\brdrs\brdrw15\brdrcf1 \clbrdrl
+\brdrs\brdrw15\brdrcf1 \clbrdrb\brdrs\brdrw15\brdrcf1 \clbrdrr\brdrs\brdrw30\brdrcf1 \cltxlrtb \cellx5040\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs18 48\cell 1835008\cell 17\cell 1835008-1966079\cell }\pard 
+\nowidctlpar\widctlpar\intbl\adjustright {\fs16 \row }\trowd \trgaph108\trleft-108\trbrdrt\brdrs\brdrw30\brdrcf1 \trbrdrl\brdrs\brdrw30\brdrcf1 \trbrdrb\brdrs\brdrw30\brdrcf1 \trbrdrr\brdrs\brdrw30\brdrcf1 \trbrdrh\brdrs\brdrw15\brdrcf1 \trbrdrv
+\brdrs\brdrw15\brdrcf1 \clvertalt\clbrdrt\brdrs\brdrw10\brdrcf1 \clbrdrl\brdrs\brdrw30\brdrcf1 \clbrdrb\brdrs\brdrw30\brdrcf1 \clbrdrr\brdrdb\brdrw15\brdrcf1 \cltxlrtb \cellx1260\clvertalt\clbrdrt\brdrs\brdrw15\brdrcf1 \clbrdrb\brdrs\brdrw30\brdrcf1 
+\clbrdrr\brdrs\brdrw15\brdrcf1 \cltxlrtb \cellx2250\clvertalt\clbrdrt\brdrs\brdrw15\brdrcf1 \clbrdrl\brdrs\brdrw15\brdrcf1 \clbrdrb\brdrs\brdrw30\brdrcf1 \clbrdrr\brdrs\brdrw15\brdrcf1 \cltxlrtb \cellx3420\clvertalt\clbrdrt\brdrs\brdrw15\brdrcf1 \clbrdrl
+\brdrs\brdrw15\brdrcf1 \clbrdrb\brdrs\brdrw30\brdrcf1 \clbrdrr\brdrs\brdrw30\brdrcf1 \cltxlrtb \cellx5040\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs18 49\cell 1966080\cell 17\cell 1966080-2097151\cell }\pard 
+\nowidctlpar\widctlpar\intbl\adjustright {\fs16 \row }\pard \nowidctlpar\widctlpar\adjustright {
+\par 
+\par {\*\bkmkstart _Toc354766376}{\*\bkmkstart _Toc354766612}{\*\bkmkstart _Toc354767031}{\*\bkmkstart _Toc354817179}{\*\bkmkstart _Toc361302024}
+In order to determine the position footer, it is first necessary to determine the position slot.  Then, a simple lookup can be performed on the position slot to determine the number of bits, B, in the position footer.  The B least significant bits of the 
+formatted offset are the position footer.  Pseudocode for obtaining the position slot and position footer are shown below, as is the lookup array (named }{\i extra_bits}{).
+\par 
+\par }\pard\plain \s15\sb120\sa120\nowidctlpar\widctlpar\adjustright \b\fs20\cgrid {The extra_bits {\*\bkmkend _Toc354766376}{\*\bkmkend _Toc354766612}{\*\bkmkend _Toc354767031}{\*\bkmkend _Toc354817179}{\*\bkmkend _Toc361302024}table
+\par }\trowd \trgaph108\trleft-108\trbrdrt\brdrs\brdrw30\brdrcf1 \trbrdrl\brdrs\brdrw30\brdrcf1 \trbrdrb\brdrs\brdrw30\brdrcf1 \trbrdrr\brdrs\brdrw30\brdrcf1 \trbrdrh\brdrs\brdrw15\brdrcf1 \trbrdrv\brdrs\brdrw15\brdrcf1 \clvertalt\clbrdrt
+\brdrs\brdrw30\brdrcf1 \clbrdrl\brdrs\brdrw30\brdrcf1 \clbrdrb\brdrs\brdrw15\brdrcf1 \cltxlrtb \cellx1980\clvertalt\clbrdrt\brdrs\brdrw30\brdrcf1 \clbrdrl\brdrs\brdrw15\brdrcf1 \clbrdrb\brdrs\brdrw15\brdrcf1 \clbrdrr\brdrs\brdrw30\brdrcf1 \cltxlrtb 
+\cellx4950\pard\plain \nowidctlpar\widctlpar\intbl\adjustright \fs20\cgrid {\b\f1\fs18 n
+\par (position slot)\cell extra_bits[n]
+\par (number of position footer bits)\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\b\f1\fs18 \row }\trowd \trgaph108\trleft-108\trbrdrt\brdrs\brdrw30\brdrcf1 \trbrdrl\brdrs\brdrw30\brdrcf1 \trbrdrb\brdrs\brdrw30\brdrcf1 \trbrdrr
+\brdrs\brdrw30\brdrcf1 \trbrdrh\brdrs\brdrw15\brdrcf1 \trbrdrv\brdrs\brdrw15\brdrcf1 \clvertalt\clbrdrl\brdrs\brdrw30\brdrcf1 \clbrdrb\brdrs\brdrw15\brdrcf1 \cltxlrtb \cellx1980\clvertalt\clbrdrl\brdrs\brdrw15\brdrcf1 \clbrdrb\brdrs\brdrw15\brdrcf1 
+\clbrdrr\brdrs\brdrw30\brdrcf1 \cltxlrtb \cellx4950\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs18 0\cell 0\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\trowd \trgaph108\trleft-108\trbrdrt\brdrs\brdrw30\brdrcf1 \trbrdrl
+\brdrs\brdrw30\brdrcf1 \trbrdrb\brdrs\brdrw30\brdrcf1 \trbrdrr\brdrs\brdrw30\brdrcf1 \trbrdrh\brdrs\brdrw15\brdrcf1 \trbrdrv\brdrs\brdrw15\brdrcf1 \clvertalt\clbrdrt\brdrs\brdrw15\brdrcf1 \clbrdrl\brdrs\brdrw30\brdrcf1 \clbrdrb\brdrs\brdrw15\brdrcf1 
+\cltxlrtb \cellx1980\clvertalt\clbrdrt\brdrs\brdrw15\brdrcf1 \clbrdrl\brdrs\brdrw15\brdrcf1 \clbrdrb\brdrs\brdrw15\brdrcf1 \clbrdrr\brdrs\brdrw30\brdrcf1 \cltxlrtb \cellx4950\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs18 1\cell 0\cell }\pard 
+\nowidctlpar\widctlpar\intbl\adjustright {\row }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs18 2\cell 0\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs18 3\cell 0\cell }\pard 
+\nowidctlpar\widctlpar\intbl\adjustright {\row }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs18 4\cell 1\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs18 5\cell 1\cell }\pard 
+\nowidctlpar\widctlpar\intbl\adjustright {\row }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs18 6\cell 2\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\trowd \trgaph108\trleft-108\trbrdrt\brdrs\brdrw30\brdrcf1 \trbrdrl
+\brdrs\brdrw30\brdrcf1 \trbrdrb\brdrs\brdrw30\brdrcf1 \trbrdrr\brdrs\brdrw30\brdrcf1 \trbrdrh\brdrs\brdrw15\brdrcf1 \trbrdrv\brdrs\brdrw15\brdrcf1 \clvertalt\clbrdrt\brdrs\brdrw15\brdrcf1 \clbrdrl\brdrs\brdrw30\brdrcf1 \cltxlrtb \cellx1980\clvertalt
+\clbrdrt\brdrs\brdrw15\brdrcf1 \clbrdrl\brdrs\brdrw15\brdrcf1 \clbrdrr\brdrs\brdrw30\brdrcf1 \cltxlrtb \cellx4950\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs18 7\cell 2\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\trowd 
+\trgaph108\trleft-108\trbrdrt\brdrs\brdrw30\brdrcf1 \trbrdrl\brdrs\brdrw30\brdrcf1 \trbrdrb\brdrs\brdrw30\brdrcf1 \trbrdrr\brdrs\brdrw30\brdrcf1 \trbrdrh\brdrs\brdrw15\brdrcf1 \trbrdrv\brdrs\brdrw15\brdrcf1 \clvertalt\clbrdrt\brdrs\brdrw15\brdrcf1 
+\clbrdrl\brdrs\brdrw30\brdrcf1 \clbrdrb\brdrs\brdrw15\brdrcf1 \cltxlrtb \cellx1980\clvertalt\clbrdrt\brdrs\brdrw15\brdrcf1 \clbrdrl\brdrs\brdrw15\brdrcf1 \clbrdrb\brdrs\brdrw15\brdrcf1 \clbrdrr\brdrs\brdrw30\brdrcf1 \cltxlrtb \cellx4950\pard 
+\nowidctlpar\widctlpar\intbl\adjustright {\fs18 8\cell 3\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\trowd \trgaph108\trleft-108\trbrdrt\brdrs\brdrw30\brdrcf1 \trbrdrl\brdrs\brdrw30\brdrcf1 \trbrdrb\brdrs\brdrw30\brdrcf1 \trbrdrr
+\brdrs\brdrw30\brdrcf1 \trbrdrh\brdrs\brdrw15\brdrcf1 \trbrdrv\brdrs\brdrw15\brdrcf1 \clvertalt\clbrdrt\brdrs\brdrw15\brdrcf1 \clbrdrl\brdrs\brdrw30\brdrcf1 \cltxlrtb \cellx1980\clvertalt\clbrdrt\brdrs\brdrw15\brdrcf1 \clbrdrl\brdrs\brdrw15\brdrcf1 
+\clbrdrr\brdrs\brdrw30\brdrcf1 \cltxlrtb \cellx4950\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs18 9\cell 3\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\trowd \trgaph108\trleft-108\trbrdrt\brdrs\brdrw30\brdrcf1 \trbrdrl
+\brdrs\brdrw30\brdrcf1 \trbrdrb\brdrs\brdrw30\brdrcf1 \trbrdrr\brdrs\brdrw30\brdrcf1 \trbrdrh\brdrs\brdrw15\brdrcf1 \trbrdrv\brdrs\brdrw15\brdrcf1 \clvertalt\clbrdrt\brdrs\brdrw15\brdrcf1 \clbrdrl\brdrs\brdrw30\brdrcf1 \clbrdrb\brdrs\brdrw15\brdrcf1 
+\cltxlrtb \cellx1980\clvertalt\clbrdrt\brdrs\brdrw15\brdrcf1 \clbrdrl\brdrs\brdrw15\brdrcf1 \clbrdrb\brdrs\brdrw15\brdrcf1 \clbrdrr\brdrs\brdrw30\brdrcf1 \cltxlrtb \cellx4950\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs18 10\cell 4\cell }\pard 
+\nowidctlpar\widctlpar\intbl\adjustright {\row }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs18 11\cell 4\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs18 12\cell 5\cell }\pard 
+\nowidctlpar\widctlpar\intbl\adjustright {\row }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs18 13\cell 5\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\trowd \trgaph108\trleft-108\trbrdrt\brdrs\brdrw30\brdrcf1 \trbrdrl
+\brdrs\brdrw30\brdrcf1 \trbrdrb\brdrs\brdrw30\brdrcf1 \trbrdrr\brdrs\brdrw30\brdrcf1 \trbrdrh\brdrs\brdrw15\brdrcf1 \trbrdrv\brdrs\brdrw15\brdrcf1 \clvertalt\clbrdrt\brdrs\brdrw15\brdrcf1 \clbrdrl\brdrs\brdrw30\brdrcf1 \cltxlrtb \cellx1980\clvertalt
+\clbrdrt\brdrs\brdrw15\brdrcf1 \clbrdrl\brdrs\brdrw15\brdrcf1 \clbrdrr\brdrs\brdrw30\brdrcf1 \cltxlrtb \cellx4950\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs18 14\cell 6\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\trowd 
+\trgaph108\trleft-108\trbrdrt\brdrs\brdrw30\brdrcf1 \trbrdrl\brdrs\brdrw30\brdrcf1 \trbrdrb\brdrs\brdrw30\brdrcf1 \trbrdrr\brdrs\brdrw30\brdrcf1 \trbrdrh\brdrs\brdrw15\brdrcf1 \trbrdrv\brdrs\brdrw15\brdrcf1 \clvertalt\clbrdrt\brdrs\brdrw15\brdrcf1 
+\clbrdrl\brdrs\brdrw30\brdrcf1 \clbrdrb\brdrs\brdrw15\brdrcf1 \cltxlrtb \cellx1980\clvertalt\clbrdrt\brdrs\brdrw15\brdrcf1 \clbrdrl\brdrs\brdrw15\brdrcf1 \clbrdrb\brdrs\brdrw15\brdrcf1 \clbrdrr\brdrs\brdrw30\brdrcf1 \cltxlrtb \cellx4950\pard 
+\nowidctlpar\widctlpar\intbl\adjustright {\fs18 15\cell 6\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs18 16\cell 7\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\pard 
+\nowidctlpar\widctlpar\intbl\adjustright {\fs18 17\cell 7\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs18 18\cell 8\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\pard 
+\nowidctlpar\widctlpar\intbl\adjustright {\fs18 19\cell 8\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs18 20\cell 9\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\pard 
+\nowidctlpar\widctlpar\intbl\adjustright {\fs18 21\cell 9\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs18 22\cell 10\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\pard 
+\nowidctlpar\widctlpar\intbl\adjustright {\fs18 23\cell 10\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs18 24\cell 11\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\pard 
+\nowidctlpar\widctlpar\intbl\adjustright {\fs18 25\cell 11\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs18 26\cell 12\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\pard 
+\nowidctlpar\widctlpar\intbl\adjustright {\fs18 27\cell 12\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs18 28\cell 13\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\pard 
+\nowidctlpar\widctlpar\intbl\adjustright {\fs18 29\cell 13\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs18 30\cell 14\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\pard 
+\nowidctlpar\widctlpar\intbl\adjustright {\fs18 31\cell 14\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs18 32\cell 15\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\pard 
+\nowidctlpar\widctlpar\intbl\adjustright {\fs18 33\cell 15\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs18 34\cell 16\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\pard 
+\nowidctlpar\widctlpar\intbl\adjustright {\fs18 35\cell 16\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\trowd \trgaph108\trleft-108\trbrdrt\brdrs\brdrw30\brdrcf1 \trbrdrl\brdrs\brdrw30\brdrcf1 \trbrdrb\brdrs\brdrw30\brdrcf1 \trbrdrr
+\brdrs\brdrw30\brdrcf1 \trbrdrh\brdrs\brdrw15\brdrcf1 \trbrdrv\brdrs\brdrw15\brdrcf1 \clvertalt\clbrdrt\brdrs\brdrw15\brdrcf1 \clbrdrl\brdrs\brdrw30\brdrcf1 \clbrdrb\brdrs\brdrw30\brdrcf1 \cltxlrtb \cellx1980\clvertalt\clbrdrt\brdrs\brdrw15\brdrcf1 
+\clbrdrl\brdrs\brdrw15\brdrcf1 \clbrdrb\brdrs\brdrw30\brdrcf1 \clbrdrr\brdrs\brdrw30\brdrcf1 \cltxlrtb \cellx4950\pard \nowidctlpar\widctlpar\intbl\adjustright {\fs18 36-49\cell 17\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\pard 
+\nowidctlpar\widctlpar\adjustright {
+\par 
+\par }\pard\plain \s15\sb120\sa120\nowidctlpar\widctlpar\adjustright \b\fs20\cgrid {{\*\bkmkstart _Toc354766377}{\*\bkmkstart _Toc354766613}{\*\bkmkstart _Toc354767032}{\*\bkmkstart _Toc354817180}{\*\bkmkstart _Toc361302025}\page 
+Calculating the position slot and position footer{\*\bkmkend _Toc354766377}{\*\bkmkend _Toc354766613}{\*\bkmkend _Toc354767032}{\*\bkmkend _Toc354817180}{\*\bkmkend _Toc361302025}
+\par }\pard\plain \nowidctlpar\widctlpar\adjustright \fs20\cgrid {\f2\fs18 position_slot }{\f2\fs18 {\field{\*\fldinst SYMBOL 172 \\f "Symbol" \\s 9}{\fldrslt\f3\fs18}}}{\f2\fs18  calculate_position_slot(formatted_offset)
+\par position_footer_bits }{\f2\fs18 {\field{\*\fldinst SYMBOL 172 \\f "Symbol" \\s 9}{\fldrslt\f3\fs18}}}{\f2\fs18  extra_bits[ position_slot ]
+\par if position_footer_bits > 0
+\par }\pard \fi720\nowidctlpar\widctlpar\adjustright {\f2\fs18 position_footer }{\f2\fs18 {\field{\*\fldinst SYMBOL 172 \\f "Symbol" \\s 9}{\fldrslt\f3\fs18}}}{\f2\fs18  formatted_offset & ((2^position_footer_bits)-1)
+\par }\pard \nowidctlpar\widctlpar\adjustright {\f2\fs18 else\tab 
+\par \tab position_footer }{\f2\fs18 {\field{\*\fldinst SYMBOL 172 \\f "Symbol" \\s 9}{\fldrslt\f3\fs18}}}{\f2\fs18  null
+\par }{
+\par }\pard\plain \s3\sb240\sa60\keepn\nowidctlpar\widctlpar\outlinelevel2\adjustright \b\f1\fs20\cgrid {{\*\bkmkstart _Toc354659899}{\*\bkmkstart _Toc354696100}{\*\bkmkstart _Toc354765939}{\*\bkmkstart _Toc354766132}{\*\bkmkstart _Toc354766325}
+{\*\bkmkstart _Toc354766378}{\*\bkmkstart _Toc354766614}{\*\bkmkstart _Toc354767033}{\*\bkmkstart _Toc354817181}{\*\bkmkstart _Toc361302026}{\*\bkmkstart _Toc378673331}Position footer }{{\field{\*\fldinst SYMBOL 222 \\f "Symbol" \\s 10}{\fldrslt\f3\fs20}}
+}{ Verbatim bits, Aligned offset bits{\*\bkmkend _Toc354659899}{\*\bkmkend _Toc354696100}{\*\bkmkend _Toc354765939}{\*\bkmkend _Toc354766132}{\*\bkmkend _Toc354766325}{\*\bkmkend _Toc354766378}{\*\bkmkend _Toc354766614}{\*\bkmkend _Toc354767033}
+{\*\bkmkend _Toc354817181}{\*\bkmkend _Toc361302026}{\*\bkmkend _Toc378673331}
+\par }\pard\plain \nowidctlpar\widctlpar\adjustright \fs20\cgrid {The position footer may be further subdivided into verbatim bits and aligned offset bi
+ts if the current block uses aligned offsets.  If the current block is not an aligned offset block then there are no aligned offset bits, and the verbatim bits are the position footer.
+\par 
+\par If aligned offsets are used, then the lower 3 bits of the position foo
+ter are the aligned offset bits, while the remaining portion of the position footer are the verbatim bits.  In the case where there are less than 3 bits in the position footer (i.e. formatted offset is <= 15) it is not possible to take the \ldblquote 
+lower 3 bits of the position footer\rdblquote  and therefore there are no aligned offset bits, and the verbatim bits and the position footer are the same.
+\par 
+\par }\pard\plain \s15\sb120\sa120\nowidctlpar\widctlpar\adjustright \b\fs20\cgrid {{\*\bkmkstart _Toc354766379}{\*\bkmkstart _Toc354766615}{\*\bkmkstart _Toc354767034}{\*\bkmkstart _Toc354817182}{\*\bkmkstart _Toc361302027}
+Pseudocode for splitting position footer into verbatim bits and aligned offset{\*\bkmkend _Toc354766379}{\*\bkmkend _Toc354766615}{\*\bkmkend _Toc354767034}{\*\bkmkend _Toc354817182}{\*\bkmkend _Toc361302027}
+\par }\pard\plain \nowidctlpar\widctlpar\adjustright \fs20\cgrid {\f2\fs16 if block_type = aligned_offset_block then
+\par \tab if formatted_offset <= 15 then
+\par \tab \tab verbatim_bits }{\f2\fs16 {\field{\*\fldinst SYMBOL 172 \\f "Symbol" \\s 8}{\fldrslt\f3\fs16}}}{\f2\fs16  position_footer
+\par \tab \tab aligned_offset }{\f2\fs16 {\field{\*\fldinst SYMBOL 172 \\f "Symbol" \\s 8}{\fldrslt\f3\fs16}}}{\f2\fs16  null
+\par \tab else
+\par \tab \tab aligned_offset }{\f2\fs16 {\field{\*\fldinst SYMBOL 172 \\f "Symbol" \\s 8}{\fldrslt\f3\fs16}}}{\f2\fs16  position_footer
+\par \tab \tab verbatim_bits }{\f2\fs16 {\field{\*\fldinst SYMBOL 172 \\f "Symbol" \\s 8}{\fldrslt\f3\fs16}}}{\f2\fs16  position_footer >> 3
+\par \tab endif
+\par else
+\par \tab verbatim_bits }{\f2\fs16 {\field{\*\fldinst SYMBOL 172 \\f "Symbol" \\s 8}{\fldrslt\f3\fs16}}}{\f2\fs16  position_footer
+\par \tab aligned_offset }{\f2\fs16 {\field{\*\fldinst SYMBOL 172 \\f "Symbol" \\s 8}{\fldrslt\f3\fs16}}}{\f2\fs16  null
+\par endif
+\par }\pard\plain \s3\sb240\sa60\keepn\nowidctlpar\widctlpar\outlinelevel2\adjustright \b\f1\fs20\cgrid {\page {\*\bkmkstart _Toc354659900}{\*\bkmkstart _Toc354696101}{\*\bkmkstart _Toc354765940}{\*\bkmkstart _Toc354766133}{\*\bkmkstart _Toc354766326}
+{\*\bkmkstart _Toc354766380}{\*\bkmkstart _Toc354766616}{\*\bkmkstart _Toc354767035}{\*\bkmkstart _Toc354817183}{\*\bkmkstart _Toc361302028}{\*\bkmkstart _Toc378673332}Match length }{{\field{\*\fldinst SYMBOL 222 \\f "Symbol" \\s 10}{\fldrslt\f3\fs20}}}{
+ Length header, Length footer{\*\bkmkend _Toc354659900}{\*\bkmkend _Toc354696101}{\*\bkmkend _Toc354765940}{\*\bkmkend _Toc354766133}{\*\bkmkend _Toc354766326}{\*\bkmkend _Toc354766380}{\*\bkmkend _Toc354766616}{\*\bkmkend _Toc354767035}
+{\*\bkmkend _Toc354817183}{\*\bkmkend _Toc361302028}{\*\bkmkend _Toc378673332}
+\par }\pard\plain \nowidctlpar\widctlpar\adjustright \fs20\cgrid {The match length is converted into a length header and a length footer.  The length header may have one of ei
+ght possible values, from 0...7 (inclusive), indicating a match of length 2, 3, 4, 5, 6, 7, 8, or a length greater than 8.  If the match length is 8 or less, then there is no length footer.  Otherwise the value of the length footer is equal to the match l
+ength minus 9.
+\par 
+\par }\pard\plain \s15\sb120\sa120\nowidctlpar\widctlpar\adjustright \b\fs20\cgrid {{\*\bkmkstart _Toc354766381}{\*\bkmkstart _Toc354766617}{\*\bkmkstart _Toc354767036}{\*\bkmkstart _Toc354817184}{\*\bkmkstart _Toc361302029}
+Pseudocode for obtaining the length header and footer{\*\bkmkend _Toc354766381}{\*\bkmkend _Toc354766617}{\*\bkmkend _Toc354767036}{\*\bkmkend _Toc354817184}{\*\bkmkend _Toc361302029}
+\par }\pard\plain \nowidctlpar\widctlpar\adjustright \fs20\cgrid {\f2\fs16 if match_length <= 8
+\par \tab length_header }{\f2\fs16 {\field{\*\fldinst SYMBOL 172 \\f "Symbol" \\s 8}{\fldrslt\f3\fs16}}}{\f2\fs16  match_length-2
+\par \tab length_footer }{\f2\fs16 {\field{\*\fldinst SYMBOL 172 \\f "Symbol" \\s 8}{\fldrslt\f3\fs16}}}{\f2\fs16  null
+\par else
+\par \tab length_header }{\f2\fs16 {\field{\*\fldinst SYMBOL 172 \\f "Symbol" \\s 8}{\fldrslt\f3\fs16}}}{\f2\fs16  7
+\par \tab length_footer }{\f2\fs16 {\field{\*\fldinst SYMBOL 172 \\f "Symbol" \\s 8}{\fldrslt\f3\fs16}}}{\f2\fs16  match_length-9
+\par endif}{
+\par 
+\par }\pard\plain \s15\sb120\sa120\nowidctlpar\widctlpar\adjustright \b\fs20\cgrid {{\*\bkmkstart _Toc354766382}{\*\bkmkstart _Toc354766618}{\*\bkmkstart _Toc354767037}{\*\bkmkstart _Toc354817185}{\*\bkmkstart _Toc361302030}
+Example conversions of some match lengths to header and footer values{\*\bkmkend _Toc354766382}{\*\bkmkend _Toc354766618}{\*\bkmkend _Toc354767037}{\*\bkmkend _Toc354817185}{\*\bkmkend _Toc361302030}
+\par }\trowd \trgaph108\trleft-108\trbrdrt\brdrs\brdrw30\brdrcf1 \trbrdrl\brdrs\brdrw30\brdrcf1 \trbrdrb\brdrs\brdrw30\brdrcf1 \trbrdrr\brdrs\brdrw30\brdrcf1 \trbrdrh\brdrs\brdrw15\brdrcf1 \trbrdrv\brdrs\brdrw15\brdrcf1 \clvertalt\clbrdrt
+\brdrs\brdrw30\brdrcf1 \clbrdrl\brdrs\brdrw30\brdrcf1 \clbrdrb\brdrs\brdrw15\brdrcf1 \clbrdrr\brdrs\brdrw15\brdrcf1 \cltxlrtb \cellx2520\clvertalt\clbrdrt\brdrs\brdrw30\brdrcf1 \clbrdrl\brdrs\brdrw15\brdrcf1 \clbrdrb\brdrs\brdrw15\brdrcf1 \clbrdrr
+\brdrs\brdrw15\brdrcf1 \cltxlrtb \cellx4140\clvertalt\clbrdrt\brdrs\brdrw30\brdrcf1 \clbrdrl\brdrs\brdrw15\brdrcf1 \clbrdrb\brdrs\brdrw15\brdrcf1 \clbrdrr\brdrs\brdrw30\brdrcf1 \cltxlrtb \cellx6660\pard\plain \nowidctlpar\widctlpar\intbl\adjustright 
+\fs20\cgrid {\b\f1\fs18 Match length\cell Length header\cell Length footer value\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\trowd \trgaph108\trleft-108\trbrdrt\brdrs\brdrw30\brdrcf1 \trbrdrl\brdrs\brdrw30\brdrcf1 \trbrdrb
+\brdrs\brdrw30\brdrcf1 \trbrdrr\brdrs\brdrw30\brdrcf1 \trbrdrh\brdrs\brdrw15\brdrcf1 \trbrdrv\brdrs\brdrw15\brdrcf1 \clvertalt\clbrdrl\brdrs\brdrw30\brdrcf1 \clbrdrb\brdrs\brdrw15\brdrcf1 \clbrdrr\brdrs\brdrw15\brdrcf1 \cltxlrtb \cellx2520\clvertalt
+\clbrdrl\brdrs\brdrw15\brdrcf1 \clbrdrb\brdrs\brdrw15\brdrcf1 \clbrdrr\brdrs\brdrw15\brdrcf1 \cltxlrtb \cellx4140\clvertalt\clbrdrl\brdrs\brdrw15\brdrcf1 \clbrdrb\brdrs\brdrw15\brdrcf1 \clbrdrr\brdrs\brdrw30\brdrcf1 \cltxlrtb \cellx6660\pard 
+\nowidctlpar\widctlpar\intbl\adjustright {2 (MIN_MATCH)\cell 0\cell None\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\trowd \trgaph108\trleft-108\trbrdrt\brdrs\brdrw30\brdrcf1 \trbrdrl\brdrs\brdrw30\brdrcf1 \trbrdrb\brdrs\brdrw30\brdrcf1 
+\trbrdrr\brdrs\brdrw30\brdrcf1 \trbrdrh\brdrs\brdrw15\brdrcf1 \trbrdrv\brdrs\brdrw15\brdrcf1 \clvertalt\clbrdrt\brdrs\brdrw15\brdrcf1 \clbrdrl\brdrs\brdrw30\brdrcf1 \clbrdrb\brdrs\brdrw15\brdrcf1 \clbrdrr\brdrs\brdrw15\brdrcf1 \cltxlrtb \cellx2520
+\clvertalt\clbrdrt\brdrs\brdrw15\brdrcf1 \clbrdrl\brdrs\brdrw15\brdrcf1 \clbrdrb\brdrs\brdrw15\brdrcf1 \clbrdrr\brdrs\brdrw15\brdrcf1 \cltxlrtb \cellx4140\clvertalt\clbrdrt\brdrs\brdrw15\brdrcf1 \clbrdrl\brdrs\brdrw15\brdrcf1 \clbrdrb
+\brdrs\brdrw15\brdrcf1 \clbrdrr\brdrs\brdrw30\brdrcf1 \cltxlrtb \cellx6660\pard \nowidctlpar\widctlpar\intbl\adjustright {3\cell 1\cell None\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\pard \nowidctlpar\widctlpar\intbl\adjustright {4
+\cell 2\cell None\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\pard \nowidctlpar\widctlpar\intbl\adjustright {5\cell 3\cell None\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\pard \nowidctlpar\widctlpar\intbl\adjustright {6
+\cell 4\cell None\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\pard \nowidctlpar\widctlpar\intbl\adjustright {7\cell 5\cell None\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\pard \nowidctlpar\widctlpar\intbl\adjustright {8
+\cell 6\cell None\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\pard \nowidctlpar\widctlpar\intbl\adjustright {9\cell 7\cell 0\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\pard \nowidctlpar\widctlpar\intbl\adjustright {10
+\cell 7\cell 1\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\pard \nowidctlpar\widctlpar\intbl\adjustright {50\cell 7\cell 41\cell }\pard \nowidctlpar\widctlpar\intbl\adjustright {\row }\trowd \trgaph108\trleft-108\trbrdrt
+\brdrs\brdrw30\brdrcf1 \trbrdrl\brdrs\brdrw30\brdrcf1 \trbrdrb\brdrs\brdrw30\brdrcf1 \trbrdrr\brdrs\brdrw30\brdrcf1 \trbrdrh\brdrs\brdrw15\brdrcf1 \trbrdrv\brdrs\brdrw15\brdrcf1 \clvertalt\clbrdrt\brdrs\brdrw15\brdrcf1 \clbrdrl\brdrs\brdrw30\brdrcf1 
+\clbrdrb\brdrs\brdrw30\brdrcf1 \clbrdrr\brdrs\brdrw15\brdrcf1 \cltxlrtb \cellx2520\clvertalt\clbrdrt\brdrs\brdrw15\brdrcf1 \clbrdrl\brdrs\brdrw15\brdrcf1 \clbrdrb\brdrs\brdrw30\brdrcf1 \clbrdrr\brdrs\brdrw15\brdrcf1 \cltxlrtb \cellx4140\clvertalt\clbrdrt
+\brdrs\brdrw15\brdrcf1 \clbrdrl\brdrs\brdrw15\brdrcf1 \clbrdrb\brdrs\brdrw30\brdrcf1 \clbrdrr\brdrs\brdrw30\brdrcf1 \cltxlrtb \cellx6660\pard \nowidctlpar\widctlpar\intbl\adjustright {257 (MAX_MATCH)\cell 7\cell 248\cell }\pard 
+\nowidctlpar\widctlpar\intbl\adjustright {\row }\pard \nowidctlpar\widctlpar\adjustright {
+\par }\pard\plain \s3\sb240\sa60\keepn\nowidctlpar\widctlpar\outlinelevel2\adjustright \b\f1\fs20\cgrid {{\*\bkmkstart _Toc354659901}{\*\bkmkstart _Toc354696102}{\*\bkmkstart _Toc354765941}{\*\bkmkstart _Toc354766134}{\*\bkmkstart _Toc354766327}
+{\*\bkmkstart _Toc354766383}{\*\bkmkstart _Toc354766619}{\*\bkmkstart _Toc354767038}{\*\bkmkstart _Toc354817186}{\*\bkmkstart _Toc361302031}{\*\bkmkstart _Toc378673333}Length header, Position slot }{{\field{\*\fldinst SYMBOL 222 \\f "Symbol"
+ \\s 10}{\fldrslt\f3\fs20}}}{ Length/Position header{\*\bkmkend _Toc354659901}{\*\bkmkend _Toc354696102}{\*\bkmkend _Toc354765941}{\*\bkmkend _Toc354766134}{\*\bkmkend _Toc354766327}{\*\bkmkend _Toc354766383}{\*\bkmkend _Toc354766619}
+{\*\bkmkend _Toc354767038}{\*\bkmkend _Toc354817186}{\*\bkmkend _Toc361302031}{\*\bkmkend _Toc378673333}
+\par }\pard\plain \nowidctlpar\widctlpar\adjustright \fs20\cgrid {The Length/Position header is the stage which correlates the match position wi
+th the match length (using only the most significant bits), and is created by combining the length header and the position slot as shown below:
+\par 
+\par }{\f2\fs16 len_pos_header }{\f2\fs16 {\field{\*\fldinst SYMBOL 172 \\f "Symbol" \\s 8}{\fldrslt\f3\fs16}}}{\f2\fs16  (position_slot << 3) + length_header}{
+\par 
+\par This operation creates a unique value for every combination of match length 2, 3, 4, 5, 6, 7, 8 with every possible position slot.  The remaining match lengths greater than 8 are all lumped together, and as a group are correlated with every possible posit
+ion slot.
+\par 
+\par }\pard\plain \s3\sb240\sa60\keepn\nowidctlpar\widctlpar\outlinelevel2\adjustright \b\f1\fs20\cgrid {{\*\bkmkstart _Toc378673334}Encoding a match{\*\bkmkend _Toc378673334}
+\par }\pard\plain \nowidctlpar\widctlpar\adjustright \fs20\cgrid {The match is finally output in up to four components, as follows:
+\par 
+\par 1.\tab Output element (len_pos_header + NUM_CHARS) from the main tree
+\par 2.\tab If length_footer != null, then output element length_footer from the length tree
+\par 3.\tab If verbatim_bits != null, then output verbatim_bits
+\par 4.\tab If aligned_offset_bits != null, then output element aligned_offset from the aligned offset tree
+\par 
+\par 
+\par }\pard\plain \s3\sb240\sa60\keepn\nowidctlpar\widctlpar\outlinelevel2\adjustright \b\f1\fs20\cgrid {\page {\*\bkmkstart _Toc378673335}Decoding a match or an uncompressed character{\*\bkmkend _Toc378673335}
+\par }\pard\plain \nowidctlpar\widctlpar\adjustright \fs20\cgrid {Decoding is p
+erformed by first decoding an element using the main tree and then, if the item is a match, determining which additional components are necessary to reconstruct the match.  Pseudocode for decoding a match or an uncompressed character is shown below:
+
+\par 
+\par }\pard \keepn\nowidctlpar\widctlpar\adjustright {\f2\fs16 main_element = main_tree.decode_element()
+\par 
+\par if (main_element < NUM_CHARS) /* is an uncompressed character */
+\par }\pard \fi720\keepn\nowidctlpar\widctlpar\adjustright {\f2\fs16 
+\par window[ curpos ] }{\f2\fs16 {\field{\*\fldinst SYMBOL 172 \\f "Symbol" \\s 8}{\fldrslt\f3\fs16}}}{\f2\fs16  (byte) main_element
+\par curpos }{\f2\fs16 {\field{\*\fldinst SYMBOL 172 \\f "Symbol" \\s 8}{\fldrslt\f3\fs16}}}{\f2\fs16  curpos + 1
+\par 
+\par }\pard \keepn\nowidctlpar\widctlpar\adjustright {\f2\fs16 else /* is a match */
+\par 
+\par }\pard \fi720\keepn\nowidctlpar\widctlpar\adjustright {\f2\fs16 length_header }{\f2\fs16 {\field{\*\fldinst SYMBOL 172 \\f "Symbol" \\s 8}{\fldrslt\f3\fs16}}}{\f2\fs16  (main_element \endash  NUM_CHARS) & NUM_PRIMARY_LENGTHS
+\par 
+\par if (length_header == NUM_PRIMARY_LENGTHS) 
+\par \tab match_length }{\f2\fs16 {\field{\*\fldinst SYMBOL 172 \\f "Symbol" \\s 8}{\fldrslt\f3\fs16}}}{\f2\fs16  length_tree.decode_element() + 
+\par }\pard \fi720\li1440\keepn\nowidctlpar\widctlpar\adjustright {\f2\fs16 NUM_PRIMARY_LENGTHS + MIN_MATCH
+\par }\pard \fi720\keepn\nowidctlpar\widctlpar\adjustright {\f2\fs16 else
+\par \tab match_length }{\f2\fs16 {\field{\*\fldinst SYMBOL 172 \\f "Symbol" \\s 8}{\fldrslt\f3\fs16}}}{\f2\fs16  length_header + MIN_MATCH /* no length footer */
+\par endif
+\par 
+\par position_slot }{\f2\fs16 {\field{\*\fldinst SYMBOL 172 \\f "Symbol" \\s 8}{\fldrslt\f3\fs16}}}{\f2\fs16  (main_element \endash  NUM_CHARS) >> 3
+\par 
+\par /* check for repeated offsets (positions 0,1,2) */
+\par if (position_slot == 0)
+\par \tab match_offset }{\f2\fs16 {\field{\*\fldinst SYMBOL 172 \\f "Symbol" \\s 8}{\fldrslt\f3\fs16}}}{\f2\fs16  R0
+\par else if (position_slot == 1)
+\par \tab match_offset }{\f2\fs16 {\field{\*\fldinst SYMBOL 172 \\f "Symbol" \\s 8}{\fldrslt\f3\fs16}}}{\f2\fs16  R1
+\par \tab swap(R0 }{\f2\fs16 {\field{\*\fldinst SYMBOL 219 \\f "Symbol" \\s 8}{\fldrslt\f3\fs16}}}{\f2\fs16  R1)
+\par else if (position_slot == 2)
+\par \tab match_offset }{\f2\fs16 {\field{\*\fldinst SYMBOL 172 \\f "Symbol" \\s 8}{\fldrslt\f3\fs16}}}{\f2\fs16  R2
+\par \tab swap(R0 }{\f2\fs16 {\field{\*\fldinst SYMBOL 219 \\f "Symbol" \\s 8}{\fldrslt\f3\fs16}}}{\f2\fs16  R2)
+\par else /* not a repeated offset */
+\par }\pard \fi720\li720\keepn\nowidctlpar\widctlpar\adjustright {\f2\fs16 extra }{\f2\fs16 {\field{\*\fldinst SYMBOL 172 \\f "Symbol" \\s 8}{\fldrslt\f3\fs16}}}{\f2\fs16  extra_bits[ position_slot ] 
+\par 
+\par if (block_type == aligned_offset_block)
+\par }\pard \fi720\li1440\keepn\nowidctlpar\widctlpar\adjustright {\f2\fs16 if (extra > 3) /* this means there are some aligned bits */
+\par }\pard \fi720\keepn\nowidctlpar\widctlpar\adjustright {\f2\fs16 \tab \tab \tab verbatim_bits }{\f2\fs16 {\field{\*\fldinst SYMBOL 172 \\f "Symbol" \\s 8}{\fldrslt\f3\fs16}}}{\f2\fs16  (readbits(extra-3)) << 3
+\par \tab \tab \tab aligned_bits  }{\f2\fs16 {\field{\*\fldinst SYMBOL 172 \\f "Symbol" \\s 8}{\fldrslt\f3\fs16}}}{\f2\fs16  aligned_offset_tree.decode_element();
+\par }\pard \fi720\li1440\keepn\nowidctlpar\widctlpar\adjustright {\f2\fs16 else if (extra > 0) /* just some verbatim bits */
+\par }\pard \fi720\keepn\nowidctlpar\widctlpar\adjustright {\f2\fs16 \tab \tab \tab verbatim_bits }{\f2\fs16 {\field{\*\fldinst SYMBOL 172 \\f "Symbol" \\s 8}{\fldrslt\f3\fs16}}}{\f2\fs16  readbits(extra)
+\par \tab \tab \tab aligned_bits  }{\f2\fs16 {\field{\*\fldinst SYMBOL 172 \\f "Symbol" \\s 8}{\fldrslt\f3\fs16}}}{\f2\fs16  0
+\par }\pard \fi720\li1440\keepn\nowidctlpar\widctlpar\adjustright {\f2\fs16 else /* no verbatim bits */
+\par }\pard \fi720\li2160\keepn\nowidctlpar\widctlpar\adjustright {\f2\fs16 verbatim_bits }{\f2\fs16 {\field{\*\fldinst SYMBOL 172 \\f "Symbol" \\s 8}{\fldrslt\f3\fs16}}}{\f2\fs16  0
+\par }\pard \fi720\keepn\nowidctlpar\widctlpar\adjustright {\f2\fs16 \tab \tab \tab aligned_bits  }{\f2\fs16 {\field{\*\fldinst SYMBOL 172 \\f "Symbol" \\s 8}{\fldrslt\f3\fs16}}}{\f2\fs16  0
+\par \tab \tab endif
+\par }\pard \fi720\li1440\keepn\nowidctlpar\widctlpar\adjustright {\f2\fs16 
+\par }\pard \fi720\keepn\nowidctlpar\widctlpar\adjustright {\f2\fs16 \tab \tab formatted_offset }{\f2\fs16 {\field{\*\fldinst SYMBOL 172 \\f "Symbol" \\s 8}{\fldrslt\f3\fs16}}}{\f2\fs16  base_position[ position_slot ] + 
+\par }\pard \fi720\li3600\keepn\nowidctlpar\widctlpar\adjustright {\f2\fs16 verbatim_bits + aligned_bits
+\par }\pard \fi720\li720\keepn\nowidctlpar\widctlpar\adjustright {\f2\fs16 else /* block_type == verbatim_block */
+\par }\pard \fi720\li1440\keepn\nowidctlpar\widctlpar\adjustright {\f2\fs16 if (extra > 0) /* if there are any extra bits */
+\par }\pard \fi720\keepn\nowidctlpar\widctlpar\adjustright {\f2\fs16 \tab \tab \tab verbatim_bits }{\f2\fs16 {\field{\*\fldinst SYMBOL 172 \\f "Symbol" \\s 8}{\fldrslt\f3\fs16}}}{\f2\fs16  readbits(extra)
+\par }\pard \fi720\li1440\keepn\nowidctlpar\widctlpar\adjustright {\f2\fs16 else
+\par }\pard \fi720\li2160\keepn\nowidctlpar\widctlpar\adjustright {\f2\fs16 verbatim_bits }{\f2\fs16 {\field{\*\fldinst SYMBOL 172 \\f "Symbol" \\s 8}{\fldrslt\f3\fs16}}}{\f2\fs16  0
+\par }\pard \fi720\keepn\nowidctlpar\widctlpar\adjustright {\f2\fs16 \tab \tab endif
+\par 
+\par \tab \tab formatted_offset }{\f2\fs16 {\field{\*\fldinst SYMBOL 172 \\f "Symbol" \\s 8}{\fldrslt\f3\fs16}}}{\f2\fs16  base_position[ position_slot ] + verbatim_bits
+\par \tab endif
+\par 
+\par \tab match_offset }{\f2\fs16 {\field{\*\fldinst SYMBOL 172 \\f "Symbol" \\s 8}{\fldrslt\f3\fs16}}}{\f2\fs16  formatted_offset \endash  2
+\par 
+\par \tab /* update repeated offset LRU queue */
+\par \tab R2 }{\f2\fs16 {\field{\*\fldinst SYMBOL 172 \\f "Symbol" \\s 8}{\fldrslt\f3\fs16}}}{\f2\fs16  R1
+\par }\pard \fi720\li720\keepn\nowidctlpar\widctlpar\adjustright {\f2\fs16 R1 }{\f2\fs16 {\field{\*\fldinst SYMBOL 172 \\f "Symbol" \\s 8}{\fldrslt\f3\fs16}}}{\f2\fs16  R0
+\par R0 }{\f2\fs16 {\field{\*\fldinst SYMBOL 172 \\f "Symbol" \\s 8}{\fldrslt\f3\fs16}}}{\f2\fs16  match_offset
+\par }\pard \keepn\nowidctlpar\widctlpar\adjustright {\f2\fs16 
+\par }\pard \fi720\keepn\nowidctlpar\widctlpar\adjustright {\f2\fs16 /* copy match data */
+\par for (i = 0; i < match_length; i++)
+\par }\pard \keepn\nowidctlpar\widctlpar\adjustright {\f2\fs16 \tab \tab window[curpos + i] }{\f2\fs16 {\field{\*\fldinst SYMBOL 172 \\f "Symbol" \\s 8}{\fldrslt\f3\fs16}}}{\f2\fs16  window[curpos + i \endash  match_offset]
+\par \tab 
+\par }\pard \fi720\keepn\nowidctlpar\widctlpar\adjustright {\f2\fs16 curpos }{\f2\fs16 {\field{\*\fldinst SYMBOL 172 \\f "Symbol" \\s 8}{\fldrslt\f3\fs16}}}{\f2\fs16  curpos + match_length
+\par }\pard \keepn\nowidctlpar\widctlpar\adjustright {\f2\fs16 endif
+\par }}

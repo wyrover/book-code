@@ -1,0 +1,11 @@
+HKCR
+{
+	NoRemove AppID
+	{
+		{6EA21C21-D1C4-11D4-A239-503748C10000} = s 'ATLSampleExe'
+		'ATLSampleExe.EXE'
+		{
+			val AppID = s {6EA21C21-D1C4-11D4-A239-503748C10000}
+		}
+	}
+}

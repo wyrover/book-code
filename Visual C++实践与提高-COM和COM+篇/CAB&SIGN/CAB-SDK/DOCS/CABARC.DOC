@@ -1,0 +1,260 @@
+{\rtf1\ansi \deff4\deflang1033{\fonttbl{\f4\froman\fcharset0\fprq2 Times New Roman{\*\falt Times};}{\f5\fswiss\fcharset0\fprq2 Arial{\*\falt Arial};}{\f11\fmodern\fcharset0\fprq1 Courier New;}}{\colortbl;\red0\green0\blue0;
+\red0\green0\blue255;\red0\green255\blue255;\red0\green255\blue0;\red255\green0\blue255;\red255\green0\blue0;\red255\green255\blue0;\red255\green255\blue255;\red0\green0\blue128;\red0\green128\blue128;\red0\green128\blue0;\red128\green0\blue128;
+\red128\green0\blue0;\red128\green128\blue0;\red128\green128\blue128;\red192\green192\blue192;}{\stylesheet{\widctlpar \f4\fs20 \snext0 Normal;}{\s1\sb240\sa60\keepn\widctlpar \b\f5\fs28\kerning28 \sbasedon0\snext0 heading 1;}{
+\s2\sb240\sa60\keepn\widctlpar \b\f5 \sbasedon0\snext0 heading 2;}{\s3\sb240\sa60\keepn\widctlpar \f5 \sbasedon0\snext0 heading 3;}{\*\cs10 \additive Default Paragraph Font;}{\s15\sb120\sa120\widctlpar \b\caps\f4\fs20 \sbasedon0\snext0 toc 1;}{\*\cs16 
+\additive\f11\fs18 \sbasedon10 cmdline;}{\s17\li200\widctlpar \scaps\f4\fs20 \sbasedon0\snext0 toc 2;}{\s18\li400\widctlpar \i\f4\fs20 \sbasedon0\snext0 toc 3;}{\s19\li600\widctlpar \f4\fs18 \sbasedon0\snext0 toc 4;}{\s20\li800\widctlpar \f4\fs18 
+\sbasedon0\snext0 toc 5;}{\s21\li1000\widctlpar \f4\fs18 \sbasedon0\snext0 toc 6;}{\s22\li1200\widctlpar \f4\fs18 \sbasedon0\snext0 toc 7;}{\s23\li1400\widctlpar \f4\fs18 \sbasedon0\snext0 toc 8;}{\s24\li1600\widctlpar \f4\fs18 \sbasedon0\snext0 toc 9;}{
+\s25\qc\widctlpar \b\f5\fs40 \sbasedon0\snext25 Title;}{\s26\widctlpar\tqc\tx4320\tqr\tx8640 \f4\fs20 \sbasedon0\snext26 header;}{\s27\widctlpar\tqc\tx4320\tqr\tx8640 \f4\fs20 \sbasedon0\snext27 footer;}{\*\cs28 \additive\sbasedon10 page number;}}{\info
+{\title CABARC}{\subject Cabarc documentation}{\author Microsoft}{\operator Microsoft}{\creatim\yr1996\mo12\dy20\hr10\min33}{\revtim\yr1997\mo3\dy26\hr1\min44}{\printim\yr1997\mo3\dy20\hr4\min35}{\version2}{\edmins1}{\nofpages8}{\nofwords1554}
+{\nofchars8863}{\*\company Microsoft}{\vern57443}}\widowctrl\ftnbj\aenddoc\hyphcaps0\formshade \fet0\sectd \linex0\endnhere\titlepg {\header \pard\plain \s26\widctlpar\tqc\tx4320\tqr\tx8640 \f4\fs20 \tab Microsoft Cabarc User's Guide
+\par }{\footer \pard\plain \s27\widctlpar\tqc\tx4320\tqr\tx8640 \f4\fs20 \tab Page {\field{\*\fldinst {\cs28  PAGE }}{\fldrslt {\cs28\lang1024 3}}}{\cs28  of }{\field{\*\fldinst {\cs28  NUMPAGES }}{\fldrslt {\cs28\lang1024 1}}}{\cs28 \tab March 20, 1997}
+
+\par }{\footerf \pard\plain \s27\qc\widctlpar\tqc\tx4320\tqr\tx8640 \f4\fs20 {\b\i Abstract
+\par }\pard \s27\widctlpar\tqc\tx4320\tqr\tx8640 {\i 
+\par }\pard \s27\qj\widctlpar\tqc\tx4320\tqr\tx8640 {\i This document is the user's guide for the Microsoft program CABARC.EXE, which can create, view, and extract from Microsoft cabinet files.
+\par 
+\par 
+\par 
+\par 
+\par 
+\par }}{\*\pnseclvl1\pnucrm\pnstart1\pnindent720\pnhang{\pntxta .}}{\*\pnseclvl2\pnucltr\pnstart1\pnindent720\pnhang{\pntxta .}}{\*\pnseclvl3\pndec\pnstart1\pnindent720\pnhang{\pntxta .}}{\*\pnseclvl4\pnlcltr\pnstart1\pnindent720\pnhang{\pntxta )}}
+{\*\pnseclvl5\pndec\pnstart1\pnindent720\pnhang{\pntxtb (}{\pntxta )}}{\*\pnseclvl6\pnlcltr\pnstart1\pnindent720\pnhang{\pntxtb (}{\pntxta )}}{\*\pnseclvl7\pnlcrm\pnstart1\pnindent720\pnhang{\pntxtb (}{\pntxta )}}{\*\pnseclvl8
+\pnlcltr\pnstart1\pnindent720\pnhang{\pntxtb (}{\pntxta )}}{\*\pnseclvl9\pnlcrm\pnstart1\pnindent720\pnhang{\pntxtb (}{\pntxta )}}\pard\plain \widctlpar \f4\fs20 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par \pard\plain \s25\qc\widctlpar \b\f5\fs40 {\fs32 Microsoft Cabarc User's Guide
+\par }\pard \s25\widctlpar {\f4\fs20 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par }\pard \s25\qc\widctlpar {\b0\f4\fs24 Copyright \'a9 1997 Microsoft Corporation.  All rights reserved.}{\b0\f4\fs20 
+\par }\pard \s25\widctlpar {\fs32 \page }{\b0\fs28 Table of Contents
+\par }\pard\plain \widctlpar \f4\fs20 
+\par 
+\par 
+\par \pard\plain \s15\sb120\sa120\widctlpar\tqr\tldot\tx8630 \b\caps\f4\fs20 {\field\fldedit{\*\fldinst  TOC \\o "1-3" }{\fldrslt {\lang1024 Introduction\tab }{\field{\*\fldinst {\lang1024  PAGEREF _Toc375712204 \\h }{\lang1024 {\*\datafield 
+08d0c9ea79f9bace118c8200aa004ba90b02000000080000000e0000005f0054006f0063003300370035003700310032003200300034000000000000}}}{\fldrslt {\lang1024 1}}}{\lang1024 
+\par }\pard\plain \s17\li200\widctlpar\tqr\tldot\tx8630 \scaps\f4\fs20 {\lang1024 The cabinet format\tab }{\field{\*\fldinst {\lang1024  PAGEREF _Toc375712205 \\h }{\lang1024 {\*\datafield 
+08d0c9ea79f9bace118c8200aa004ba90b02000000080000000e0000005f0054006f0063003300370035003700310032003200300035000000000000}}}{\fldrslt {\lang1024 1}}}{\lang1024 
+\par Cabarc\tab }{\field{\*\fldinst {\lang1024  PAGEREF _Toc375712206 \\h }{\lang1024 {\*\datafield 08d0c9ea79f9bace118c8200aa004ba90b02000000080000000e0000005f0054006f0063003300370035003700310032003200300036000000000000}}}{\fldrslt {\lang1024 1}}}{\lang1024 
+
+\par Command line usage\tab }{\field{\*\fldinst {\lang1024  PAGEREF _Toc375712207 \\h }{\lang1024 {\*\datafield 08d0c9ea79f9bace118c8200aa004ba90b02000000080000000e0000005f0054006f0063003300370035003700310032003200300037000000000000}}}{\fldrslt {\lang1024 1}}}
+{\lang1024 
+\par }\pard\plain \s15\sb120\sa120\widctlpar\tqr\tldot\tx8630 \b\caps\f4\fs20 {\lang1024 Creating cabinets\tab }{\field{\*\fldinst {\lang1024  PAGEREF _Toc375712208 \\h }{\lang1024 {\*\datafield 
+08d0c9ea79f9bace118c8200aa004ba90b02000000080000000e0000005f0054006f0063003300370035003700310032003200300038000000000000}}}{\fldrslt {\lang1024 1}}}{\lang1024 
+\par }\pard\plain \s17\li200\widctlpar\tqr\tldot\tx8630 \scaps\f4\fs20 {\lang1024 Wildcards\tab }{\field{\*\fldinst {\lang1024  PAGEREF _Toc375712209 \\h }{\lang1024 {\*\datafield 
+08d0c9ea79f9bace118c8200aa004ba90b02000000080000000e0000005f0054006f0063003300370035003700310032003200300039000000000000}}}{\fldrslt {\lang1024 1}}}{\lang1024 
+\par Folders\tab }{\field{\*\fldinst {\lang1024  PAGEREF _Toc375712210 \\h }{\lang1024 {\*\datafield 08d0c9ea79f9bace118c8200aa004ba90b02000000080000000e0000005f0054006f0063003300370035003700310032003200310030000000000000}}}{\fldrslt {\lang1024 1}}}{\lang1024 
+
+\par Path name preservation\tab }{\field{\*\fldinst {\lang1024  PAGEREF _Toc375712211 \\h }{\lang1024 {\*\datafield 08d0c9ea79f9bace118c8200aa004ba90b02000000080000000e0000005f0054006f0063003300370035003700310032003200310031000000000000}}}{\fldrslt {\lang1024 
+1}}}{\lang1024 
+\par Path stripping\tab }{\field{\*\fldinst {\lang1024  PAGEREF _Toc375712212 \\h }{\lang1024 {\*\datafield 08d0c9ea79f9bace118c8200aa004ba90b02000000080000000e0000005f0054006f0063003300370035003700310032003200310032000000000000}}}{\fldrslt {\lang1024 1}}}{
+\lang1024 
+\par Recursive directory search\tab }{\field{\*\fldinst {\lang1024  PAGEREF _Toc375712213 \\h }{\lang1024 {\*\datafield 08d0c9ea79f9bace118c8200aa004ba90b02000000080000000e0000005f0054006f0063003300370035003700310032003200310033000000000000}}}{\fldrslt {
+\lang1024 1}}}{\lang1024 
+\par Reserve space for code signature\tab }{\field{\*\fldinst {\lang1024  PAGEREF _Toc375712214 \\h }{\lang1024 {\*\datafield 08d0c9ea79f9bace118c8200aa004ba90b02000000080000000e0000005f0054006f0063003300370035003700310032003200310034000000000000}}}{\fldrslt {
+\lang1024 1}}}{\lang1024 
+\par Set cabinet ID\tab }{\field{\*\fldinst {\lang1024  PAGEREF _Toc375712215 \\h }{\lang1024 {\*\datafield 08d0c9ea79f9bace118c8200aa004ba90b02000000080000000e0000005f0054006f0063003300370035003700310032003200310035000000000000}}}{\fldrslt {\lang1024 1}}}{
+\lang1024 
+\par Set compression type\tab }{\field{\*\fldinst {\lang1024  PAGEREF _Toc375712216 \\h }{\lang1024 {\*\datafield 08d0c9ea79f9bace118c8200aa004ba90b02000000080000000e0000005f0054006f0063003300370035003700310032003200310036000000000000}}}{\fldrslt {\lang1024 1}
+}}{\lang1024 
+\par File list from a File\tab }{\field{\*\fldinst {\lang1024  PAGEREF _Toc375712217 \\h }{\lang1024 {\*\datafield 08d0c9ea79f9bace118c8200aa004ba90b02000000080000000e0000005f0054006f0063003300370035003700310032003200310037000000000000}}}{\fldrslt {\lang1024 1
+}}}{\lang1024 
+\par }\pard\plain \s15\sb120\sa120\widctlpar\tqr\tldot\tx8630 \b\caps\f4\fs20 {\lang1024 List cabinet contents\tab }{\field{\*\fldinst {\lang1024  PAGEREF _Toc375712218 \\h }{\lang1024 {\*\datafield 
+08d0c9ea79f9bace118c8200aa004ba90b02000000080000000e0000005f0054006f0063003300370035003700310032003200310038000000000000}}}{\fldrslt {\lang1024 1}}}{\lang1024 
+\par Extracting cabinets\tab }{\field{\*\fldinst {\lang1024  PAGEREF _Toc375712219 \\h }{\lang1024 {\*\datafield 08d0c9ea79f9bace118c8200aa004ba90b02000000080000000e0000005f0054006f0063003300370035003700310032003200310039000000000000}}}{\fldrslt {\lang1024 1}
+}}{\lang1024 
+\par }\pard\plain \widctlpar \f4\fs20 }}\pard\plain \widctlpar \f4\fs20 
+\par \pard\plain \s1\sb240\sa60\keepn\widctlpar \b\f5\fs28\kerning28 \page {\*\bkmkstart _Toc375712204}Introduction{\*\bkmkend _Toc375712204}
+\par \pard\plain \s2\sb240\sa60\keepn\widctlpar \b\f5 {\*\bkmkstart _Toc375712205}The cabinet format{\*\bkmkend _Toc375712205}
+\par \pard\plain \widctlpar \f4\fs20 
+\par The cabinet format provides a way to efficiently package multiple files.  The key features of the cabinet format are that multiple files may be stored in a single cabinet (\ldblquote CAB file\rdblquote ); and that data compression is 
+performed across file boundaries, significantly improving the compression ratio.
+\par 
+\par Depending upon the number of files to be compressed, and the expected access patterns (sequential or random access; whether most of the files will be requested at once or only a small portion), cabinets can be constructed in different ways.  One key conce
+pt of the cabinet file is the {\i folder}.  A {\i folder }is a collection of one or more files which are compressed together as a single entity.  By compressing files in this way, the c
+ompression ratio is improved.  The downside is that random access time suffers, since in order for any particular file in a folder to be decoded, all preceding files in the same folder must also be decoded.
+\par 
+\par \pard\plain \s2\sb240\sa60\keepn\widctlpar \b\f5 {\*\bkmkstart _Toc375712206}Cabarc{\*\bkmkend _Toc375712206}
+\par \pard\plain \widctlpar \f4\fs20 
+\par Cabarc is a utility that creates, extracts, and lists the contents of cabinet files (CABs), using a command line interface similar to that of popular archiving tools.  Cabarc supports wildcards and recursive directory searches.
+\par 
+\par \pard\plain \s2\sb240\sa60\keepn\widctlpar \b\f5 {\*\bkmkstart _Toc375712207}Command line usage{\*\bkmkend _Toc375712207}
+\par \pard\plain \widctlpar \f4\fs20 
+\par Cabarc is used as follows:
+\par 
+\par {\f11\fs18 Usage: CABARC [options] command cabfile [@list] [files] [dest_dir]}{\cs16\f11\fs18 
+\par }
+\par Currently, only three commands are supported; N (create new cabinet), L (list contents of an existing cabinet), and X (extract files from a cabinet).  These commands are described in the following pages.
+\par 
+\par Options must appear before the command name, and cannot be combined (for example, to set the \endash r and \endash p options, use \endash r \endash p, and not \endash rp).
+\par 
+\par \pard\plain \s1\sb240\sa60\keepn\widctlpar \b\f5\fs28\kerning28 \page {\*\bkmkstart _Toc375712208}Creating cabinets{\*\bkmkend _Toc375712208}
+\par \pard\plain \widctlpar \f4\fs20 
+\par Cabinets are created using the {\i n} command, followed by the name of the cabinet to create, followed by a filename list, as shown below:
+\par 
+\par {\cs16\f11\fs18 cabarc n mycab.cab prog.c prog.h prog.exe readme.txt
+\par }
+\par The above command creates the cabinet {\i mycab.cab} containing the files \ldblquote prog.c\rdblquote , \ldblquote prog.h\rdblquote , \ldblquote prog.exe\rdblquote , and \ldblquote readme.txt\rdblquote 
+, in a single folder, using the default compression mode, MSZIP.
+\par 
+\par \pard\plain \s2\sb240\sa60\keepn\widctlpar \b\f5 {\*\bkmkstart _Toc375712209}Wildcards{\*\bkmkend _Toc375712209}
+\par \pard\plain \widctlpar \f4\fs20 
+\par Cabarc supports wildcards in the filename list, as shown in the example below:
+\par 
+\par {\cs16\f11\fs18 cabarc n mycab.cab prog.* readme.txt
+\par }
+\par 
+\par \pard\plain \s2\sb240\sa60\keepn\widctlpar \b\f5 {\*\bkmkstart _Toc375712210}Folders{\*\bkmkend _Toc375712210}
+\par \pard\plain \widctlpar \f4\fs20 
+\par By default, all files are added to a single folder (compression history) in the cabinet.  It is possible to tell cabarc to begin a new folder, by inserting the plus (+) symbol as a file to be added, as shown below:
+\par 
+\par {\cs16\f11\fs18 cabarc n mycab.cab test.c main.c + test.exe *.obj
+\par }
+\par The above command creates the cabinet \ldblquote mycab.cab\rdblquote  with one folder containing \ldblquote test.c\rdblquote  and \ldblquote main.c\rdblquote , and a second folder containing \ldblquote test.exe\rdblquote  and all files matching 
+\ldblquote *.obj\rdblquote .
+\par 
+\par \pard\plain \s2\sb240\sa60\keepn\widctlpar \b\f5 {\*\bkmkstart _Toc375712211}Path name preservation{\*\bkmkend _Toc375712211}
+\par \pard\plain \widctlpar \f4\fs20 
+\par By default, directory names are not preserved in the cabinet; only the filename component is stored.  For example, the following command will result in the filename \ldblquote prog.c\rdblquote  being stored in the cabinet:
+\par 
+\par {\cs16\f11\fs18 cabarc n mycab.cab c:\\source\\myproj\\prog.c
+\par }
+\par In order to preserve path names, the \endash p option should be used:
+\par 
+\par {\cs16\f11\fs18 cabarc \endash p n mycab.cab c:\\mysource\\myproj\\prog.c
+\par }
+\par This command will cause the file to be named \ldblquote mysource\\myproj\\prog.c\rdblquote  in the cabinet.  Note that the c:\\ prefix is still stripped from the filename; cabarc will not allow absolute paths to be store
+d in the cabinet, nor will it extract such absolute paths.
+\par 
+\par \pard\plain \s2\sb240\sa60\keepn\widctlpar \b\f5 {\*\bkmkstart _Toc375712212}Path stripping{\*\bkmkend _Toc375712212}
+\par \pard\plain \widctlpar \f4\fs20 
+\par In many situations it may be desirable to preserve some of the path name, but not all of it.  For example, one might wish to archive everything in the c:\\mysource\\myproj\\ directory, but store only the myproj\\
+ component of the path.  This can be accomplished with the path stripping option, -P (capital P).
+\par 
+\par {\cs16\f11\fs18 cabarc \endash p \endash P mysource\\ n mycab.cab c:\\mysource\\myproj\\prog.c
+\par }
+\par The \endash P option strips any strings which begin with the provided string (wildcards are not supported in this case; it is a simple text match).  Any absolute path prefixes such as c:\\ or \\
+ are stripped before the comparison takes place, so these characters should not be included in the \endash P option.
+\par 
+\par The \endash P option may be used multiple times to strip out multiple paths; cabarc builds a list of all paths to be stripped, and applies only the first one which matches.  For example:
+\par 
+\par {\cs16\f11\fs18 cabarc \endash p \endash P mysrc\\ \endash P yoursrc\\ n mycab.cab c:\\mysrc\\myproj\\*.* d:\\yoursrc\\yourproj\\*.c
+\par }
+\par The trailing slash at the end of the path name is important; entering {\cs16\f11\fs18 \endash P mysrc} instead of {\cs16\f11\fs18 \endash P mysrc\\} would cause files to be added as \ldblquote \\myproj\\<filename>\rdblquote .
+\par 
+\par \pard\plain \s2\sb240\sa60\keepn\widctlpar \b\f5 {\*\bkmkstart _Toc375712213}Recursive directory search{\*\bkmkend _Toc375712213}
+\par \pard\plain \widctlpar \f4\fs20 
+\par Cabarc can archive files in a directory and all of its subdirectories, by use of the \endash r option.  For example, the command shown below will archive all files ending in .h which are in c:\\msdev\\include\\, c:\\msdev\\include\\sys, and c:\\msdev\\
+include\\gl (assuming these directories exist on your system).  
+\par 
+\par {\cs16\f11\fs18 cabarc \endash r \endash p n mycab.cab c:\\msdev\\include\\*.h
+\par }
+\par The \endash p option is used here to preserve the path information when the files are added to the cabinet; without this option, only the filename components would be stored, although sometimes it might be desirable behavior to not use \endash p.
+\par 
+\par \pard\plain \s2\sb240\sa60\keepn\widctlpar \b\f5 {\*\bkmkstart _Toc375712214}Reserve space for code signature{\*\bkmkend _Toc375712214}
+\par \pard\plain \widctlpar \f4\fs20 
+\par Cabarc can reserve space in the cabinet for a code signature.  This is done using the \endash s option, which reserves a specified amount of empty space in the cabinet.  For code signing, 6144 bytes need to be reserved:
+\par 
+\par {\cs16\f11\fs18 cabarc \endash s 6144 n mycab.cab test.exe
+\par }
+\par Note that the \endash s option does not actually write the code signature; it merely reserves space for it in the cabinet.  The appropriate code signing utility must be used to fill out the code signature.
+\par 
+\par \pard\plain \s2\sb240\sa60\keepn\widctlpar \b\f5 {\*\bkmkstart _Toc375712215}Set cabinet ID{\*\bkmkend _Toc375712215}
+\par \pard\plain \widctlpar \f4\fs20 
+\par Cabinet files have a 16-bit cabinet ID field that is designed for application use.  The default value of this field is zero, however, the \endash i option of cabarc can be used to set this field to any 16-bit value:
+\par 
+\par {\cs16\f11\fs18 cabarc \endash i 12345 n mycab.cab test.exe
+\par }
+\par \pard\plain \s2\sb240\sa60\keepn\widctlpar \b\f5 {\*\bkmkstart _Toc375712216}Set compression type{\*\bkmkend _Toc375712216}
+\par \pard\plain \widctlpar \f4\fs20 
+\par The default compression type for a cabinet is MSZIP.  However, the compression type can be changed with the \endash m option.  Currently only MSZIP compression (-m MSZIP) and no compression (-m NONE) are supported.
+\par 
+\par The following command stores files in the cabinet with no compression:
+\par 
+\par {\cs16\f11\fs18 cabarc \endash m NONE n mycab.c *.*
+\par }
+\par \pard\plain \s2\sb240\sa60\keepn\widctlpar \b\f5 {\*\bkmkstart _Toc375712217}File list from a File{\*\bkmkend _Toc375712217}
+\par \pard\plain \widctlpar \f4\fs20 
+\par Cabarc can input its list of files from a text file, instead of from the command line, by using @files (\ldblquote at files\rdblquote ).  This is done by prefixing with the @ symbol the name of the file which contains the file list.  For example:
+\par 
+\par {\cs16\f11\fs18 cabarc n mycab.cab @filelist.txt
+\par }
+\par The text file must list the physical file names of the files to be added, one per line.  As is the case when specifying filenames on the command line, the plus (+) symbol can be used as a filename to specify the beginning of a new folder.  If a filename c
+ontains any embedded spaces, it must be enclosed as quotes, as shown below:
+\par 
+\par {\cs16\f11\fs18 test.c
+\par myapp.exe
+\par \ldblquote output file.exe\rdblquote }
+\par 
+\par The reason for requiring quotes is that each physical filename may be followed on the same line by an optional logical filename, which specifies the name under which the file will be stored in the cabinet:
+\par 
+\par {\cs16\f11\fs18 test.c myapp.c
+\par myapp.exe
+\par \ldblquote output file.exe\rdblquote  foobar.exe}
+\par 
+\par If the logical filename contains spaces, then it must also be enclosed in quotes.  Note that the logical filename overrides the \endash p (preserve path names) and \endash P (strip path name) options -the file will be added to the cabinet {\i exactly}
+ as indicated.  Wildcards are allowed in the physical filename, but in this situation a logical filename is not allowed.
+\par 
+\par The \ldblquote @\rdblquote 
+ feature may be used multiple times, to retrieve file lists from multiple files.  Cabarc does not check for the presence of duplicate files, so if the same physical file appears in multiple file lists, it will be added to the cabinet multiple times.  
+
+\par 
+\par The \ldblquote @\rdblquote  feature may be combined with filenames on the command line.  Files are added in the order in which they are parsed on the command line.  Example:
+\par 
+\par {\cs16\f11\fs18 cabarc n mycab.cab @filelist1.txt *.c @filelist2.txt *.h
+\par }
+\par Note: The \ldblquote @\rdblquote  feature is available only when creating cabinets, not when extracting or listing cabinets.
+\par \pard\plain \s1\sb240\sa60\keepn\widctlpar \b\f5\fs28\kerning28 \page {\*\bkmkstart _Toc375712218}List cabinet contents{\*\bkmkend _Toc375712218}
+\par \pard\plain \widctlpar \f4\fs20 
+\par It is possible to view the contents of a cabinet using the L (list) command, as shown below:
+\par 
+\par {\cs16\f11\fs18 cabarc l mycab.cab
+\par }
+\par Cabarc will display the Set ID in the cabinet (see the \endash s option for cabinet creation), as well as the name of each file in the cabinet, along with its file size, file date, file time, and file attributes.
+\par 
+\par \pard\plain \s1\sb240\sa60\keepn\widctlpar \b\f5\fs28\kerning28 \page {\*\bkmkstart _Toc375712219}Extracting cabinets{\*\bkmkend _Toc375712219}
+\par \pard\plain \widctlpar \f4\fs20 
+\par The X (extract) command extracts files from a cabinet.  The simplest use of the X command is shown below, which causes all files to be extracted from the cabinet:
+\par 
+\par {\cs16\f11\fs18 cabarc x mycab.cab
+\par }
+\par Alternatively, it is possible to selectively extract files, by providing a list of filenames and/or wildcards:
+\par 
+\par {\cs16\f11\fs18 cabarc x mycab.cab readme.txt *.exe *.c
+\par }
+\par By default, full path names (if they are present in the cabinet) are {\i not} preserved upon extraction.  For example, if a file named {\i mysrc\\myproj\\test.c} is present in the cabinet, then the command {\cs16\f11\fs18 cabarc x mycab.cab }
+will cause the file {\i test.c} to be extracted into the current directory.  In order to preserve file names upon extraction, the \endash p option must be used.  This option will cause any required directories to be created if necessary.
+\par 
+\par Only the filename component is considered in the matching process; the pathname is discounted.  For example, {\cs16\f11\fs18 cabarc x mycab.cab test.c} will cause the file {\i mysrc\\myproj\\test.c} to be extracted to the current directory as {\i test.c}
+, as will {\cs16\f11\fs18 cabarc x mycab.cab *.c} (which will also extract any other files matching *.c).
+\par 
+\par By default, the extracted files are stored in the current directory (and its subdirectories, if \endash 
+p is used).  However, it is possible to specify a destination directory for the extracted files.  This is accomplished by appending a directory name to the command line.  The directory name must end in a backslash ( \\ ).  Examples:
+\par 
+\par {\cs16\f11\fs18 cabarc x mycab.cab c:\\somedir\\
+\par }
+\par {\cs16\f11\fs18 cabarc x mycab.cab *.exe c:\\somedir\\
+\par }
+\par }

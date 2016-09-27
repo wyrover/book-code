@@ -1,0 +1,57 @@
+//
+// Chapter3_Server.idl : IDL source for Chapter3_Server.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (Chapter3_Server.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+	[	
+		object,
+		uuid(8812699C-1CC8-11D1-883A-444553540000),	
+		helpstring("IMath Interface"),
+		pointer_default(unique)
+	]
+	interface IMath : IUnknown
+	{
+		[helpstring("method Add")] HRESULT Add([in] long lOp1,[in] long lOp2, [out,retval] long* plResult);
+		[helpstring("method Subtract")] HRESULT Subtract([in] long lOp1,[in] long lOp2, [out,retval] long* plResult);
+		[helpstring("method Multiply")] HRESULT Multiply([in] long lOp1,[in] long lOp2, [out,retval] long* plResult);
+		[helpstring("method Divide")] HRESULT Divide([in] long lOp1,[in] long lOp2, [out,retval] long* plResult);
+	};
+
+   [	
+    object,
+	// We have to create this new GUID
+	uuid(6AF3DF1E-C48F-11D0-A769-D477A4000000),
+	helpstring("IAdvancedMath Interface"),
+	pointer_default(unique)
+   ]
+   interface IAdvancedMath : IUnknown
+   {
+	HRESULT Factorial( [in] short sFact, [out, retval] long* pResult );
+	HRESULT Fibonacci( [in] short sFib, [out, retval] long* pResult );
+   };
+
+[
+	uuid(8812698E-1CC8-11D1-883A-444553540000),
+	version(1.0),
+	helpstring("Chapter3_Server 1.0 Type Library")
+]
+library CHAPTER3_SERVERLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(8812699D-1CC8-11D1-883A-444553540000),
+		helpstring("Math Class")
+	]
+	coclass Math
+	{
+		[default] interface IMath;
+		interface IAdvancedMath;
+	};
+};

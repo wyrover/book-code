@@ -1,0 +1,11 @@
+HKCR
+{
+	NoRemove AppID
+	{
+		{E4658772-97AE-11D3-851B-00400530CFB7} = s 'ATL_OLEDB_Consumer'
+		'ATL_OLEDB_Consumer.EXE'
+		{
+			val AppID = s {E4658772-97AE-11D3-851B-00400530CFB7}
+		}
+	}
+}

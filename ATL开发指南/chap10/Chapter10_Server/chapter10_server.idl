@@ -1,0 +1,57 @@
+// Chapter10_Server.idl : IDL source for Chapter10_Server.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (Chapter10_Server.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+	[
+		object,
+		uuid(9029D3B0-67FE-11d1-B5F9-0004ACFF171C),
+		helpstring("ICallBack Interface"),
+		pointer_default(unique)
+	]
+	interface ICallBack : IUnknown
+	{
+		[helpstring("method ComputationComplete")] HRESULT ComputationComplete( [in] long lResult );
+		[helpstring("method Error")] HRESULT Error( [in] BSTR bstrDescription );
+	};
+
+	[
+		object,
+		uuid(EBFEC172-67FA-11D1-B5F9-0004ACFF171C),
+		helpstring("IMath Interface"),
+		pointer_default(unique)
+	]
+	interface IMath : IUnknown
+	{
+		[id(1), helpstring("method Add")] HRESULT Add([in] long lOp1, [in] long lOp2);
+		[id(2), helpstring("method Subtract")] HRESULT Subtract([in] long lOp1, [in] long lOp2);
+		[id(3), helpstring("method Multiply")] HRESULT Multiply([in] long lOp1, [in] long lOp2);
+		[id(4), helpstring("method Divide")] HRESULT Divide([in] long lOp1, [in] long lOp2);
+		[id(5), helpstring("method Advise")] HRESULT Advise([in] ICallBack* pCallBack);
+		[id(6), helpstring("method Unadvise")] HRESULT Unadvise();
+	};
+
+[
+	uuid(EBFEC163-67FA-11D1-B5F9-0004ACFF171C),
+	version(1.0),
+	helpstring("Chapter10_Server 1.0 Type Library")
+]
+library CHAPTER10_SERVERLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(EBFEC173-67FA-11D1-B5F9-0004ACFF171C),
+		helpstring("Math Class")
+	]
+	coclass Math
+	{
+		[default] interface IMath;
+		interface ICallBack;
+	};
+};

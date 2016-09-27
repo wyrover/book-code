@@ -1,0 +1,38 @@
+// Chapter9_EnumServer.idl : IDL source for Chapter9_EnumServer.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (Chapter9_EnumServer.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+	[
+		object,
+		uuid(DBD4D8EF-DCD4-11D3-83C0-0060081AEB5F),
+		helpstring("IBasicEnum Interface"),
+		pointer_default(unique)
+	]
+	interface IBasicEnum : IUnknown
+	{
+		[id(1), helpstring("method get_Enum")] HRESULT get_Enum([out, retval] IEnumString  **ppVal);
+	};
+
+[
+	uuid(DBD4D8E3-DCD4-11D3-83C0-0060081AEB5F),
+	version(1.0),
+	helpstring("Chapter9_EnumServer 1.0 Type Library")
+]
+library CHAPTER9_ENUMSERVERLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(DBD4D8F0-DCD4-11D3-83C0-0060081AEB5F),
+		helpstring("BasicEnum Class")
+	]
+	coclass BasicEnum
+	{
+		[default] interface IBasicEnum;
+	};
+};

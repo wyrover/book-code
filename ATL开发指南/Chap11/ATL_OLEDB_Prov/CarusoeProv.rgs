@@ -1,0 +1,27 @@
+HKCR
+{
+	ATL_OLEDB_Prov.CarusoeProv.1 = s 'CarusoeProv OLE DB Provider'
+	{
+		CLSID = s '{4DAF1613-783B-11D3-9D83-DA68CA737833}'
+	}
+	ATL_OLEDB_Prov.CarusoeProv = s 'CarusoeProv OLE DB Provider'
+	{
+		CLSID = s '{4DAF1613-783B-11D3-9D83-DA68CA737833}'
+		CurVer = s 'ATL_OLEDB_Prov.CarusoeProv.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {4DAF1613-783B-11D3-9D83-DA68CA737833} = s 'CarusoeProv OLE DB Provider'
+		{
+			ProgID = s 'ATL_OLEDB_Prov.CarusoeProv.1'
+			VersionIndependentProgID = s 'ATL_OLEDB_Prov.CarusoeProv'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'OLE DB Provider' = s 'CarusoeProv OLE DB Provider'
+			OLEDB_SERVICES = d '4294967295'
+			'TypeLib' = s '{F5F87941-9374-11D3-850F-00400530CFB7}'
+		}
+	}
+}

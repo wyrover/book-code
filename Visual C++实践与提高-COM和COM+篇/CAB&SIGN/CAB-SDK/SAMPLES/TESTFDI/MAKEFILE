@@ -1,0 +1,38 @@
+#
+# Makefile for TESTFDI
+#
+
+CL = cl.exe
+
+LINK = link.exe
+
+CFLAGS = /nologo /ML /W3 /O2 /c 
+
+LINK_FLAGS = /nologo /incremental:no
+
+
+#
+# Targets
+#
+
+all: testfdi.exe
+
+clean: 
+    -@if exist testfdi.obj erase testfdi.obj
+    -@if exist testfdi.exe erase testfdi.exe
+
+
+#
+# Linking
+#
+
+testfdi.exe: testfdi.obj ..\..\lib\fdi.lib
+    $(LINK) $(LINK_FLAGS) testfdi.obj ..\..\lib\fdi.lib /out:testfdi.exe
+
+
+#
+# Object files
+#
+
+testfdi.obj: testfdi.c ..\..\include\fdi.h
+    $(CL) $(CFLAGS) $*.c

@@ -1,0 +1,12 @@
+;
+; Server.def : Declares the module parameters for the DLL.
+;
+
+LIBRARY      "SERVER"
+DESCRIPTION  'SERVER Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+    DllGetClassObject   PRIVATE
+    DllCanUnloadNow     PRIVATE
+    DllRegisterServer   PRIVATE

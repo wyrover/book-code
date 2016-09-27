@@ -1,0 +1,33 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "MFC ActiveX Form ClassWizard"=".\MFC ActiveX Form ClassWizard.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+}}}
+
+Package=<3>
+{{{
+    {AFDC1587-F993-11D1-96ED-F05F03C10000}
+    {0DA2FC7F-F113-11D1-B0C8-0060083E4690}
+    {32100FBA-AC87-11D1-8F3C-00A0C9150754}
+    {6262D3A0-531B-11CF-91F6-C2863C385E30}
+}}}
+
+###############################################################################
+

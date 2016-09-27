@@ -1,0 +1,24 @@
+HKCR
+{
+	Chapter10.Math.1 = s 'Math Class'
+	{
+		CLSID = s '{EBFEC173-67FA-11D1-B5F9-0004ACFF171C}'
+	}
+	Chapter10.Math = s 'Math Class'
+	{
+		CurVer = s 'Chapter10.Math.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {EBFEC173-67FA-11D1-B5F9-0004ACFF171C} = s 'Math Class'
+		{
+			ProgID = s 'Chapter10.Math.1'
+			VersionIndependentProgID = s 'Chapter10.Math'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+		}
+	}
+}

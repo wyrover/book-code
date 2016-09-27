@@ -1,0 +1,23 @@
+HKCR
+{
+	Chapter7.CallBackMath.1 = s 'Math Class'
+	{
+		CLSID = s '{DB5CCD8F-5489-11D1-883A-444553540000}'
+	}
+	Chapter7.CallBackMath = s 'Math Class'
+	{
+		CurVer = s 'Chapter7.CallBackMath.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {DB5CCD8F-5489-11D1-883A-444553540000} = s 'Math Class'
+		{
+			ProgID = s 'Chapter7.CallBackMath.1'
+			VersionIndependentProgID = s 'Chapter7.CallBackMath'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+		}
+	}
+}

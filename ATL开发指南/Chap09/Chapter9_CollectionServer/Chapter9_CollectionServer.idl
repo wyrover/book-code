@@ -1,0 +1,83 @@
+// Chapter9_CollectionServer.idl : IDL source for Chapter9_CollectionServer.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (Chapter9_CollectionServer.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+    [
+       object,
+       uuid(F579C5C1-3777-11d2-883A-444553540000),
+       dual,
+       helpstring("IMovie Interface"),
+       pointer_default(unique)
+    ]
+    interface IMovie : IDispatch
+    {
+       [propget, id(1), helpstring("property Director")] 
+          HRESULT Director([out, retval] BSTR *pVal);
+       [propput, id(1), helpstring("property Director")] 
+          HRESULT Director([in] BSTR newVal);
+       [propget, id(2), helpstring("property Title")] 
+          HRESULT Title([out, retval] BSTR *pVal);
+       [propput, id(2), helpstring("property Title")] 
+          HRESULT Title([in] BSTR newVal);
+    }
+
+    [
+       object,
+       uuid(F579C5C4-3777-11d2-883A-444553540000),
+       dual,
+       helpstring("IMovieCollection Interface"),
+       pointer_default(unique)
+    ]
+    interface IMovieCollection : IDispatch
+    {
+       [propget, id(1)] HRESULT Count([out, retval] long *pVal);
+       [id(2)] HRESULT Add([in] IMovie* pMovie );
+       [id(3)] HRESULT Remove([in] long inIndex);
+       [id(4)] HRESULT RemoveAll();
+       [propget, id(DISPID_VALUE)] 
+          HRESULT Item([in] long inIndex,[out, retval] IMovie** ppMovie );
+       [propget, id(DISPID_NEWENUM)] 
+          HRESULT _NewEnum([out, retval]LPUNKNOWN *pVal);
+    }
+
+
+	[
+		object,
+		uuid(56E642CF-EA5F-11D3-83D5-0060081AEB5F),
+		dual,
+		helpstring("IApplication Interface"),
+		pointer_default(unique)
+	]
+	interface IApplication : IDispatch
+	{
+		[propget, id(1), helpstring("property Movies")] HRESULT Movies([out, retval] IDispatch** ppVal);
+		[id(2), helpstring("method CreateMovie")] HRESULT CreateMovie([out, retval] IDispatch** ppVal);
+	};
+
+[
+	uuid(56E642C3-EA5F-11D3-83D5-0060081AEB5F),
+	version(1.0),
+	helpstring("Chapter9_CollectionServer 1.0 Type Library")
+]
+library CHAPTER9_COLLECTIONSERVERLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+    interface IMovieCollection;
+    interface IMovie;
+
+	[
+		uuid(56E642D0-EA5F-11D3-83D5-0060081AEB5F),
+		helpstring("Application Class")
+	]
+	coclass Application
+	{
+		[default] interface IApplication;
+	};
+};

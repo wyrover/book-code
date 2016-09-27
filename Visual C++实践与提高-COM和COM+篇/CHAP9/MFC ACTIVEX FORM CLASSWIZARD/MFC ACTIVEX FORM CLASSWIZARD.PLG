@@ -1,0 +1,62 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: MFC ActiveX Form ClassWizard - Win32 Pseudo-Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x409 /fo"Debug/MFC ActiveX Form ClassWizard.res" /d "NDEBUG" /d "_PSEUDO_DEBUG" /d "_AFXDLL" "C:\SkunkWork\MFC ActiveX Form ClassWizard\MFC ActiveX Form ClassWizard.rc"" 
+Creating temporary file "C:\WINDOWS\TEMP\RSPB0C5.TMP" with contents
+[
+/nologo /MD /W3 /Gm /GX /ZI /Od /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_PSEUDO_DEBUG" /D "_WINDLL" /D "_AFXDLL" /D "_AFXEXT" /Fp"Debug/MFC ActiveX Form ClassWizard.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /c 
+"C:\SkunkWork\MFC ActiveX Form ClassWizard\Debug.cpp"
+"C:\SkunkWork\MFC ActiveX Form ClassWizard\MFC ActiveX Form ClassWizard.cpp"
+"C:\SkunkWork\MFC ActiveX Form ClassWizard\MFC ActiveX Form ClassWizardAw.cpp"
+]
+Creating command line "cl.exe @C:\WINDOWS\TEMP\RSPB0C5.TMP" 
+Creating temporary file "C:\WINDOWS\TEMP\RSPB0C6.TMP" with contents
+[
+/nologo /MD /W3 /Gm /GX /ZI /Od /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_PSEUDO_DEBUG" /D "_WINDLL" /D "_AFXDLL" /D "_AFXEXT" /Fp"Debug/MFC ActiveX Form ClassWizard.pch" /Yc"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /c 
+"C:\SkunkWork\MFC ActiveX Form ClassWizard\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\WINDOWS\TEMP\RSPB0C6.TMP" 
+Creating temporary file "C:\WINDOWS\TEMP\RSPB0C7.TMP" with contents
+[
+/nologo /subsystem:windows /dll /incremental:yes /pdb:"Debug/MFC ActiveX Form ClassWizard.pdb" /debug /machine:I386 /out:"Debug/MFC ActiveX Form ClassWizard.awx" /implib:"Debug/MFC ActiveX Form ClassWizard.lib" 
+".\Debug\Debug.obj"
+".\Debug\MFC ActiveX Form ClassWizard.obj"
+".\Debug\MFC ActiveX Form ClassWizardAw.obj"
+".\Debug\StdAfx.obj"
+".\Debug\MFC ActiveX Form ClassWizard.res"
+]
+Creating command line "link.exe @C:\WINDOWS\TEMP\RSPB0C7.TMP"
+Creating temporary file "C:\WINDOWS\TEMP\RSPB0C8.BAT" with contents
+[
+@echo off
+if not exist "C:\PROGRAM FILES\MICROSOFT VISUAL STUDIO\COMMON\MSDEV98\Template\nul" md "C:\PROGRAM FILES\MICROSOFT VISUAL STUDIO\COMMON\MSDEV98\Template"
+copy ".\Debug\MFC ActiveX Form ClassWizard.awx" "C:\PROGRAM FILES\MICROSOFT VISUAL STUDIO\COMMON\MSDEV98\Template"
+if exist ".\Debug\MFC ActiveX Form ClassWizard.pdb" copy ".\Debug\MFC ActiveX Form ClassWizard.pdb"  "C:\PROGRAM FILES\MICROSOFT VISUAL STUDIO\COMMON\MSDEV98\Template"
+]
+Creating command line "C:\WINDOWS\TEMP\RSPB0C8.BAT"
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+Debug.cpp
+MFC ActiveX Form ClassWizard.cpp
+MFC ActiveX Form ClassWizardAw.cpp
+Generating Code...
+Linking...
+<h3>Output Window</h3>
+Copying custom AppWizard to Template directory...
+        1 file(s) copied
+        1 file(s) copied
+
+
+
+<h3>Results</h3>
+MFC ActiveX Form ClassWizard.awx - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

@@ -1,0 +1,637 @@
+{\rtf1\ansi \deff4\deflang1033{\fonttbl{\f0\froman\fcharset0\fprq2 Tms Rmn;}{\f1\froman\fcharset2\fprq2 Symbol;}{\f2\fswiss\fcharset0\fprq2 Helv;}{\f3\fmodern\fcharset0\fprq1 Courier;}
+{\f4\froman\fcharset0\fprq2 Times New Roman{\*\falt Times};}{\f5\fswiss\fcharset0\fprq2 Arial{\*\falt Arial};}{\f6\froman\fcharset0\fprq2 MS Serif;}{\f7\fswiss\fcharset0\fprq2 MS Sans Serif;}{\f8\froman\fcharset0\fprq2 Times;}
+{\f9\fswiss\fcharset0\fprq2 Helvetica;}{\f10\fswiss\fcharset0\fprq2 System;}{\f11\fmodern\fcharset0\fprq1 Courier New;}{\f12\froman\fcharset0\fprq2 New York;}{\f13\fswiss\fcharset0\fprq2 Geneva;}{\f14\fnil\fcharset2\fprq2 Marlett;}
+{\f15\fnil\fcharset2\fprq2 Wingdings;}{\f16\fmodern\fcharset0\fprq1 Lucida Console;}{\f17\fswiss\fcharset0\fprq2 Arial Rounded MT Bold;}{\f18\froman\fcharset0\fprq2 Book Antiqua;}{\f19\fswiss\fcharset0\fprq2 Century Gothic;}
+{\f20\froman\fcharset0\fprq2 Century Schoolbook;}{\f21\fswiss\fcharset0\fprq2 Haettenschweiler;}{\f22\fdecor\fcharset0\fprq2 Algerian;}{\f23\fdecor\fcharset0\fprq2 Braggadocio;}{\f24\fswiss\fcharset0\fprq2 Britannic Bold;}
+{\f25\fscript\fcharset0\fprq2 Brush Script MT;}{\f26\fdecor\fcharset0\fprq2 Colonna MT;}{\f27\fdecor\fcharset0\fprq2 Desdemona;}{\f28\froman\fcharset0\fprq2 Footlight MT Light;}{\f29\fdecor\fcharset0\fprq2 Kino MT;}
+{\f30\froman\fcharset0\fprq2 Wide Latin;}{\f31\fscript\fcharset0\fprq2 Matura MT Script Capitals;}{\f32\fdecor\fcharset0\fprq2 Playbill;}{\f33\fmodern\fcharset2\fprq1 MS LineDraw;}{\f34\fswiss\fcharset0\fprq2 Verdana;}
+{\f35\fnil\fcharset2\fprq2 Microsoft Logo 95;}{\f36\fswiss\fcharset2\fprq2 Arial Special G1;}{\f37\fswiss\fcharset2\fprq2 Arial Special G2;}{\f38\fswiss\fcharset2\fprq2 Arial Narrow Special G1;}{\f39\fswiss\fcharset2\fprq2 Arial Narrow Special G2;}
+{\f40\froman\fcharset2\fprq2 Times New Roman Special G1;}{\f41\froman\fcharset2\fprq2 Times New Roman Special G2;}{\f42\fswiss\fcharset0\fprq2 Tahoma;}{\f43\fswiss\fcharset2\fprq2 Bookshelf Symbol 1;}{\f44\fnil\fcharset2\fprq2 Bookshelf Symbol 2;}
+{\f45\froman\fcharset2\fprq2 Bookshelf Symbol 3;}{\f46\fswiss\fcharset0\fprq2 Franklin Gothic Heavy;}{\f47\fswiss\fcharset0\fprq2 Franklin Gothic Book;}{\f48\fswiss\fcharset0\fprq2 Franklin Gothic Demi;}
+{\f49\fswiss\fcharset0\fprq2 Franklin Gothic Demi Cond;}{\f50\fswiss\fcharset0\fprq2 Franklin Gothic Medium;}{\f51\fswiss\fcharset0\fprq2 Franklin Gothic Medium Cond;}{\f52\fnil\fcharset0\fprq2 Microsoft Logo;}{\f53\fscript\fcharset0\fprq2 Comic Sans MS;}
+{\f54\fswiss\fcharset0\fprq2 Arial Narrow;}{\f55\fswiss\fcharset0\fprq2 Arial Black;}{\f56\froman\fcharset0\fprq2 Bookman Old Style;}{\f57\froman\fcharset0\fprq2 Garamond;}{\f58\fswiss\fcharset0\fprq2 Impact;}{\f59\fnil\fcharset2\fprq2 Monotype Sorts;}
+{\f60\fnil\fcharset2\fprq2 MS Outlook;}{\f61\fmodern\fcharset0\fprq1 LinePrinter;}{\f62\fswiss\fcharset0\fprq2 CG Omega (W1);}{\f63\froman\fcharset0\fprq2 Clarendon Cd (W1);}{\f64\fscript\fcharset0\fprq2 Marigold (W1);}
+{\f65\fswiss\fcharset0\fprq2 Albertus (W1);}{\f66\fswiss\fcharset0\fprq2 Albertus Xb (W1);}{\f67\fswiss\fcharset0\fprq2 Antique Olv (W1);}{\f68\froman\fcharset0\fprq2 CG Times (W1);}{\f69\fscript\fcharset0\fprq2 Coronet (W1);}
+{\f70\fmodern\fcharset0\fprq1 Letter Gothic (W1);}{\f71\fswiss\fcharset0\fprq2 Univers (W1);}{\f72\fswiss\fcharset0\fprq2 Univers Cd (W1);}{\f73\fmodern\fcharset255\fprq2 Modern;}{\f74\fswiss\fcharset0\fprq1 MS Dialog;}
+{\f75\fnil\fcharset0\fprq0 Courier (W1);}{\f76\fswiss\fcharset186\fprq2 Franklin Gothic Demi Cond Balti;}{\f77\fswiss\fcharset161\fprq2 Franklin Gothic Medium Cond Gre;}{\f78\fswiss\fcharset186\fprq2 Franklin Gothic Medium Cond Bal;}
+{\f79\fnil\fcharset0\fprq1 Small Fonts;}{\f80\fswiss\fcharset238\fprq2 Tahoma CE;}{\f81\fswiss\fcharset204\fprq2 Tahoma Cyr;}{\f82\fswiss\fcharset161\fprq2 Tahoma Greek;}{\f83\fswiss\fcharset162\fprq2 Tahoma Tur;}
+{\f84\fswiss\fcharset186\fprq2 Tahoma Baltic;}{\f85\fmodern\fcharset238\fprq1 Lucida Console CE;}{\f86\fmodern\fcharset204\fprq1 Lucida Console Cyr;}{\f87\fmodern\fcharset161\fprq1 Lucida Console Greek;}{\f88\fmodern\fcharset162\fprq1 Lucida Console Tur;}
+{\f89\fswiss\fcharset238\fprq2 Franklin Gothic Heavy CE;}{\f90\fswiss\fcharset204\fprq2 Franklin Gothic Heavy Cyr;}{\f91\fswiss\fcharset161\fprq2 Franklin Gothic Heavy Greek;}{\f92\fswiss\fcharset162\fprq2 Franklin Gothic Heavy Tur;}
+{\f93\fswiss\fcharset186\fprq2 Franklin Gothic Heavy Baltic;}{\f94\fswiss\fcharset238\fprq2 Franklin Gothic Book CE;}{\f95\fswiss\fcharset204\fprq2 Franklin Gothic Book Cyr;}{\f96\fswiss\fcharset161\fprq2 Franklin Gothic Book Greek;}
+{\f97\fswiss\fcharset162\fprq2 Franklin Gothic Book Tur;}{\f98\fswiss\fcharset186\fprq2 Franklin Gothic Book Baltic;}{\f99\fswiss\fcharset238\fprq2 Franklin Gothic Demi CE;}{\f100\fswiss\fcharset204\fprq2 Franklin Gothic Demi Cyr;}
+{\f101\fswiss\fcharset161\fprq2 Franklin Gothic Demi Greek;}{\f102\fswiss\fcharset162\fprq2 Franklin Gothic Demi Tur;}{\f103\fswiss\fcharset186\fprq2 Franklin Gothic Demi Baltic;}{\f104\fswiss\fcharset238\fprq2 Franklin Gothic Demi Cond CE;}
+{\f105\fswiss\fcharset204\fprq2 Franklin Gothic Demi Cond Cyr;}{\f106\fswiss\fcharset161\fprq2 Franklin Gothic Demi Cond Greek;}{\f107\fswiss\fcharset162\fprq2 Franklin Gothic Demi Cond Tur;}{\f108\fswiss\fcharset238\fprq2 Franklin Gothic Medium CE;}
+{\f109\fswiss\fcharset204\fprq2 Franklin Gothic Medium Cyr;}{\f110\fswiss\fcharset161\fprq2 Franklin Gothic Medium Greek;}{\f111\fswiss\fcharset162\fprq2 Franklin Gothic Medium Tur;}{\f112\fswiss\fcharset186\fprq2 Franklin Gothic Medium Baltic;}
+{\f113\fswiss\fcharset238\fprq2 Franklin Gothic Medium Cond CE;}{\f114\fswiss\fcharset204\fprq2 Franklin Gothic Medium Cond Cyr;}{\f115\fswiss\fcharset162\fprq2 Franklin Gothic Medium Cond Tur;}{\f116\fswiss\fcharset238\fprq2 Arial Narrow CE;}
+{\f117\fswiss\fcharset204\fprq2 Arial Narrow Cyr;}{\f118\fswiss\fcharset161\fprq2 Arial Narrow Greek;}{\f119\fswiss\fcharset162\fprq2 Arial Narrow Tur;}{\f120\fswiss\fcharset186\fprq2 Arial Narrow Baltic;}{\f121\fswiss\fcharset238\fprq2 Arial Black CE;}
+{\f122\fswiss\fcharset204\fprq2 Arial Black Cyr;}{\f123\fswiss\fcharset161\fprq2 Arial Black Greek;}{\f124\fswiss\fcharset162\fprq2 Arial Black Tur;}{\f125\fswiss\fcharset186\fprq2 Arial Black Baltic;}{\f126\froman\fcharset238\fprq2 Bookman Old Style CE;}
+{\f127\froman\fcharset204\fprq2 Bookman Old Style Cyr;}{\f128\froman\fcharset161\fprq2 Bookman Old Style Greek;}{\f129\froman\fcharset162\fprq2 Bookman Old Style Tur;}{\f130\froman\fcharset186\fprq2 Bookman Old Style Baltic;}
+{\f131\froman\fcharset238\fprq2 Garamond CE;}{\f132\froman\fcharset204\fprq2 Garamond Cyr;}{\f133\froman\fcharset161\fprq2 Garamond Greek;}{\f134\froman\fcharset162\fprq2 Garamond Tur;}{\f135\froman\fcharset186\fprq2 Garamond Baltic;}
+{\f136\fswiss\fcharset238\fprq2 Impact CE;}{\f137\fswiss\fcharset204\fprq2 Impact Cyr;}{\f138\fswiss\fcharset161\fprq2 Impact Greek;}{\f139\fswiss\fcharset162\fprq2 Impact Tur;}{\f140\fswiss\fcharset186\fprq2 Impact Baltic;}}{\colortbl;\red0\green0\blue0;
+\red0\green0\blue255;\red0\green255\blue255;\red0\green255\blue0;\red255\green0\blue255;\red255\green0\blue0;\red255\green255\blue0;\red255\green255\blue255;\red0\green0\blue128;\red0\green128\blue128;\red0\green128\blue0;\red128\green0\blue128;
+\red128\green0\blue0;\red128\green128\blue0;\red128\green128\blue128;\red192\green192\blue192;}{\stylesheet{\widctlpar \f4\fs20 \snext0 Normal;}{\s1\sb240\sa60\keepn\widctlpar \b\f5\fs32\kerning28 \sbasedon0\snext0 heading 1;}{
+\s2\sb240\sa60\keepn\widctlpar \b\f5\fs28 \sbasedon0\snext0 heading 2;}{\s3\sb240\sa60\keepn\widctlpar \b\f5 \sbasedon0\snext0 heading 3;}{\*\cs10 \additive Default Paragraph Font;}{\s15\sb120\sa120\widctlpar\tqr\tldot\tx8640 \b\caps\f4\fs20 
+\sbasedon0\snext0 toc 1;}{\s16\li200\widctlpar\tqr\tldot\tx8640 \scaps\f4\fs20 \sbasedon0\snext0 toc 2;}{\s17\li400\widctlpar\tqr\tldot\tx8640 \i\f4\fs20 \sbasedon0\snext0 toc 3;}{\s18\li600\widctlpar\tqr\tldot\tx8640 \f4\fs18 \sbasedon0\snext0 toc 4;}{
+\s19\li800\widctlpar\tqr\tldot\tx8640 \f4\fs18 \sbasedon0\snext0 toc 5;}{\s20\li1000\widctlpar\tqr\tldot\tx8640 \f4\fs18 \sbasedon0\snext0 toc 6;}{\s21\li1200\widctlpar\tqr\tldot\tx8640 \f4\fs18 \sbasedon0\snext0 toc 7;}{
+\s22\li1400\widctlpar\tqr\tldot\tx8640 \f4\fs18 \sbasedon0\snext0 toc 8;}{\s23\li1600\widctlpar\tqr\tldot\tx8640 \f4\fs18 \sbasedon0\snext0 toc 9;}{\*\cs24 \additive\f5 \sbasedon10 Parameter;}{\*\cs25 \additive\f11\fs20 \sbasedon10 Field;}{\*\cs26 
+\additive\b\f5\fs20 \sbasedon10 API;}{\*\cs27 \additive\b\i\f5 \sbasedon10 Constant;}{\s28\widctlpar\tqc\tx4320\tqr\tx8640 \f4\fs20 \sbasedon0\snext28 header;}{\s29\widctlpar\tqc\tx4320\tqr\tx8640 \f4\fs20 \sbasedon0\snext29 footer;}{\*\cs30 \additive
+\sbasedon10 page number;}}{\info{\title FCI/FDI API Description}{\subject FCI.LIB/FDI.LIB documentation}{\author Microsoft}{\keywords FCI FDI compression ZIP CAB cabinet}{\operator Microsoft}{\creatim\yr1997\mo3\dy19\hr23\min13}
+{\revtim\yr1997\mo3\dy26\hr13\min7}{\printim\yr1997\mo3\dy26\hr1\min46}{\version2}{\edmins0}{\nofpages22}{\nofwords4803}{\nofchars27378}{\*\company Microsoft}{\vern57443}}\widowctrl\ftnbj\aenddoc\hyphcaps0\formshade \fet0\sectd 
+\psz1\linex0\endnhere\titlepg {\header \pard\plain \s28\widctlpar\tqc\tx4320\tqr\tx8640 \f4\fs20 \tab Microsoft FCI/FDI Library Description
+\par }{\footer \pard\plain \s29\widctlpar\tqc\tx4320\tqr\tx8640 \f4\fs20 {\cs30 \tab Page }{\field{\*\fldinst {\cs30  PAGE }}{\fldrslt {\cs30\lang1024 22}}}{\cs30  of }{\field{\*\fldinst {\cs30  NUMPAGES }}{\fldrslt {\cs30\lang1024 1}}}{\cs30 \tab 
+March 20, 1997}
+\par }{\footerf \pard\plain \s29\qc\widctlpar\tqc\tx4320\tqr\tx8640 \f4\fs20 {\b\i Abstract
+\par }\pard \s29\widctlpar\tqc\tx4320\tqr\tx8640 {\i 
+\par This document describes use of the functions in the Microsoft File Compression Interface and File Decompression Interface libraries or in CABINET.DLL to create or extract from Microsoft Cabinet Files.
+\par 
+\par 
+\par 
+\par 
+\par 
+\par }}{\*\pnseclvl1\pnucrm\pnstart1\pnindent720\pnhang{\pntxta .}}{\*\pnseclvl2\pnucltr\pnstart1\pnindent720\pnhang{\pntxta .}}{\*\pnseclvl3\pndec\pnstart1\pnindent720\pnhang{\pntxta .}}{\*\pnseclvl4\pnlcltr\pnstart1\pnindent720\pnhang{\pntxta )}}
+{\*\pnseclvl5\pndec\pnstart1\pnindent720\pnhang{\pntxtb (}{\pntxta )}}{\*\pnseclvl6\pnlcltr\pnstart1\pnindent720\pnhang{\pntxtb (}{\pntxta )}}{\*\pnseclvl7\pnlcrm\pnstart1\pnindent720\pnhang{\pntxtb (}{\pntxta )}}{\*\pnseclvl8
+\pnlcltr\pnstart1\pnindent720\pnhang{\pntxtb (}{\pntxta )}}{\*\pnseclvl9\pnlcrm\pnstart1\pnindent720\pnhang{\pntxtb (}{\pntxta )}}\pard\plain \widctlpar \f4\fs20 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par \pard \qc\widctlpar {\b\f5\fs36 Microsoft FCI/FDI Library Description
+\par }\pard \widctlpar {\f5\fs24 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par }\pard \qc\widctlpar Copyright \'a9 1996-1997 Microsoft Corporation.  All rights reserved.
+\par \pard \widctlpar \page {\b\f5\fs24\ul Table of Contents}
+\par 
+\par 
+\par \pard\plain \s15\sb120\sa120\widctlpar\tqr\tldot\tx8640 \b\caps\f4\fs20 {\field\fldedit{\*\fldinst {\b0\scaps\caps0  TOC \\o "1-2" }}{\fldrslt {\lang1024 Introduction\tab }{\field{\*\fldinst {\lang1024  GOTOBUTTON _Toc377752855  }{\field{\*\fldinst {
+\lang1024  PAGEREF _Toc377752855 }}{\fldrslt {\lang1024 1}}}}}{\lang1024 
+\par FCI\tab }{\field{\*\fldinst {\lang1024  GOTOBUTTON _Toc377752856  }{\field{\*\fldinst {\lang1024  PAGEREF _Toc377752856 }}{\fldrslt {\lang1024 1}}}}}{\lang1024 
+\par }\pard\plain \s16\li200\widctlpar\tqr\tldot\tx8640 \scaps\f4\fs20 {\lang1024 FCICreate\tab }{\field{\*\fldinst {\lang1024  GOTOBUTTON _Toc377752857  }{\field{\*\fldinst {\lang1024  PAGEREF _Toc377752857 }}{\fldrslt {\lang1024 1}}}}}{\lang1024 
+\par FCIAddFile\tab }{\field{\*\fldinst {\lang1024  GOTOBUTTON _Toc377752858  }{\field{\*\fldinst {\lang1024  PAGEREF _Toc377752858 }}{\fldrslt {\lang1024 1}}}}}{\lang1024 
+\par FCIFlushCabinet\tab }{\field{\*\fldinst {\lang1024  GOTOBUTTON _Toc377752859  }{\field{\*\fldinst {\lang1024  PAGEREF _Toc377752859 }}{\fldrslt {\lang1024 1}}}}}{\lang1024 
+\par FCIFlushFolder\tab }{\field{\*\fldinst {\lang1024  GOTOBUTTON _Toc377752860  }{\field{\*\fldinst {\lang1024  PAGEREF _Toc377752860 }}{\fldrslt {\lang1024 1}}}}}{\lang1024 
+\par FCIDestroy\tab }{\field{\*\fldinst {\lang1024  GOTOBUTTON _Toc377752861  }{\field{\*\fldinst {\lang1024  PAGEREF _Toc377752861 }}{\fldrslt {\lang1024 1}}}}}{\lang1024 
+\par }\pard\plain \s15\sb120\sa120\widctlpar\tqr\tldot\tx8640 \b\caps\f4\fs20 {\lang1024 FDI\tab }{\field{\*\fldinst {\lang1024  GOTOBUTTON _Toc377752862  }{\field{\*\fldinst {\lang1024  PAGEREF _Toc377752862 }}{\fldrslt {\lang1024 1}}}}}{\lang1024 
+\par }\pard\plain \s16\li200\widctlpar\tqr\tldot\tx8640 \scaps\f4\fs20 {\lang1024 FDICreate\tab }{\field{\*\fldinst {\lang1024  GOTOBUTTON _Toc377752863  }{\field{\*\fldinst {\lang1024  PAGEREF _Toc377752863 }}{\fldrslt {\lang1024 1}}}}}{\lang1024 
+\par FDIIsCabinet\tab }{\field{\*\fldinst {\lang1024  GOTOBUTTON _Toc377752864  }{\field{\*\fldinst {\lang1024  PAGEREF _Toc377752864 }}{\fldrslt {\lang1024 1}}}}}{\lang1024 
+\par FDICopy\tab }{\field{\*\fldinst {\lang1024  GOTOBUTTON _Toc377752865  }{\field{\*\fldinst {\lang1024  PAGEREF _Toc377752865 }}{\fldrslt {\lang1024 1}}}}}{\lang1024 
+\par FDIDestroy\tab }{\field{\*\fldinst {\lang1024  GOTOBUTTON _Toc377752866  }{\field{\*\fldinst {\lang1024  PAGEREF _Toc377752866 }}{\fldrslt {\lang1024 1}}}}}{\lang1024 
+\par }\pard\plain \widctlpar \f4\fs20 }}\pard\plain \widctlpar \f4\fs20 
+\par \pard\plain \s1\sb240\sa60\keepn\widctlpar \b\f5\fs32\kerning28 \page {\*\bkmkstart _Toc372430526}{\*\bkmkstart _Toc377752855}Introduction{\*\bkmkend _Toc372430526}{\*\bkmkend _Toc377752855}
+\par \pard\plain \widctlpar \f4\fs20 
+\par The FCI (File Compression Interface) and FDI (File Decompression Interface) libraries provide the ability to create and extract files from cabinets (also known as \ldblquote CAB files\rdblquote 
+).  In addition, the libraries provide compression and decompression capability to reduce the size of file data stored in cabinets.
+\par 
+\par The FCI and FDI libraries, FCI.LIB and FDI.LIB, are available in both 32-bit and 16-bit forms.  However, the 16-bit version will run more slowly than the 32-bit version.
+\par 
+\par FCI and FDI support multiple simultaneous contexts, so it is possible to create or extract multiple cabinets simultaneously within th
+e same application.  If the application is multi-threaded, it is also possible to run a different context in each thread; however, it is not permitted for the application to use the {\i same}
+ context simultaneously in multiple threads (e.g. one cannot call FCIAddFile from two different threads, using the same FCI context).
+\par 
+\par FCI and FDI operate using the technique of function callbacks; some of the parameters of the FCI and FDI APIs are pointers to functions in the client application.  The parameters and purpose of these functions are explained fully in this document.  The {
+\i fci_int.h} and {\i fd_int.h}
+ header files provide macros for declaring the callback functions, and use keywords such HUGE, FAR, and DIAMONDAPI, which ensure that the functions are properly defined for both 32-bit and 16-bit operation.  For example, in the case of the memory allocati
+on and memory free functions, the following definitions exist in {\i fci_int.h}:
+\par 
+\par {\f11 #define FNFCIALLOC(fn) void HUGE * FAR DIAMONDAPI fn(ULONG cb)
+\par #define FNFCIFREE(fn) void FAR DIAMONDAPI fn(void HUGE *pv)}
+\par 
+\par These declarations can be used as follows:
+\par 
+\par {\f11 FNFCIALLOC(mem_alloc)
+\par \{
+\par \tab return malloc(cb);
+\par \}
+\par 
+\par FNFCIFREE(mem_free)
+\par \{
+\par \tab return free(memory);
+\par \}}
+\par 
+\par {\f11 some_function()
+\par \{
+\par }\pard \fi720\widctlpar {\f11 hfci = FCICreate(
+\par }\pard \fi720\li720\widctlpar {\f11 &erf, 
+\par filedest, 
+\par mem_alloc, 
+\par mem_free,
+\par }{\i\f11 etc.}{\f11 
+\par }\pard \fi720\widctlpar {\f11 );
+\par }\pard \widctlpar {\f11 \}}
+\par 
+\par It should be noted that the FCI callback function names all begin with the string \ldblquote FCI\rdblquote .  In addition, the FCI and FDI i/o functions (open, close, read, write, seek) take different parameters, and cannot be used interchangeably.  
+
+\par 
+\par The FDI i/o functions ta
+ke parameters which are identical to those of the C run-time library routines _open, close,  read,  write, and lseek.  The FCI i/o functions take similar parameters, with the addition of an error pointer in which to return an i/o error, and the client
+\rquote s context pointer originally passed in to the FCICreate API.
+\par 
+\par Two example applications are provided; {\i testfci} and {\i testfdi}.  These applications demonstrate how all of the FCI and FDI APIs, respectively, may be used.
+\par \pard\plain \s1\sb240\sa60\keepn\widctlpar \b\f5\fs32\kerning28 \page {\*\bkmkstart _Toc372430527}{\*\bkmkstart _Toc377752856}FCI{\*\bkmkend _Toc372430527}{\*\bkmkend _Toc377752856}
+\par \pard\plain \widctlpar \f4\fs20 
+\par 
+\par The five FCI (File Compression Interface) APIs are:
+\par 
+\par {\cs26\b\f5 FCICreate}\tab \tab Create an FCI context
+\par {\cs26\b\f5 FCIAddFile}\tab \tab Add a file to the cabinet under construction
+\par {\cs26\b\f5 FCIFlushCabinet}\tab Complete the current cabinet
+\par {\cs26\b\f5 FCIFlushFolder}\tab Complete the current folder and start a new folder
+\par {\cs26\b\f5 FCIDestroy}\tab \tab Destroy an FCI context
+\par 
+\par 
+\par \pard\plain \s2\sb240\sa60\keepn\widctlpar \b\f5\fs28 \page {\*\bkmkstart _Toc372430528}{\*\bkmkstart _Toc377752857}FCICreate{\*\bkmkend _Toc372430528}{\*\bkmkend _Toc377752857}
+\par \pard\plain \widctlpar \f4\fs20 
+\par \pard\plain \s3\sb240\sa60\keepn\widctlpar \b\f5 Usage
+\par \pard\plain \widctlpar \f4\fs20 
+\par {\f11 HFCI DIAMONDAPI FCICreate(
+\par }\pard \fi720\widctlpar {\f11 PERF              perf,
+\par }\pard \widctlpar {\f11       PFNFCIFILEPLACED  pfnfiledest,
+\par       PFNFCIALLOC       pfnalloc,
+\par       PFNFCIFREE        pfnfree,
+\par       PFNFCIOPEN        pfnopen,
+\par       PFNFCIREAD        pfnread,
+\par       PFNFCIWRITE       pfnwrite,
+\par       PFNFCICLOSE       pfnclose,
+\par       PFNFCISEEK        pfnseek,
+\par \tab PFNFCIDELETE\tab pfndelete,
+\par       PFNFCIGETTEMPFILE pfnfcigtf,
+\par       PCCAB             pccab,
+\par \tab void FAR *\tab \tab pv
+\par );
+\par 
+\par }\pard\plain \s3\sb240\sa60\keepn\widctlpar \b\f5 Parameters
+\par \pard\plain \widctlpar \f4\fs20 
+\par {\i perf}\tab \tab Pointer to an error structure
+\par {\i pfnfiledest}\tab Function to call when a file is placed
+\par {\i pfnalloc}\tab \tab Memory allocation function
+\par {\i pfnfree}\tab \tab Memory free function
+\par {\i pfnopen}\tab \tab Function to open a file
+\par {\i pfnread}\tab \tab Function to read data from a file
+\par {\i pfnwrite}\tab \tab Function to write data to a file
+\par {\i pfnclose}\tab \tab Function to close a file
+\par {\i pfnseek}\tab \tab Function to seek to a new position in a file
+\par {\i pfntemp}\tab \tab Function to obtain a temporary file name
+\par {\i pfndelete}\tab Function to delete a file
+\par {\i pccab}\tab \tab Parameters for creating cabinet
+\par {\i pv}\tab \tab Client context parameter
+\par 
+\par \pard\plain \s3\sb240\sa60\keepn\widctlpar \b\f5 Description
+\par \pard\plain \widctlpar \f4\fs20 
+\par The {\cs26\b\f5 FCICreate} API creates an FCI context that is passed to other FCI APIs.  
+\par 
+\par The {\i perf} parameter should point to a global or allocated ERF structure.  Any errors returned by {\cs26\b\f5 FCICreate} or subsequent FCI APIs using the same context will cause the ERF structure to be filled out.
+\par 
+\par The {\i pfnalloc} and {\i pfnfree} parameters should point to memory allocation and memory free functions which will be called by FCI to allocate and free memory.  These two functions take parameters identical to the standard C malloc and free functions.
+
+\par 
+\par The {\i pfnopen}, {\i pfnread}, {\i pfnwrite}, {\i pfnclose}, {\i pfnseek}, and {\i pfndelete}
+ parameters should point to functions which perform file open, file read, file write, file close, file seek, and file delete operations respectively.  These functions must accept parameters similar to those for the standard {\i _open}, {\i _read}, {\i 
+_write}, {\i _close}, {\i _lseek}, and {\i remove} functions, with the addition of two additional parameters to the list; {\cs24\f5 err} and {\cs24\f5 pv}.  The {\cs24\f5 err} parameter is an {\i int *}, and upon entry into the function, {\i *err}
+ will equal zero.  However, if the function returns failure, {\i *err} should be set to an error code of the application\rquote s choosing, which will be returned via {\i perf}
+ (the error code is not used by FCI, and is not required to conform to C run-time library {\i errno} conventions).  The {\cs24\f5 pv} parameter will equal the client\rquote s context parameter passed in to {\cs26\b\f5 FCICreate}.
+\par 
+\par The {\i pfntemp} parameter should point to a function which returns the name of a suitable temporary file.  Three parameters will be passed to this function; {\cs24\f5 pszTempName}, an area of memory to store the filename, {\cs24\f5 cbTempName}
+, the size of the memory area, and {\cs24\f5 pv}, the client\rquote s context pointer.  The filename returned by this function should not occupy more than {\cs24\f5 cbTempName} bytes.  FCI may open several temporary files at once, so it is impor
+tant to ensure that a different filename is returned each time, and that the file does not already exist.  The function should return TRUE for success, or FALSE for failure.  
+\par 
+\par The {\i pfnfiledest}
+ parameter should point to a function which will be called whenever the location of a file or file segment on a particular cabinet has been finalized.  This information is useful only when files are being stored across multiple cabinets.  The parameters p
+assed to this function are {\cs24\f5 pccab}, a pointer to the CCAB structure of the cabinet on which the file has been stored, {\cs24\f5 pszFile}, the filename of the file which has been placed, {\cs24\f5 cbFile}, the file size, and {\cs24\f5 
+fContinuation}, a boolean which signifies whether the file is a later segment of a file which has been split across cabinets.  In addition, the client context value, {\cs24\f5 pv}, is also passed as a parameter. 
+\par 
+\par The {\i pccab} parameter should point to an initialized CCAB structure, which will provide FCI with details on how to build the cabinet.  The CCAB fields are explained below:
+\par 
+\par The {\cs25\f11 cb}
+ field, the media size, specifies the maximum size of a cabinet which will be created by FCI.  If necessary, multiple cabinets will be created.  To ensure that only one cabinet is created, a sufficiently large number should be used for this parameter.
+
+\par 
+\par The {\cs25\f11 cbFolderThresh}
+ field specifies the maximum number of compressed bytes which may reside in a folder before a new folder is created.  A higher folder threshold improves compression performance (since creating a new folder resets the compression history), 
+but increases random access time to the folder.
+\par 
+\par The {\cs25\f11 iCab} field is used by FCI to count the number of cabinets that have been created so far.  This value can also be read by the application to determine the name of a cabinet.  See the {\i GetNextCab} parameter of the {\cs26\b\f5 FCIAddFile}
+ API for details.
+\par 
+\par The {\cs25\f11 iDisk} field is used in a similar manner to {\cs25\f11 iCab}.  See the {\i GetNextCab} parameter of the {\cs26\b\f5 FCIAddFile} API for details.
+\par 
+\par The {\cs25\f11 setID} field is for the use of the application, and can be initialized with any number.  The set ID is stored in the cabinet.
+\par 
+\par The {\cs25\f11 szDisk} field should contain a disk-specific string (such as \ldblquote Disk1\rdblquote , \ldblquote Disk2\rdblquote 
+, etc.) corresponding to the disk on which the cabinet is placed.  Alternatively, if cabinets are not spanning multiple disks, the string can simply be a null string.  This field is sto
+red in the cabinet and is used upon extraction to prompt the user to insert the correct disk.  See the {\cs26\b\f5 FCIAddFile} API for details.
+\par 
+\par The {\cs25\f11 szCab} field should contain a string which contains the name of the first cabinet to be created (e.g. \ldblquote APP1.CAB\rdblquote ).  In the event of multiple cabinets being created, the {\i GetNextCab} function called by the {\cs26\b\f5 
+FCIAddFile} API allows subsequent cabinet names to be specified.
+\par 
+\par The {\cs25\f11 szCabPath} field should contain the complete path of where to create the cabinet (e.g. \ldblquote C:\\MYFILES\\\rdblquote ).
+\par 
+\par The {\f11 cbReserveCFHeader}, {\f11 cbReserveCFFolder}, and {\f11 cbReserveCFData} fields can be set to create per-cabinet, per-folder, and per-datablock reserved sections in the cabinet.  For example, setting {\f11 cbReserveCFHeader}
+ to 6144 is commonly used to reserve a 6k space in the cabinet file as needed for codesigning.  The other reserved sections are not commonly used.
+\par 
+\par \pard\plain \s3\sb240\sa60\keepn\widctlpar \b\f5 Returns
+\par \pard\plain \widctlpar \f4\fs20 
+\par If successful, a non-NULL HFCI context pointer is returned.  If unsuccessful, NULL is returned, and the error structure pointed to by {\i perf} is filled out.
+\par 
+\par \pard\plain \s2\sb240\sa60\keepn\widctlpar \b\f5\fs28 \page {\*\bkmkstart _Toc372430529}{\*\bkmkstart _Toc377752858}FCIAddFile{\*\bkmkend _Toc372430529}{\*\bkmkend _Toc377752858}
+\par \pard\plain \widctlpar \f4\fs20 
+\par \pard\plain \s3\sb240\sa60\keepn\widctlpar \b\f5 Usage
+\par \pard\plain \widctlpar \f4\fs20 
+\par {\f11 BOOL DIAMONDAPI FCIAddFile(
+\par }\pard \fi720\widctlpar {\f11 HFCI                  hfci,
+\par }\pard \widctlpar {\f11      \tab char                 *pszSourceFile,
+\par      \tab char                 *pszFileName,
+\par      \tab BOOL                  fExecute,
+\par      \tab PFNFCIGETNEXTCABINET  GetNextCab,
+\par      \tab PFNFCISTATUS          pfnProgress,
+\par      \tab PFNFCIGETOPENINFO     pfnOpenInfo,
+\par     \tab TCOMP                 typeCompress
+\par )}
+\par 
+\par \pard\plain \s3\sb240\sa60\keepn\widctlpar \b\f5 Parameters
+\par \pard\plain \widctlpar \f4\fs20 
+\par {\i hfci}\tab \tab FCI Context pointer originally returned by {\cs26\b\f5 FCICreate}
+\par {\i pszSourceFile}\tab Name of file to add (should include path information)
+\par {\i pszFileName}\tab Name under which to store the file in the cabinet
+\par {\i fExecute}\tab \tab Boolean indicating whether the file should be executed when it is extracted
+\par {\i GetNextCab}\tab Function called to obtain specifications on the next cabinet to create
+\par {\i pfnProgress}\tab Progress function called to update the user
+\par {\i pfnOpenInfo}\tab Function called to open a file and return file date, time and attributes
+\par {\i typeCompress}\tab Compression type to use
+\par 
+\par \pard\plain \s3\sb240\sa60\keepn\widctlpar \b\f5 Description
+\par \pard\plain \widctlpar \f4\fs20 
+\par The {\cs26\b\f5 FCIAddFile} API adds a file to the cabinet under construction.
+\par 
+\par The {\i hfci} parameter must be the context pointer returned by a previous call to {\cs26\b\f5 FCICreate}.
+\par 
+\par The {\i pszSourceFile} parameter specifies the location of the file to be added to the cabinet, and should therefore include as much path information as possible (e.g. \ldblquote C:\\MYFILES\\TEST.EXE\rdblquote ).
+\par 
+\par The {\i pszFileName} parameter specifies the name of the file inside the cabinet, and should not include any path information (e.g. \ldblquote TEST.EXE\rdblquote ).
+\par 
+\par The {\i fExecute}
+ parameter specifies whether the file should be executed automatically when the cabinet is extracted.  When set, the _A_EXEC attribute will be added to the file entry in the CAB.  This mechanism is used in some Microsoft self-extracting executables, and c
+ould be used for this purpose in any custom extract application.
+\par 
+\par The {\i GetNextCab} parameter should point to a function which is called whenever FCI wishes to create a new cabinet, which will happen whenever the size of the cabinet is about to exceed the media size as specified in the {\cs25\f11 cb}
+ field of the CCAB structure passed to {\cs26\b\f5 FCICreate}.  The {\i GetNextCab} function is called with three parameters which are explained below:
+\par 
+\par The first parameter, {\cs24\f5 pccab}, is a pointer to a copy of the CCAB structure of the cabinet which has just been completed.  However, the {\cs25\f11 iCab}
+ field will have been incremented by one.  When this function returns, the next cabinet will be created using the fields in this structure, so these fields should be modified as is necessary.  In particular, the {\cs25\f11 szCab}
+ field (the cabinet name) should be changed.  If creating multiple cabinets, typically the {\cs25\f11 iCab} field is used to create the name; for example, the {\i GetNextCab} function might include a line which does:
+\par 
+\par {\f11 sprintf(pccab->szCab, \ldblquote FOO%d.CAB\rdblquote , pccab->iCab);}
+\par 
+\par Similarly, the disk name, media size, folder threshold, etc. parameters may also be modified.
+\par 
+\par The second parameter, {\cs24\f5 cbPrevCab}, is an estimate of the size of the cabinet which has just been completed.
+\par 
+\par The last parameter, {\cs24\f5 pv}, is the application-defined value originally passed to {\cs26\b\f5 FCICreate}.
+\par 
+\par The {\i GetNextCab} function should return TRUE for success, or FALSE to abort cabinet creation.
+\par 
+\par The {\i pfnProgress} parameter should point to a function which is called periodically by FCI so that the application may send a progress report to the user.  The progress function has four parameters; {\cs24\f5 typeStatus}
+, which specifies the type of status message, {\cs24\f5 cb1} and {\cs24\f5 cb2}, which are numbers, the meaning of which is dependent upon {\cs24\f5 typeStatus}, and {\cs24\f5 pv}, the application-specific context pointer.  
+\par 
+\par The {\cs24\f5 typeStatus} parameter may take on values of {\cs27\b\i\f5 statusFile}, {\cs27\b\i\f5 statusFolder}, or {\cs27\b\i\f5 statusCabinet}.  If {\cs24\f5 typeStatus} equals {\cs27\b\i\f5 statusFile}
+ then it means that FCI is compressing data blocks into a folder.  In this case, {\cs24\f5 cb1} is either zero, or the compressed size of the most recently compressed block, and {\cs24\f5 cb2}
+ is either zero, or the uncompressed size of the most recently read block (which is usually 32K, except for the last block in a folder, which may be smaller).  There is {\i no} direct relation between {\cs24\f5 cb1} and {\cs24\f5 cb2}
+; FCI may read several blocks of uncompressed data before emitting any compressed data; if this happens, some {\cs27\b\i\f5 statusFile} messages may contain, for example, {\cs24\f5 cb1} = 0 and {\cs24\f5 cb2}
+ = 32K, followed later by other messages which contain {\cs24\f5 cb1} = 20K and {\cs24\f5 cb2} = 0.
+\par 
+\par If {\cs24\f5 typeStatus} equals {\cs27\b\i\f5 statusFolder} then it means that FCI is copying a folder to a cabinet, and {\cs24\f5 cb1} is the amount copied so far, and {\cs24\f5 cb2} is the total size of the folder.  Finally, if {\cs24\f5 typeStatus}
+ equals {\cs27\b\i\f5 statusCabinet}, then it means that FCI is writing out a completed cabinet, and {\cs24\f5 cb1} is the estimated cabinet size that was previously passed to {\i GetNextCab}, and {\cs24\f5 cb2} is the actual resulting cabinet size.
+
+\par 
+\par The progress function should return 0 for success, or -1 for failure, with an exception in the case of {\cs27\b\i\f5 statusCabinet} messages, where the function should return the desired cabinet size ({\i cb2}
+), or possibly a value rounded up to slightly higher than that.
+\par 
+\par The {\i pfnOpenInfo} parameter should point to a function which opens a file and returns its datestamp, timestamp, and attributes.  The function will receive five parameters; {\cs24\f5 pszName}, the complete pathname of the file to open; {\cs24\f5 pdate}
+, a memory location to return a FAT-style date code; {\cs24\f5 ptime}, a memory location to return a FAT-style time code; {\cs24\f5 pattribs}, a memory location to return FAT-style attributes; and {\cs24\f5 pv}
+, the application-specific context pointer originally passed to {\cs26\b\f5 FCICreate}.  The function should open the file using a file open function compatible with those passed in to {\cs26\b\f5 FCICreate}
+, and return the resulting file handle, or -1 if unsuccessful.
+\par 
+\par The {\i typeCompress} parameter specifies the type of compression to use, which may be either {\cs27\b\i\f5 tcompTYPE_NONE} for no compression, or{\i  }{\cs27\b\i\f5 tcompTYPE_MSZIP}
+ for Microsoft ZIP compression.  Other compression formats may be supported in the future.
+\par 
+\par \pard\plain \s3\sb240\sa60\keepn\widctlpar \b\f5 Returns
+\par \pard\plain \widctlpar \f4\fs20 
+\par If successful, TRUE is returned.  If unsuccessful, FALSE is returned, and the error structure pointed to by {\i perf} (from {\cs26\b\f5 FCICreate}) is filled out.
+\par 
+\par 
+\par 
+\par \pard\plain \s2\sb240\sa60\keepn\widctlpar \b\f5\fs28 \page {\*\bkmkstart _Toc372430530}{\*\bkmkstart _Toc377752859}FCIFlushCabinet{\*\bkmkend _Toc372430530}{\*\bkmkend _Toc377752859}
+\par \pard\plain \widctlpar \f4\fs20 
+\par \pard\plain \s3\sb240\sa60\keepn\widctlpar \b\f5 Usage
+\par \pard\plain \widctlpar \f4\fs20 
+\par {\f11 BOOL DIAMONDAPI FCIFlushCabinet(
+\par }\pard \fi720\widctlpar {\f11 HFCI                  hfci,
+\par }\pard \widctlpar {\f11       BOOL                  fGetNextCab,
+\par       PFNFCIGETNEXTCABINET  GetNextCab,
+\par       PFNFCISTATUS          pfnProgress
+\par )}
+\par 
+\par \pard\plain \s3\sb240\sa60\keepn\widctlpar \b\f5 Parameters
+\par \pard\plain \widctlpar \f4\fs20 
+\par {\i hfci}\tab \tab FCI Context pointer originally returned by {\cs26\b\f5 FCICreate}
+\par {\i fGetNextCab}\tab Name of file to add (should include path information)
+\par {\i GetNextCab}\tab Function called to obtain specifications on the next cabinet to create
+\par {\i pfnProgress}\tab Progress function called to update the user
+\par 
+\par \pard\plain \s3\sb240\sa60\keepn\widctlpar \b\f5 Description
+\par \pard\plain \widctlpar \f4\fs20 
+\par The {\cs26\b\f5 FCIFlushCabinet} API forces the current cabinet under construction to be completed immediately and written to disk.  Further calls to {\cs26\b\f5 FCIAddFile}
+ will cause files to be added to another cabinet.  It is also possible that there exists pending data in FCI\rquote s internal buffers that will may require spillover into another cabinet, if the current cabinet has reached the app
+lication-specified media size limit.
+\par 
+\par The {\i hfci} parameter must be the context pointer returned by a previous call to {\cs26\b\f5 FCICreate}.
+\par 
+\par The {\i fGetNextCab} flag determines whether the function pointed to by the supplied {\i GetNextCab} parameter, will be called.  If {\i fGetNextCab} is TRUE, then {\i GetNextCab} will be called to obtain continuation information.  Otherwise, if {\i 
+fGetNextCab} is FALSE, then {\i GetNextCab} will be called only if the cabinet overflows.
+\par 
+\par The {\i pfnProgress} parameter should point to a function which is called periodically by FCI so that the application may send a progress report to the user.  This function works in an identical manner to the progress function passed to {\cs26\b\f5 
+FCIAddFile}.
+\par 
+\par \pard\plain \s3\sb240\sa60\keepn\widctlpar \b\f5 Returns
+\par \pard\plain \widctlpar \f4\fs20 
+\par If successful, TRUE is returned.  If unsuccessful, FALSE is returned, and the error structure pointed to by {\i perf} (from {\cs26\b\f5 FCICreate}) is filled out.
+\par 
+\par 
+\par \pard\plain \s2\sb240\sa60\keepn\widctlpar \b\f5\fs28 \page {\*\bkmkstart _Toc372430531}{\*\bkmkstart _Toc377752860}FCIFlushFolder{\*\bkmkend _Toc372430531}{\*\bkmkend _Toc377752860}
+\par \pard\plain \widctlpar \f4\fs20 
+\par \pard\plain \s3\sb240\sa60\keepn\widctlpar \b\f5 Usage
+\par \pard\plain \widctlpar \f4\fs20 
+\par {\f11 BOOL DIAMONDAPI FCIFlushFolder(
+\par }\pard \fi720\widctlpar {\f11 HFCI                  hfci,
+\par PFNFCIGETNEXTCABINET  GetNextCab,
+\par PFNFCISTATUS          pfnProgress
+\par }\pard \widctlpar {\f11 )}
+\par 
+\par \pard\plain \s3\sb240\sa60\keepn\widctlpar \b\f5 Parameters
+\par \pard\plain \widctlpar \f4\fs20 
+\par {\i hfci}\tab \tab FCI Context pointer originally returned by {\cs26\b\f5 FCICreate}
+\par {\i GetNextCab}\tab Function called to obtain specifications on the next cabinet to create
+\par {\i pfnProgress}\tab Progress function called to update the user
+\par 
+\par \pard\plain \s3\sb240\sa60\keepn\widctlpar \b\f5 Description
+\par \pard\plain \widctlpar \f4\fs20 
+\par The {\cs26\b\f5 FCIFlushFolder} API forces the current folder under construction to be completed immediately, effectively resetting the compression history at this point (if compression is being used).  
+\par 
+\par The {\i hfci} parameter must be the context pointer returned by a previous call to {\cs26\b\f5 FCICreate}.
+\par 
+\par The supplied {\i GetNextCab} function will be called if the cabinet overflows, which is a possibility if the pending data buffered inside FCI causes the application-specified cabinet media size to be exceeded.
+\par 
+\par The {\i pfnProgress} parameter should point to a function which is called periodically by FCI so that the application may send a progress report to the user.  This function works in an identical manner to the progress function passed to {\cs26\b\f5 
+FCIAddFile}.
+\par 
+\par \pard\plain \s2\sb240\sa60\keepn\widctlpar \b\f5\fs28 \page {\*\bkmkstart _Toc372430532}{\*\bkmkstart _Toc377752861}FCIDestroy{\*\bkmkend _Toc372430532}{\*\bkmkend _Toc377752861}
+\par \pard\plain \widctlpar \f4\fs20 
+\par \pard\plain \s3\sb240\sa60\keepn\widctlpar \b\f5 Usage
+\par \pard\plain \widctlpar \f4\fs20 
+\par {\f11 BOOL DIAMONDAPI FCIDestroy(
+\par }\pard \fi720\widctlpar {\f11 HFCI\tab hfci
+\par }\pard \widctlpar {\f11 )}
+\par 
+\par \pard\plain \s3\sb240\sa60\keepn\widctlpar \b\f5 Parameters
+\par \pard\plain \widctlpar \f4\fs20 
+\par {\i hfci}\tab \tab FCI context handle returned by {\cs26\b\f5 FCICreate}
+\par 
+\par \pard\plain \s3\sb240\sa60\keepn\widctlpar \b\f5 Description
+\par \pard\plain \widctlpar \f4\fs20 
+\par The {\cs26\b\f5 FCIDestroy} API destroys an {\i hfci} context, freeing any memory and temporary files associated with the context.
+\par 
+\par \pard\plain \s3\sb240\sa60\keepn\widctlpar \b\f5 Returns
+\par \pard\plain \widctlpar \f4\fs20 
+\par If successful, TRUE is returned.  If unsuccessful, FALSE is returned.  The only reason for failure is that the {\i hfci} passed in was not a proper context handle.
+\par 
+\par \pard\plain \s1\sb240\sa60\keepn\widctlpar \b\f5\fs32\kerning28 \page {\*\bkmkstart _Toc372430533}{\*\bkmkstart _Toc377752862}FDI{\*\bkmkend _Toc372430533}{\*\bkmkend _Toc377752862}
+\par \pard\plain \widctlpar \f4\fs20 
+\par 
+\par The four FDI (File Decompression Interface) APIs are:
+\par 
+\par {\cs26\b\f5 FDICreate}\tab \tab Create an FDI context
+\par {\cs26\b\f5 FDIIsCabinet}{\b \tab \tab }Determines whether a file is a cabinet, and returns information if so
+\par {\cs26\b\f5 FDICopy}{\b \tab \tab }Extracts files from cabinets{\b 
+\par }{\cs26\b\f5 FDIDestroy}\tab \tab Destroy an FDI context
+\par 
+\par 
+\par \pard\plain \s2\sb240\sa60\keepn\widctlpar \b\f5\fs28 \page {\*\bkmkstart _Toc372430534}{\*\bkmkstart _Toc377752863}FDICreate{\*\bkmkend _Toc372430534}{\*\bkmkend _Toc377752863}
+\par \pard\plain \widctlpar \f4\fs20 
+\par \pard\plain \s3\sb240\sa60\keepn\widctlpar \b\f5 Usage
+\par \pard\plain \widctlpar \f4\fs20 
+\par {\f11 HFCI DIAMONDAPI FDICreate(
+\par }\pard \fi720\widctlpar {\f11 PFNALLOC \tab \tab pfnalloc,
+\par PFNFREE \tab \tab pfnfree,
+\par PFNOPEN \tab \tab pfnopen,
+\par PFNREAD \tab \tab pfnread,
+\par PFNWRITE \tab \tab pfnwrite,
+\par PFNCLOSE\tab \tab pfnclose,
+\par PFNSEEK\tab \tab pfnseek,
+\par int\tab \tab \tab cpuType,
+\par }\pard \widctlpar {\f11 \tab PERF\tab \tab \tab perf
+\par )}
+\par 
+\par \pard\plain \s3\sb240\sa60\keepn\widctlpar \b\f5 Parameters
+\par \pard\plain \widctlpar \f4\fs20 
+\par {\i pfnalloc}\tab \tab Memory allocation function
+\par {\i pfnfree}\tab \tab Memory free function
+\par {\i pfnopen}\tab \tab File open function
+\par {\i pfnread}\tab \tab File read function
+\par {\i pfnwrite}\tab \tab File write function
+\par {\i pfnclose}\tab \tab File close function
+\par {\i pfnseek}\tab \tab File seek function
+\par {\i cpuType}\tab \tab Type of CPU
+\par {\i perf}\tab \tab Pointer to an error structure
+\par 
+\par \pard\plain \s3\sb240\sa60\keepn\widctlpar \b\f5 Description
+\par \pard\plain \widctlpar \f4\fs20 
+\par The {\cs26\b\f5 FDICreate} API creates an FDI context that is passed to other FDI APIs.  
+\par 
+\par The {\i pfnalloc} and {\i pfnfree} parameters should point to memory allocation and memory free functions which will be called by FDI to allocate and free memory.  These two functions take parameters identical to the standard C malloc and free functions.
+
+\par 
+\par The {\i pfnopen}, {\i pfnread}, {\i pfnwrite}, {\i pfnclose}, and {\i pfnseek} parameters should point to functions which perform file open, f
+ile read, file write, file close, and file seek operations respectively.  These functions should accept parameters identical to those for the standard {\i _open}, {\i _read}, {\i _write}, {\i _close}, and {\i _lseek}
+ functions, and should likewise have identical return codes.  Note that the FDI i/o functions do not take the same parameters as the FCI i/o functions.
+\par 
+\par It is not necessary for these functions to actually call _open etc.; these functions could instead call fopen, fread, fwrite, fclose, and fseek, or CreateFile, ReadFile
+, WriteFile, CloseHandle, and SetFilePointer, etc.  However, the parameters and return codes will have to be translated appropriately (e.g. the file open mode passed in to {\i pfnopen}).
+\par 
+\par The {\i cpuType} parameter should equal one of {\cs27\b\i\f5 cpu80386} (indicating that 80386 instructions may be used), {\cs27\b\i\f5 cpu80286} (indicating that only 80286 instructions may be used), or {\cs27\b\i\f5 cpuUNKNOWN}
+ (indicating that FDI should determine the CPU type).  The {\i cpuType} parameter is looked at only by the 16-bit version of FDI; it is ignored by the 32-bit version of FDI.
+\par 
+\par The {\i perf} parameter should point to a global or allocated ERF structure.  Any errors returned by {\cs26\b\f5 FDICreate} or subsequent FDI APIs using the same context will cause the ERF structure to be filled out.
+\par 
+\par \pard\plain \s3\sb240\sa60\keepn\widctlpar \b\f5 Returns
+\par \pard\plain \widctlpar \f4\fs20 
+\par If successful, a non-NULL HFDI context pointer is returned.  If unsuccessful, NULL is returned, and the error structure pointed to by {\i perf} is filled out.
+\par \pard\plain \s2\sb240\sa60\keepn\widctlpar \b\f5\fs28 \page {\*\bkmkstart _Toc372430535}{\*\bkmkstart _Toc377752864}FDIIsCabinet{\*\bkmkend _Toc372430535}{\*\bkmkend _Toc377752864}
+\par \pard\plain \widctlpar \f4\fs20 
+\par \pard\plain \s3\sb240\sa60\keepn\widctlpar \b\f5 Usage
+\par \pard\plain \widctlpar \f4\fs20 
+\par {\f11 BOOL DIAMONDAPI FDIIsCabinet(
+\par }\pard \fi720\widctlpar {\f11 HFDI \tab \tab \tab hfdi,
+\par int \tab \tab \tab hf,
+\par PFDICABINETINFO \tab pfdici
+\par }\pard \widctlpar {\f11 )}
+\par 
+\par \pard\plain \s3\sb240\sa60\keepn\widctlpar \b\f5 Parameters
+\par \pard\plain \widctlpar \f4\fs20 
+\par {\i hfdi}\tab \tab FDI Context pointer originally returned by {\cs26\b\f5 FDICreate}
+\par {\i hf}\tab \tab File handle returned by a call to the application\rquote s file open function
+\par {\i pfdici}\tab \tab Pointer to a cabinet info structure
+\par 
+\par 
+\par \pard\plain \s3\sb240\sa60\keepn\widctlpar \b\f5 Description
+\par \pard\plain \widctlpar \f4\fs20 
+\par The {\cs26\b\f5 FDIIsCabinet} API determines whether a given file is a cabinet, and if so, returns information about the cabinet in the provided FDICABINETINFO structure.
+\par 
+\par The {\i hfdi} parameter is the context pointer returned by a previous call to {\cs26\b\f5 FDICreate}.
+\par 
+\par The {\i hf} parameter must be a file handle on the file being examined.  The file handle must be of the same type as those used by the file i/o functions passed to {\cs26\b\f5 FDICreate}.
+\par 
+\par The {\i pfdici} parameter should point to an FDICABINETINFO structure, which will receive the cabinet details if the file is indeed a cabinet.  The fields of this structure are as follows:
+\par 
+\par The {\cs24\f5 cbCabinet} field contains the length of the cabinet file, in bytes.  The {\cs24\f5 cFolders} field contains the number of folders in the cabinet.  The {\cs24\f5 cFiles} field contains the total number of files in the cabinet.  The {\cs24\f5 
+setID} field contains the set ID (an application-defined magic number) of the cabinet.  The {\cs24\f5 iCabinet} field contains the number of this cabinet in the set (0 for the first cabinet, 1 for the second, and so forth).  The {\cs24\f5 fReserve}
+ field is a boolean indicating whether there is a reserved area present in the cabinet.  The {\cs24\f5 hasprev}
+ field is a boolean indicating whether this cabinet is chained to the previous cabinet, by way of having a file continued from the previous cabinet into the current one.  The {\cs24\f5 hasnext}
+ field is a boolean indicating whether this cabinet is chained to the next cabinet, by way of having a file continued from this cabinet into the next one.
+\par 
+\par \pard\plain \s3\sb240\sa60\keepn\widctlpar \b\f5 Returns
+\par \pard\plain \widctlpar \f4\fs20 
+\par If the file is a cabinet, then TRUE is returned and the FDICABINETINFO structure is filled out.  If the file is not a cabinet, or some other error occurred, then FALSE is returned.  In either case, it is the responsibility of the application to close the 
+file handle passed to this function.
+\par 
+\par \pard\plain \s2\sb240\sa60\keepn\widctlpar \b\f5\fs28 \page {\*\bkmkstart _Toc372430536}{\*\bkmkstart _Toc377752865}FDICopy{\*\bkmkend _Toc372430536}{\*\bkmkend _Toc377752865}
+\par \pard\plain \widctlpar \f4\fs20 
+\par \pard\plain \s3\sb240\sa60\keepn\widctlpar \b\f5 Usage
+\par \pard\plain \widctlpar \f4\fs20 
+\par {\f11 BOOL FAR DIAMONDAPI FDICopy(
+\par }\pard \fi720\widctlpar {\f11 HFDI          hfdi,
+\par }\pard \widctlpar {\f11       char FAR     *pszCabinet,
+\par       char FAR     *pszCabPath,
+\par       int           flags,
+\par       PFNFDINOTIFY  pfnfdin,
+\par       PFNFDIDECRYPT pfnfdid,
+\par       void FAR     *pvUser
+\par );}
+\par 
+\par \pard\plain \s3\sb240\sa60\keepn\widctlpar \b\f5 Parameters
+\par \pard\plain \widctlpar \f4\fs20 
+\par {\i hfdi}\tab \tab FDI Context pointer originally returned by {\cs26\b\f5 FDICreate}
+\par {\i pszCabinet\tab }Name of cabinet file, excluding path information{\i 
+\par pszCabPath}\tab File path to cabinet file{\i 
+\par flags}\tab \tab Flags to control the extract operation{\i 
+\par pfnfdin}\tab \tab Pointer to a notification (status update) function{\i 
+\par pfnfdid}\tab \tab Pointer to a decryption function{\i 
+\par pvUser}\tab \tab Application-specified value to pass to notification function
+\par 
+\par 
+\par \pard\plain \s3\sb240\sa60\keepn\widctlpar \b\f5 Description
+\par \pard\plain \widctlpar \f4\fs20 
+\par The {\cs26\b\f5 FDICopy} API extracts one or more files from a cabinet.  Information on each file in the cabinet is passed back to the supplied pfnfdin function, at which point the application may decide to extract or not extract the file.
+\par 
+\par The {\i hfdi} parameter is the context pointer returned by a previous call to {\cs26\b\f5 FDICreate}.
+\par 
+\par The {\i pszCabinet} parameter should be the name of the cabinet file, excluding any path information, from which to extract files.  If a file is split over multiple cabinets, {\cs26\b\f5 FDICopy} does allow subsequent cabinets to be opened.
+\par 
+\par The {\i pszCabPath} parameter should be the file path of the cabinet file (e.g. \ldblquote C:\\MYCABS\\\rdblquote ).  The contents of {\i pszCabPath} and {\i pszCabinet} will be strung together to create the full pathname of the cabinet.
+\par 
+\par The {\i flags} parameter is used to set flags for the decoder.  At this time there are no flags defined, and the {\i flags} parameter should be set to zero.
+\par 
+\par The {\i pfnfdin} parameter should point to a file notification function, which will be called periodically to update the application on the status of the decoder.  The {\i pfnfdin} function takes two parameters; {\cs24\f5 fdint}
+, an integral value indicating the type of notification message, and {\cs24\f5 pfdin}, a pointer to an FDINOTIFICATION structure.
+\par 
+\par The {\cs24\f5 fdint} parameter may equal one of the following values; {\cs27\b\i\f5 fdintCABINET_INFO} (general information about the cabinet),{\cs27\b\i\f5  fdintPARTIAL_FILE} (the first file in the cabinet is a continuation from a previous cabinet), {
+\cs27\b\i\f5 fdintCOPY_FILE} (asks the application if this file should be copied), {\cs27\b\i\f5 fdintCLOSE_FILE_INFO} (close the file and set file attributes, date, etc.), or{\cs27\b\i\f5  fdintNEXT_CABINET} (file continued on next cabinet).  
+\par 
+\par The {\cs24\f5 pfdin} parameter will point to an FDINOTIFICATION structure with some or all of the fields filled out, depending on the value of the {\cs24\f5 fdint} parameter.  Four of the fields are used for general data; {\cs25\f11 cb}
+ (a long integer), and {\cs25\f11 psz1}, {\cs25\f11 psz2}, and {\cs25\f11 psz3} (pointers to strings), the meaning of which are highly dependent on the {\cs24\f5 fdint} value.  The {\cs25\f11 pv}
+ field will be the value the application originally passed in as the {\i pvUser} parameter to {\cs26\b\f5 FDICopy}.
+\par 
+\par The {\i pfnfdin} function must return a value to FDI, which tells FDI whether to continue, abort, skip a file, or perform some other operation.  The values which can be returned depend on {\cs24\f5 fdint}, and are explained below.
+\par 
+\par Note that it is possible that future versions of FDI will have additional notification messages.  Therefore, the application should ignore values of {\cs24\f5 fdint} it does not understand, and return zero t
+o continue (preferably), or -1 (negative one) to abort.
+\par 
+\par If {\cs24\f5 fdint} equals {\cs27\b\i\f5 fdintCABINET_INFO} then the following fields will be filled out; {\cs25\f11 psz1} will point to the name of the next cabinet (excluding path information); {\cs25\f11 psz2} will point to the name of the next disk; {
+\cs25\f11 psz3} will point to the cabinet path name; {\cs25\f11 setID} will equal the set ID of the current cabinet; and {\cs25\f11 iCabinet}
+ will equal the cabinet number within the cabinet set (0 for the first cabinet, 1 for the second cabinet, etc.)  The application should return 0 to indicate success, or -1 to indicate failure, which will abort {\cs26\b\f5 FDICopy}.  An {\cs27\b\i\f5 
+fdintCABINET_INFO} notification will be provided exactly once for each cabinet opened by {\cs26\b\f5 FDICopy}, including continuation cabinets opened due to files spanning cabinet boundaries.
+\par 
+\par If {\cs24\f5 fdint} equals {\cs27\b\i\f5 fdintCOPY_FILE} then the following fields will be filled out; {\cs25\f11 psz1} will point to the name of a file in the cabinet; {\cs25\f11 cb} will equal the uncompressed size of the file; {\cs25\f11 date}
+ will equal the file\rquote s 16-bit FAT date; {\cs25\f11 time} will equal the file\rquote s 16-bit FAT time; and {\cs25\f11 attribs} will equal the file\rquote 
+s 16-bit FAT attributes.  The application may return one of three values; 0 (zero) to skip (i.e. not copy) the file; -1 (negative one) to abort {\cs26\b\f5 FDICopy}
+; or a non-zero (and non-negative-one) file handle for the destination to which to write the file.  The file handle returned must be compatible with the PFNCLOSE function supplied to {\cs26\b\f5 FDICreate}.  The {\cs27\b\i\f5 fdintCOPY_FILE}
+ notification is called for each file that {\i starts} in the current cabinet, providing the opportunity for the application to request that the file be copied or skipped.
+\par 
+\par \pard \widctlpar\tx540 If {\cs24\f5 fdint} equals {\cs27\b\i\f5 fdintCLOSE_FILE_INFO} then the following fields will be filled out; {\cs25\f11 psz1} will point to the name of a file in the cabinet; {\cs25\f11 hf}
+ will be a file handle (which originated from {\cs27\b\i\f5 fdintCOPY_FILE}); {\cs25\f11 date} will equal the file\rquote s 16-bit FAT date; {\cs25\f11 time} will equal the file\rquote s 16-bit FAT time; {\cs25\f11 attributes} will equal the file\rquote 
+s 16-bit FAT attributes (minus the _A_EXEC bit); and {\cs25\f11 cb}
+ will equal either zero (0) or one (1), indicating whether the file should be executed after extract (one), or not (zero).  It is the responsibility of the application to execute the file if {\cs25\f11 cb} equals one.  The{\cs27\b\i\f5 
+ fdintCLOSE_FILE_INFO} notification is called after all of the data has been written to a target file.  The application must close the file (using the provided {\cs25\f11 hf} handle), and set the file date, time, and attributes.  The applica
+tion should return TRUE for success, or FALSE or -1 (negative one) to abort {\cs26\b\f5 FDICopy}.  FDI assumes that the target file was closed, even if this callback returns failure; FDI will not attempt to use PFNCLOSE to close the file.
+\par \pard \widctlpar 
+\par If {\cs24\f5 fdint} equals {\cs27\b\i\f5 fdintPARTIAL_FILE} then the following fields will be filled out; {\cs25\f11 psz1} will point to the name of the file continued from a previous cabinet; {\cs25\f11 psz2}
+ will point to the name of the cabinet on which the first segment of the file exists; {\cs25\f11 psz3} will point to the name of the disk on which the first segment of the file exists.  The {\cs27\b\i\f5 fdintPARTIAL_FILE}
+ notification is called for files at the beginning of a cabinet which are continued from a previous cabinet.  This notification will occur only when {\cs26\b\f5 FDICopy}
+ is started on the second or subsequent cabinet in a series, which has files continued from a previous cabinet.  The application should return zero (0) for success, or -1 (negative one) for failure, which will abort {\cs26\b\f5 FDICopy}.
+\par 
+\par If {\cs24\f5 fdint} equals {\cs27\b\i\f5 fdintNEXT_CABINET} then the following fields will be filled out; {\cs25\f11 psz1} will point to the name of the next cabinet on which the current file is continued; {\cs25\f11 psz2}
+ will point to the name of the next disk on which the current file is continued; {\cs25\f11 psz3} will point to the cabinet path information; and {\cs25\f11 fdie} will equal a success or error value.  The {\cs27\b\i\f5 fdintNEXT_CABINET}
+ notification is called only when {\cs27\b\i\f5 fdintCOPY_FILE} was instructed to copy a file in the current cabinet that is continued in a subsequent cabinet.  It is important that the cabinet path name, {\cs25\f11 psz3}, be validated before returning ({
+\cs25\f11 psz3}, which points to a 256 byte array, may be modified by the application; however, it is not permissible to modify {\cs25\f11 psz1} or {\cs25\f11 psz2}
+).  The application should ensure that the cabinet exists and is readable before returning; if necessary, the application should issue a disk change prompt and ensure that the cabinet file exists.  When this function returns to FDI, FDI will verify that t
+he {\cs25\f11 setID} and {\cs25\f11 iCabinet} fields of the supplied cabinet match the expected values for that cabinet.  If not, FDI will continue to send {\cs27\b\i\f5 fdintNEXT_CABINET} notification messages with the {\cs25\f11 fdie} field set to {
+\cs27\b\i\f5 FDIERROR_WRONG_CABINET}, until the correct cabinet file is specified, or until this function returns -1 (negative one) to abort the {\cs26\b\f5 FDICopy}
+ call.  If after returning from this function, the cabinet file is not present and readable, or has been damaged, then the {\cs25\f11 fdie} field will equal one of the following values; {\cs27\b\i\f5 FDIERROR_CABINET_NOT_FOUND}, {\cs27\b\i\f5 
+FDIERROR_NOT_A_CABINET}, {\cs27\b\i\f5 FDIERROR_UNKNOWN_CABINET_VERSION}, {\cs27\b\i\f5 FDIERROR_CORRUPT_CABINET}, {\cs27\b\i\f5 FDIERROR_BAD_COMPR_TYPE}, {\cs27\b\i\f5 FDIERROR_RESERVE_MISMATCH}, {\cs27\b\i\f5 FDIERROR_WRONG_CABINET}
+.  If there was no error, {\cs25\f11 fdie} will equal {\cs27\b\i\f5 FDIERROR_NONE}.  The application should return 0 (zero) to indicate success, or -1 (negative one) to indicate failure, which will abort {\cs26\b\f5 FDICopy}.
+\par 
+\par The {\i pfndid} parameter is reserved for encryption, and is currently not used by FDI.  This parameter should be set to NULL.
+\par 
+\par The {\i pvUser} parameter should contain an application-defined value which will be passed back as a field in the FDINOTIFICATION structure of the notification function.  It not required, this field may be safely set to NULL.
+\par 
+\par \pard\plain \s3\sb240\sa60\keepn\widctlpar \b\f5 Returns
+\par \pard\plain \widctlpar \f4\fs20 
+\par If successful, TRUE is returned.  If unsuccessful, FALSE is returned, and the error structure pointed to by {\i perf} (from {\cs26\b\f5 FDICreate}) is filled out.
+\par \pard\plain \s2\sb240\sa60\keepn\widctlpar \b\f5\fs28 \page {\*\bkmkstart _Toc372430537}{\*\bkmkstart _Toc377752866}FDIDestroy{\*\bkmkend _Toc372430537}{\*\bkmkend _Toc377752866}
+\par \pard\plain \widctlpar \f4\fs20 
+\par \pard\plain \s3\sb240\sa60\keepn\widctlpar \b\f5 Usage
+\par \pard\plain \widctlpar \f4\fs20 
+\par {\f11 BOOL DIAMONDAPI FDIDestroy(
+\par }\pard \fi720\widctlpar {\f11 HFDI\tab hfdi
+\par }\pard \widctlpar {\f11 )}
+\par 
+\par \pard\plain \s3\sb240\sa60\keepn\widctlpar \b\f5 Parameters
+\par \pard\plain \widctlpar \f4\fs20 
+\par {\i hfdi}\tab \tab FDI context handle returned by {\cs26\b\f5 FDICreate}
+\par 
+\par \pard\plain \s3\sb240\sa60\keepn\widctlpar \b\f5 Description
+\par \pard\plain \widctlpar \f4\fs20 
+\par The {\cs26\b\f5 FDIDestroy} API destroys an {\i hfdi} context, freeing any memory and temporary files associated with the context.
+\par 
+\par \pard\plain \s3\sb240\sa60\keepn\widctlpar \b\f5 Returns
+\par \pard\plain \widctlpar \f4\fs20 
+\par If successful, TRUE is returned.  If unsuccessful, FALSE is returned.  The only reason for failure is that the {\i hfdi} passed in was not a proper context handle.
+\par 
+\par }

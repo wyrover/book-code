@@ -1,0 +1,21 @@
+HKCR
+{
+	Chapter4.Math.1 = s 'Math Class'
+	{
+		CLSID = s '{5FB0C22F-3343-11D1-883A-444553540000}'
+	}
+	Chapter4.Math = s 'Math Class'
+	{
+		CurVer = s 'Chapter4.Math.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {5FB0C22F-3343-11D1-883A-444553540000} = s 'Math Class'
+		{
+			ProgID = s 'Chapter4.Math.1'
+			VersionIndependentProgID = s 'Chapter4.Math'
+			LocalServer32 = s '%MODULE%'
+			val AppID = s '{5FB0C222-3343-11D1-883A-444553540000}'
+		}
+	}
+}

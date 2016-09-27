@@ -1,0 +1,39 @@
+// ATL_OLEDB_Prov.idl : IDL source for ATL_OLEDB_Prov.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (ATL_OLEDB_Prov.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(8DFCA8E0-791B-11d3-9D83-D79826594133),
+	helpstring("IDBCarusoeProvSource Interface"),
+	pointer_default(unique)
+]
+interface IDBCarusoeProvSource : IUnknown
+{
+	[helpstring("GetServerFile Method")] HRESULT GetServerFileName([out]BSTR* pBSTRFileName);
+};
+
+[
+	uuid(F5F87941-9374-11D3-850F-00400530CFB7),
+	version(1.0),
+	helpstring("ATL_OLEDB_Prov 1.0 Type Library")
+]
+library ATL_OLEDB_PROVLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(4DAF1613-783B-11D3-9D83-DA68CA737833),
+		helpstring("CarusoeProv OLE DB Provider")
+	]
+	coclass CarusoeProv
+	{
+		interface IUnknown;
+	};
+};

@@ -1,0 +1,24 @@
+HKCR
+{
+	ATLSampleExe.Account.1 = s 'Account Class'
+	{
+		CLSID = s '{6EA21C2D-D1C4-11D4-A239-503748C10000}'
+	}
+	ATLSampleExe.Account = s 'Account Class'
+	{
+		CLSID = s '{6EA21C2D-D1C4-11D4-A239-503748C10000}'
+		CurVer = s 'ATLSampleExe.Account.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {6EA21C2D-D1C4-11D4-A239-503748C10000} = s 'Account Class'
+		{
+			ProgID = s 'ATLSampleExe.Account.1'
+			VersionIndependentProgID = s 'ATLSampleExe.Account'
+			ForceRemove 'Programmable'
+			LocalServer32 = s '%MODULE%'
+			val AppID = s '{6EA21C21-D1C4-11D4-A239-503748C10000}'
+			'TypeLib' = s '{6EA21C20-D1C4-11D4-A239-503748C10000}'
+		}
+	}
+}

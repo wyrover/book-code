@@ -1,0 +1,55 @@
+// Chapter10_GITServer.idl : IDL source for Chapter10_GITServer.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (Chapter10_GITServer.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+	[
+		object,
+		uuid(9029D3B0-67FE-11d1-B5F9-0004ACFF171C),
+		helpstring("ICallBack Interface"),
+		pointer_default(unique)
+	]
+	interface ICallBack : IUnknown
+	{
+		[helpstring("method ComputationComplete")] HRESULT ComputationComplete( [in] long lResult );
+		[helpstring("method Error")] HRESULT Error( [in] BSTR bstrDescription );
+	};
+
+	[
+		uuid(C2C66744-C012-11D1-B619-0004ACFF171C),	
+		helpstring("IMath Interface"),
+		pointer_default(unique)
+	]
+	interface IMath : IUnknown
+	{
+		[id(1), helpstring("method Add")] HRESULT Add([in] long lOp1, [in] long lOp2);
+		[id(2), helpstring("method Subtract")] HRESULT Subtract([in] long lOp1, [in] long lOp2);
+		[id(3), helpstring("method Multiply")] HRESULT Multiply([in] long lOp1, [in] long lOp2);
+		[id(4), helpstring("method Divide")] HRESULT Divide([in] long lOp1, [in] long lOp2);
+		[id(5), helpstring("method Advise")] HRESULT Advise([in] ICallBack* pCallBack);
+		[id(6), helpstring("method Unadvise")] HRESULT Unadvise();
+	};
+[
+	uuid(C2C66733-C012-11D1-B619-0004ACFF171C),
+	version(1.0),
+	helpstring("Chapter10_GITServer 1.0 Type Library")
+]
+library CHAPTER10_GITSERVERLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(C2C66745-C012-11D1-B619-0004ACFF171C),
+		helpstring("Math Class")
+	]
+	coclass Math
+	{
+		[default] interface IMath;
+      interface ICallBack;
+	};
+};

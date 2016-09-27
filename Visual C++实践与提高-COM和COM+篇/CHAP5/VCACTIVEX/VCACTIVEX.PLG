@@ -1,0 +1,43 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: VCActiveX - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x804 /fo"Debug/VCActiveX.res" /d "_DEBUG" /d "_AFXDLL" "D:\Samples\VCActiveX\VCActiveX.rc"" 
+Creating temporary file "C:\TEMP\RSP9.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Debug/VCActiveX.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"D:\Samples\VCActiveX\VCActiveX.cpp"
+"D:\Samples\VCActiveX\VCActiveXDlg.cpp"
+]
+Creating command line "cl.exe @C:\TEMP\RSP9.tmp" 
+Creating temporary file "C:\TEMP\RSPA.tmp" with contents
+[
+/nologo /subsystem:windows /incremental:yes /pdb:"Debug/VCActiveX.pdb" /debug /machine:I386 /out:"Debug/VCActiveX.exe" /pdbtype:sept 
+.\Debug\calendar.obj
+.\Debug\font.obj
+.\Debug\StdAfx.obj
+.\Debug\VCActiveX.obj
+.\Debug\VCActiveXDlg.obj
+.\Debug\VCActiveX.res
+]
+Creating command line "link.exe @C:\TEMP\RSPA.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+VCActiveXDlg.cpp
+Generating Code...
+Skipping... (no relevant changes detected)
+VCActiveX.cpp
+Linking...
+
+
+
+<h3>Results</h3>
+VCActiveX.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>
