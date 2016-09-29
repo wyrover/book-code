@@ -63,6 +63,14 @@ public:
         return value;
     }
 
+
+	HRESULT GetValue(const wchar_t* name, CComVariant* value);
+	HRESULT GetValue(const wchar_t* name, CString* value);
+	HRESULT GetValue(const wchar_t* name, bool* value);
+	HRESULT GetValue(const wchar_t* name, int* value);
+	HRESULT GetValue(const wchar_t* name, UINT32* value);
+
+
     std::wstring GetString(std::wstring);
 
     //从WMI实例中设置或读取一个string属性

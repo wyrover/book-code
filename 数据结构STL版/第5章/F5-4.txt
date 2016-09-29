@@ -1,0 +1,6 @@
+false
+false
+2
+c1 20 c2 70
+1
+c1 c2 good

@@ -1,0 +1,6 @@
+true
+false
+2
+a1 a2
+1
+a2 a1

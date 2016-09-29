@@ -280,6 +280,75 @@ BOOL CWmiUtilities::GetStringProperty(const wchar_t* csName, std::wstring& csVal
 }
 
 
+HRESULT CWmiUtilities::GetValue( const wchar_t* name, CComVariant* value )
+{
+	value->Clear();
+
+	CComBSTR name_string;
+	HRESULT hr = name_string.Append(name);
+	if (FAILED(hr)) {
+		return hr;
+	}
+	hr = pls_->Get(name_string, 0, value, 0, 0);
+	if (FAILED(hr)) {
+		return hr;
+	}
+
+	return S_OK;
+}
+
+HRESULT CWmiUtilities::GetValue( const wchar_t* name, CString* value )
+{
+	CComVariant var;
+	HRESULT hr = GetValue(name, &var);
+	if (FAILED(hr)) {
+		return hr;
+	}
+
+	//ASSERT1(V_VT(&var) == VT_BSTR);
+	value->SetString(var.bstrVal);
+	return S_OK;
+}
+
+HRESULT CWmiUtilities::GetValue( const wchar_t* name, bool* value )
+{
+	CComVariant var;
+	HRESULT hr = GetValue(name, &var);
+	if (FAILED(hr)) {
+		return hr;
+	}
+
+	//ASSERT1(V_VT(&var) == VT_BOOL);
+	*value = var.boolVal != 0;
+	return S_OK;
+}
+
+HRESULT CWmiUtilities::GetValue( const wchar_t* name, int* value )
+{
+	CComVariant var;
+	HRESULT hr = GetValue(name, &var);
+	if (FAILED(hr)) {
+		return hr;
+	}
+
+	//ASSERT1(V_VT(&var) == VT_I4);
+	*value = var.lVal;
+	return S_OK;
+}
+
+HRESULT CWmiUtilities::GetValue( const wchar_t* name, UINT32* value )
+{
+	CComVariant var;
+	HRESULT hr = GetValue(name, &var);
+	if (FAILED(hr)) {
+		return hr;
+	}
+
+	//ASSERT1(V_VT(&var) == VT_UI4);
+	*value = var.ulVal;
+	return S_OK;
+}
+
 std::wstring CWmiUtilities::GetString(std::wstring item)
 {
     VARIANT prop;

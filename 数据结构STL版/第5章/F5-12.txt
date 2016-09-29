@@ -1,0 +1,13 @@
+true
+true
+6
+V0 V1 V2 V3 V4 V5
+8
+V0 V5 100
+V0 V4 30
+V0 V2 10
+V1 V2 5
+V2 V3 50
+V3 V5 10
+V4 V3 20
+V4 V5 60
