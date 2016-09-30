@@ -1,0 +1,36 @@
+HKCR
+{
+	AtlInternals2e.BullsEye.1 = s 'BullsEye Class'
+	{
+		CLSID = s '{E9312AF5-1C11-4BA4-A0C6-CB660E949B78}'
+		'Insertable'
+	}
+	AtlInternals2e.BullsEye = s 'BullsEye Class'
+	{
+		CLSID = s '{E9312AF5-1C11-4BA4-A0C6-CB660E949B78}'
+		CurVer = s 'AtlInternals2e.BullsEye.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {E9312AF5-1C11-4BA4-A0C6-CB660E949B78} = s 'BullsEye Class'
+		{
+			ProgID = s 'AtlInternals2e.BullsEye.1'
+			VersionIndependentProgID = s 'AtlInternals2e.BullsEye'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			val AppID = s '%APPID%'
+			ForceRemove 'Control'
+			ForceRemove 'Insertable'
+			ForceRemove 'ToolboxBitmap32' = s '%MODULE%, 102'
+			'MiscStatus' = s '0'
+			{
+			    '1' = s '%OLEMISC%'
+			}
+			'TypeLib' = s '{EE053344-4858-4A64-9A22-5968D92255D1}'
+			'Version' = s '1.0'
+		}
+	}
+}

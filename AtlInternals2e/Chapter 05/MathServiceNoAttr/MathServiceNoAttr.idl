@@ -1,0 +1,36 @@
+// MathServiceNoAttr.idl : IDL source for MathServiceNoAttr
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (MathServiceNoAttr.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(51B1924D-A506-41E6-99EF-0AE88D70247A),
+	dual,
+	nonextensible,
+	helpstring("ICalc Interface"),
+	pointer_default(unique)
+]
+interface ICalc : IDispatch{
+};
+[
+	uuid(BC1A13FD-B906-427A-AADB-EEBF1E0E3D5D),
+	version(1.0),
+	helpstring("MathServiceNoAttr 1.0 Type Library")
+]
+library MathServiceNoAttrLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(199AC6A5-5362-492D-8CED-346A79F93673),
+		helpstring("Calc Class")
+	]
+	coclass Calc
+	{
+		[default] interface ICalc;
+	};
+};

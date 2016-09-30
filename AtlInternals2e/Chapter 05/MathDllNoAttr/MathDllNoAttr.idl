@@ -1,0 +1,36 @@
+// MathDllNoAttr.idl : IDL source for MathDllNoAttr
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (MathDllNoAttr.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(FCA4E718-0B2D-4D86-8915-E7A239721798),
+	dual,
+	nonextensible,
+	helpstring("ICalc Interface"),
+	pointer_default(unique)
+]
+interface ICalc : IDispatch{
+};
+[
+	uuid(CC49F481-FED3-4B05-A53D-66011E7FB6B7),
+	version(1.0),
+	helpstring("MathDllNoAttr 1.0 Type Library")
+]
+library MathDllNoAttrLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(50392000-BE7A-4614-9B27-B5A778D2949E),
+		helpstring("Calc Class")
+	]
+	coclass Calc
+	{
+		[default] interface ICalc;
+	};
+};

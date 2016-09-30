@@ -1,0 +1,27 @@
+HKCR
+{
+	Math.Calc.1 = s 'Calc Class'
+	{
+		CLSID = s '{3718FAF2-7F65-46DC-AFFD-F44E469804DA}'
+	}
+	Math.Calc = s 'Calc Class'
+	{
+		CLSID = s '{3718FAF2-7F65-46DC-AFFD-F44E469804DA}'
+		CurVer = s 'Math.Calc.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {3718FAF2-7F65-46DC-AFFD-F44E469804DA} = s 'Calc Class'
+		{
+			ProgID = s 'Math.Calc.1'
+			VersionIndependentProgID = s 'Math.Calc'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			val AppID = s '%APPID%'
+			'TypeLib' = s '{BDB79373-744D-4C7F-A9AD-0EF5F1F380CE}'
+		}
+	}
+}

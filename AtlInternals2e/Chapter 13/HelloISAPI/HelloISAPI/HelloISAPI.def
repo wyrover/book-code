@@ -1,0 +1,9 @@
+;HelloISAPI.def : Declares the module parameters for the DLL.
+LIBRARY	"HelloISAPI"
+
+EXPORTS
+   ; Explicit exports can go here
+
+   HttpExtensionProc @1
+   GetExtensionVersion @2
+   TerminateExtension @3

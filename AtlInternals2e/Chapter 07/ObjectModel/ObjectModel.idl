@@ -1,0 +1,89 @@
+// ObjectModel.idl : IDL source for ObjectModel.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (ObjectModel.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+	[
+		object,
+		uuid(CB693B6C-80E2-11D2-987D-00600823CFFB),
+        dual,	
+		helpstring("IDocument Interface"),
+		pointer_default(unique)
+	]
+	interface IDocument : IDispatch
+	{
+		[propget, helpstring("property Data")] HRESULT Data([out, retval] BSTR *pVal);
+		[propput, helpstring("property Data")] HRESULT Data([in] BSTR newVal);
+	};
+
+	[
+		object,
+		uuid(CB693B6E-80E2-11D2-987D-00600823CFFB),
+		dual,
+		helpstring("IDocuments Interface"),
+		pointer_default(unique)
+	]
+	interface IDocuments : IDispatch
+	{
+		[id(1), helpstring("method AddDocument")] HRESULT AddDocument([out, retval] IDocument** ppDocument);
+
+        [propget] HRESULT Count([out, retval] long* pnCount);
+
+        [id(DISPID_VALUE), propget] HRESULT Item([in] long n, [out, retval] IDocument** ppdoc);
+        
+        [id(DISPID_NEWENUM), propget] HRESULT _NewEnum([out, retval] IUnknown** ppEnum);
+	};
+
+	[
+		object,
+		uuid(CB693B70-80E2-11D2-987D-00600823CFFB),
+		dual,
+		helpstring("IApplication Interface"),
+		pointer_default(unique)
+	]
+	interface IApplication : IDispatch
+	{
+		[propget, id(1), helpstring("property Documents")] HRESULT Documents([out, retval] IDocuments* *pVal);
+	};
+
+[
+	uuid(CB693B60-80E2-11D2-987D-00600823CFFB),
+	version(1.0),
+	helpstring("ObjectModel 1.0 Type Library")
+]
+library OBJECTMODELLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(CB693B6D-80E2-11D2-987D-00600823CFFB),
+		helpstring("Document Class")
+	]
+	coclass Document
+	{
+		[default] interface IDocument;
+	};
+
+	[
+		uuid(CB693B6F-80E2-11D2-987D-00600823CFFB),
+		helpstring("Documents Class")
+	]
+	coclass Documents
+	{
+		[default] interface IDocuments;
+	};
+
+	[
+		uuid(CB693B71-80E2-11D2-987D-00600823CFFB),
+		helpstring("Application Class")
+	]
+	coclass Application
+	{
+		[default] interface IApplication;
+	};
+};

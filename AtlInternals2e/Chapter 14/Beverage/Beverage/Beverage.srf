@@ -1,0 +1,19 @@
+<html>
+{{handler Beverage.dll/Default}}
+<head>
+  <title>The Beverage Song</title>
+</head>
+<body>
+{{if InputValid}}
+{{while MoreDrinks}}
+<p>
+{{DrinkNumber}} bottles of {{Beverage}} on the wall, <br>
+{{DrinkNumber}} bottles of {{Beverage}}.<br>
+Take one down, pass it around,<br>
+{{NextDrink}} bottles of {{Beverage}} on the wall.<br>
+{{endwhile}}
+{{else}}
+<h1>You must specify a beverage and the number of them in the query string.</h1>
+{{endif}}
+</body>
+</html>

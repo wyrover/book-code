@@ -1,0 +1,26 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PiSvr", "PiSvr.vcproj", "{20881DD9-853E-4DFA-9894-4E988E6C1500}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PiSvrPS", "PiSvrPS.vcproj", "{1FF68AC0-9AAD-4685-A155-DF3705D7941D}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+		{1FF68AC0-9AAD-4685-A155-DF3705D7941D}.0 = {20881DD9-853E-4DFA-9894-4E988E6C1500}
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{20881DD9-853E-4DFA-9894-4E988E6C1500}.Debug.ActiveCfg = Debug|Win32
+		{20881DD9-853E-4DFA-9894-4E988E6C1500}.Debug.Build.0 = Debug|Win32
+		{20881DD9-853E-4DFA-9894-4E988E6C1500}.Release.ActiveCfg = Release|Win32
+		{20881DD9-853E-4DFA-9894-4E988E6C1500}.Release.Build.0 = Release|Win32
+		{1FF68AC0-9AAD-4685-A155-DF3705D7941D}.Debug.ActiveCfg = Debug|Win32
+		{1FF68AC0-9AAD-4685-A155-DF3705D7941D}.Release.ActiveCfg = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

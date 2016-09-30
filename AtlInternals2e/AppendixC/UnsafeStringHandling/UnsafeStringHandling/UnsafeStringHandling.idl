@@ -1,0 +1,18 @@
+// UnsafeStringHandling.idl : IDL source for UnsafeStringHandling
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (UnsafeStringHandling.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	uuid(58D52FAA-95DE-452B-A859-648FAE9147AB),
+	version(1.0),
+	helpstring("UnsafeStringHandling 1.0 Type Library")
+]
+library UnsafeStringHandlingLib
+{
+	importlib("stdole2.tlb");
+};

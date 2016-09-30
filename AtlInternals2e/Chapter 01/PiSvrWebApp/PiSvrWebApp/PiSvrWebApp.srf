@@ -1,0 +1,8 @@
+<html>
+	{{handler PiSvrWebApp.dll/Default}}
+	<head>
+	</head>
+	<body>
+		Pi = {{Pi}}<br>
+	</body>
+</html>

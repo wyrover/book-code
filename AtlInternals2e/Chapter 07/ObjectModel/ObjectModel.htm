@@ -1,0 +1,20 @@
+<html>
+<script language=vbscript>
+    dim app
+    set app = CreateObject("ObjectModel.Application")
+
+    dim docs
+    set docs = app.Documents
+
+    dim doc
+    set doc = docs.AddDocument
+    doc.Data = "Document 1"
+
+    set doc = docs.AddDocument
+    doc.Data = "Document 2"
+
+    for each doc in docs
+        msgbox doc.data
+    next
+</script>
+</html>

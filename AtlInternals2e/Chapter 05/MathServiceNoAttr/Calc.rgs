@@ -1,0 +1,24 @@
+HKCR
+{
+	MathServiceNoAttr.Calc.1 = s 'Calc Class'
+	{
+		CLSID = s '{199AC6A5-5362-492D-8CED-346A79F93673}'
+	}
+	MathServiceNoAttr.Calc = s 'Calc Class'
+	{
+		CLSID = s '{199AC6A5-5362-492D-8CED-346A79F93673}'
+		CurVer = s 'MathServiceNoAttr.Calc.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {199AC6A5-5362-492D-8CED-346A79F93673} = s 'Calc Class'
+		{
+			ProgID = s 'MathServiceNoAttr.Calc.1'
+			VersionIndependentProgID = s 'MathServiceNoAttr.Calc'
+			ForceRemove 'Programmable'
+			LocalServer32 = s '%MODULE%'
+			val AppID = s '%APPID%'
+			'TypeLib' = s '{BC1A13FD-B906-427A-AADB-EEBF1E0E3D5D}'
+		}
+	}
+}

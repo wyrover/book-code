@@ -1,0 +1,37 @@
+// Calc.idl : IDL source for Calc
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (Calc.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(A736FC7D-484A-4F88-9E4D-0F9C5E3C398A),
+	dual,
+	nonextensible,
+	helpstring("ICalc Interface"),
+	pointer_default(unique)
+]
+interface ICalc : IDispatch{
+	[id(1), helpstring("method Add")] HRESULT Add([in] DOUBLE Op1, [in] DOUBLE Op2, [out,retval] DOUBLE* Result);
+};
+[
+	uuid(FA3F403F-CD07-492D-83EF-563E643F42B6),
+	version(1.0),
+	helpstring("Calc 1.0 Type Library")
+]
+library CalcLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(93C997C9-3A3E-437F-93A4-4F854DB3543B),
+		helpstring("Calc Class")
+	]
+	coclass Calc
+	{
+		[default] interface ICalc;
+	};
+};

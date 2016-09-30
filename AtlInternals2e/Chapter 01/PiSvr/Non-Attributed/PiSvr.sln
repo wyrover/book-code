@@ -1,0 +1,26 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PiSvr", "PiSvr.vcproj", "{95716DAB-BAC3-4E88-A106-F742C13E88CB}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PiSvrPS", "PiSvrPS.vcproj", "{CF2DD602-2E6F-4FC7-9719-7B3187F08660}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+		{CF2DD602-2E6F-4FC7-9719-7B3187F08660}.0 = {95716DAB-BAC3-4E88-A106-F742C13E88CB}
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{95716DAB-BAC3-4E88-A106-F742C13E88CB}.Debug.ActiveCfg = Debug|Win32
+		{95716DAB-BAC3-4E88-A106-F742C13E88CB}.Debug.Build.0 = Debug|Win32
+		{95716DAB-BAC3-4E88-A106-F742C13E88CB}.Release.ActiveCfg = Release|Win32
+		{95716DAB-BAC3-4E88-A106-F742C13E88CB}.Release.Build.0 = Release|Win32
+		{CF2DD602-2E6F-4FC7-9719-7B3187F08660}.Debug.ActiveCfg = Debug|Win32
+		{CF2DD602-2E6F-4FC7-9719-7B3187F08660}.Release.ActiveCfg = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

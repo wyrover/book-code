@@ -1,0 +1,27 @@
+HKCR
+{
+	SpeakerNoAttr.EarPolitic.1 = s 'EarPolitic Class'
+	{
+		CLSID = s '{3BEA68EC-4B6D-46D7-A3EE-792CA10EB0F6}'
+	}
+	SpeakerNoAttr.EarPolitic = s 'EarPolitic Class'
+	{
+		CLSID = s '{3BEA68EC-4B6D-46D7-A3EE-792CA10EB0F6}'
+		CurVer = s 'SpeakerNoAttr.EarPolitic.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {3BEA68EC-4B6D-46D7-A3EE-792CA10EB0F6} = s 'EarPolitic Class'
+		{
+			ProgID = s 'SpeakerNoAttr.EarPolitic.1'
+			VersionIndependentProgID = s 'SpeakerNoAttr.EarPolitic'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			val AppID = s '%APPID%'
+			'TypeLib' = s '{6C353116-9E91-4429-A6EC-A6DC65AFADCC}'
+		}
+	}
+}

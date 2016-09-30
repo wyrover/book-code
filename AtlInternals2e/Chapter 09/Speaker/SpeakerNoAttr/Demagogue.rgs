@@ -1,0 +1,27 @@
+HKCR
+{
+	SpeakerNoAttr.Demagogue.1 = s 'Demagogue Class'
+	{
+		CLSID = s '{BA5A5622-05DF-45CF-A80A-E09DC145B01C}'
+	}
+	SpeakerNoAttr.Demagogue = s 'Demagogue Class'
+	{
+		CLSID = s '{BA5A5622-05DF-45CF-A80A-E09DC145B01C}'
+		CurVer = s 'SpeakerNoAttr.Demagogue.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {BA5A5622-05DF-45CF-A80A-E09DC145B01C} = s 'Demagogue Class'
+		{
+			ProgID = s 'SpeakerNoAttr.Demagogue.1'
+			VersionIndependentProgID = s 'SpeakerNoAttr.Demagogue'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			val AppID = s '%APPID%'
+			'TypeLib' = s '{6C353116-9E91-4429-A6EC-A6DC65AFADCC}'
+		}
+	}
+}

@@ -1,0 +1,8 @@
+; PiSvrIsapi.def : declares the module parameters for the DLL.
+
+LIBRARY	     "PiSvrIsapi"
+
+EXPORTS
+	HttpExtensionProc
+	GetExtensionVersion
+	TerminateExtension

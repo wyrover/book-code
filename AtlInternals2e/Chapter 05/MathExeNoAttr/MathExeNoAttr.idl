@@ -1,0 +1,36 @@
+// MathExeNoAttr.idl : IDL source for MathExeNoAttr
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (MathExeNoAttr.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(9CF62660-EF29-4D9A-B04C-EF1F760752CF),
+	dual,
+	nonextensible,
+	helpstring("ICalc Interface"),
+	pointer_default(unique)
+]
+interface ICalc : IDispatch{
+};
+[
+	uuid(E7BDF855-3B91-40D0-B52D-72D2F779B922),
+	version(1.0),
+	helpstring("MathExeNoAttr 1.0 Type Library")
+]
+library MathExeNoAttrLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(86F9C4E6-13A1-4282-AC9E-9F7FB89292D4),
+		helpstring("Calc Class")
+	]
+	coclass Calc
+	{
+		[default] interface ICalc;
+	};
+};

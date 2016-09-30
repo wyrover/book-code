@@ -1,0 +1,11 @@
+HKCR
+{
+	NoRemove AppID
+	{
+		'%APPID%' = s 'GITTest'
+		'GITTest.DLL'
+		{
+			val AppID = s '%APPID%'
+		}
+	}
+}

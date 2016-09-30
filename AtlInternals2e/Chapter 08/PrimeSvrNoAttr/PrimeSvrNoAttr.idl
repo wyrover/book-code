@@ -1,0 +1,92 @@
+// PrimeSvrNoAttr.idl : IDL source for PrimeSvrNoAttr
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (PrimeSvrNoAttr.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+interface IEnumPrimes;
+
+[
+	object,
+	uuid(F9F30604-5F08-4184-BE87-EE5193E707B2),
+	dual,
+	nonextensible,
+	helpstring("IPrimeNumbers Interface"),
+	pointer_default(unique)
+]
+interface IPrimeNumbers : IDispatch
+{
+    HRESULT CalcPrimes([in] long min, [in] long max);
+    
+    [propget]
+    HRESULT Count([out, retval] long* pnCount);
+
+    [propget]
+    HRESULT Item([in] long n, [out, retval] long* pnPrime);
+
+    [propget]
+    HRESULT Enum([out, retval] IEnumPrimes** ppEnum);
+};
+
+[
+	object,
+	uuid(E64EDDDF-2B2C-11D2-983C-00600823CFFB),
+	helpstring("IEnumPrimes Interface"),
+	pointer_default(unique)
+]
+interface IEnumPrimes : IUnknown
+{
+	[local]
+	HRESULT Next([in] ULONG celt,
+				 [out] long* rgelt,
+				 [out] ULONG *pceltFetched);
+
+	[call_as(Next)]
+	HRESULT RemoteNext([in] ULONG celt,
+					   [out, size_is(celt), length_is(*pceltFetched)] long* rgelt,
+					   [out] ULONG *pceltFetched);
+
+	HRESULT Skip([in] ULONG celt);
+	HRESULT Reset();
+	HRESULT Clone([out] IEnumPrimes **ppenum);
+};
+
+[
+	uuid(DEE7108E-16B0-4972-A72B-916D23608649),
+	version(1.0),
+	helpstring("PrimeSvrNoAttr 1.0 Type Library")
+]
+library PrimeSvrNoAttrLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(687E728A-56E2-4B6F-B7DD-D066728DCCE3),
+		helpstring("PrimeNumbers Class")
+	]
+	coclass PrimeNumbers
+	{
+		[default] interface IPrimeNumbers;
+	};
+};
+
+// Implement local/call_as for IEnumPrimes
+cpp_quote("#ifdef __midl_proxy")
+cpp_quote("static HRESULT STDMETHODCALLTYPE")
+cpp_quote("IEnumPrimes_Next_Proxy(IEnumPrimes* This, ULONG celt, long* rgelt, ULONG* pceltFetched)")
+cpp_quote("{")
+cpp_quote("  ULONG cFetched;")
+cpp_quote("  if( !pceltFetched && celt != 1 ) return E_INVALIDARG;")
+cpp_quote("  return IEnumPrimes_RemoteNext_Proxy(This, celt, rgelt, pceltFetched ? pceltFetched : &cFetched);")
+cpp_quote("}")
+cpp_quote("")
+cpp_quote("static HRESULT STDMETHODCALLTYPE")
+cpp_quote("IEnumPrimes_Next_Stub(IEnumPrimes* This, ULONG celt, long* rgelt, ULONG* pceltFetched)")
+cpp_quote("{")
+cpp_quote("  HRESULT hr = This->lpVtbl->Next(This, celt, rgelt, pceltFetched);")
+cpp_quote("  if( hr == S_OK && celt == 1 ) *pceltFetched = 1;")
+cpp_quote("  return hr;")
+cpp_quote("}")
+cpp_quote("#endif // __midl_proxy")

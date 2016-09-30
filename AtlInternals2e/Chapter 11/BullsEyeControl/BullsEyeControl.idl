@@ -1,0 +1,123 @@
+// BullsEyeControl.idl : IDL source for BullsEyeControl
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (BullsEyeControl.tlb) and marshalling code.
+
+#include "olectl.h"
+import "oaidl.idl";
+import "ocidl.idl";
+import "CategorizeProperties.idl";
+
+[
+    object,
+    uuid(B4FBD008-B03D-4F48-9C5B-4A981EB6A515),
+    dual,
+    nonextensible,
+    helpstring("IBullsEye Interface"),
+    pointer_default(unique)
+]
+interface IBullsEye : IDispatch {
+    const int DISPID_ALTERNATECOLOR = 1;
+    const int DISPID_BEEP = 2;
+    const int DISPID_CENTERCOLOR = 3;
+    const int DISPID_RINGCOUNT = 4;
+    const int DISPID_RINGVALUE = 5;
+    const int DISPID_APPLICATION = 6;
+    const int DISPID_PARENT = 7;
+
+    [propput, bindable, requestedit, id(DISPID_BACKCOLOR)]
+    HRESULT BackColor([in]OLE_COLOR clr);
+    [propget, bindable, requestedit, id(DISPID_BACKCOLOR)]
+    HRESULT BackColor([out,retval]OLE_COLOR* pclr);
+    [propput, bindable, requestedit, id(DISPID_BACKSTYLE)]
+    HRESULT BackStyle([in]long style);
+    [propget, bindable, requestedit, id(DISPID_BACKSTYLE)]
+    HRESULT BackStyle([out,retval]long* pstyle);
+    [propput, bindable, requestedit, id(DISPID_FORECOLOR)]
+    HRESULT ForeColor([in]OLE_COLOR clr);
+    [propget, bindable, requestedit, id(DISPID_FORECOLOR)]
+    HRESULT ForeColor([out,retval]OLE_COLOR* pclr);
+    [propput, bindable, requestedit, id(DISPID_ENABLED)]
+    HRESULT Enabled([in]VARIANT_BOOL vbool);
+    [propget, bindable, requestedit, id(DISPID_ENABLED)]
+    HRESULT Enabled([out,retval]VARIANT_BOOL* pbool);
+    [id(DISPID_ABOUTBOX)] HRESULT AboutBox( );
+    [id(DISPID_DOCLICK)] HRESULT DoClick( );
+    [id(DISPID_REFRESH)] HRESULT Refresh( );
+
+    [propget, bindable, requestedit, id(DISPID_APPLICATION), helpstring("property Application")]
+    HRESULT Application([out, retval] IDispatch** pVal);
+
+    [propget, bindable, requestedit, id(DISPID_ALTERNATECOLOR), helpstring("property AlternateColor")]
+    HRESULT AlternateColor([out, retval] OLE_COLOR* pVal);
+    [propput, bindable, requestedit, id(DISPID_ALTERNATECOLOR), helpstring("property AlternateColor")]
+    HRESULT AlternateColor([in] OLE_COLOR newVal);
+
+    [propget, bindable, requestedit, id(DISPID_BEEP), helpstring("property Beep")]
+    HRESULT Beep([out, retval] VARIANT_BOOL* pVal);
+    [propput, bindable, requestedit, id(DISPID_BEEP), helpstring("property Beep")] 
+    HRESULT Beep([in] VARIANT_BOOL newVal);
+
+    [propget, bindable, requestedit, id(DISPID_CENTERCOLOR), helpstring("property CenterColor")]
+    HRESULT CenterColor([out, retval] OLE_COLOR* pVal);
+    [propput, bindable, requestedit, id(DISPID_CENTERCOLOR), helpstring("property CenterColor")]
+    HRESULT CenterColor([in] OLE_COLOR newVal);
+
+    [propget, bindable, requestedit, id(DISPID_PARENT), helpstring("property Parent")]
+    HRESULT Parent([out, retval] IDispatch** pVal);
+
+    [propget, bindable, requestedit, id(DISPID_RINGCOUNT), helpstring("property RingCount")]
+    HRESULT RingCount([out, retval] SHORT* pVal);
+    [propput, bindable, requestedit, id(DISPID_RINGCOUNT), helpstring("property RingCount")]
+    HRESULT RingCount([in] SHORT newVal);
+    
+    [propget, bindable, requestedit, id(DISPID_RINGVALUE), helpstring("property RingValue")]
+    HRESULT RingValue([in] SHORT sRingNumber, [out, retval] LONG* pVal);
+    [propput, bindable, requestedit, id(DISPID_RINGVALUE), helpstring("property RingValue")]
+    HRESULT RingValue([in] SHORT sRingNumber, [in] LONG newVal);
+};
+
+const int DISPID_ONRINGHIT = 1;
+const int DISPID_ONSCORECHANGED = 2;
+
+[
+    uuid(EE053344-4858-4A64-9A22-5968D92255D1),
+    version(1.0),
+    helpstring("BullsEyeControl 1.0 Type Library")
+]
+library BullsEyeControlLib
+{
+    importlib("stdole2.tlb");
+    [
+        uuid(58D6D8CB-765D-4C59-A41F-BBA8C40F7A14),
+        helpstring("_IBullsEyeEvents Interface")
+    ]
+    dispinterface _IBullsEyeEvents
+    {
+        properties:
+        methods:
+        [id(DISPID_ONRINGHIT)] void OnRingHit(short ringNum);
+        [id(DISPID_ONSCORECHANGED)] void OnScoreChanged(long ringValue);
+    };
+
+    [
+        uuid(E9312AF5-1C11-4BA4-A0C6-CB660E949B78),
+        control,
+        helpstring("BullsEye Class")
+    ]
+    coclass BullsEye
+    {
+        [default] interface IBullsEye;
+        [default, source] dispinterface _IBullsEyeEvents;
+    };
+
+    [
+        uuid(47446235-8500-43a2-92A7-F0686FDAA69C),
+        helpstring("BullsEye Property Page class")
+    ]
+    coclass BullsEyePropPage
+    {
+        interface IUnknown;
+    };
+};

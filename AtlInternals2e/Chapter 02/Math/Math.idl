@@ -1,0 +1,37 @@
+// Math.idl : IDL source for Math
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (Math.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(2F6C88D7-C2BF-4933-81FA-3FBAFC3FC34B),
+	dual,
+	nonextensible,
+	helpstring("ICalc Interface"),
+	pointer_default(unique)
+]
+interface ICalc : IDispatch{
+	[id(1), helpstring("method Add")] HRESULT Add([in] DOUBLE Op1, [in] DOUBLE Op2, [out,retval] DOUBLE* Result);
+};
+[
+	uuid(BDB79373-744D-4C7F-A9AD-0EF5F1F380CE),
+	version(1.0),
+	helpstring("Math 1.0 Type Library")
+]
+library MathLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(3718FAF2-7F65-46DC-AFFD-F44E469804DA),
+		helpstring("Calc Class")
+	]
+	coclass Calc
+	{
+		[default] interface ICalc;
+	};
+};

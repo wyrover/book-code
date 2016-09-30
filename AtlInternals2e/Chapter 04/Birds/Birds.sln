@@ -1,0 +1,26 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Birds", "Birds.vcproj", "{485593B2-22BF-4C5B-920C-58E989304FE3}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BirdsPS", "BirdsPS.vcproj", "{4EC3A272-CCF2-4B2C-8769-A0EFFF82D188}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+		{4EC3A272-CCF2-4B2C-8769-A0EFFF82D188}.0 = {485593B2-22BF-4C5B-920C-58E989304FE3}
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{485593B2-22BF-4C5B-920C-58E989304FE3}.Debug.ActiveCfg = Debug|Win32
+		{485593B2-22BF-4C5B-920C-58E989304FE3}.Debug.Build.0 = Debug|Win32
+		{485593B2-22BF-4C5B-920C-58E989304FE3}.Release.ActiveCfg = Release|Win32
+		{485593B2-22BF-4C5B-920C-58E989304FE3}.Release.Build.0 = Release|Win32
+		{4EC3A272-CCF2-4B2C-8769-A0EFFF82D188}.Debug.ActiveCfg = Debug|Win32
+		{4EC3A272-CCF2-4B2C-8769-A0EFFF82D188}.Release.ActiveCfg = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

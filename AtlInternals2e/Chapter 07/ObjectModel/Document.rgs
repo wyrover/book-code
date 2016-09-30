@@ -1,0 +1,25 @@
+HKCR
+{
+	ObjectModel.Document.1 = s 'Document Class'
+	{
+		CLSID = s '{CB693B6D-80E2-11D2-987D-00600823CFFB}'
+	}
+	ObjectModel.Document = s 'Document Class'
+	{
+		CLSID = s '{CB693B6D-80E2-11D2-987D-00600823CFFB}'
+		CurVer = s 'ObjectModel.Document.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {CB693B6D-80E2-11D2-987D-00600823CFFB} = s 'Document Class'
+		{
+			ProgID = s 'ObjectModel.Document.1'
+			VersionIndependentProgID = s 'ObjectModel.Document'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{CB693B60-80E2-11D2-987D-00600823CFFB}'
+		}
+	}
+}

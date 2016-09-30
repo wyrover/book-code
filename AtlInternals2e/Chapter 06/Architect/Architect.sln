@@ -1,0 +1,26 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Architect", "Architect.vcproj", "{9E012A07-77AC-4005-8C36-2731B140924F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ArchitectPS", "ArchitectPS.vcproj", "{90B1E538-0357-4D3A-AF9F-CEA03EE17626}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+		{90B1E538-0357-4D3A-AF9F-CEA03EE17626}.0 = {9E012A07-77AC-4005-8C36-2731B140924F}
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{9E012A07-77AC-4005-8C36-2731B140924F}.Debug.ActiveCfg = Debug|Win32
+		{9E012A07-77AC-4005-8C36-2731B140924F}.Debug.Build.0 = Debug|Win32
+		{9E012A07-77AC-4005-8C36-2731B140924F}.Release.ActiveCfg = Release|Win32
+		{9E012A07-77AC-4005-8C36-2731B140924F}.Release.Build.0 = Release|Win32
+		{90B1E538-0357-4D3A-AF9F-CEA03EE17626}.Debug.ActiveCfg = Debug|Win32
+		{90B1E538-0357-4D3A-AF9F-CEA03EE17626}.Release.ActiveCfg = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

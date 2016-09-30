@@ -1,0 +1,38 @@
+import "C:\Program Files\Microsoft Visual Studio .NET\Vc7\PlatformSDK\include\prsht.idl";
+import "C:\Program Files\Microsoft Visual Studio .NET\Vc7\PlatformSDK\include\mshtml.idl";
+import "c:\program files\microsoft visual studio .net\vc7\platformsdk\include\dimm.idl";
+import "C:\Program Files\Microsoft Visual Studio .NET\Vc7\PlatformSDK\include\mshtmhst.idl";
+import "c:\program files\microsoft visual studio .net\vc7\platformsdk\include\docobj.idl";
+import "C:\Program Files\Microsoft Visual Studio .NET\Vc7\PlatformSDK\include\exdisp.idl";
+import "C:\Program Files\Microsoft Visual Studio .NET\Vc7\PlatformSDK\include\objsafe.idl";
+
+[
+	object,
+	uuid(525DE96A-ABF6-46DF-8EF5-7E677A3F128C),
+	oleautomation,
+	helpstring("IEarPolitic Interface"),
+	pointer_default(unique)
+] 
+#line 15 "c:\\kirk\\atl internals 2e\\src\\chapter 05\\licensedemo\\licensedobject\\coearpolitic.h"
+interface IEarPolitic : IUnknown {
+};
+
+
+[ version(1.0), uuid(9B52D164-65E1-4B3A-9B29-D9DF87328EC2), helpstring("LicenseDemo 1.0 Type Library") ]
+library LicenseDemo
+{
+	importlib("stdole2.tlb");
+	importlib("olepro32.dll");
+
+	[
+		version(1.0),
+		uuid(90B1E18D-2976-41A3-A4CC-7DA344318C58),
+		helpstring("EarPolitic Class")
+	] 
+#line 32 "c:\\kirk\\atl internals 2e\\src\\chapter 05\\licensedemo\\licensedobject\\coearpolitic.h"
+	coclass CEarPolitic {
+		interface IEarPolitic;
+	};
+
+}
+

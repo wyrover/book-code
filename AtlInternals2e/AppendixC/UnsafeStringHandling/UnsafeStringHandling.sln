@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnsafeStringHandling", "UnsafeStringHandling\UnsafeStringHandling.vcproj", "{B07D0280-6FB8-4825-B06C-094E81D599CF}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnsafeStringHandlingPS", "UnsafeStringHandling\UnsafeStringHandlingPS.vcproj", "{9473E5D7-8A20-4308-AAC5-5A9C3F3A2807}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B07D0280-6FB8-4825-B06C-094E81D599CF} = {B07D0280-6FB8-4825-B06C-094E81D599CF}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B07D0280-6FB8-4825-B06C-094E81D599CF}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B07D0280-6FB8-4825-B06C-094E81D599CF}.Debug|Win32.Build.0 = Debug|Win32
+		{B07D0280-6FB8-4825-B06C-094E81D599CF}.Release|Win32.ActiveCfg = Release|Win32
+		{B07D0280-6FB8-4825-B06C-094E81D599CF}.Release|Win32.Build.0 = Release|Win32
+		{9473E5D7-8A20-4308-AAC5-5A9C3F3A2807}.Debug|Win32.ActiveCfg = Debug|Win32
+		{9473E5D7-8A20-4308-AAC5-5A9C3F3A2807}.Release|Win32.ActiveCfg = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

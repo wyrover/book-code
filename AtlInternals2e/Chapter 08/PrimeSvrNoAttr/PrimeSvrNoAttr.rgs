@@ -1,0 +1,11 @@
+HKCR
+{
+	NoRemove AppID
+	{
+		'%APPID%' = s 'PrimeSvrNoAttr'
+		'PrimeSvrNoAttr.EXE'
+		{
+			val AppID = s '%APPID%'
+		}
+	}
+}

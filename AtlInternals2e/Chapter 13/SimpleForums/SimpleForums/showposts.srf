@@ -1,0 +1,31 @@
+<html>
+{{handler SimpleForums.dll/ShowPosts}}
+<head>
+<title>{{if InvalidForumId}}
+Invalid forum
+{{else}}
+{{ForumName}}
+{{endif}}</title>
+</head>
+<body>
+{{if InvalidForumId}}
+<h1>You have passed an invalid forum. Shame on you!</h1>
+{{else}}
+<h1>{{ForumName}}</h1>
+<p>You have visited this forum {{HitCount}} times in the current session.</p>
+<div>
+{{if HasPosts}}
+{{while HasPosts}}
+<a href="showpost.srf?postid={{PostId}}">{{PostTitle}}</a>
+{{PostAuthor}}<br />
+{{NextPost}}
+{{endwhile}}
+{{else}}
+This forum has no posts.
+{{endif}}
+</div>
+<a href="newpost.srf?forumid={{ForumId}}">New Post</a>
+<a href="forumlist.srf">Return to forum list</a>
+{{endif}}
+</body>
+</html>

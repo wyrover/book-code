@@ -1,0 +1,108 @@
+// SpeakerNoAttr.idl : IDL source for SpeakerNoAttr
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (SpeakerNoAttr.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+    const int DISPID_ONWHISPER      = 1;
+    const int DISPID_ONTALK         = 2;
+    const int DISPID_ONYELL         = 3;
+
+[
+	object,
+	uuid(CE00527D-F8E3-46A3-8BC8-A25345AD6CAA),
+	dual,
+	nonextensible,
+	helpstring("ISpeaker Interface"),
+	pointer_default(unique)
+]
+interface ISpeaker : IDispatch
+{
+	const int DISPID_VOLUME         = 1;
+	const int DISPID_SPEECH         = 2;
+	const int DISPID_SPEAK          = 3;
+
+	[propget, id(DISPID_VOLUME), helpstring("property Volume")] HRESULT Volume([out, retval] LONG* pVal);
+	[propput, id(DISPID_VOLUME), helpstring("property Volume")] HRESULT Volume([in] LONG newVal);
+	[propget, id(DISPID_SPEECH), helpstring("property Speech")] HRESULT Speech([out, retval] BSTR* pVal);
+	[propput, id(DISPID_SPEECH), helpstring("property Speech")] HRESULT Speech([in] BSTR newVal);
+	[id(DISPID_SPEAK), helpstring("method Speak")] HRESULT Speak(void);
+};
+
+[
+	object,
+	uuid(BECC670E-7A07-4032-A5A3-07D1558AE65D),
+	dual,
+	nonextensible,
+	helpstring("IListener Interface"),
+	pointer_default(unique)
+]
+interface IListener : IDispatch
+{
+    typedef enum SpeakerRole { Defendant, Plaintiff } SpeakerRole ;
+
+	[id(1), helpstring("method ListenTo")] HRESULT ListenTo([in] SpeakerRole role, [in] IUnknown* pSpeaker);
+	[id(2), helpstring("method StopListening")] HRESULT StopListening([in] SpeakerRole role);
+};
+
+[
+	object,
+	uuid(450D6780-FC73-11d1-8CC3-00A0C9C8E50D),
+	dual,
+	helpstring("INamedObject Interface"),
+	pointer_default(unique)
+]
+interface INamedObject : IDispatch
+{
+    const int DISPID_NAME           = 1;
+
+	[propget, id(DISPID_NAME), helpstring("property Name")] HRESULT Name([out, retval] BSTR *pVal);
+	[propput, id(DISPID_NAME), helpstring("property Name")] HRESULT Name([in] BSTR newVal);
+};
+
+[
+	uuid(6C353116-9E91-4429-A6EC-A6DC65AFADCC),
+	version(1.0),
+	helpstring("SpeakerNoAttr 1.0 Type Library")
+]
+library SpeakerNoAttrLib
+{
+	importlib("stdole2.tlb");
+
+	[
+		uuid(9CB7F78F-EF31-4702-9510-72B0952DF487),
+		helpstring("_ISpeakerEvents Interface")
+	]
+	dispinterface _ISpeakerEvents
+	{
+		properties:
+		methods:
+		[id(DISPID_ONWHISPER), helpstring("method OnWhisper")] void OnWhisper(BSTR bstrSpeech);
+		[id(DISPID_ONTALK), helpstring("method OnTalk")]    void OnTalk(BSTR bstrSpeech);
+		[id(DISPID_ONYELL), helpstring("method OnYell")]    void OnYell(BSTR bstrSpeech);
+	};
+
+	[
+		uuid(BA5A5622-05DF-45CF-A80A-E09DC145B01C),
+		helpstring("Demagogue Class")
+	]
+	coclass Demagogue
+	{
+		[default]			interface ISpeaker;
+		[default, source]	dispinterface _ISpeakerEvents;
+							interface INamedObject;
+	};
+
+	[
+		uuid(3BEA68EC-4B6D-46D7-A3EE-792CA10EB0F6),
+		helpstring("EarPolitic Class")
+	]
+	coclass EarPolitic
+	{
+		[default] interface IUnknown;
+				  interface IListener;
+	};
+};

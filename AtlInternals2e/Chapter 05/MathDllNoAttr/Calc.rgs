@@ -1,0 +1,27 @@
+HKCR
+{
+	MathDllNoAttr.Calc.1 = s 'Calc Class'
+	{
+		CLSID = s '{50392000-BE7A-4614-9B27-B5A778D2949E}'
+	}
+	MathDllNoAttr.Calc = s 'Calc Class'
+	{
+		CLSID = s '{50392000-BE7A-4614-9B27-B5A778D2949E}'
+		CurVer = s 'MathDllNoAttr.Calc.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {50392000-BE7A-4614-9B27-B5A778D2949E} = s 'Calc Class'
+		{
+			ProgID = s 'MathDllNoAttr.Calc.1'
+			VersionIndependentProgID = s 'MathDllNoAttr.Calc'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			val AppID = s '%APPID%'
+			'TypeLib' = s '{CC49F481-FED3-4B05-A53D-66011E7FB6B7}'
+		}
+	}
+}

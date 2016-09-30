@@ -1,0 +1,50 @@
+// AcePowellNoAttr.idl : IDL source for AcePowellNoAttr
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (AcePowellNoAttr.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(23811532-01E8-4832-AC42-77397857108A),
+	oleautomation,
+	nonextensible,
+	helpstring("ICowboy Interface"),
+	pointer_default(unique)
+]
+interface ICowboy : IUnknown{
+	HRESULT Draw();
+};
+
+[
+	object,
+	uuid(76B2EA85-80EE-4dc8-B62E-5857D540B060),
+	oleautomation,
+	nonextensible,
+	helpstring("IArtist Interface"),
+	pointer_default(unique)
+]
+interface IArtist : IUnknown{
+	HRESULT Draw();
+};
+
+[
+	uuid(24BCCB00-3F25-4F84-84AC-3763CBDEDBE8),
+	version(1.0),
+	helpstring("AcePowellNoAttr 1.0 Type Library")
+]
+library AcePowellNoAttrLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(BF788C8C-BBC9-4825-9A2A-D89051B87074),
+		helpstring("AcePowell Class")
+	]
+	coclass AcePowell
+	{
+		[default] interface ICowboy;
+	};
+};

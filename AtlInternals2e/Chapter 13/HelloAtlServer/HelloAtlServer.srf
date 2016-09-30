@@ -1,0 +1,15 @@
+<html>
+{{// use MSDN's "ATL Server Response File Reference" to learn about SRF files.}}
+{{handler HelloAtlServer.dll/Default}}
+<head>
+  <title>Hello from ATL Server</title>
+</head>
+<body>
+<h1>Hello from ATL Server</h1>
+{{if NameGiven}}
+<p>Your name is {{Name}}
+{{else}}
+<p>You didn't give your name!
+{{endif}}
+</body>
+</html>

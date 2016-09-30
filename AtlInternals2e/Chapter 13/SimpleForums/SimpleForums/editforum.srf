@@ -1,0 +1,43 @@
+<html>
+{{handler SimpleForums.dll/EditForum}}
+  <head>
+    <title>Edit Forum</title>
+  </head>
+  <body>
+    <h1>Edit Forum Information</h1>
+    {{if ValidForumId}}
+    <form action="editforum.srf?forumid={{ForumId}}" 
+      method="post">
+      <table border="0" cellpadding="0">
+        <tr>
+          <td>
+            Forum Name:
+          </td>
+          <td>
+            <input type="text" name="forumName" 
+              id="forumName" maxlength="63" 
+              value="{{ForumName}}" />
+          </td>
+        </tr>
+        <tr>
+        <td>
+          Forum Description:
+        </td>
+        <td>
+          <textarea cols="50" rows="10"
+            wrap="soft" name="forumDescription"
+            id="forumDescription">
+            {{ForumDescription}}
+          </textarea>
+        </td>
+        </tr>
+      </table>
+      <input type="submit" />
+      <a href="forumlist.srf">Return to Forum List</a>
+    </form>
+    {{else}}
+    <p><b>You have given an invalid forum ID. Shame on you!</b>
+    {{endif}}
+    {{ValidationErrors}}
+  </body>
+</html>

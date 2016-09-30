@@ -1,0 +1,32 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Math", "Math.vcproj", "{C614F028-C4D6-4A0C-BAD0-0747B9E91EBE}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MathPS", "MathPS.vcproj", "{C438E401-E69A-4F43-9F8D-D3055611C336}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DispatchClient", "..\DispatchClient\DispatchClient.vcproj", "{6E4DA857-C397-457B-9493-BC8FB355803A}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+		{C438E401-E69A-4F43-9F8D-D3055611C336}.0 = {C614F028-C4D6-4A0C-BAD0-0747B9E91EBE}
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{C614F028-C4D6-4A0C-BAD0-0747B9E91EBE}.Debug.ActiveCfg = Debug|Win32
+		{C614F028-C4D6-4A0C-BAD0-0747B9E91EBE}.Debug.Build.0 = Debug|Win32
+		{C614F028-C4D6-4A0C-BAD0-0747B9E91EBE}.Release.ActiveCfg = Release|Win32
+		{C614F028-C4D6-4A0C-BAD0-0747B9E91EBE}.Release.Build.0 = Release|Win32
+		{C438E401-E69A-4F43-9F8D-D3055611C336}.Debug.ActiveCfg = Debug|Win32
+		{C438E401-E69A-4F43-9F8D-D3055611C336}.Release.ActiveCfg = Release|Win32
+		{6E4DA857-C397-457B-9493-BC8FB355803A}.Debug.ActiveCfg = Debug|Win32
+		{6E4DA857-C397-457B-9493-BC8FB355803A}.Debug.Build.0 = Debug|Win32
+		{6E4DA857-C397-457B-9493-BC8FB355803A}.Release.ActiveCfg = Release|Win32
+		{6E4DA857-C397-457B-9493-BC8FB355803A}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

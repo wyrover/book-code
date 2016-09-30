@@ -1,0 +1,9 @@
+
+LIBRARY      "DemagogueNoAttrPS"
+
+EXPORTS
+	DllGetClassObject       PRIVATE
+	DllCanUnloadNow         PRIVATE
+	GetProxyDllInfo         PRIVATE
+	DllRegisterServer		PRIVATE
+	DllUnregisterServer		PRIVATE

@@ -1,0 +1,32 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CAutoPtrTest", "CAutoPtrTest.vcproj", "{E0CD8B68-E962-4885-8C77-B6E29771B680}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CAutoPtrTestPS", "CAutoPtrTestPS.vcproj", "{B91D5FB5-BCFE-4ED1-9BA4-06F13530EB72}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CAutoPtrClient", "..\CAutoPtrClient\CAutoPtrClient.vcproj", "{0D8FF084-8EE9-4E5A-A050-AC1BB5D9692B}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+		{B91D5FB5-BCFE-4ED1-9BA4-06F13530EB72}.0 = {E0CD8B68-E962-4885-8C77-B6E29771B680}
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{E0CD8B68-E962-4885-8C77-B6E29771B680}.Debug.ActiveCfg = Debug|Win32
+		{E0CD8B68-E962-4885-8C77-B6E29771B680}.Debug.Build.0 = Debug|Win32
+		{E0CD8B68-E962-4885-8C77-B6E29771B680}.Release.ActiveCfg = Release|Win32
+		{E0CD8B68-E962-4885-8C77-B6E29771B680}.Release.Build.0 = Release|Win32
+		{B91D5FB5-BCFE-4ED1-9BA4-06F13530EB72}.Debug.ActiveCfg = Debug|Win32
+		{B91D5FB5-BCFE-4ED1-9BA4-06F13530EB72}.Release.ActiveCfg = Release|Win32
+		{0D8FF084-8EE9-4E5A-A050-AC1BB5D9692B}.Debug.ActiveCfg = Debug|Win32
+		{0D8FF084-8EE9-4E5A-A050-AC1BB5D9692B}.Debug.Build.0 = Debug|Win32
+		{0D8FF084-8EE9-4E5A-A050-AC1BB5D9692B}.Release.ActiveCfg = Release|Win32
+		{0D8FF084-8EE9-4E5A-A050-AC1BB5D9692B}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

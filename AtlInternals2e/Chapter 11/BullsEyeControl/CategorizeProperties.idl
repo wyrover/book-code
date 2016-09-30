@@ -1,0 +1,49 @@
+//+---------------------------------------------------------------------------
+//  File: CategorizeProperties.idl
+//
+//  Copyright (C) Wise Owl Consulting, Inc. 1998.
+//  Author: Brent Rector (brent@wiseowl.com)
+//
+//  IDL source for ICategorizeProperties interface
+//  
+//  Microsoft presently doesn't publish the IDL for this interface.
+//  You may freely redistribute and use this source as long as you
+//  preserve this copyright notice.
+//----------------------------------------------------------------------------
+
+// This file will be processed by the MIDL tool to
+// produce the header file definitions
+
+#ifndef DO_NO_IMPORTS
+import "oleidl.idl";
+import "oaidl.idl";
+#endif
+
+interface ICategorizeProperties;
+
+// ICategorizeProperties Interface
+[
+	object, local,
+	uuid(4D07FC10-F931-11CE-B001-00AA006884E5),
+	helpstring("ICategorizeProperties Interface"),
+	pointer_default(unique)
+]
+interface ICategorizeProperties : IUnknown
+{
+    typedef [public] int PROPCAT;
+
+    const int PROPCAT_Nil        = -1;
+    const int PROPCAT_Misc       = -2;
+    const int PROPCAT_Font       = -3;
+    const int PROPCAT_Position   = -4;
+    const int PROPCAT_Appearance = -5;
+    const int PROPCAT_Behavior   = -6;
+    const int PROPCAT_Data       = -7;
+    const int PROPCAT_List       = -8;
+    const int PROPCAT_Text       = -9;
+    const int PROPCAT_Scale      = -10;
+    const int PROPCAT_DDE        = -11;
+
+    HRESULT MapPropertyToCategory([in] DISPID dispid, [out] PROPCAT* ppropcat);
+    HRESULT GetCategoryName([in] PROPCAT propcat, [in] LCID lcid, [out] BSTR* pbstrName);
+}

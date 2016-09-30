@@ -1,0 +1,32 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Atlduck", "Atlduck.vcproj", "{18980add-610a-465e-86f4-8c3190543581}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+	ProjectSection(SolutionConfiguration) = postProject
+		Debug.ActiveCfg = Debug|Win32
+		Debug.Build.0 = Debug|Win32
+		Release.ActiveCfg = Release|Win32
+		Release.Build.0 = Release|Win32
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Duck", "Duck\Duck.vcproj", "{82e1b38f-72a0-42d6-82cd-5e0996b1b70b}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+	ProjectSection(SolutionConfiguration) = postProject
+		Debug.ActiveCfg = Debug|Win32
+		Debug.Build.0 = Debug|Win32
+		Release.ActiveCfg = Release|Win32
+		Release.Build.0 = Release|Win32
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Release
+		ConfigName.1 = Debug
+		DoSign = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

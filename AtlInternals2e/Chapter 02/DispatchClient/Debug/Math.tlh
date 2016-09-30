@@ -1,0 +1,61 @@
+// Created by Microsoft (R) C/C++ Compiler Version 13.00.9466 (65d19755).
+//
+// c:\kirk\atl internals 2e\chapter 02 -- smart types\dispatchclient\debug\Math.tlh
+//
+// C++ source equivalent of Win32 type library ..\\Math\\Debug\\Math.dll
+// compiler-generated file created 09/23/02 at 12:44:48 - DO NOT EDIT!
+
+#pragma once
+#pragma pack(push, 8)
+
+#include <comdef.h>
+
+//
+// Forward references and typedefs
+//
+
+struct __declspec(uuid("bdb79373-744d-4c7f-a9ad-0ef5f1f380ce"))
+/* LIBID */ __MathLib;
+struct /* coclass */ Calc;
+struct __declspec(uuid("2f6c88d7-c2bf-4933-81fa-3fbafc3fc34b"))
+/* dual interface */ ICalc;
+
+//
+// Smart pointer typedef declarations
+//
+
+_COM_SMARTPTR_TYPEDEF(ICalc, __uuidof(ICalc));
+
+//
+// Type library items
+//
+
+struct __declspec(uuid("3718faf2-7f65-46dc-affd-f44e469804da"))
+Calc;
+    // [ default ] interface ICalc
+
+struct __declspec(uuid("2f6c88d7-c2bf-4933-81fa-3fbafc3fc34b"))
+ICalc : IDispatch
+{
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall Add (
+        /*[in]*/ double Op1,
+        /*[in]*/ double Op2,
+        /*[out,retval]*/ double * Result ) = 0;
+};
+
+//
+// Named GUID constants initializations
+//
+
+extern "C" const GUID __declspec(selectany) LIBID_MathLib =
+    {0xbdb79373,0x744d,0x4c7f,{0xa9,0xad,0x0e,0xf5,0xf1,0xf3,0x80,0xce}};
+extern "C" const GUID __declspec(selectany) CLSID_Calc =
+    {0x3718faf2,0x7f65,0x46dc,{0xaf,0xfd,0xf4,0x4e,0x46,0x98,0x04,0xda}};
+extern "C" const GUID __declspec(selectany) IID_ICalc =
+    {0x2f6c88d7,0xc2bf,0x4933,{0x81,0xfa,0x3f,0xba,0xfc,0x3f,0xc3,0x4b}};
+
+#pragma pack(pop)

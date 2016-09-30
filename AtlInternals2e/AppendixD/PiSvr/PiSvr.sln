@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PiSvr", "PiSvr\PiSvr.vcproj", "{8C371CE7-0456-4461-A10D-65936D458F06}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PiSvrPS", "PiSvr\PiSvrPS.vcproj", "{4CA0F1A5-062F-4354-A5BB-94CF1920CCE5}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8C371CE7-0456-4461-A10D-65936D458F06} = {8C371CE7-0456-4461-A10D-65936D458F06}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PiSvrClient", "PiSvrClient\PiSvrClient.vcproj", "{17C4AB57-E7EA-4D7D-A26C-DA3B5101053E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8C371CE7-0456-4461-A10D-65936D458F06}.Debug|Win32.ActiveCfg = Debug|Win32
+		{8C371CE7-0456-4461-A10D-65936D458F06}.Debug|Win32.Build.0 = Debug|Win32
+		{8C371CE7-0456-4461-A10D-65936D458F06}.Release|Win32.ActiveCfg = Release|Win32
+		{8C371CE7-0456-4461-A10D-65936D458F06}.Release|Win32.Build.0 = Release|Win32
+		{4CA0F1A5-062F-4354-A5BB-94CF1920CCE5}.Debug|Win32.ActiveCfg = Debug|Win32
+		{4CA0F1A5-062F-4354-A5BB-94CF1920CCE5}.Release|Win32.ActiveCfg = Release|Win32
+		{17C4AB57-E7EA-4D7D-A26C-DA3B5101053E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{17C4AB57-E7EA-4D7D-A26C-DA3B5101053E}.Debug|Win32.Build.0 = Debug|Win32
+		{17C4AB57-E7EA-4D7D-A26C-DA3B5101053E}.Release|Win32.ActiveCfg = Release|Win32
+		{17C4AB57-E7EA-4D7D-A26C-DA3B5101053E}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

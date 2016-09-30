@@ -1,0 +1,9 @@
+SCC = This is a Source Code Control file
+
+[CStringTest.sln]
+SCC_Aux_Path = "\\frodo\d$\vssdb\project"
+SCC_Project_Name = "$/ATLINTERNALS2E/src/Chapter 02/CStringTest", FDGAAAAA
+
+[CStringTest.vcproj]
+SCC_Aux_Path = "\\frodo\d$\vssdb\project"
+SCC_Project_Name = "$/ATLINTERNALS2E/src/Chapter 02/CStringTest", FDGAAAAA

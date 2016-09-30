@@ -1,0 +1,23 @@
+HKCR
+{
+	ATLInternals.BullsEyePropPage.1 = s 'BullsEyePropPage Class'
+	{
+		CLSID = s '{47446235-8500-43a2-92A7-F0686FDAA69C}'
+	}
+	ATLInternals.BullsEyePropPage = s 'BullsEyePropPage Class'
+	{
+		CLSID = s '{47446235-8500-43a2-92A7-F0686FDAA69C}'
+		CurVer = s 'ATLInternals.BullsEyePropPage.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {47446235-8500-43a2-92A7-F0686FDAA69C} = s 'BullsEyePropPage Class'
+		{
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+		}
+	}
+}

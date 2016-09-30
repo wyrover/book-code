@@ -1,0 +1,18 @@
+HKCR
+{
+	NoRemove AppID
+	{
+		'%APPID%' = s 'MathDllNoAttr'
+		'MathDllNoAttr.DLL'
+		{
+			val AppID = s '%APPID%'
+		}
+	}
+    NoRemove 'Component Categories'
+    {
+        {0D22FF22-28CC-11d2-ABDD-00A0C9C8E50D}
+        {
+            val 409 = s 'ATL Internals Example Components'
+        }
+    }
+}

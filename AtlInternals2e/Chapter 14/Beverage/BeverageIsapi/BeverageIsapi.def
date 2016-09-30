@@ -1,0 +1,8 @@
+; BeverageIsapi.def : declares the module parameters for the DLL.
+
+LIBRARY	     "BeverageIsapi"
+
+EXPORTS
+	HttpExtensionProc
+	GetExtensionVersion
+	TerminateExtension

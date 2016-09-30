@@ -1,0 +1,13 @@
+SCC = This is a Source Code Control file
+
+[MemMgrTest.sln]
+SCC_Aux_Path = "\\frodo\d$\vssdb\project"
+SCC_Project_Name = "$/ATLINTERNALS2E/src/Chapter 02/MemMgrTest", MDGAAAAA
+
+[MemMgrTest.vcproj]
+SCC_Aux_Path = "\\frodo\d$\vssdb\project"
+SCC_Project_Name = "$/ATLINTERNALS2E/src/Chapter 02/MemMgrTest", MDGAAAAA
+
+[MemMgrTestPS.vcproj]
+SCC_Aux_Path = "\\frodo\d$\vssdb\project"
+SCC_Project_Name = "$/ATLINTERNALS2E/src/Chapter 02/MemMgrTest", MDGAAAAA

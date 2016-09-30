@@ -1,0 +1,9 @@
+; BullsEyeControl.def : Declares the module parameters.
+
+LIBRARY      "BullsEyeControl.DLL"
+
+EXPORTS
+	DllCanUnloadNow		PRIVATE
+	DllGetClassObject	PRIVATE
+	DllRegisterServer	PRIVATE
+	DllUnregisterServer	PRIVATE

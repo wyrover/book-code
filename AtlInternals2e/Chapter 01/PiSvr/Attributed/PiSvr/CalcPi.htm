@@ -1,0 +1,74 @@
+<object classid="clsid:E5F91723-E7AD-4596-AC90-17586D400BF7" id="objPiCalculator" VIEWASTEXT>
+	<param name="digits" value="5">
+</object>
+Pi to
+<span id="spanDigits">0</span>
+digits is
+<span id="spanPi">3</span>.
+<p>
+	Digits: <input type="text" id="txtDigits" value="2"> <input type="submit" id="cmdRecalc" value="Calculate Pi">
+<p>
+	<script language="vbscript">
+  sub window_onLoad
+    spanDigits.innerText = objPiCalculator.digits
+    spanPi.innerText = objPiCalculator.calcPi
+    txtDigits.value = objPiCalculator.digits
+  end sub
+
+  sub cmdRecalc_onClick
+    objPiCalculator.digits = txtDigits.value
+    spanDigits.innerText = txtDigits.value
+    spanPi.innerText = objPiCalculator.calcPi
+  end sub
+	</script>
+	<table border>
+		<tr>
+			<td>Digit</td>
+			<td>Frequency</td>
+		<tr>
+			<td>0</td>
+			<td><span id="span0">0</span></td>
+		<tr>
+			<td>1</td>
+			<td><span id="span1">0</span></td>
+		<tr>
+			<td>2</td>
+			<td><span id="span2">0</span></td>
+		<tr>
+			<td>3</td>
+			<td><span id="span3">0</span></td>
+		<tr>
+			<td>4</td>
+			<td><span id="span4">0</span></td>
+		<tr>
+			<td>5</td>
+			<td><span id="span5">0</span></td>
+		<tr>
+			<td>6</td>
+			<td><span id="span6">0</span></td>
+		<tr>
+			<td>7</td>
+			<td><span id="span7">0</span></td>
+		<tr>
+			<td>8</td>
+			<td><span id="span8">0</span></td>
+		<tr>
+			<td>9</td>
+			<td><span id="span9">0</span></td>
+	</table>
+	<script language="vbscript">
+  sub objPiCalculator_onDigitFred(index, digit)
+    select case digit
+    case 0: span0.innerText = span0.innerText + 1
+    case 1: span1.innerText = span1.innerText + 1
+    case 2: span2.innerText = span2.innerText + 1
+    case 3: span3.innerText = span3.innerText + 1
+    case 4: span4.innerText = span4.innerText + 1
+    case 5: span5.innerText = span5.innerText + 1
+    case 6: span6.innerText = span6.innerText + 1
+    case 7: span7.innerText = span7.innerText + 1
+    case 8: span8.innerText = span8.innerText + 1
+    case 9: span9.innerText = span9.innerText + 1
+    end select
+  end sub
+	</script>

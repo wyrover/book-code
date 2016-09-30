@@ -1,0 +1,4 @@
+<?xml version="1.0" ?>
+<discovery xmlns="http://schemas.xmlsoap.org/disco/">
+	<contractRef xmlns="http://schemas.xmlsoap.org/disco/scl/" ref="http://HOUSTON/PiSvr/PiSvr.dll?Handler=GenPiSvrWSDL" docRef="http://HOUSTON/PiSvr/PiSvr.htm"/>
+</discovery>

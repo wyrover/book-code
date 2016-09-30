@@ -1,0 +1,24 @@
+HKCR
+{
+	PrimeSvrNoAttr.PrimeNumbers.1 = s 'PrimeNumbers Class'
+	{
+		CLSID = s '{687E728A-56E2-4B6F-B7DD-D066728DCCE3}'
+	}
+	PrimeSvrNoAttr.PrimeNumbers = s 'PrimeNumbers Class'
+	{
+		CLSID = s '{687E728A-56E2-4B6F-B7DD-D066728DCCE3}'
+		CurVer = s 'PrimeSvrNoAttr.PrimeNumbers.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {687E728A-56E2-4B6F-B7DD-D066728DCCE3} = s 'PrimeNumbers Class'
+		{
+			ProgID = s 'PrimeSvrNoAttr.PrimeNumbers.1'
+			VersionIndependentProgID = s 'PrimeSvrNoAttr.PrimeNumbers'
+			ForceRemove 'Programmable'
+			LocalServer32 = s '%MODULE%'
+			val AppID = s '%APPID%'
+			'TypeLib' = s '{DEE7108E-16B0-4972-A72B-916D23608649}'
+		}
+	}
+}

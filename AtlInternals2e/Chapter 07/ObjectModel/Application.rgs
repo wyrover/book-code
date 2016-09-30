@@ -1,0 +1,26 @@
+HKCR
+{
+	ObjectModel.Application.1 = s 'Application Class'
+	{
+		CLSID = s '{CB693B71-80E2-11D2-987D-00600823CFFB}'
+	}
+	ObjectModel.Application = s 'Application Class'
+	{
+		CLSID = s '{CB693B71-80E2-11D2-987D-00600823CFFB}'
+		CurVer = s 'ObjectModel.Application.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {CB693B71-80E2-11D2-987D-00600823CFFB} = s 'Application Class'
+		{
+			ProgID = s 'ObjectModel.Application.1'
+			VersionIndependentProgID = s 'ObjectModel.Application'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{CB693B60-80E2-11D2-987D-00600823CFFB}'
+		}
+	}
+}

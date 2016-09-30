@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HelloAtlServer", "HelloAtlServer.vcproj", "{56B08185-1D13-409C-BAB2-CC830BAEB95A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HelloAtlServerIsapi", "..\HelloAtlServerIsapi\HelloAtlServerIsapi.vcproj", "{A4D8DE6D-1E27-4F2E-A15B-939C99E1B70D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{56B08185-1D13-409C-BAB2-CC830BAEB95A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{56B08185-1D13-409C-BAB2-CC830BAEB95A}.Debug|Win32.Build.0 = Debug|Win32
+		{56B08185-1D13-409C-BAB2-CC830BAEB95A}.Release|Win32.ActiveCfg = Release|Win32
+		{56B08185-1D13-409C-BAB2-CC830BAEB95A}.Release|Win32.Build.0 = Release|Win32
+		{A4D8DE6D-1E27-4F2E-A15B-939C99E1B70D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A4D8DE6D-1E27-4F2E-A15B-939C99E1B70D}.Debug|Win32.Build.0 = Debug|Win32
+		{A4D8DE6D-1E27-4F2E-A15B-939C99E1B70D}.Release|Win32.ActiveCfg = Release|Win32
+		{A4D8DE6D-1E27-4F2E-A15B-939C99E1B70D}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

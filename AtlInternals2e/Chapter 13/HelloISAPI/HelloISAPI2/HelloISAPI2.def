@@ -1,0 +1,8 @@
+LIBRARY	"HelloISAPI2"
+EXPORTS
+   ; Explicit exports can go here
+
+   HttpExtensionProc @1
+   GetExtensionVersion @2
+   TerminateExtension @3
+   

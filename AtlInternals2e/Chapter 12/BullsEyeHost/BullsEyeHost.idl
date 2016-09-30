@@ -1,0 +1,18 @@
+// BullsEyeHost.idl : IDL source for BullsEyeHost
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (BullsEyeHost.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	uuid(46161D22-445C-408D-84DC-31E317AEE39F),
+	version(1.0),
+	helpstring("BullsEyeHost 1.0 Type Library")
+]
+library BullsEyeHostLib
+{
+	importlib("stdole2.tlb");
+};

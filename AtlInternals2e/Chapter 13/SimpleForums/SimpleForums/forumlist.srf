@@ -1,0 +1,17 @@
+<html>
+{{handler SimpleForums.dll/ForumList}}
+<head>
+    <title>Forums</title>
+</head>
+<body>
+<h1>ATL Server Simple Forums</h1>
+<p>There are {{NumForums}} forums on this system.</p>
+{{while MoreForums}}
+    <h2><a href="{{LinkToForum}}">{{ForumName}}</a></h2>
+    <p>{{ForumDescription}}</p>
+    <p><a href="{{LinkToEditForum}}">Edit Forum Settings</a></p>
+    <br />
+{{NextForum}}
+{{endwhile}}
+</body>
+</html>

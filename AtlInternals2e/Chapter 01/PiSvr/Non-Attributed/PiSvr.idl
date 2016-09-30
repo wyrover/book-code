@@ -1,0 +1,65 @@
+// PiSvr.idl : IDL source for PiSvr
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (PiSvr.tlb) and marshalling code.
+
+#include "olectl.h"
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(1F50EB41-517E-492E-AEB5-1B6B62BE45EF),
+	dual,
+	nonextensible,
+	helpstring("ICalcPi Interface"),
+	pointer_default(unique)
+]
+interface ICalcPi : IDispatch{
+	[propget, id(1), helpstring("property Digits")] HRESULT Digits([out, retval] LONG* pVal);
+	[propput, id(1), helpstring("property Digits")] HRESULT Digits([in] LONG newVal);
+	[id(2), helpstring("method CalcPi")] HRESULT CalcPi([out,retval] BSTR* pbstrPi);
+};
+
+[
+	object,
+	uuid(7B568195-F63B-11D1-9818-00600823CFFB),
+	oleautomation,
+	helpstring("IAdvertiseMyself Interface"),
+	pointer_default(unique)
+]
+interface IAdvertiseMyself : IUnknown
+{
+	[helpstring("method ShowAd")] HRESULT ShowAd(BSTR bstrClient);
+};
+
+[
+	uuid(E20118C6-84AF-4002-9A36-94309C2F1B42),
+	version(1.0),
+	helpstring("PiSvr 1.0 Type Library")
+]
+library PiSvrLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(04959383-AFDD-4D13-813A-818B102F9ADE),
+		helpstring("_ICalcPiEvents Interface")
+	]
+	dispinterface _ICalcPiEvents
+	{
+		properties:
+		methods:
+			[id(1)] void OnDigit([in] short nIndex, [in] short nDigit);
+	};
+	[
+		uuid(0FC2B4C2-0159-4ECC-897E-60CA305199C0),
+		helpstring("CalcPi Class")
+	]
+	coclass CalcPi
+	{
+		[default] interface ICalcPi;
+		[default, source] dispinterface _ICalcPiEvents;
+		interface IAdvertiseMyself;
+	};
+};

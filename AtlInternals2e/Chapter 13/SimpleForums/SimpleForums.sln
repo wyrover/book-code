@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SimpleForums", "SimpleForums\SimpleForums.vcproj", "{15880257-9C71-4E10-8283-C5944E9E1FCA}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SimpleForumsIsapi", "SimpleForumsIsapi\SimpleForumsIsapi.vcproj", "{A65CD62B-C0C8-4B26-A3B2-D65C15E1B845}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{15880257-9C71-4E10-8283-C5944E9E1FCA}.Debug|Win32.ActiveCfg = Debug|Win32
+		{15880257-9C71-4E10-8283-C5944E9E1FCA}.Debug|Win32.Build.0 = Debug|Win32
+		{15880257-9C71-4E10-8283-C5944E9E1FCA}.Release|Win32.ActiveCfg = Release|Win32
+		{15880257-9C71-4E10-8283-C5944E9E1FCA}.Release|Win32.Build.0 = Release|Win32
+		{A65CD62B-C0C8-4B26-A3B2-D65C15E1B845}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A65CD62B-C0C8-4B26-A3B2-D65C15E1B845}.Debug|Win32.Build.0 = Debug|Win32
+		{A65CD62B-C0C8-4B26-A3B2-D65C15E1B845}.Release|Win32.ActiveCfg = Release|Win32
+		{A65CD62B-C0C8-4B26-A3B2-D65C15E1B845}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

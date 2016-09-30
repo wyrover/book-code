@@ -1,0 +1,9 @@
+; DemagogueNoAttr.def : Declares the module parameters.
+
+LIBRARY      "DemagogueNoAttr.DLL"
+
+EXPORTS
+	DllCanUnloadNow		PRIVATE
+	DllGetClassObject	PRIVATE
+	DllRegisterServer	PRIVATE
+	DllUnregisterServer	PRIVATE

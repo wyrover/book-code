@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HelloISAPI", "HelloISAPI\HelloISAPI.vcproj", "{8693B71D-B9B8-43AD-9DDA-19FDB3E0E877}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HelloISAPI2", "HelloISAPI2\HelloISAPI2.vcproj", "{2E007BDB-FE32-4CF2-8320-6244BDCA1565}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8693B71D-B9B8-43AD-9DDA-19FDB3E0E877}.Debug|Win32.ActiveCfg = Debug|Win32
+		{8693B71D-B9B8-43AD-9DDA-19FDB3E0E877}.Debug|Win32.Build.0 = Debug|Win32
+		{8693B71D-B9B8-43AD-9DDA-19FDB3E0E877}.Release|Win32.ActiveCfg = Release|Win32
+		{8693B71D-B9B8-43AD-9DDA-19FDB3E0E877}.Release|Win32.Build.0 = Release|Win32
+		{2E007BDB-FE32-4CF2-8320-6244BDCA1565}.Debug|Win32.ActiveCfg = Debug|Win32
+		{2E007BDB-FE32-4CF2-8320-6244BDCA1565}.Debug|Win32.Build.0 = Debug|Win32
+		{2E007BDB-FE32-4CF2-8320-6244BDCA1565}.Release|Win32.ActiveCfg = Release|Win32
+		{2E007BDB-FE32-4CF2-8320-6244BDCA1565}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
