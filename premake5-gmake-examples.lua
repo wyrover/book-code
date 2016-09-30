@@ -2,11 +2,18 @@ workspace "gmake-examples"
     language "C++"
     location "build/%{_ACTION}"    
     flags { "StaticRuntime", "C++14" }
+    buildoptions
+    {
+        "-finput-charset=GBK",
+        "-fexec-charset=GBK",
+        "-fwide-exec-charset=UTF-16LE"
+    }
     linkoptions
     {
         --"-static-libgcc",
         --"-static-libstdc++"
         "-static"
+       
     }
 		
 
