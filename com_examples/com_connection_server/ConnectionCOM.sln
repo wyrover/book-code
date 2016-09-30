@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConnectionCOM", "ConnectionCOM.vcproj", "{5026CEA7-8E25-4B10-9C93-90259AC7ADE3}"
+EndProject
+Project("{059D6162-CD51-11D0-AE1F-00A0C90FFFC3}") = "ConnectionClient", "ConnectionClient\ConnectionClient.dsp", "{031DAAF0-F38B-429B-BB81-3038F3CD8CFA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release MinDependency|Win32 = Release MinDependency|Win32
+		Release MinSize|Win32 = Release MinSize|Win32
+		Unicode Debug|Win32 = Unicode Debug|Win32
+		Unicode Release MinDependency|Win32 = Unicode Release MinDependency|Win32
+		Unicode Release MinSize|Win32 = Unicode Release MinSize|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5026CEA7-8E25-4B10-9C93-90259AC7ADE3}.Debug|Win32.ActiveCfg = Debug|Win32
+		{5026CEA7-8E25-4B10-9C93-90259AC7ADE3}.Debug|Win32.Build.0 = Debug|Win32
+		{5026CEA7-8E25-4B10-9C93-90259AC7ADE3}.Release MinDependency|Win32.ActiveCfg = Release MinDependency|Win32
+		{5026CEA7-8E25-4B10-9C93-90259AC7ADE3}.Release MinDependency|Win32.Build.0 = Release MinDependency|Win32
+		{5026CEA7-8E25-4B10-9C93-90259AC7ADE3}.Release MinSize|Win32.ActiveCfg = Release MinSize|Win32
+		{5026CEA7-8E25-4B10-9C93-90259AC7ADE3}.Release MinSize|Win32.Build.0 = Release MinSize|Win32
+		{5026CEA7-8E25-4B10-9C93-90259AC7ADE3}.Unicode Debug|Win32.ActiveCfg = Unicode Debug|Win32
+		{5026CEA7-8E25-4B10-9C93-90259AC7ADE3}.Unicode Debug|Win32.Build.0 = Unicode Debug|Win32
+		{5026CEA7-8E25-4B10-9C93-90259AC7ADE3}.Unicode Release MinDependency|Win32.ActiveCfg = Unicode Release MinDependency|Win32
+		{5026CEA7-8E25-4B10-9C93-90259AC7ADE3}.Unicode Release MinDependency|Win32.Build.0 = Unicode Release MinDependency|Win32
+		{5026CEA7-8E25-4B10-9C93-90259AC7ADE3}.Unicode Release MinSize|Win32.ActiveCfg = Unicode Release MinSize|Win32
+		{5026CEA7-8E25-4B10-9C93-90259AC7ADE3}.Unicode Release MinSize|Win32.Build.0 = Unicode Release MinSize|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

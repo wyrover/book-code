@@ -1,0 +1,49 @@
+// ConnectionCOM.idl : IDL source for ConnectionCOM.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (ConnectionCOM.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+	[
+		object,
+		uuid(295D9570-C579-4696-8BE2-C069DEC06F36),
+		dual,
+		helpstring("IAdd Interface"),
+		pointer_default(unique)
+	]
+	interface IAdd : IDispatch
+	{
+		[id(1), helpstring("method Add")] HRESULT Add(int a,int b);
+	};
+
+[
+	uuid(40EAC38A-60AA-4F14-BC5D-C7C3C8DE89C5),
+	version(1.0),
+	helpstring("ConnectionCOM 1.0 Type Library")
+]
+library CONNECTIONCOMLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(AFE854B0-246F-4B66-B26F-A1060225C71C),
+		helpstring("_IAddEvents Interface")
+	] 
+	interface _IAddEvents : IUnknown
+	{
+		[id(1), helpstring("method ExecutionOver")] HRESULT ExecutionOver(int Result);
+	};
+
+	[
+		uuid(630B3CD3-DDB1-43CE-AD2F-4F57DC54D5D0),
+		helpstring("Add Class")
+	]
+	coclass Add
+	{
+		[default] interface IAdd;
+		[default, source] interface _IAddEvents;
+	};
+};

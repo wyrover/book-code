@@ -1,0 +1,26 @@
+HKCR
+{
+	ConnectionCOM.Add.1 = s 'Add Class'
+	{
+		CLSID = s '{630B3CD3-DDB1-43CE-AD2F-4F57DC54D5D0}'
+	}
+	ConnectionCOM.Add = s 'Add Class'
+	{
+		CLSID = s '{630B3CD3-DDB1-43CE-AD2F-4F57DC54D5D0}'
+		CurVer = s 'ConnectionCOM.Add.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {630B3CD3-DDB1-43CE-AD2F-4F57DC54D5D0} = s 'Add Class'
+		{
+			ProgID = s 'ConnectionCOM.Add.1'
+			VersionIndependentProgID = s 'ConnectionCOM.Add'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{40EAC38A-60AA-4F14-BC5D-C7C3C8DE89C5}'
+		}
+	}
+}

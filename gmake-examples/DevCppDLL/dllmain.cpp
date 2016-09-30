@@ -2,6 +2,7 @@
 #include "dll.h"
 #include <windows.h>
 #include <stdio.h>
+#include <iostream>
 
 /* --- DLL 入口 ---*/ 
 
@@ -49,6 +50,17 @@ class XyzImpl : public IXyz
 
 int XyzImpl::Foo(int n)
 {
+    setlocale(LC_ALL, "");
+    std::ios_base::sync_with_stdio(false); // 缺少的话，wcout wchar_t 会漏掉中文
+    std::wcin.imbue(std::locale(""));
+    std::wcout.imbue(std::locale(""));
+
+    wchar_t wstr[] = L"中文";             
+    wprintf(L"%ls\n", wstr);
+    printf("%s\n", "中文测试");
+    
+    std::wcout << L"中文测试unicode" << std::endl;
+    std::cout << "中文测试utf8" << std::endl;
     return n * n;
 }
 
