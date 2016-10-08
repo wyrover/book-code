@@ -1,0 +1,41 @@
+<languageVersion : 1.0;>
+
+kernel Checkerboard
+<   namespace : "com.friendsofed";
+    vendor : "Advanced ActionScript 3.0 Animation";
+    version : 1;
+    description : "creates a checkerboard pattern";
+>
+{
+    input image4 src;
+    output pixel4 dst;
+    
+    parameter int xres
+    <
+        minValue:1;
+        maxValue:200;
+        defaultValue:50;
+    >;
+    parameter int yres
+    <
+        minValue:1;
+        maxValue:200;
+        defaultValue:50;
+    >;
+
+    void
+    evaluatePixel()
+    {
+        float2 pos = outCoord();
+        float xpos = floor(pos.x / float(xres));
+        float ypos = floor(pos.y / float(yres));
+        if(mod(xpos, 2.0) > 0.0 ^^ mod(ypos, 2.0) > 0.0)
+        {
+            dst = pixel4(1, 1, 1, 1);
+        }
+        else
+        {
+            dst = pixel4(0, 0, 0, 1);
+        }
+    }
+}

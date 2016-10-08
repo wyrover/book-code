@@ -1,0 +1,20 @@
+<languageVersion : 1.0;>
+
+kernel ColorChooser
+<   namespace : "com.friendsofed";
+    vendor : "Advanced ActionScript 3.0 Animation";
+    version : 1;
+    description : "shows a pixel4 parameter in action";
+>
+{
+    input image4 src;
+    output pixel4 dst;
+    
+    parameter pixel4 color;
+
+    void
+    evaluatePixel()
+    {
+        dst = color;
+    }
+}

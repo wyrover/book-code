@@ -1,0 +1,27 @@
+<languageVersion : 1.0;>
+
+kernel ChannelBlend
+<   namespace : "com.friendsofed";
+    vendor : "Advamced ActionScript 3.0 Animation";
+    version : 1;
+    description : "blends the channels of two images";
+>
+{
+    input image4 back;
+    input image4 fore;
+    
+    output pixel4 dst;
+    
+    parameter float3 amt;
+
+    void
+    evaluatePixel()
+    {
+        pixel4 bg = sampleNearest(back, outCoord());
+        pixel4 fg = sampleNearest(fore, outCoord());
+        dst.r = fg.r * amt.r + bg.r * (1.0 - amt.r);
+        dst.g = fg.g * amt.g + bg.g * (1.0 - amt.g);
+        dst.b = fg.b * amt.b + bg.b * (1.0 - amt.b);
+        dst.a = 1.0;
+    }
+}

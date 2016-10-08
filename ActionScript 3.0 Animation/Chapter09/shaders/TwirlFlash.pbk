@@ -1,0 +1,56 @@
+<languageVersion : 1.0;>
+
+kernel TwirlFlash
+<   namespace : "com.friendsofed";
+    vendor : "Advanced ActionScript 3.0 Animation";
+    version : 1;
+    description : "spins an image";
+>
+{
+    input image4 src;
+    output pixel4 dst;
+    
+    parameter float2 center
+    <
+        minValue:float2(0.0);
+        maxValue:float2(1000.0);
+        defaultValue:float2(200.0);
+    >;
+    
+    parameter float twist
+    <
+        minValue:-10.0;
+        maxValue:10.0;
+        defaultValue:0.0;
+    >;
+    
+    parameter float radius
+    <
+        minValue:0.0;
+        maxValue:500.0;
+        defaultValue:100.0;
+    >;
+    
+    void
+    evaluatePixel()
+    {
+        float2 pos = outCoord();
+        float dist = distance(center, pos);
+        
+        float PI = 3.14159;
+        
+        if(dist < radius)
+        {
+            float dx = pos.x - center.x;
+            float dy = pos.y - center.y;
+            float angle = atan(dy, dx);
+            angle += sin(dist / radius * PI) * twist;
+            float2 newpos = center + float2(cos(angle) * dist, sin(angle) * dist);
+            dst = sampleNearest(src, newpos);
+        }
+        else
+        {
+            dst = sampleNearest(src, pos);
+        }
+    }
+}

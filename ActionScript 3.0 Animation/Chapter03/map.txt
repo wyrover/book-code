@@ -1,0 +1,18 @@
+// this is a comment.
+
+# 0 type:GraphicTile graphicClass:MapTest_Tile01 xoffset:20 yoffset:10 walkable:true
+# 1 type:GraphicTile graphicClass:MapTest_Tile02 xoffset:20 yoffset:30 walkable:false
+# 2 type:DrawnIsoBox color:0xff6666 walkable:false height:20
+# 3 type:DrawnIsoTile color:0x6666ff walkable:false
+
+
+0 0 0 0 0 0 0 0 0 0
+0 1 1 1 1 1 1 1 1 0
+0 1 0 0 0 0 0 0 0 0
+0 1 0 3 3 3 3 0 0 0
+0 1 0 3 2 2 3 0 0 0
+0 1 0 3 2 2 3 0 0 0
+0 1 0 3 3 3 3 0 0 0
+0 1 0 0 0 0 0 0 0 0
+0 1 1 1 1 1 1 1 1 0
+0 0 0 0 0 0 0 0 0 0

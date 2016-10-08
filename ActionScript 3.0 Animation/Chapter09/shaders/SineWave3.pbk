@@ -1,0 +1,20 @@
+<languageVersion : 1.0;>
+
+kernel SineWave3
+<   namespace : "com.friendsofed";
+    vendor : "Advanced ActionScript 3.0 Animation";
+    version : 1;
+    description : "draws vertical and horizontal bands";
+>
+{
+    input image4 src;
+    output pixel4 dst;
+
+    void
+    evaluatePixel()
+    {
+        dst = pixel4(0, 0, 0, 1);
+        float2 pos = outCoord();
+        dst.rgb = pixel3(sin(pos.x * .2) * .5 + .5);
+    }
+}

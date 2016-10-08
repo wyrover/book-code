@@ -1,0 +1,34 @@
+<languageVersion : 1.0;>
+
+kernel GlassTile
+<   namespace : "com.friendsofed";
+    vendor : "Advanced ActionScript 3.0 Animation";
+    version : 1;
+    description : "creates a glass tile refraction effect";
+>
+{
+    input image4 src;
+    output pixel4 dst;
+    
+    parameter float mult
+    <
+        minValue:0.0;
+        maxValue:10.0;
+        defaultValue:1.0;
+    >;
+    
+    parameter float wave
+    <
+        minValue:0.0;
+        maxValue:1.0;
+        defaultValue:0.1;
+    >;
+    
+    void
+    evaluatePixel()
+    {
+        float2 pos = outCoord();
+        pos += float2(sin(pos.x * wave) * mult, sin(pos.y * wave) * mult);
+        dst = sampleNearest(src, pos);
+    }
+}
