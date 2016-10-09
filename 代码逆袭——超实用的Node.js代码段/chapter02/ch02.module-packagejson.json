@@ -1,0 +1,47 @@
+/**
+ * Created by king on 15-2-12.
+ *
+ * ch02.module-packagejson.json
+ */
+{
+
+    "name": "myNodeJSApp",
+    "version": "0.0.1",
+    "author" : "king",
+    "description" : "Introduce to Nodejs Package.json",
+    "main" : "./lib/main.js",
+    "keywords" : "javascript, node.js",
+    "respository" : {
+        "type" : "git",
+        "url" :"http://url"
+    },
+    "bugs" : [
+        {
+            "url" : "http://url/bug",
+            "email" : "bug@example.com"
+        }
+    ],
+    "contributors" : [
+        {
+            "name" : "xxx",
+            "email" : "xxx@example.com"
+        }
+    ],
+    "license" : "MIT",
+    "engines" : { "node" : "0.10.x"},
+    "script" : {
+        "start" : "node index.js"
+    },
+    "private": true,
+    "scripts": {
+        "start": "node ./bin/www"
+    },
+    "dependencies": {
+        "express": "~5.0.0",
+        "debug": "~2.0.0",
+        "jade": "~1.6.0"
+    },
+    "devDependencies": {
+        "grunt" : "~0.5.1"
+    }
+}

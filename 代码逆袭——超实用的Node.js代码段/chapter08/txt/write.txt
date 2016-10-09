@@ -1,0 +1,2 @@
+fs.write(fd, buffer, offset, length[, position], callback)
+fs.write(fd, data[, position[, encoding]], callback)

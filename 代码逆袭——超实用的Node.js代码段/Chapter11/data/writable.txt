@@ -1,0 +1,1 @@
+stream - writable - file - end.

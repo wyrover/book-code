@@ -1,0 +1,2 @@
+fs.writeSync(fd, buffer, offset, length[, position])
+fs.writeSync(fd, data[, position[, encoding]])

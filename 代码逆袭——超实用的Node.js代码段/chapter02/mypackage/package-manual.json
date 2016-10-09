@@ -1,0 +1,13 @@
+{
+  "name": "mypackage",
+  "description": "mypackage - 简单四则运算应用",
+  "main": "./lib/main",
+  "author": {
+    "name": "king"
+  },
+  "version": "0.0.1",
+  "dependencies": {
+  },
+  "devDependencies": {
+  }
+}

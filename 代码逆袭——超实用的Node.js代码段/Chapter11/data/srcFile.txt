@@ -1,0 +1,2 @@
+Stream - pipe - srcfile.txt
+Stream - pipe - destfile.txt
