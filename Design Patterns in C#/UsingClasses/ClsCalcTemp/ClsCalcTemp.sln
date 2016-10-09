@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClsCalcTemp", "ClsCalcTemp.csproj", "{C6BEC150-0CE4-48C6-A713-1AE534A079FA}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{C6BEC150-0CE4-48C6-A713-1AE534A079FA}.Debug.ActiveCfg = Debug|.NET
+		{C6BEC150-0CE4-48C6-A713-1AE534A079FA}.Debug.Build.0 = Debug|.NET
+		{C6BEC150-0CE4-48C6-A713-1AE534A079FA}.Release.ActiveCfg = Release|.NET
+		{C6BEC150-0CE4-48C6-A713-1AE534A079FA}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

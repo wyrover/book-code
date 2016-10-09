@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListAdapter", "ListAdapter.csproj", "{AD20CC40-4BAA-4795-B6B7-3B240C0F8313}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{AD20CC40-4BAA-4795-B6B7-3B240C0F8313}.Debug.ActiveCfg = Debug|.NET
+		{AD20CC40-4BAA-4795-B6B7-3B240C0F8313}.Debug.Build.0 = Debug|.NET
+		{AD20CC40-4BAA-4795-B6B7-3B240C0F8313}.Release.ActiveCfg = Release|.NET
+		{AD20CC40-4BAA-4795-B6B7-3B240C0F8313}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

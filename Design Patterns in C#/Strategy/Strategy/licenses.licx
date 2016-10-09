@@ -1,0 +1,6 @@
+Strategy.LineButton, Strategy, Version=1.0.743.24990, Culture=neutral, PublicKeyToken=null
+System.Windows.Forms.Form, System.Windows.Forms, Version=1.0.2411.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+Strategy.BarButton, Strategy, Version=1.0.743.24990, Culture=neutral, PublicKeyToken=null
+System.Windows.Forms.PictureBox, System.Windows.Forms, Version=1.0.2411.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+Strategy.BarButton, Strategy, Version=1.0.743.25020, Culture=neutral, PublicKeyToken=null
+Strategy.LineButton, Strategy, Version=1.0.743.25020, Culture=neutral, PublicKeyToken=null

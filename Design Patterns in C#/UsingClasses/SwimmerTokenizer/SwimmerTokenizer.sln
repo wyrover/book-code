@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwimmerTokenizer", "SwimmerTokenizer.csproj", "{E1957258-1504-400F-A77E-EF1917E39496}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{E1957258-1504-400F-A77E-EF1917E39496}.Debug.ActiveCfg = Debug|.NET
+		{E1957258-1504-400F-A77E-EF1917E39496}.Debug.Build.0 = Debug|.NET
+		{E1957258-1504-400F-A77E-EF1917E39496}.Release.ActiveCfg = Release|.NET
+		{E1957258-1504-400F-A77E-EF1917E39496}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

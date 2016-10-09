@@ -1,0 +1,20 @@
+Kristen Frost, 9, CAT, 26.31, F
+Kimberly Watcke, 10, CDEV,27.37, F
+Jaclyn Carey, 10, ARAC, 27.53, F
+Megan Crapster, 10, LEHY, 27.68, F
+Kaitlyn Ament, 10, HNHS, 28.20, F
+Jackie Rogers, 10, WCA, 28.68, F
+Erin McLaughlin, 9, HMST, 28.80, F
+Emily Ferrier, 10, NMIL, 28.85, F
+Aurora Lee, 8, FFLY, 28.88, F
+Kate Isselee, 9, NMIL, 28.91, F
+Luke Mester, 10, GYWD, 24.88,  M
+Stephen Cosme, 9, OAK, 27.89, M
+Jeffrey Sudbury, 10, WYW, 28.24, M
+Ernest Verrico, 9, SHKS, 28.46, M
+David Liebovitz, 10, WYW, 28.78, M
+Ryan Rynazewski, 10, AJSC, 28.83, M
+Matthew Donch, 9, PSDY, 28.95, M
+Christopher Prus, 10, RAYS, 29.02, M
+Charles Baker, 10, PSDY, 29.06, M
+Matthew Sweitzer, 10, SHKS, 29.10, M

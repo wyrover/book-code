@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlobalSpooler", "GlobalSpooler.csproj", "{A114F4F3-DF9B-46C6-8857-8FC2DA0300D5}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{A114F4F3-DF9B-46C6-8857-8FC2DA0300D5}.Debug.ActiveCfg = Debug|.NET
+		{A114F4F3-DF9B-46C6-8857-8FC2DA0300D5}.Debug.Build.0 = Debug|.NET
+		{A114F4F3-DF9B-46C6-8857-8FC2DA0300D5}.Release.ActiveCfg = Release|.NET
+		{A114F4F3-DF9B-46C6-8857-8FC2DA0300D5}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

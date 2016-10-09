@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stocks", "Stocks.csproj", "{A4D8947D-9DF0-4DEE-B158-110D28F0E481}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{A4D8947D-9DF0-4DEE-B158-110D28F0E481}.Debug.ActiveCfg = Debug|.NET
+		{A4D8947D-9DF0-4DEE-B158-110D28F0E481}.Debug.Build.0 = Debug|.NET
+		{A4D8947D-9DF0-4DEE-B158-110D28F0E481}.Release.ActiveCfg = Release|.NET
+		{A4D8947D-9DF0-4DEE-B158-110D28F0E481}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

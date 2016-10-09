@@ -1,0 +1,21 @@
+Stop and Shop,	Apples,	        0.27
+Stop and Shop,	Oranges,        0.36
+Stop and Shop,	Hamburger,	1.98
+Stop and Shop,	Butter,	        2.39
+Stop and Shop,	Milk,	        1.98
+Stop and Shop,	Cola,	        2.65
+Stop and Shop,	Green beans,	2.29
+Village Market,	Apples,	        0.29
+Village Market,	Oranges,        0.29
+Village Market,	Hamburger,	2.45
+Village Market,	Butter,	        2.99
+Village Market,	Milk,	        1.79
+Village Market,	Cola,	        3.79
+Village Market,	Green beans,	2.19
+Waldbaums,	Apples,	        0.33
+Waldbaums,	Oranges,        0.47
+Waldbaums,	Hamburger,	2.29
+Waldbaums,	Butter,	        3.29
+Waldbaums,	Milk,	        1.89
+Waldbaums,	Cola,	        2.99
+Waldbaums,	Green beans,	1.99

@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Seeding", "Seeding.csproj", "{9D0C52D9-4599-4EEB-A0F0-1CC8C25F865D}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{9D0C52D9-4599-4EEB-A0F0-1CC8C25F865D}.Debug.ActiveCfg = Debug|.NET
+		{9D0C52D9-4599-4EEB-A0F0-1CC8C25F865D}.Debug.Build.0 = Debug|.NET
+		{9D0C52D9-4599-4EEB-A0F0-1CC8C25F865D}.Release.ActiveCfg = Release|.NET
+		{9D0C52D9-4599-4EEB-A0F0-1CC8C25F865D}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelpChain", "HelpChain.csproj", "{72477B2F-9F9E-4621-816E-81F97639118A}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{72477B2F-9F9E-4621-816E-81F97639118A}.Debug.ActiveCfg = Debug|.NET
+		{72477B2F-9F9E-4621-816E-81F97639118A}.Debug.Build.0 = Debug|.NET
+		{72477B2F-9F9E-4621-816E-81F97639118A}.Release.ActiveCfg = Release|.NET
+		{72477B2F-9F9E-4621-816E-81F97639118A}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

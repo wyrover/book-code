@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandHolder", "CommandHolder.csproj", "{AF89A0BF-782B-4333-9810-9CF0374D8A2D}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{AF89A0BF-782B-4333-9810-9CF0374D8A2D}.Debug.ActiveCfg = Debug|.NET
+		{AF89A0BF-782B-4333-9810-9CF0374D8A2D}.Debug.Build.0 = Debug|.NET
+		{AF89A0BF-782B-4333-9810-9CF0374D8A2D}.Release.ActiveCfg = Release|.NET
+		{AF89A0BF-782B-4333-9810-9CF0374D8A2D}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

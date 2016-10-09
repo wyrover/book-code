@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mediate", "Mediate.csproj", "{9E1EDB5C-F3FF-4A3A-BA12-EB6ED7D77334}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{9E1EDB5C-F3FF-4A3A-BA12-EB6ED7D77334}.Debug.ActiveCfg = Debug|.NET
+		{9E1EDB5C-F3FF-4A3A-BA12-EB6ED7D77334}.Debug.Build.0 = Debug|.NET
+		{9E1EDB5C-F3FF-4A3A-BA12-EB6ED7D77334}.Release.ActiveCfg = Release|.NET
+		{9E1EDB5C-F3FF-4A3A-BA12-EB6ED7D77334}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

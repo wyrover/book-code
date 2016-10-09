@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UndoCommand", "UndoCommand.csproj", "{D929F55C-55B3-4FF0-8041-00AB58E5E916}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{D929F55C-55B3-4FF0-8041-00AB58E5E916}.Debug.ActiveCfg = Debug|.NET
+		{D929F55C-55B3-4FF0-8041-00AB58E5E916}.Debug.Build.0 = Debug|.NET
+		{D929F55C-55B3-4FF0-8041-00AB58E5E916}.Release.ActiveCfg = Release|.NET
+		{D929F55C-55B3-4FF0-8041-00AB58E5E916}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

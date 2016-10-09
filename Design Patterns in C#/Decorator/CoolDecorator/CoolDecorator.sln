@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoolDecorator", "CoolDecorator.csproj", "{33A82A96-C0A3-42A4-B65B-60836FA7C422}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{33A82A96-C0A3-42A4-B65B-60836FA7C422}.Debug.ActiveCfg = Debug|.NET
+		{33A82A96-C0A3-42A4-B65B-60836FA7C422}.Debug.Build.0 = Debug|.NET
+		{33A82A96-C0A3-42A4-B65B-60836FA7C422}.Release.ActiveCfg = Release|.NET
+		{33A82A96-C0A3-42A4-B65B-60836FA7C422}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal
