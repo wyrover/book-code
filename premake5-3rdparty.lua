@@ -934,10 +934,250 @@ workspace "3rdparty"
                 "3rdparty/libcnary/include"
                 
             }
-            
 
+    group "gtest"
+
+        project "gtest"            
+            kind "StaticLib"     
+            defines { "GTEST_HAS_PTHREAD=0", "_HAS_EXCEPTIONS=1" }            
+            files
+            {
             
+                "3rdparty/googletest/googletest/src/gtest-all.cc"
+                     
+                               
+            }             
+            includedirs
+            {
+               
+                "3rdparty/googletest/googletest/include",
+                "3rdparty/googletest/googletest"
+            }
             
+        project "gtest_mt"            
+            kind "StaticLib"     
+            defines { "GTEST_HAS_PTHREAD=0", "_HAS_EXCEPTIONS=1" }
+            flags { "StaticRuntime" }
+            files
+            {
+            
+                "3rdparty/googletest/googletest/src/gtest-all.cc"
+                     
+                               
+            }             
+            includedirs
+            {
+               
+                "3rdparty/googletest/googletest/include",
+                "3rdparty/googletest/googletest"
+            }
+
+    group "gtest_main"
+
+        project "gtest_main"            
+            kind "StaticLib"     
+            defines { "GTEST_HAS_PTHREAD=0", "_HAS_EXCEPTIONS=1" }            
+            files
+            {
+            
+                "3rdparty/googletest/googletest/src/gtest-all.cc",
+                "3rdparty/googletest/googletest/src/gtest_main.cc"
+                  
+                               
+            }             
+            includedirs
+            {
+               
+                "3rdparty/googletest/googletest/include",
+                "3rdparty/googletest/googletest"
+            }
+            
+        project "gtest_main_mt"            
+            kind "StaticLib"     
+            defines { "GTEST_HAS_PTHREAD=0", "_HAS_EXCEPTIONS=1" }
+            flags { "StaticRuntime" }
+            files
+            {
+            
+                "3rdparty/googletest/googletest/src/gtest-all.cc",
+                "3rdparty/googletest/googletest/src/gtest_main.cc"
+                     
+                               
+            }             
+            includedirs
+            {
+               
+                "3rdparty/googletest/googletest/include",
+                "3rdparty/googletest/googletest"
+            }
+            
+    
+    group "gmock"
+
+        project "gmock"            
+            kind "StaticLib"     
+            defines { "GTEST_HAS_PTHREAD=0", "_HAS_EXCEPTIONS=1" }            
+            files
+            {
+            
+                "3rdparty/googletest/googletest/src/gtest-all.cc",
+                "3rdparty/googletest/googlemock/src/gmock-all.cc"      
+                               
+            }             
+            includedirs
+            {
+               
+                "3rdparty/googletest/googletest/include",
+                "3rdparty/googletest/googletest",
+                "3rdparty/googletest/googlemock/include",
+                "3rdparty/googletest/googlemock"
+
+            }
+            
+        project "gmock_mt"            
+            kind "StaticLib"     
+            defines { "GTEST_HAS_PTHREAD=0", "_HAS_EXCEPTIONS=1" }
+            flags { "StaticRuntime" }
+            files
+            {
+            
+                "3rdparty/googletest/googletest/src/gtest-all.cc",
+                "3rdparty/googletest/googlemock/src/gmock-all.cc"      
+                               
+            }             
+            includedirs
+            {
+               
+                "3rdparty/googletest/googletest/include",
+                "3rdparty/googletest/googletest",
+                "3rdparty/googletest/googlemock/include",
+                "3rdparty/googletest/googlemock"
+
+            }
+    
+    group "gmock_main"
+
+        project "gmock_main"            
+            kind "StaticLib"     
+            defines { "GTEST_HAS_PTHREAD=0", "_HAS_EXCEPTIONS=1" }            
+            files
+            {
+            
+                
+                "3rdparty/googletest/googletest/src/gtest-all.cc",
+                "3rdparty/googletest/googlemock/src/gmock-all.cc",
+                "3rdparty/googletest/googlemock/src/gmock_main.cc"
+                               
+            }             
+            includedirs
+            {       
+               
+                "3rdparty/googletest/googletest/include",
+                "3rdparty/googletest/googletest",
+                "3rdparty/googletest/googlemock/include",
+                "3rdparty/googletest/googlemock"
+
+            }
+
+        project "gmock_main_mt"            
+            kind "StaticLib"     
+            defines { "GTEST_HAS_PTHREAD=0", "_HAS_EXCEPTIONS=1" }   
+            flags { "StaticRuntime" }
+            files
+            {
+            
+                
+                "3rdparty/googletest/googletest/src/gtest-all.cc",
+                "3rdparty/googletest/googlemock/src/gmock-all.cc",
+                "3rdparty/googletest/googlemock/src/gmock_main.cc"
+                               
+            }             
+            includedirs
+            {       
+               
+                "3rdparty/googletest/googletest/include",
+                "3rdparty/googletest/googletest",
+                "3rdparty/googletest/googlemock/include",
+                "3rdparty/googletest/googlemock"
+
+            }
+
+    group "libprotobuf"
+
+        project "libprotobuf"            
+            kind "StaticLib"     
+            --defines { "GTEST_HAS_PTHREAD=0", "_HAS_EXCEPTIONS=1" }            
+            files
+            {
+            
+                
+                "3rdparty/protobuf/src/google/protobuf/any.cc",
+                "3rdparty/protobuf/src/google/protobuf/any.pb.cc",
+                "3rdparty/protobuf/src/google/protobuf/api.pb.cc",
+                "3rdparty/protobuf/src/google/protobuf/compiler/importer.cc",
+                "3rdparty/protobuf/src/google/protobuf/compiler/parser.cc",
+                "3rdparty/protobuf/src/google/protobuf/descriptor.cc",
+                "3rdparty/protobuf/src/google/protobuf/descriptor.pb.cc",
+                "3rdparty/protobuf/src/google/protobuf/descriptor_database.cc",
+                "3rdparty/protobuf/src/google/protobuf/duration.pb.cc",
+                "3rdparty/protobuf/src/google/protobuf/dynamic_message.cc",
+                "3rdparty/protobuf/src/google/protobuf/empty.pb.cc",
+                "3rdparty/protobuf/src/google/protobuf/extension_set_heavy.cc",
+                "3rdparty/protobuf/src/google/protobuf/field_mask.pb.cc",
+                "3rdparty/protobuf/src/google/protobuf/generated_message_reflection.cc",
+                "3rdparty/protobuf/src/google/protobuf/io/gzip_stream.cc",
+                "3rdparty/protobuf/src/google/protobuf/io/printer.cc",
+                "3rdparty/protobuf/src/google/protobuf/io/strtod.cc",
+                "3rdparty/protobuf/src/google/protobuf/io/tokenizer.cc",
+                "3rdparty/protobuf/src/google/protobuf/io/zero_copy_stream_impl.cc",
+                "3rdparty/protobuf/src/google/protobuf/map_field.cc",
+                "3rdparty/protobuf/src/google/protobuf/message.cc",
+                "3rdparty/protobuf/src/google/protobuf/reflection_ops.cc",
+                "3rdparty/protobuf/src/google/protobuf/service.cc",
+                "3rdparty/protobuf/src/google/protobuf/source_context.pb.cc",
+                "3rdparty/protobuf/src/google/protobuf/struct.pb.cc",
+                "3rdparty/protobuf/src/google/protobuf/stubs/mathlimits.cc",
+                "3rdparty/protobuf/src/google/protobuf/stubs/substitute.cc",
+                "3rdparty/protobuf/src/google/protobuf/text_format.cc",
+                "3rdparty/protobuf/src/google/protobuf/timestamp.pb.cc",
+                "3rdparty/protobuf/src/google/protobuf/type.pb.cc",
+                "3rdparty/protobuf/src/google/protobuf/unknown_field_set.cc",
+                "3rdparty/protobuf/src/google/protobuf/util/field_comparator.cc",
+                "3rdparty/protobuf/src/google/protobuf/util/field_mask_util.cc",
+                "3rdparty/protobuf/src/google/protobuf/util/internal/datapiece.cc",
+                "3rdparty/protobuf/src/google/protobuf/util/internal/default_value_objectwriter.cc",
+                "3rdparty/protobuf/src/google/protobuf/util/internal/error_listener.cc",
+                "3rdparty/protobuf/src/google/protobuf/util/internal/field_mask_utility.cc",
+                "3rdparty/protobuf/src/google/protobuf/util/internal/json_escaping.cc",
+                "3rdparty/protobuf/src/google/protobuf/util/internal/json_objectwriter.cc",
+                "3rdparty/protobuf/src/google/protobuf/util/internal/json_stream_parser.cc",
+                "3rdparty/protobuf/src/google/protobuf/util/internal/object_writer.cc",
+                "3rdparty/protobuf/src/google/protobuf/util/internal/proto_writer.cc",
+                "3rdparty/protobuf/src/google/protobuf/util/internal/protostream_objectsource.cc",
+                "3rdparty/protobuf/src/google/protobuf/util/internal/protostream_objectwriter.cc",
+                "3rdparty/protobuf/src/google/protobuf/util/internal/type_info.cc",
+                "3rdparty/protobuf/src/google/protobuf/util/internal/type_info_test_helper.cc",
+                "3rdparty/protobuf/src/google/protobuf/util/internal/utility.cc",
+                "3rdparty/protobuf/src/google/protobuf/util/json_util.cc",
+                "3rdparty/protobuf/src/google/protobuf/util/message_differencer.cc",
+                "3rdparty/protobuf/src/google/protobuf/util/time_util.cc",
+                "3rdparty/protobuf/src/google/protobuf/util/type_resolver_util.cc",
+                "3rdparty/protobuf/src/google/protobuf/wire_format.cc",
+                "3rdparty/protobuf/src/google/protobuf/wrappers.pb.cc",
+                
+                               
+            }            
+            
+            includedirs
+            {       
+                "3rdparty/protobuf/src",
+                "3rdparty/googletest/googletest/include",
+                "3rdparty/googletest/googletest",
+                "3rdparty/googletest/googlemock/include",
+                "3rdparty/googletest/googlemock"
+
+            }
+        
 
     
     group "lua"
