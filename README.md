@@ -83,3 +83,45 @@ book code
 -  https://github.com/BackupTheBerlios/vs90-msvcrt
 -  https://github.com/yumeyao/7zip
 -  https://github.com/bin-y/nodefaultlib
+
+
+## pattern
+
+-  https://github.com/iluwatar/java-design-patterns
+
+
+## android
+
+-  https://github.com/crazycodeboy/TakePhoto
+-  https://github.com/RimonHwang/RimonZhiHuStory   知乎日报第三方客户端
+-  https://github.com/GeekGhost/Ghost
+-  https://github.com/jaydenxiao2016/AndroidFire
+-  https://github.com/80945540/FreeBook
+-  https://github.com/JustWayward/BookReader
+-  https://github.com/smuyyh/SprintNBA
+-  https://github.com/babylikebird/owspace
+-  https://github.com/MarnonDev/GameNews
+-  https://github.com/smuyyh/HardwareTest
+-  https://github.com/CooLoongWu/CoolChat
+-  https://github.com/TruthKeeper/MediaPicker
+
+
+
+## C++ 
+
+
+C++ 类型转换
+C++ 日期时间
+
+
+- getopt 命令行解析
+- zlib
+- openssl
+- curl
+- 7z
+- lua
+- msgpack
+- jsoncpp
+- tinyxml
+- Crypto++
+- boost
