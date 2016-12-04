@@ -32,6 +32,42 @@ C++ 提供的整数数据类型有三种:int、long、short。在 vc6 中，int 
 
 现代反汇编器是很智能化的，并在识别关键结构方面享有很高的声誉。特别是，IDA Pro 能够成功地识别标准库函数、友 ESP 分配的局部变量以及 CASE 分支等。然而，IDA 偶尔也会出错，从而误导使用者。
 
+## EBP 和 ESP 寄存器的用途
+
+EBP 和 ESP 常配合使用完成堆栈的访问，下面是一段常见的堆栈访问指令。
+
+``` asm
+push    ebp
+move    ebp, esp
+sub     esp, 78
+push    esi
+push    edi
+cmp     dword ptr [ebp+8], 0
+```
+
+一直对寄存器 ESP 和 EBP 的概念总是有些混淆，查看定义 ESP 是栈顶指针，EBP 是存取堆栈指针。还是不能很透彻理解。之后借于一段汇编代码，总算是对两者有个比较清晰的理解。
+下面是按调用约定__stdcall 调用函数 test(int p1,int p2) 的汇编代码
+假设执行函数前堆栈指针 ESP 为 NN
+```
+push   p2    ; 参数 2 入栈, ESP -= 4h , ESP = NN - 4h
+push   p1    ; 参数 1 入栈, ESP -= 4h , ESP = NN - 8h
+call test    ; 压入返回地址 ESP -= 4h, ESP = NN - 0Ch  
+;// 进入函数内
+{
+push   ebp                        ; 保护先前 EBP 指针， EBP 入栈， ESP-=4h, ESP = NN - 10h
+mov    ebp, esp                   ; 设置 EBP 指针指向栈顶 NN-10h
+mov    eax, dword ptr  [ebp+0ch]  ;ebp+0ch 为 NN-4h, 即参数 2 的位置
+mov    ebx, dword ptr  [ebp+08h]  ;ebp+08h 为 NN-8h, 即参数 1 的位置
+sub    esp, 8                     ; 局部变量所占空间 ESP-=8, ESP = NN-18h
+...
+add    esp, 8                     ; 释放局部变量, ESP+=8, ESP = NN-10h
+pop    ebp                        ; 出栈, 恢复 EBP, ESP+=4, ESP = NN-0Ch
+ret    8                          ;ret 返回, 弹出返回地址, ESP+=4, ESP=NN-08h, 后面加操作数 8 为平衡堆栈, ESP+=8,ESP=NN, 恢复进入函数前的堆栈.
+}
+```
+看完汇编后, 再看 EBP 和 ESP 的定义, 哦, 豁然开朗,
+原来 ESP 就是一直指向栈顶的指针, 而 EBP 只是存取某时刻的栈顶指针, 以方便对栈的操作, 如获取函数参数、局部变量等。
+
 ## 函数
 
 ## 启动函数
