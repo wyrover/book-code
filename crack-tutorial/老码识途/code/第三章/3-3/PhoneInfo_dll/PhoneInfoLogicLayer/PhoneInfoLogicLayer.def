@@ -1,0 +1,15 @@
+LIBRARY	"PhoneInfoLogicLayer"
+
+EXPORTS
+ addInfo;
+ setShowPhoneInfo;
+ getInfoCount;
+ getInfo;
+ hasDefaultPhoneInfo;
+ loadPhoneInfo;
+ getDefaultFilePath;
+ addPhoneInfo;
+ initInfo;
+ queryName;
+ initSys;
+

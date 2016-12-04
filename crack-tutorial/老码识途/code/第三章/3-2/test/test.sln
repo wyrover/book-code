@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "structfile", "structfile\structfile.vcproj", "{30363413-6477-49EC-A185-0A08263329F1}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "refcount", "refcount\refcount.vcproj", "{E704A33E-1712-4E3E-A39E-D7745CDB47D9}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dynamicArray", "dynamicArray\dynamicArray.vcproj", "{85290DCB-DF5C-4D1E-B55E-B5D53F72E191}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{30363413-6477-49EC-A185-0A08263329F1}.Debug|Win32.ActiveCfg = Debug|Win32
+		{30363413-6477-49EC-A185-0A08263329F1}.Debug|Win32.Build.0 = Debug|Win32
+		{30363413-6477-49EC-A185-0A08263329F1}.Release|Win32.ActiveCfg = Release|Win32
+		{30363413-6477-49EC-A185-0A08263329F1}.Release|Win32.Build.0 = Release|Win32
+		{E704A33E-1712-4E3E-A39E-D7745CDB47D9}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E704A33E-1712-4E3E-A39E-D7745CDB47D9}.Debug|Win32.Build.0 = Debug|Win32
+		{E704A33E-1712-4E3E-A39E-D7745CDB47D9}.Release|Win32.ActiveCfg = Release|Win32
+		{E704A33E-1712-4E3E-A39E-D7745CDB47D9}.Release|Win32.Build.0 = Release|Win32
+		{85290DCB-DF5C-4D1E-B55E-B5D53F72E191}.Debug|Win32.ActiveCfg = Debug|Win32
+		{85290DCB-DF5C-4D1E-B55E-B5D53F72E191}.Debug|Win32.Build.0 = Debug|Win32
+		{85290DCB-DF5C-4D1E-B55E-B5D53F72E191}.Release|Win32.ActiveCfg = Release|Win32
+		{85290DCB-DF5C-4D1E-B55E-B5D53F72E191}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

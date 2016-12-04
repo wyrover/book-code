@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PhoneInfoLogicLayer", "PhoneInfoLogicLayer\PhoneInfoLogicLayer.vcproj", "{BD561337-07B5-47D0-9E20-C00F9703D427}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PhoneInfoUILayer", "PhoneInfoUILayer\PhoneInfoUILayer.vcproj", "{77B2D1C4-4564-4562-8DDB-6A3090FF1CBE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{BD561337-07B5-47D0-9E20-C00F9703D427} = {BD561337-07B5-47D0-9E20-C00F9703D427}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PhoneInfo", "PhoneInfo\PhoneInfo.vcproj", "{CEAF37E4-450B-4473-BD5B-0F53139A874C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{BD561337-07B5-47D0-9E20-C00F9703D427} = {BD561337-07B5-47D0-9E20-C00F9703D427}
+		{77B2D1C4-4564-4562-8DDB-6A3090FF1CBE} = {77B2D1C4-4564-4562-8DDB-6A3090FF1CBE}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BD561337-07B5-47D0-9E20-C00F9703D427}.Debug|Win32.ActiveCfg = Debug|Win32
+		{BD561337-07B5-47D0-9E20-C00F9703D427}.Debug|Win32.Build.0 = Debug|Win32
+		{BD561337-07B5-47D0-9E20-C00F9703D427}.Release|Win32.ActiveCfg = Release|Win32
+		{BD561337-07B5-47D0-9E20-C00F9703D427}.Release|Win32.Build.0 = Release|Win32
+		{77B2D1C4-4564-4562-8DDB-6A3090FF1CBE}.Debug|Win32.ActiveCfg = Debug|Win32
+		{77B2D1C4-4564-4562-8DDB-6A3090FF1CBE}.Debug|Win32.Build.0 = Debug|Win32
+		{77B2D1C4-4564-4562-8DDB-6A3090FF1CBE}.Release|Win32.ActiveCfg = Release|Win32
+		{77B2D1C4-4564-4562-8DDB-6A3090FF1CBE}.Release|Win32.Build.0 = Release|Win32
+		{CEAF37E4-450B-4473-BD5B-0F53139A874C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{CEAF37E4-450B-4473-BD5B-0F53139A874C}.Debug|Win32.Build.0 = Debug|Win32
+		{CEAF37E4-450B-4473-BD5B-0F53139A874C}.Release|Win32.ActiveCfg = Release|Win32
+		{CEAF37E4-450B-4473-BD5B-0F53139A874C}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "diskarray", "diskarray\diskarray.vcproj", "{53ADAF76-4FF5-451E-9918-30B2D639B114}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testsimplediskarray", "testsimplediskarray\testsimplediskarray.vcproj", "{83F297D9-5A2B-4587-A205-00C97D00D8BC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{53ADAF76-4FF5-451E-9918-30B2D639B114}.Debug|Win32.ActiveCfg = Debug|Win32
+		{53ADAF76-4FF5-451E-9918-30B2D639B114}.Debug|Win32.Build.0 = Debug|Win32
+		{53ADAF76-4FF5-451E-9918-30B2D639B114}.Release|Win32.ActiveCfg = Release|Win32
+		{53ADAF76-4FF5-451E-9918-30B2D639B114}.Release|Win32.Build.0 = Release|Win32
+		{83F297D9-5A2B-4587-A205-00C97D00D8BC}.Debug|Win32.ActiveCfg = Debug|Win32
+		{83F297D9-5A2B-4587-A205-00C97D00D8BC}.Debug|Win32.Build.0 = Debug|Win32
+		{83F297D9-5A2B-4587-A205-00C97D00D8BC}.Release|Win32.ActiveCfg = Release|Win32
+		{83F297D9-5A2B-4587-A205-00C97D00D8BC}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

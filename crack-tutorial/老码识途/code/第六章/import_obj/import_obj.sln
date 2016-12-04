@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "import_obj", "import_obj\import_obj.vcproj", "{F69F161A-1CC2-4D55-B9ED-C2EBE215704A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "test", "test\test.vcproj", "{77E504DE-23C1-4479-BD2E-A1AFB16EF3EC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F69F161A-1CC2-4D55-B9ED-C2EBE215704A} = {F69F161A-1CC2-4D55-B9ED-C2EBE215704A}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F69F161A-1CC2-4D55-B9ED-C2EBE215704A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F69F161A-1CC2-4D55-B9ED-C2EBE215704A}.Debug|Win32.Build.0 = Debug|Win32
+		{F69F161A-1CC2-4D55-B9ED-C2EBE215704A}.Release|Win32.ActiveCfg = Release|Win32
+		{F69F161A-1CC2-4D55-B9ED-C2EBE215704A}.Release|Win32.Build.0 = Release|Win32
+		{77E504DE-23C1-4479-BD2E-A1AFB16EF3EC}.Debug|Win32.ActiveCfg = Debug|Win32
+		{77E504DE-23C1-4479-BD2E-A1AFB16EF3EC}.Debug|Win32.Build.0 = Debug|Win32
+		{77E504DE-23C1-4479-BD2E-A1AFB16EF3EC}.Release|Win32.ActiveCfg = Release|Win32
+		{77E504DE-23C1-4479-BD2E-A1AFB16EF3EC}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

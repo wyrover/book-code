@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dllload", "dllload\dllload.vcproj", "{117CB777-0197-430A-933F-7F5FD2BB07FA}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testrelocation", "testrelocation\testrelocation.vcproj", "{1F337260-A67B-4424-A726-0F2C8AEDB16A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dll_relocation", "dll_relocation\dll_relocation.vcproj", "{598BA0FD-5C75-4D0C-958D-12ADCF204934}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{117CB777-0197-430A-933F-7F5FD2BB07FA}.Debug|Win32.ActiveCfg = Debug|Win32
+		{117CB777-0197-430A-933F-7F5FD2BB07FA}.Debug|Win32.Build.0 = Debug|Win32
+		{117CB777-0197-430A-933F-7F5FD2BB07FA}.Release|Win32.ActiveCfg = Release|Win32
+		{117CB777-0197-430A-933F-7F5FD2BB07FA}.Release|Win32.Build.0 = Release|Win32
+		{1F337260-A67B-4424-A726-0F2C8AEDB16A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1F337260-A67B-4424-A726-0F2C8AEDB16A}.Debug|Win32.Build.0 = Debug|Win32
+		{1F337260-A67B-4424-A726-0F2C8AEDB16A}.Release|Win32.ActiveCfg = Release|Win32
+		{1F337260-A67B-4424-A726-0F2C8AEDB16A}.Release|Win32.Build.0 = Release|Win32
+		{598BA0FD-5C75-4D0C-958D-12ADCF204934}.Debug|Win32.ActiveCfg = Debug|Win32
+		{598BA0FD-5C75-4D0C-958D-12ADCF204934}.Debug|Win32.Build.0 = Debug|Win32
+		{598BA0FD-5C75-4D0C-958D-12ADCF204934}.Release|Win32.ActiveCfg = Release|Win32
+		{598BA0FD-5C75-4D0C-958D-12ADCF204934}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,3 @@
+LIBRARY	"import_obj"
+
+EXPORTS createObj;

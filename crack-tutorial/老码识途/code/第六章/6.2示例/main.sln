@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "main", "main\main.vcproj", "{6485AC8D-712C-42F8-9732-02EEF50EAFA9}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "function", "function\function.vcproj", "{E28F8F72-94A6-43AC-A59D-47B5CFCB6796}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Function2", "Function2\Function2.vcproj", "{A53AAD0B-A24C-42FE-A534-54C222C5A326}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6485AC8D-712C-42F8-9732-02EEF50EAFA9}.Debug|Win32.ActiveCfg = Debug|Win32
+		{6485AC8D-712C-42F8-9732-02EEF50EAFA9}.Debug|Win32.Build.0 = Debug|Win32
+		{6485AC8D-712C-42F8-9732-02EEF50EAFA9}.Release|Win32.ActiveCfg = Release|Win32
+		{6485AC8D-712C-42F8-9732-02EEF50EAFA9}.Release|Win32.Build.0 = Release|Win32
+		{E28F8F72-94A6-43AC-A59D-47B5CFCB6796}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E28F8F72-94A6-43AC-A59D-47B5CFCB6796}.Debug|Win32.Build.0 = Debug|Win32
+		{E28F8F72-94A6-43AC-A59D-47B5CFCB6796}.Release|Win32.ActiveCfg = Release|Win32
+		{E28F8F72-94A6-43AC-A59D-47B5CFCB6796}.Release|Win32.Build.0 = Release|Win32
+		{A53AAD0B-A24C-42FE-A534-54C222C5A326}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A53AAD0B-A24C-42FE-A534-54C222C5A326}.Debug|Win32.Build.0 = Debug|Win32
+		{A53AAD0B-A24C-42FE-A534-54C222C5A326}.Release|Win32.ActiveCfg = Release|Win32
+		{A53AAD0B-A24C-42FE-A534-54C222C5A326}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(DPCodeReviewSolutionGUID) = preSolution
+		DPCodeReviewSolutionGUID = {00000000-0000-0000-0000-000000000000}
+	EndGlobalSection
+EndGlobal

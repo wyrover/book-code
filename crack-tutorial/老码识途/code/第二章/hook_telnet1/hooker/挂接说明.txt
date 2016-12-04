@@ -1,0 +1,102 @@
+读写管道的，要用替换了的，不能挂接
+设定屏幕的，全部忽略返回成功，要挂接
+
+getchar是从ReadFile来读取标准输入，而telnet是用ReadConsoleW来读，用管道的句柄传递给该函数是无效的。
+估计标准输入的句柄能换算出特殊的结构。
+
+从printf的分析看在调用_ftbuf后才写屏幕的。而该函数最后掉到_write函数，该函数有单/多线程两个版本。
+最后，还是调用WriteFile写入的，而此时的handle是将文件指针上取出的标准输出句柄。
+在printf前用HANDLE hhh = GetStdHandle(STD_OUTPUT_HANDLE);打印了一下输出句柄，确实和WriteFile用的句柄相同。
+那么说明，要写入屏幕最终还是用WriteFile。
+
+似乎telnet用一个线程在ReadConsoleW等待输入，用WriteConsole写屏幕。似乎应该将这两个函数替换成
+ReadFile替换的管道，WriteFile替换的管道。
+
+注：
+
+对于console的input来讲，就是标准输入。在telnet的反汇编中查看到了如下代码：
+.text:0100C825                 push    0FFFFFFF6h
+.text:0100C827                 mov     dword_102B3FC, esi
+.text:0100C82D                 call    edi ; GetStdHandle
+.text:0100C82F                 or      ebx, 0FFFFFFFFh
+.text:0100C832                 cmp     eax, ebx
+.text:0100C834                 jz      loc_100C92F
+.text:0100C83A                 push    0FFFFFFF5h
+.text:0100C83C                 mov     hConsoleInput, eax
+
+0FFFFFFF6h就是要获取标准输入，在调用GetStdHandle获取后，mov     hConsoleInput, eax将这个值赋值给全局变量hConsoleInput
+后面有很多都在用它。
+
+替代的buffer的属性
+info.dwCursorPosition.X= 0, info.dwCursorPosition.Y=1
+info.dwMaximumWindowSize.X=80, info.dwMaximumWindowSize.Y=43
+info.wAttributes=7
+info.dwSize.X=80, info.dwSize.Y=300
+info.srWindow.Top=0, info.srWindow.Bottom=21, info.srWindow.Left=0, info.srWindow.Right=79
+
+
+算法：
+  当读写以及控制buffer属性时，如果H是标准handle，那么就向我用CreateConsoleScreenBuffer生成的gbuffer去操作。
+  如果handle不是标准handle就说明是telnet字节创建的，那么就调用原来的函数。
+
+不挂接
+ CreateConsoleScreenBuffer 这个估计是生成多个屏幕，我们只要一个，所以这个可忽略，不挂接
+ GetStdHandle
+ SetConsoleCtrlHandler
+GetConsoleCP 
+GetConsoleOutputCP
+SetConsoleCtrlHandler
+SetConsoleTitleW
+ 
+当读写以及控制buffer属性时，如果H是标准handle，那么就向我用CreateConsoleScreenBuffer生成的gbuffer去操作。
+  如果handle不是标准handle就说明是telnet字节创建的，那么就调用原来的函数。
+  FillConsoleOutputAttribute
+  FillConsoleOutputCharacterW
+GetConsoleCursorInfo
+GetConsoleScreenBufferInfo
+GetLargestConsoleWindowSize
+ReadConsoleOutput
+ReadConsoleOutputAttribute
+ScrollConsoleScreenBuffer
+SetConsoleActiveScreenBuffer
+SetConsoleCursorInfo
+SetConsoleCursorPosition
+SetConsoleScreenBufferSize
+SetConsoleWindowInfo
+WriteConsoleOutputW
+WriteConsoleOutputAttribute
+WriteConsoleOutputCharacterA
+  重写函数
+  ---writefile(替换的管道)
+  WriteConsoleA
+  WriteConsoleW
+
+用标准输入的
+  用一个CreateFile出来的input骗
+  GetConsoleMode 在一处是用的是输入句柄  ，另一处未确定
+  SetConsoleMode一处用的是inputhandle,其余未确定
+  ReadConsoleInputA
+  ReadConsoleInputW
+  WriteConsoleInputW
+  
+  重写函数 
+   
+   ReadConsoleW--- readfile(替换的管道)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

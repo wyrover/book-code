@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hooker", "hooker\hooker.vcproj", "{E51A5B6F-6B1C-40FC-84F1-6CD51BBA5300}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "inject", "inject\inject.vcproj", "{E0E68C54-766F-4C59-A430-BA592F6EFB66}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E51A5B6F-6B1C-40FC-84F1-6CD51BBA5300}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E51A5B6F-6B1C-40FC-84F1-6CD51BBA5300}.Debug|Win32.Build.0 = Debug|Win32
+		{E51A5B6F-6B1C-40FC-84F1-6CD51BBA5300}.Release|Win32.ActiveCfg = Release|Win32
+		{E51A5B6F-6B1C-40FC-84F1-6CD51BBA5300}.Release|Win32.Build.0 = Release|Win32
+		{E0E68C54-766F-4C59-A430-BA592F6EFB66}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E0E68C54-766F-4C59-A430-BA592F6EFB66}.Debug|Win32.Build.0 = Debug|Win32
+		{E0E68C54-766F-4C59-A430-BA592F6EFB66}.Release|Win32.ActiveCfg = Release|Win32
+		{E0E68C54-766F-4C59-A430-BA592F6EFB66}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

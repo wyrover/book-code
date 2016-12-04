@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "strlenError", "strlenError\strlenError.vcproj", "{332519A0-9E7E-4E67-855C-0D0476A946AD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{332519A0-9E7E-4E67-855C-0D0476A946AD}.Debug|Win32.ActiveCfg = Debug|Win32
+		{332519A0-9E7E-4E67-855C-0D0476A946AD}.Debug|Win32.Build.0 = Debug|Win32
+		{332519A0-9E7E-4E67-855C-0D0476A946AD}.Release|Win32.ActiveCfg = Release|Win32
+		{332519A0-9E7E-4E67-855C-0D0476A946AD}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
