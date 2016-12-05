@@ -1,0 +1,3 @@
+1、将pcf.exe、sigmake.exe所在的目录加入环境变量 path 中(如：L:\编程相关\生成sig文件\Flair\bin)
+2、将要生成sig文件的LIB文件与批处理文件放同一个目录
+3、在DOS下运行，将LIB的文件名做为第一个参数即可(去掉后缀.lib)
