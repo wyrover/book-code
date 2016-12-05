@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual C++ Express 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "InjectDll_new", "InjectDll_new.vcxproj", "{30AFC62C-AAF3-42B5-B113-D1B842FB846B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{30AFC62C-AAF3-42B5-B113-D1B842FB846B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{30AFC62C-AAF3-42B5-B113-D1B842FB846B}.Debug|Win32.Build.0 = Debug|Win32
+		{30AFC62C-AAF3-42B5-B113-D1B842FB846B}.Release|Win32.ActiveCfg = Release|Win32
+		{30AFC62C-AAF3-42B5-B113-D1B842FB846B}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

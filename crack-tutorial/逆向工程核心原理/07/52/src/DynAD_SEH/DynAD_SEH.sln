@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual C++ Express 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DynAD_SEH", "DynAD_SEH.vcxproj", "{C3EDA145-1213-4D77-A2FD-B8561495107C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C3EDA145-1213-4D77-A2FD-B8561495107C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{C3EDA145-1213-4D77-A2FD-B8561495107C}.Debug|Win32.Build.0 = Debug|Win32
+		{C3EDA145-1213-4D77-A2FD-B8561495107C}.Release|Win32.ActiveCfg = Release|Win32
+		{C3EDA145-1213-4D77-A2FD-B8561495107C}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

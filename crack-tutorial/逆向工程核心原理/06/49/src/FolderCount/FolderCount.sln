@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual C++ Express 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FolderCount", "FolderCount.vcxproj", "{85B53DB3-B72F-4148-A5C5-BA22A6371016}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{85B53DB3-B72F-4148-A5C5-BA22A6371016}.Debug|Win32.ActiveCfg = Debug|Win32
+		{85B53DB3-B72F-4148-A5C5-BA22A6371016}.Debug|Win32.Build.0 = Debug|Win32
+		{85B53DB3-B72F-4148-A5C5-BA22A6371016}.Release|Win32.ActiveCfg = Release|Win32
+		{85B53DB3-B72F-4148-A5C5-BA22A6371016}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual C++ Express 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StaAD_FindWindow", "StaAD_FindWindow.vcxproj", "{C4DC80B8-6B97-439C-B144-5EC76AB6D4EA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C4DC80B8-6B97-439C-B144-5EC76AB6D4EA}.Debug|Win32.ActiveCfg = Debug|Win32
+		{C4DC80B8-6B97-439C-B144-5EC76AB6D4EA}.Debug|Win32.Build.0 = Debug|Win32
+		{C4DC80B8-6B97-439C-B144-5EC76AB6D4EA}.Release|Win32.ActiveCfg = Release|Win32
+		{C4DC80B8-6B97-439C-B144-5EC76AB6D4EA}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

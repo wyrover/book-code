@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual C++ Express 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Stack", "Stack.vcxproj", "{25F0C3D5-AE79-476C-B0E8-215D7F9C8CEC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Debug|x64 = Debug|x64
+		Release|Win32 = Release|Win32
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{25F0C3D5-AE79-476C-B0E8-215D7F9C8CEC}.Debug|Win32.ActiveCfg = Debug|Win32
+		{25F0C3D5-AE79-476C-B0E8-215D7F9C8CEC}.Debug|Win32.Build.0 = Debug|Win32
+		{25F0C3D5-AE79-476C-B0E8-215D7F9C8CEC}.Debug|x64.ActiveCfg = Debug|x64
+		{25F0C3D5-AE79-476C-B0E8-215D7F9C8CEC}.Debug|x64.Build.0 = Debug|x64
+		{25F0C3D5-AE79-476C-B0E8-215D7F9C8CEC}.Release|Win32.ActiveCfg = Release|Win32
+		{25F0C3D5-AE79-476C-B0E8-215D7F9C8CEC}.Release|Win32.Build.0 = Release|Win32
+		{25F0C3D5-AE79-476C-B0E8-215D7F9C8CEC}.Release|x64.ActiveCfg = Release|x64
+		{25F0C3D5-AE79-476C-B0E8-215D7F9C8CEC}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
