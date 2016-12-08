@@ -1,5 +1,12 @@
 # crack-tutorial
 
+- 用 masm(radasm) 编译 exe，用 ollydbg 来反汇编学习
+- 用 vc 编译 exe，用 ollydbg 来反汇编学习
+- 用 vc 反汇编 debug 版 exe 来学习
+
+https://github.com/Apress/modern-x86-assembly-language-programming
+
+
 人类正常阅读方式是从左上到右下，16 进制编辑器也是从左上到右下，内存地址空间也是从左上到右下。那么文件中数据的存储方式是小端存储，即最低位在左边。
 
 C++ 提供的整数数据类型有三种:int、long、short。在 vc6 中，int 类型与 long 类型在内存中都占 4 个字节，short 类型在内存中占两个字节。
