@@ -1,0 +1,1 @@
+WndProc proto hwnd:DWORD, uMsg:DWORD, wParam:DWORD, lParam:DWORD
