@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual C++ Express 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DynAD_INT2D", "DynAD_INT2D.vcxproj", "{70C0D4A8-4320-4C2B-9A07-F293F7672FC8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{70C0D4A8-4320-4C2B-9A07-F293F7672FC8}.Debug|Win32.ActiveCfg = Debug|Win32
+		{70C0D4A8-4320-4C2B-9A07-F293F7672FC8}.Debug|Win32.Build.0 = Debug|Win32
+		{70C0D4A8-4320-4C2B-9A07-F293F7672FC8}.Release|Win32.ActiveCfg = Release|Win32
+		{70C0D4A8-4320-4C2B-9A07-F293F7672FC8}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

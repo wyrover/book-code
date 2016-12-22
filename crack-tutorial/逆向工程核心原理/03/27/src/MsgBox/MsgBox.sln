@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual C++ Express 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MsgBox", "MsgBox.vcxproj", "{EBF5E124-6011-4DB7-BA47-F06A2733A2E7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EBF5E124-6011-4DB7-BA47-F06A2733A2E7}.Debug|Win32.ActiveCfg = Debug|Win32
+		{EBF5E124-6011-4DB7-BA47-F06A2733A2E7}.Debug|Win32.Build.0 = Debug|Win32
+		{EBF5E124-6011-4DB7-BA47-F06A2733A2E7}.Release|Win32.ActiveCfg = Release|Win32
+		{EBF5E124-6011-4DB7-BA47-F06A2733A2E7}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

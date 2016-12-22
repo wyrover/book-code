@@ -1,0 +1,1 @@
+myStrLen proto lpStart:DWORD
