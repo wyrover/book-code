@@ -29,6 +29,10 @@ workspace "pattern-examples"
     filter { "kind:SharedLib", "platforms:x64" }
         implibdir "lib/x64/%{_ACTION}" 
     filter { "kind:ConsoleApp or WindowedApp or SharedLib", "platforms:Win32" }
+        includedirs
+        {
+            "C:/nginxstack/msys64/mingw32/include/libxml2"
+        }
         targetdir "bin/x86/%{_ACTION}/%{wks.name}"         
     filter { "kind:ConsoleApp or WindowedApp or SharedLib", "platforms:x64" }
         targetdir "bin/x64/%{_ACTION}/%{wks.name}" 

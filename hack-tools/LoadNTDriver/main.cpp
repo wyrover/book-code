@@ -4,7 +4,9 @@
 #include <stdio.h>
 
 #define DRIVER_NAME "HelloDDK"
-#define DRIVER_PATH "..\\MyDriver\\MyDriver_Check\\HelloDDK.sys"
+//#define DRIVER_PATH "..\\MyDriver\\MyDriver_Check\\HelloDDK.sys"
+#define DRIVER_PATH ".\\TestHello.sys"
+
 
 // ×°ÔØ NT Çý¶¯³ÌÐò
 BOOL LoadNTDriver(char* lpszDriverName, char* lpszDriverPath)

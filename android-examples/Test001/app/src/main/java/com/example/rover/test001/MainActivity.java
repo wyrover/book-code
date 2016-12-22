@@ -4,7 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 // 日志
-import android.util.Log;
+import com.socks.library.KLog;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -13,6 +13,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Log.d("HelloWorldActivity", "onCreate execute");
+        KLog.d("onCreate execute");
+        KLog.d("test 1");
+        KLog.d("test 2");
+
     }
 }

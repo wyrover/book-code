@@ -16,10 +16,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-    <com.example.rover.test005.TitleLayout
+
+
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        ></com.example.rover.test005.TitleLayout>
+        android:layout_height="match_parent">
+
+        <com.example.rover.test005.TitleLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            ></com.example.rover.test005.TitleLayout>
+
+        <Button
+            android:text="Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/button"
+            />
+    </LinearLayout>
+
+
 
 </LinearLayout>
 
