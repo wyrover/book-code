@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+
+<!-- 
+sizebox 拖拽区域矩形大小
+caption="0,0,0,40" 标题栏区域
+
+showshadow="true" 阴影
+shadowimage="example01/images/shadow.png"
+shadowcorner="23,13,23,33"
+
+阴影这三个属性需要配合起来使用
+
+-->
+
+<Window size="840,600" sizebox="4,4,4,4" caption="0,0,0,600" mininfo="840,600" showshadow="true" shadowimage="example01/images/shadow.png" shadowcorner="23,13,23,33">
+<Font name="微软雅黑" size="13" default="true"/>
+<Font name="微软雅黑" size="16"/>
+<Font name="微软雅黑" size="22"/>
+<VerticalLayout name="background" width="840" height="320" bkimage="file='example01/images/SKIN_PIC_2.png' corner='0,320,0,0'" bkcolor="#FFA0A0A4" bordercolor="#00969696" bordersize="1">
+
+    
+    
+
+             
+
+
+    <VerticalLayout name="九宫格布局举例" bkcolor="#FFFFFFFF">
+        <HorizontalLayout  height="50">
+            <VerticalLayout  bkcolor="#FFFF0000" width="50">
+            	<Text text="左上"/>
+            </VerticalLayout>
+            <VerticalLayout  bkcolor="#FF00FF00">
+            	<Text text="中上"/>
+            </VerticalLayout>
+            <VerticalLayout  bkcolor="#FFFF0000" width="50">
+            	<Text text="右上"/>
+            </VerticalLayout>
+        </HorizontalLayout>
+        <HorizontalLayout >
+            <VerticalLayout  bkcolor="#FF00FF00" width="50">
+            	<Text text="左中"/>
+            </VerticalLayout>
+            <VerticalLayout >
+            	<Text text="中中" />
+            </VerticalLayout>
+            <VerticalLayout  bkcolor="#FF00FF00" width="50">
+            	<Text text="右中"/>
+            </VerticalLayout>
+        </HorizontalLayout>
+        <HorizontalLayout  height="50">
+            <VerticalLayout  bkcolor="#FFFF0000" width="50">
+            	<Text text="左下"/>
+            </VerticalLayout>
+            <VerticalLayout  bkcolor="#FF00FF00">
+            	<Text text="中下"/>
+            </VerticalLayout>
+            <VerticalLayout  bkcolor="#FFFF0000" width="50">
+            	<Text text="右下"/>
+            </VerticalLayout>
+        </HorizontalLayout>
+    </VerticalLayout>
+
+           
+
+        
+    
+</VerticalLayout>
+</Window>

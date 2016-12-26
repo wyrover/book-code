@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+
+<!-- 
+sizebox 拖拽区域矩形大小
+caption="0,0,0,40" 标题栏区域
+
+showshadow="true" 阴影
+shadowimage="example01/images/shadow.png"
+shadowcorner="23,13,23,33"
+
+阴影这三个属性需要配合起来使用
+
+-->
+
+<Window size="1200,800" sizebox="4,4,4,4" caption="0,0,0,80" mininfo="840,600" showshadow="true" shadowimage="example01/images/shadow.png" shadowcorner="23,13,23,33">
+<Font name="微软雅黑" size="13" default="true"/>
+<Font name="微软雅黑" size="16"/>
+<Font name="微软雅黑" size="22"/>
+
+
+
+
+<HorizontalLayout name="background" bkcolor="#FFFF00FF" >    
+    <!-- begin 左侧导航 -->
+    <HorizontalLayout width="251px" bkcolor="#FFCCCCCC">  
+
+        
+   
+    
+
+        <VerticalLayout name="sidebar" width="251" bkimage="example01/images1/bk.png" ytiled="true">
+            
+            <!-- logo -->
+            <Label name="logo" width="251" height="73" bkimage="file=&apos;example01/images1/logo.png&apos; source=&apos;0,0,251,73&apos;"/>
+
+            <!-- 导航 -->
+            <!--<Option name="LeftTabMusic" width="251" height="51" normalimage="example01/images1/item.png" hotimage="example01/images1/item.png" pushedimage="example01/images1/item.png"  group="LeftTab" selectedimage="example01/images1/item.png"  selected="true" tooltip="本地列表" text="本地列表" textcolor="#FFFFFFFF"/>-->
+
+            <Option name="LeftTabMusic" width="251" height="51" normalimage="example01/images1/item.png" hotimage="example01/images1/item.png" pushedimage="example01/images1/item.png"  group="LeftTab" selectedimage="example01/images1/item.png"  selected="true" tooltip="本地列表" />
+
+            <Option name="LeftTabMusic" width="251" height="51" normalimage="example01/images1/item.png" hotimage="example01/images1/item.png" pushedimage="example01/images1/item.png"  group="LeftTab" selectedimage="example01/images1/item.png"  selected="true" tooltip="本地列表" />
+
+            <Option name="LeftTabMusic" width="251" height="51" normalimage="example01/images1/item.png" hotimage="example01/images1/item.png" pushedimage="example01/images1/item.png"  group="LeftTab" selectedimage="example01/images1/item.png"  selected="true" tooltip="本地列表" />
+
+            <Option name="LeftTabMusic" width="251" height="51" normalimage="example01/images1/item.png" hotimage="example01/images1/item.png" pushedimage="example01/images1/item.png"  group="LeftTab" selectedimage="example01/images1/item.png"  selected="true" tooltip="本地列表" />
+
+            <Option name="LeftTabMusic" width="251" height="51" normalimage="example01/images1/item.png" hotimage="example01/images1/item.png" pushedimage="example01/images1/item.png"  group="LeftTab" selectedimage="example01/images1/item.png"  selected="true" tooltip="本地列表" />
+            
+        </VerticalLayout>
+            
+
+
+    </HorizontalLayout>  
+    <!-- end 左侧导航 -->
+
+    <!-- begin 右侧区域 -->
+    <HorizontalLayout bkcolor="#FFFFFFFF"  >  
+        
+        <VerticalLayout>
+            <!-- begin 右侧关闭按钮 -->
+            <HorizontalLayout height="65" bkcolor="#FFFFFFFF">
+                <HorizontalLayout name="" >
+                    <Text text="标题栏"  autocalcwidth="true" height="23" textcolor="#001C1C1C" font="1" />
+                </HorizontalLayout>
+                <HorizontalLayout width="76" >
+                    <Button name="minbtn" width="31" height="29" normalimage="file='example01/images/BT_MIN.png' source='0,0,31,29'" hotimage="file='example01/images/BT_MIN.png' source='31,0,62,29'" pushedimage="file='example01/images/BT_MIN.png' source='62,0,93,29'" />
+                    <Button name="closebtn" width="45" height="29" normalimage="file='example01/images/BT_CLOSE.png' source='0,0,45,29'" hotimage="file='example01/images/BT_CLOSE.png' source='45,0,90,29'" pushedimage="file='example01/images/BT_CLOSE.png' source='90,0,135,29'" />
+                </HorizontalLayout> 
+            </HorizontalLayout>
+            <!-- end 右侧关闭按钮 -->
+
+            <!-- begin 右侧面板 -->
+            <VerticalLayout bkcolor="#FFD9DCDE">        
+                <!--<Text text="padding 左侧 100" padding="100,0,0,0" autocalcwidth="true" height="23" textcolor="#001C1C1C" font="1" />-->
+
+                <HorizontalLayout height="150" padding="0,50,0,0">
+                <Container width="258" height="177" bkcolor="#FF00B07D" padding="20,0,0,0" borderround="2,2">
+                </Container>
+
+                <Container width="258" height="177" bkcolor="#FFD74D54" padding="20,0,0,0" borderround="2,2">
+                </Container>
+               
+                </HorizontalLayout>
+
+
+                <HorizontalLayout padding="0,50,0,0">
+
+                <Container width="258" height="177" bkcolor="#FFFFFFFF" padding="20,0,0,0" borderround="2,2">
+                </Container>
+
+                </HorizontalLayout>
+
+
+            </VerticalLayout>
+            <!-- end 右侧面板 -->
+        </VerticalLayout>
+
+        
+    </HorizontalLayout> 
+    <!-- end 右侧区域 -->
+
+
+
+
+</HorizontalLayout>
+             
+  
+ 
+
+           
+
+        
+    
+
+</Window>
