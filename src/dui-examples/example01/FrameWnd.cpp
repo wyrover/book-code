@@ -1,4 +1,5 @@
 #include "duilib.h"
+#include <tracetool/tracetool.h>
 
 CFrameWnd::CFrameWnd( LPCTSTR pszXMLPath )
 	:  m_strXMLPath(pszXMLPath)
@@ -8,29 +9,16 @@ CFrameWnd::CFrameWnd( LPCTSTR pszXMLPath )
 
 LPCTSTR CFrameWnd::GetWindowClassName() const
 {
+	TRACE_SEND_A("CFrameWnd::GetWindowClassName");
 	return _T("MainWnd");
 }
 
 CDuiString CFrameWnd::GetSkinFile()
 {
+	TRACE_SEND_A("CFrameWnd::GetSkinFile");
 	return m_strXMLPath;
 }
 
-CDuiString CFrameWnd::GetSkinFolder()
-{
-	return _T("Skin");
-}
-
-// 	UILIB_RESOURCETYPE CFrameWnd::GetResourceType() const
-// 	{
-// 		return UILIB_ZIPRESOURCE;
-// 	}
-// 
-// 
-// 	LPCTSTR CFrameWnd::GetResourceID() const
-// 	{
-// 		return MAKEINTRESOURCE(IDR_ZIPRES1);
-// 	}
 
 void CFrameWnd::InitWindow()
 {
@@ -47,7 +35,7 @@ void CFrameWnd::Notify( TNotifyUI& msg )
 			CPoint point(0, 0);
 			GetCursorPos(&point);
 			
-			CMenuWnd* pMenu = CMenuWnd::CreateMenu(NULL, _T("Skin/menutest.xml"), point, &m_PaintManager, &m_MenuCheckInfo);
+			CMenuWnd* pMenu = CMenuWnd::CreateMenu(NULL, _T("example01/layout/menutest.xml"), point, &m_PaintManager, &m_MenuCheckInfo);
 
 			//×ó²à´ò¿ª²Ëµ¥
 			//CMenuWnd* pMenu = CMenuWnd::CreateMenu(NULL, _T("menutest.xml"), point, &m_PaintManager, &m_MenuCheckInfo, eMenuAlignment_Right );
