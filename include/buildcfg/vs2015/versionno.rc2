@@ -1,0 +1,48 @@
+//CopyRight·ûºÅµÄ Ascii ÂëÎª 0xA9
+
+#ifndef VER_H
+#define VOS_NT_WINDOWS32        0x00040004L
+#define VFT_DLL                 0x00000002L
+#define VS_VERSION_INFO         1
+#endif
+
+#include "buildcfg.h"
+
+#define VI_FILEVERSION          9,2,726,1221
+#define VI_FILEVERSION_STR      "9.2.726.1221"
+#define VI_PRODUCTVERSION       2016,7,26,1221
+#define VI_PRODUCTVERSION_STR   "2016.7.26.1221"
+
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION VI_FILEVERSION
+PRODUCTVERSION VI_PRODUCTVERSION
+FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+FILEFLAGS VS_FF_DEBUG
+#else
+FILEFLAGS 0x0L	
+#endif
+FILEOS VOS_NT_WINDOWS32 
+FILETYPE VFT_DLL
+FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "000004B0"
+        BEGIN
+            VALUE "CompanyName","MyDrivers.com"
+            VALUE "FileDescription",	VI_FILEDESCRIPTION
+            VALUE "FileVersion",    VI_FILEVERSION_STR
+            VALUE "InternalName",	VI_INTERNALNAME
+            VALUE "LegalCopyright","Copyright MyDrivers.com all right"
+            VALUE "OriginalFilename",	VI_ORIGINALFILENAME
+            VALUE "ProductName",	"DriverGenius\0"
+            VALUE "ProductVersion", VI_PRODUCTVERSION_STR
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x0000, 1200
+    END
+END
