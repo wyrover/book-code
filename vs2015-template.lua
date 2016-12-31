@@ -3,7 +3,7 @@ includeexternal ("premake5-include.lua")
 workspace "tools"
     language "C++"
     location "build/%{_ACTION}/%{wks.name}"    
-
+    toolset "v140_xp"
     configurations { "Debug", "Release", "TRACE", "TRACE_MT" }
     platforms { "Win32", "x64" }    
 
@@ -299,8 +299,7 @@ workspace "tools"
                 "src/dui-examples/%{prj.name}/**.h",
                 "src/dui-examples/%{prj.name}/**.cpp",
                 "src/dui-examples/%{prj.name}/**.c",
-                "include/buildcfg/vs2015/buildcfg.h",
-                "include/buildcfg/vs2015/version.rc",                
+                "include/buildcfg/vs2015/buildcfg.h",                         
                 "include/buildcfg/vs2015/versionno.rc2"
             }
             removefiles
@@ -461,6 +460,108 @@ workspace "tools"
                      
             }
 
+
+        project "duilib_test"            
+            kind "WindowedApp"                         
+            flags { "NoManifest", "WinMain" }  
+            defines { "UILIB_EXPORTS", "FILE_2_HEX_EXE" }
+            files
+            {
+
+                "src/dui-examples/%{prj.name}/**.h",
+                "src/dui-examples/%{prj.name}/**.cpp",
+                "src/dui-examples/%{prj.name}/**.c",
+                "include/buildcfg/vs2015/buildcfg.h",
+                "include/buildcfg/vs2015/version.rc",                
+                "include/buildcfg/vs2015/versionno.rc2"
+            }
+            removefiles
+            {               
+            }
+            includedirs
+            {                   
+                "src/dui-examples/DuiLib/",
+                "include/buildcfg/vs2015/",
+                
+            }
+            links
+            { 
+                "DuiLib.lib"
+            }
+            libdirs
+            {
+                     
+            }
+        
+        project "DownloadDemo"            
+            kind "WindowedApp"                         
+            flags { "NoManifest", "WinMain" }  
+            defines { "UILIB_EXPORTS", "FILE_2_HEX_EXE" }
+            files
+            {
+
+                "src/dui-examples/%{prj.name}/**.h",
+                "src/dui-examples/%{prj.name}/**.cpp",
+                "src/dui-examples/%{prj.name}/**.c",
+                "include/buildcfg/vs2015/buildcfg.h",
+                "include/buildcfg/vs2015/version.rc",                
+                "include/buildcfg/vs2015/versionno.rc2"
+            }
+            removefiles
+            {               
+            }
+            includedirs
+            {                   
+                "src/dui-examples/DuiLib/",
+                "include/buildcfg/vs2015/",
+                
+            }
+            links
+            { 
+                "DuiLib.lib"
+            }
+            libdirs
+            {
+                     
+            }
+
+
+        project "win360"            
+            kind "WindowedApp"                         
+            flags { "NoManifest", "WinMain" }  
+            defines { "UILIB_EXPORTS", "FILE_2_HEX_EXE" }
+            files
+            {
+
+                "src/dui-examples/%{prj.name}/**.h",
+                "src/dui-examples/%{prj.name}/**.cpp",
+                "src/dui-examples/%{prj.name}/**.c",
+                "src/dui-examples/%{prj.name}/**.rc",
+                "include/buildcfg/vs2015/buildcfg.h",
+                "include/buildcfg/vs2015/version.rc",                
+                "include/buildcfg/vs2015/versionno.rc2"
+            }
+            removefiles
+            {               
+            }
+            includedirs
+            {                   
+                "src/dui-examples/DuiLib/",
+                "include/buildcfg/vs2015/",
+                
+            }
+            links
+            { 
+                "DuiLib.lib"
+            }
+            libdirs
+            {
+                
+            }
+
+            
+            
+
     group "UiLib"
 
         project "UiLib"            
@@ -473,8 +574,7 @@ workspace "tools"
                 "src/dui-examples/%{prj.name}/**.h",
                 "src/dui-examples/%{prj.name}/**.cpp",
                 "src/dui-examples/%{prj.name}/**.c",
-                "include/buildcfg/vs2015/buildcfg.h",
-                "include/buildcfg/vs2015/version.rc",                
+                "include/buildcfg/vs2015/buildcfg.h",                          
                 "include/buildcfg/vs2015/versionno.rc2"
             }
             removefiles
@@ -536,38 +636,7 @@ workspace "tools"
             }
            
         
-        project "win360"            
-            kind "WindowedApp"                         
-            flags { "NoManifest", "WinMain" }  
-            defines { "UILIB_EXPORTS", "FILE_2_HEX_EXE" }
-            files
-            {
-
-                "src/dui-examples/%{prj.name}/**.h",
-                "src/dui-examples/%{prj.name}/**.cpp",
-                "src/dui-examples/%{prj.name}/**.c",
-                "src/dui-examples/%{prj.name}/**.rc",
-                "include/buildcfg/vs2015/buildcfg.h",
-                "include/buildcfg/vs2015/version.rc",                
-                "include/buildcfg/vs2015/versionno.rc2"
-            }
-            removefiles
-            {               
-            }
-            includedirs
-            {                   
-                "src/dui-examples/DuiLib/",
-                "include/buildcfg/vs2015/",
-                
-            }
-            links
-            { 
-                "DuiLib.lib"
-            }
-            libdirs
-            {
-                
-            }
+        
 
     
         

@@ -2,8 +2,7 @@ includeexternal ("premake5-include.lua")
 
 workspace "3rdparty"
     language "C++"
-    location "build/%{_ACTION}"
-    
+    location "build/%{_ACTION}/%{wks.name}"    
 
     configurations { "Debug", "Release", "TRACE", "TRACE_MT" }
     platforms { "Win32", "x64" }    
@@ -19,9 +18,9 @@ workspace "3rdparty"
         implibdir "lib/x64/%{_ACTION}" 
         implibsuffix  "_impl"
     filter { "kind:ConsoleApp or WindowedApp or SharedLib", "platforms:Win32" }
-        targetdir "bin/x86/%{_ACTION}"         
+        targetdir "bin/x86/%{_ACTION}/%{wks.name}"         
     filter { "kind:ConsoleApp or WindowedApp or SharedLib", "platforms:x64" }
-        targetdir "bin/x64/%{_ACTION}" 
+        targetdir "bin/x64/%{_ACTION}/%{wks.name}" 
         
 
     filter { "platforms:Win32" }
@@ -52,6 +51,7 @@ workspace "3rdparty"
         defines { "NDEBUG" }
         flags { "Symbols" }
         optimize "Speed"  
+        buildoptions { "/Od" } 
     
     filter "configurations:TRACE"
         defines { "NDEBUG", "TRACE_TOOL" }
@@ -133,6 +133,81 @@ workspace "3rdparty"
             {
                 "lib/win32"
             }
+
+        project "cryptopp"            
+            kind "StaticLib"            
+            characterset "MBCS"
+            defines { "_WINDOWS", "USE_PRECOMPILED_HEADERS", "WIN32" }                                    
+            
+            filter { "platforms:Win32" }
+               -- defines { "WIN32", "_WINDOWS" }                 
+                files
+                {
+                    "3rdparty/cryptopp565/**.h",
+                    "3rdparty/cryptopp565/**.c",
+                    "3rdparty/cryptopp565/**.cpp",
+                    "3rdparty/cryptopp565/**.asm"                    
+                }   
+                removefiles
+                {
+                    "3rdparty/cryptopp565/test.cpp",
+                    "3rdparty/cryptopp565/fipstest.cpp",
+                    "3rdparty/cryptopp565/fipsalgt.cpp",
+                    "3rdparty/cryptopp565/regtest.cpp",
+                    "3rdparty/cryptopp565/bench*.cpp",
+                    "3rdparty/cryptopp565/eccrypto.cpp",
+                    "3rdparty/cryptopp565/eprecomp.cpp",                    
+                    "3rdparty/cryptopp565/dlltest.cpp",
+                    "3rdparty/cryptopp565/datatest.cpp",
+                    "3rdparty/cryptopp565/validat*.cpp",
+                    "3rdparty/cryptopp565/x64dll.asm",
+                    "3rdparty/cryptopp565/x64masm.asm" 
+                }
+            filter "platforms:x64"
+               -- defines { "WIN32", "_WINDOWS", "_USRDLL", "OLSDLL_EXPORTS", "OLS_WIN_RING0" }
+                files
+                {
+                    "3rdparty/cryptopp565/**.h",
+                    "3rdparty/cryptopp565/**.c",
+                    "3rdparty/cryptopp565/**.cpp",
+                    "3rdparty/cryptopp565/**.asm"                   
+                }
+                removefiles
+                {
+                    "3rdparty/cryptopp565/test.cpp",
+                    "3rdparty/cryptopp565/fipstest.cpp",
+                    "3rdparty/cryptopp565/fipsalgt.cpp",
+                    "3rdparty/cryptopp565/regtest.cpp",
+                    "3rdparty/cryptopp565/bench*.cpp",
+                    "3rdparty/cryptopp565/eccrypto.cpp",
+                    "3rdparty/cryptopp565/eprecomp.cpp",                    
+                    "3rdparty/cryptopp565/dlltest.cpp",
+                    "3rdparty/cryptopp565/datatest.cpp",
+                    "3rdparty/cryptopp565/validat*.cpp"
+                    
+                }
+                          
+            filter { "files:**.asm", "platforms:Win32" }            
+                buildmessage "Compiling %{file.relpath}"
+                buildcommands 
+                {
+                    "ml -c \"-Fl%{cfg.objdir}/%{file.basename}.lst\" \"-Fo%{cfg.objdir}/%{file.basename}.obj\" \"%{file.relpath}\""
+                }
+                buildoutputs
+                {
+                    "%{cfg.objdir}/%{file.basename}.obj"
+                }
+
+            filter { "files:**.asm", "platforms:x64" }            
+                buildmessage "Compiling %{file.relpath}"
+                buildcommands 
+                {
+                    "ml64 -c \"-Fl%{cfg.objdir}/%{file.basename}.lst\" \"-Fo%{cfg.objdir}/%{file.basename}.obj\" \"%{file.relpath}\""
+                }
+                buildoutputs
+                {
+                    "%{cfg.objdir}/%{file.basename}.obj"
+                }
 
         project "libQREncode"            
             kind "StaticLib"            
