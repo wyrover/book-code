@@ -1,0 +1,506 @@
+﻿  Microsoft (R) 生成引擎版本 14.0.25123.0
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  生成启动时间为 2016/12/30 16:15:47。
+  项目“H:\rover\rover-self-work\cpp\book-code\3rdparty\cryptopp565\cryptlib.vcxproj”在节点 1 上(Build 个目标)。
+  PrepareForBuild:
+    正在创建目录“Win32\cryptlib\Debug\”。
+    正在创建目录“Win32\Output\Debug\”。
+    正在创建目录“Win32\cryptlib\Debug\cryptlib.tlog\”。
+  InitializeBuildStatus:
+    正在创建“Win32\cryptlib\Debug\cryptlib.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+  CustomBuild:
+    Performing Custom Build Tools
+    已复制         1 个文件。
+    Building and assembling rdrand.asm
+     Assembling: H:\rover\rover-self-work\cpp\book-code\3rdparty\cryptopp565\rdrand.asm
+  ClCompile:
+    C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /Zi /nologo /W4 /WX- /Od /Oi /Oy- /D USE_PRECOMPILED_HEADERS /Gm- /EHsc /RTC1 /MTd /GS /arch:SSE2 /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Yc"pch.h" /Fp"Win32\cryptlib\Debug\cryptlib.pch" /Fo"Win32\cryptlib\Debug\\" /Fd"Win32\cryptlib\Debug\cryptlib.pdb" /Gd /TP /analyze- /errorReport:none pch.cpp
+    pch.cpp
+    C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /Zi /nologo /W4 /WX- /Od /Oi /Oy- /D USE_PRECOMPILED_HEADERS /Gm- /EHsc /RTC1 /MTd /GS /arch:SSE2 /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Yu"pch.h" /Fp"Win32\cryptlib\Debug\cryptlib.pch" /Fo"Win32\cryptlib\Debug\\" /Fd"Win32\cryptlib\Debug\cryptlib.pdb" /Gd /TP /analyze- /errorReport:none cryptlib.cpp cpu.cpp integer.cpp 3way.cpp adler32.cpp algebra.cpp algparam.cpp arc4.cpp asn.cpp authenc.cpp base32.cpp base64.cpp basecode.cpp bfinit.cpp blake2.cpp blowfish.cpp blumshub.cpp camellia.cpp cast.cpp casts.cpp cbcmac.cpp ccm.cpp chacha.cpp channels.cpp cmac.cpp crc.cpp default.cpp des.cpp dessp.cpp dh.cpp dh2.cpp dsa.cpp eax.cpp ec2n.cpp ecp.cpp elgamal.cpp emsa2.cpp esign.cpp files.cpp filters.cpp fips140.cpp fipstest.cpp gcm.cpp gf256.cpp gf2_32.cpp gf2n.cpp gfpcrypt.cpp gost.cpp gzip.cpp hex.cpp hmac.cpp hrtimer.cpp ida.cpp idea.cpp keccak.cpp luc.cpp mars.cpp marss.cpp md2.cpp md4.cpp md5.cpp misc.cpp modes.cpp mqueue.cpp mqv.cpp nbtheory.cpp network.cpp oaep.cpp osrng.cpp panama.cpp pkcspad.cpp polynomi.cpp pssr.cpp pubkey.cpp queue.cpp rabin.cpp randpool.cpp rc2.cpp rc5.cpp rc6.cpp rdrand.cpp rdtables.cpp rijndael.cpp ripemd.cpp rng.cpp rsa.cpp rw.cpp safer.cpp salsa.cpp seal.cpp seed.cpp serpent.cpp sha.cpp sha3.cpp shacal2.cpp shark.cpp sharkbox.cpp simple.cpp skipjack.cpp socketft.cpp sosemanuk.cpp square.cpp squaretb.cpp strciphr.cpp tea.cpp tftables.cpp tiger.cpp tigertab.cpp trdlocal.cpp ttmac.cpp twofish.cpp vmac.cpp wait.cpp wake.cpp whrlpool.cpp winpipes.cpp xtr.cpp xtrcrypt.cpp zdeflate.cpp zinflate.cpp zlib.cpp
+    cryptlib.cpp
+    cpu.cpp
+    integer.cpp
+    3way.cpp
+    adler32.cpp
+    algebra.cpp
+    algparam.cpp
+    arc4.cpp
+    asn.cpp
+    authenc.cpp
+    base32.cpp
+    base64.cpp
+    basecode.cpp
+    bfinit.cpp
+    blake2.cpp
+    blowfish.cpp
+    blumshub.cpp
+    camellia.cpp
+    cast.cpp
+    casts.cpp
+    正在生成代码...
+    正在编译...
+    cbcmac.cpp
+    ccm.cpp
+    chacha.cpp
+    channels.cpp
+    cmac.cpp
+    crc.cpp
+    default.cpp
+    des.cpp
+    dessp.cpp
+    dh.cpp
+    dh2.cpp
+    dsa.cpp
+    eax.cpp
+    ec2n.cpp
+    ecp.cpp
+    elgamal.cpp
+    emsa2.cpp
+    esign.cpp
+    files.cpp
+    filters.cpp
+    正在生成代码...
+    正在编译...
+    fips140.cpp
+    fipstest.cpp
+c:\program files\microsoft sdks\windows\v7.0\include\sal_supp.h(57): warning C4005: “__useHeader”: 宏重定义 [H:\rover\rover-self-work\cpp\book-code\3rdparty\cryptopp565\cryptlib.vcxproj]
+    C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\sal.h(2886): note: 参见“__useHeader”的前一个定义
+c:\program files\microsoft sdks\windows\v7.0\include\specstrings_supp.h(77): warning C4005: “__on_failure”: 宏重定义 [H:\rover\rover-self-work\cpp\book-code\3rdparty\cryptopp565\cryptlib.vcxproj]
+    C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\sal.h(2896): note: 参见“__on_failure”的前一个定义
+    gcm.cpp
+    gf256.cpp
+    gf2_32.cpp
+    gf2n.cpp
+    gfpcrypt.cpp
+    gost.cpp
+    gzip.cpp
+    hex.cpp
+    hmac.cpp
+    hrtimer.cpp
+c:\program files\microsoft sdks\windows\v7.0\include\sal_supp.h(57): warning C4005: “__useHeader”: 宏重定义 [H:\rover\rover-self-work\cpp\book-code\3rdparty\cryptopp565\cryptlib.vcxproj]
+    C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\sal.h(2886): note: 参见“__useHeader”的前一个定义
+c:\program files\microsoft sdks\windows\v7.0\include\specstrings_supp.h(77): warning C4005: “__on_failure”: 宏重定义 [H:\rover\rover-self-work\cpp\book-code\3rdparty\cryptopp565\cryptlib.vcxproj]
+    C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\sal.h(2896): note: 参见“__on_failure”的前一个定义
+    ida.cpp
+    idea.cpp
+    keccak.cpp
+    luc.cpp
+    mars.cpp
+    marss.cpp
+    md2.cpp
+    md4.cpp
+    正在生成代码...
+    正在编译...
+    md5.cpp
+    misc.cpp
+    modes.cpp
+    mqueue.cpp
+    mqv.cpp
+    nbtheory.cpp
+    network.cpp
+c:\program files\microsoft sdks\windows\v7.0\include\sal_supp.h(57): warning C4005: “__useHeader”: 宏重定义 [H:\rover\rover-self-work\cpp\book-code\3rdparty\cryptopp565\cryptlib.vcxproj]
+    C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\sal.h(2886): note: 参见“__useHeader”的前一个定义
+c:\program files\microsoft sdks\windows\v7.0\include\specstrings_supp.h(77): warning C4005: “__on_failure”: 宏重定义 [H:\rover\rover-self-work\cpp\book-code\3rdparty\cryptopp565\cryptlib.vcxproj]
+    C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\sal.h(2896): note: 参见“__on_failure”的前一个定义
+    oaep.cpp
+    osrng.cpp
+c:\program files\microsoft sdks\windows\v7.0\include\sal_supp.h(57): warning C4005: “__useHeader”: 宏重定义 [H:\rover\rover-self-work\cpp\book-code\3rdparty\cryptopp565\cryptlib.vcxproj]
+    C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\sal.h(2886): note: 参见“__useHeader”的前一个定义
+c:\program files\microsoft sdks\windows\v7.0\include\specstrings_supp.h(77): warning C4005: “__on_failure”: 宏重定义 [H:\rover\rover-self-work\cpp\book-code\3rdparty\cryptopp565\cryptlib.vcxproj]
+    C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\sal.h(2896): note: 参见“__on_failure”的前一个定义
+    panama.cpp
+    pkcspad.cpp
+    polynomi.cpp
+    pssr.cpp
+    pubkey.cpp
+    queue.cpp
+    rabin.cpp
+    randpool.cpp
+    rc2.cpp
+    rc5.cpp
+    rc6.cpp
+    正在生成代码...
+    正在编译...
+    rdrand.cpp
+    rdtables.cpp
+    rijndael.cpp
+    ripemd.cpp
+    rng.cpp
+    rsa.cpp
+    rw.cpp
+    safer.cpp
+    salsa.cpp
+    seal.cpp
+    seed.cpp
+    serpent.cpp
+    sha.cpp
+    sha3.cpp
+    shacal2.cpp
+    shark.cpp
+    sharkbox.cpp
+    simple.cpp
+    skipjack.cpp
+    socketft.cpp
+c:\program files\microsoft sdks\windows\v7.0\include\sal_supp.h(57): warning C4005: “__useHeader”: 宏重定义 [H:\rover\rover-self-work\cpp\book-code\3rdparty\cryptopp565\cryptlib.vcxproj]
+    C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\sal.h(2886): note: 参见“__useHeader”的前一个定义
+c:\program files\microsoft sdks\windows\v7.0\include\specstrings_supp.h(77): warning C4005: “__on_failure”: 宏重定义 [H:\rover\rover-self-work\cpp\book-code\3rdparty\cryptopp565\cryptlib.vcxproj]
+    C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\sal.h(2896): note: 参见“__on_failure”的前一个定义
+    正在生成代码...
+    正在编译...
+    sosemanuk.cpp
+    square.cpp
+    squaretb.cpp
+    strciphr.cpp
+    tea.cpp
+    tftables.cpp
+    tiger.cpp
+    tigertab.cpp
+    trdlocal.cpp
+c:\program files\microsoft sdks\windows\v7.0\include\sal_supp.h(57): warning C4005: “__useHeader”: 宏重定义 [H:\rover\rover-self-work\cpp\book-code\3rdparty\cryptopp565\cryptlib.vcxproj]
+    C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\sal.h(2886): note: 参见“__useHeader”的前一个定义
+c:\program files\microsoft sdks\windows\v7.0\include\specstrings_supp.h(77): warning C4005: “__on_failure”: 宏重定义 [H:\rover\rover-self-work\cpp\book-code\3rdparty\cryptopp565\cryptlib.vcxproj]
+    C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\sal.h(2896): note: 参见“__on_failure”的前一个定义
+    ttmac.cpp
+    twofish.cpp
+    vmac.cpp
+    wait.cpp
+c:\program files\microsoft sdks\windows\v7.0\include\sal_supp.h(57): warning C4005: “__useHeader”: 宏重定义 [H:\rover\rover-self-work\cpp\book-code\3rdparty\cryptopp565\cryptlib.vcxproj]
+    C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\sal.h(2886): note: 参见“__useHeader”的前一个定义
+c:\program files\microsoft sdks\windows\v7.0\include\specstrings_supp.h(77): warning C4005: “__on_failure”: 宏重定义 [H:\rover\rover-self-work\cpp\book-code\3rdparty\cryptopp565\cryptlib.vcxproj]
+    C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\sal.h(2896): note: 参见“__on_failure”的前一个定义
+    wake.cpp
+    whrlpool.cpp
+    winpipes.cpp
+c:\program files\microsoft sdks\windows\v7.0\include\sal_supp.h(57): warning C4005: “__useHeader”: 宏重定义 [H:\rover\rover-self-work\cpp\book-code\3rdparty\cryptopp565\cryptlib.vcxproj]
+    C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\sal.h(2886): note: 参见“__useHeader”的前一个定义
+c:\program files\microsoft sdks\windows\v7.0\include\specstrings_supp.h(77): warning C4005: “__on_failure”: 宏重定义 [H:\rover\rover-self-work\cpp\book-code\3rdparty\cryptopp565\cryptlib.vcxproj]
+    C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\sal.h(2896): note: 参见“__on_failure”的前一个定义
+    xtr.cpp
+    xtrcrypt.cpp
+    zdeflate.cpp
+    zinflate.cpp
+    正在生成代码...
+    正在编译...
+    zlib.cpp
+    正在生成代码...
+    C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /Zi /nologo /W4 /WX- /Od /Oi /Oy- /D USE_PRECOMPILED_HEADERS /Gm- /EHsc /RTC1 /MTd /GS /arch:SSE2 /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Win32\cryptlib\Debug\\" /Fd"Win32\cryptlib\Debug\cryptlib.pdb" /Gd /TP /analyze- /errorReport:none dll.cpp iterhash.cpp
+    dll.cpp
+    iterhash.cpp
+    正在生成代码...
+  Lib:
+    C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\Lib.exe /OUT:"Win32\Output\Debug\cryptlib.lib" /NOLOGO /MACHINE:X86 "Win32\cryptlib\Debug\\rdrand-x86.obj"
+    Win32\cryptlib\Debug\cryptlib.obj
+    Win32\cryptlib\Debug\cpu.obj
+    Win32\cryptlib\Debug\integer.obj
+    Win32\cryptlib\Debug\3way.obj
+    Win32\cryptlib\Debug\adler32.obj
+    Win32\cryptlib\Debug\algebra.obj
+    Win32\cryptlib\Debug\algparam.obj
+    Win32\cryptlib\Debug\arc4.obj
+    Win32\cryptlib\Debug\asn.obj
+    Win32\cryptlib\Debug\authenc.obj
+    Win32\cryptlib\Debug\base32.obj
+    Win32\cryptlib\Debug\base64.obj
+    Win32\cryptlib\Debug\basecode.obj
+    Win32\cryptlib\Debug\bfinit.obj
+    Win32\cryptlib\Debug\blake2.obj
+    Win32\cryptlib\Debug\blowfish.obj
+    Win32\cryptlib\Debug\blumshub.obj
+    Win32\cryptlib\Debug\camellia.obj
+    Win32\cryptlib\Debug\cast.obj
+    Win32\cryptlib\Debug\casts.obj
+    Win32\cryptlib\Debug\cbcmac.obj
+    Win32\cryptlib\Debug\ccm.obj
+    Win32\cryptlib\Debug\chacha.obj
+    Win32\cryptlib\Debug\channels.obj
+    Win32\cryptlib\Debug\cmac.obj
+    Win32\cryptlib\Debug\crc.obj
+    Win32\cryptlib\Debug\default.obj
+    Win32\cryptlib\Debug\des.obj
+    Win32\cryptlib\Debug\dessp.obj
+    Win32\cryptlib\Debug\dh.obj
+    Win32\cryptlib\Debug\dh2.obj
+    Win32\cryptlib\Debug\dll.obj
+    Win32\cryptlib\Debug\dsa.obj
+    Win32\cryptlib\Debug\eax.obj
+    Win32\cryptlib\Debug\ec2n.obj
+    Win32\cryptlib\Debug\ecp.obj
+    Win32\cryptlib\Debug\elgamal.obj
+    Win32\cryptlib\Debug\emsa2.obj
+    Win32\cryptlib\Debug\esign.obj
+    Win32\cryptlib\Debug\files.obj
+    Win32\cryptlib\Debug\filters.obj
+    Win32\cryptlib\Debug\fips140.obj
+    Win32\cryptlib\Debug\fipstest.obj
+    Win32\cryptlib\Debug\gcm.obj
+    Win32\cryptlib\Debug\gf256.obj
+    Win32\cryptlib\Debug\gf2_32.obj
+    Win32\cryptlib\Debug\gf2n.obj
+    Win32\cryptlib\Debug\gfpcrypt.obj
+    Win32\cryptlib\Debug\gost.obj
+    Win32\cryptlib\Debug\gzip.obj
+    Win32\cryptlib\Debug\hex.obj
+    Win32\cryptlib\Debug\hmac.obj
+    Win32\cryptlib\Debug\hrtimer.obj
+    Win32\cryptlib\Debug\ida.obj
+    Win32\cryptlib\Debug\idea.obj
+    Win32\cryptlib\Debug\iterhash.obj
+    Win32\cryptlib\Debug\keccak.obj
+    Win32\cryptlib\Debug\luc.obj
+    Win32\cryptlib\Debug\mars.obj
+    Win32\cryptlib\Debug\marss.obj
+    Win32\cryptlib\Debug\md2.obj
+    Win32\cryptlib\Debug\md4.obj
+    Win32\cryptlib\Debug\md5.obj
+    Win32\cryptlib\Debug\misc.obj
+    Win32\cryptlib\Debug\modes.obj
+    Win32\cryptlib\Debug\mqueue.obj
+    Win32\cryptlib\Debug\mqv.obj
+    Win32\cryptlib\Debug\nbtheory.obj
+    Win32\cryptlib\Debug\network.obj
+    Win32\cryptlib\Debug\oaep.obj
+    Win32\cryptlib\Debug\osrng.obj
+    Win32\cryptlib\Debug\panama.obj
+    Win32\cryptlib\Debug\pch.obj
+    Win32\cryptlib\Debug\pkcspad.obj
+    Win32\cryptlib\Debug\polynomi.obj
+    Win32\cryptlib\Debug\pssr.obj
+    Win32\cryptlib\Debug\pubkey.obj
+    Win32\cryptlib\Debug\queue.obj
+    Win32\cryptlib\Debug\rabin.obj
+    Win32\cryptlib\Debug\randpool.obj
+    Win32\cryptlib\Debug\rc2.obj
+    Win32\cryptlib\Debug\rc5.obj
+    Win32\cryptlib\Debug\rc6.obj
+    Win32\cryptlib\Debug\rdrand.obj
+    Win32\cryptlib\Debug\rdtables.obj
+    Win32\cryptlib\Debug\rijndael.obj
+    Win32\cryptlib\Debug\ripemd.obj
+    Win32\cryptlib\Debug\rng.obj
+    Win32\cryptlib\Debug\rsa.obj
+    Win32\cryptlib\Debug\rw.obj
+    Win32\cryptlib\Debug\safer.obj
+    Win32\cryptlib\Debug\salsa.obj
+    Win32\cryptlib\Debug\seal.obj
+    Win32\cryptlib\Debug\seed.obj
+    Win32\cryptlib\Debug\serpent.obj
+    Win32\cryptlib\Debug\sha.obj
+    Win32\cryptlib\Debug\sha3.obj
+    Win32\cryptlib\Debug\shacal2.obj
+    Win32\cryptlib\Debug\shark.obj
+    Win32\cryptlib\Debug\sharkbox.obj
+    Win32\cryptlib\Debug\simple.obj
+    Win32\cryptlib\Debug\skipjack.obj
+    Win32\cryptlib\Debug\socketft.obj
+    Win32\cryptlib\Debug\sosemanuk.obj
+    Win32\cryptlib\Debug\square.obj
+    Win32\cryptlib\Debug\squaretb.obj
+    Win32\cryptlib\Debug\strciphr.obj
+    Win32\cryptlib\Debug\tea.obj
+    Win32\cryptlib\Debug\tftables.obj
+    Win32\cryptlib\Debug\tiger.obj
+    Win32\cryptlib\Debug\tigertab.obj
+    Win32\cryptlib\Debug\trdlocal.obj
+    Win32\cryptlib\Debug\ttmac.obj
+    Win32\cryptlib\Debug\twofish.obj
+    Win32\cryptlib\Debug\vmac.obj
+    Win32\cryptlib\Debug\wait.obj
+    Win32\cryptlib\Debug\wake.obj
+    Win32\cryptlib\Debug\whrlpool.obj
+    Win32\cryptlib\Debug\winpipes.obj
+    Win32\cryptlib\Debug\xtr.obj
+    Win32\cryptlib\Debug\xtrcrypt.obj
+    Win32\cryptlib\Debug\zdeflate.obj
+    Win32\cryptlib\Debug\zinflate.obj
+    Win32\cryptlib\Debug\zlib.obj
+strciphr.obj : warning LNK4221: 此对象文件未定义任何之前未定义的公共符号，因此任何耗用此库的链接操作都不会使用此文件 [H:\rover\rover-self-work\cpp\book-code\3rdparty\cryptopp565\cryptlib.vcxproj]
+simple.obj : warning LNK4221: 此对象文件未定义任何之前未定义的公共符号，因此任何耗用此库的链接操作都不会使用此文件 [H:\rover\rover-self-work\cpp\book-code\3rdparty\cryptopp565\cryptlib.vcxproj]
+polynomi.obj : warning LNK4221: 此对象文件未定义任何之前未定义的公共符号，因此任何耗用此库的链接操作都不会使用此文件 [H:\rover\rover-self-work\cpp\book-code\3rdparty\cryptopp565\cryptlib.vcxproj]
+algebra.obj : warning LNK4221: 此对象文件未定义任何之前未定义的公共符号，因此任何耗用此库的链接操作都不会使用此文件 [H:\rover\rover-self-work\cpp\book-code\3rdparty\cryptopp565\cryptlib.vcxproj]
+    cryptlib.vcxproj -> H:\rover\rover-self-work\cpp\book-code\3rdparty\cryptopp565\Win32\Output\Debug\cryptlib.lib
+  CopyFilesToOutputDirectory:
+    正在将文件从“Win32\cryptlib\Debug\cryptlib.pdb”复制到“Win32\Output\Debug\cryptlib.pdb”。
+  FinalizeBuildStatus:
+    正在删除文件“Win32\cryptlib\Debug\cryptlib.tlog\unsuccessfulbuild”。
+    正在对“Win32\cryptlib\Debug\cryptlib.tlog\cryptlib.lastbuildstate”执行 Touch 任务。
+  已完成生成项目“H:\rover\rover-self-work\cpp\book-code\3rdparty\cryptopp565\cryptlib.vcxproj”(Build 个目标)的操作。
+  
+  已成功生成。
+  
+  “H:\rover\rover-self-work\cpp\book-code\3rdparty\cryptopp565\cryptlib.vcxproj”(Build 目标) (1) ->
+  (ClCompile 目标) -> 
+c:\program files\microsoft sdks\windows\v7.0\include\sal_supp.h(57): warning C4005: “__useHeader”: 宏重定义 [H:\rover\rover-self-work\cpp\book-code\3rdparty\cryptopp565\cryptlib.vcxproj]
+c:\program files\microsoft sdks\windows\v7.0\include\specstrings_supp.h(77): warning C4005: “__on_failure”: 宏重定义 [H:\rover\rover-self-work\cpp\book-code\3rdparty\cryptopp565\cryptlib.vcxproj]
+c:\program files\microsoft sdks\windows\v7.0\include\sal_supp.h(57): warning C4005: “__useHeader”: 宏重定义 [H:\rover\rover-self-work\cpp\book-code\3rdparty\cryptopp565\cryptlib.vcxproj]
+c:\program files\microsoft sdks\windows\v7.0\include\specstrings_supp.h(77): warning C4005: “__on_failure”: 宏重定义 [H:\rover\rover-self-work\cpp\book-code\3rdparty\cryptopp565\cryptlib.vcxproj]
+c:\program files\microsoft sdks\windows\v7.0\include\sal_supp.h(57): warning C4005: “__useHeader”: 宏重定义 [H:\rover\rover-self-work\cpp\book-code\3rdparty\cryptopp565\cryptlib.vcxproj]
+c:\program files\microsoft sdks\windows\v7.0\include\specstrings_supp.h(77): warning C4005: “__on_failure”: 宏重定义 [H:\rover\rover-self-work\cpp\book-code\3rdparty\cryptopp565\cryptlib.vcxproj]
+c:\program files\microsoft sdks\windows\v7.0\include\sal_supp.h(57): warning C4005: “__useHeader”: 宏重定义 [H:\rover\rover-self-work\cpp\book-code\3rdparty\cryptopp565\cryptlib.vcxproj]
+c:\program files\microsoft sdks\windows\v7.0\include\specstrings_supp.h(77): warning C4005: “__on_failure”: 宏重定义 [H:\rover\rover-self-work\cpp\book-code\3rdparty\cryptopp565\cryptlib.vcxproj]
+c:\program files\microsoft sdks\windows\v7.0\include\sal_supp.h(57): warning C4005: “__useHeader”: 宏重定义 [H:\rover\rover-self-work\cpp\book-code\3rdparty\cryptopp565\cryptlib.vcxproj]
+c:\program files\microsoft sdks\windows\v7.0\include\specstrings_supp.h(77): warning C4005: “__on_failure”: 宏重定义 [H:\rover\rover-self-work\cpp\book-code\3rdparty\cryptopp565\cryptlib.vcxproj]
+c:\program files\microsoft sdks\windows\v7.0\include\sal_supp.h(57): warning C4005: “__useHeader”: 宏重定义 [H:\rover\rover-self-work\cpp\book-code\3rdparty\cryptopp565\cryptlib.vcxproj]
+c:\program files\microsoft sdks\windows\v7.0\include\specstrings_supp.h(77): warning C4005: “__on_failure”: 宏重定义 [H:\rover\rover-self-work\cpp\book-code\3rdparty\cryptopp565\cryptlib.vcxproj]
+c:\program files\microsoft sdks\windows\v7.0\include\sal_supp.h(57): warning C4005: “__useHeader”: 宏重定义 [H:\rover\rover-self-work\cpp\book-code\3rdparty\cryptopp565\cryptlib.vcxproj]
+c:\program files\microsoft sdks\windows\v7.0\include\specstrings_supp.h(77): warning C4005: “__on_failure”: 宏重定义 [H:\rover\rover-self-work\cpp\book-code\3rdparty\cryptopp565\cryptlib.vcxproj]
+c:\program files\microsoft sdks\windows\v7.0\include\sal_supp.h(57): warning C4005: “__useHeader”: 宏重定义 [H:\rover\rover-self-work\cpp\book-code\3rdparty\cryptopp565\cryptlib.vcxproj]
+c:\program files\microsoft sdks\windows\v7.0\include\specstrings_supp.h(77): warning C4005: “__on_failure”: 宏重定义 [H:\rover\rover-self-work\cpp\book-code\3rdparty\cryptopp565\cryptlib.vcxproj]
+  
+  
+  “H:\rover\rover-self-work\cpp\book-code\3rdparty\cryptopp565\cryptlib.vcxproj”(Build 目标) (1) ->
+  (Lib 目标) -> 
+strciphr.obj : warning LNK4221: 此对象文件未定义任何之前未定义的公共符号，因此任何耗用此库的链接操作都不会使用此文件 [H:\rover\rover-self-work\cpp\book-code\3rdparty\cryptopp565\cryptlib.vcxproj]
+simple.obj : warning LNK4221: 此对象文件未定义任何之前未定义的公共符号，因此任何耗用此库的链接操作都不会使用此文件 [H:\rover\rover-self-work\cpp\book-code\3rdparty\cryptopp565\cryptlib.vcxproj]
+polynomi.obj : warning LNK4221: 此对象文件未定义任何之前未定义的公共符号，因此任何耗用此库的链接操作都不会使用此文件 [H:\rover\rover-self-work\cpp\book-code\3rdparty\cryptopp565\cryptlib.vcxproj]
+algebra.obj : warning LNK4221: 此对象文件未定义任何之前未定义的公共符号，因此任何耗用此库的链接操作都不会使用此文件 [H:\rover\rover-self-work\cpp\book-code\3rdparty\cryptopp565\cryptlib.vcxproj]
+  
+      20 个警告
+      0 个错误
+  
+  已用时间 00:01:15.92
+  Microsoft (R) 生成引擎版本 14.0.25123.0
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  生成启动时间为 2016/12/30 16:17:04。
+  项目“H:\rover\rover-self-work\cpp\book-code\3rdparty\cryptopp565\cryptest.vcxproj”在节点 1 上(Build 个目标)。
+  PrepareForBuild:
+    正在创建目录“Win32\cryptest\Debug\”。
+    正在创建目录“Win32\cryptest\Debug\cryptest.tlog\”。
+  InitializeBuildStatus:
+    正在创建“Win32\cryptest\Debug\cryptest.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+  ClCompile:
+    C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /Zi /nologo /W4 /WX- /Od /Oi /Oy- /Gm- /EHsc /RTC1 /MTd /GS /arch:SSE2 /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Win32\cryptest\Debug\\" /Fd"Win32\cryptest\Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:none adhoc.cpp bench1.cpp bench2.cpp datatest.cpp dlltest.cpp fipsalgt.cpp regtest.cpp test.cpp validat1.cpp validat2.cpp validat3.cpp
+    adhoc.cpp
+    bench1.cpp
+    bench2.cpp
+    datatest.cpp
+    dlltest.cpp
+    fipsalgt.cpp
+    regtest.cpp
+    test.cpp
+c:\program files\microsoft sdks\windows\v7.0\include\sal_supp.h(57): warning C4005: “__useHeader”: 宏重定义 [H:\rover\rover-self-work\cpp\book-code\3rdparty\cryptopp565\cryptest.vcxproj]
+    C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\sal.h(2886): note: 参见“__useHeader”的前一个定义
+c:\program files\microsoft sdks\windows\v7.0\include\specstrings_supp.h(77): warning C4005: “__on_failure”: 宏重定义 [H:\rover\rover-self-work\cpp\book-code\3rdparty\cryptopp565\cryptest.vcxproj]
+    C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\sal.h(2896): note: 参见“__on_failure”的前一个定义
+    validat1.cpp
+    validat2.cpp
+    validat3.cpp
+    正在生成代码...
+  Link:
+    C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:"Win32\Output\Debug\\cryptest.exe" /NOLOGO /LIBPATH:Win32\Output\Debug cryptlib.lib Ws2_32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"Win32\Output\Debug\\cryptlib.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"Win32\Output\Debug\cryptest.lib" /MACHINE:X86 /SAFESEH Win32\cryptest\Debug\adhoc.obj
+    Win32\cryptest\Debug\bench1.obj
+    Win32\cryptest\Debug\bench2.obj
+    Win32\cryptest\Debug\datatest.obj
+    Win32\cryptest\Debug\dlltest.obj
+    Win32\cryptest\Debug\fipsalgt.obj
+    Win32\cryptest\Debug\regtest.obj
+    Win32\cryptest\Debug\test.obj
+    Win32\cryptest\Debug\validat1.obj
+    Win32\cryptest\Debug\validat2.obj
+    Win32\cryptest\Debug\validat3.obj
+    cryptest.vcxproj -> H:\rover\rover-self-work\cpp\book-code\3rdparty\cryptopp565\Win32\Output\Debug\cryptest.exe
+  FinalizeBuildStatus:
+    正在删除文件“Win32\cryptest\Debug\cryptest.tlog\unsuccessfulbuild”。
+    正在对“Win32\cryptest\Debug\cryptest.tlog\cryptest.lastbuildstate”执行 Touch 任务。
+  已完成生成项目“H:\rover\rover-self-work\cpp\book-code\3rdparty\cryptopp565\cryptest.vcxproj”(Build 个目标)的操作。
+  
+  已成功生成。
+  
+  “H:\rover\rover-self-work\cpp\book-code\3rdparty\cryptopp565\cryptest.vcxproj”(Build 目标) (1) ->
+  (ClCompile 目标) -> 
+c:\program files\microsoft sdks\windows\v7.0\include\sal_supp.h(57): warning C4005: “__useHeader”: 宏重定义 [H:\rover\rover-self-work\cpp\book-code\3rdparty\cryptopp565\cryptest.vcxproj]
+c:\program files\microsoft sdks\windows\v7.0\include\specstrings_supp.h(77): warning C4005: “__on_failure”: 宏重定义 [H:\rover\rover-self-work\cpp\book-code\3rdparty\cryptopp565\cryptest.vcxproj]
+  
+      2 个警告
+      0 个错误
+  
+  已用时间 00:00:35.70
+  pch.cpp
+  dll.cpp
+c:\program files\microsoft sdks\windows\v7.0\include\sal_supp.h(57): warning C4005: “__useHeader”: 宏重定义
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\sal.h(2886): note: 参见“__useHeader”的前一个定义
+c:\program files\microsoft sdks\windows\v7.0\include\specstrings_supp.h(77): warning C4005: “__on_failure”: 宏重定义
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\sal.h(2896): note: 参见“__on_failure”的前一个定义
+  iterhash.cpp
+  正在生成代码...
+  algebra.cpp
+  algparam.cpp
+  asn.cpp
+  authenc.cpp
+  basecode.cpp
+  cbcmac.cpp
+  ccm.cpp
+  channels.cpp
+  cmac.cpp
+  cpu.cpp
+  cryptlib.cpp
+  des.cpp
+  dessp.cpp
+  dh.cpp
+  dsa.cpp
+  ec2n.cpp
+  eccrypto.cpp
+  ecp.cpp
+  emsa2.cpp
+  eprecomp.cpp
+  正在生成代码...
+  正在编译...
+  files.cpp
+  filters.cpp
+  fips140.cpp
+  fipstest.cpp
+c:\program files\microsoft sdks\windows\v7.0\include\sal_supp.h(57): warning C4005: “__useHeader”: 宏重定义
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\sal.h(2886): note: 参见“__useHeader”的前一个定义
+c:\program files\microsoft sdks\windows\v7.0\include\specstrings_supp.h(77): warning C4005: “__on_failure”: 宏重定义
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\sal.h(2896): note: 参见“__on_failure”的前一个定义
+  gcm.cpp
+  gf2n.cpp
+  gfpcrypt.cpp
+  hex.cpp
+  hmac.cpp
+  hrtimer.cpp
+c:\program files\microsoft sdks\windows\v7.0\include\sal_supp.h(57): warning C4005: “__useHeader”: 宏重定义
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\sal.h(2886): note: 参见“__useHeader”的前一个定义
+c:\program files\microsoft sdks\windows\v7.0\include\specstrings_supp.h(77): warning C4005: “__on_failure”: 宏重定义
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\sal.h(2896): note: 参见“__on_failure”的前一个定义
+  integer.cpp
+  misc.cpp
+  modes.cpp
+  mqueue.cpp
+  nbtheory.cpp
+  oaep.cpp
+  osrng.cpp
+c:\program files\microsoft sdks\windows\v7.0\include\sal_supp.h(57): warning C4005: “__useHeader”: 宏重定义
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\sal.h(2886): note: 参见“__useHeader”的前一个定义
+c:\program files\microsoft sdks\windows\v7.0\include\specstrings_supp.h(77): warning C4005: “__on_failure”: 宏重定义
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\sal.h(2896): note: 参见“__on_failure”的前一个定义
+  pkcspad.cpp
+  pssr.cpp
+  pubkey.cpp
+  正在生成代码...
+  正在编译...
+  queue.cpp
+  randpool.cpp
+  rdtables.cpp
+  rijndael.cpp
+  rng.cpp
+  rsa.cpp
+  rw.cpp
+  sha.cpp
+  simple.cpp
+  skipjack.cpp
+  strciphr.cpp
+  trdlocal.cpp
+c:\program files\microsoft sdks\windows\v7.0\include\sal_supp.h(57): warning C4005: “__useHeader”: 宏重定义
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\sal.h(2886): note: 参见“__useHeader”的前一个定义
+c:\program files\microsoft sdks\windows\v7.0\include\specstrings_supp.h(77): warning C4005: “__on_failure”: 宏重定义
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\sal.h(2896): note: 参见“__on_failure”的前一个定义
+  正在生成代码...
+C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\sal.h(2886): warning RC4005: '__useHeader' : redefinition
+  
+C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\sal.h(2896): warning RC4005: '__on_failure' : redefinition
+  
+    正在创建库 H:\rover\rover-self-work\cpp\book-code\3rdparty\cryptopp565\Win32\DLL_Output\Release\\cryptopp.lib 和对象 H:\rover\rover-self-work\cpp\book-code\3rdparty\cryptopp565\Win32\DLL_Output\Release\\cryptopp.exp
+  cryptdll.vcxproj -> H:\rover\rover-self-work\cpp\book-code\3rdparty\cryptopp565\Win32\DLL_Output\Release\cryptopp.dll
+  Placing MAC 86FE0A22252A17ACB93523D505DD9F55A52B9274 in H:\rover\rover-self-work\cpp\book-code\3rdparty\cryptopp565\Win32\DLL_Output\Release\cryptopp.dll at file offset 1057248 (0x1021e0).
