@@ -3,7 +3,8 @@
 
 #pragma once
 
-namespace UiLib {
+namespace UiLib
+{
 
 class IDialogBuilderCallback
 {
@@ -17,9 +18,9 @@ class UILIB_API CDialogBuilder
 public:
     CDialogBuilder();
     CControlUI* Create(STRINGorID xml, LPCTSTR type = NULL, IDialogBuilderCallback* pCallback = NULL,
-        CPaintManagerUI* pManager = NULL, CControlUI* pParent = NULL);
+                       CPaintManagerUI* pManager = NULL, CControlUI* pParent = NULL);
     CControlUI* Create(IDialogBuilderCallback* pCallback = NULL, CPaintManagerUI* pManager = NULL,
-        CControlUI* pParent = NULL);
+                       CControlUI* pParent = NULL);
 
     CMarkup* GetMarkup();
 

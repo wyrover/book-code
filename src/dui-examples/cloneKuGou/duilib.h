@@ -9,9 +9,9 @@ using namespace std;
 using namespace DuiLib;
 
 #ifdef _UNICODE
-typedef wstring tstring;
+    typedef wstring tstring;
 #else
-typedef string	tstring;
+    typedef string  tstring;
 #endif
 /*************************************************/
 

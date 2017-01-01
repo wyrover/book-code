@@ -5,7 +5,8 @@
 #include <Imm.h>
 #pragma comment(lib,"imm32.lib")
 
-namespace DuiLib {
+namespace DuiLib
+{
 
 class CTxtWinHost;
 
@@ -34,7 +35,7 @@ public:
     int GetFont();
     void SetFont(int index);
     void SetFont(LPCTSTR pStrFontName, int nSize, bool bBold, bool bUnderline, bool bItalic);
-	void SetEnabled(bool bEnabled);
+    void SetEnabled(bool bEnabled);
     LONG GetWinStyle();
     void SetWinStyle(LONG lStyle);
     DWORD GetTextColor();
@@ -86,7 +87,7 @@ public:
     int LineIndex(int nLine = -1) const;
     int LineLength(int nLine = -1) const;
     bool LineScroll(int nLines, int nChars = 0);
-	CPoint GetCharPos(long lChar) const;
+    CPoint GetCharPos(long lChar) const;
     long LineFromChar(long nIndex) const;
     CPoint PosFromChar(UINT nChar) const;
     int CharFromPos(CPoint pt) const;
@@ -94,14 +95,14 @@ public:
     UINT SetUndoLimit(UINT nLimit);
     long StreamIn(int nFormat, EDITSTREAM &es);
     long StreamOut(int nFormat, EDITSTREAM &es);
-	void SetAccumulateDBCMode(bool bDBCMode);
-	bool IsAccumulateDBCMode();
+    void SetAccumulateDBCMode(bool bDBCMode);
+    bool IsAccumulateDBCMode();
 
     void DoInit();
     // 注意：TxSendMessage和SendMessage是有区别的，TxSendMessage没有multibyte和unicode自动转换的功能，
     // 而richedit2.0内部是以unicode实现的，在multibyte程序中，必须自己处理unicode到multibyte的转换
-	bool SetDropAcceptFile(bool bAccept);
-    virtual HRESULT TxSendMessage(UINT msg, WPARAM wparam, LPARAM lparam, LRESULT *plresult) const; 
+    bool SetDropAcceptFile(bool bAccept);
+    virtual HRESULT TxSendMessage(UINT msg, WPARAM wparam, LPARAM lparam, LRESULT *plresult) const;
     IDropTarget* GetTxDropTarget();
     virtual bool OnTxViewChanged();
     virtual void OnTxNotify(DWORD iNotify, void *pv);
@@ -125,14 +126,14 @@ public:
     void DoEvent(TEventUI& event);
     void DoPaint(HDC hDC, const RECT& rcPaint);
 
-	void PaintStatusImage(HDC hDC);
-	RECT GetTextPadding() const;
-	void SetTextPadding(RECT rc);
+    void PaintStatusImage(HDC hDC);
+    RECT GetTextPadding() const;
+    void SetTextPadding(RECT rc);
 
-	void SetTipValue(LPCTSTR pStrTipValue);
-	LPCTSTR GetTipValue();
-	void SetTipValueColor(LPCTSTR pStrColor);
-	DWORD GetTipValueColor();
+    void SetTipValue(LPCTSTR pStrTipValue);
+    LPCTSTR GetTipValue();
+    void SetTipValueColor(LPCTSTR pStrColor);
+    DWORD GetTipValueColor();
 
     void SetAttribute(LPCTSTR pstrName, LPCTSTR pstrValue);
 
@@ -151,16 +152,16 @@ protected:
     int m_iFont;
     int m_iLimitText;
     LONG m_lTwhStyle;
-	bool m_bInited;
-	bool  m_fAccumulateDBC ; // TRUE - need to cumulate ytes from 2 WM_CHAR msgs
-	// we are in this mode when we receive VK_PROCESSKEY
-	UINT m_chLeadByte; // use when we are in _fAccumulateDBC mode
+    bool m_bInited;
+    bool  m_fAccumulateDBC ; // TRUE - need to cumulate ytes from 2 WM_CHAR msgs
+    // we are in this mode when we receive VK_PROCESSKEY
+    UINT m_chLeadByte; // use when we are in _fAccumulateDBC mode
 
-	UINT m_uButtonState;
+    UINT m_uButtonState;
 
-	RECT		m_rcTextPadding;
-	CDuiString	m_sTipValue;
-	DWORD		m_dwTipValueColor;
+    RECT        m_rcTextPadding;
+    CDuiString  m_sTipValue;
+    DWORD       m_dwTipValueColor;
 
 };
 

@@ -22,9 +22,9 @@
 
 //根据不同的版本连接不同的库
 //#ifdef _DEBUG
-//#	pragma comment(lib, "duilib_d.lib")
+//# pragma comment(lib, "duilib_d.lib")
 //#else
-//#	pragma comment(lib, "duilib.lib")
+//# pragma comment(lib, "duilib.lib")
 //#endif
 
 // TODO: 在此处引用程序需要的其他头文件

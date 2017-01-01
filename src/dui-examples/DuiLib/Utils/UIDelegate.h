@@ -3,16 +3,17 @@
 
 #pragma once
 
-namespace DuiLib {
+namespace DuiLib
+{
 
-class UILIB_API CDelegateBase	 
+class UILIB_API CDelegateBase
 {
 public:
     CDelegateBase(void* pObject, void* pFn);
     CDelegateBase(const CDelegateBase& rhs);
     virtual ~CDelegateBase();
     bool Equals(const CDelegateBase& rhs) const;
-    bool operator() (void* param);
+    bool operator()(void* param);
     virtual CDelegateBase* Copy() const = 0; // add const for gcc
 
 protected:
@@ -29,15 +30,18 @@ class CDelegateStatic: public CDelegateBase
 {
     typedef bool (*Fn)(void*);
 public:
-    CDelegateStatic(Fn pFn) : CDelegateBase(NULL, pFn) { } 
-    CDelegateStatic(const CDelegateStatic& rhs) : CDelegateBase(rhs) { } 
-    virtual CDelegateBase* Copy() const { return new CDelegateStatic(*this); }
+    CDelegateStatic(Fn pFn) : CDelegateBase(NULL, pFn) { }
+    CDelegateStatic(const CDelegateStatic& rhs) : CDelegateBase(rhs) { }
+    virtual CDelegateBase* Copy() const
+    {
+        return new CDelegateStatic(*this);
+    }
 
 protected:
     virtual bool Invoke(void* param)
     {
         Fn pFn = (Fn)GetFn();
-        return (*pFn)(param); 
+        return (*pFn)(param);
     }
 };
 
@@ -47,15 +51,21 @@ class CDelegate : public CDelegateBase
     typedef bool (T::* Fn)(void*);
 public:
     CDelegate(O* pObj, Fn pFn) : CDelegateBase(pObj, &pFn), m_pFn(pFn) { }
-    CDelegate(const CDelegate& rhs) : CDelegateBase(rhs) { m_pFn = rhs.m_pFn; } 
-    virtual CDelegateBase* Copy() const { return new CDelegate(*this); }
+    CDelegate(const CDelegate& rhs) : CDelegateBase(rhs)
+    {
+        m_pFn = rhs.m_pFn;
+    }
+    virtual CDelegateBase* Copy() const
+    {
+        return new CDelegate(*this);
+    }
 
 protected:
     virtual bool Invoke(void* param)
     {
         O* pObject = (O*) GetObject();
-        return (pObject->*m_pFn)(param); 
-    }  
+        return (pObject->*m_pFn)(param);
+    }
 
 private:
     Fn m_pFn;
@@ -69,7 +79,7 @@ CDelegate<O, T> MakeDelegate(O* pObject, bool (T::* pFn)(void*))
 
 inline CDelegateStatic MakeDelegate(bool (*pFn)(void*))
 {
-    return CDelegateStatic(pFn); 
+    return CDelegateStatic(pFn);
 }
 
 class UILIB_API CEventSource
@@ -82,7 +92,7 @@ public:
     void operator+= (FnType pFn);
     void operator-= (const CDelegateBase& d);
     void operator-= (FnType pFn);
-    bool operator() (void* param);
+    bool operator()(void* param);
 
 protected:
     CStdPtrArray m_aDelegates;

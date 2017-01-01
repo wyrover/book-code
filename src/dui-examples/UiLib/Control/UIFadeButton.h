@@ -4,41 +4,42 @@
 #include "UIAnimation.h"
 #pragma once
 
-namespace UiLib {
-	
-	class UILIB_API CFadeButtonUI : public CButtonUI, public CUIAnimation
-	{
-	public:
-		CFadeButtonUI();
-		virtual ~CFadeButtonUI();
+namespace UiLib
+{
 
-		LPCTSTR GetClass() const;
-		LPVOID GetInterface(LPCTSTR pstrName);
-		void SetNormalImage(LPCTSTR pStrImage);
+class UILIB_API CFadeButtonUI : public CButtonUI, public CUIAnimation
+{
+public:
+    CFadeButtonUI();
+    virtual ~CFadeButtonUI();
 
-		void DoEvent(TEventUI& event);
-		void OnTimer( int nTimerID );
-		void PaintStatusImage(HDC hDC);
+    LPCTSTR GetClass() const;
+    LPVOID GetInterface(LPCTSTR pstrName);
+    void SetNormalImage(LPCTSTR pStrImage);
 
-		virtual void OnAnimationStart(INT nAnimationID, BOOL bFirstLoop) {}
-		virtual void OnAnimationStep(INT nTotalFrame, INT nCurFrame, INT nAnimationID);
-		virtual void OnAnimationStop(INT nAnimationID) {}
-		
-	protected:
-		CDuiString m_sOldImage;
-		CDuiString m_sNewImage;
-		CDuiString m_sLastImage;
-		BYTE       m_bFadeAlpha;
-		BOOL       m_bMouseHove;
-		BOOL       m_bMouseLeave;
-		enum{
-			FADE_IN_ID			= 8,
-			FADE_OUT_ID			= 9,
+    void DoEvent(TEventUI& event);
+    void OnTimer(int nTimerID);
+    void PaintStatusImage(HDC hDC);
 
-			FADE_ELLAPSE		= 10,
-			FADE_FRAME_COUNT	= 30,
-		};
-	};
+    virtual void OnAnimationStart(INT nAnimationID, BOOL bFirstLoop) {}
+    virtual void OnAnimationStep(INT nTotalFrame, INT nCurFrame, INT nAnimationID);
+    virtual void OnAnimationStop(INT nAnimationID) {}
+
+protected:
+    CDuiString m_sOldImage;
+    CDuiString m_sNewImage;
+    CDuiString m_sLastImage;
+    BYTE       m_bFadeAlpha;
+    BOOL       m_bMouseHove;
+    BOOL       m_bMouseLeave;
+    enum {
+        FADE_IN_ID          = 8,
+        FADE_OUT_ID         = 9,
+
+        FADE_ELLAPSE        = 10,
+        FADE_FRAME_COUNT    = 30,
+    };
+};
 
 } // namespace UiLib
 

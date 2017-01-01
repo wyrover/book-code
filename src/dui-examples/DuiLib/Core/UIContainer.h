@@ -3,7 +3,8 @@
 
 #pragma once
 
-namespace DuiLib {
+namespace DuiLib
+{
 /////////////////////////////////////////////////////////////////////////////////////
 //
 
@@ -49,7 +50,7 @@ public:
     void DoEvent(TEventUI& event);
     void SetVisible(bool bVisible = true);
     void SetInternVisible(bool bVisible = true);
-	void SetEnabled(bool bEnabled);
+    void SetEnabled(bool bEnabled);
     void SetMouseEnabled(bool bEnable = true);
 
     virtual RECT GetInset() const;
@@ -73,22 +74,22 @@ public:
     void SetManager(CPaintManagerUI* pManager, CControlUI* pParent, bool bInit = true);
     CControlUI* FindControl(FINDCONTROLPROC Proc, LPVOID pData, UINT uFlags);
 
-	bool SetSubControlText(LPCTSTR pstrSubControlName,LPCTSTR pstrText);
-	bool SetSubControlFixedHeight(LPCTSTR pstrSubControlName,int cy);
-	bool SetSubControlFixedWdith(LPCTSTR pstrSubControlName,int cx);
-	bool SetSubControlUserData(LPCTSTR pstrSubControlName,LPCTSTR pstrText);
+    bool SetSubControlText(LPCTSTR pstrSubControlName, LPCTSTR pstrText);
+    bool SetSubControlFixedHeight(LPCTSTR pstrSubControlName, int cy);
+    bool SetSubControlFixedWdith(LPCTSTR pstrSubControlName, int cx);
+    bool SetSubControlUserData(LPCTSTR pstrSubControlName, LPCTSTR pstrText);
 
-	CDuiString GetSubControlText(LPCTSTR pstrSubControlName);
-	int GetSubControlFixedHeight(LPCTSTR pstrSubControlName);
-	int GetSubControlFixedWdith(LPCTSTR pstrSubControlName);
-	const CDuiString GetSubControlUserData(LPCTSTR pstrSubControlName);
-	CControlUI* FindSubControl(LPCTSTR pstrSubControlName);
+    CDuiString GetSubControlText(LPCTSTR pstrSubControlName);
+    int GetSubControlFixedHeight(LPCTSTR pstrSubControlName);
+    int GetSubControlFixedWdith(LPCTSTR pstrSubControlName);
+    const CDuiString GetSubControlUserData(LPCTSTR pstrSubControlName);
+    CControlUI* FindSubControl(LPCTSTR pstrSubControlName);
 
     virtual SIZE GetScrollPos() const;
     virtual SIZE GetScrollRange() const;
     virtual void SetScrollPos(SIZE szPos);
-	virtual void SetScrollStepSize(int nSize);
-	virtual int GetScrollStepSize() const;
+    virtual void SetScrollStepSize(int nSize);
+    virtual int GetScrollStepSize() const;
     virtual void LineUp();
     virtual void LineDown();
     virtual void PageUp();
@@ -117,7 +118,7 @@ protected:
     bool m_bDelayedDestroy;
     bool m_bMouseChildEnabled;
     bool m_bScrollProcess; // ∑¿÷πSetPos—≠ª∑µ˜”√
-	int	 m_nScrollStepSize;
+    int  m_nScrollStepSize;
 
     CScrollBarUI* m_pVerticalScrollBar;
     CScrollBarUI* m_pHorizontalScrollBar;

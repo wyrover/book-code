@@ -5,7 +5,8 @@
 #include "Layout/UIVerticalLayout.h"
 #include "Layout/UIHorizontalLayout.h"
 
-namespace DuiLib {
+namespace DuiLib
+{
 /////////////////////////////////////////////////////////////////////////////////////
 //
 
@@ -15,8 +16,7 @@ class CListHeaderUI;
 
 #define UILIST_MAX_COLUMNS 32
 
-typedef struct tagTListInfoUI
-{
+typedef struct tagTListInfoUI {
     int nColumns;
     RECT rcColumn[UILIST_MAX_COLUMNS];
     int nFont;
@@ -24,14 +24,14 @@ typedef struct tagTListInfoUI
     RECT rcTextPadding;
     DWORD dwTextColor;
     DWORD dwBkColor;
-	CImageAttribute bkImage;
+    CImageAttribute bkImage;
     bool bAlternateBk;
     DWORD dwSelectedTextColor;
     DWORD dwSelectedBkColor;
-	CImageAttribute selectedImage;
+    CImageAttribute selectedImage;
     DWORD dwHotTextColor;
     DWORD dwHotBkColor;
-	CImageAttribute hotImage;
+    CImageAttribute hotImage;
     DWORD dwDisabledTextColor;
     DWORD dwDisabledBkColor;
     CImageAttribute disabledImage;
@@ -103,11 +103,11 @@ public:
     bool GetScrollSelect();
     void SetScrollSelect(bool bScrollSelect);
     int GetCurSel() const;
-	int GetCurSelActivate() const;
-	bool SelectItem(int iIndex, bool bTakeFocus = false);
-	bool SelectItemActivate(int iIndex);    // 双击选中
+    int GetCurSelActivate() const;
+    bool SelectItem(int iIndex, bool bTakeFocus = false);
+    bool SelectItemActivate(int iIndex);    // 双击选中
 
-    CListHeaderUI* GetHeader() const;  
+    CListHeaderUI* GetHeader() const;
     CContainerUI* GetList() const;
     TListInfoUI* GetListInfo();
 
@@ -124,8 +124,8 @@ public:
     void EnsureVisible(int iIndex);
     void Scroll(int dx, int dy);
 
-	bool IsDelayedDestroy() const;
-	void SetDelayedDestroy(bool bDelayed);
+    bool IsDelayedDestroy() const;
+    void SetDelayedDestroy(bool bDelayed);
     int GetChildPadding() const;
     void SetChildPadding(int iPadding);
 
@@ -138,7 +138,7 @@ public:
     void SetAlternateBk(bool bAlternateBk);
     void SetSelectedItemTextColor(DWORD dwTextColor);
     void SetSelectedItemBkColor(DWORD dwBkColor);
-    void SetSelectedItemImage(LPCTSTR pStrImage); 
+    void SetSelectedItemImage(LPCTSTR pStrImage);
     void SetHotItemTextColor(DWORD dwTextColor);
     void SetHotItemBkColor(DWORD dwBkColor);
     void SetHotItemImage(LPCTSTR pStrImage);
@@ -148,23 +148,23 @@ public:
     void SetItemLineColor(DWORD dwLineColor);
     bool IsItemShowHtml();
     void SetItemShowHtml(bool bShowHtml = true);
-	RECT GetItemTextPadding() const;
-	DWORD GetItemTextColor() const;
-	DWORD GetItemBkColor() const;
-	LPCTSTR GetItemBkImage() const;
+    RECT GetItemTextPadding() const;
+    DWORD GetItemTextColor() const;
+    DWORD GetItemBkColor() const;
+    LPCTSTR GetItemBkImage() const;
     bool IsAlternateBk() const;
-	DWORD GetSelectedItemTextColor() const;
-	DWORD GetSelectedItemBkColor() const;
-	LPCTSTR GetSelectedItemImage() const;
-	DWORD GetHotItemTextColor() const;
-	DWORD GetHotItemBkColor() const;
-	LPCTSTR GetHotItemImage() const;
-	DWORD GetDisabledItemTextColor() const;
-	DWORD GetDisabledItemBkColor() const;
-	LPCTSTR GetDisabledItemImage() const;
-	DWORD GetItemLineColor() const;
+    DWORD GetSelectedItemTextColor() const;
+    DWORD GetSelectedItemBkColor() const;
+    LPCTSTR GetSelectedItemImage() const;
+    DWORD GetHotItemTextColor() const;
+    DWORD GetHotItemBkColor() const;
+    LPCTSTR GetHotItemImage() const;
+    DWORD GetDisabledItemTextColor() const;
+    DWORD GetDisabledItemBkColor() const;
+    LPCTSTR GetDisabledItemImage() const;
+    DWORD GetItemLineColor() const;
 
-    void SetMultiExpanding(bool bMultiExpandable); 
+    void SetMultiExpanding(bool bMultiExpandable);
     int GetExpandedItem() const;
     bool ExpandItem(int iIndex, bool bExpand = true);
 
@@ -197,7 +197,7 @@ public:
 protected:
     bool m_bScrollSelect;
     int m_iCurSel;
-	int m_iCurSelActivate;  // 双击的列
+    int m_iCurSelActivate;  // 双击的列
     int m_iExpandedItem;
     IListCallbackUI* m_pCallback;
     CListBodyUI* m_pList;
@@ -220,12 +220,12 @@ public:
     void DoEvent(TEventUI& event);
     BOOL SortItems(PULVCompareFunc pfnCompare, UINT_PTR dwData);
 protected:
-	static int __cdecl ItemComareFunc(void *pvlocale, const void *item1, const void *item2);
-	int __cdecl ItemComareFunc(const void *item1, const void *item2);
+    static int __cdecl ItemComareFunc(void *pvlocale, const void *item1, const void *item2);
+    int __cdecl ItemComareFunc(const void *item1, const void *item2);
 protected:
     CListUI* m_pOwner;
-	PULVCompareFunc m_pCompareFunc;
-	UINT_PTR m_compareData;
+    PULVCompareFunc m_pCompareFunc;
+    UINT_PTR m_compareData;
 };
 
 /////////////////////////////////////////////////////////////////////////////////////
@@ -236,19 +236,19 @@ class UILIB_API CListHeaderUI : public CHorizontalLayoutUI
 public:
     CListHeaderUI();
 
-	LPCTSTR GetClass() const;
-	LPVOID GetInterface(LPCTSTR pstrName);
+    LPCTSTR GetClass() const;
+    LPVOID GetInterface(LPCTSTR pstrName);
 
-	SIZE EstimateSize(SIZE szAvailable);
-	//开启百分比表头功能 redrain 2014.12.29
-	void SetPos(RECT rc);
-	void SetAttribute(LPCTSTR pstrName, LPCTSTR pstrValue);
+    SIZE EstimateSize(SIZE szAvailable);
+    //开启百分比表头功能 redrain 2014.12.29
+    void SetPos(RECT rc);
+    void SetAttribute(LPCTSTR pstrName, LPCTSTR pstrValue);
 
-	void SetScaleHeader(bool bIsScale);
-	bool IsScaleHeader() const;
+    void SetScaleHeader(bool bIsScale);
+    bool IsScaleHeader() const;
 
 private:
-	bool m_bIsScaleHeader;
+    bool m_bIsScaleHeader;
 };
 
 
@@ -266,25 +266,25 @@ public:
 
     void SetEnabled(bool bEnable = true);
 
-	bool IsDragable() const;
+    bool IsDragable() const;
     void SetDragable(bool bDragable);
-	DWORD GetSepWidth() const;
+    DWORD GetSepWidth() const;
     void SetSepWidth(int iWidth);
-	DWORD GetTextStyle() const;
+    DWORD GetTextStyle() const;
     void SetTextStyle(UINT uStyle);
-	DWORD GetTextColor() const;
+    DWORD GetTextColor() const;
     void SetTextColor(DWORD dwTextColor);
-	void SetTextPadding(RECT rc);
-	RECT GetTextPadding() const;
+    void SetTextPadding(RECT rc);
+    RECT GetTextPadding() const;
     void SetFont(int index);
     bool IsShowHtml();
     void SetShowHtml(bool bShowHtml = true);
 
     LPCTSTR GetSepImage() const;
     void SetSepImage(LPCTSTR pStrImage);
-	//开启百分比表头功能,百分比 redrain 2014.12.29
-	void SetScale(int nScale);
-	int GetScale() const;
+    //开启百分比表头功能,百分比 redrain 2014.12.29
+    void SetScale(int nScale);
+    int GetScale() const;
 
     void DoEvent(TEventUI& event);
     SIZE EstimateSize(SIZE szAvailable);
@@ -303,9 +303,9 @@ protected:
     int m_iFont;
     UINT m_uTextStyle;
     bool m_bShowHtml;
-	RECT m_rcTextPadding;
-	CImageAttribute m_sepImage;
-	int m_nScale;
+    RECT m_rcTextPadding;
+    CImageAttribute m_sepImage;
+    int m_nScale;
 };
 
 
@@ -436,11 +436,11 @@ public:
     void SetAttribute(LPCTSTR pstrName, LPCTSTR pstrValue);
     void DoPaint(HDC hDC, const RECT& rcPaint);
 
-    virtual void DrawItemText(HDC hDC, const RECT& rcItem);    
+    virtual void DrawItemText(HDC hDC, const RECT& rcItem);
     virtual void DrawItemBk(HDC hDC, const RECT& rcItem);
 
-	void SetPos(RECT rc);
-	
+    void SetPos(RECT rc);
+
 protected:
     int m_iIndex;
     bool m_bSelected;

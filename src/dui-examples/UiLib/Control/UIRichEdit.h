@@ -3,7 +3,8 @@
 
 #pragma once
 
-namespace UiLib {
+namespace UiLib
+{
 
 class CTxtWinHost;
 
@@ -83,7 +84,7 @@ public:
     int LineIndex(int nLine = -1) const;
     int LineLength(int nLine = -1) const;
     bool LineScroll(int nLines, int nChars = 0);
-	CPoint GetCharPos(long lChar) const;
+    CPoint GetCharPos(long lChar) const;
     long LineFromChar(long nIndex) const;
     CPoint PosFromChar(UINT nChar) const;
     int CharFromPos(CPoint pt) const;
@@ -91,14 +92,14 @@ public:
     UINT SetUndoLimit(UINT nLimit);
     long StreamIn(int nFormat, EDITSTREAM &es);
     long StreamOut(int nFormat, EDITSTREAM &es);
-	RECT GetTextPadding() const;
-	void SetTextPadding(RECT rc);
+    RECT GetTextPadding() const;
+    void SetTextPadding(RECT rc);
 
     void DoInit();
     // 注意：TxSendMessage和SendMessage是有区别的，TxSendMessage没有multibyte和unicode自动转换的功能，
     // 而richedit2.0内部是以unicode实现的，在multibyte程序中，必须自己处理unicode到multibyte的转换
-	bool SetDropAcceptFile(bool bAccept);
-    virtual HRESULT TxSendMessage(UINT msg, WPARAM wparam, LPARAM lparam, LRESULT *plresult) const; 
+    bool SetDropAcceptFile(bool bAccept);
+    virtual HRESULT TxSendMessage(UINT msg, WPARAM wparam, LPARAM lparam, LRESULT *plresult) const;
     IDropTarget* GetTxDropTarget();
     virtual bool OnTxViewChanged();
     virtual void OnTxNotify(DWORD iNotify, void *pv);
@@ -120,8 +121,8 @@ public:
     SIZE EstimateSize(SIZE szAvailable);
     void SetPos(RECT rc);
     void DoEvent(TEventUI& event);
-	void DoPaint(HDC hDC, const RECT& rcPaint);
-	void PaintBkColor(HDC hDC);
+    void DoPaint(HDC hDC, const RECT& rcPaint);
+    void PaintBkColor(HDC hDC);
 
     void SetAttribute(LPCTSTR pstrName, LPCTSTR pstrValue);
 
@@ -140,8 +141,8 @@ protected:
     int m_iFont;
     int m_iLimitText;
     LONG m_lTwhStyle;
-	bool m_bInited;
-	RECT m_rcTextPadding;
+    bool m_bInited;
+    RECT m_rcTextPadding;
 };
 
 } // namespace UiLib

@@ -3,7 +3,8 @@
 
 #pragma once
 
-namespace DuiLib {
+namespace DuiLib
+{
 /////////////////////////////////////////////////////////////////////////////////////
 //
 
@@ -13,8 +14,7 @@ class CRichEditUI;
 /////////////////////////////////////////////////////////////////////////////////////
 //
 
-typedef enum EVENTTYPE_UI
-{
+typedef enum EVENTTYPE_UI {
     UIEVENT__FIRST = 1,
     UIEVENT__KEYBEGIN,
     UIEVENT_KEYDOWN,
@@ -30,7 +30,7 @@ typedef enum EVENTTYPE_UI
     UIEVENT_BUTTONDOWN,
     UIEVENT_BUTTONUP,
     UIEVENT_RBUTTONDOWN,
-	UIEVENT_DBLCLICK,
+    UIEVENT_DBLCLICK,
     UIEVENT_CONTEXTMENU,
     UIEVENT_SCROLLWHEEL,
     UIEVENT__MOUSEEND,
@@ -82,8 +82,7 @@ typedef enum EVENTTYPE_UI
 /////////////////////////////////////////////////////////////////////////////////////
 //
 
-typedef struct tagTFontInfo
-{
+typedef struct tagTFontInfo {
     HFONT hFont;
     CDuiString sFontName;
     int iSize;
@@ -93,8 +92,7 @@ typedef struct tagTFontInfo
     TEXTMETRIC tm;
 } TFontInfo;
 
-typedef struct tagTImageInfo
-{
+typedef struct tagTImageInfo {
     HBITMAP hBitmap;
     int nX;
     int nY;
@@ -105,8 +103,7 @@ typedef struct tagTImageInfo
 
 // Structure for notifications from the system
 // to the control implementation.
-typedef struct tagTEventUI
-{
+typedef struct tagTEventUI {
     int Type;
     CControlUI* pSender;
     DWORD dwTimestamp;
@@ -118,15 +115,14 @@ typedef struct tagTEventUI
 } TEventUI;
 
 // Structure for relative position to the parent
-typedef struct tagTRelativePosUI
-{
-	bool bRelative;
-	SIZE szParent;
-	int nMoveXPercent;
-	int nMoveYPercent;
-	int nZoomXPercent;
-	int nZoomYPercent;
-}TRelativePosUI;
+typedef struct tagTRelativePosUI {
+    bool bRelative;
+    SIZE szParent;
+    int nMoveXPercent;
+    int nMoveYPercent;
+    int nZoomXPercent;
+    int nZoomYPercent;
+} TRelativePosUI;
 
 // Listener interface
 class INotifyUI
@@ -145,7 +141,7 @@ public:
 class ITranslateAccelerator
 {
 public:
-	virtual LRESULT TranslateAccelerator(MSG *pMsg) = 0;
+    virtual LRESULT TranslateAccelerator(MSG *pMsg) = 0;
 };
 
 
@@ -183,23 +179,23 @@ public:
     void SetMinInfo(int cx, int cy);
     SIZE GetMaxInfo() const;
     void SetMaxInfo(int cx, int cy);
-	int GetTransparent() const;
+    int GetTransparent() const;
     void SetTransparent(int nOpacity);
 
     void SetUseLayeredWindow(bool bTrans);
-	bool IsLayeredWindow();
-	RECT GetRichEditCorner() const;
-	void SetRichEditCorner(const RECT& rcRichedit);
+    bool IsLayeredWindow();
+    RECT GetRichEditCorner() const;
+    void SetRichEditCorner(const RECT& rcRichedit);
 
-	CRichEditUI* GetCurrentCaretRichEdit();
-	bool CreateCaret(HBITMAP hBmp, int nWidth, int nHeight);
-	bool SetCaretPos(CRichEditUI* obj, int x, int y);
-	bool ShowCaret(bool bShow);
-	void DrawCaret(HDC hDC, const RECT& rcPaint);
+    CRichEditUI* GetCurrentCaretRichEdit();
+    bool CreateCaret(HBITMAP hBmp, int nWidth, int nHeight);
+    bool SetCaretPos(CRichEditUI* obj, int x, int y);
+    bool ShowCaret(bool bShow);
+    void DrawCaret(HDC hDC, const RECT& rcPaint);
 
-	CShadowUI* GetShadow();
-	void SetUseGdiplusText(bool bUse);
-	bool IsUseGdiplusText() const;
+    CShadowUI* GetShadow();
+    void SetUseGdiplusText(bool bUse);
+    bool IsUseGdiplusText() const;
 
     static HINSTANCE GetInstance();
     static CDuiString GetInstancePath();
@@ -213,18 +209,18 @@ public:
     static void SetCurrentPath(LPCTSTR pStrPath);
     static void SetResourceDll(HINSTANCE hInst);
     static void SetResourcePath(LPCTSTR pStrPath);
-	//从资源文件中加载zip
-	static void SetResourceZip(UINT nResID);
-	//从内存数据加载zip
-	static void SetResourceZip(LPVOID pVoid, unsigned int len);
-	//从本地zip加载zip
+    //从资源文件中加载zip
+    static void SetResourceZip(UINT nResID);
+    //从内存数据加载zip
+    static void SetResourceZip(LPVOID pVoid, unsigned int len);
+    //从本地zip加载zip
     static void SetResourceZip(LPCTSTR pstrZip, bool bCachedResourceZip = false);
     static void GetHSL(short* H, short* S, short* L);
-    static void SetHSL(bool bUseHSL, short H, short S, short L); // H:0~360, S:0~200, L:0~200 
+    static void SetHSL(bool bUseHSL, short H, short S, short L); // H:0~360, S:0~200, L:0~200
     static void ReloadSkin();
     static bool LoadPlugin(LPCTSTR pstrModuleName);
-	static TImageInfo* LoadImage(STRINGorID bitmap, LPCTSTR type = NULL, DWORD mask = 0);
-	static void FreeImage(const TImageInfo* bitmap);
+    static TImageInfo* LoadImage(STRINGorID bitmap, LPCTSTR type = NULL, DWORD mask = 0);
+    static void FreeImage(const TImageInfo* bitmap);
     static CStdPtrArray* GetPlugins();
 
     bool UseParentResource(CPaintManagerUI* pm);
@@ -296,7 +292,7 @@ public:
     bool IsCaptured();
 
     bool AddNotifier(INotifyUI* pControl);
-    bool RemoveNotifier(INotifyUI* pControl);   
+    bool RemoveNotifier(INotifyUI* pControl);
     void SendNotify(TNotifyUI& Msg, bool bAsync = false);
     void SendNotify(CControlUI* pControl, LPCTSTR pstrMessage, WPARAM wParam = 0, LPARAM lParam = 0, bool bAsync = false);
 
@@ -313,9 +309,9 @@ public:
 
     void AddDelayedCleanup(CControlUI* pControl);
 
-	bool AddTranslateAccelerator(ITranslateAccelerator *pTranslateAccelerator);
-	bool RemoveTranslateAccelerator(ITranslateAccelerator *pTranslateAccelerator);
-	bool TranslateAccelerator(LPMSG pMsg);
+    bool AddTranslateAccelerator(ITranslateAccelerator *pTranslateAccelerator);
+    bool RemoveTranslateAccelerator(ITranslateAccelerator *pTranslateAccelerator);
+    bool TranslateAccelerator(LPMSG pMsg);
 
     CControlUI* GetRoot() const;
     CControlUI* FindControl(POINT pt) const;
@@ -328,11 +324,11 @@ public:
 
     static void MessageLoop();
     static bool TranslateMessage(const MSG* pMsg);
-	static void Term();
+    static void Term();
 
     bool MessageHandler(UINT uMsg, WPARAM wParam, LPARAM lParam, LRESULT& lRes);
     bool PreMessageHandler(UINT uMsg, WPARAM wParam, LPARAM lParam, LRESULT& lRes);
-	void UsedVirtualWnd(bool bUsed);
+    void UsedVirtualWnd(bool bUsed);
 
 private:
     static CControlUI* CALLBACK __FindControlFromNameHash(CControlUI* pThis, LPVOID pData);
@@ -346,31 +342,31 @@ private:
     static CControlUI* CALLBACK __FindControlsFromClass(CControlUI* pThis, LPVOID pData);
 
 private:
-    HWND	m_hWndPaint;	//所附加的窗体的句柄
-	int		m_nOpacity;		//窗体透明度
-    HDC		m_hDcPaint;		//窗体DC
-    HDC		m_hDcOffscreen;
+    HWND    m_hWndPaint;    //所附加的窗体的句柄
+    int     m_nOpacity;     //窗体透明度
+    HDC     m_hDcPaint;     //窗体DC
+    HDC     m_hDcOffscreen;
     HBITMAP m_hbmpOffscreen;
-	LPBYTE	m_pBmpOffscreenBits;
+    LPBYTE  m_pBmpOffscreenBits;
 
-	bool	m_bLayeredWindow;
-	RECT	m_rcInvalidate;		// 半透明异形窗体中，保存刷新区域
-	RECT	m_rcRichEditCorner;	// RichEdit控件的范围（距离左上右下窗体的边距），在分层窗体中，用于修复RichEdit的Alpha通道
-	bool	m_bIsRestore;
-	bool	m_bUseGdiplusText;
+    bool    m_bLayeredWindow;
+    RECT    m_rcInvalidate;     // 半透明异形窗体中，保存刷新区域
+    RECT    m_rcRichEditCorner; // RichEdit控件的范围（距离左上右下窗体的边距），在分层窗体中，用于修复RichEdit的Alpha通道
+    bool    m_bIsRestore;
+    bool    m_bUseGdiplusText;
 
-	CShadowUI m_shadow;
+    CShadowUI m_shadow;
 
-	//光标
-	RECT m_rcCaret;
-	bool m_bCaretActive;
-	bool m_bCaretShowing;
-	CRichEditUI *m_pCurrentCaretRichedit;
+    //光标
+    RECT m_rcCaret;
+    bool m_bCaretActive;
+    bool m_bCaretShowing;
+    CRichEditUI *m_pCurrentCaretRichedit;
 
-	//
-	HWND	m_hwndTooltip;
-	TOOLINFO m_ToolTip;
-	//
+    //
+    HWND    m_hwndTooltip;
+    TOOLINFO m_ToolTip;
+    //
     CControlUI* m_pRoot;
     CControlUI* m_pFocus;
     CControlUI* m_pEventHover;
@@ -390,7 +386,7 @@ private:
     bool m_bFocusNeeded;
     bool m_bMouseTracking;
     bool m_bMouseCapture;
-	bool m_bUsedVirtualWnd;
+    bool m_bUsedVirtualWnd;
 
     //
     CStdPtrArray m_aNotifiers;
@@ -416,8 +412,8 @@ private:
     CStdStringPtrMap m_mImageHash;
     CStdStringPtrMap m_DefaultAttrHash;
     //
-	static ULONG_PTR m_gdiplusToken;
-	static Gdiplus::GdiplusStartupInput *m_pGdiplusStartupInput;
+    static ULONG_PTR m_gdiplusToken;
+    static Gdiplus::GdiplusStartupInput *m_pGdiplusStartupInput;
     static HINSTANCE m_hInstance;
     static HINSTANCE m_hResourceInstance;
     static CDuiString m_pStrResourcePath;
@@ -431,8 +427,8 @@ private:
     static CStdPtrArray m_aPlugins;
 
 public:
-	static CDuiString m_pStrDefaultFontName;
-	CStdPtrArray m_aTranslateAccelerator;
+    static CDuiString m_pStrDefaultFontName;
+    CStdPtrArray m_aTranslateAccelerator;
 };
 
 } // namespace DuiLib

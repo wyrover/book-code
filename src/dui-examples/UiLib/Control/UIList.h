@@ -5,13 +5,14 @@
 #include "Layout/UIVerticalLayout.h"
 #include "Layout/UIHorizontalLayout.h"
 
-namespace UiLib {
+namespace UiLib
+{
 /////////////////////////////////////////////////////////////////////////////////////
 //
 
-#define ULVHT_NOWHERE				0x0001
-#define ULVHT_ITEM					0x0002
-#define ULVHT_CHECKBOX				0x0004
+#define ULVHT_NOWHERE               0x0001
+#define ULVHT_ITEM                  0x0002
+#define ULVHT_CHECKBOX              0x0004
 
 typedef int (CALLBACK *PULVCompareFunc)(UINT_PTR, UINT_PTR, UINT_PTR);
 
@@ -19,8 +20,7 @@ class CListHeaderUI;
 
 #define UILIST_MAX_COLUMNS 32
 
-typedef struct tagTListInfoUI
-{
+typedef struct tagTListInfoUI {
     int nColumns;
     RECT rcColumn[UILIST_MAX_COLUMNS];
     int nFont;
@@ -42,10 +42,10 @@ typedef struct tagTListInfoUI
     DWORD dwLineColor;
     bool bShowHtml;
     bool bMultiExpandable;
-	SIZE szCheckImg;
-	SIZE szIconImg;
-	bool bShowVLine;
-	bool bShowHLine;
+    SIZE szCheckImg;
+    SIZE szIconImg;
+    bool bShowVLine;
+    bool bShowHLine;
 } TListInfoUI;
 
 
@@ -77,14 +77,14 @@ public:
     virtual bool ExpandItem(int iIndex, bool bExpand = true) = 0;
     virtual int GetExpandedItem() const = 0;
 
-	virtual bool SelectMultiItem(int iIndex, bool bTakeFocus = false) = 0;
-	virtual void SetSingleSelect(bool bSingleSel) = 0;
-	virtual bool GetSingleSelect() const = 0;
-	virtual bool UnSelectItem(int iIndex) = 0;
-	virtual void SelectAllItems() = 0;
-	virtual void UnSelectAllItems() = 0;
-	virtual int GetSelectItemCount() const = 0;
-	virtual int GetNextSelItem(int nItem) const = 0;
+    virtual bool SelectMultiItem(int iIndex, bool bTakeFocus = false) = 0;
+    virtual void SetSingleSelect(bool bSingleSel) = 0;
+    virtual bool GetSingleSelect() const = 0;
+    virtual bool UnSelectItem(int iIndex) = 0;
+    virtual void SelectAllItems() = 0;
+    virtual void UnSelectAllItems() = 0;
+    virtual int GetSelectItemCount() const = 0;
+    virtual int GetNextSelItem(int nItem) const = 0;
 };
 
 class IListItemUI
@@ -122,16 +122,16 @@ public:
     int GetCurSel() const;
     bool SelectItem(int iIndex, bool bTakeFocus = false);
 
-	bool SelectMultiItem(int iIndex, bool bTakeFocus = false);
-	void SetSingleSelect(bool bSingleSel);
-	bool GetSingleSelect() const;
-	bool UnSelectItem(int iIndex);
-	void SelectAllItems();
-	void UnSelectAllItems();
-	int GetSelectItemCount() const;
-	int GetNextSelItem(int nItem) const;
+    bool SelectMultiItem(int iIndex, bool bTakeFocus = false);
+    void SetSingleSelect(bool bSingleSel);
+    bool GetSingleSelect() const;
+    bool UnSelectItem(int iIndex);
+    void SelectAllItems();
+    void UnSelectAllItems();
+    int GetSelectItemCount() const;
+    int GetNextSelItem(int nItem) const;
 
-    CListHeaderUI* GetHeader() const;  
+    CListHeaderUI* GetHeader() const;
     CContainerUI* GetList() const;
     TListInfoUI* GetListInfo();
 
@@ -160,47 +160,47 @@ public:
     void SetAlternateBk(bool bAlternateBk);
     void SetSelectedItemTextColor(DWORD dwTextColor);
     void SetSelectedItemBkColor(DWORD dwBkColor);
-    void SetSelectedItemImage(LPCTSTR pStrImage); 
+    void SetSelectedItemImage(LPCTSTR pStrImage);
     void SetHotItemTextColor(DWORD dwTextColor);
     void SetHotItemBkColor(DWORD dwBkColor);
     void SetHotItemImage(LPCTSTR pStrImage);
     void SetDisabledItemTextColor(DWORD dwTextColor);
     void SetDisabledItemBkColor(DWORD dwBkColor);
     void SetDisabledItemImage(LPCTSTR pStrImage);
-	void SetItemLineColor(DWORD dwLineColor);
-	void SetCheckImgSize(SIZE szCheckImg);
-	void SetIconImgSize(SIZE szIconImg);
-	void SetShowVLine(bool bVLine);
-	void SetShowHLine(bool bHLine);
+    void SetItemLineColor(DWORD dwLineColor);
+    void SetCheckImgSize(SIZE szCheckImg);
+    void SetIconImgSize(SIZE szIconImg);
+    void SetShowVLine(bool bVLine);
+    void SetShowHLine(bool bHLine);
     bool IsItemShowHtml();
     void SetItemShowHtml(bool bShowHtml = true);
-	RECT GetItemTextPadding() const;
-	DWORD GetItemTextColor() const;
-	DWORD GetItemBkColor() const;
-	LPCTSTR GetItemBkImage() const;
+    RECT GetItemTextPadding() const;
+    DWORD GetItemTextColor() const;
+    DWORD GetItemBkColor() const;
+    LPCTSTR GetItemBkImage() const;
     bool IsAlternateBk() const;
-	DWORD GetSelectedItemTextColor() const;
-	DWORD GetSelectedItemBkColor() const;
-	LPCTSTR GetSelectedItemImage() const;
-	DWORD GetHotItemTextColor() const;
-	DWORD GetHotItemBkColor() const;
-	LPCTSTR GetHotItemImage() const;
-	DWORD GetDisabledItemTextColor() const;
-	DWORD GetDisabledItemBkColor() const;
-	LPCTSTR GetDisabledItemImage() const;
-	DWORD GetItemLineColor() const;
-	SIZE GetCheckImgSize() const;
-	SIZE GetIconImgSize() const;
-	bool IsShowVLine() const;
-	bool IsShowHLine() const;
+    DWORD GetSelectedItemTextColor() const;
+    DWORD GetSelectedItemBkColor() const;
+    LPCTSTR GetSelectedItemImage() const;
+    DWORD GetHotItemTextColor() const;
+    DWORD GetHotItemBkColor() const;
+    LPCTSTR GetHotItemImage() const;
+    DWORD GetDisabledItemTextColor() const;
+    DWORD GetDisabledItemBkColor() const;
+    LPCTSTR GetDisabledItemImage() const;
+    DWORD GetItemLineColor() const;
+    SIZE GetCheckImgSize() const;
+    SIZE GetIconImgSize() const;
+    bool IsShowVLine() const;
+    bool IsShowHLine() const;
 
     void SetMultiExpanding(bool bMultiExpandable);
-	int GetExpandedItem() const;
-	void SetMultipleItem(bool bMultipleable);
-	bool GetMultipleItem() const;
+    int GetExpandedItem() const;
+    void SetMultipleItem(bool bMultipleable);
+    bool GetMultipleItem() const;
     bool ExpandItem(int iIndex, bool bExpand = true);
 
-	void SetPos(RECT rc);
+    void SetPos(RECT rc);
     void DoEvent(TEventUI& event);
     void SetAttribute(LPCTSTR pstrName, LPCTSTR pstrValue);
 
@@ -226,16 +226,16 @@ public:
     virtual CScrollBarUI* GetVerticalScrollBar() const;
     virtual CScrollBarUI* GetHorizontalScrollBar() const;
 
-	BOOL SortItems(PULVCompareFunc pfnCompare, UINT_PTR dwData);
+    BOOL SortItems(PULVCompareFunc pfnCompare, UINT_PTR dwData);
 protected:
-	int GetMinSelItemIndex();
-	int GetMaxSelItemIndex();
+    int GetMinSelItemIndex();
+    int GetMaxSelItemIndex();
 
 protected:
     bool m_bScrollSelect;
-	//int m_iCurSel;
-	bool m_bSingleSel;
-	CStdPtrArray m_aSelItems;
+    //int m_iCurSel;
+    bool m_bSingleSel;
+    CStdPtrArray m_aSelItems;
     int m_iExpandedItem;
     IListCallbackUI* m_pCallback;
     CListBodyUI* m_pList;
@@ -255,16 +255,16 @@ public:
     void SetPos(RECT rc);
     void DoEvent(TEventUI& event);
 
-	BOOL SortItems(PULVCompareFunc pfnCompare, UINT_PTR dwData);
+    BOOL SortItems(PULVCompareFunc pfnCompare, UINT_PTR dwData);
 
 protected:
-	static int __cdecl ItemComareFunc(void *pvlocale, const void *item1, const void *item2);
-	int __cdecl ItemComareFunc(const void *item1, const void *item2);
+    static int __cdecl ItemComareFunc(void *pvlocale, const void *item1, const void *item2);
+    int __cdecl ItemComareFunc(const void *item1, const void *item2);
 
 protected:
     CListUI* m_pOwner;
-	PULVCompareFunc m_pCompareFunc;
-	UINT_PTR m_compareData;
+    PULVCompareFunc m_pCompareFunc;
+    UINT_PTR m_compareData;
 };
 
 /////////////////////////////////////////////////////////////////////////////////////
@@ -296,16 +296,16 @@ public:
 
     void SetEnabled(bool bEnable = true);
 
-	bool IsDragable() const;
+    bool IsDragable() const;
     void SetDragable(bool bDragable);
-	DWORD GetSepWidth() const;
+    DWORD GetSepWidth() const;
     void SetSepWidth(int iWidth);
-	DWORD GetTextStyle() const;
+    DWORD GetTextStyle() const;
     void SetTextStyle(UINT uStyle);
-	DWORD GetTextColor() const;
+    DWORD GetTextColor() const;
     void SetTextColor(DWORD dwTextColor);
-	void SetTextPadding(RECT rc);
-	RECT GetTextPadding() const;
+    void SetTextPadding(RECT rc);
+    RECT GetTextPadding() const;
     void SetFont(int index);
     bool IsShowHtml();
     void SetShowHtml(bool bShowHtml = true);
@@ -337,7 +337,7 @@ protected:
     int m_iFont;
     UINT m_uTextStyle;
     bool m_bShowHtml;
-	RECT m_rcTextPadding;
+    RECT m_rcTextPadding;
     CDuiString m_sNormalImage;
     CDuiString m_sHotImage;
     CDuiString m_sPushedImage;
@@ -421,7 +421,7 @@ public:
     LPVOID GetInterface(LPCTSTR pstrName);
     UINT GetControlFlags() const;
 
-	bool Select(bool bSelect = true);
+    bool Select(bool bSelect = true);
 
     LPCTSTR GetText(int iIndex) const;
     void SetText(int iIndex, LPCTSTR pstrText);
@@ -451,44 +451,44 @@ protected:
 class UILIB_API CListImageTextElementUI : public CListTextElementUI
 {
 public:
-	CListImageTextElementUI();
-	~CListImageTextElementUI();
+    CListImageTextElementUI();
+    ~CListImageTextElementUI();
 
-	LPCTSTR GetClass() const;
-	LPVOID GetInterface(LPCTSTR pstrName);
+    LPCTSTR GetClass() const;
+    LPVOID GetInterface(LPCTSTR pstrName);
 
-	LPCTSTR GetNorImg(int iIndex) const;
-	LPCTSTR GetSelImg(int iIndex) const;
-	void SetNorImg(int iIndex, LPCTSTR pstrText);
-	void SetSelImg(int iIndex, LPCTSTR pstrText);
+    LPCTSTR GetNorImg(int iIndex) const;
+    LPCTSTR GetSelImg(int iIndex) const;
+    void SetNorImg(int iIndex, LPCTSTR pstrText);
+    void SetSelImg(int iIndex, LPCTSTR pstrText);
 
-	void SetCheckFlag(int iIndex, bool bStartCheck = TRUE);
-	bool GetCheckFlag(int iIndex) const;
-	void SetCheck(int iIndex, bool bCheck);
-	bool GetCheck(int iIndex) const;	
-	LPCTSTR GetNorCheckImg(int iIndex) const;
-	LPCTSTR GetSelCheckImg(int iIndex) const;
-	void SetNorCheckImg(int iIndex, LPCTSTR pstrText);
-	void SetSelCheckImg(int iIndex, LPCTSTR pstrText);
+    void SetCheckFlag(int iIndex, bool bStartCheck = TRUE);
+    bool GetCheckFlag(int iIndex) const;
+    void SetCheck(int iIndex, bool bCheck);
+    bool GetCheck(int iIndex) const;
+    LPCTSTR GetNorCheckImg(int iIndex) const;
+    LPCTSTR GetSelCheckImg(int iIndex) const;
+    void SetNorCheckImg(int iIndex, LPCTSTR pstrText);
+    void SetSelCheckImg(int iIndex, LPCTSTR pstrText);
 
-	int HitTest(POINT pt, UINT* pFlags = NULL);
+    int HitTest(POINT pt, UINT* pFlags = NULL);
 
-	RECT GetItemRect(int iIndex);
-	RECT GetItemRectPadding(int iIndex);
-	RECT GetItemCheckRect(int iIndex);
-	RECT GetItemImgRect(int iIndex);
-	RECT GetItemTextRect(int iIndex);
+    RECT GetItemRect(int iIndex);
+    RECT GetItemRectPadding(int iIndex);
+    RECT GetItemCheckRect(int iIndex);
+    RECT GetItemImgRect(int iIndex);
+    RECT GetItemTextRect(int iIndex);
 
-	void DoEvent(TEventUI& event);
-	void DrawItemText(HDC hDC, const RECT& rcItem);	
+    void DoEvent(TEventUI& event);
+    void DrawItemText(HDC hDC, const RECT& rcItem);
 
-protected:	
-	CStdPtrArray m_aImgNor;
-	CStdPtrArray m_aImgSel;
-	CStdValArray m_aStartCheck;
-	CStdValArray m_aCheck;
-	CStdPtrArray m_aImgNorCheck;
-	CStdPtrArray m_aImgSelCheck;
+protected:
+    CStdPtrArray m_aImgNor;
+    CStdPtrArray m_aImgSel;
+    CStdValArray m_aStartCheck;
+    CStdValArray m_aCheck;
+    CStdPtrArray m_aImgNorCheck;
+    CStdPtrArray m_aImgSelCheck;
 };
 
 
@@ -523,12 +523,12 @@ public:
     void SetAttribute(LPCTSTR pstrName, LPCTSTR pstrValue);
     void DoPaint(HDC hDC, const RECT& rcPaint);
 
-    virtual void DrawItemText(HDC hDC, const RECT& rcItem);    
+    virtual void DrawItemText(HDC hDC, const RECT& rcItem);
     virtual void DrawItemBk(HDC hDC, const RECT& rcItem);
-	void SetPos(RECT rc);
+    void SetPos(RECT rc);
 
 public:
-	CListHeaderUI *m_pHeader;
+    CListHeaderUI *m_pHeader;
 protected:
     int m_iIndex;
     bool m_bSelected;

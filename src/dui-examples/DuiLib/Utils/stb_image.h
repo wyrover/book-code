@@ -387,19 +387,18 @@ License:
 
 
 #ifndef STBI_NO_STDIO
-#include <stdio.h>
+    #include <stdio.h>
 #endif // STBI_NO_STDIO
 
 #define STBI_VERSION 1
 
-enum
-{
-   STBI_default = 0, // only used for req_comp
+enum {
+    STBI_default = 0, // only used for req_comp
 
-   STBI_grey       = 1,
-   STBI_grey_alpha = 2,
-   STBI_rgb        = 3,
-   STBI_rgb_alpha  = 4
+    STBI_grey       = 1,
+    STBI_grey_alpha = 2,
+    STBI_rgb        = 3,
+    STBI_rgb_alpha  = 4
 };
 
 typedef unsigned char stbi_uc;
@@ -423,65 +422,64 @@ extern "C" {
 // load image by filename, open file, or memory buffer
 //
 
-typedef struct
-{
-   int      (*read)  (void *user,char *data,int size);   // fill 'data' with 'size' bytes.  return number of bytes actually read
-   void     (*skip)  (void *user,int n);                 // skip the next 'n' bytes, or 'unget' the last -n bytes if negative
-   int      (*eof)   (void *user);                       // returns nonzero if we are at end of file/data
+typedef struct {
+    int (*read)(void *user, char *data, int size);        // fill 'data' with 'size' bytes.  return number of bytes actually read
+    void (*skip)(void *user, int n);                      // skip the next 'n' bytes, or 'unget' the last -n bytes if negative
+    int (*eof)(void *user);                               // returns nonzero if we are at end of file/data
 } stbi_io_callbacks;
 
-STBIDEF stbi_uc *stbi_load               (char              const *filename,           int *x, int *y, int *comp, int req_comp);
-STBIDEF stbi_uc *stbi_load_from_memory   (stbi_uc           const *buffer, int len   , int *x, int *y, int *comp, int req_comp);
+STBIDEF stbi_uc *stbi_load(char              const *filename,           int *x, int *y, int *comp, int req_comp);
+STBIDEF stbi_uc *stbi_load_from_memory(stbi_uc           const *buffer, int len   , int *x, int *y, int *comp, int req_comp);
 STBIDEF stbi_uc *stbi_load_from_callbacks(stbi_io_callbacks const *clbk  , void *user, int *x, int *y, int *comp, int req_comp);
 
 #ifndef STBI_NO_STDIO
-STBIDEF stbi_uc *stbi_load_from_file  (FILE *f,                  int *x, int *y, int *comp, int req_comp);
+STBIDEF stbi_uc *stbi_load_from_file(FILE *f,                  int *x, int *y, int *comp, int req_comp);
 // for stbi_load_from_file, file pointer is left pointing immediately after image
 #endif
 
 #ifndef STBI_NO_LINEAR
-   STBIDEF float *stbi_loadf                 (char const *filename,           int *x, int *y, int *comp, int req_comp);
-   STBIDEF float *stbi_loadf_from_memory     (stbi_uc const *buffer, int len, int *x, int *y, int *comp, int req_comp);
-   STBIDEF float *stbi_loadf_from_callbacks  (stbi_io_callbacks const *clbk, void *user, int *x, int *y, int *comp, int req_comp);
+STBIDEF float *stbi_loadf(char const *filename,           int *x, int *y, int *comp, int req_comp);
+STBIDEF float *stbi_loadf_from_memory(stbi_uc const *buffer, int len, int *x, int *y, int *comp, int req_comp);
+STBIDEF float *stbi_loadf_from_callbacks(stbi_io_callbacks const *clbk, void *user, int *x, int *y, int *comp, int req_comp);
 
-   #ifndef STBI_NO_STDIO
-   STBIDEF float *stbi_loadf_from_file  (FILE *f,                int *x, int *y, int *comp, int req_comp);
-   #endif
+#ifndef STBI_NO_STDIO
+STBIDEF float *stbi_loadf_from_file(FILE *f,                int *x, int *y, int *comp, int req_comp);
+#endif
 #endif
 
 #ifndef STBI_NO_HDR
-   STBIDEF void   stbi_hdr_to_ldr_gamma(float gamma);
-   STBIDEF void   stbi_hdr_to_ldr_scale(float scale);
+STBIDEF void   stbi_hdr_to_ldr_gamma(float gamma);
+STBIDEF void   stbi_hdr_to_ldr_scale(float scale);
 #endif
 
 #ifndef STBI_NO_LINEAR
-   STBIDEF void   stbi_ldr_to_hdr_gamma(float gamma);
-   STBIDEF void   stbi_ldr_to_hdr_scale(float scale);
+STBIDEF void   stbi_ldr_to_hdr_gamma(float gamma);
+STBIDEF void   stbi_ldr_to_hdr_scale(float scale);
 #endif // STBI_NO_HDR
 
 // stbi_is_hdr is always defined, but always returns false if STBI_NO_HDR
 STBIDEF int    stbi_is_hdr_from_callbacks(stbi_io_callbacks const *clbk, void *user);
 STBIDEF int    stbi_is_hdr_from_memory(stbi_uc const *buffer, int len);
 #ifndef STBI_NO_STDIO
-STBIDEF int      stbi_is_hdr          (char const *filename);
+STBIDEF int      stbi_is_hdr(char const *filename);
 STBIDEF int      stbi_is_hdr_from_file(FILE *f);
 #endif // STBI_NO_STDIO
 
 
 // get a VERY brief reason for failure
 // NOT THREADSAFE
-STBIDEF const char *stbi_failure_reason  (void);
+STBIDEF const char *stbi_failure_reason(void);
 
 // free the loaded image -- this is just free()
-STBIDEF void     stbi_image_free      (void *retval_from_stbi_load);
+STBIDEF void     stbi_image_free(void *retval_from_stbi_load);
 
 // get image dimensions & components without fully decoding
 STBIDEF int      stbi_info_from_memory(stbi_uc const *buffer, int len, int *x, int *y, int *comp);
 STBIDEF int      stbi_info_from_callbacks(stbi_io_callbacks const *clbk, void *user, int *x, int *y, int *comp);
 
 #ifndef STBI_NO_STDIO
-STBIDEF int      stbi_info            (char const *filename,     int *x, int *y, int *comp);
-STBIDEF int      stbi_info_from_file  (FILE *f,                  int *x, int *y, int *comp);
+STBIDEF int      stbi_info(char const *filename,     int *x, int *y, int *comp);
+STBIDEF int      stbi_info_from_file(FILE *f,                  int *x, int *y, int *comp);
 
 #endif
 

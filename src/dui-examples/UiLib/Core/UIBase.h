@@ -4,7 +4,8 @@
 
 #pragma once
 
-namespace UiLib {
+namespace UiLib
+{
 /////////////////////////////////////////////////////////////////////////////////////
 //
 
@@ -25,23 +26,23 @@ namespace UiLib {
 /////////////////////////////////////////////////////////////////////////////////////
 //
 #ifndef ASSERT
-#define ASSERT(expr)  _ASSERTE(expr)
+    #define ASSERT(expr)  _ASSERTE(expr)
 #endif
 
 #ifdef _DEBUG
-#ifndef DUITRACE
-#define DUITRACE DUI__Trace
-#endif
-#define DUITRACEMSG DUI__TraceMsg
+    #ifndef DUITRACE
+        #define DUITRACE DUI__Trace
+    #endif
+    #define DUITRACEMSG DUI__TraceMsg
 #else
-#ifndef DUITRACE
-#define DUITRACE
-#endif
-#define DUITRACEMSG _T("")
+    #ifndef DUITRACE
+        #define DUITRACE
+    #endif
+    #define DUITRACEMSG _T("")
 #endif
 
 void UILIB_API DUI__Trace(LPCTSTR pstrFormat, ...);
-void UILIB_API DUI__Trace(LPCSTR pstrFormat,...);
+void UILIB_API DUI__Trace(LPCSTR pstrFormat, ...);
 LPCTSTR UILIB_API DUI__TraceMsg(UINT uMsg);
 
 /////////////////////////////////////////////////////////////////////////////////////
@@ -50,13 +51,13 @@ LPCTSTR UILIB_API DUI__TraceMsg(UINT uMsg);
 class UILIB_API CNotifyPump
 {
 public:
-	bool AddVirtualWnd(CDuiString strName,CNotifyPump* pObject);
-	bool RemoveVirtualWnd(CDuiString strName);
-	void NotifyPump(TNotifyUI& msg);
-	bool LoopDispatch(TNotifyUI& msg);
-	DUI_DECLARE_MESSAGE_MAP()
+    bool AddVirtualWnd(CDuiString strName, CNotifyPump* pObject);
+    bool RemoveVirtualWnd(CDuiString strName);
+    void NotifyPump(TNotifyUI& msg);
+    bool LoopDispatch(TNotifyUI& msg);
+    DUI_DECLARE_MESSAGE_MAP()
 private:
-	CStdStringPtrMap m_VirtualWndMap;
+    CStdStringPtrMap m_VirtualWndMap;
 };
 
 class UILIB_API CWindowWnd
@@ -72,7 +73,7 @@ public:
 
     HWND Create(HWND hwndParent, LPCTSTR pstrName, DWORD dwStyle, DWORD dwExStyle, const RECT rc, HMENU hMenu = NULL);
     HWND Create(HWND hwndParent, LPCTSTR pstrName, DWORD dwStyle, DWORD dwExStyle, int x = CW_USEDEFAULT, int y = CW_USEDEFAULT, int cx = CW_USEDEFAULT, int cy = CW_USEDEFAULT, HMENU hMenu = NULL);
-    HWND CreateDuiWindow(HWND hwndParent, LPCTSTR pstrWindowName,DWORD dwStyle =0, DWORD dwExStyle =0);
+    HWND CreateDuiWindow(HWND hwndParent, LPCTSTR pstrWindowName, DWORD dwStyle = 0, DWORD dwExStyle = 0);
     HWND Subclass(HWND hWnd);
     void Unsubclass();
     void ShowWindow(bool bShow = true, bool bTakeFocus = true);

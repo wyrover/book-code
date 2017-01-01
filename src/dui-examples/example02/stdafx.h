@@ -29,21 +29,21 @@ using namespace DuiLib;
 #pragma warning(disable:4192)
 
 #ifdef _UNICODE
-	typedef std::wstring	tstring;
+    typedef std::wstring    tstring;
 #else
-	typedef std::string		tstring;
+    typedef std::string     tstring;
 #endif
 
 //#ifdef _UNICODE
-//#	ifdef _DEBUG
-//#		pragma comment(lib, "DuiLib_ud.lib")
-//#	else
-//#		pragma comment(lib, "DuiLib_u.lib")
-//#	endif
+//# ifdef _DEBUG
+//#     pragma comment(lib, "DuiLib_ud.lib")
+//# else
+//#     pragma comment(lib, "DuiLib_u.lib")
+//# endif
 //#else
-//#	ifdef _DEBUG
-//#		pragma comment(lib, "DuiLib_d.lib")
-//#	else
-//#		pragma comment(lib, "DuiLib.lib")
-//#	endif
+//# ifdef _DEBUG
+//#     pragma comment(lib, "DuiLib_d.lib")
+//# else
+//#     pragma comment(lib, "DuiLib.lib")
+//# endif
 //#endif

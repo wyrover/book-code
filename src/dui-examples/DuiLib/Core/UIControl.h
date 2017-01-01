@@ -3,7 +3,8 @@
 
 #pragma once
 
-namespace DuiLib {
+namespace DuiLib
+{
 
 /////////////////////////////////////////////////////////////////////////////////////
 //
@@ -42,47 +43,47 @@ public:
 
     LPCTSTR GetBkImage();
     void SetBkImage(LPCTSTR pStrImage);
-	LPCTSTR GetNormalImage();
-	void SetNormalImage(LPCTSTR pStrImage);
-	LPCTSTR GetHotImage();
-	void SetHotImage(LPCTSTR pStrImage);
-	LPCTSTR GetPushedImage();
-	void SetPushedImage(LPCTSTR pStrImage);
-	LPCTSTR GetFocusedImage();
-	void SetFocusedImage(LPCTSTR pStrImage);
-	LPCTSTR GetDisabledImage();
-	void SetDisabledImage(LPCTSTR pStrImage);
-	LPCTSTR GetForeImage();
-	void SetForeImage(LPCTSTR pStrImage);
+    LPCTSTR GetNormalImage();
+    void SetNormalImage(LPCTSTR pStrImage);
+    LPCTSTR GetHotImage();
+    void SetHotImage(LPCTSTR pStrImage);
+    LPCTSTR GetPushedImage();
+    void SetPushedImage(LPCTSTR pStrImage);
+    LPCTSTR GetFocusedImage();
+    void SetFocusedImage(LPCTSTR pStrImage);
+    LPCTSTR GetDisabledImage();
+    void SetDisabledImage(LPCTSTR pStrImage);
+    LPCTSTR GetForeImage();
+    void SetForeImage(LPCTSTR pStrImage);
 
-	DWORD GetFocusBorderColor() const;
-	void SetFocusBorderColor(DWORD dwBorderColor);
+    DWORD GetFocusBorderColor() const;
+    void SetFocusBorderColor(DWORD dwBorderColor);
     bool IsColorHSL() const;
     void SetColorHSL(bool bColorHSL);
     SIZE GetBorderRound() const;
     void SetBorderRound(SIZE cxyRound);
-	bool DrawImage(HDC hDC, CImageAttribute& image);
-	//因为经常需要指定绘制的Dest，所以专门增加rcDest参数控制输出位置
-	bool DrawImage(HDC hDC, CImageAttribute& image, const RECT& rcDest);
-	bool DrawImage(HDC hDC, CImageAttribute& image, LPCTSTR pStrModify);
+    bool DrawImage(HDC hDC, CImageAttribute& image);
+    //因为经常需要指定绘制的Dest，所以专门增加rcDest参数控制输出位置
+    bool DrawImage(HDC hDC, CImageAttribute& image, const RECT& rcDest);
+    bool DrawImage(HDC hDC, CImageAttribute& image, LPCTSTR pStrModify);
 
-	//边框相关
-	int GetBorderSize() const;
-	void SetBorderSize(int nSize);
-	DWORD GetBorderColor() const;
-	void SetBorderColor(DWORD dwBorderColor);
+    //边框相关
+    int GetBorderSize() const;
+    void SetBorderSize(int nSize);
+    DWORD GetBorderColor() const;
+    void SetBorderColor(DWORD dwBorderColor);
 
-	void SetBorderSize(RECT rc);
-	int GetLeftBorderSize() const;
-	void SetLeftBorderSize(int nSize);
-	int GetTopBorderSize() const;
-	void SetTopBorderSize(int nSize);
-	int GetRightBorderSize() const;
-	void SetRightBorderSize(int nSize);
-	int GetBottomBorderSize() const;
-	void SetBottomBorderSize(int nSize);
-	int GetBorderStyle() const;
-	void SetBorderStyle(int nStyle);
+    void SetBorderSize(RECT rc);
+    int GetLeftBorderSize() const;
+    void SetLeftBorderSize(int nSize);
+    int GetTopBorderSize() const;
+    void SetTopBorderSize(int nSize);
+    int GetRightBorderSize() const;
+    void SetRightBorderSize(int nSize);
+    int GetBottomBorderSize() const;
+    void SetBottomBorderSize(int nSize);
+    int GetBorderStyle() const;
+    void SetBorderStyle(int nStyle);
 
     // 位置相关
     virtual const RECT& GetPos() const;
@@ -107,7 +108,7 @@ public:
     virtual void SetMinHeight(int cy);
     virtual int GetMaxHeight() const;
     virtual void SetMaxHeight(int cy);
-    virtual void SetRelativePos(SIZE szMove,SIZE szZoom);
+    virtual void SetRelativePos(SIZE szMove, SIZE szZoom);
     virtual void SetRelativeParentSize(SIZE sz);
     virtual TRelativePosUI GetRelativePos() const;
     virtual bool IsRelativePos() const;
@@ -115,8 +116,8 @@ public:
     // 鼠标提示
     virtual CDuiString GetToolTip() const;
     virtual void SetToolTip(LPCTSTR pstrText);
-	virtual void SetToolTipWidth(int nWidth);
-	virtual int	  GetToolTipWidth(void);	// 多行ToolTip单行最长宽度
+    virtual void SetToolTipWidth(int nWidth);
+    virtual int   GetToolTipWidth(void);    // 多行ToolTip单行最长宽度
 
     // 快捷键
     virtual TCHAR GetShortcut() const;
@@ -175,9 +176,9 @@ public:
 
     virtual void DoPostPaint(HDC hDC, const RECT& rcPaint);
 
-	//虚拟窗口参数
-	void SetVirtualWnd(LPCTSTR pstrValue);
-	CDuiString GetVirtualWnd() const;
+    //虚拟窗口参数
+    void SetVirtualWnd(LPCTSTR pstrValue);
+    CDuiString GetVirtualWnd() const;
 
 public:
     CEventSource OnInit;
@@ -189,7 +190,7 @@ public:
 protected:
     CPaintManagerUI* m_pManager;
     CControlUI* m_pParent;
-	CDuiString m_sVirtualWnd;
+    CDuiString m_sVirtualWnd;
     CDuiString m_sName;
     bool m_bUpdateNeeded;
     bool m_bMenuUsed;
@@ -203,7 +204,7 @@ protected:
     bool m_bInternVisible;
     bool m_bEnabled;
     bool m_bMouseEnabled;
-	bool m_bKeyboardEnabled ;
+    bool m_bKeyboardEnabled ;
     bool m_bFocused;
     bool m_bFloat;
     bool m_bSetPos; // 防止SetPos循环调用
@@ -219,23 +220,23 @@ protected:
     DWORD m_dwBackColor2;
     DWORD m_dwBackColor3;
 
-	CImageAttribute m_bkImage;
-	CImageAttribute m_foreImage;
-	CImageAttribute m_normalImage;
-	CImageAttribute m_hotImage;
-	CImageAttribute m_pushedImage;
-	CImageAttribute m_focusedImage;
-	CImageAttribute m_disabledImage;
+    CImageAttribute m_bkImage;
+    CImageAttribute m_foreImage;
+    CImageAttribute m_normalImage;
+    CImageAttribute m_hotImage;
+    CImageAttribute m_pushedImage;
+    CImageAttribute m_focusedImage;
+    CImageAttribute m_disabledImage;
 
     DWORD m_dwBorderColor;
-	DWORD m_dwFocusBorderColor;
+    DWORD m_dwFocusBorderColor;
     bool m_bColorHSL;
     int m_nBorderSize;
-	int m_nBorderStyle;
-	int m_nTooltipWidth;
+    int m_nBorderStyle;
+    int m_nTooltipWidth;
     SIZE m_cxyBorderRound;
     RECT m_rcPaint;
-	RECT m_rcBorderSize;
+    RECT m_rcBorderSize;
 };
 
 } // namespace DuiLib

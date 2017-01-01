@@ -6,7 +6,8 @@
 struct IOleObject;
 
 
-namespace DuiLib {
+namespace DuiLib
+{
 /////////////////////////////////////////////////////////////////////////////////////
 //
 
@@ -17,8 +18,16 @@ class CSafeRelease
 {
 public:
     CSafeRelease(T* p) : m_p(p) { };
-    ~CSafeRelease() { if( m_p != NULL ) m_p->Release(); };
-    T* Detach() { T* t = m_p; m_p = NULL; return t; };
+    ~CSafeRelease()
+    {
+        if (m_p != NULL) m_p->Release();
+    };
+    T* Detach()
+    {
+        T* t = m_p;
+        m_p = NULL;
+        return t;
+    };
     T* m_p;
 };
 
@@ -33,7 +42,7 @@ public:
     virtual ~CActiveXUI();
 
     LPCTSTR GetClass() const;
-	LPVOID GetInterface(LPCTSTR pstrName);
+    LPVOID GetInterface(LPCTSTR pstrName);
 
     HWND GetHostWindow() const;
 
@@ -43,7 +52,7 @@ public:
     bool CreateControl(const CLSID clsid);
     bool CreateControl(LPCTSTR pstrCLSID);
     HRESULT GetControl(const IID iid, LPVOID* ppRet);
-	CLSID GetClisd() const;
+    CLSID GetClisd() const;
     CDuiString GetModuleName() const;
     void SetModuleName(LPCTSTR pstrText);
 

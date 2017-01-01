@@ -3,10 +3,10 @@
 
 #pragma once
 
-namespace DuiLib {
-
-enum
+namespace DuiLib
 {
+
+enum {
     XMLFILE_ENCODING_UTF8 = 0,
     XMLFILE_ENCODING_UNICODE = 1,
     XMLFILE_ENCODING_ASNI = 2,
@@ -35,8 +35,7 @@ public:
     CMarkupNode GetRoot();
 
 private:
-    typedef struct tagXMLELEMENT
-    {
+    typedef struct tagXMLELEMENT {
         ULONG iStart;
         ULONG iChild;
         ULONG iNext;
@@ -101,8 +100,7 @@ private:
 
     enum { MAX_XML_ATTRIBUTES = 64 };
 
-    typedef struct
-    {
+    typedef struct {
         ULONG iName;
         ULONG iValue;
     } XMLATTRIBUTE;

@@ -5,37 +5,37 @@
 
 namespace DuiLib
 {
-	class UILIB_API CProgressUI : public CLabelUI
-	{
-	public:
-		CProgressUI();
+class UILIB_API CProgressUI : public CLabelUI
+{
+public:
+    CProgressUI();
 
-		LPCTSTR GetClass() const;
-		LPVOID GetInterface(LPCTSTR pstrName);
+    LPCTSTR GetClass() const;
+    LPVOID GetInterface(LPCTSTR pstrName);
 
-		bool IsHorizontal();
-		void SetHorizontal(bool bHorizontal = true);
-		bool IsStretchForeImage();
-		void SetStretchForeImage(bool bStretchForeImage = true);
-		int GetMinValue() const;
-		void SetMinValue(int nMin);
-		int GetMaxValue() const;
-		void SetMaxValue(int nMax);
-		int GetValue() const;
-		void SetValue(int nValue);
+    bool IsHorizontal();
+    void SetHorizontal(bool bHorizontal = true);
+    bool IsStretchForeImage();
+    void SetStretchForeImage(bool bStretchForeImage = true);
+    int GetMinValue() const;
+    void SetMinValue(int nMin);
+    int GetMaxValue() const;
+    void SetMaxValue(int nMax);
+    int GetValue() const;
+    void SetValue(int nValue);
 
-		void SetAttribute(LPCTSTR pstrName, LPCTSTR pstrValue);
-		void PaintStatusImage(HDC hDC);
+    void SetAttribute(LPCTSTR pstrName, LPCTSTR pstrValue);
+    void PaintStatusImage(HDC hDC);
 
-	protected:
-		bool m_bHorizontal;
-		bool m_bStretchForeImage;
-		int m_nMax;
-		int m_nMin;
-		int m_nValue;
+protected:
+    bool m_bHorizontal;
+    bool m_bStretchForeImage;
+    int m_nMax;
+    int m_nMin;
+    int m_nValue;
 
-		CDuiString m_sForeImageModify;
-	};
+    CDuiString m_sForeImageModify;
+};
 
 } // namespace DuiLib
 

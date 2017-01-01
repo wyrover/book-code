@@ -4,12 +4,13 @@
 class CDialogBuilderCallbackEx : public IDialogBuilderCallback
 {
 public:
-	CControlUI* CDialogBuilderCallbackEx::CreateControl(LPCTSTR pstrClass) 
-	{
-		if (_tcsicmp(pstrClass, kMusicListItemUIInferFace) == 0)
-			return	new CMusicListItemUI();
-		return NULL;
-	}
+    CControlUI* CDialogBuilderCallbackEx::CreateControl(LPCTSTR pstrClass)
+    {
+        if (_tcsicmp(pstrClass, kMusicListItemUIInferFace) == 0)
+            return  new CMusicListItemUI();
+
+        return NULL;
+    }
 };
 
 
