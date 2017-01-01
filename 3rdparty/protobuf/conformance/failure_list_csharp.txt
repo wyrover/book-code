@@ -1,0 +1,4 @@
+JsonInput.FieldNameWithMixedCases.JsonOutput
+JsonInput.FieldNameWithMixedCases.ProtobufOutput
+JsonInput.FieldNameWithMixedCases.Validator
+JsonInput.OriginalProtoFieldName.JsonOutput
