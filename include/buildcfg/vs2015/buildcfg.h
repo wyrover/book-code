@@ -18,6 +18,13 @@
 #define VI_ORIGINALFILENAME	"file-2-hex.exe"
 #endif
 
+#ifdef RSA_CLIENT_SERVER
+#pragma message("\t   RSA_CLIENT_SERVER")
+#define VI_FILEDESCRIPTION	"RSA_CLIENT_SERVER"
+#define VI_INTERNALNAME		"RSA_CLIENT_SERVER"
+#define VI_ORIGINALFILENAME	"rsa-client-server.exe"
+#endif
+
 
 
 #endif /* __BUILDCFG_BUILDCFG_H__ */
