@@ -1,0 +1,24 @@
+LIBRARY pe-master
+
+EXPORTS
+analyze_pe_file_struct
+check_lib_file_type
+write_to_new_file
+write_to_new_file_by_name
+analyze_lib_file_struct
+init_analyzing
+analyze_pe_file_struct
+mem_submem
+dump_mem
+open_file_dlg
+release_file_data
+find_struct_info
+find_struct_info_by_id
+clean_hdr_filled_bytes
+create_pe_file
+add_codes
+init_pe_make
+uninit_pe_make
+write_pe_structs_to_file
+add_new_section
+destroy_pe_writer
