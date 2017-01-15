@@ -1,97 +1,11 @@
-includeexternal ("premake5-include.lua")
+includeexternal ("premake-vs-include.lua")
+
 
 workspace "3rdparty"
     language "C++"
     location "build/%{_ACTION}/%{wks.name}"    
 
-    configurations { "Debug", "Release", "TRACE", "TRACE_MT" }
-    platforms { "Win32", "x64" }    
-
-    filter { "kind:StaticLib", "platforms:Win32" }
-        targetdir "lib/x86/%{_ACTION}" 
-    filter { "kind:StaticLib", "platforms:x64" }
-        targetdir "lib/x64/%{_ACTION}" 
-    filter { "kind:SharedLib", "platforms:Win32" }
-        implibdir "lib/x86/%{_ACTION}" 
-        implibsuffix  "_impl"
-    filter { "kind:SharedLib", "platforms:x64" }
-        implibdir "lib/x64/%{_ACTION}" 
-        implibsuffix  "_impl"
-    filter { "kind:ConsoleApp or WindowedApp or SharedLib", "platforms:Win32" }
-        targetdir "bin/x86/%{_ACTION}/%{wks.name}"         
-    filter { "kind:ConsoleApp or WindowedApp or SharedLib", "platforms:x64" }
-        targetdir "bin/x64/%{_ACTION}/%{wks.name}" 
-        
-
-    filter { "platforms:Win32" }
-        system "Windows"
-        architecture "x32"
-        libdirs 
-        {
-            "lib/x86/%{_ACTION}",
-            "lib/x86/%{_ACTION}/boost-1_60",
-            "bin/x86/%{_ACTION}"            
-        }
     
-    filter { "platforms:x64" }
-        system "Windows"
-        architecture "x64"   
-        libdirs
-        {
-            "lib/x64/%{_ACTION}",
-            "lib/x64/%{_ACTION}/boost-1_60",
-            "bin/x64/%{_ACTION}"
-        }
-
-    filter "configurations:Debug"
-        defines { "DEBUG" }
-        flags { "Symbols" }
-
-    filter "configurations:Release"
-        defines { "NDEBUG" }
-        flags { "Symbols" }
-        optimize "Speed"  
-        buildoptions { "/Od" } 
-    
-    filter "configurations:TRACE"
-        defines { "NDEBUG", "TRACE_TOOL" }
-        flags { "Symbols" }
-        optimize "Speed"  
-        buildoptions { "/Od" } 
-        includedirs
-        {            
-            "3rdparty"    
-        }  
-        links { "tracetool.lib" }         
-
-    filter "configurations:TRACE_MT"
-        defines { "NDEBUG", "TRACE_TOOL" }
-        flags { "Symbols" }
-        optimize "On"  
-        buildoptions { "/Od" }  
-        includedirs
-        {            
-            "3rdparty"    
-        }    
-        links { "tracetool_mt.lib" }        
-
-    configuration "vs*"
-        warnings "Extra"                    -- 开启最高级别警告
-        defines
-        {
-            "WIN32",
-            "WIN32_LEAN_AND_MEAN",
-            "_WIN32_WINNT=0x501",           -- 支持到 xp
-            "_CRT_SECURE_NO_WARNINGS",        
-            "_CRT_SECURE_NO_DEPRECATE",            
-            "STRSAFE_NO_DEPRECATE",
-            "_CRT_NON_CONFORMING_SWPRINTFS"
-        }
-        buildoptions
-        {
-            "/wd4267",                      -- 关闭 64 位检测
-            "/wd4996"
-        }
    
     group "09 底层"
 
@@ -99,9 +13,7 @@ workspace "3rdparty"
             
             kind "SharedLib"            
             defines { "_WINDOWS", "_USRDLL", "DLL_EXPORTS", "CACTUS_DLL", "CACTUS_EXPORTS" }               
-            buildoptions { "/EHsc", "/Zm200" }
-            flags { "NoManifest" }
-            targetdir "bin/x86"   
+            buildoptions { "/EHsc", "/Zm200" }           
             files
             {
                 "src/cactus/**.h",
@@ -340,14 +252,7 @@ workspace "3rdparty"
                 "3rdparty/pugixml/**.cpp"                
             }             
 
-        project "pugixml_mt"              
-            kind "StaticLib"          
-            flags { "StaticRuntime" }           
-            files
-            {
-                "3rdparty/pugixml/**.hpp",
-                "3rdparty/pugixml/**.cpp"                      
-            }  
+        
 
     group "libpng"    
 
@@ -369,24 +274,7 @@ workspace "3rdparty"
                 "3rdparty/zlib"
             }
 
-        project "libpng_mt"              
-            kind "StaticLib"          
-            flags { "StaticRuntime" }           
-            files
-            {
-                "3rdparty/libpng-libpng16/*.h",
-                "3rdparty/libpng-libpng16/*.c",
-                "3rdparty/libpng-libpng16/scripts/pngwin.rc"  
-            }  
-            removefiles
-            {   
-                "3rdparty/libpng-libpng16/example.c",
-
-            }
-            includedirs
-            {
-                "3rdparty/zlib"
-            }
+        
 
         project "libpng_dll"         
             targetname "libpng"    
@@ -413,30 +301,7 @@ workspace "3rdparty"
                 "zlib1_impl.lib"
             }
 
-        project "libpng_dll_mt"  
-            targetname "libpng"    
-            implibname "libpng_mt"
-            kind "SharedLib"                  
-            flags { "StaticRuntime", "NoManifest" }
-            files
-            {
-                "3rdparty/libpng-libpng16/*.h",
-                "3rdparty/libpng-libpng16/*.c",
-                "3rdparty/libpng-libpng16/scripts/pngwin.rc"  
-            }  
-            removefiles
-            {   
-                "3rdparty/libpng-libpng16/example.c",
-
-            }
-            includedirs
-            {
-                "3rdparty/zlib"
-            }
-            links
-            {
-                "zlib1_mt_impl.lib"
-            }
+        
 
     group "tidylib"    
 
@@ -456,29 +321,12 @@ workspace "3rdparty"
             includedirs
             {
                 "3rdparty/tidylib/include"
-            }
-            
+            }          
 
-        project "tidylib_mt"              
-            kind "StaticLib"          
-            flags { "StaticRuntime" }           
-            files
-            {
-                "3rdparty/tidylib/**.h",
-                "3rdparty/tidylib/**.c", 
-            }  
-            removefiles
-            {   
-                --"3rdparty/libpng-libpng16/example.c",
-
-            }
-            includedirs
-            {
-                "3rdparty/tidylib/include"
-            }
+        
             
             
-    group "tracetool"
+    
 
         project "tracetool"
             removeconfigurations "TRACE*"            
@@ -487,20 +335,9 @@ workspace "3rdparty"
             {
                 "3rdparty/tracetool/**.h",
                 "3rdparty/tracetool/**.cpp"                
-            }             
+            }                     
 
-        project "tracetool_mt"
-            removeconfigurations "TRACE*"            
-            kind "StaticLib"          
-            flags { "StaticRuntime" }                 
-            targetname "tracetool_mt"
-            files
-            {
-                "3rdparty/tracetool/**.h",
-                "3rdparty/tracetool/**.cpp"                
-            }
-
-    group "getopt"
+  
 
         project "getopt"            
             kind "StaticLib"         
@@ -512,16 +349,7 @@ workspace "3rdparty"
                                
             } 
             
-        project "getopt_mt"            
-            kind "StaticLib"      
-            defines { "STATIC_GETOPT" }
-            flags { "StaticRuntime" }
-            files
-            {
-                "3rdparty/getopt/**.h",
-                "3rdparty/getopt/**.c"      
-                               
-            } 
+        
 
 
     group "jsoncpp"
@@ -537,24 +365,9 @@ workspace "3rdparty"
             includedirs
             {          
                 "3rdparty/jsoncpp/include"
-            }   
-            
-        project "jsoncpp_mt"            
-            kind "StaticLib"      
-           
-            flags { "StaticRuntime" }
-            files
-            {
-                "3rdparty/jsoncpp/include/**.h",
-                "3rdparty/jsoncpp/**.cpp"      
-                               
-            } 
-            includedirs
-            {          
-                "3rdparty/jsoncpp/include"
-            }
+            }      
 
-    group "bzip2"
+    
 
         project "bzip2"            
             kind "StaticLib"        
@@ -571,26 +384,8 @@ workspace "3rdparty"
                 "3rdparty/bzip2/mk251.c",
                 "3rdparty/bzip2/spewG.c",
                 "3rdparty/bzip2/unzcrash.c"
-            }
-            
-        project "bzip2_mt"            
-            kind "StaticLib"     
-            defines { "BZ_NO_STDIO2" }
-            flags { "StaticRuntime" }
-            files
-            {
-                "3rdparty/bzip2/*.h",
-                "3rdparty/bzip2/*.c"      
-                               
-            }
-            removefiles
-            {   
-                "3rdparty/bzip2/bzip2recover.c",
-                "3rdparty/bzip2/dlltest.c",
-                "3rdparty/bzip2/mk251.c",
-                "3rdparty/bzip2/spewG.c",
-                "3rdparty/bzip2/unzcrash.c"
-            }
+            }         
+        
 
     group "zlib"
 
@@ -602,18 +397,7 @@ workspace "3rdparty"
                 "3rdparty/zlib/*.h",
                 "3rdparty/zlib/*.c"      
                                
-            } 
-            
-        project "zlib_mt"            
-            kind "StaticLib"     
-            
-            flags { "StaticRuntime" }
-            files
-            {
-                "3rdparty/zlib/*.h",
-                "3rdparty/zlib/*.c"      
-                               
-            }
+            }         
 
         project "zlib_dll"         
             targetname "zlib1"    
@@ -626,20 +410,7 @@ workspace "3rdparty"
                 "3rdparty/zlib/win32/*.def",
                 "3rdparty/zlib/win32/*.rc"
                                
-            }
-
-        project "zlib_dll_mt"  
-            targetname "zlib1"    
-            implibname "zlib1_mt"
-            kind "SharedLib"                  
-            flags { "StaticRuntime", "NoManifest" }
-            files
-            {
-                "3rdparty/zlib/*.h",
-                "3rdparty/zlib/*.c",
-                "3rdparty/zlib/win32/*.def",
-                "3rdparty/zlib/win32/*.rc"                               
-            }
+            }        
 
     group "unzip"
 
@@ -655,23 +426,9 @@ workspace "3rdparty"
             includedirs
             {
                 "3rdparty/zlib"
-            }
+            }   
             
-            
-        project "unzip_mt"            
-            kind "StaticLib"     
-            
-            flags { "StaticRuntime" }
-            files
-            {
-                "3rdparty/unzip101e/*.h",
-                "3rdparty/unzip101e/*.c"      
-                               
-            }
-            includedirs
-            {
-                "3rdparty/zlib"
-            }
+        
             
 
 
@@ -710,39 +467,7 @@ workspace "3rdparty"
                 "3rdparty/unrar"
             }   
 
-        project "unrar_mt"            
-            kind "StaticLib"        
-            defines { "UNRAR" }
-            flags { "StaticRuntime" }
-            files
-            {
-                "3rdparty/unrar/rar.hpp",
-                "3rdparty/unrar/**.cpp"      
-                               
-            } 
-            removefiles
-            {
-                "3rdparty/unrar/arccmt.cpp",
-                "3rdparty/unrar/beosea.cpp",
-                "3rdparty/unrar/coder.cpp",
-                "3rdparty/unrar/dll.cpp",
-                "3rdparty/unrar/log.cpp",
-                "3rdparty/unrar/model.cpp",
-                "3rdparty/unrar/os2ea.cpp",
-                "3rdparty/unrar/rarvmtbl.cpp",
-                "3rdparty/unrar/suballoc.cpp",
-                "3rdparty/unrar/unios2.cpp",
-                "3rdparty/unrar/unpack15.cpp",
-                "3rdparty/unrar/unpack20.cpp",
-                "3rdparty/unrar/uowners.cpp",
-                "3rdparty/unrar/win32acl.cpp",
-                "3rdparty/unrar/win32stm.cpp",
-
-            }     
-            includedirs
-            {          
-                "3rdparty/unrar"
-            }   
+        
 
         project "unrar_dll"         
             targetname "unrar"                
@@ -779,41 +504,7 @@ workspace "3rdparty"
                 "3rdparty/unrar"
             }   
             
-        project "unrar_dll_mt"     
-            targetname "unrar"    
-            implibname "unrar_mt"
-            kind "SharedLib"        
-            defines { "RARDLL", "UNRAR", "SILENT" }
-            flags { "StaticRuntime", "NoManifest" }
-            files
-            {
-                "3rdparty/unrar/rar.hpp",
-                "3rdparty/unrar/**.cpp",
-                "3rdparty/unrar/**.rc"  
-                               
-            } 
-            removefiles
-            {
-                "3rdparty/unrar/arccmt.cpp",
-                "3rdparty/unrar/beosea.cpp",
-                "3rdparty/unrar/coder.cpp",                
-                "3rdparty/unrar/log.cpp",
-                "3rdparty/unrar/model.cpp",
-                "3rdparty/unrar/os2ea.cpp",
-                "3rdparty/unrar/rarvmtbl.cpp",
-                "3rdparty/unrar/suballoc.cpp",
-                "3rdparty/unrar/unios2.cpp",
-                "3rdparty/unrar/unpack15.cpp",
-                "3rdparty/unrar/unpack20.cpp",
-                "3rdparty/unrar/uowners.cpp",
-                "3rdparty/unrar/win32acl.cpp",
-                "3rdparty/unrar/win32stm.cpp",
-
-            }     
-            includedirs
-            {          
-                "3rdparty/unrar"
-            } 
+        
             
     group "libiconv"
 
@@ -828,17 +519,7 @@ workspace "3rdparty"
                                
             } 
             
-        project "libiconv_mt"            
-            kind "StaticLib"     
-            
-            flags { "StaticRuntime" }
-            files
-            {
-                "3rdparty/libiconv/**.h",
-                "3rdparty/libiconv/**.c",
-                "3rdparty/libiconv/**.rc"
-                               
-            }
+        
 
         project "libiconv_dll"    
             targetname "libiconv" 
@@ -852,20 +533,7 @@ workspace "3rdparty"
                 "3rdparty/libiconv/**.rc"
                 
                                
-            }
-
-        project "libiconv_dll_mt"  
-            targetname "libiconv"    
-            implibname "libiconv_mt"
-            kind "SharedLib"            
-            defines { "_USRDLL", "LIBICONV_EXPORTS", "BUILDING_LIBICONV", "BUILDING_LIBCHARSET" }
-            flags { "StaticRuntime", "NoManifest" }
-            files
-            {
-                "3rdparty/libiconv/**.h",
-                "3rdparty/libiconv/**.c",
-                "3rdparty/libiconv/**.rc"                           
-            }
+            }        
 
     group "libxml2"
 
@@ -897,34 +565,7 @@ workspace "3rdparty"
                 "3rdparty/libiconv/include"
             }
             
-        project "libxml2_mt"            
-            kind "StaticLib"     
-            
-            flags { "StaticRuntime" }
-            files
-            {
-                "3rdparty/libxml2/**.h",
-                "3rdparty/libxml2/**.c",
-                "3rdparty/libxml2/**.rc"
-                               
-            }
-            removefiles
-            {
-                "3rdparty/libxml2/run*.c",
-                "3rdparty/libxml2/test*.c",
-                "3rdparty/libxml2/trio.c",
-                "3rdparty/libxml2/trionan.c",
-                "3rdparty/libxml2/triostr.c",
-                "3rdparty/libxml2/xmlcatalog.c",
-                "3rdparty/libxml2/xmllint.c",
-                "3rdparty/libxml2/xzlib.c",
-                
-            }  
-            includedirs
-            {
-                "3rdparty/libxml2/include",
-                "3rdparty/libiconv/include"
-            }
+        
 
     group "libmobi"
 
@@ -952,29 +593,7 @@ workspace "3rdparty"
             }
             
             
-        project "libmobi_mt"            
-            kind "StaticLib"     
-            
-            flags { "StaticRuntime" }
-            files
-            {
-                "3rdparty/libmobi/src/*.h",
-                "3rdparty/libmobi/src/*.c"      
-                               
-            }
-            removefiles
-            {
-                "3rdparty/libmobi/src/miniz.c"
-            }
-            includedirs
-            {
-                "3rdparty/include",
-                "3rdparty/zlib",
-                "3rdparty/libiconv/include",
-                "3rdparty/libxml2/include",
-                "3rdparty/unzip101e",
-                "3rdparty/tidylib/include"
-            }
+        
 
     group "libcnary"
 
@@ -994,21 +613,7 @@ workspace "3rdparty"
             }
             
             
-        project "libcnary_mt"            
-            kind "StaticLib"     
-            
-            flags { "StaticRuntime" }
-            files
-            {
-                "3rdparty/libcnary/**.h",
-                "3rdparty/libcnary/**.c"      
-                               
-            }             
-            includedirs
-            {
-                "3rdparty/libcnary/include"
-                
-            }
+        
 
     group "gtest"
 
@@ -1029,25 +634,8 @@ workspace "3rdparty"
                 "3rdparty/googletest/googletest"
             }
             
-        project "gtest_mt"            
-            kind "StaticLib"     
-            defines { "GTEST_HAS_PTHREAD=0", "_HAS_EXCEPTIONS=1" }
-            flags { "StaticRuntime" }
-            files
-            {
-            
-                "3rdparty/googletest/googletest/src/gtest-all.cc"
-                     
-                               
-            }             
-            includedirs
-            {
-               
-                "3rdparty/googletest/googletest/include",
-                "3rdparty/googletest/googletest"
-            }
-
-    group "gtest_main"
+        
+    
 
         project "gtest_main"            
             kind "StaticLib"     
@@ -1067,27 +655,10 @@ workspace "3rdparty"
                 "3rdparty/googletest/googletest"
             }
             
-        project "gtest_main_mt"            
-            kind "StaticLib"     
-            defines { "GTEST_HAS_PTHREAD=0", "_HAS_EXCEPTIONS=1" }
-            flags { "StaticRuntime" }
-            files
-            {
-            
-                "3rdparty/googletest/googletest/src/gtest-all.cc",
-                "3rdparty/googletest/googletest/src/gtest_main.cc"
-                     
-                               
-            }             
-            includedirs
-            {
-               
-                "3rdparty/googletest/googletest/include",
-                "3rdparty/googletest/googletest"
-            }
+        
             
     
-    group "gmock"
+   
 
         project "gmock"            
             kind "StaticLib"     
@@ -1109,28 +680,9 @@ workspace "3rdparty"
 
             }
             
-        project "gmock_mt"            
-            kind "StaticLib"     
-            defines { "GTEST_HAS_PTHREAD=0", "_HAS_EXCEPTIONS=1" }
-            flags { "StaticRuntime" }
-            files
-            {
-            
-                "3rdparty/googletest/googletest/src/gtest-all.cc",
-                "3rdparty/googletest/googlemock/src/gmock-all.cc"      
-                               
-            }             
-            includedirs
-            {
-               
-                "3rdparty/googletest/googletest/include",
-                "3rdparty/googletest/googletest",
-                "3rdparty/googletest/googlemock/include",
-                "3rdparty/googletest/googlemock"
-
-            }
+        
     
-    group "gmock_main"
+    
 
         project "gmock_main"            
             kind "StaticLib"     
@@ -1154,28 +706,7 @@ workspace "3rdparty"
 
             }
 
-        project "gmock_main_mt"            
-            kind "StaticLib"     
-            defines { "GTEST_HAS_PTHREAD=0", "_HAS_EXCEPTIONS=1" }   
-            flags { "StaticRuntime" }
-            files
-            {
-            
-                
-                "3rdparty/googletest/googletest/src/gtest-all.cc",
-                "3rdparty/googletest/googlemock/src/gmock-all.cc",
-                "3rdparty/googletest/googlemock/src/gmock_main.cc"
-                               
-            }             
-            includedirs
-            {       
-               
-                "3rdparty/googletest/googletest/include",
-                "3rdparty/googletest/googletest",
-                "3rdparty/googletest/googlemock/include",
-                "3rdparty/googletest/googlemock"
-
-            }
+        
 
     group "libprotobuf"
 
@@ -1272,24 +803,11 @@ workspace "3rdparty"
                 "3rdparty/lua-5.3.3/lua.c"
             }  
 
-        project "liblua_mt"            
-            kind "StaticLib"      
-            --defines { "STATIC_GETOPT" }
-            flags { "StaticRuntime" }
-            files
-            {
-                "3rdparty/lua-5.3.3/**.h",
-                "3rdparty/lua-5.3.3/**.c"                               
-            } 
-            removefiles
-            {
-                "3rdparty/lua-5.3.3/luac.c",
-                "3rdparty/lua-5.3.3/lua.c"
-            }  
+          
             
         project "lua"            
-            kind "ConsoleApp"                           
-            flags { "NoManifest", "WinMain", "StaticRuntime" }    
+            kind "ConsoleApp"          
+               
             files
             {
                 "3rdparty/lua-5.3.3/**.h",
@@ -1302,7 +820,7 @@ workspace "3rdparty"
 
         project "luac"            
             kind "ConsoleApp"                  
-            flags { "NoManifest", "WinMain", "StaticRuntime" } 
+            
             files
             {
                 "3rdparty/lua-5.3.3/**.h",
@@ -1312,13 +830,30 @@ workspace "3rdparty"
             {
                 "3rdparty/lua-5.3.3/lua.c"                
             }  
+
+
+    group "pe-parse"
+        project "pe-parse"            
+            kind "StaticLib"        
+                       
+            files
+            {
+                "3rdparty/pe-parse/parser-library/*.h",
+                "3rdparty/pe-parse/parser-library/*.c",
+                "3rdparty/pe-parse/parser-library/*.cpp" 
+                               
+            } 
+            includedirs
+            {            
+                "3rdparty/boost_1_60_0"    
+            }  
              
     group "lua-bridge-sample"
          
         project "test01"       
             targetdir "bin/x86/%{_ACTION}/lua-bridge-sample"
-            kind "ConsoleApp"                  
-            flags { "NoManifest", "WinMain", "StaticRuntime" } 
+            kind "ConsoleApp"                 
+             
             files
             {
                 "lua-bridge-sample/%{prj.name}/**.cpp",
@@ -1343,7 +878,7 @@ workspace "3rdparty"
         project "test02"       
             targetdir "bin/x86/%{_ACTION}/lua-bridge-sample"
             kind "ConsoleApp"                  
-            flags { "NoManifest", "WinMain", "StaticRuntime" } 
+            
             files
             {
                 "lua-bridge-sample/%{prj.name}/**.cpp",
@@ -1370,7 +905,7 @@ workspace "3rdparty"
         project "test03"       
             targetdir "bin/x86/%{_ACTION}/lua-bridge-sample"
             kind "ConsoleApp"                  
-            flags { "NoManifest", "WinMain", "StaticRuntime" } 
+            
             defines { "PSAPI_VERSION=1", "DISABLE_INVALID_NUMBERS", "MISSING_ISINF", "ENABLE_CJSON_GLOBAL" }
             files
             {
@@ -1436,8 +971,7 @@ workspace "3rdparty"
         
         project "shell"       
             targetdir "bin/x86/%{_ACTION}/lua-bridge-sample"
-            kind "SharedLib"                  
-            flags { "StaticRuntime", "NoManifest" } 
+            kind "SharedLib"            
             files
             {
                 "lua-bridge-sample/%{prj.name}/**.cpp",
@@ -1464,8 +998,7 @@ workspace "3rdparty"
         
         project "winreg"       
             targetdir "bin/x86/%{_ACTION}/lua-bridge-sample"
-            kind "SharedLib"                  
-            flags { "StaticRuntime", "NoManifest" } 
+            kind "SharedLib"             
             files
             {
                 "lua-bridge-sample/%{prj.name}/**.c",
@@ -1488,10 +1021,58 @@ workspace "3rdparty"
                 "liblua_mt.lib",
                 --"Shlwapi.lib"
             }
-        
+    
+    group "PE"   
+        project "PEFile"                   
+            kind "ConsoleApp"                 
+            
+            files
+            {
+                "3rdparty/PEFile/**.cpp",             
+            } 
+
+        project "impdef"                   
+            kind "ConsoleApp"                  
+            
+            files
+            {
+                "3rdparty/pe-file/**.c",               
+            } 
+
+        project "bin-to-hex"                   
+            kind "ConsoleApp"                  
+           
+            files
+            {
+                "3rdparty/bin-to-hex/**.cpp",               
+            }
+            
+        project "oless"                   
+            kind "ConsoleApp"                  
+           
+            files
+            {
+                "3rdparty/oless/**.h",  
+                "3rdparty/oless/**.hpp",  
+                "3rdparty/oless/**.cpp",               
+            }
 
 
+workspace "pe-master"
+    language "C++"
+    location "build/%{_ACTION}/%{wks.name}"    
 
+        project "pe-master"                   
+            kind "SharedLib"                  
+           
+            files
+            {
+                "3rdparty/%{wks.name}/%{prj.name}/**.h",  
+                "3rdparty/%{wks.name}/%{prj.name}/**.hpp",  
+                "3rdparty/%{wks.name}/%{prj.name}/**.cpp", 
+                "3rdparty/%{wks.name}/%{prj.name}/**.c",
+                "3rdparty/%{wks.name}/%{prj.name}/**.def",
+            }
 
 
 

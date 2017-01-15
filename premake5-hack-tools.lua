@@ -2,7 +2,7 @@ includeexternal ("premake5-include.lua")
 
 workspace "hack-tools"
     language "C++"
-    location "build/%{_ACTION}"    
+    location "build/%{_ACTION}/%{wks.name}"    
 
     configurations { "Debug", "Release", "TRACE", "TRACE_MT" }
     platforms { "Win32", "x64" }    

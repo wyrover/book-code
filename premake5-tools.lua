@@ -27,7 +27,6 @@ workspace "tools"
         libdirs 
         {
             "lib/x86/%{_ACTION}",
-            "lib/x86/%{_ACTION}/boost-1_56",
             "lib/x86/%{_ACTION}/boost-1_60",
             "bin/x86/%{_ACTION}"            
         }
@@ -38,7 +37,6 @@ workspace "tools"
         libdirs
         {
             "lib/x64/%{_ACTION}",
-            "lib/x64/%{_ACTION}/boost-1_56",
             "lib/x64/%{_ACTION}/boost-1_60",
             "bin/x64/%{_ACTION}"
         }
@@ -51,6 +49,7 @@ workspace "tools"
         defines { "NDEBUG" }
         flags { "Symbols" }
         optimize "Speed"  
+        buildoptions { "/Od" } 
     
     filter "configurations:TRACE"
         defines { "NDEBUG", "TRACE_TOOL" }
