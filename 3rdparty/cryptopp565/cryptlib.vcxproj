@@ -151,12 +151,12 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <Lib>
-      <OutputFile>../../lib/x86/vs2015/$(TargetName)$(TargetExt)</OutputFile>
+      <OutputFile>../../lib/x86/vs2015/cryptlib.lib</OutputFile>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Lib>
-      <OutputFile>../../lib/x64/vs2015/$(TargetName)$(TargetExt)</OutputFile>
+      <OutputFile>../../lib/x64/vs2015/cryptlib_mt.lib</OutputFile>
     </Lib>
   </ItemDefinitionGroup>
   <!-- Original File with special treatment -->

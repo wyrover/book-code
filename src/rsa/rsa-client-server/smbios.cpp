@@ -36,8 +36,8 @@ errno_t SMBIOSParse(ULONG64 *IDEN_UUID) {
 		{
 		case 0://BIOS Info
 		{
-			PBIOSInfo pBiosInfo = (PBIOSInfo)(pHeader);
-			IDEN_UUID[3] = pBiosInfo->Characteristics;
+			PBIOSInfo pBiosInfo = (PBIOSInfo)(pHeader);			
+			//IDEN_UUID[3] = pBiosInfo->Version;
 			break;
 		}
 		case 1://ProcSysInfo

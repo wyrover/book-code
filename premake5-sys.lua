@@ -285,6 +285,8 @@ workspace "sys"
         create_sys_project("TestString", "hack-tools/sys-examples")
         create_sys_project("KeyBoard", "hack-tools/sys-examples")
 
+        create_sys_project("BlackBoneDrv", "hack-tools/sys-examples")
+
     group "demo01"
         create_sys_project("demo01", "hack-tools/sys-examples/demo01")
         create_console_project("demo01_user", "hack-tools/sys-examples/demo01", "mbcs")

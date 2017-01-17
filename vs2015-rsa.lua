@@ -211,6 +211,7 @@ workspace "rsa"
                
                 "src/%{wks.name}/%{prj.name}/**.h",
                 "src/%{wks.name}/%{prj.name}/**.cpp",
+                "3rdparty/jsoncpp/**.cpp",
                 "include/buildcfg/vs2015/buildcfg.h",
                 "include/buildcfg/vs2015/version.rc",                
                 "include/buildcfg/vs2015/versionno.rc2"
@@ -222,6 +223,7 @@ workspace "rsa"
             {          
                 "lib/x86/vs2015/curl-7.48/include",
                 "3rdparty/cryptopp565",
+                "3rdparty/jsoncpp/include",
                 "3rdparty",
                 "include/buildcfg",
                 "include"
@@ -271,5 +273,160 @@ workspace "rsa"
                 
             }  
 
+        project "rsa_encrypt"            
+            kind "SharedLib"                         
+            flags { "NoManifest", "StaticRuntime" }                  
+            files
+            {
+                "src/%{wks.name}/rsa_encrypt_dll/**.h",
+                "src/%{wks.name}/rsa_encrypt_dll/**.cpp",
+                "src/%{wks.name}/rsa_encrypt_dll/**.def",
+                
+            }             
+            removefiles
+            {
+                 
+            }
+            includedirs
+            {          
+                "3rdparty/cryptopp565",
+                "3rdparty",
+                "include/buildcfg",
+                "include"
+            }                
+            links
+            {
+                "cryptlib_mt.lib", 
+            }
+            libdirs
+            {
+               
+            }
         
+
+        project "rsa_encrypt_dll_test"            
+            kind "WindowedApp"                         
+            language "C#"               
+            files
+            {
+               
+                "src/%{wks.name}/%{prj.name}/**.cs",
+                "src/%{wks.name}/%{prj.name}/Properties/**",
+                "src/%{wks.name}/%{prj.name}/**.config",
+              
+            }
+            removefiles
+            {          
+                
+            
+            }
+            links {                
+                "System",
+                "System.Core",
+                "System.Data",               
+                "System.Deployment",
+                "System.Drawing",               
+                "System.Windows.Forms"
+                
+            }
+
+
+
+        project "rsa_encrypt_dll_test_console"            
+            kind "ConsoleApp"                         
+            flags { "NoManifest", "WinMain" }   
+            defines { "RSA_CLIENT_SERVER" }
+            files
+            {
+               
+                "src/%{wks.name}/%{prj.name}/**.h",
+                "src/%{wks.name}/%{prj.name}/**.cpp",
+                "include/buildcfg/vs2015/buildcfg.h",
+                "include/buildcfg/vs2015/version.rc",                
+                "include/buildcfg/vs2015/versionno.rc2"
+            }
+            removefiles
+            {               
+            }
+            includedirs
+            {          
+               
+                "3rdparty/cryptopp565",
+                "3rdparty",
+                "include/buildcfg",
+                "include"
+            }
+            links
+            { 
+                "rsa_encrypt.lib"
+                
+            }
+            libdirs
+            {
+                
+            }  
+
+        project "aes_cbc"            
+            kind "ConsoleApp"                         
+            flags { "NoManifest", "WinMain" }   
+            defines { "RSA_CLIENT_SERVER" }
+            files
+            {
+               
+                "src/%{wks.name}/%{prj.name}/**.h",
+                "src/%{wks.name}/%{prj.name}/**.cpp",
+                "include/buildcfg/vs2015/buildcfg.h",
+                "include/buildcfg/vs2015/version.rc",                
+                "include/buildcfg/vs2015/versionno.rc2"
+            }
+            removefiles
+            {               
+            }
+            includedirs
+            {          
+               
+                "3rdparty/cryptopp565",
+                "3rdparty",
+                "include/buildcfg",
+                "include"
+            }
+            links
+            { 
+                "cryptlib.lib"
+                
+            }
+            libdirs
+            {
+                
+            }  
+
         
+        project "install_report"            
+            kind "SharedLib"                         
+            flags { "NoManifest", "StaticRuntime" }                  
+            files
+            {
+                "src/%{wks.name}/install_report_dll/**.h",
+                "src/%{wks.name}/install_report_dll/**.cpp",
+                "src/%{wks.name}/install_report_dll/**.def",
+                
+            }             
+            removefiles
+            {
+                 
+            }
+            includedirs
+            {          
+                "3rdparty/cryptopp565",
+                "3rdparty",
+                "include/buildcfg",
+                "include"
+            }                
+            links
+            {
+                "cryptlib_mt.lib", 
+            }
+            libdirs
+            {
+               
+            }

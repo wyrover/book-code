@@ -28,3 +28,5 @@
 *.out
 *.app
 /3rdparty/curl-curl-7_50_3/deps
+/build
+/tmp

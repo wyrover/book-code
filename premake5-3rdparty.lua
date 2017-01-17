@@ -1075,5 +1075,67 @@ workspace "pe-master"
             }
 
 
+workspace "cairo"
+    language "C++"
+    location "build/%{_ACTION}/%{wks.name}"    
 
+        project "test_wtl_cairo"                   
+            kind "WindowedApp"                  
+           
+            files
+            {
+                "src/test_wtl_cairo/**.h",            
+                "src/test_wtl_cairo/**.cpp", 
+                "src/test_wtl_cairo/**.c",
+                "src/test_wtl_cairo/**.rc",
+            }
+            includedirs
+            {               
+                "E:/cairo-ft-c951bb2e0d21a1bd46a348f61a59d3e15ff96399/cairo/src",
+                "3rdparty/wtl",
+               
+            }                
+          
+                    
+workspace "sfml"
+    language "C++"
+    location "build/%{_ACTION}/%{wks.name}"    
+
+    create_sfml_project("win32", "src/sfml-examples")
+    create_sfml_project("mouse_button", "src/sfml-examples")
+    create_sfml_project("shape", "src/sfml-examples")
+    create_sfml_project("01", "src/sfml-examples")    
+    create_sfml_project("opengl_01", "src/sfml-examples")  
+    create_sfml_project("dragable_window", "src/sfml-examples") 
+    create_sfml_project("fps", "src/sfml-examples")
+    create_sfml_project("layered_window", "src/sfml-examples")
+
+        
+workspace "test"
+    language "C++"
+    location "build/%{_ACTION}/%{wks.name}"                
+    
+    create_mfc_console_project("test_filesystem", "src")
+    create_console_project("test_unix_time", "src")       
+    
+
+workspace "glfw"
+    language "C++"
+    location "build/%{_ACTION}/%{wks.name}"  
+
+    group "Tutorial1"
+        create_glfw_console_project("Tutorial1", "src/glfw")
+
+    group "Tutorial2"
+        create_glfw_console_project("ecg", "src/glfw/Tutorial2")
+        create_glfw_console_project("gaussian", "src/glfw/Tutorial2")
+        create_glfw_console_project("line", "src/glfw/Tutorial2")
+        create_glfw_console_project("point", "src/glfw/Tutorial2")
+        create_glfw_console_project("sinusoid", "src/glfw/Tutorial2")
+        create_glfw_console_project("triangle", "src/glfw/Tutorial2")       
+    group "Tutorial3"
+        create_glfw_console_project("mcml", "src/glfw/Tutorial3")
+        create_glfw_console_project("gaussian2", "src/glfw/Tutorial3")
+    group "Tutorial4"
+        create_glfw_console_project("code_image", "src/glfw/Tutorial4")
         

@@ -1,7 +1,4 @@
-﻿  Performing Custom Build Tools
-  Building and assembling rdrand.asm
-   Assembling: H:\rover\rover-self-work\cpp\book-code\3rdparty\cryptopp565\rdrand.asm
-  pch.cpp
+﻿  pch.cpp
   cryptlib.cpp
   cpu.cpp
   integer.cpp

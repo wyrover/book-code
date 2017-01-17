@@ -1,6 +1,13 @@
 configurations { "Debug", "Release", "Debug_MT", "Release_MT", "TRACE", "TRACE_MT" }
     platforms { "Win32", "x64" }      
 
+    filter { "action:vs2005" }
+        includedirs
+        {                  
+            "3rdparty/msvc_compat",
+            
+        }        
+
     -- ¾²Ì¬¿â
     filter { "kind:StaticLib", "platforms:Win32" }
         targetdir "lib/x86/%{_ACTION}/md" 
@@ -43,6 +50,14 @@ configurations { "Debug", "Release", "Debug_MT", "Release_MT", "TRACE", "TRACE_M
 
     filter { kind "ConsoleApp" }
         flags { "WinMain" } 
+
+     
+    filter { "platforms:Win32 or x64" }
+        includedirs
+        {                  
+            "3rdparty/boost_1_60_0",
+            "3rdparty"
+        }    
         
 
     filter { "platforms:Win32", "configurations:not *_MT" }
@@ -51,6 +66,7 @@ configurations { "Debug", "Release", "Debug_MT", "Release_MT", "TRACE", "TRACE_M
         includedirs
         {            
             --"lib/v7.1/Include"    
+           
         }    
         libdirs 
         {
@@ -157,3 +173,136 @@ configurations { "Debug", "Release", "Debug_MT", "Release_MT", "TRACE", "TRACE_M
             "/wd4267",                      -- ¹Ø±Õ 64 Î»¼ì²â
             "/wd4996"
         }
+
+
+
+
+
+    function create_mfc_console_project(name, dir)        
+        project(name)          
+        kind "WindowedApp"                             
+        defines {  }
+        flags { "MFC", "WinMain" }
+        removeconfigurations "*_MT"      
+        linkoptions
+        {
+            "/ENTRY:\"wmainCRTStartup\""
+        }
+        files
+        {                                  
+            dir .. "/%{prj.name}/**.h",
+            dir .. "/%{prj.name}/**.cpp", 
+            dir .. "/%{prj.name}/**.c", 
+            dir .. "/%{prj.name}/**.rc" 
+        }
+        removefiles
+        {               
+        }
+        includedirs
+        {               
+            "3rdparty",          
+        }        
+        
+    end
+
+
+    function create_console_project(name, dir)        
+        project(name)          
+        kind "ConsoleApp"                                             
+        files
+        {                                  
+            dir .. "/%{prj.name}/**.h",
+            dir .. "/%{prj.name}/**.cpp", 
+            dir .. "/%{prj.name}/**.c", 
+            dir .. "/%{prj.name}/**.rc" 
+        }
+        removefiles
+        {               
+        }
+        includedirs
+        {               
+            "3rdparty",          
+        }        
+        
+    end
+
+
+    function create_sfml_project(name, dir)        
+        project(name)          
+        kind "ConsoleApp"                                
+        defines {  }
+        removeconfigurations "*_MT"      
+        files
+        {                                  
+            dir .. "/%{prj.name}/**.h",
+            dir .. "/%{prj.name}/**.cpp", 
+            dir .. "/%{prj.name}/**.c", 
+            dir .. "/%{prj.name}/**.rc" 
+        }
+        removefiles
+        {               
+        }
+        includedirs
+        {               
+            "3rdparty",          
+        }        
+        libdirs
+        {
+            "lib/x86/%{_ACTION}/md/sfml"
+        }
+        filter "configurations:Debug"
+            links
+            {
+                "sfml-main-d.lib",
+                "sfml-system-d.lib",
+                "sfml-window-d.lib",
+                "sfml-network-d.lib",
+                "sfml-graphics-d.lib",
+                "sfml-audio-d.lib"
+            }  
+
+        filter "configurations:Release"
+            links
+            {
+                "sfml-main.lib",
+                "sfml-system.lib",
+                "sfml-window.lib",
+                "sfml-network.lib",
+                "sfml-graphics.lib",
+                "sfml-audio.lib"
+            }  
+    end
+
+
+    function create_glfw_console_project(name, dir)        
+        project(name)          
+        kind "ConsoleApp"                                             
+        files
+        {                                  
+            dir .. "/%{prj.name}/**.h",
+            dir .. "/%{prj.name}/**.cpp", 
+            dir .. "/%{prj.name}/**.c", 
+            dir .. "/%{prj.name}/**.rc" 
+        }
+        removefiles
+        {               
+        }
+        includedirs
+        {               
+            "3rdparty/GLFW",          
+        }  
+        links
+        {
+            "glfw3.lib",
+            "opengl32.lib"
+        }        
+        libdirs
+        {
+            "lib/x86/vs2005/md/glfw"
+        }
+       
+
+
+            
+        
+    end

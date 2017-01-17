@@ -1,7 +1,6 @@
 workspace "test"
     language "C++"
-    location "build/%{_ACTION}"
-    
+    location "build/%{_ACTION}/%{wks.name}"    
 
     configurations { "Debug", "Release", "TRACE", "TRACE_MT" }
     platforms { "Win32", "x64" }    
@@ -37,7 +36,7 @@ workspace "test"
         libdirs
         {
             "lib/x64/%{_ACTION}",
-            "lib/x86/%{_ACTION}/boost-1_56",
+            "lib/x64/%{_ACTION}/boost-1_56",
             "lib/x64/%{_ACTION}/boost-1_60",
             "bin/x64/%{_ACTION}"
         }

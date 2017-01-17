@@ -3,7 +3,8 @@
 #include <Windows.h>
 
 
-
+#pragma pack(push) 
+#pragma pack(1)
 //SMBIOS INFOS
 typedef struct _RawSMBIOSData
 {
@@ -64,5 +65,6 @@ typedef struct _TYPE_4_ {
 	// Todo, Here
 
 } ProcessorInfo, *PProcessorInfo;
+#pragma pack(push) 
 
 errno_t SMBIOSParse(ULONG64 *IDEN_UUID);
