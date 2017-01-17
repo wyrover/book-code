@@ -1109,6 +1109,11 @@ workspace "sfml"
     create_sfml_project("dragable_window", "src/sfml-examples") 
     create_sfml_project("fps", "src/sfml-examples")
     create_sfml_project("layered_window", "src/sfml-examples")
+    create_sfml_project("opengl", "src/sfml-examples")
+    links
+    {
+        "opengl32.lib"
+    }
 
         
 workspace "test"
