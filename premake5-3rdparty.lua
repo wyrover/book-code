@@ -1129,7 +1129,8 @@ workspace "glfw"
     location "build/%{_ACTION}/%{wks.name}"  
 
     group "Tutorial1"
-        create_glfw_console_project("Tutorial1", "src/glfw")
+        create_glfw_console_project("hello", "src/glfw/Tutorial1")
+        create_glfw2_console_project("hellowindow2", "src/glfw/Tutorial1")
 
     group "Tutorial2"
         create_glfw_console_project("ecg", "src/glfw/Tutorial2")
@@ -1143,4 +1144,141 @@ workspace "glfw"
         create_glfw_console_project("gaussian2", "src/glfw/Tutorial3")
     group "Tutorial4"
         create_glfw_console_project("code_image", "src/glfw/Tutorial4")
+ 
         
+workspace "glew"
+    language "C++"
+    location "build/%{_ACTION}/%{wks.name}" 
+
+    project "glew"               
+        kind "StaticLib"
+        removeconfigurations "TRACE*"   
+        defines { "VC_EXTRALEAN", "GLEW_STATIC" }
+        files
+        {
+            "3rdparty/glew/include/GL/glew.h",
+            "3rdparty/glew/include/GL/wglew.h",
+            "3rdparty/glew/src/glew.c",
+            "3rdparty/glew/build/glew.rc"           
+            
+        } 
+        removefiles
+        {
+            
+
+        }     
+        includedirs
+        {               
+            "3rdparty/glew/include"     
+           
+        }                
+        links
+        {
+            
+        }
+        buildoptions
+        {
+            "/wd4244",                     
+            
+        }
+
+    project "glew_shared"          
+        kind "SharedLib"
+        targetname "glew"
+        removeconfigurations "TRACE*"   
+        defines { "VC_EXTRALEAN", "GLEW_BUILD" }
+        files
+        {
+            "3rdparty/glew/include/GL/glew.h",
+            "3rdparty/glew/include/GL/wglew.h",
+            "3rdparty/glew/src/glew.c",
+            "3rdparty/glew/build/glew.rc"           
+            
+        } 
+        removefiles
+        {
+            
+
+        }     
+        includedirs
+        {               
+            "3rdparty/glew/include"     
+           
+        }                
+        links
+        {
+            "opengl32.lib"
+        }
+        buildoptions
+        {
+            "/wd4244",                     
+            
+        }
+
+
+    project "glewinfo"          
+        kind "ConsoleApp"     
+        characterset "MBCS"
+        removeconfigurations "TRACE*"   
+        defines { "VC_EXTRA_LEAN", "GLEW_STATIC" }
+        files
+        {          
+            "3rdparty/glew/src/glewinfo.c",
+            "3rdparty/glew/build/glewinfo.rc"           
+            
+        } 
+        removefiles
+        {
+            
+
+        }     
+        includedirs
+        {               
+            "3rdparty/glew/include"     
+           
+        }                
+        links
+        {
+            "glew-s.lib",
+            "opengl32.lib"
+            
+        }
+        buildoptions
+        {
+            "/wd4244",                     
+            
+        }
+
+
+    project "visualinfo"          
+        kind "ConsoleApp"   
+        characterset "MBCS"
+        removeconfigurations "TRACE*"   
+        defines { "VC_EXTRA_LEAN", "GLEW_STATIC" }
+        files
+        {          
+            "3rdparty/glew/src/visualinfo.c",
+            "3rdparty/glew/build/visualinfo.rc"           
+            
+        } 
+        removefiles
+        {
+            
+
+        }     
+        includedirs
+        {               
+            "3rdparty/glew/include"     
+           
+        }                
+        links
+        {
+            "glew-s.lib",
+            "opengl32.lib",
+            "glu32.lib"
+        }
+        buildoptions
+        {
+            "/wd4244",                     
+            
+        }

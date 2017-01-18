@@ -6,7 +6,17 @@ configurations { "Debug", "Release", "Debug_MT", "Release_MT", "TRACE", "TRACE_M
         {                  
             "3rdparty/msvc_compat",
             
-        }        
+        }      
+        
+    filter { "platforms:Win32" }
+        architecture "x86"
+    filter { "platforms:x64" }
+        architecture "x64"
+        
+    filter { "kind:StaticLib", "platforms:Win32" }
+        linkoptions { "/MACHINE:X86" }        
+    filter { "kind:StaticLib", "platforms:x64" }
+        linkoptions { "/MACHINE:X64" }
 
     -- 静态库
     filter { "kind:StaticLib", "platforms:Win32" }
@@ -22,30 +32,29 @@ configurations { "Debug", "Release", "Debug_MT", "Release_MT", "TRACE", "TRACE_M
 
     -- 动态库    
     filter { "kind:SharedLib", "platforms:Win32" }
-        implibdir "lib/x86/%{_ACTION}/md" 
-        implibsuffix  "_impl"
+        implibdir "lib/x86/%{_ACTION}/md"       
     filter { "kind:SharedLib", "platforms:Win32", "configurations:*_MT" }
-        implibdir "lib/x86/%{_ACTION}/mt" 
-        implibsuffix  "_impl"
-
+        implibdir "lib/x86/%{_ACTION}/mt"
     filter { "kind:SharedLib", "platforms:x64" }
-        implibdir "lib/x64/%{_ACTION}/md" 
-        implibsuffix  "_impl"
+        implibdir "lib/x64/%{_ACTION}/md"        
     filter { "kind:SharedLib", "platforms:x64", "configurations:*_MT" }
         implibdir "lib/x64/%{_ACTION}/mt" 
-        implibsuffix  "_impl"
+        
 
     -- EXE 和 动态库输出
 
     filter { "kind:ConsoleApp or WindowedApp or SharedLib", "platforms:Win32" }
-        targetdir "bin/x86/%{_ACTION}/%{wks.name}/md"     
+        targetdir "bin/x86/%{_ACTION}/%{wks.name}/md"  
+        debugdir "bin/x86/%{_ACTION}/%{wks.name}/md"          
     filter { "kind:ConsoleApp or WindowedApp or SharedLib", "platforms:Win32", "configurations:*_MT" }
         targetdir "bin/x86/%{_ACTION}/%{wks.name}/mt"
-
+        debugdir "bin/x86/%{_ACTION}/%{wks.name}/mt"        
     filter { "kind:ConsoleApp or WindowedApp or SharedLib", "platforms:x64" }
         targetdir "bin/x64/%{_ACTION}/%{wks.name}/md" 
+        debugdir "bin/x64/%{_ACTION}/%{wks.name}/md"         
     filter { "kind:ConsoleApp or WindowedApp or SharedLib", "platforms:x64", "configurations:*_MT" }
         targetdir "bin/x64/%{_ACTION}/%{wks.name}/mt"
+        debugdir "bin/x64/%{_ACTION}/%{wks.name}/md"        
 
 
     filter { kind "ConsoleApp" }
@@ -116,7 +125,7 @@ configurations { "Debug", "Release", "Debug_MT", "Release_MT", "TRACE", "TRACE_M
 
     filter "configurations:Debug"
         defines { "DEBUG" }
-        flags { "Symbols" }
+        flags { "Symbols" }        
 
     filter { "configurations:Debug_MT" }
         defines { "DEBUG" }       
@@ -154,7 +163,30 @@ configurations { "Debug", "Release", "Debug_MT", "Release_MT", "TRACE", "TRACE_M
         {            
             "3rdparty"    
         }    
-        links { "tracetool.lib" }        
+        links { "tracetool.lib" }     
+        
+    filter { "kind:StaticLib", "configurations:Debug*", "configurations:*_MT"}
+        targetsuffix "-mt-s-gd"    
+    filter { "kind:StaticLib", "configurations:Debug*", "configurations:not *_MT"}
+        targetsuffix "-s-gd"
+    filter { "kind:StaticLib", "configurations:not Debug*", "configurations:*_MT"}
+        targetsuffix "-mt-s"    
+    filter { "kind:StaticLib", "configurations:not Debug*", "configurations:not *_MT"}
+        targetsuffix "-s"
+
+    filter { "kind:SharedLib", "configurations:Debug*", "configurations:*_MT"}
+        targetsuffix "-mt-gd"        
+    filter { "kind:SharedLib", "configurations:Debug*", "configurations:not *_MT"}
+        targetsuffix "-gd"        
+    filter { "kind:SharedLib", "configurations:not Debug*", "configurations:*_MT"}
+        targetsuffix "-mt"        
+    filter { "kind:SharedLib", "configurations:not Debug*", "configurations:not *_MT"}
+        targetsuffix ""
+        
+
+
+        
+
 
     configuration "vs*"
         warnings "Extra"                    -- 开启最高级别警告
@@ -299,10 +331,37 @@ configurations { "Debug", "Release", "Debug_MT", "Release_MT", "TRACE", "TRACE_M
         libdirs
         {
             "lib/x86/vs2005/md/glfw"
+        }       
+    end
+
+
+    function create_glfw2_console_project(name, dir)        
+        project(name)          
+        kind "ConsoleApp"                                             
+        files
+        {                                  
+            dir .. "/%{prj.name}/**.h",
+            dir .. "/%{prj.name}/**.cpp", 
+            dir .. "/%{prj.name}/**.c", 
+            dir .. "/%{prj.name}/**.rc" 
         }
-       
-
-
-            
-        
+        removefiles
+        {               
+        }
+        includedirs
+        {               
+            "3rdparty/GLFW",   
+            "3rdparty/glew/include",
+            "3rdparty"
+        }  
+        links
+        {
+            "glfw3.lib",
+            "glew-s.lib",
+            "opengl32.lib"
+        }        
+        libdirs
+        {
+            "lib/x86/vs2005/md/glfw"
+        }       
     end
