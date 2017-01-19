@@ -1,0 +1,71 @@
+//Microsoft Visual C++ 生成的资源脚本。
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// 从 TEXTINCLUDE 2 资源生成。
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "buildcfg/buildcfg.h"
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE 4, 2
+#pragma code_page(936)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// manifest
+//
+
+#ifdef _DEBUG
+	IDC_MANIFEST  		RT_MANIFEST		"../../include/buildcfg/Microsoft.VC80.DebugCRT_and_common_ctrls_uac.manifest"
+#else
+	IDC_MANIFEST  		RT_MANIFEST		"../../include/buildcfg/Microsoft.VC80.CRT_and_common_ctrls_uac.manifest"
+#endif
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE  
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE  
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE  
+BEGIN
+    "#include ""buildcfg/VersionNo.rc2""\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif
+/////////////////////////////////////////////////////////////////////////////
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// 从 TEXTINCLUDE 3 资源生成。
+//
+//#include "buildcfg/versionno.rc2"
+/////////////////////////////////////////////////////////////////////////////
+#endif    // 不是 APSTUDIO_INVOKED
+
