@@ -1,0 +1,3 @@
+DIRS=\
+	Server \
+	Client 

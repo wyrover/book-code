@@ -1,0 +1,9 @@
+DIRS= \
+    Async \
+    CallConv \
+#    CallConv2 \
+    CallConv3 \
+    MemCorrupt \
+    Overrun \
+    StackDesc \
+

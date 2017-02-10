@@ -1,0 +1,7 @@
+dirs = \
+	basichleak \
+	basicmleak \
+	HInject \
+	HLeak \
+	MemLeak \
+

@@ -1,0 +1,18 @@
+;--------------------------------------------------------------------
+;   Copyright (c) 2000  Microsoft Corporation
+;
+;Module:
+;   dbgexts.def
+;--------------------------------------------------------------------
+
+EXPORTS
+
+;--------------------------------------------------------------------
+; These are the extension functions exported by sysexts.dll
+;--------------------------------------------------------------------
+	help
+	dumptree
+	
+    DebugExtensionInitialize
+   	DebugExtensionUninitialize
+	KnownStructOutput

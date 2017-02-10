@@ -270,7 +270,10 @@ configurations { "Debug", "Release", "Debug_MT", "Release_MT", "TRACE", "TRACE_M
         includedirs
         {               
             "3rdparty",          
-        }        
+        }  
+        
+        pchsource(dir .. "/%{prj.name}/stdafx.cpp")
+        pchheader("stdafx.h")
         
     end    
     

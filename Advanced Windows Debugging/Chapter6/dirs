@@ -1,0 +1,6 @@
+DIRS= \
+    BasicAlloc \
+    DblFree \
+    Mismatch \
+    Overrun \
+    Uninit \

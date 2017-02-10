@@ -1,0 +1,49 @@
+#
+# The developer defines the TARGETNAME variable. It is the name of
+# the target (component) that is being built by this makefile.
+# It should not include any path or filename extension.
+#
+TARGETNAME=09hTarget
+
+#
+# The developer defines the TARGETPATH and TARGETTYPE variables.
+# The first variable specifies where the target will be built. The second specifies
+# the type of target (either PROGRAM, DYNLINK, LIBRARY, UMAPPL_NOLIB or
+# BOOTPGM). Use UMAPPL_NOLIB when you are only building user-mode
+# programs and do not need to build a library.
+#
+TARGETPATH=obj
+
+# Select one of the following, and delete the others:
+TARGETTYPE=PROGRAM
+
+#
+# The developer defines the SOURCES macro. It contains a list of all the
+# source files for this component. Specify each source file on a separate
+# line using the line-continuation character. This minimizes merge
+# conflicts if two developers are adding source files to the same component.
+#
+SOURCES= \
+	target.cpp \
+        version.rc	
+
+#
+# The TARGETLIBS macro specifies additional libraries to link against your target
+# image. Each library path specification should contain an asterisk (*)
+# where the machine-specific subdirectory name should go.
+#
+TARGETLIBS= \
+
+
+
+#
+# Next, specify options for the compiler using C_DEFINES.
+# All parameters specified here will be passed to both the C
+# compiler and the resource compiler.
+C_DEFINES=/DUNICODE /D_UNICODE
+
+USE_MSVCRT=1
+
+UMTYPE=console
+UMENTRY=wmain
+USE_NATIVE_EH=SYNC

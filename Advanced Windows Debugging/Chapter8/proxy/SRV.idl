@@ -1,0 +1,46 @@
+/*++
+Copyright (c) Advanced Windows Debugging (ISBN 0321374460) from Addison-Wesley Professional.  All rights reserved.
+
+    THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY
+    KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+    IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR
+    PURPOSE.
+
+--*/
+
+// This file will be processed by the MIDL tool to
+// produce the type library (SRV.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+    object,
+    uuid(DAF50CDB-D2A5-4E5C-9528-A7CACF04D471),
+    oleautomation,
+    nonextensible,
+    helpstring("ICalculator Interface"),
+    pointer_default(unique)
+]
+interface ICalculator : IUnknown
+{
+    HRESULT Sum( __int32 a,__int32 b,__int32 *result);
+    HRESULT SumSlow( __int32 a,__int32 b,__int32 *result);
+};
+[
+    uuid(B31EA1BE-1740-4E89-A9D1-76D53025898E),
+    version(1.0),
+    helpstring("SRV 1.0 Type Library")
+]
+library SRVLib
+{
+    importlib("stdole2.tlb");
+    [
+        uuid(31810948-8D81-4E55-BD16-0C27F5629392),
+        helpstring("Calculator Class")
+    ]
+    coclass Calculator
+    {
+        [default] interface ICalculator;
+    };
+};

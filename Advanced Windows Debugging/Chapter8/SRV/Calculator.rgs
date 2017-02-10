@@ -1,0 +1,23 @@
+HKCR
+{
+	SRV.Calculator.1 = s 'Calculator Class'
+	{
+		CLSID = s '{31810948-8D81-4E55-BD16-0C27F5629392}'
+	}
+	SRV.Calculator = s 'Calculator Class'
+	{
+		CLSID = s '{31810948-8D81-4E55-BD16-0C27F5629392}'
+		CurVer = s 'SRV.Calculator.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {31810948-8D81-4E55-BD16-0C27F5629392} = s 'Calculator Class'
+		{
+			ProgID = s 'SRV.Calculator.1'
+			VersionIndependentProgID = s 'SRV.Calculator'
+			LocalServer32 = s '%MODULE%'
+			val AppID = s '%APPID%'
+			'TypeLib' = s '{B31EA1BE-1740-4E89-A9D1-76D53025898E}'
+		}
+	}
+}

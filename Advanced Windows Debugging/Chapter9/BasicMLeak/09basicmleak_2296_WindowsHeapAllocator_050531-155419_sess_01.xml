@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<logdata>
+<xs:schema id="logdata" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"><xs:element name="SUMMARY_INFO"><xs:complexType><xs:sequence minOccurs="0" maxOccurs="unbounded"><xs:element name="FILENAME" type="xs:string" minOccurs="0" /><xs:element name="PID" type="xs:integer" minOccurs="0" /><xs:element name="OS" minOccurs="0" maxOccurs="unbounded"><xs:complexType><xs:attribute name="ver" type="xs:string" /><xs:attribute name="sp" type="xs:string" /><xs:attribute name="name" type="xs:string" /></xs:complexType></xs:element><xs:element name="LEAKDIAG_SETTINGS" minOccurs="0" maxOccurs="unbounded"><xs:complexType><xs:sequence minOccurs="0" maxOccurs="unbounded"><xs:element name="ALLOCATOR" minOccurs="0" maxOccurs="unbounded"><xs:complexType><xs:attribute name="num" type="xs:integer" /><xs:attribute name="name" type="xs:string" /><xs:attribute name="state" type="xs:integer" /></xs:complexType></xs:element></xs:sequence></xs:complexType></xs:element><xs:element name="MEMORY_INFO" minOccurs="0" maxOccurs="unbounded"><xs:complexType><xs:sequence minOccurs="0" maxOccurs="unbounded"><xs:element name="LEAKDIAG" minOccurs="0"  maxOccurs="unbounded"><xs:complexType><xs:attribute name="memusage" type="xs:double" /></xs:complexType></xs:element><xs:element name="GLOBALMEM" minOccurs="0" maxOccurs="unbounded"><xs:complexType><xs:attribute name="TotalPhys" type="xs:double" /><xs:attribute name="AvailPhys" type="xs:double" /><xs:attribute name="TotalPageFile" type="xs:double" /><xs:attribute name="AvailPageFile" type="xs:double" /><xs:attribute name="TotalVirtual" type="xs:double" /><xs:attribute name="AvailVirtual" type="xs:double" /><xs:attribute name="AvailExtendedVirtual" type="xs:double" /></xs:complexType></xs:element><xs:element name="PROCESSMEM" minOccurs="0" maxOccurs="unbounded"><xs:complexType><xs:attribute name="PeakVirtualSize" type="xs:double" /><xs:attribute name="VirtualSize" type="xs:double" /><xs:attribute name="PageFaultCount" type="xs:double" /><xs:attribute name="PeakWorkingSetSize" type="xs:double" /><xs:attribute name="WorkingSetSize" type="xs:double" /><xs:attribute name="QuotaPeakPagedPoolUsage" type="xs:double" /><xs:attribute name="QuotaPagedPoolUsage" type="xs:double" /><xs:attribute name="QuotaPeakNonPagedPoolUsage" type="xs:double" /><xs:attribute name="QuotaNonPagedPoolUsage" type="xs:double" /><xs:attribute name="PagefileUsage" type="xs:double" /><xs:attribute name="PeakPagefileUsage" type="xs:double" /></xs:complexType></xs:element></xs:sequence></xs:complexType></xs:element><xs:element name="MODULES" minOccurs="0" maxOccurs="unbounded"><xs:complexType><xs:sequence><xs:element name="MODULE_INFO" minOccurs="0" maxOccurs="unbounded"><xs:complexType><xs:attribute name="name" type="xs:string" /><xs:attribute name="timedate" type="xs:string" /><xs:attribute name="base" type="xs:string" /><xs:attribute name="end" type="xs:string" /></xs:complexType></xs:element></xs:sequence></xs:complexType></xs:element></xs:sequence></xs:complexType></xs:element><xs:element name="LEAKS"><xs:complexType><xs:sequence><xs:element name="STACK" minOccurs="0" maxOccurs="unbounded"><xs:complexType><xs:sequence><xs:element name="STACKID" type="xs:string" minOccurs="0" msdata:Ordinal="1" /><xs:element name="STACKSTATS" minOccurs="0" maxOccurs="unbounded"><xs:complexType><xs:sequence><xs:element name="SIZESTAT" minOccurs="0" maxOccurs="unbounded"><xs:complexType><xs:attribute name="size" type="xs:double" /><xs:attribute name="numallocs" type="xs:double" /><xs:attribute name="type" type="xs:string" /></xs:complexType></xs:element><xs:element name="HEAPSTAT" minOccurs="0" maxOccurs="unbounded"><xs:complexType><xs:attribute name="handle" type="xs:string" /><xs:attribute name="numallocs" type="xs:double" /></xs:complexType></xs:element><xs:element name="ASSOCIATED_STACKS" minOccurs="0" maxOccurs="unbounded"><xs:complexType><xs:attribute name="stackid" type="xs:string" /><xs:attribute name="type" type="xs:string" /><xs:attribute name="numallocs" type="xs:double" /><xs:attribute name="totalsize" type="xs:double" /></xs:complexType></xs:element></xs:sequence></xs:complexType></xs:element><xs:element name="FRAME" minOccurs="0" maxOccurs="unbounded"><xs:complexType><xs:attribute name="num" type="xs:integer" /><xs:attribute name="dll" type="xs:string" /><xs:attribute name="function" type="xs:string" /><xs:attribute name="offset" type="xs:string" /><xs:attribute name="filename" type="xs:string" /><xs:attribute name="line" type="xs:string" /><xs:attribute name="addr" type="xs:string" /></xs:complexType></xs:element></xs:sequence><xs:attribute name="numallocs" type="xs:double" /><xs:attribute name="size" type="xs:double" /><xs:attribute name="totalsize" type="xs:double" /><xs:attribute name="totalalloccount" type="xs:double" /><xs:attribute name="totalallocsize" type="xs:double" /></xs:complexType></xs:element></xs:sequence><xs:attribute name="ver" type="xs:string" /></xs:complexType><xs:key name="LEAKSKey1"><xs:selector xpath=".//STACK" /><xs:field xpath="STACKID" /></xs:key></xs:element></xs:schema>
+<LEAKS ver="1.31.03.0915">
+<STACK numallocs="0710" size="028" totalsize="019880" totalalloccount="0710" totalallocsize="019880">
+<STACKSTATS>
+<SIZESTAT size="028" numallocs="0710" type="N/A"/>
+<HEAPSTAT handle="80000" numallocs="0710"/>
+</STACKSTATS>
+<FRAME num="0" dll="09basicmleak.exe" function ="CServer__GetSID" offset="0xC8" filename="c:\zone\pwd\cd\code\resleak\memleak\scenario1\server\srv.cpp" line="42" addr="0x1001C38" />
+<FRAME num="1" dll="09basicmleak.exe" function ="ThreadWorker" offset="0x6B" filename="c:\zone\pwd\cd\code\resleak\memleak\scenario1\client\client.cpp" line="36" addr="0x100142B" />
+<FRAME num="2" dll="kernel32.dll" function ="BaseThreadStart" offset="0x37" filename="" line="" addr="0x7C80B50B" />
+<STACKID>008E5C88</STACKID>
+</STACK>
+<STACK numallocs="00" size="00" totalsize="00" totalalloccount="0710" totalallocsize="025560">
+<STACKSTATS>
+</STACKSTATS>
+<FRAME num="0" dll="09basicmleak.exe" function ="CServer__GetSID" offset="0x78" filename="c:\zone\pwd\cd\code\resleak\memleak\scenario1\server\srv.cpp" line="30" addr="0x1001BE8" />
+<FRAME num="1" dll="09basicmleak.exe" function ="ThreadWorker" offset="0x6B" filename="c:\zone\pwd\cd\code\resleak\memleak\scenario1\client\client.cpp" line="36" addr="0x100142B" />
+<FRAME num="2" dll="kernel32.dll" function ="BaseThreadStart" offset="0x37" filename="" line="" addr="0x7C80B50B" />
+<STACKID>008E5A08</STACKID>
+</STACK>
+<STACK numallocs="00" size="00" totalsize="00" totalalloccount="0580" totalallocsize="032480">
+<STACKSTATS>
+</STACKSTATS>
+<FRAME num="0" dll="09basicmleak.exe" function ="CServer__GetGroupCount" offset="0x70" filename="c:\zone\pwd\cd\code\resleak\memleak\scenario1\server\srv.cpp" line="113" addr="0x1001DE0" />
+<FRAME num="1" dll="09basicmleak.exe" function ="ThreadWorker" offset="0xD7" filename="c:\zone\pwd\cd\code\resleak\memleak\scenario1\client\client.cpp" line="60" addr="0x1001497" />
+<FRAME num="2" dll="kernel32.dll" function ="BaseThreadStart" offset="0x37" filename="" line="" addr="0x7C80B50B" />
+<STACKID>008E5788</STACKID>
+</STACK>
+<STACK numallocs="00" size="00" totalsize="00" totalalloccount="01" totalallocsize="040">
+<STACKSTATS>
+</STACKSTATS>
+<FRAME num="0" dll="kernel32.dll" function ="WaitForMultipleObjectsEx" offset="0x59" filename="" line="" addr="0x7C81E551" />
+<FRAME num="1" dll="kernel32.dll" function ="WaitForMultipleObjects" offset="0x18" filename="" line="" addr="0x7C809C86" />
+<FRAME num="2" dll="09basicmleak.exe" function ="wmain" offset="0x247" filename="c:\zone\pwd\cd\code\resleak\memleak\scenario1\client\client.cpp" line="153" addr="0x1001737" />
+<FRAME num="3" dll="09basicmleak.exe" function ="wmainCRTStartup" offset="0x12B" filename="d:\dnsrv\base\crts\crtw32\dllstuff\crtexe.c" line="498" addr="0x1001933" />
+<FRAME num="4" dll="kernel32.dll" function ="BaseProcessStart" offset="0x23" filename="" line="" addr="0x7C816D4F" />
+<STACKID>008E5288</STACKID>
+</STACK>
+<STACK numallocs="00" size="00" totalsize="00" totalalloccount="01" totalallocsize="040">
+<STACKSTATS>
+</STACKSTATS>
+<FRAME num="0" dll="msvcrt.dll" function ="_heap_alloc" offset="0xE0" filename="" line="" addr="0x77C2C3C9" />
+<FRAME num="1" dll="msvcrt.dll" function ="_nh_malloc" offset="0x13" filename="" line="" addr="0x77C2C3E7" />
+<FRAME num="2" dll="msvcrt.dll" function ="operator new" offset="0xF" filename="" line="" addr="0x77C29CD4" />
+<FRAME num="3" dll="09basicmleak.exe" function ="wmain" offset="0x1A5" filename="c:\zone\pwd\cd\code\resleak\memleak\scenario1\client\client.cpp" line="131" addr="0x1001695" />
+<FRAME num="4" dll="09basicmleak.exe" function ="wmainCRTStartup" offset="0x12B" filename="d:\dnsrv\base\crts\crtw32\dllstuff\crtexe.c" line="498" addr="0x1001933" />
+<FRAME num="5" dll="kernel32.dll" function ="BaseProcessStart" offset="0x23" filename="" line="" addr="0x7C816D4F" />
+<STACKID>008E5008</STACKID>
+</STACK>
+<STACK numallocs="00" size="00" totalsize="00" totalalloccount="010" totalallocsize="01360">
+<STACKSTATS>
+</STACKSTATS>
+<FRAME num="0" dll="msvcrt.dll" function ="calloc" offset="0x118" filename="" line="" addr="0x77C2C1DB" />
+<FRAME num="1" dll="msvcrt.dll" function ="__CRTDLL_INIT" offset="0x15F" filename="" line="" addr="0x77C1F0D0" />
+<FRAME num="2" dll="ntdll.dll" function ="LdrpCallInitRoutine" offset="0x14" filename="" line="" addr="0x7C9011A7" />
+<FRAME num="3" dll="ntdll.dll" function ="LdrpInitializeThread" offset="0xC0" filename="" line="" addr="0x7C918F65" />
+<FRAME num="4" dll="ntdll.dll" function ="_LdrpInitialize" offset="0x219" filename="" line="" addr="0x7C918DDE" />
+<FRAME num="5" dll="ntdll.dll" function ="KiUserApcDispatcher" offset="0x7" filename="" line="" addr="0x7C90EAC7" />
+<STACKID>008E5508</STACKID>
+</STACK>
+<STACK numallocs="00" size="00" totalsize="00" totalalloccount="0710" totalallocsize="039760">
+<STACKSTATS>
+</STACKSTATS>
+<FRAME num="0" dll="09basicmleak.exe" function ="CServer__GetPrivilegeCount" offset="0x70" filename="c:\zone\pwd\cd\code\resleak\memleak\scenario1\server\srv.cpp" line="76" addr="0x1001D10" />
+<FRAME num="1" dll="09basicmleak.exe" function ="ThreadWorker" offset="0xA4" filename="c:\zone\pwd\cd\code\resleak\memleak\scenario1\client\client.cpp" line="48" addr="0x1001464" />
+<FRAME num="2" dll="kernel32.dll" function ="BaseThreadStart" offset="0x37" filename="" line="" addr="0x7C80B50B" />
+<STACKID>008E8008</STACKID>
+</STACK>
+</LEAKS>
+<SUMMARY_INFO>
+<FILENAME>C:\Zone\PWD\CD\Code\ResLeak\MemLeak\Scenario1\Client\objchk_wxp_x86\i386\09basicmleak.exe</FILENAME>
+<PID>2296</PID>
+<OS ver="5.1.2600" sp="2.0" name="Windows XP Professional Service Pack 2" />
+<LEAKDIAG_SETTINGS>
+<ALLOCATOR num="2" name="WindowsHeapAllocator" state="1" />
+</LEAKDIAG_SETTINGS>
+<MEMORY_INFO>
+<LEAKDIAG memusage="2968720" />
+<GLOBALMEM MemoryLoad="45" TotalPhys="1072926720" AvailPhys="0" TotalPageFile="585379840" AvailPageFile="0" TotalVirtual="2579705856" AvailVirtual="0" AvailExtendedVirtual="2197856256"/>
+<PROCESSMEM PeakVirtualSize="54640640" VirtualSize="54640640" PageFaultCount="4632" PeakWorkingSetSize="15699968" WorkingSetSize="15699968" QuotaPeakPagedPoolUsage="32548" QuotaPagedPoolUsage="32212" QuotaPeakNonPagedPoolUsage="3280" PagefileUsage="16642048" PeakPagefileUsage="16642048" />
+</MEMORY_INFO>
+<MODULES>
+<MODULE_INFO name="symsrv.dll" timestamp="0x40E5C500" base="0xBE0000" end="0xC09000" />
+<MODULE_INFO name="09basicmleak.exe" timestamp="0x42911AE4" base="0x1000000" end="0x1004000" />
+<MODULE_INFO name="dbghelp.dll" timestamp="0x40E5C4F0" base="0x2800000" end="0x2901000" />
+<MODULE_INFO name="inject.dll" timestamp="0x3FCBC8C2" base="0x67A10000" end="0x67BD3000" />
+<MODULE_INFO name="psapi.dll" timestamp="0x38439A0A" base="0x690A0000" end="0x690AB000" />
+<MODULE_INFO name="msvcrt.dll" timestamp="0x41109752" base="0x77C10000" end="0x77C68000" />
+<MODULE_INFO name="USER32.dll" timestamp="0x42260159" base="0x77D40000" end="0x77DD0000" />
+<MODULE_INFO name="ADVAPI32.dll" timestamp="0x411096A7" base="0x77DD0000" end="0x77E6B000" />
+<MODULE_INFO name="RPCRT4.dll" timestamp="0x411096AE" base="0x77E70000" end="0x77F01000" />
+<MODULE_INFO name="GDI32.dll" timestamp="0x41109697" base="0x77F10000" end="0x77F56000" />
+<MODULE_INFO name="kernel32.dll" timestamp="0x411096B4" base="0x7C800000" end="0x7C8F4000" />
+<MODULE_INFO name="ntdll.dll" timestamp="0x411096B4" base="0x7C900000" end="0x7C9B0000" />
+</MODULES>
+</SUMMARY_INFO>
+</logdata>

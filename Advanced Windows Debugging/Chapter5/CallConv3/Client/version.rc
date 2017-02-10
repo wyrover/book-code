@@ -1,0 +1,32 @@
+/*++
+Copyright (c) Advanced Windows Debugging (ISBN 0321374460) from Addison-Wesley Professional.  All rights reserved.
+
+    THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY
+    KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+    IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR
+    PURPOSE.
+
+--*/
+#include <windows.h>
+
+#include <ntverp.h>
+
+#define    VER_FILETYPE    VFT_DLL
+#define    VER_FILESUBTYPE    VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Sample Code"
+#define VER_INTERNALNAME_STR SXS_TARGET
+#define VER_LEGALCOPYRIGHT_STR "Copyright (c) Advanced Windows Debugging (ISBN 0321374460) from Addison-Wesley Professional. All rights reserved."
+
+#undef VER_PRODUCTVERSION
+#define VER_PRODUCTVERSION 1,0
+
+#undef VER_PRODUCTVERSION_STR
+#define VER_PRODUCTVERSION_STR "1.0.0.0"
+
+#undef VER_COMPANYNAME_STR
+#define VER_COMPANYNAME_STR "Advanced Windows Debugging"
+
+#undef VER_PRODUCTNAME_STR
+#define VER_PRODUCTNAME_STR "Advanced Windows Debugging Samples"
+
+#include "common.ver"
