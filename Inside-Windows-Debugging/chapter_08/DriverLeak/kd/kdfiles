@@ -1,0 +1,6 @@
+# 
+# map loading of the driver in KD (.kdfiles)
+#
+map
+\Systemroot\system32\drivers\drvleak.sys
+G:\book\code\chapter_4\DriverLeak\sys\objfre_win7_x86\i386\drvleak.sys

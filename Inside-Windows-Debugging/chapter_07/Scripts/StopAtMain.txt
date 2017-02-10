@@ -1,0 +1,5 @@
+.symfix
+.reload
+bp notepad!WinMain
+g
+k

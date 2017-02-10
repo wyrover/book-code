@@ -1,0 +1,12 @@
+$$
+$$ win7services_x64.txt
+$$
+.echo Dumping running services list...
+r $t1=services!ImageDatabase;
+r $t1 = poi(@$t1 + 0x08);
+
+.for (; @$t1 != 0; r $t1 = poi(@$t1 + 0x08))
+{
+    .printf "Service Image Name: %mu\n", poi(@$t1+0x10);
+    .printf "Service Image PID: 0x%p\n", poi(@$t1+0x18);
+}

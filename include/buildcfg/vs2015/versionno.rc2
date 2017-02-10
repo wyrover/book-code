@@ -31,13 +31,13 @@ BEGIN
     BEGIN
         BLOCK "000004B0"
         BEGIN
-            VALUE "CompanyName","MyDrivers.com"
+            VALUE "CompanyName","100w123.com"
             VALUE "FileDescription",	VI_FILEDESCRIPTION
             VALUE "FileVersion",    VI_FILEVERSION_STR
             VALUE "InternalName",	VI_INTERNALNAME
-            VALUE "LegalCopyright","Copyright MyDrivers.com all right"
+            VALUE "LegalCopyright","Copyright 100w123.com all right"
             VALUE "OriginalFilename",	VI_ORIGINALFILENAME
-            VALUE "ProductName",	"DriverGenius\0"
+            VALUE "ProductName",	"TOOLS\0"
             VALUE "ProductVersion", VI_PRODUCTVERSION_STR
         END
     END

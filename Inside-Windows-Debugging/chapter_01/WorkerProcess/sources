@@ -1,0 +1,23 @@
+TARGETNAME          = workerprocess
+TARGETTYPE          = PROGRAM
+
+UMTYPE = console
+UMENTRY = wmain
+
+C_DEFINES=$(C_DEFINES) -DUNICODE -D_UNICODE
+
+USE_MSVCRT=1
+USE_ATL=1
+
+SOURCES=\
+    main.cpp \
+
+INCLUDES= \
+    $(INCLUDES); \
+    ..\..\common\corelib; \
+
+TARGETLIBS= \
+    $(SDK_LIB_PATH)\kernel32.lib \
+    $(SDK_LIB_PATH)\advapi32.lib \
+    $(SDK_LIB_PATH)\oleaut32.lib \
+    $(SDK_LIB_PATH)\user32.lib \

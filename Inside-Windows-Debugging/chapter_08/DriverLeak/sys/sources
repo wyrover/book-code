@@ -1,0 +1,22 @@
+!ifdef USE_MSVCRT
+!undef USE_MSVCRT
+!endif 
+
+TARGETNAME=drvleak
+TARGETTYPE=DRIVER
+
+INCLUDES = $(INCLUDES) \
+    ..\inc; \
+
+LINKER_FLAGS = $(LINKER_FLAGS) /INTEGRITYCHECK
+
+# 
+# Enable KD output on free builds. Should be removed
+# in shipping releases of the binary!!
+#
+C_DEFINES=$(C_DEFINES) -DDRV_FORCE_KD_PRINT
+
+SOURCES = \
+    main.c \
+
+MUI=0

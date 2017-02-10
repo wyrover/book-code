@@ -1,0 +1,19 @@
+TARGETNAME          = DllModule
+TARGETTYPE          = DYNLINK
+
+USE_MSVCRT=1
+
+C_DEFINES=$(C_DEFINES) -DUNICODE -D_UNICODE
+
+DLLDEF=main.def
+
+SOURCES=\
+    main.cpp \
+
+INCLUDES= \
+    $(INCLUDES); \
+    ..\..\common\corelib; \
+
+TARGETLIBS= \
+    $(SDK_LIB_PATH)\kernel32.lib \
+    $(SDK_LIB_PATH)\advapi32.lib \

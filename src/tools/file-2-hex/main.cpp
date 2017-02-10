@@ -1,7 +1,7 @@
 // console_template.cpp : Defines the entry point for the console application.
 //
 
-#include "buildcfg.h"
+
 #include "targetver.h"
 
 #include <stdio.h>

@@ -1,0 +1,4 @@
+r? $t1 = ((nt!_EPROCESS*) @eax);
+as /ma ${/v:NewImageName} @@c++(@$t1->ImageFileName);
+.echo ${NewImageName}
+j ($spat("${NewImageName}", "notepad*") == 0) gc;

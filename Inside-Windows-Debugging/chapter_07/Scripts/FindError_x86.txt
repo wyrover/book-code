@@ -1,0 +1,17 @@
+.if (${/d:$arg1})
+{ 
+    r? $t1 = ((DWORD*) @eax);
+    r $t2 = $arg1;
+    r? $t2 = ((DWORD*) @$t2);
+
+    .for (; @$t1 != @$t2; r $t1=@eax)
+    {
+        t;
+        r @eax;
+    }
+}
+.else
+{
+    .echo An error value is required with this script
+    .echo For example: $$>a< FindError_x86.txt 0x80070005
+}

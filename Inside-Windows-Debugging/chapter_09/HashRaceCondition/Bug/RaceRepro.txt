@@ -1,0 +1,24 @@
+.symfix
+.reload
+bp advapi32!CryptHashData
+bp advapi32!CryptCreateHash
+$$ The first breakpoint is CryptCreateHash (constructor)
+g
+$$ The first thread hits CryptHashData (ComputeHash)
+g
+$$ Now freeze the first thread before continuing the hash operation
+~f
+$$ The next breakpoint is CryptHashData in the second thread
+g
+$$ Let the second thread complete the hash operation
+g
+$$ You’ve now hit CryptCreateHash: The second thread is re-initializing the
+$$ hash object after the hash operation is over. Freeze the second thread now
+$$ and unfreeze the first thread so it sees the hash in this finalized state.
+~*u
+~f
+g
+g
+$$ You will always hit a managed code exception here
+.loadby sos clr
+!pe

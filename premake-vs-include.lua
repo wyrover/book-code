@@ -43,15 +43,31 @@ configurations { "Debug", "Release", "Debug_MT", "Release_MT", "TRACE", "TRACE_M
 
     -- EXE ºÍ ¶¯Ì¬¿âÊä³ö
 
-    filter { "kind:ConsoleApp or WindowedApp or SharedLib", "platforms:Win32" }
+    filter { "kind:ConsoleApp or WindowedApp or SharedLib", "platforms:Win32", "configurations:not *_MT" }
         targetdir "bin/x86/%{_ACTION}/%{wks.name}/md"  
-        debugdir "bin/x86/%{_ACTION}/%{wks.name}/md"          
+        debugdir "bin/x86/%{_ACTION}/%{wks.name}/md"      
+        if _ACTION == "vs2015" then
+            flags { "NoManifest" } 
+            files { "include/buildcfg/vs2015/version.rc" }
+            includedirs
+            {              
+                "include/buildcfg/vs2015"                
+            }
+        end
     filter { "kind:ConsoleApp or WindowedApp or SharedLib", "platforms:Win32", "configurations:*_MT" }
         targetdir "bin/x86/%{_ACTION}/%{wks.name}/mt"
         debugdir "bin/x86/%{_ACTION}/%{wks.name}/mt"        
-    filter { "kind:ConsoleApp or WindowedApp or SharedLib", "platforms:x64" }
+    filter { "kind:ConsoleApp or WindowedApp or SharedLib", "platforms:x64", "configurations:not *_MT" }
         targetdir "bin/x64/%{_ACTION}/%{wks.name}/md" 
-        debugdir "bin/x64/%{_ACTION}/%{wks.name}/md"         
+        debugdir "bin/x64/%{_ACTION}/%{wks.name}/md"  
+        if _ACTION == "vs2015" then
+            flags { "NoManifest" } 
+            files { "include/buildcfg/vs2015/version.rc" }
+            includedirs
+            {              
+                "include/buildcfg/vs2015"                
+            }
+        end
     filter { "kind:ConsoleApp or WindowedApp or SharedLib", "platforms:x64", "configurations:*_MT" }
         targetdir "bin/x64/%{_ACTION}/%{wks.name}/mt"
         debugdir "bin/x64/%{_ACTION}/%{wks.name}/md"        
@@ -256,6 +272,57 @@ configurations { "Debug", "Release", "Debug_MT", "Release_MT", "TRACE", "TRACE_M
             "3rdparty",          
         }        
         
+    end    
+    
+
+    function create_console_charset_project(name, dir, mbcs)        
+        project(name)          
+        kind "ConsoleApp"                          
+        if mbcs == "mbcs" then
+            characterset "MBCS"
+        end
+        flags { "NoManifest", "WinMain", "StaticRuntime" }       
+        defines {  }
+        files
+        {                                  
+            dir .. "/%{prj.name}/**.h",
+            dir .. "/%{prj.name}/**.cpp", 
+            dir .. "/%{prj.name}/**.c", 
+            dir .. "/%{prj.name}/**.rc" 
+        }
+        removefiles
+        {               
+        }
+        includedirs
+        {                   
+            "3rdparty"   
+        }       
+        links
+        {
+            
+        }
+    end
+
+
+    function create_wtl_project(name, dir)        
+        project(name)          
+        kind "WindowedApp"                                                     
+        files
+        {                                  
+            dir .. "/%{prj.name}/**.h",
+            dir .. "/%{prj.name}/**.cpp", 
+            dir .. "/%{prj.name}/**.c", 
+            dir .. "/%{prj.name}/**.rc" 
+        }
+        removefiles
+        {               
+        }
+        includedirs
+        {               
+            "3rdparty",   
+            "3rdparty/wtl"
+        }        
+        
     end
 
 
@@ -364,4 +431,74 @@ configurations { "Debug", "Release", "Debug_MT", "Release_MT", "TRACE", "TRACE_M
         {
             "lib/x86/vs2005/md/glfw"
         }       
+    end
+
+
+    function create_sys_project(name, dir)
+        project(name)          
+        targetextension ".sys"
+        kind "WindowedApp"               
+        buildoptions { "/X", "/Gz", "/GR-" } 
+        --linkoptions { "/SUBSYSTEM:NATIVE", "/DRIVER", "/ENTRY:\"DriverEntry\"", "/NODEFAULTLIB" }
+        linkoptions { "/SUBSYSTEM:NATIVE", "/DRIVER", "/ENTRY:\"DriverEntry\"" }
+        flags { "StaticRuntime", "NoManifest", "No64BitChecks", "NoBufferSecurityCheck", "NoRuntimeChecks" }
+        files
+        {
+            dir .. "/%{prj.name}/**.h",
+            dir .. "/%{prj.name}/**.cpp", 
+            dir .. "/%{prj.name}/**.c", 
+            dir .. "/%{prj.name}/**.rc" 
+--            "3rdparty/WinRing0/**.h",
+--            "3rdparty/WinRing0/**.c",
+--            "3rdparty/WinRing0/**.cpp",
+--            "3rdparty/WinRing0/**.rc"                
+        }
+        removefiles
+        {               
+        }
+        includedirs
+        {   
+            "C:/WinDDK/7600.16385.1/inc/ddk",
+            "C:/WinDDK/7600.16385.1/inc/api",
+            "C:/WinDDK/7600.16385.1/inc/crt",
+            "C:/Program Files (x86)/Microsoft Visual Studio 8/VC/include"
+        }
+        --pchsource "3rdparty/WinRing0/stdafx.cpp"
+        --pchheader "stdafx.h"               
+        defines { "WIN32", "_CONSOLE", "_DDK_" }
+        filter { "platforms:Win32" }
+            defines { "_X86_" }     
+            libdirs
+            {
+                "C:/WinDDK/7600.16385.1/lib/WIN7/i386"
+                
+            }
+            links
+            { 
+                "ntoskrnl.lib",
+                "hal.lib",
+                "int64.lib",
+                "ntstrsafe.lib",
+                "exsup.lib",
+                "ksecdd.lib"                      
+            }            
+        filter "platforms:x64"
+            defines { "_AMD64_" }
+            libdirs
+            {
+                "C:/WinDDK/7600.16385.1/lib/WIN7/amd64"                    
+            }
+            links
+            { 
+                "ntoskrnl.lib",
+                "hal.lib",                    
+                "ntstrsafe.lib",                    
+                "ksecdd.lib"                      
+            }            
+            targetsuffix "x64"
+        filter "configurations:Debug"
+            defines { "_DEBUG", "DBG=1" }
+        filter "configurations:Release"
+            defines { "_NDEBUG", "DBG=0" }
+            buildoptions { "/Ob2", "/Oi", "/GL" } 
     end

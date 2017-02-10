@@ -1,0 +1,5 @@
+DIRS=\
+    Deadlocks \
+    DllLifetimeRaceCondition \
+    ExeGlobalsLifetime \
+    ThreadCtxLifetime \

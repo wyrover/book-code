@@ -1,0 +1,8 @@
+DIRS=\
+    IllegalWriteAV \
+    HeapCorruption \
+    StackCorruption \
+    StackOverflow \
+    HeapLeak \
+    RefCountDB \
+    DriverLeak \

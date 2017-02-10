@@ -1,0 +1,34 @@
+﻿Build started 11/8/2011 12:42:33 PM.
+     1>Project "G:\book\code\chapter_06\FormatString\FormatString.vcxproj" on node 2 (rebuild target(s)).
+     1>_PrepareForClean:
+         Deleting file "Debug\FormatString.lastbuildstate".
+       InitializeBuildStatus:
+         Creating "Debug\FormatString.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I..\..\common\corelib /I..\..\common\misc /I..\..\common\comlib /Zi /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D /DUNICODE /D /D_UNICODE /D _ATL_STATIC_REGISTRY /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp stdafx.cpp
+         stdafx.cpp
+         main.cpp
+         Generating Code...
+       ManifestResourceCompile:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\FormatString.exe.embed.manifest.res" Debug\FormatString_manifest.rc 
+       Link:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"G:\book\code\chapter_06\FormatString\Debug\FormatString.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\FormatString.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"G:\book\code\chapter_06\FormatString\Debug\FormatString.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"G:\book\code\chapter_06\FormatString\Debug\FormatString.lib" /MACHINE:X86 Debug\FormatString.exe.embed.manifest.res
+         Debug\main.obj
+         Debug\stdafx.obj
+       Manifest:
+         Deleting file "Debug\FormatString.exe.embed.manifest".
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug\FormatString.exe.embed.manifest" /manifest Debug\FormatString.exe.intermediate.manifest
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\FormatString.exe.embed.manifest.res" Debug\FormatString_manifest.rc 
+       LinkEmbedManifest:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"G:\book\code\chapter_06\FormatString\Debug\FormatString.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\FormatString.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"G:\book\code\chapter_06\FormatString\Debug\FormatString.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"G:\book\code\chapter_06\FormatString\Debug\FormatString.lib" /MACHINE:X86 Debug\FormatString.exe.embed.manifest.res
+         Debug\main.obj
+         Debug\stdafx.obj
+         FormatString.vcxproj -> G:\book\code\chapter_06\FormatString\Debug\FormatString.exe
+       FinalizeBuildStatus:
+         Deleting file "Debug\FormatString.unsuccessfulbuild".
+         Touching "Debug\FormatString.lastbuildstate".
+     1>Done Building Project "G:\book\code\chapter_06\FormatString\FormatString.vcxproj" (rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:24.79

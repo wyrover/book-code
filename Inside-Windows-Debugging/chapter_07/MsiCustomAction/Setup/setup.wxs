@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <Product Id="*"
+        UpgradeCode="f70d3807-40b7-460e-98a5-ba7af273a48c"
+        Version="1.0.0.0"
+        Language="1033"
+        Name="MSI Custom Action Example"
+        Manufacturer="Microsoft Press"
+    >
+        <Package InstallerVersion="300" Compressed="yes"/>
+        <Media Id="1" Cabinet="setup.cab" EmbedCab="yes" />
+
+        <!-- A single component/file: readme.txt -->
+        <Directory Id="TARGETDIR" Name="SourceDir">
+          <Directory Id="ProgramFilesFolder">
+            <Directory Id="APPLICATIONROOTDIRECTORY" Name="Chapter_3_CA_Sample"/>
+          </Directory>
+        </Directory>
+
+        <DirectoryRef Id="APPLICATIONROOTDIRECTORY">
+          <Component Id="readme.txt" Guid="fccad948-a103-4279-8b07-64ad7c2ca2a1">
+            <File Id="readme.txt" Source=".\readme.txt" KeyPath="yes" Checksum="yes"/>
+          </Component>
+        </DirectoryRef>
+
+        <Feature Id="MainApplication" Title="Main Application" Level="1">
+          <ComponentRef Id="readme.txt" />
+        </Feature>
+
+        <!-- From WIX UI Utils Library -->
+        <UI>
+            <UIRef Id="WixUI_Minimal" />
+            <Publish Dialog="ExitDialog"
+                Control="Finish"
+                Event="DoAction"
+                Value="WriteTmpFile">WIXUI_EXITDIALOGOPTIONALCHECKBOX = 1 and NOT Installed
+            </Publish>
+        </UI>
+        <Property Id="WIXUI_EXITDIALOGOPTIONALCHECKBOXTEXT" Value="Launch Custom Action" />
+
+        <!-- Custom Action -->
+        <Binary Id="TestCA" SourceFile="..\CustomActionDll\objfre_win7_x86\i386\CustomActionDll.dll" />
+        <CustomAction Id="WriteTmpFile"
+            BinaryKey="TestCA"
+            DllEntry="TestCustomAction"
+            Impersonate="yes"
+         />
+    </Product>
+</Wix>

@@ -1,0 +1,7 @@
+.symfix
+.reload
+sxe ld clr.dll
+g
+.loadby sos clr
+!eeversion
+

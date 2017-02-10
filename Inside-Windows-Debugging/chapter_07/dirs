@@ -1,0 +1,4 @@
+DIRS=\    
+    BreakOnDllLoad \
+    BreakOnFailure \
+    MsiCustomAction \

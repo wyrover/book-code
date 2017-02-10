@@ -1,0 +1,6 @@
+.symfix
+.reload
+bp ntdll!NtCreateFile
+g
+g
+k

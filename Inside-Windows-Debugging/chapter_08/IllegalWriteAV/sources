@@ -1,0 +1,16 @@
+TARGETNAME          = IllegalWriteAv
+TARGETTYPE          = PROGRAM
+
+UMTYPE = console
+UMENTRY = wmain
+
+C_DEFINES=$(C_DEFINES) -DUNICODE -D_UNICODE
+LINKER_FLAGS=$(LINKER_FLAGS) /WX /MAP:$(OBJ_PATH)\$(O)\$(TARGETNAME).map  
+  
+USE_MSVCRT=1
+
+SOURCES=\
+    main.cpp \
+
+TARGETLIBS= \
+    $(SDK_LIB_PATH)\kernel32.lib \

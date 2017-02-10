@@ -348,6 +348,19 @@ workspace "3rdparty"
                 "3rdparty/getopt/**.c"      
                                
             } 
+
+        project "msgpack"            
+            kind "StaticLib"                             
+            files
+            {
+                "3rdparty/msgpack-c/include/msgpack.hpp",
+                "3rdparty/msgpack-c/src/**.c"                                   
+            } 
+            includedirs
+            {          
+                "3rdparty/msgpack-c/include",
+                "3rdparty"    
+            }  
             
         
 
