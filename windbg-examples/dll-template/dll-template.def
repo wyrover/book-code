@@ -1,0 +1,3 @@
+LIBRARY	"dll-template"
+EXPORTS 
+	Hello1
