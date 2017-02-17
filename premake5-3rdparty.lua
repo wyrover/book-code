@@ -1126,15 +1126,8 @@ workspace "sfml"
     links
     {
         "opengl32.lib"
-    }
-
-        
-workspace "test"
-    language "C++"
-    location "build/%{_ACTION}/%{wks.name}"                
+    }        
     
-    create_mfc_console_project("test_filesystem", "src")
-    create_console_project("test_unix_time", "src")       
     
 
 workspace "glfw"

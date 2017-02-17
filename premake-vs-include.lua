@@ -151,13 +151,13 @@ configurations { "Debug", "Release", "Debug_MT", "Release_MT", "TRACE", "TRACE_M
         defines { "NDEBUG" }
         flags { "Symbols" }
         optimize "Speed"  
-        buildoptions { "/Od" } 
+        --buildoptions { "/Od" } 
 
     filter "configurations:Release_MT"
         defines { "NDEBUG" }
         flags { "Symbols", "StaticRuntime", "NoManifest" }
         optimize "Speed"  
-        buildoptions { "/Od" } 
+        --buildoptions { "/Od" } 
     
     filter "configurations:TRACE"
         defines { "NDEBUG", "TRACE_TOOL" }
@@ -223,7 +223,29 @@ configurations { "Debug", "Release", "Debug_MT", "Release_MT", "TRACE", "TRACE_M
         }
 
 
-
+    function has_stdafx(name, dir)
+        if os.isfile(dir .. "/" .. name .. "/stdafx.cpp") then              
+            local upper_flag = false
+            local result = os.matchfiles(dir .. "/" .. name .. "/*.cpp")
+            for i = #result, 1, -1 do                
+                local filename = path.getname(result[i])
+                if filename == "StdAfx.cpp" then
+                    upper_flag = true
+                elseif filename == "stdafx.cpp" then
+                    upper_flag = false   
+                end
+                
+            end
+                
+            if upper_flag then
+                pchsource(dir .. "/%{prj.name}/StdAfx.cpp")
+                pchheader("StdAfx.h")
+            else
+                pchsource(dir .. "/%{prj.name}/stdafx.cpp")
+                pchheader("stdafx.h")    
+            end
+        end
+    end
 
 
     function create_mfc_console_project(name, dir)        
@@ -254,6 +276,58 @@ configurations { "Debug", "Release", "Debug_MT", "Release_MT", "TRACE", "TRACE_M
     end
 
 
+    function create_mfc_project(name, dir)        
+        project(name)          
+        kind "WindowedApp"                             
+        defines {  }
+        flags { "MFC", "WinMain" }
+        removeconfigurations "*_MT"              
+        files
+        {                                  
+            dir .. "/%{prj.name}/**.h",
+            dir .. "/%{prj.name}/**.cpp", 
+            dir .. "/%{prj.name}/**.c", 
+            dir .. "/%{prj.name}/**.rc" 
+        }
+        removefiles
+        {               
+        }
+        includedirs
+        {               
+            "3rdparty",          
+        }  
+        has_stdafx(name, dir)  
+        
+    end
+
+    function create_mfc_charset_project(name, dir, mbcs)        
+        project(name)          
+        kind "WindowedApp"                             
+        defines {  }
+        flags { "MFC", "WinMain" }
+        removeconfigurations "*_MT"   
+        if mbcs == "mbcs" then
+            characterset "MBCS"
+        end 
+        files
+        {                                  
+            dir .. "/%{prj.name}/**.h",
+            dir .. "/%{prj.name}/**.cpp", 
+            dir .. "/%{prj.name}/**.c", 
+            dir .. "/%{prj.name}/**.rc" 
+        }
+        removefiles
+        {               
+        }
+        includedirs
+        {               
+            "3rdparty",          
+        }  
+        has_stdafx(name, dir)  
+        
+    end
+
+
     function create_console_project(name, dir)        
         project(name)          
         kind "ConsoleApp"                                             
@@ -270,11 +344,8 @@ configurations { "Debug", "Release", "Debug_MT", "Release_MT", "TRACE", "TRACE_M
         includedirs
         {               
             "3rdparty",          
-        }  
-        
-        pchsource(dir .. "/%{prj.name}/stdafx.cpp")
-        pchheader("stdafx.h")
-        
+        }         
+        has_stdafx(name, dir)               
     end    
     
 
@@ -283,9 +354,7 @@ configurations { "Debug", "Release", "Debug_MT", "Release_MT", "TRACE", "TRACE_M
         kind "ConsoleApp"                          
         if mbcs == "mbcs" then
             characterset "MBCS"
-        end
-        flags { "NoManifest", "WinMain", "StaticRuntime" }       
-        defines {  }
+        end        
         files
         {                                  
             dir .. "/%{prj.name}/**.h",
@@ -300,10 +369,7 @@ configurations { "Debug", "Release", "Debug_MT", "Release_MT", "TRACE", "TRACE_M
         {                   
             "3rdparty"   
         }       
-        links
-        {
-            
-        }
+        has_stdafx(name, dir)
     end
 
 
@@ -325,7 +391,28 @@ configurations { "Debug", "Release", "Debug_MT", "Release_MT", "TRACE", "TRACE_M
             "3rdparty",   
             "3rdparty/wtl"
         }        
-        
+        has_stdafx(name, dir)
+    end
+
+
+    function create_dll_project(name, dir)        
+        project(name)          
+        kind "SharedLib"                                           
+        files
+        {                                  
+            dir .. "/%{prj.name}/**.h",
+            dir .. "/%{prj.name}/**.cpp", 
+            dir .. "/%{prj.name}/**.c", 
+            dir .. "/%{prj.name}/**.rc" 
+        }
+        removefiles
+        {               
+        }
+        includedirs
+        {               
+            "3rdparty",          
+        }         
+        has_stdafx(name, dir)               
     end
 
 
@@ -464,7 +551,7 @@ configurations { "Debug", "Release", "Debug_MT", "Release_MT", "TRACE", "TRACE_M
             "C:/WinDDK/7600.16385.1/inc/ddk",
             "C:/WinDDK/7600.16385.1/inc/api",
             "C:/WinDDK/7600.16385.1/inc/crt",
-            "C:/Program Files (x86)/Microsoft Visual Studio 8/VC/include"
+            --"C:/Program Files (x86)/Microsoft Visual Studio 8/VC/include"
         }
         --pchsource "3rdparty/WinRing0/stdafx.cpp"
         --pchheader "stdafx.h"               
