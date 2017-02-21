@@ -22,7 +22,7 @@ workspace "thread-examples"
 
 
 
-        create_wtl_project("event5", "thread_examples")
+
 
 
         

@@ -38,6 +38,7 @@ workspace "windbg-examples"
         create_console_project("oless", "windbg-examples")  
         create_console_project("GetChildProcessOutput", "windbg-examples")   
         create_mfc_project("ReadEnvironmentSample", "windbg-examples", "mbcs")
+        create_console_charset_project("aes-finder", "windbg-examples", "mbcs")  
         
 
     group "DllInject"
@@ -99,4 +100,4 @@ workspace "windbg-examples"
         end
 
 
-        
+        create_wtl_project("crack-24", "windbg-examples")
