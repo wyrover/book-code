@@ -84,11 +84,11 @@ void DoRate(int argc)
 
 void main(int argc, char *argv[ ], char *envp[ ])
 {
-//  printf("%d \r\n", GoToDo(5));
+  printf("%d \r\n", GoToDo(5));
 //  printf("%d \r\n", LoopDO(5));
 //  printf("%d \r\n", LoopWhile(5));
 //  printf("%d \r\n", LoopFor(5));
-    printf("%d \r\n", CodePick(5));
+//    printf("%d \r\n", CodePick(5));
     DoRate(argc);
 }
 

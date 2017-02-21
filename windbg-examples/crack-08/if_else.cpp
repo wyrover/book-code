@@ -58,9 +58,9 @@ int main(int argc, char* argv[])
     int a = 7;
     int b = !!a;
     printf("%f", 10);
-    // If(argc);
+     If(argc);
     // IfElse(argc);
-    IfElseIf(argc);
+    //IfElseIf(argc);
     return 0;
 }
 

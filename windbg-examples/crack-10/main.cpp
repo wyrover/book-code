@@ -136,9 +136,9 @@ void test_switch_tree()
 int main()
 {
     // 线性处理
-    //SwitchLine();
+    SwitchLine();
     //test_switch_if();
-    test_switch_nonline();
+    //test_switch_nonline();
     //test_switch_tree();
     return 0;
 }
