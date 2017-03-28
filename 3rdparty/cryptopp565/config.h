@@ -17,6 +17,8 @@
 #   define _interlockedbittestandset64 _local_interlockedbittestandset64
 #   define _interlockedbittestandreset64 _local_interlockedbittestandreset64
 #   include <intrin.h> // to force the header not to be included elsewhere
+#pragma intrinsic(_BitScanForward)
+#pragma intrinsic(__emulu)
 #   pragma pop_macro("_interlockedbittestandreset64")
 #   pragma pop_macro("_interlockedbittestandset64")
 #   pragma pop_macro("_interlockedbittestandreset")
