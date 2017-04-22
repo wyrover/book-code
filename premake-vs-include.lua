@@ -20,57 +20,52 @@ configurations { "Debug", "Release", "Debug_MT", "Release_MT", "TRACE", "TRACE_M
 
     -- ¾²Ì¬¿â
     filter { "kind:StaticLib", "platforms:Win32" }
-        targetdir "lib/x86/%{_ACTION}/md" 
+        targetdir "%{WORK_PATH}/lib/x86/%{_ACTION}/md" 
     filter { "kind:StaticLib", "platforms:Win32", "configurations:*_MT" }
-        targetdir "lib/x86/%{_ACTION}/mt"         
+        targetdir "%{WORK_PATH}/lib/x86/%{_ACTION}/mt"         
 
     filter { "kind:StaticLib", "platforms:x64" }
-        targetdir "lib/x64/%{_ACTION}/md" 
+        targetdir "%{WORK_PATH}/lib/x64/%{_ACTION}/md" 
     filter { "kind:StaticLib", "platforms:x64", "configurations:*_MT" }
-        targetdir "lib/x64/%{_ACTION}/mt" 
+        targetdir "%{WORK_PATH}/lib/x64/%{_ACTION}/mt" 
 
 
     -- ¶¯Ì¬¿â    
     filter { "kind:SharedLib", "platforms:Win32" }
-        implibdir "lib/x86/%{_ACTION}/md"       
+        implibdir "%{WORK_PATH}/lib/x86/%{_ACTION}/md"       
     filter { "kind:SharedLib", "platforms:Win32", "configurations:*_MT" }
-        implibdir "lib/x86/%{_ACTION}/mt"
+        implibdir "%{WORK_PATH}/lib/x86/%{_ACTION}/mt"
     filter { "kind:SharedLib", "platforms:x64" }
-        implibdir "lib/x64/%{_ACTION}/md"        
+        implibdir "%{WORK_PATH}/lib/x64/%{_ACTION}/md"        
     filter { "kind:SharedLib", "platforms:x64", "configurations:*_MT" }
-        implibdir "lib/x64/%{_ACTION}/mt" 
+        implibdir "%{WORK_PATH}/lib/x64/%{_ACTION}/mt" 
         
 
     -- EXE ºÍ ¶¯Ì¬¿âÊä³ö
 
     filter { "kind:ConsoleApp or WindowedApp or SharedLib", "platforms:Win32", "configurations:not *_MT" }
-        targetdir "bin/x86/%{_ACTION}/%{wks.name}/md"  
-        debugdir "bin/x86/%{_ACTION}/%{wks.name}/md"      
-        if _ACTION == "vs2015" then
-            flags { "NoManifest" } 
-            files { "include/buildcfg/vs2015/version.rc" }
-            includedirs
-            {              
-                "include/buildcfg/vs2015"                
-            }
-        end
+        targetdir "%{WORK_PATH}/bin/x86/%{_ACTION}/%{wks.name}/md"  
+        debugdir "%{WORK_PATH}/bin/x86/%{_ACTION}/%{wks.name}/md"           
     filter { "kind:ConsoleApp or WindowedApp or SharedLib", "platforms:Win32", "configurations:*_MT" }
-        targetdir "bin/x86/%{_ACTION}/%{wks.name}/mt"
-        debugdir "bin/x86/%{_ACTION}/%{wks.name}/mt"        
+        targetdir "%{WORK_PATH}/bin/x86/%{_ACTION}/%{wks.name}/mt"
+        debugdir "%{WORK_PATH}/bin/x86/%{_ACTION}/%{wks.name}/mt"        
     filter { "kind:ConsoleApp or WindowedApp or SharedLib", "platforms:x64", "configurations:not *_MT" }
-        targetdir "bin/x64/%{_ACTION}/%{wks.name}/md" 
-        debugdir "bin/x64/%{_ACTION}/%{wks.name}/md"  
+        targetdir "%{WORK_PATH}/bin/x64/%{_ACTION}/%{wks.name}/md" 
+        debugdir "%{WORK_PATH}/bin/x64/%{_ACTION}/%{wks.name}/md"        
+    filter { "kind:ConsoleApp or WindowedApp or SharedLib", "platforms:x64", "configurations:*_MT" }
+        targetdir "%{WORK_PATH}/bin/x64/%{_ACTION}/%{wks.name}/mt"
+        debugdir "%{WORK_PATH}/bin/x64/%{_ACTION}/%{wks.name}/md" 
+        
+    
+    filter { "kind:ConsoleApp or WindowedApp" }
         if _ACTION == "vs2015" then
             flags { "NoManifest" } 
-            files { "include/buildcfg/vs2015/version.rc" }
+            files { "%{BOOK_CODE_PATH}/include/buildcfg/vs2015/version.rc" }
             includedirs
             {              
-                "include/buildcfg/vs2015"                
+                "%{BOOK_CODE_PATH}/include/buildcfg/vs2015"                
             }
-        end
-    filter { "kind:ConsoleApp or WindowedApp or SharedLib", "platforms:x64", "configurations:*_MT" }
-        targetdir "bin/x64/%{_ACTION}/%{wks.name}/mt"
-        debugdir "bin/x64/%{_ACTION}/%{wks.name}/md"        
+        end    
 
 
     filter { kind "ConsoleApp" }
@@ -182,11 +177,11 @@ configurations { "Debug", "Release", "Debug_MT", "Release_MT", "TRACE", "TRACE_M
         links { "tracetool.lib" }     
         
     filter { "kind:StaticLib", "configurations:Debug*", "configurations:*_MT"}
-        targetsuffix "-mt-s-gd"    
+        targetsuffix "-s-mt-gd"    
     filter { "kind:StaticLib", "configurations:Debug*", "configurations:not *_MT"}
         targetsuffix "-s-gd"
     filter { "kind:StaticLib", "configurations:not Debug*", "configurations:*_MT"}
-        targetsuffix "-mt-s"    
+        targetsuffix "-s-mt"    
     filter { "kind:StaticLib", "configurations:not Debug*", "configurations:not *_MT"}
         targetsuffix "-s"
 
@@ -201,7 +196,73 @@ configurations { "Debug", "Release", "Debug_MT", "Release_MT", "TRACE", "TRACE_M
         
 
 
-        
+    function link_book_libs(libs)
+        local files = libs
+        for i = 1, #libs do
+            -- debug
+            filter { "platforms:Win32", "configurations:Debug*", "configurations:*_MT"}
+                libdirs { "%{BOOK_CODE_PATH}/lib/x86/%{_ACTION}/mt" } 
+                links { path.getbasename(libs[i]) .. "-mt-gd.lib"}                
+            filter { "platforms:Win32", "configurations:Debug*", "configurations:not *_MT"}
+                libdirs { "%{BOOK_CODE_PATH}/lib/x86/%{_ACTION}/md" } 
+                links { path.getbasename(libs[i]) .. "-gd.lib"}                
+            filter { "platforms:x64", "configurations:Debug*", "configurations:*_MT"}
+                libdirs { "%{BOOK_CODE_PATH}/lib/x64/%{_ACTION}/mt" } 
+                links { path.getbasename(libs[i]) .. "-mt-gd.lib"}                
+            filter { "platforms:x64", "configurations:Debug*", "configurations:not *_MT"}
+                libdirs { "%{BOOK_CODE_PATH}/lib/x64/%{_ACTION}/md" } 
+                links { path.getbasename(libs[i]) .. "-gd.lib"}     
+                
+
+            -- release
+            filter { "platforms:Win32", "configurations:not Debug*", "configurations:*_MT"}
+                libdirs { "%{BOOK_CODE_PATH}/lib/x86/%{_ACTION}/mt" } 
+                links { path.getbasename(libs[i]) .. "-mt.lib"}                
+            filter { "platforms:Win32", "configurations:not Debug*", "configurations:not *_MT"}
+                libdirs { "%{BOOK_CODE_PATH}/lib/x86/%{_ACTION}/md" } 
+                links { path.getbasename(libs[i]) .. ".lib"}                
+            filter { "platforms:x64", "configurations:not Debug*", "configurations:*_MT"}
+                libdirs { "%{BOOK_CODE_PATH}/lib/x64/%{_ACTION}/mt" } 
+                links { path.getbasename(libs[i]) .. "-mt.lib"}                
+            filter { "platforms:x64", "configurations:not Debug*", "configurations:not *_MT"}
+                libdirs { "%{BOOK_CODE_PATH}/lib/x64/%{_ACTION}/md" } 
+                links { path.getbasename(libs[i]) .. ".lib"}    
+        end
+    end
+
+    function link_libs(libs)
+        local files = libs
+        for i = 1, #libs do
+            -- debug
+            filter { "platforms:Win32", "configurations:Debug*", "configurations:*_MT"}
+                libdirs { "%{WORK_PATH}/lib/x86/%{_ACTION}/mt" } 
+                links { path.getbasename(libs[i]) .. "-mt-gd.lib"}                
+            filter { "platforms:Win32", "configurations:Debug*", "configurations:not *_MT"}
+                libdirs { "%{WORK_PATH}/lib/x86/%{_ACTION}/md" } 
+                links { path.getbasename(libs[i]) .. "-gd.lib"}                
+            filter { "platforms:x64", "configurations:Debug*", "configurations:*_MT"}
+                libdirs { "%{WORK_PATH}/lib/x64/%{_ACTION}/mt" } 
+                links { path.getbasename(libs[i]) .. "-mt-gd.lib"}                
+            filter { "platforms:x64", "configurations:Debug*", "configurations:not *_MT"}
+                libdirs { "%{WORK_PATH}/lib/x64/%{_ACTION}/md" } 
+                links { path.getbasename(libs[i]) .. "-gd.lib"}     
+                
+
+            -- release
+            filter { "platforms:Win32", "configurations:not Debug*", "configurations:*_MT"}
+                libdirs { "%{WORK_PATH}/lib/x86/%{_ACTION}/mt" } 
+                links { path.getbasename(libs[i]) .. "-mt.lib"}                
+            filter { "platforms:Win32", "configurations:not Debug*", "configurations:not *_MT"}
+                libdirs { "%{WORK_PATH}/lib/x86/%{_ACTION}/md" } 
+                links { path.getbasename(libs[i]) .. ".lib"}                
+            filter { "platforms:x64", "configurations:not Debug*", "configurations:*_MT"}
+                libdirs { "%{WORK_PATH}/lib/x64/%{_ACTION}/mt" } 
+                links { path.getbasename(libs[i]) .. "-mt.lib"}                
+            filter { "platforms:x64", "configurations:not Debug*", "configurations:not *_MT"}
+                libdirs { "%{WORK_PATH}/lib/x64/%{_ACTION}/md" } 
+                links { path.getbasename(libs[i]) .. ".lib"}    
+        end
+    end    
 
 
     configuration "vs*"
@@ -238,10 +299,10 @@ configurations { "Debug", "Release", "Debug_MT", "Release_MT", "TRACE", "TRACE_M
             end
                 
             if upper_flag then
-                pchsource(dir .. "/%{prj.name}/StdAfx.cpp")
+                pchsource(dir .. "/" .. name .. "/StdAfx.cpp")
                 pchheader("StdAfx.h")
             else
-                pchsource(dir .. "/%{prj.name}/stdafx.cpp")
+                pchsource(dir .. "/" .. name .. "/stdafx.cpp")
                 pchheader("stdafx.h")    
             end
         end

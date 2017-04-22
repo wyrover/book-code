@@ -1,6 +1,8 @@
 # book-code
 book code
 
+将书籍代码和写过的测试代码放在一个仓库，方便利用 github 的代码搜索功能
+
 -  https://github.com/fffaraz/awesome-cpp
 -  https://github.com/jobbole/awesome-cpp-cn
 -  https://github.com/jobbole/awesome-c-cn
