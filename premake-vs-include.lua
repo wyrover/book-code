@@ -74,10 +74,13 @@ configurations { "Debug", "Release", "Debug_MT", "Release_MT", "TRACE", "TRACE_M
      
     filter { "platforms:Win32 or x64" }
         includedirs
-        {                  
-            "3rdparty/boost_1_60_0",
-            "3rdparty"
+        {               
+            "%{WORK_PATH}/3rdparty/boost_1_60_0",
+            "%{WORK_PATH}/3rdparty",
+            "%{BOOK_CODE_PATH}/3rdparty/boost_1_60_0",            
+            "C:/Program Files (x86)/Microsoft DirectX SDK (June 2010)/Include"
         }    
+
         
 
     filter { "platforms:Win32", "configurations:not *_MT" }
@@ -91,6 +94,9 @@ configurations { "Debug", "Release", "Debug_MT", "Release_MT", "TRACE", "TRACE_M
         libdirs 
         {
             --"lib/v7.1/Lib",
+            "%{WORK_PATH}/lib/x86/%{_ACTION}/md",
+            "%{WORK_PATH}/lib/x86/%{_ACTION}/md/boost-1_60",
+            "%{WORK_PATH}/bin/x86/%{_ACTION}/md", 
             "lib/x86/%{_ACTION}/md",
             "lib/x86/%{_ACTION}/md/boost-1_60",
             "bin/x86/%{_ACTION}/md"            
@@ -106,6 +112,9 @@ configurations { "Debug", "Release", "Debug_MT", "Release_MT", "TRACE", "TRACE_M
         libdirs 
         {
             --"lib/v7.1/Lib",
+            "%{WORK_PATH}/lib/x86/%{_ACTION}/mt",
+            "%{WORK_PATH}/lib/x86/%{_ACTION}/mt/boost-1_60",
+            "%{WORK_PATH}/bin/x86/%{_ACTION}/mt",
             "lib/x86/%{_ACTION}/mt",
             "lib/x86/%{_ACTION}/mt/boost-1_60",
             "bin/x86/%{_ACTION}/mt"            
@@ -118,6 +127,9 @@ configurations { "Debug", "Release", "Debug_MT", "Release_MT", "TRACE", "TRACE_M
         libdirs
         {
             --"lib/v7.1/Lib/x64",
+            "%{WORK_PATH}/lib/x64/%{_ACTION}/md",
+            "%{WORK_PATH}/lib/x64/%{_ACTION}/md/boost-1_60",
+            "%{WORK_PATH}/bin/x64/%{_ACTION}/md",
             "lib/x64/%{_ACTION}/md",
             "lib/x64/%{_ACTION}/md/boost-1_60",
             "bin/x64/%{_ACTION}/md"
@@ -129,10 +141,26 @@ configurations { "Debug", "Release", "Debug_MT", "Release_MT", "TRACE", "TRACE_M
         libdirs
         {
             --"lib/v7.1/Lib/x64",
+            "%{WORK_PATH}/lib/x64/%{_ACTION}/mt",
+            "%{WORK_PATH}/lib/x64/%{_ACTION}/mt/boost-1_60",
+            "%{WORK_PATH}/bin/x64/%{_ACTION}/mt",
             "lib/x64/%{_ACTION}/mt",
             "lib/x64/%{_ACTION}/mt/boost-1_60",
             "bin/x64/%{_ACTION}/mt"
         }
+
+    filter { "platforms:Win32" }
+        libdirs
+        {
+            "C:/Program Files (x86)/Microsoft DirectX SDK (June 2010)/Lib/x86"
+        }
+
+    filter { "platforms:x64" }
+        libdirs
+        {
+            "C:/Program Files (x86)/Microsoft DirectX SDK (June 2010)/Lib/x64"
+        }
+        
 
     filter "configurations:Debug"
         defines { "DEBUG" }
@@ -161,9 +189,9 @@ configurations { "Debug", "Release", "Debug_MT", "Release_MT", "TRACE", "TRACE_M
         buildoptions { "/Od" } 
         includedirs
         {            
-            "3rdparty"    
+            "%{WORK_PATH}/3rdparty"    
         }  
-        links { "tracetool.lib" }         
+        links { "tracetool-s.lib" }         
 
     filter "configurations:TRACE_MT"
         defines { "NDEBUG", "TRACE_TOOL" }
@@ -172,9 +200,9 @@ configurations { "Debug", "Release", "Debug_MT", "Release_MT", "TRACE", "TRACE_M
         buildoptions { "/Od" }  
         includedirs
         {            
-            "3rdparty"    
+            "%{WORK_PATH}/3rdparty"    
         }    
-        links { "tracetool.lib" }     
+        links { "tracetool-s-mt.lib" }     
         
     filter { "kind:StaticLib", "configurations:Debug*", "configurations:*_MT"}
         targetsuffix "-s-mt-gd"    
@@ -271,7 +299,7 @@ configurations { "Debug", "Release", "Debug_MT", "Release_MT", "TRACE", "TRACE_M
         {
             "WIN32",
             "WIN32_LEAN_AND_MEAN",
-            "_WIN32_WINNT=0x501",           -- 支持到 xp
+            "_WIN32_WINNT=0x502",           -- 支持到 xp
             "_CRT_SECURE_NO_WARNINGS",        
             "_CRT_SECURE_NO_DEPRECATE",            
             "STRSAFE_NO_DEPRECATE",
@@ -317,7 +345,8 @@ configurations { "Debug", "Release", "Debug_MT", "Release_MT", "TRACE", "TRACE_M
         removeconfigurations "*_MT"      
         linkoptions
         {
-            "/ENTRY:\"wmainCRTStartup\""
+            "/ENTRY:\"wmainCRTStartup\" /SUBSYSTEM:CONSOLE"
+            
         }
         files
         {                                  
@@ -332,7 +361,8 @@ configurations { "Debug", "Release", "Debug_MT", "Release_MT", "TRACE", "TRACE_M
         includedirs
         {               
             "3rdparty",          
-        }        
+        }       
+        has_stdafx(name, dir)  
         
     end
 
