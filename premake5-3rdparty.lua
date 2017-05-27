@@ -1,5 +1,7 @@
-includeexternal ("premake-vs-include.lua")
-
+BOOK_CODE_PATH = "E:/book-code"
+THIRD_PARTY = "E:/book-code/3rdparty"
+WORK_PATH = os.getcwd()
+includeexternal (BOOK_CODE_PATH .. "/premake-vs-include.lua")
 
 workspace "3rdparty"
     language "C++"
@@ -7,44 +9,7 @@ workspace "3rdparty"
 
     
    
-    group "09 底层"
-
-        project "cactus"
-            
-            kind "SharedLib"            
-            defines { "_WINDOWS", "_USRDLL", "DLL_EXPORTS", "CACTUS_DLL", "CACTUS_EXPORTS" }               
-            buildoptions { "/EHsc", "/Zm200" }           
-            files
-            {
-                "src/cactus/**.h",
-                "src/cactus/**.cpp",  
-                "src/cactus/**.c",
-                "include/buildcfg/version.rc",
-                "include/buildcfg/versionno.rc2",                
-                "include/buildcfg/buildcfg.h"
-            }             
-            removefiles
-            {
-                "src/cactus/7zHelper.cpp",
-                "src/cactus/cactus_7z.cpp",
-                "src/cactus/cactus_cmdline.cpp",
-                "src/cactus/cactus_szlib.cpp",
-                "src/cactus/cactus_xunlei.cpp",
-                "src/cactus/log_impl.cpp",
-                "src/cactus/PropVariant.cpp"
-            }
-            includedirs
-            {            
-                "3rdparty"    
-            }                
-            links
-            {
-                              
-            }
-            libdirs
-            {
-                "lib/win32"
-            }
+    group "09 底层"       
 
         project "cryptopp"            
             kind "StaticLib"            
@@ -126,21 +91,7 @@ workspace "3rdparty"
                     "%{cfg.objdir}/%{file.basename}.obj"
                 }
 
-        project "libQREncode"            
-            kind "StaticLib"            
-            defines { "_WINDOWS", "HAVE_CONFIG_H" }                                    
-            files
-            {
-                "3rdparty/libQREncode/**.h",
-                "3rdparty/libQREncode/**.cpp",  
-                "3rdparty/libQREncode/**.c"
-            }             
-            removefiles
-            {
-                "3rdparty/libQREncode/qrenc.c",
-                "3rdparty/libQREncode/libQREncode.h",
-                "3rdparty/libQREncode/libQREncode.cpp"
-            }
+        
              
 
         
@@ -215,15 +166,7 @@ workspace "3rdparty"
                 
             }
 
-    group "pugixml"
-
-        project "pugixml"                     
-            kind "StaticLib"                    
-            files
-            {
-                "3rdparty/pugixml/**.hpp",
-                "3rdparty/pugixml/**.cpp"                
-            }             
+               
 
         
 
@@ -294,33 +237,14 @@ workspace "3rdparty"
             includedirs
             {
                 "3rdparty/tidylib/include"
-            }          
+            }    
 
         
             
             
     
 
-        project "tracetool"
-            removeconfigurations "TRACE*"            
-            kind "StaticLib"                    
-            files
-            {
-                "3rdparty/tracetool/**.h",
-                "3rdparty/tracetool/**.cpp"                
-            }                     
-
-  
-
-        project "getopt"            
-            kind "StaticLib"         
-            defines { "STATIC_GETOPT" }            
-            files
-            {
-                "3rdparty/getopt/**.h",
-                "3rdparty/getopt/**.c"      
-                               
-            } 
+        
 
         project "msgpack"            
             kind "StaticLib"                             
@@ -338,22 +262,7 @@ workspace "3rdparty"
         
 
 
-    group "jsoncpp"
-
-        project "jsoncpp"            
-            kind "StaticLib"                     
-            files
-            {
-                "3rdparty/jsoncpp/include/**.h",
-                "3rdparty/jsoncpp/**.cpp"      
-                               
-            } 
-            includedirs
-            {          
-                "3rdparty/jsoncpp/include"
-            }      
-
-    
+        
 
         project "bzip2"            
             kind "StaticLib"        
@@ -372,389 +281,7 @@ workspace "3rdparty"
                 "3rdparty/bzip2/unzcrash.c"
             }   
             
-    group "libcurl"
-        project "libcurl"
-            kind "SharedLib"
-            defines { "BUILDING_LIBCURL", "USE_WINDOWS_SSPI", "USE_SCHANNEL", "USE_IPV6", "HTTP_ONLY" }
-            files
-            {
-                "3rdparty/curl-7.53.1/lib/amigaos.c",
-                "3rdparty/curl-7.53.1/lib/asyn-ares.c",
-                "3rdparty/curl-7.53.1/lib/asyn-thread.c",
-                "3rdparty/curl-7.53.1/lib/base64.c",
-                "3rdparty/curl-7.53.1/lib/conncache.c",
-                "3rdparty/curl-7.53.1/lib/connect.c",
-                "3rdparty/curl-7.53.1/lib/content_encoding.c",
-                "3rdparty/curl-7.53.1/lib/cookie.c",
-                "3rdparty/curl-7.53.1/lib/curl_addrinfo.c",
-                "3rdparty/curl-7.53.1/lib/curl_des.c",
-                "3rdparty/curl-7.53.1/lib/curl_endian.c",
-                "3rdparty/curl-7.53.1/lib/curl_fnmatch.c",
-                "3rdparty/curl-7.53.1/lib/curl_gethostname.c",
-                "3rdparty/curl-7.53.1/lib/curl_gssapi.c",
-                "3rdparty/curl-7.53.1/lib/curl_memrchr.c",
-                "3rdparty/curl-7.53.1/lib/curl_multibyte.c",
-                "3rdparty/curl-7.53.1/lib/curl_ntlm_core.c",
-                "3rdparty/curl-7.53.1/lib/curl_ntlm_wb.c",
-                "3rdparty/curl-7.53.1/lib/curl_rtmp.c",
-                "3rdparty/curl-7.53.1/lib/curl_sasl.c",
-                "3rdparty/curl-7.53.1/lib/curl_sspi.c",
-                "3rdparty/curl-7.53.1/lib/curl_threads.c",
-                "3rdparty/curl-7.53.1/lib/dict.c",
-                "3rdparty/curl-7.53.1/lib/dotdot.c",
-                "3rdparty/curl-7.53.1/lib/easy.c",
-                "3rdparty/curl-7.53.1/lib/escape.c",
-                "3rdparty/curl-7.53.1/lib/file.c",
-                "3rdparty/curl-7.53.1/lib/fileinfo.c",
-                "3rdparty/curl-7.53.1/lib/formdata.c",
-                "3rdparty/curl-7.53.1/lib/ftp.c",
-                "3rdparty/curl-7.53.1/lib/ftplistparser.c",
-                "3rdparty/curl-7.53.1/lib/getenv.c",
-                "3rdparty/curl-7.53.1/lib/getinfo.c",
-                "3rdparty/curl-7.53.1/lib/gopher.c",
-                "3rdparty/curl-7.53.1/lib/hash.c",
-                "3rdparty/curl-7.53.1/lib/hmac.c",
-                "3rdparty/curl-7.53.1/lib/hostasyn.c",
-                "3rdparty/curl-7.53.1/lib/hostcheck.c",
-                "3rdparty/curl-7.53.1/lib/hostip.c",
-                "3rdparty/curl-7.53.1/lib/hostip4.c",
-                "3rdparty/curl-7.53.1/lib/hostip6.c",
-                "3rdparty/curl-7.53.1/lib/hostsyn.c",
-                "3rdparty/curl-7.53.1/lib/http.c",
-                "3rdparty/curl-7.53.1/lib/http2.c",
-                "3rdparty/curl-7.53.1/lib/http_chunks.c",
-                "3rdparty/curl-7.53.1/lib/http_digest.c",
-                "3rdparty/curl-7.53.1/lib/http_negotiate.c",
-                "3rdparty/curl-7.53.1/lib/http_ntlm.c",
-                "3rdparty/curl-7.53.1/lib/http_proxy.c",
-                "3rdparty/curl-7.53.1/lib/idn_win32.c",
-                "3rdparty/curl-7.53.1/lib/if2ip.c",
-                "3rdparty/curl-7.53.1/lib/imap.c",
-                "3rdparty/curl-7.53.1/lib/inet_ntop.c",
-                "3rdparty/curl-7.53.1/lib/inet_pton.c",
-                "3rdparty/curl-7.53.1/lib/krb5.c",
-                "3rdparty/curl-7.53.1/lib/ldap.c",
-                "3rdparty/curl-7.53.1/lib/llist.c",
-                "3rdparty/curl-7.53.1/lib/md4.c",
-                "3rdparty/curl-7.53.1/lib/md5.c",
-                "3rdparty/curl-7.53.1/lib/memdebug.c",
-                "3rdparty/curl-7.53.1/lib/mprintf.c",
-                "3rdparty/curl-7.53.1/lib/multi.c",
-                "3rdparty/curl-7.53.1/lib/netrc.c",
-                "3rdparty/curl-7.53.1/lib/non-ascii.c",
-                "3rdparty/curl-7.53.1/lib/nonblock.c",
-                "3rdparty/curl-7.53.1/lib/openldap.c",
-                "3rdparty/curl-7.53.1/lib/parsedate.c",
-                "3rdparty/curl-7.53.1/lib/pingpong.c",
-                "3rdparty/curl-7.53.1/lib/pipeline.c",
-                "3rdparty/curl-7.53.1/lib/pop3.c",
-                "3rdparty/curl-7.53.1/lib/progress.c",
-                "3rdparty/curl-7.53.1/lib/rand.c",
-                "3rdparty/curl-7.53.1/lib/rtsp.c",
-                "3rdparty/curl-7.53.1/lib/security.c",
-                "3rdparty/curl-7.53.1/lib/select.c",
-                "3rdparty/curl-7.53.1/lib/sendf.c",
-                "3rdparty/curl-7.53.1/lib/share.c",
-                "3rdparty/curl-7.53.1/lib/slist.c",
-                "3rdparty/curl-7.53.1/lib/smb.c",
-                "3rdparty/curl-7.53.1/lib/smtp.c",
-                "3rdparty/curl-7.53.1/lib/socks.c",
-                "3rdparty/curl-7.53.1/lib/socks_gssapi.c",
-                "3rdparty/curl-7.53.1/lib/socks_sspi.c",
-                "3rdparty/curl-7.53.1/lib/speedcheck.c",
-                "3rdparty/curl-7.53.1/lib/splay.c",
-                "3rdparty/curl-7.53.1/lib/ssh.c",
-                "3rdparty/curl-7.53.1/lib/strcase.c",
-                "3rdparty/curl-7.53.1/lib/strdup.c",
-                "3rdparty/curl-7.53.1/lib/strerror.c",
-                "3rdparty/curl-7.53.1/lib/strtok.c",
-                "3rdparty/curl-7.53.1/lib/strtoofft.c",
-                "3rdparty/curl-7.53.1/lib/system_win32.c",
-                "3rdparty/curl-7.53.1/lib/telnet.c",
-                "3rdparty/curl-7.53.1/lib/tftp.c",
-                "3rdparty/curl-7.53.1/lib/timeval.c",
-                "3rdparty/curl-7.53.1/lib/transfer.c",
-                "3rdparty/curl-7.53.1/lib/url.c",
-                "3rdparty/curl-7.53.1/lib/version.c",
-                "3rdparty/curl-7.53.1/lib/warnless.c",
-                "3rdparty/curl-7.53.1/lib/wildcard.c",
-                "3rdparty/curl-7.53.1/lib/x509asn1.c",
-                "3rdparty/curl-7.53.1/lib/vauth/cleartext.c",
-                "3rdparty/curl-7.53.1/lib/vauth/cram.c",
-                "3rdparty/curl-7.53.1/lib/vauth/digest.c",
-                "3rdparty/curl-7.53.1/lib/vauth/digest_sspi.c",
-                "3rdparty/curl-7.53.1/lib/vauth/krb5_gssapi.c",
-                "3rdparty/curl-7.53.1/lib/vauth/krb5_sspi.c",
-                "3rdparty/curl-7.53.1/lib/vauth/ntlm.c",
-                "3rdparty/curl-7.53.1/lib/vauth/ntlm_sspi.c",
-                "3rdparty/curl-7.53.1/lib/vauth/oauth2.c",
-                "3rdparty/curl-7.53.1/lib/vauth/spnego_gssapi.c",
-                "3rdparty/curl-7.53.1/lib/vauth/spnego_sspi.c",
-                "3rdparty/curl-7.53.1/lib/vauth/vauth.c",
-                "3rdparty/curl-7.53.1/lib/vtls/axtls.c",
-                "3rdparty/curl-7.53.1/lib/vtls/cyassl.c",
-                "3rdparty/curl-7.53.1/lib/vtls/darwinssl.c",
-                "3rdparty/curl-7.53.1/lib/vtls/gskit.c",
-                "3rdparty/curl-7.53.1/lib/vtls/gtls.c",
-                "3rdparty/curl-7.53.1/lib/vtls/mbedtls.c",
-                "3rdparty/curl-7.53.1/lib/vtls/nss.c",
-                "3rdparty/curl-7.53.1/lib/vtls/openssl.c",
-                "3rdparty/curl-7.53.1/lib/vtls/polarssl.c",
-                "3rdparty/curl-7.53.1/lib/vtls/polarssl_threadlock.c",
-                "3rdparty/curl-7.53.1/lib/vtls/schannel.c",
-                "3rdparty/curl-7.53.1/lib/vtls/vtls.c",
-                "3rdparty/curl-7.53.1/lib/amigaos.h",
-                "3rdparty/curl-7.53.1/lib/arpa_telnet.h",
-                "3rdparty/curl-7.53.1/lib/asyn.h",
-                "3rdparty/curl-7.53.1/lib/config-win32.h",
-                "3rdparty/curl-7.53.1/lib/conncache.h",
-                "3rdparty/curl-7.53.1/lib/connect.h",
-                "3rdparty/curl-7.53.1/lib/content_encoding.h",
-                "3rdparty/curl-7.53.1/lib/cookie.h",
-                "3rdparty/curl-7.53.1/lib/curl_addrinfo.h",
-                "3rdparty/curl-7.53.1/lib/curl_base64.h",
-                "3rdparty/curl-7.53.1/lib/curl_des.h",
-                "3rdparty/curl-7.53.1/lib/curl_endian.h",
-                "3rdparty/curl-7.53.1/lib/curl_fnmatch.h",
-                "3rdparty/curl-7.53.1/lib/curl_gethostname.h",
-                "3rdparty/curl-7.53.1/lib/curl_gssapi.h",
-                "3rdparty/curl-7.53.1/lib/curl_hmac.h",
-                "3rdparty/curl-7.53.1/lib/curl_ldap.h",
-                "3rdparty/curl-7.53.1/lib/curl_md4.h",
-                "3rdparty/curl-7.53.1/lib/curl_md5.h",
-                "3rdparty/curl-7.53.1/lib/curl_memory.h",
-                "3rdparty/curl-7.53.1/lib/curl_memrchr.h",
-                "3rdparty/curl-7.53.1/lib/curl_multibyte.h",
-                "3rdparty/curl-7.53.1/lib/curl_ntlm_core.h",
-                "3rdparty/curl-7.53.1/lib/curl_ntlm_wb.h",
-                "3rdparty/curl-7.53.1/lib/curl_printf.h",
-                "3rdparty/curl-7.53.1/lib/curl_rtmp.h",
-                "3rdparty/curl-7.53.1/lib/curl_sasl.h",
-                "3rdparty/curl-7.53.1/lib/curl_sec.h",
-                "3rdparty/curl-7.53.1/lib/curl_setup.h",
-                "3rdparty/curl-7.53.1/lib/curl_setup_once.h",
-                "3rdparty/curl-7.53.1/lib/curl_sspi.h",
-                "3rdparty/curl-7.53.1/lib/curl_threads.h",
-                "3rdparty/curl-7.53.1/lib/curlx.h",
-                "3rdparty/curl-7.53.1/lib/dict.h",
-                "3rdparty/curl-7.53.1/lib/dotdot.h",
-                "3rdparty/curl-7.53.1/lib/easyif.h",
-                "3rdparty/curl-7.53.1/lib/escape.h",
-                "3rdparty/curl-7.53.1/lib/file.h",
-                "3rdparty/curl-7.53.1/lib/fileinfo.h",
-                "3rdparty/curl-7.53.1/lib/formdata.h",
-                "3rdparty/curl-7.53.1/lib/ftp.h",
-                "3rdparty/curl-7.53.1/lib/ftplistparser.h",
-                "3rdparty/curl-7.53.1/lib/getinfo.h",
-                "3rdparty/curl-7.53.1/lib/gopher.h",
-                "3rdparty/curl-7.53.1/lib/hash.h",
-                "3rdparty/curl-7.53.1/lib/hostcheck.h",
-                "3rdparty/curl-7.53.1/lib/hostip.h",
-                "3rdparty/curl-7.53.1/lib/http.h",
-                "3rdparty/curl-7.53.1/lib/http2.h",
-                "3rdparty/curl-7.53.1/lib/http_chunks.h",
-                "3rdparty/curl-7.53.1/lib/http_digest.h",
-                "3rdparty/curl-7.53.1/lib/http_negotiate.h",
-                "3rdparty/curl-7.53.1/lib/http_ntlm.h",
-                "3rdparty/curl-7.53.1/lib/http_proxy.h",
-                "3rdparty/curl-7.53.1/lib/if2ip.h",
-                "3rdparty/curl-7.53.1/lib/imap.h",
-                "3rdparty/curl-7.53.1/lib/inet_ntop.h",
-                "3rdparty/curl-7.53.1/lib/inet_pton.h",
-                "3rdparty/curl-7.53.1/lib/llist.h",
-                "3rdparty/curl-7.53.1/lib/memdebug.h",
-                "3rdparty/curl-7.53.1/lib/multihandle.h",
-                "3rdparty/curl-7.53.1/lib/multiif.h",
-                "3rdparty/curl-7.53.1/lib/netrc.h",
-                "3rdparty/curl-7.53.1/lib/non-ascii.h",
-                "3rdparty/curl-7.53.1/lib/nonblock.h",
-                "3rdparty/curl-7.53.1/lib/parsedate.h",
-                "3rdparty/curl-7.53.1/lib/pingpong.h",
-                "3rdparty/curl-7.53.1/lib/pipeline.h",
-                "3rdparty/curl-7.53.1/lib/pop3.h",
-                "3rdparty/curl-7.53.1/lib/progress.h",
-                "3rdparty/curl-7.53.1/lib/rand.h",
-                "3rdparty/curl-7.53.1/lib/rtsp.h",
-                "3rdparty/curl-7.53.1/lib/select.h",
-                "3rdparty/curl-7.53.1/lib/sendf.h",
-                "3rdparty/curl-7.53.1/lib/setup-vms.h",
-                "3rdparty/curl-7.53.1/lib/share.h",
-                "3rdparty/curl-7.53.1/lib/sigpipe.h",
-                "3rdparty/curl-7.53.1/lib/slist.h",
-                "3rdparty/curl-7.53.1/lib/smb.h",
-                "3rdparty/curl-7.53.1/lib/smtp.h",
-                "3rdparty/curl-7.53.1/lib/sockaddr.h",
-                "3rdparty/curl-7.53.1/lib/socks.h",
-                "3rdparty/curl-7.53.1/lib/speedcheck.h",
-                "3rdparty/curl-7.53.1/lib/splay.h",
-                "3rdparty/curl-7.53.1/lib/ssh.h",
-                "3rdparty/curl-7.53.1/lib/strcase.h",
-                "3rdparty/curl-7.53.1/lib/strdup.h",
-                "3rdparty/curl-7.53.1/lib/strerror.h",
-                "3rdparty/curl-7.53.1/lib/strtok.h",
-                "3rdparty/curl-7.53.1/lib/strtoofft.h",
-                "3rdparty/curl-7.53.1/lib/system_win32.h",
-                "3rdparty/curl-7.53.1/lib/telnet.h",
-                "3rdparty/curl-7.53.1/lib/tftp.h",
-                "3rdparty/curl-7.53.1/lib/timeval.h",
-                "3rdparty/curl-7.53.1/lib/transfer.h",
-                "3rdparty/curl-7.53.1/lib/url.h",
-                "3rdparty/curl-7.53.1/lib/urldata.h",
-                "3rdparty/curl-7.53.1/lib/warnless.h",
-                "3rdparty/curl-7.53.1/lib/wildcard.h",
-                "3rdparty/curl-7.53.1/lib/x509asn1.h",
-                "3rdparty/curl-7.53.1/lib/vauth/digest.h",
-                "3rdparty/curl-7.53.1/lib/vauth/ntlm.h",
-                "3rdparty/curl-7.53.1/lib/vauth/vauth.h",
-                "3rdparty/curl-7.53.1/lib/vtls/axtls.h",
-                "3rdparty/curl-7.53.1/lib/vtls/cyassl.h",
-                "3rdparty/curl-7.53.1/lib/vtls/darwinssl.h",
-                "3rdparty/curl-7.53.1/lib/vtls/gskit.h",
-                "3rdparty/curl-7.53.1/lib/vtls/gtls.h",
-                "3rdparty/curl-7.53.1/lib/vtls/mbedtls.h",
-                "3rdparty/curl-7.53.1/lib/vtls/nssg.h",
-                "3rdparty/curl-7.53.1/lib/vtls/openssl.h",
-                "3rdparty/curl-7.53.1/lib/vtls/polarssl.h",
-                "3rdparty/curl-7.53.1/lib/vtls/polarssl_threadlock.h",
-                "3rdparty/curl-7.53.1/lib/vtls/schannel.h",
-                "3rdparty/curl-7.53.1/lib/vtls/vtls.h",
-                "3rdparty/curl-7.53.1/lib/libcurl.rc"
-            }
-            vpaths 
-            { 
-                ["Header Files"] = {"**.h", "**.hpp"},
-                ["Source Files"] = {"**.c", "**.cpp"}
-            }
-            includedirs
-            {
-                "3rdparty/curl-7.53.1/include",
-                "3rdparty/curl-7.53.1/lib"
-            }
-            links
-            {
-                "ws2_32.lib",
-                "wldap32.lib",
-                "Crypt32.lib"
-            }
-
-        
-
-       
-        project "curl"          
-            kind "ConsoleApp"                                             
-            files
-            {                                  
-                "3rdparty/curl-7.53.1/lib/nonblock.c",
-                "3rdparty/curl-7.53.1/lib/strtoofft.c",
-                "3rdparty/curl-7.53.1/lib/warnless.c",
-                "3rdparty/curl-7.53.1/src/slist_wc.c",
-                "3rdparty/curl-7.53.1/src/tool_binmode.c",
-                "3rdparty/curl-7.53.1/src/tool_bname.c",
-                "3rdparty/curl-7.53.1/src/tool_cb_dbg.c",
-                "3rdparty/curl-7.53.1/src/tool_cb_hdr.c",
-                "3rdparty/curl-7.53.1/src/tool_cb_prg.c",
-                "3rdparty/curl-7.53.1/src/tool_cb_rea.c",
-                "3rdparty/curl-7.53.1/src/tool_cb_see.c",
-                "3rdparty/curl-7.53.1/src/tool_cb_wrt.c",
-                "3rdparty/curl-7.53.1/src/tool_cfgable.c",
-                "3rdparty/curl-7.53.1/src/tool_convert.c",
-                "3rdparty/curl-7.53.1/src/tool_dirhie.c",
-                "3rdparty/curl-7.53.1/src/tool_doswin.c",
-                "3rdparty/curl-7.53.1/src/tool_easysrc.c",
-                "3rdparty/curl-7.53.1/src/tool_formparse.c",
-                "3rdparty/curl-7.53.1/src/tool_getparam.c",
-                "3rdparty/curl-7.53.1/src/tool_getpass.c",
-                "3rdparty/curl-7.53.1/src/tool_help.c",
-                "3rdparty/curl-7.53.1/src/tool_helpers.c",
-                "3rdparty/curl-7.53.1/src/tool_homedir.c",
-                "3rdparty/curl-7.53.1/src/tool_hugehelp.c",
-                "3rdparty/curl-7.53.1/src/tool_libinfo.c",
-                "3rdparty/curl-7.53.1/src/tool_main.c",
-                "3rdparty/curl-7.53.1/src/tool_metalink.c",
-                "3rdparty/curl-7.53.1/src/tool_mfiles.c",
-                "3rdparty/curl-7.53.1/src/tool_msgs.c",
-                "3rdparty/curl-7.53.1/src/tool_operate.c",
-                "3rdparty/curl-7.53.1/src/tool_operhlp.c",
-                "3rdparty/curl-7.53.1/src/tool_panykey.c",
-                "3rdparty/curl-7.53.1/src/tool_paramhlp.c",
-                "3rdparty/curl-7.53.1/src/tool_parsecfg.c",
-                "3rdparty/curl-7.53.1/src/tool_setopt.c",
-                "3rdparty/curl-7.53.1/src/tool_sleep.c",
-                "3rdparty/curl-7.53.1/src/tool_strdup.c",
-                "3rdparty/curl-7.53.1/src/tool_urlglob.c",
-                "3rdparty/curl-7.53.1/src/tool_util.c",
-                "3rdparty/curl-7.53.1/src/tool_vms.c",
-                "3rdparty/curl-7.53.1/src/tool_writeenv.c",
-                "3rdparty/curl-7.53.1/src/tool_writeout.c",
-                "3rdparty/curl-7.53.1/src/tool_xattr.c",
-                ------------------------------------------------------------------------------------------------------------
-                "3rdparty/curl-7.53.1/lib/config-win32.h",
-                "3rdparty/curl-7.53.1/lib/curl_setup.h",
-                "3rdparty/curl-7.53.1/lib/nonblock.h",
-                "3rdparty/curl-7.53.1/lib/strtoofft.h",
-                "3rdparty/curl-7.53.1/lib/warnless.h",
-                "3rdparty/curl-7.53.1/src/slist_wc.h",
-                "3rdparty/curl-7.53.1/src/tool_binmode.h",
-                "3rdparty/curl-7.53.1/src/tool_bname.h",
-                "3rdparty/curl-7.53.1/src/tool_cb_dbg.h",
-                "3rdparty/curl-7.53.1/src/tool_cb_hdr.h",
-                "3rdparty/curl-7.53.1/src/tool_cb_prg.h",
-                "3rdparty/curl-7.53.1/src/tool_cb_rea.h",
-                "3rdparty/curl-7.53.1/src/tool_cb_see.h",
-                "3rdparty/curl-7.53.1/src/tool_cb_wrt.h",
-                "3rdparty/curl-7.53.1/src/tool_cfgable.h",
-                "3rdparty/curl-7.53.1/src/tool_convert.h",
-                "3rdparty/curl-7.53.1/src/tool_dirhie.h",
-                "3rdparty/curl-7.53.1/src/tool_doswin.h",
-                "3rdparty/curl-7.53.1/src/tool_easysrc.h",
-                "3rdparty/curl-7.53.1/src/tool_formparse.h",
-                "3rdparty/curl-7.53.1/src/tool_getparam.h",
-                "3rdparty/curl-7.53.1/src/tool_getpass.h",
-                "3rdparty/curl-7.53.1/src/tool_helpers.h",
-                "3rdparty/curl-7.53.1/src/tool_help.h",
-                "3rdparty/curl-7.53.1/src/tool_homedir.h",
-                "3rdparty/curl-7.53.1/src/tool_hugehelp.h",
-                "3rdparty/curl-7.53.1/src/tool_libinfo.h",
-                "3rdparty/curl-7.53.1/src/tool_main.h",
-                "3rdparty/curl-7.53.1/src/tool_metalink.h",
-                "3rdparty/curl-7.53.1/src/tool_mfiles.h",
-                "3rdparty/curl-7.53.1/src/tool_msgs.h",
-                "3rdparty/curl-7.53.1/src/tool_operate.h",
-                "3rdparty/curl-7.53.1/src/tool_operhlp.h",
-                "3rdparty/curl-7.53.1/src/tool_panykey.h",
-                "3rdparty/curl-7.53.1/src/tool_paramhlp.h",
-                "3rdparty/curl-7.53.1/src/tool_parsecfg.h",
-                "3rdparty/curl-7.53.1/src/tool_sdecls.h",
-                "3rdparty/curl-7.53.1/src/tool_setopt.h",
-                "3rdparty/curl-7.53.1/src/tool_setup.h",
-                "3rdparty/curl-7.53.1/src/tool_sleep.h",
-                "3rdparty/curl-7.53.1/src/tool_strdup.h",
-                "3rdparty/curl-7.53.1/src/tool_urlglob.h",
-                "3rdparty/curl-7.53.1/src/tool_util.h",
-                "3rdparty/curl-7.53.1/src/tool_version.h",
-                "3rdparty/curl-7.53.1/src/tool_vms.h",
-                "3rdparty/curl-7.53.1/src/tool_writeenv.h",
-                "3rdparty/curl-7.53.1/src/tool_writeout.h",
-                "3rdparty/curl-7.53.1/src/tool_xattr.h",
-                ------------------------------------------------------------------------------------------------------------
-                "3rdparty/curl-7.53.1/src/curl.rc",    
-            }            
-            vpaths 
-            { 
-                ["Header Files"] = {"**.h", "**.hpp"},
-                ["Source Files"] = {"**.c", "**.cpp"}
-            }
-            includedirs
-            {
-                "3rdparty/curl-7.53.1/include",
-                "3rdparty/curl-7.53.1/lib"
-            }
-            links
-            {
-                "libcurl",
-                "ws2_32.lib",
-                "wldap32.lib"
-            }    
+     
             
 
 
@@ -1054,96 +581,16 @@ workspace "3rdparty"
             
         
 
-    group "gtest"
-
-        project "gtest"            
-            kind "StaticLib"     
-            defines { "GTEST_HAS_PTHREAD=0", "_HAS_EXCEPTIONS=1" }            
-            files
-            {
-            
-                "3rdparty/googletest/googletest/src/gtest-all.cc"
-                     
-                               
-            }             
-            includedirs
-            {
-               
-                "3rdparty/googletest/googletest/include",
-                "3rdparty/googletest/googletest"
-            }
-            
-        
     
-
-        project "gtest_main"            
-            kind "StaticLib"     
-            defines { "GTEST_HAS_PTHREAD=0", "_HAS_EXCEPTIONS=1" }            
-            files
-            {
-            
-                "3rdparty/googletest/googletest/src/gtest-all.cc",
-                "3rdparty/googletest/googletest/src/gtest_main.cc"
-                  
-                               
-            }             
-            includedirs
-            {
-               
-                "3rdparty/googletest/googletest/include",
-                "3rdparty/googletest/googletest"
-            }
-            
-        
-            
     
    
 
-        project "gmock"            
-            kind "StaticLib"     
-            defines { "GTEST_HAS_PTHREAD=0", "_HAS_EXCEPTIONS=1" }            
-            files
-            {
-            
-                "3rdparty/googletest/googletest/src/gtest-all.cc",
-                "3rdparty/googletest/googlemock/src/gmock-all.cc"      
-                               
-            }             
-            includedirs
-            {
-               
-                "3rdparty/googletest/googletest/include",
-                "3rdparty/googletest/googletest",
-                "3rdparty/googletest/googlemock/include",
-                "3rdparty/googletest/googlemock"
-
-            }
-            
+       
         
     
     
 
-        project "gmock_main"            
-            kind "StaticLib"     
-            defines { "GTEST_HAS_PTHREAD=0", "_HAS_EXCEPTIONS=1" }            
-            files
-            {
-            
-                
-                "3rdparty/googletest/googletest/src/gtest-all.cc",
-                "3rdparty/googletest/googlemock/src/gmock-all.cc",
-                "3rdparty/googletest/googlemock/src/gmock_main.cc"
-                               
-            }             
-            includedirs
-            {       
-               
-                "3rdparty/googletest/googletest/include",
-                "3rdparty/googletest/googletest",
-                "3rdparty/googletest/googlemock/include",
-                "3rdparty/googletest/googlemock"
-
-            }
+       
 
         
 
@@ -1225,50 +672,7 @@ workspace "3rdparty"
         
 
     
-    group "lua"
-
-        project "liblua"            
-            kind "StaticLib"      
-            --defines { "STATIC_GETOPT" }
-            --flags { "StaticRuntime" }
-            files
-            {
-                "3rdparty/lua-5.3.3/**.h",
-                "3rdparty/lua-5.3.3/**.c"                               
-            } 
-            removefiles
-            {
-                "3rdparty/lua-5.3.3/luac.c",
-                "3rdparty/lua-5.3.3/lua.c"
-            }  
-
-          
-            
-        project "lua"            
-            kind "ConsoleApp"          
-               
-            files
-            {
-                "3rdparty/lua-5.3.3/**.h",
-                "3rdparty/lua-5.3.3/**.c"                               
-            } 
-            removefiles
-            {
-                "3rdparty/lua-5.3.3/luac.c"                
-            }  
-
-        project "luac"            
-            kind "ConsoleApp"                  
-            
-            files
-            {
-                "3rdparty/lua-5.3.3/**.h",
-                "3rdparty/lua-5.3.3/**.c"                               
-            } 
-            removefiles
-            {
-                "3rdparty/lua-5.3.3/lua.c"                
-            }  
+ 
 
 
     group "pe-parse"

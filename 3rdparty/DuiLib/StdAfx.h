@@ -80,17 +80,6 @@ extern "C" {
 #define CACTUS_DLL
 #include <cactus/cactus.h>   
 
-//#ifdef _DEBUG     
-//    #pragma comment(lib, "../../lib/win32d/cactus_dll_mdd.lib")
-//#else
-//    #pragma comment(lib, "../../lib/win32/cactus_dll_md.lib")
-//#endif
-
-#include <cactus/tracetool/tracetool.h>
-
-
-
-
 
 #define lengthof(x) (sizeof(x)/sizeof(*x))
 #define MAX max

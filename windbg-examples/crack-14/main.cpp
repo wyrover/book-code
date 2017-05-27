@@ -1,12 +1,16 @@
 #include "windows.h"
 #include "tchar.h"
 #include <stdio.h>
+#include <iostream>
 
 void if_example_01()
 {
 	printf("if_example_01 begin ----------------------------\n");
 
 	int a = 3, b = 5;
+
+	std::cout << a << b << std::endl;
+
 	if (a < b)
 		printf("%s", "yes"); 
 
@@ -18,6 +22,9 @@ void if_example_02()
 	printf("if_example_02 begin ----------------------------\n");
 
 	int a = 3, b = 5;
+
+	std::cout << a << b << std::endl;
+
 	if (a < b)
 		printf("%s", "yes");
 	else 
@@ -31,6 +38,9 @@ void if_example_03()
 	printf("if_example_03 begin ----------------------------\n");
 
 	int a = 3, b = 5;
+
+	std::cout << a << b << std::endl;
+
 	if (a < b)
 		printf("%s", "yes");
 	else if (a > b)
@@ -50,6 +60,9 @@ void if_example_04()
 	printf("if_example_04 begin ----------------------------\n");
 
 	int i = 1, j = 2;
+
+	std::cout << i << j << std::endl;
+
 	if (i < 2 || i == 1 || j != 2 || i + j < 3) {
 		printf("%s", "yes");
 	} else {
@@ -64,6 +77,9 @@ void if_example_05()
 	printf("if_example_05 begin ----------------------------\n");
 
 	int i = 1, j = 2;
+
+	std::cout << i << j << std::endl;
+
 	if (i < 2 && i == 1 && j != 2 && i + j < 3) {
 		printf("%s", "yes");
 	} else {

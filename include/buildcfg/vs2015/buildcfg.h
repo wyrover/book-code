@@ -25,6 +25,13 @@
 #define VI_ORIGINALFILENAME	"rsa-client-server.exe"
 #endif
 
+#ifdef CACTUS_DLL
+#pragma message("\t   RSA_CLIENT_SERVER")
+#define VI_FILEDESCRIPTION	"CACTUS_DLL"
+#define VI_INTERNALNAME		"CACTUS_DLL"
+#define VI_ORIGINALFILENAME	"cactus.dll"
+#endif
+
 
 
 #endif /* __BUILDCFG_BUILDCFG_H__ */

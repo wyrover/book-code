@@ -4,8 +4,10 @@
 #include "stdafx.h"
 
 // if 结构
-void If(int argc)
+void if_example_01(int argc)
 {
+	printf("if_example_01 begin ----------------------------\n");
+
     if (argc == 0) {
         printf("%d \r\n", argc);
     }
@@ -14,12 +16,14 @@ void If(int argc)
         printf("argc >= 0");
     }
 
-    return;
+	printf("if_example_01 end ----------------------------\n");
+    
 }
 
 // if else 结构
-void IfElse(int argc)
+void if_example_02(int argc)
 {
+	printf("if_example_02 begin ----------------------------\n");
 //  if (argc == 0)
 //  {
 //      printf("argc == 0");
@@ -37,11 +41,15 @@ void IfElse(int argc)
     }
 
     printf("%d \r\n", argc);
+
+	printf("if_example_02 end ----------------------------\n");
 }
 
 // if else if 组合
-void IfElseIf(int argc)
+void if_example_03(int argc)
 {
+	printf("if_example_03 begin ----------------------------\n");
+
     argc = 0;
 
     if (argc > 0) {
@@ -51,6 +59,33 @@ void IfElseIf(int argc)
     } else {
         printf("argc <= 0");
     }
+
+	printf("if_example_03 end ----------------------------\n");
+}
+
+void if_example_04(int argc)
+{
+	printf("if_example_04 begin ----------------------------\n");
+
+	int x = 0;
+	int y = 1;
+	int z = 2;
+
+	if (x == y) {
+		if (z == 0) {
+			printf("z is zero and x = y.\n");
+		} else {
+			printf("z is non-zero and x = y.\n");
+		}
+	} else {
+		if (z == 0) {
+			printf("z zero and x != y.\n");
+		} else {
+			printf("z non-zero and x != y.\n");
+		}
+	}
+
+	printf("if_example_04 end ----------------------------\n");
 }
 
 int main(int argc, char* argv[])
@@ -58,9 +93,12 @@ int main(int argc, char* argv[])
     int a = 7;
     int b = !!a;
     printf("%f", 10);
-     If(argc);
-    // IfElse(argc);
-    //IfElseIf(argc);
+
+
+    if_example_01(argc);
+    if_example_02(argc);
+    if_example_03(argc);
+
     return 0;
 }
 

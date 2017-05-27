@@ -28,6 +28,8 @@ int main(int argc, char *argv[])
         myvector->push_back(i * 3);
     }
 
+	system("pause");
+
     while (1) {
         for (int i = 0; i < 6; ++i) { //Insert data in the vector
             printf("%d ", i);
@@ -37,6 +39,8 @@ int main(int argc, char *argv[])
 
         printf("\n");
     }
+
+
 
     return 0;
 };

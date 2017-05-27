@@ -30,5 +30,7 @@ int main()
     }
 
     message_queue::remove("message_queue");
+
+	system("pause");
     return 0;
 }

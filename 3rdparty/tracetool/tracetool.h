@@ -14,13 +14,13 @@
 #endif
 
 #ifndef NOEXCEPT
-    #define NOEXCEPT    throw()
+	#define NOEXCEPT    throw()
 #endif
 
 #ifdef _X86_
-inline void debugBreak() NOEXCEPT { _asm { int 3 } }
+	inline void debugBreak() NOEXCEPT{ _asm { int 3 } }
 #else
-//inline void debugBreak() NOEXCEPT{ DebugBreak(); }
+	//inline void debugBreak() NOEXCEPT{ DebugBreak(); }
 #endif
 
 #ifdef TRACE_TOOL
@@ -31,19 +31,19 @@ inline void debugBreak() NOEXCEPT { _asm { int 3 } }
     #define __STR2WSTR(str) L##str
     #define _STR2WSTR(str) __STR2WSTR(str)
     #define __FUNCTIONW__ _STR2WSTR(__FUNCTION__)
-    //Serialization.cpp(226) : warning C4189: “nCount”: 局部变量已初始化但不引用
-    //#define DO_PRAGMA(x) __pragma (#x)
-    #define TODO(x) __pragma(message("TODO: " TOSTRING(x)) ) \
-        __pragma(message(__FILE__ "(" TOSTRING(__LINE__) ") : warning C999999: “TODO”: " TOSTRING(x)) )
-    #define FIXME(x) __pragma(message("FIX: " TOSTRING(x) "(" TOSTRING(__LINE__) ")") )
-    //#define TODO(...) DO_PRAGMA(message ("TODO - " #__VA_ARGS__))
-    //#define FIXME(...) DO_PRAGMA(message ("FIX - " #__VA_ARGS__))
+	//Serialization.cpp(226) : warning C4189: “nCount”: 局部变量已初始化但不引用
+	//#define DO_PRAGMA(x) __pragma (#x)
+	#define TODO(x) __pragma(message("TODO: " TOSTRING(x)) ) \
+		__pragma(message(__FILE__ "(" TOSTRING(__LINE__) ") : warning C999999: “TODO”: " TOSTRING(x)) )
+	#define FIXME(x) __pragma(message("FIX: " TOSTRING(x) "(" TOSTRING(__LINE__) ")") )
+	//#define TODO(...) DO_PRAGMA(message ("TODO - " #__VA_ARGS__))
+	//#define FIXME(...) DO_PRAGMA(message ("FIX - " #__VA_ARGS__))
     #define INIT_CONSOLE                    cactus::InitConsole()
     #define TRACE_CLEAR                     TTrace::ClearAll()
     #define TRACE_FlUSH                     TTrace::Flush()
     #define TRACE_SEND_FORMAT(format, ...)  TTrace::Debug()->SendFormat(format, __VA_ARGS__)
-    #define TRACE_IF(cond, format, ...) \
-        if (cond) TTrace::Debug()->SendFormat(format, __VA_ARGS__)
+	#define TRACE_IF(cond, format, ...) \
+				if (cond) TTrace::Debug()->SendFormat(format, __VA_ARGS__)	
     #define TRACE_SEND_W(x)                 TTrace::Debug()->SendW(x, TOSTRING_W(__FILE__) L":" TOSTRING_W(__LINE__))
     #define TRACE_SEND_A(x)                 TTrace::Debug()->SendA(x, __FILE__ ":" TOSTRING(__LINE__))
 
@@ -62,27 +62,29 @@ inline void debugBreak() NOEXCEPT { _asm { int 3 } }
     #endif
 
 
-    #define TRACE_MSGBOX_A(x)                   ::MessageBoxA(NULL, x, "TRACE_TOOL_MSGBOX", MB_OK)
-    #define TRACE_MSGBOX_W(x)                   ::MessageBoxW(NULL, x, L"TRACE_TOOL_MSGBOX", MB_OK)
+	#define TRACE_MSGBOX_A(x)					::MessageBoxA(NULL, x, "TRACE_TOOL_MSGBOX", MB_OK)
+	#define TRACE_MSGBOX_W(x)					::MessageBoxW(NULL, x, L"TRACE_TOOL_MSGBOX", MB_OK)
+
+	#define TRACE_REGKEY_W(x,y)			cactus::trace_regkey(x, y)
 
 #else
-    #define TODO(...)
-    #define FIXME(...)
+	#define TODO(...) 
+	#define FIXME(...) 
     #define INIT_CONSOLE
     #define TRACE_CLEAR
     #define TRACE_FlUSH
     #define TRACE_SEND_FORMAT(format, ...)
-    #define TRACE_IF(cond, format, ...)
+	#define TRACE_IF(cond, format, ...)
     #define TRACE_SEND(x)
     #define TRACE_SEND2(x,y)
-    #define TRACE_SEND2_W(x,y)
-    #define TRACE_SEND2_A(x,y)
-    #define TRACE_SEND_W
-    #define TRACE_SEND_A
+	#define TRACE_SEND2_W(x,y)
+	#define TRACE_SEND2_A(x,y)
+	#define TRACE_SEND_W
+	#define TRACE_SEND_A
     #define TRACE_ENTER_METHOD
     #define TRACE_EXIT_METHOD
-    #define TRACE_MSGBOX_A(x)
-    #define TRACE_MSGBOX_W(x)
+	#define TRACE_MSGBOX_A(x)					
+	#define TRACE_MSGBOX_W(x)					
 #endif
 
 #define CACTUS_API_CORE
@@ -94,6 +96,7 @@ inline void debugBreak() NOEXCEPT { _asm { int 3 } }
 namespace cactus
 {
 CACTUS_API_CORE void InitConsole();
+CACTUS_API_CORE void trace_regkey(const wchar_t* rootkey, const wchar_t* key);
 } // namespace cactus
 
 using namespace std ;
@@ -1148,5 +1151,5 @@ public :
 } ;
 
 
-//====================================================================================
+//====================================================================================    
 void DebugTrace(const TCHAR* format, ...);

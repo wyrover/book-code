@@ -71,29 +71,168 @@ namespace
 }
 
 
-LPTSTR
-SystemMessage (
-			   LPTSTR Buffer,
-			   HRESULT hr
-			   )
+namespace 
 {
-	LPTSTR   message;
+	DWORD WaitWithMsgQueue(DWORD nCount, const HANDLE* pHandles, BOOL fWaitAll, DWORD dwMilliseconds)
+	{
+		DWORD dw, tcNow, tcEnd, dwTimeToWait; 
+		DWORD dwResult = 0;
+		MSG msg;
+		DWORD i;
+		bool *ba = 0;
+		HANDLE myHandles[MAXIMUM_WAIT_OBJECTS];
+		unsigned int myCount;
 
-	FormatMessage (FORMAT_MESSAGE_ALLOCATE_BUFFER |
-		FORMAT_MESSAGE_FROM_SYSTEM,
-		NULL,
-		hr,
-		MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT),
-		(LPTSTR) &message,
-		0,
-		NULL);
+		// Initialize handle array
+		for (i = 0; i < nCount; i++)
+		{
+			myHandles[i] = pHandles[i];
+		}
+		myCount = nCount;
 
-	wsprintf (Buffer, TEXT("%s(%lx)\n"), message, hr);
+		tcNow = GetTickCount();
+		tcEnd = tcNow + dwMilliseconds;
 
-	LocalFree (message);
-	return Buffer;
+		bool bRepeat = true;
+		while (bRepeat) 
+		{
+			if ((dwMilliseconds != INFINITE) && (tcNow >= tcEnd))
+			{
+				dwResult = WAIT_TIMEOUT;
+				goto Cleanup;
+			}
+
+			if (dwMilliseconds != INFINITE)
+			{
+				dwTimeToWait = tcEnd - tcNow;
+			}
+			else
+			{
+				dwTimeToWait = INFINITE;
+			}
+
+			dw = MsgWaitForMultipleObjects(myCount, myHandles, false, dwTimeToWait, QS_ALLINPUT);
+			// Object got signaled
+			if (dw < (WAIT_OBJECT_0 + myCount))
+			{
+				if (fWaitAll)
+				{
+					// Remove object
+					i = dw - WAIT_OBJECT_0;
+					myCount--;
+					for (unsigned int j = i; j < myCount - 1 && myCount > 0; j++)
+					{
+						myHandles[j] = myHandles[j + 1];
+					}
+
+					// Exit if all objects have been signaled
+					if (myCount == 0)
+					{
+						dwResult = WAIT_OBJECT_0;
+						goto Cleanup;
+					}
+				}
+				else
+				{
+					dwResult = dw;
+					goto Cleanup;
+				}
+			}
+			// Got message
+			else if (dw == (WAIT_OBJECT_0 + nCount))
+			{
+				while (PeekMessage(&msg, 0, 0, 0, PM_REMOVE))
+				{
+					if (msg.message == WM_QUIT)
+					{
+						dwResult = dw;
+						goto Cleanup;
+					}
+
+					DispatchMessage(&msg);
+
+					// Check for timeout
+					tcNow = GetTickCount();
+					if ((dwMilliseconds != INFINITE) && (tcNow >= tcEnd))
+					{
+						dwResult = WAIT_TIMEOUT;
+						goto Cleanup;
+					}
+				}
+			}
+			// WAIT timed out
+			else if (dw == WAIT_TIMEOUT)
+			{
+				dwResult = dw;
+				goto Cleanup;
+			}
+			// WAIT failed
+			else
+			{
+				dwResult = dw;
+				goto Cleanup;
+			}
+
+			tcNow = GetTickCount();
+		}
+
+Cleanup:
+		if (ba) 
+			delete ba;
+		return dwResult;
+	}
+
+	BOOL LaunchCommand(const std::wstring& command, BOOL waitForEnd, BOOL minimized = FALSE)
+	{
+		PROCESS_INFORMATION processInfo;
+		STARTUPINFOW startupInfo;
+		memset(&startupInfo, 0, sizeof(startupInfo));
+		startupInfo.cb = sizeof(startupInfo);
+		startupInfo.dwFlags = minimized ? STARTF_USESHOWWINDOW : 0;
+		startupInfo.wShowWindow = SW_SHOWMINIMIZED;
+		int res = CreateProcessW(0,
+			const_cast<wchar_t*>(command.c_str()),
+			0, 0,
+			FALSE,
+			CREATE_NO_WINDOW,
+			0, 0, &startupInfo, &processInfo);
+
+		if (res == 0)
+		{
+			return FALSE;
+		}
+
+		if (waitForEnd)
+		{
+			WaitWithMsgQueue(1, &processInfo.hProcess, true, INFINITE);			
+		}
+
+		CloseHandle(processInfo.hProcess);
+		CloseHandle(processInfo.hThread);
+		return TRUE;
+	}
+
+
+	void Location_Regedit(const std::wstring& rootkey, const std::wstring& key)
+	{
+
+		std::wstring cmd;
+		cmd.append(L"regjump.exe ");
+		cmd.append(rootkey);
+		cmd.append(L"\\");
+		cmd.append(key);
+		LaunchCommand(cmd, TRUE);
+	}
 }
 
+namespace cactus
+{
+	void trace_regkey(const wchar_t* rootkey, const wchar_t* key)
+	{
+		TTrace::Debug()->SendW(rootkey, key);		
+		Location_Regedit(rootkey, key);
+	}
+}
 
 
 
@@ -3136,11 +3275,6 @@ void TraceToSend::EnterMethod(const char *leftMsg , const char *rightMsg , int B
 {
     string msg = "Enter " ;
     msg = msg + leftMsg ;
-
-	OutputDebugStringA(msg.c_str());
-	OutputDebugStringA("\n");
-	printf_s("%s\n", msg.c_str());
-
     Indent(msg.c_str(), rightMsg, BackGroundColor, true);
 }
 
@@ -3159,10 +3293,6 @@ void TraceToSend::EnterMethod(const wchar_t *leftMsg , const wchar_t *rightMsg ,
     char * strRightMsg = TTrace::WideToMbs(rightMsg) ;
     string msg = "Enter " ;
     msg = msg + strLeftMsg ;
-
-	OutputDebugStringA(msg.c_str());
-	OutputDebugStringA("\n");
-	printf_s("%s\n", msg.c_str());
     Indent(msg.c_str(), strRightMsg, BackGroundColor, true);
     free(strLeftMsg) ;
     free(strRightMsg) ;
@@ -3181,11 +3311,6 @@ void TraceToSend::ExitMethod(const char *leftMsg, const char *rightMsg , int Bac
 {
     string msg = "Exit " ;
     msg = msg + leftMsg ;
-
-	OutputDebugStringA(msg.c_str());
-	OutputDebugStringA("\n");
-	printf_s("%s\n", msg.c_str());
-
     UnIndent(msg.c_str(), rightMsg, BackGroundColor, true);
 }
 
@@ -3204,11 +3329,6 @@ void TraceToSend::ExitMethod(const wchar_t *leftMsg, const wchar_t *rightMsg , i
     char * strRightMsg = TTrace::WideToMbs(rightMsg) ;
     string msg = "Exit " ;
     msg = msg + strLeftMsg ;
-
-	OutputDebugStringA(msg.c_str());
-	OutputDebugStringA("\n");
-	printf_s("%s\n", msg.c_str());
-
     UnIndent(msg.c_str(), strRightMsg, BackGroundColor, true);
     free(strLeftMsg) ;
     free(strRightMsg) ;
