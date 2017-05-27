@@ -1090,6 +1090,37 @@ group "cactus"
         }                
         
 
+group "duilib"
+
+    project "duilib"        
+        kind "SharedLib"            
+        defines { "_WINDOWS", "UILIB_EXPORTS", "DUILIB_DLL" }               
+        flags { "NoManifest" }                       
+        files
+        {
+            "%{THIRD_PARTY}/DuiLib/**.h",
+            "%{THIRD_PARTY}/DuiLib/**.cpp",  
+            "%{THIRD_PARTY}/DuiLib/**.c",
+            "%{BOOK_CODE_PATH}/include/buildcfg/vs2015/dll_version.rc",
+            "%{BOOK_CODE_PATH}/include/buildcfg/vs2015/versionno.rc2",                
+            "%{BOOK_CODE_PATH}/include/buildcfg/vs2015/buildcfg.h"
+        }                    
+        includedirs
+        {          
+            "%{THIRD_PARTY}/DuiLib", 
+            "%{THIRD_PARTY}",     
+        }            
+        links
+        {
+            "cactus.lib"              
+        }        
+        pchsource "%{THIRD_PARTY}/DuiLib/StdAfx.cpp"
+        pchheader "StdAfx.h"
+        filter "files:**.c"
+            flags { "NoPCH" }
+        filter "files:%{THIRD_PARTY}/DuiLib/Utils/XUnzip.cpp"
+            flags { "NoPCH" }
+
 --    function include_win32_common()
 --        files { 
 --            "api/win32_common.h",
