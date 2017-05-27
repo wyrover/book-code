@@ -292,6 +292,34 @@ namespace DuiLib
 		Invalidate();
 	}
 
+	//************************************
+	// Method:    GetPushedForeImage
+	// FullName:  CButtonUI::GetPushedForeImage
+	// Access:    public 
+	// Returns:   LPCTSTR
+	// Qualifier:
+	// Note:	  
+	//************************************
+	LPCTSTR CButtonUI::GetPushedForeImage()
+	{
+		return m_sPushedForeImage;
+	}
+
+	//************************************
+	// Method:    SetPushedForeImage
+	// FullName:  CButtonUI::SetPushedForeImage
+	// Access:    public 
+	// Returns:   void
+	// Qualifier:
+	// Parameter: LPCTSTR pStrImage
+	// Note:	  
+	//************************************
+	void CButtonUI::SetPushedForeImage( LPCTSTR pStrImage )
+	{
+		m_sPushedForeImage = pStrImage;
+		Invalidate();
+	}
+
 	SIZE CButtonUI::EstimateSize(SIZE szAvailable)
 	{
 		if( m_cxyFixed.cy == 0 ) return CDuiSize(m_cxyFixed.cx, m_pManager->GetFontInfo(GetFont())->tm.tmHeight + 8);
@@ -307,6 +335,7 @@ namespace DuiLib
 		else if( _tcscmp(pstrName, _T("disabledimage")) == 0 ) SetDisabledImage(pstrValue);
 		else if( _tcscmp(pstrName, _T("foreimage")) == 0 ) SetForeImage(pstrValue);
 		else if( _tcscmp(pstrName, _T("hotforeimage")) == 0 ) SetHotForeImage(pstrValue);
+        else if( _tcscmp(pstrName, _T("pushedforeimage")) == 0 ) SetPushedForeImage(pstrValue);
 		else if( _tcscmp(pstrName, _T("hotbkcolor")) == 0 )
 		{
 			if( *pstrValue == _T('#')) pstrValue = ::CharNext(pstrValue);

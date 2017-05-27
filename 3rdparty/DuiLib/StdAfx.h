@@ -80,6 +80,11 @@ extern "C" {
 #define CACTUS_DLL
 #include <cactus/cactus.h>   
 
+#include <tracetool/tracetool.h>
+
+
+
+
 
 #define lengthof(x) (sizeof(x)/sizeof(*x))
 #define MAX max

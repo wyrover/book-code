@@ -52,7 +52,7 @@ CShadowUI::CShadowUI(void)
 , m_bIsShowShadow(false)
 , m_Status(SS_ENABLED)
 {
-	::ZeroMemory(&m_rcShadowCorner, sizeof(RECT));
+    ::ZeroMemory(&m_rcShadowCorner, sizeof(RECT));
 }
 
 CShadowUI::~CShadowUI(void)
@@ -61,7 +61,7 @@ CShadowUI::~CShadowUI(void)
 
 bool CShadowUI::Initialize(HINSTANCE hInstance)
 {
-	// Should not initiate more than once
+    // Should not initiate more than once
     if (NULL != s_UpdateLayeredWindow)
         return false;
 
@@ -75,7 +75,7 @@ bool CShadowUI::Initialize(HINSTANCE hInstance)
         return false;
 
     hSysDll = LoadLibrary(_T("dwmapi.dll"));
-    if(hSysDll)	// Loaded dwmapi.dll succefull, must on Vista or above
+    if(hSysDll)    // Loaded dwmapi.dll succefull, must on Vista or above
     {
         s_bVista = true;
         s_DwmIsCompositionEnabled = 
@@ -83,28 +83,28 @@ bool CShadowUI::Initialize(HINSTANCE hInstance)
             "DwmIsCompositionEnabled");
     }
 
-	// Register window class for shadow window
-	WNDCLASSEX wcex;
+    // Register window class for shadow window
+    WNDCLASSEX wcex;
 
-	memset(&wcex, 0, sizeof(wcex));
+    memset(&wcex, 0, sizeof(wcex));
 
-	wcex.cbSize = sizeof(WNDCLASSEX); 
-	wcex.style			= CS_HREDRAW | CS_VREDRAW;
-	wcex.lpfnWndProc	= DefWindowProc;
-	wcex.cbClsExtra		= 0;
-	wcex.cbWndExtra		= 0;
-	wcex.hInstance		= hInstance;
-	wcex.hIcon			= NULL;
-	wcex.hCursor		= LoadCursor(NULL, IDC_ARROW);
-	wcex.hbrBackground	= (HBRUSH)(COLOR_WINDOW+1);
-	wcex.lpszMenuName	= NULL;
-	wcex.lpszClassName	= strWndClassName;
-	wcex.hIconSm		= NULL;
+    wcex.cbSize = sizeof(WNDCLASSEX); 
+    wcex.style            = CS_HREDRAW | CS_VREDRAW;
+    wcex.lpfnWndProc    = DefWindowProc;
+    wcex.cbClsExtra        = 0;
+    wcex.cbWndExtra        = 0;
+    wcex.hInstance        = hInstance;
+    wcex.hIcon            = NULL;
+    wcex.hCursor        = LoadCursor(NULL, IDC_ARROW);
+    wcex.hbrBackground    = (HBRUSH)(COLOR_WINDOW+1);
+    wcex.lpszMenuName    = NULL;
+    wcex.lpszClassName    = strWndClassName;
+    wcex.hIconSm        = NULL;
 
-	RegisterClassEx(&wcex);
+    RegisterClassEx(&wcex);
 
-	s_bHasInit = true;
-	return true;
+    s_bHasInit = true;
+    return true;
 }
 
 void CShadowUI::Create(HWND hWndParent, CPaintManagerUI* pPaintManager)
@@ -112,44 +112,44 @@ void CShadowUI::Create(HWND hWndParent, CPaintManagerUI* pPaintManager)
     if(NULL == s_UpdateLayeredWindow)
         return;
 
-	// Already initialized
-	_ASSERT(CPaintManagerUI::GetInstance() != INVALID_HANDLE_VALUE);
-	_ASSERT(pPaintManager != NULL);
-	m_pManager = pPaintManager;
-	//HWND hParentWnd = m_pManager->GetPaintWindow();
+    // Already initialized
+    _ASSERT(CPaintManagerUI::GetInstance() != INVALID_HANDLE_VALUE);
+    _ASSERT(pPaintManager != NULL);
+    m_pManager = pPaintManager;
+    //HWND hParentWnd = m_pManager->GetPaintWindow();
 
     m_hWnd = CreateWindowEx(WS_EX_LAYERED | WS_EX_TRANSPARENT, strWndClassName, NULL,
-		/*WS_VISIBLE | styleValue |*/ WS_POPUPWINDOW,
-		CW_USEDEFAULT, 0, 0, 0, hWndParent, NULL, CPaintManagerUI::GetInstance(), NULL);
+        /*WS_VISIBLE | styleValue |*/ WS_POPUPWINDOW,
+        CW_USEDEFAULT, 0, 0, 0, hWndParent, NULL, CPaintManagerUI::GetInstance(), NULL);
 
     // Determine the initial show state of shadow according to Aero
-    m_Status = SS_ENABLED;	// Enabled by default
+    m_Status = SS_ENABLED;    // Enabled by default
     BOOL bAero = FALSE;
     if(s_DwmIsCompositionEnabled)
         s_DwmIsCompositionEnabled(&bAero);
-    //if (bAero)	m_Status |= SS_DISABLEDBYAERO;
+    //if (bAero)    m_Status |= SS_DISABLEDBYAERO;
 
-    Show(hWndParent);	// Show the shadow if conditions are met
+    Show(hWndParent);    // Show the shadow if conditions are met
 
 /*
-	// Replace the original WndProc of parent window to steal messages
-	m_OriParentProc = GetWindowLongPtr(hParentWnd, GWLP_WNDPROC);
+    // Replace the original WndProc of parent window to steal messages
+    m_OriParentProc = GetWindowLongPtr(hParentWnd, GWLP_WNDPROC);
 
-#pragma warning(disable: 4311)	// temporrarily disable the type_cast warning in Win32
-	SetWindowLongPtr(hParentWnd, GWLP_WNDPROC, (LONG)ParentProc);
+#pragma warning(disable: 4311)    // temporrarily disable the type_cast warning in Win32
+    SetWindowLongPtr(hParentWnd, GWLP_WNDPROC, (LONG)ParentProc);
 #pragma warning(default: 4311)*/
 
 }
 
 LRESULT CALLBACK CShadowUI::ParentProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
-	switch(uMsg)
-	{
-	case WM_MOVE:
-		if(this->m_Status & SS_VISABLE)
-		{
-			RECT WndRect;
-			GetWindowRect(hwnd, &WndRect);
+    switch(uMsg)
+    {
+    case WM_MOVE:
+        if(this->m_Status & SS_VISABLE)
+        {
+            RECT WndRect;
+            GetWindowRect(hwnd, &WndRect);
             int x = 0, y = 0; 
             if (m_bIsImageMode){
                 if(m_sShadowImage.empty())
@@ -162,220 +162,225 @@ LRESULT CALLBACK CShadowUI::ParentProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPAR
                 y = WndRect.top + this->m_nyOffset - this->m_nSize;
             }
             
-			SetWindowPos(this->m_hWnd, 0, x, y,
-				0, 0, SWP_NOSIZE | SWP_NOACTIVATE);
-		}
-		break;
+            SetWindowPos(this->m_hWnd, 0, x, y,
+                0, 0, SWP_NOSIZE | SWP_NOACTIVATE);
+        }
+        break;
 
-	case WM_SIZE:
-		if(this->m_Status & SS_ENABLED && !(this->m_Status & SS_DISABLEDBYAERO))
-		{
-			if(SIZE_MAXIMIZED == wParam || SIZE_MINIMIZED == wParam)
-			{
-				ShowWindow(this->m_hWnd, SW_HIDE);
-				this->m_Status &= ~SS_VISABLE;
-			}
-			else
-			{
-				LONG lParentStyle = GetWindowLong(hwnd, GWL_STYLE);
-				if(WS_VISIBLE & lParentStyle)	// Parent may be resized even if invisible
-				{
-					this->m_Status |= SS_PARENTVISIBLE;
-					if(!(this->m_Status & SS_VISABLE))
-					{
-						this->m_Status |= SS_VISABLE;
-						// Update before show, because if not, restore from maximized will
-						// see a glance misplaced shadow
-						this->Update(hwnd);
-						ShowWindow(this->m_hWnd, SW_SHOWNA);
-						// If restore from minimized, the window region will not be updated until WM_PAINT:(
-						this->m_bUpdate = true;
-					}
-					// Awful! It seems that if the window size was not decreased
-					// the window region would never be updated until WM_PAINT was sent.
-					// So do not Update() until next WM_PAINT is received in this case
-					else if(LOWORD(lParam) > LOWORD(this->m_WndSize) || HIWORD(lParam) > HIWORD(this->m_WndSize))
-						this->m_bUpdate = true;
-					else
-						this->Update(hwnd);
-				}
+    case WM_SIZE:
+        if(this->m_Status & SS_ENABLED && !(this->m_Status & SS_DISABLEDBYAERO))
+        {
+            if(SIZE_MAXIMIZED == wParam || SIZE_MINIMIZED == wParam)
+            {
+                ShowWindow(this->m_hWnd, SW_HIDE);
+                this->m_Status &= ~SS_VISABLE;
+            }
+            else
+            {
+                LONG lParentStyle = GetWindowLong(hwnd, GWL_STYLE);
+                if(WS_VISIBLE & lParentStyle)    // Parent may be resized even if invisible
+                {
+                    this->m_Status |= SS_PARENTVISIBLE;
+                    if(!(this->m_Status & SS_VISABLE))
+                    {
+                        this->m_Status |= SS_VISABLE;
+                        // Update before show, because if not, restore from maximized will
+                        // see a glance misplaced shadow
+                        this->Update(hwnd);
+                        ShowWindow(this->m_hWnd, SW_SHOWNA);
+                        // If restore from minimized, the window region will not be updated until WM_PAINT:(
+                        this->m_bUpdate = true;
+                    }
+                    // Awful! It seems that if the window size was not decreased
+                    // the window region would never be updated until WM_PAINT was sent.
+                    // So do not Update() until next WM_PAINT is received in this case
+                    else if(LOWORD(lParam) > LOWORD(this->m_WndSize) || HIWORD(lParam) > HIWORD(this->m_WndSize))
+                        this->m_bUpdate = true;
+                    else
+                        this->Update(hwnd);
+                }
 
-			}
-			this->m_WndSize = lParam;
-		}
-		break;
+            }
+            this->m_WndSize = lParam;
+        }
+        break;
 
-	case WM_PAINT:
-		{
-			if(this->m_bUpdate)
-			{
-				this->Update(hwnd);
-				this->m_bUpdate = false;
-			}
-			//return hr;
-			break;
-		}
+    case WM_PAINT:
+        {
+            if(this->m_bUpdate)
+            {
+                this->Update(hwnd);
+                this->m_bUpdate = false;
+            }
+            //return hr;
+            break;
+        }
 
-		// In some cases of sizing, the up-right corner of the parent window region would not be properly updated
-		// Update() again when sizing is finished
-	case WM_EXITSIZEMOVE:
-		if(this->m_Status & SS_VISABLE)
-		{
-			this->Update(hwnd);
-		}
-		break;
+        // In some cases of sizing, the up-right corner of the parent window region would not be properly updated
+        // Update() again when sizing is finished
+    case WM_EXITSIZEMOVE:
+        if(this->m_Status & SS_VISABLE)
+        {
+            this->Update(hwnd);
+        }
+        break;
 
 /*
-	case WM_SHOWWINDOW:
-		if(this->m_Status & SS_ENABLED && !(this->m_Status & SS_DISABLEDBYAERO))
-		{
-			LRESULT lResult =  pDefProc(hwnd, uMsg, wParam, lParam);
-			if((int)wParam == SW_HIDE)	// the window is being hidden
-			{
-				ShowWindow(this->m_hWnd, SW_HIDE);
-				this->m_Status &= ~(SS_VISABLE | SS_PARENTVISIBLE);
-			}
-			else
-			{
-// 				this->m_Status |= SS_VISABLE | SS_PARENTVISIBLE;
-// 				ShowWindow(this->m_hWnd, SW_SHOWNA);
-// 				this->Update(hwnd);
-				this->m_bUpdate = true;
-				this->Show(hwnd);
-			}
-			return lResult;
-		}
-		break;
+    case WM_SHOWWINDOW:
+        if(this->m_Status & SS_ENABLED && !(this->m_Status & SS_DISABLEDBYAERO))
+        {
+            LRESULT lResult =  pDefProc(hwnd, uMsg, wParam, lParam);
+            if((int)wParam == SW_HIDE)    // the window is being hidden
+            {
+                ShowWindow(this->m_hWnd, SW_HIDE);
+                this->m_Status &= ~(SS_VISABLE | SS_PARENTVISIBLE);
+            }
+            else
+            {
+//                 this->m_Status |= SS_VISABLE | SS_PARENTVISIBLE;
+//                 ShowWindow(this->m_hWnd, SW_SHOWNA);
+//                 this->Update(hwnd);
+                this->m_bUpdate = true;
+                this->Show(hwnd);
+            }
+            return lResult;
+        }
+        break;
 */
-	case WM_SHOWWINDOW:
-		{
-			if(this->m_Status & SS_ENABLED/* && !(this->m_Status & SS_DISABLEDBYAERO)*/)
-			{
-				if(!wParam)	// the window is being hidden
-				{
-					ShowWindow(this->m_hWnd, SW_HIDE);
-					this->m_Status &= ~(SS_VISABLE | SS_PARENTVISIBLE);
-				}
-				else
-				{
-					this->m_bUpdate = true;
-					this->Show(hwnd);
-					LONG lParentStyle = GetWindowLong(hwnd, GWL_STYLE);
-					if (lParentStyle & 0x80000000)
-					{
-						CDuiRect rect;
-						GetClientRect(hwnd,&rect);
-						PostMessage(hwnd,WM_SIZE,rect.GetWidth(),rect.GetHeight());
-					}
-					// this->m_Status |= SS_VISABLE | SS_PARENTVISIBLE;
-					// ShowWindow(this->m_hWnd, SW_SHOWNA);
-					// this->Update(hwnd);
-					//this->m_bUpdate = true;
-					//this->Show(hwnd);
-				}
-				return 0;
-			}
-			break;
+    case WM_SHOWWINDOW:
+        {
+            if(this->m_Status & SS_ENABLED/* && !(this->m_Status & SS_DISABLEDBYAERO)*/)
+            {
+                if(!wParam)    // the window is being hidden
+                {
+                    ShowWindow(this->m_hWnd, SW_HIDE);
+                    this->m_Status &= ~(SS_VISABLE | SS_PARENTVISIBLE);
+                }
+                else
+                {
+                    this->m_bUpdate = true;
+                    this->Show(hwnd);
+                    LONG lParentStyle = GetWindowLong(hwnd, GWL_STYLE);
+                    if (lParentStyle & 0x80000000)
+                    {
+                        CDuiRect rect;
+                        GetClientRect(hwnd,&rect);
+                        PostMessage(hwnd,WM_SIZE,rect.GetWidth(),rect.GetHeight());
+                    }
+                    // this->m_Status |= SS_VISABLE | SS_PARENTVISIBLE;
+                    // ShowWindow(this->m_hWnd, SW_SHOWNA);
+                    // this->Update(hwnd);
+                    //this->m_bUpdate = true;
+                    //this->Show(hwnd);
+                }
+                return 0;
+            }
+            break;
 
-		}
-	case WM_DESTROY:
-		DestroyWindow(this->m_hWnd);	// Destroy the shadow
-		break;
-	case WM_DWMCOMPOSITIONCHANGED:
-		{
-			BOOL bAero = FALSE;
-			if(s_DwmIsCompositionEnabled)	// "if" is actually not necessary here :P
-				s_DwmIsCompositionEnabled(&bAero);
-			if (bAero)
-				this->m_Status |= SS_DISABLEDBYAERO;
-			else
-				this->m_Status &= ~SS_DISABLEDBYAERO;
-			
-			this->Show(hwnd);
-		}
-		break;
+        }
+    case WM_DESTROY:
+        DestroyWindow(this->m_hWnd);    // Destroy the shadow
+        break;
+    case WM_DWMCOMPOSITIONCHANGED:
+        {
+            BOOL bAero = FALSE;
+            if(s_DwmIsCompositionEnabled)    // "if" is actually not necessary here :P
+                s_DwmIsCompositionEnabled(&bAero);
+            if (bAero)
+                this->m_Status |= SS_DISABLEDBYAERO;
+            else
+                this->m_Status &= ~SS_DISABLEDBYAERO;
+            
+            this->Show(hwnd);
+        }
+        break;
 
-	}
+    }
 
     return 0;
 }
 
 void CShadowUI::Update(HWND hParent)
 {
-	RECT WndRect;
-	GetWindowRect(hParent, &WndRect);
-	int nShadWndWid;
-	int nShadWndHei;
-	if (m_bIsImageMode){
-		if(m_sShadowImage.empty())
-			return;
+    RECT WndRect;
+    GetWindowRect(hParent, &WndRect);
 
-		nShadWndWid = WndRect.right - WndRect.left + m_rcShadowCorner.left + m_rcShadowCorner.right;
-		nShadWndHei = WndRect.bottom - WndRect.top + m_rcShadowCorner.top + m_rcShadowCorner.bottom;
-	} else {
-		nShadWndWid = WndRect.right - WndRect.left + m_nSize * 2;
-		nShadWndHei = WndRect.bottom - WndRect.top + m_nSize * 2;
-	}
-		
-	// Create the alpha blending bitmap
-	BITMAPINFO bmi;        // bitmap header
+    if (WndRect.left == 0 && WndRect.top == 0){
+        return;
+    }
 
-	ZeroMemory(&bmi, sizeof(BITMAPINFO));
-	bmi.bmiHeader.biSize = sizeof(BITMAPINFOHEADER);
-	bmi.bmiHeader.biWidth = nShadWndWid;
-	bmi.bmiHeader.biHeight = nShadWndHei;
-	bmi.bmiHeader.biPlanes = 1;
-	bmi.bmiHeader.biBitCount = 32;         // four 8-bit components
-	bmi.bmiHeader.biCompression = BI_RGB;
-	bmi.bmiHeader.biSizeImage = nShadWndWid * nShadWndHei * 4;
+    int nShadWndWid;
+    int nShadWndHei;
+    if (m_bIsImageMode){
+        if(m_sShadowImage.empty())
+            return;
 
-	BYTE *pvBits;          // pointer to DIB section
-	HBITMAP hbitmap = CreateDIBSection(NULL, &bmi, DIB_RGB_COLORS, (void **)&pvBits, NULL, 0);
-	HDC hMemDC = CreateCompatibleDC(NULL);
-	HBITMAP hOriBmp = (HBITMAP)SelectObject(hMemDC, hbitmap);
+        nShadWndWid = WndRect.right - WndRect.left + m_rcShadowCorner.left + m_rcShadowCorner.right;
+        nShadWndHei = WndRect.bottom - WndRect.top + m_rcShadowCorner.top + m_rcShadowCorner.bottom;
+    } else {
+        nShadWndWid = WndRect.right - WndRect.left + m_nSize * 2;
+        nShadWndHei = WndRect.bottom - WndRect.top + m_nSize * 2;
+    }
+        
+    // Create the alpha blending bitmap
+    BITMAPINFO bmi;        // bitmap header
 
-	if (m_bIsImageMode){
-		RECT rcPaint = {0, 0, nShadWndWid, nShadWndHei};
-		const TImageInfo* data = m_pManager->GetImageEx(m_sShadowImage.c_str(), NULL, 0);
+    ZeroMemory(&bmi, sizeof(BITMAPINFO));
+    bmi.bmiHeader.biSize = sizeof(BITMAPINFOHEADER);
+    bmi.bmiHeader.biWidth = nShadWndWid;
+    bmi.bmiHeader.biHeight = nShadWndHei;
+    bmi.bmiHeader.biPlanes = 1;
+    bmi.bmiHeader.biBitCount = 32;         // four 8-bit components
+    bmi.bmiHeader.biCompression = BI_RGB;
+    bmi.bmiHeader.biSizeImage = nShadWndWid * nShadWndHei * 4;
 
-		if( !data ) 
-			return;
+    BYTE *pvBits;          // pointer to DIB section
+    HBITMAP hbitmap = CreateDIBSection(NULL, &bmi, DIB_RGB_COLORS, (void **)&pvBits, NULL, 0);
+    HDC hMemDC = CreateCompatibleDC(NULL);
+    HBITMAP hOriBmp = (HBITMAP)SelectObject(hMemDC, hbitmap);
 
-		RECT rcBmpPart = {0};
-		rcBmpPart.right = data->nX;
-		rcBmpPart.bottom = data->nY;
+    if (m_bIsImageMode){
+        RECT rcPaint = {0, 0, nShadWndWid, nShadWndHei};
+        const TImageInfo* data = m_pManager->GetImageEx(m_sShadowImage.c_str(), NULL, 0);
 
-		CRenderEngine::DrawImage(hMemDC, data->hBitmap, rcPaint, rcPaint, rcBmpPart, 
+        if( !data ) 
+            return;
+
+        RECT rcBmpPart = {0};
+        rcBmpPart.right = data->nX;
+        rcBmpPart.bottom = data->nY;
+
+        CRenderEngine::DrawImage(hMemDC, data->hBitmap, rcPaint, rcPaint, rcBmpPart, 
             m_rcShadowCorner, data->alphaChannel, 0xFF, 0, true, false, false);
-	} else {
-		ZeroMemory(pvBits, bmi.bmiHeader.biSizeImage);
-		MakeShadow((UINT32 *)pvBits, hParent, &WndRect);
-	}
+    } else {
+        ZeroMemory(pvBits, bmi.bmiHeader.biSizeImage);
+        MakeShadow((UINT32 *)pvBits, hParent, &WndRect);
+    }
 
-	POINT ptDst;
-	if (m_bIsImageMode) {
-		ptDst.x = WndRect.left - m_rcShadowCorner.left;
-		ptDst.y = WndRect.top - m_rcShadowCorner.top;
-	} else {
-		ptDst.x = WndRect.left + m_nxOffset - m_nSize;
-		ptDst.y = WndRect.top + m_nyOffset - m_nSize;
-	}
+    POINT ptDst;
+    if (m_bIsImageMode) {
+        ptDst.x = WndRect.left - m_rcShadowCorner.left;
+        ptDst.y = WndRect.top - m_rcShadowCorner.top;
+    } else {
+        ptDst.x = WndRect.left + m_nxOffset - m_nSize;
+        ptDst.y = WndRect.top + m_nyOffset - m_nSize;
+    }
 
-	POINT ptSrc = {0, 0};
-	SIZE WndSize = {nShadWndWid, nShadWndHei};
-	BLENDFUNCTION blendPixelFunction= { AC_SRC_OVER, 0, 255, AC_SRC_ALPHA };
+    POINT ptSrc = {0, 0};
+    SIZE WndSize = {nShadWndWid, nShadWndHei};
+    BLENDFUNCTION blendPixelFunction= { AC_SRC_OVER, 0, 255, AC_SRC_ALPHA };
 
-	MoveWindow(m_hWnd, ptDst.x, ptDst.y, nShadWndWid, nShadWndHei, FALSE);
+    MoveWindow(m_hWnd, ptDst.x, ptDst.y, nShadWndWid, nShadWndHei, FALSE);
 
-	BOOL bRet= ::UpdateLayeredWindow(m_hWnd, NULL, &ptDst, &WndSize, hMemDC,
-		&ptSrc, 0, &blendPixelFunction, ULW_ALPHA);
+    BOOL bRet= ::UpdateLayeredWindow(m_hWnd, NULL, &ptDst, &WndSize, hMemDC,
+        &ptSrc, 0, &blendPixelFunction, ULW_ALPHA);
 
-	_ASSERT(bRet); // something was wrong....
+    _ASSERT(bRet); // something was wrong....
 
-	// Delete used resources
-	SelectObject(hMemDC, hOriBmp);
-	DeleteObject(hbitmap);
-	DeleteDC(hMemDC);
+    // Delete used resources
+    SelectObject(hMemDC, hOriBmp);
+    DeleteObject(hbitmap);
+    DeleteDC(hMemDC);
 
 }
 
@@ -384,17 +389,17 @@ void CShadowUI::Show(HWND hParentWnd)
     // Clear all except the enabled status
     m_Status &= SS_ENABLED | SS_DISABLEDBYAERO;
     //SetStatus(m_Status & (SS_ENABLED | SS_DISABLEDBYAERO));
-    if((m_Status & SS_ENABLED) && !(m_Status & SS_DISABLEDBYAERO))	// Enabled
+    if((m_Status & SS_ENABLED) && !(m_Status & SS_DISABLEDBYAERO))    // Enabled
     {
         // Determine the show state of shadow according to parent window's state
         LONG lParentStyle = GetWindowLong(hParentWnd, GWL_STYLE);
 
-        if(WS_VISIBLE & lParentStyle)	// Parent visible
+        if(WS_VISIBLE & lParentStyle)    // Parent visible
         {
             m_Status |= SS_PARENTVISIBLE;
 
             // Parent is normal, show the shadow
-            if(!((WS_MAXIMIZE | WS_MINIMIZE) & lParentStyle))	// Parent visible but does not need shadow
+            if(!((WS_MAXIMIZE | WS_MINIMIZE) & lParentStyle))    // Parent visible but does not need shadow
                 m_Status |= SS_VISABLE;
         }
     }
@@ -425,9 +430,9 @@ void CShadowUI::MakeShadow(UINT32 *pShadBits, HWND hParent, RECT *rcParent)
     SIZE szParent = {rcParent->right - rcParent->left, rcParent->bottom - rcParent->top};
     SIZE szShadow = {szParent.cx + 2 * m_nSize, szParent.cy + 2 * m_nSize};
     // Extra 2 lines (set to be empty) in ptAnchors are used in dilation
-    int nAnchors = max(szParent.cy, szShadow.cy);	// # of anchor points pares
+    int nAnchors = max(szParent.cy, szShadow.cy);    // # of anchor points pares
     int (*ptAnchors)[2] = new int[nAnchors + 2][2];
-    int (*ptAnchorsOri)[2] = new int[szParent.cy][2];	// anchor points, will not modify during erosion
+    int (*ptAnchorsOri)[2] = new int[szParent.cy][2];    // anchor points, will not modify during erosion
     ptAnchors[0][0] = szParent.cx;
     ptAnchors[0][1] = 0;
     ptAnchors[nAnchors + 1][0] = szParent.cx;
@@ -458,7 +463,7 @@ void CShadowUI::MakeShadow(UINT32 *pShadBits, HWND hParent, RECT *rcParent)
             }
         }
 
-        if(j >= szParent.cx)	// Start point not found
+        if(j >= szParent.cx)    // Start point not found
         {
             ptAnchors[i + 1][0] = szParent.cx;
             ptAnchorsOri[i][1] = 0;
@@ -478,13 +483,13 @@ void CShadowUI::MakeShadow(UINT32 *pShadBits, HWND hParent, RECT *rcParent)
                 }
             }
         }
-        // 		if(0 != ptAnchorsOri[i][1])
-        // 			_RPTF2(_CRT_WARN, "%d %d\n", ptAnchorsOri[i][0], ptAnchorsOri[i][1]);
+        //         if(0 != ptAnchorsOri[i][1])
+        //             _RPTF2(_CRT_WARN, "%d %d\n", ptAnchorsOri[i][0], ptAnchorsOri[i][1]);
     }
 
     if(m_nSize > 0)
-        ptAnchors -= m_nSize;	// Restore pos of ptAnchors for erosion
-    int (*ptAnchorsTmp)[2] = new int[nAnchors + 2][2];	// Store the result of erosion
+        ptAnchors -= m_nSize;    // Restore pos of ptAnchors for erosion
+    int (*ptAnchorsTmp)[2] = new int[nAnchors + 2][2];    // Store the result of erosion
     // First and last line should be empty
     ptAnchorsTmp[0][0] = szParent.cx;
     ptAnchorsTmp[0][1] = 0;
@@ -511,7 +516,7 @@ void CShadowUI::MakeShadow(UINT32 *pShadBits, HWND hParent, RECT *rcParent)
     }
 
     // morphologic dilation
-    ptAnchors += (m_nSize < 0 ? -m_nSize : 0) + 1;	// now coordinates in ptAnchors are same as in shadow window
+    ptAnchors += (m_nSize < 0 ? -m_nSize : 0) + 1;    // now coordinates in ptAnchors are same as in shadow window
     // Generate the kernel
     int nKernelSize = m_nSize > m_nSharpness ? m_nSize : m_nSharpness;
     int nCenterSize = m_nSize > m_nSharpness ? (m_nSize - m_nSharpness) : 0;
@@ -561,7 +566,7 @@ void CShadowUI::MakeShadow(UINT32 *pShadBits, HWND hParent, RECT *rcParent)
                         pKernelPixel++;
                     }
                 }
-            }	// for() start of line
+            }    // for() start of line
 
             // End of line
             for(j = max(j, min(ptAnchors[i - 1][1], ptAnchors[i + 1][1]) - 1);
@@ -581,10 +586,10 @@ void CShadowUI::MakeShadow(UINT32 *pShadBits, HWND hParent, RECT *rcParent)
                         pKernelPixel++;
                     }
                 }
-            }	// for() end of line
+            }    // for() end of line
 
         }
-    }	// for() Generate blurred border
+    }    // for() Generate blurred border
 
     // Erase unwanted parts and complement missing
     UINT32 clCenter = m_nDarkness << 24 | PreMultiply(m_Color, m_nDarkness);
@@ -593,7 +598,7 @@ void CShadowUI::MakeShadow(UINT32 *pShadBits, HWND hParent, RECT *rcParent)
         i++)
     {
         UINT32 *pLine = pShadBits + (szShadow.cy - i - 1) * szShadow.cx;
-        if(i - m_nSize + m_nyOffset < 0 || i - m_nSize + m_nyOffset >= szParent.cy)	// Line is not covered by parent window
+        if(i - m_nSize + m_nyOffset < 0 || i - m_nSize + m_nyOffset >= szParent.cy)    // Line is not covered by parent window
         {
             for(int j = ptAnchors[i][0]; j < ptAnchors[i][1]; j++)
             {
@@ -627,92 +632,92 @@ void CShadowUI::MakeShadow(UINT32 *pShadBits, HWND hParent, RECT *rcParent)
 
 void CShadowUI::ShowShadow(bool bShow)
 {
-	m_bIsShowShadow = bShow;
+    m_bIsShowShadow = bShow;
 }
 
 bool CShadowUI::IsShowShadow() const
 {
-	return m_bIsShowShadow;
+    return m_bIsShowShadow;
 }
 
 bool CShadowUI::SetSize(int NewSize)
 {
-	if(NewSize > 20 || NewSize < -20)
-		return false;
+    if(NewSize > 20 || NewSize < -20)
+        return false;
 
-	m_nSize = (signed char)NewSize;
-	if(m_hWnd != NULL && (SS_VISABLE & m_Status))
-		Update(GetParent(m_hWnd));
-	return true;
+    m_nSize = (signed char)NewSize;
+    if(m_hWnd != NULL && (SS_VISABLE & m_Status))
+        Update(GetParent(m_hWnd));
+    return true;
 }
 
 bool CShadowUI::SetSharpness(unsigned int NewSharpness)
 {
-	if(NewSharpness > 20)
-		return false;
+    if(NewSharpness > 20)
+        return false;
 
-	m_nSharpness = (unsigned char)NewSharpness;
-	if(m_hWnd != NULL && (SS_VISABLE & m_Status))
-		Update(GetParent(m_hWnd));
-	return true;
+    m_nSharpness = (unsigned char)NewSharpness;
+    if(m_hWnd != NULL && (SS_VISABLE & m_Status))
+        Update(GetParent(m_hWnd));
+    return true;
 }
 
 bool CShadowUI::SetDarkness(unsigned int NewDarkness)
 {
-	if(NewDarkness > 255)
-		return false;
+    if(NewDarkness > 255)
+        return false;
 
-	m_nDarkness = (unsigned char)NewDarkness;
-	if(m_hWnd != NULL && (SS_VISABLE & m_Status))
-		Update(GetParent(m_hWnd));
-	return true;
+    m_nDarkness = (unsigned char)NewDarkness;
+    if(m_hWnd != NULL && (SS_VISABLE & m_Status))
+        Update(GetParent(m_hWnd));
+    return true;
 }
 
 bool CShadowUI::SetPosition(int NewXOffset, int NewYOffset)
 {
-	if(NewXOffset > 20 || NewXOffset < -20 ||
-		NewYOffset > 20 || NewYOffset < -20)
-		return false;
-	
-	m_nxOffset = (signed char)NewXOffset;
-	m_nyOffset = (signed char)NewYOffset;
-	if(m_hWnd != NULL && (SS_VISABLE & m_Status))
-		Update(GetParent(m_hWnd));
-	return true;
+    if(NewXOffset > 20 || NewXOffset < -20 ||
+        NewYOffset > 20 || NewYOffset < -20)
+        return false;
+    
+    m_nxOffset = (signed char)NewXOffset;
+    m_nyOffset = (signed char)NewYOffset;
+    if(m_hWnd != NULL && (SS_VISABLE & m_Status))
+        Update(GetParent(m_hWnd));
+    return true;
 }
 
 bool CShadowUI::SetColor(COLORREF NewColor)
 {
-	m_Color = NewColor;
-	if(m_hWnd != NULL && (SS_VISABLE & m_Status))
-		Update(GetParent(m_hWnd));
-	return true;
+    m_Color = NewColor;
+    if(m_hWnd != NULL && (SS_VISABLE & m_Status))
+        Update(GetParent(m_hWnd));
+    return true;
 }
 
 bool CShadowUI::SetImage(LPCTSTR szImage)
 {
-	if (szImage == NULL || _tcslen(szImage) == 0)
-		return false;
+    if (szImage == NULL || _tcslen(szImage) == 0)
+        return false;
 
-	m_bIsImageMode = true;
-	m_sShadowImage = szImage;
-	if(m_hWnd != NULL && (SS_VISABLE & m_Status))
-		Update(GetParent(m_hWnd));
+    m_bIsImageMode = true;
+    m_sShadowImage = szImage;
+    if(m_hWnd != NULL && (SS_VISABLE & m_Status))
+        Update(GetParent(m_hWnd));
 
-	return true;
+    return true;
 }
 
 bool CShadowUI::SetCorner(RECT rcCorner)
 {
-	if (rcCorner.left < 0 || rcCorner.top < 0 || rcCorner.right < 0 || rcCorner.bottom < 0)
-		return false;
+    if (rcCorner.left < 0 || rcCorner.top < 0 || rcCorner.right < 0 || rcCorner.bottom < 0)
+        return false;
 
-	m_rcShadowCorner = rcCorner;
+    m_rcShadowCorner = rcCorner;
 
-	if(m_hWnd != NULL && (SS_VISABLE & m_Status))
-		Update(GetParent(m_hWnd));
+    if(m_hWnd != NULL && (SS_VISABLE & m_Status))
+        Update(GetParent(m_hWnd));
 
-	return true;
+    return true;
 }
 
 bool CShadowUI::CopyShadow(CShadowUI* pShadow)
@@ -722,14 +727,14 @@ bool CShadowUI::CopyShadow(CShadowUI* pShadow)
         this->SetCorner(pShadow->GetCorner());
     } else {
         POINT pt = pShadow->GetPosition();
-		this->SetSize(pShadow->GetSize());
-		this->SetSharpness(pShadow->GetSharpness());
-		this->SetDarkness(pShadow->GetDarkness());
-		this->SetColor(pShadow->GetColor());
-		this->SetPosition(pt.x, pt.y);
-	}
+        this->SetSize(pShadow->GetSize());
+        this->SetSharpness(pShadow->GetSharpness());
+        this->SetDarkness(pShadow->GetDarkness());
+        this->SetColor(pShadow->GetColor());
+        this->SetPosition(pt.x, pt.y);
+    }
     this->ShowShadow(pShadow->IsShowShadow());
-	return true;
+    return true;
 }
 
 void CShadowUI::SetStatus(int state)

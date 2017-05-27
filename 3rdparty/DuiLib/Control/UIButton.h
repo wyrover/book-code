@@ -32,6 +32,8 @@ namespace DuiLib
 		void SetForeImage(LPCTSTR pStrImage);
 		LPCTSTR GetHotForeImage();
 		void SetHotForeImage(LPCTSTR pStrImage);
+        LPCTSTR GetPushedForeImage();
+        void SetPushedForeImage(LPCTSTR pStrImage);
 
 		void SetHotBkColor(DWORD dwColor);
 		DWORD GetHotBkColor() const;

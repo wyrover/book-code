@@ -792,7 +792,6 @@ bool CPaintManagerUI::MessageHandler(UINT uMsg, WPARAM wParam, LPARAM lParam, LR
         return true;
     case WM_TIMER:
         {
-            TRACE_SEND_FORMAT("%s", "TIMERÏûÏ¢");
             for( int i = 0; i < m_aTimers.GetSize(); i++ ) {
                 const TIMERINFO* pTimer = static_cast<TIMERINFO*>(m_aTimers[i]);
                 if( pTimer->hWnd == m_hWndPaint && pTimer->uWinTimer == LOWORD(wParam) && pTimer->bKilled == false) {
