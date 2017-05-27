@@ -876,7 +876,7 @@ group "libQREncode"
 
 group "cryptopp"
 
-    project "cryptopp"            
+    project "cryptopp565"            
         kind "StaticLib"            
         characterset "MBCS"
         defines { "_WINDOWS", "USE_PRECOMPILED_HEADERS", "WIN32" }    
@@ -933,6 +933,102 @@ group "cryptopp"
                 "%{THIRD_PARTY}/cryptopp565/validat*.cpp"
                 
             }
+                      
+        filter { "files:**.asm", "platforms:Win32" }            
+            buildmessage "Compiling %{file.relpath}"
+            buildcommands 
+            {
+                "ml -c \"-Fl%{cfg.objdir}/%{file.basename}.lst\" \"-Fo%{cfg.objdir}/%{file.basename}.obj\" \"%{file.relpath}\""
+            }
+            buildoutputs
+            {
+                "%{cfg.objdir}/%{file.basename}.obj"
+            }
+
+        filter { "files:**.asm", "platforms:x64" }            
+            buildmessage "Compiling %{file.relpath}"
+            buildcommands 
+            {
+                "ml64 -c \"-Fl%{cfg.objdir}/%{file.basename}.lst\" \"-Fo%{cfg.objdir}/%{file.basename}.obj\" \"%{file.relpath}\""
+            }
+            buildoutputs
+            {
+                "%{cfg.objdir}/%{file.basename}.obj"
+            }
+          
+
+    project "cryptopp"            
+        kind "StaticLib"            
+        characterset "MBCS"
+        defines { "_WINDOWS", "USE_PRECOMPILED_HEADERS", "WIN32" }                                    
+        
+        filter { "platforms:Win32" }
+           -- defines { "WIN32", "_WINDOWS" }                 
+            files
+            {
+                "%{THIRD_PARTY}/cryptopp/**.h",
+                "%{THIRD_PARTY}/cryptopp/**.c",
+                "%{THIRD_PARTY}/cryptopp/**.cpp",
+                "%{THIRD_PARTY}/cryptopp/**.asm"                    
+            }   
+            removefiles
+            {
+                "%{THIRD_PARTY}/cryptopp/cryptlib_bds.cpp",
+                "%{THIRD_PARTY}/cryptopp/test.cpp",
+                "%{THIRD_PARTY}/cryptopp/fipstest.cpp",
+                "%{THIRD_PARTY}/cryptopp/fipsalgt.cpp",
+                "%{THIRD_PARTY}/cryptopp/regtest.cpp",
+                "%{THIRD_PARTY}/cryptopp/bench*.cpp",
+                "%{THIRD_PARTY}/cryptopp/eccrypto.cpp",
+                "%{THIRD_PARTY}/cryptopp/eprecomp.cpp",                    
+                "%{THIRD_PARTY}/cryptopp/dlltest.cpp",
+                "%{THIRD_PARTY}/cryptopp/datatest.cpp",
+                "%{THIRD_PARTY}/cryptopp/validat*.cpp",
+                "%{THIRD_PARTY}/cryptopp/x64dll.asm",
+                "%{THIRD_PARTY}/cryptopp/x64masm.asm" 
+            }
+            pchsource "%{THIRD_PARTY}/cryptopp/pch.cpp"
+            pchheader "pch.h"   
+            filter "files:%{THIRD_PARTY}/cryptopp/iterhash.cpp"
+                flags { "NoPCH" }
+            filter "files:%{THIRD_PARTY}/cryptopp/dll.cpp"
+                flags { "NoPCH" }
+            filter "files:%{THIRD_PARTY}/cryptopp/adhoc.cpp"
+                flags { "NoPCH" }
+
+        filter "platforms:x64"
+           -- defines { "WIN32", "_WINDOWS", "_USRDLL", "OLSDLL_EXPORTS", "OLS_WIN_RING0" }
+            files
+            {
+                "%{THIRD_PARTY}/cryptopp/**.h",
+                "%{THIRD_PARTY}/cryptopp/**.c",
+                "%{THIRD_PARTY}/cryptopp/**.cpp",
+                "%{THIRD_PARTY}/cryptopp/**.asm"                   
+            }
+            removefiles
+            {
+                "%{THIRD_PARTY}/cryptopp/cryptlib_bds.cpp",
+                "%{THIRD_PARTY}/cryptopp/test.cpp",
+                "%{THIRD_PARTY}/cryptopp/fipstest.cpp",
+                "%{THIRD_PARTY}/cryptopp/fipsalgt.cpp",
+                "%{THIRD_PARTY}/cryptopp/regtest.cpp",
+                "%{THIRD_PARTY}/cryptopp/bench*.cpp",
+                "%{THIRD_PARTY}/cryptopp/eccrypto.cpp",
+                "%{THIRD_PARTY}/cryptopp/eprecomp.cpp",                    
+                "%{THIRD_PARTY}/cryptopp/dlltest.cpp",
+                "%{THIRD_PARTY}/cryptopp/datatest.cpp",
+                "%{THIRD_PARTY}/cryptopp/validat*.cpp"
+                
+            }            
+            pchsource "%{THIRD_PARTY}/cryptopp/pch.cpp"
+            pchheader "pch.h"   
+            filter "files:%{THIRD_PARTY}/cryptopp/iterhash.cpp"
+                flags { "NoPCH" }
+            filter "files:%{THIRD_PARTY}/cryptopp/dll.cpp"
+                flags { "NoPCH" }
+            filter "files:%{THIRD_PARTY}/cryptopp/adhoc.cpp"
+                flags { "NoPCH" } 
+                   
                       
         filter { "files:**.asm", "platforms:Win32" }            
             buildmessage "Compiling %{file.relpath}"
