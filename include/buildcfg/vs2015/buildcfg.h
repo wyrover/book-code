@@ -26,11 +26,19 @@
 #endif
 
 #ifdef CACTUS_DLL
-#pragma message("\t   RSA_CLIENT_SERVER")
+#pragma message("\t   CACTUS_DLL")
 #define VI_FILEDESCRIPTION	"CACTUS_DLL"
 #define VI_INTERNALNAME		"CACTUS_DLL"
 #define VI_ORIGINALFILENAME	"cactus.dll"
 #endif
+
+#ifdef DUILIB_DLL
+#pragma message("\t   DUILIB_DLL")
+#define VI_FILEDESCRIPTION	"DUILIB_DLL"
+#define VI_INTERNALNAME		"DUILIB_DLL"
+#define VI_ORIGINALFILENAME	"duilib.dll"
+#endif
+
 
 
 
