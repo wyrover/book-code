@@ -1104,21 +1104,13 @@ group "xml"
             "include/buildcfg/versionno.rc2",                
             "include/buildcfg/buildcfg.h"
         }             
-        removefiles
+        
+    project "tinyxml2"            
+        kind "StaticLib"      
+        files
         {
-             
-        }
-        includedirs
-        {          
-            
-        }                
-        links
-        {
-             
-        }
-        libdirs
-        {
-            
+            "%{THIRD_PARTY}/tinyxml2/**.h",
+            "%{THIRD_PARTY}/tinyxml2/**.cpp",            
         }
 
 group "libQREncode"

@@ -205,13 +205,13 @@ configurations { "Debug", "Release", "Debug_MT", "Release_MT", "TRACE", "TRACE_M
         links { "tracetool-s-mt.lib" }     
         
     filter { "kind:StaticLib", "configurations:Debug*", "configurations:*_MT"}
-        targetsuffix "-s-mt-gd"    
+        targetsuffix "-mt-gd"    
     filter { "kind:StaticLib", "configurations:Debug*", "configurations:not *_MT"}
-        targetsuffix "-s-gd"
+        targetsuffix "-gd"
     filter { "kind:StaticLib", "configurations:not Debug*", "configurations:*_MT"}
-        targetsuffix "-s-mt"    
+        targetsuffix "-mt"    
     filter { "kind:StaticLib", "configurations:not Debug*", "configurations:not *_MT"}
-        targetsuffix "-s"
+        targetsuffix ""
 
     filter { "kind:SharedLib", "configurations:Debug*", "configurations:*_MT"}
         targetsuffix "-mt-gd"        
