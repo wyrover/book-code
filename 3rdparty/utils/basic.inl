@@ -1,3 +1,7 @@
+#ifndef _LPCBYTE_DEFINED
+#define _LPCBYTE_DEFINED
+typedef const BYTE *LPCBYTE;
+#endif
 
 inline void *heap_xalloc(size_t size)
 {
@@ -307,6 +311,42 @@ inline BYTE hexchar_to_byte(WCHAR ch)
 }
 
 void __cdecl output_message(unsigned int id, ...);
+
+
+struct CAutoCryptContextHandle
+{
+    HCRYPTPROV m_h;
+    CAutoCryptContextHandle(HCRYPTPROV h = NULL) : m_h(h) { };
+    ~CAutoCryptContextHandle() { if( m_h != NULL ) ::CryptReleaseContext(m_h, 0UL); };
+    operator HCRYPTPROV() const { return m_h; };
+};
+
+struct CAutoCryptHashHandle
+{
+    HCRYPTHASH m_h;
+    CAutoCryptHashHandle(HCRYPTHASH h = NULL) : m_h(h) { };
+    ~CAutoCryptHashHandle() { if( m_h != NULL ) ::CryptDestroyHash(m_h); };
+    operator HCRYPTHASH() const { return m_h; };
+};
+
+
+
+inline BOOL MD5Hash(LPCSTR data, LPTSTR pstrResult)
+{
+    CAutoCryptContextHandle m_hCrypt;
+    CAutoCryptHashHandle hHash;
+    if( !::CryptAcquireContext(&m_hCrypt.m_h, NULL, NULL, PROV_RSA_FULL, CRYPT_VERIFYCONTEXT | CRYPT_MACHINE_KEYSET) ) 
+        return FALSE;
+
+    if( !::CryptCreateHash(m_hCrypt, CALG_MD5, 0, 0, &hHash.m_h) ) return FALSE;
+    SIZE_T len = strlen(data);
+    if( !::CryptHashData(hHash, (LPCBYTE) data, (DWORD) len, 0) ) return FALSE;
+    BYTE bHash[16];
+    DWORD dwHashLen = 16;
+    if( !::CryptGetHashParam(hHash, HP_HASHVAL, bHash, &dwHashLen, 0) ) return FALSE;
+    for( int i = 0; i < 16; i++ ) ::wsprintf(pstrResult + (i * 2), _T("%02x"), bHash[i]);
+    return TRUE;
+}
 
 
 namespace winsparkle

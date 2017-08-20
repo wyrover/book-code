@@ -3,6 +3,7 @@
 
 #include <Windows.h>
 #include <tchar.h>
+#include <WinCrypt.h>
 #include <stdlib.h>
 #include <string>
 #include <map>
@@ -11,6 +12,8 @@
 
 #define ARRAY_SIZE(A) (sizeof(A)/sizeof(*A))
 typedef std::basic_string<TCHAR> tstring;
+
+
 
 #include "basic.inl"
 
