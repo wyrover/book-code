@@ -1,0 +1,37 @@
+//-----------------------------------------------------------------
+// Stunt Jumper Resources
+// RC Source - StuntJumper.rc
+//-----------------------------------------------------------------
+
+//-----------------------------------------------------------------
+// Include Files
+//-----------------------------------------------------------------
+#include "Resource.h"
+
+//-----------------------------------------------------------------
+// Icons
+//-----------------------------------------------------------------
+IDI_STUNTJUMPER       ICON         "Res\\StuntJumper.ico"
+IDI_STUNTJUMPER_SM    ICON         "Res\\StuntJumper_sm.ico"
+
+//-----------------------------------------------------------------
+// Bitmaps
+//-----------------------------------------------------------------
+IDB_SPLASH            BITMAP       "Res\\Splash.bmp"
+IDB_BG_ROAD           BITMAP       "Res\\Background_Road.bmp"
+IDB_BG_TREES          BITMAP       "Res\\Background_Trees.bmp"
+IDB_BG_MOUNTAINS      BITMAP       "Res\\Background_Mountains.bmp"
+IDB_BG_SKY            BITMAP       "Res\\Background_Sky.bmp"
+IDB_JUMPER            BITMAP       "Res\\Jumper.bmp"
+IDB_BUS               BITMAP       "Res\\Bus.bmp"
+IDB_RAMPLEFT          BITMAP       "Res\\RampLeft.bmp"
+IDB_RAMPRIGHT         BITMAP       "Res\\RampRight.bmp"
+IDB_GAMEOVER          BITMAP       "Res\\GameOver.bmp"
+
+//-----------------------------------------------------------------
+// Wave Sounds
+//-----------------------------------------------------------------
+IDW_ENGINE            WAVE         "Res\\Engine.wav"
+IDW_BRAKES            WAVE         "Res\\Brakes.wav"
+IDW_CELEBRATION       WAVE         "Res\\Celebration.wav"
+IDW_CRASH             WAVE         "Res\\Crash.wav"

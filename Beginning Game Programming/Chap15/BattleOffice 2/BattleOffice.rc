@@ -1,0 +1,36 @@
+//-----------------------------------------------------------------
+// Battle Office 2 Resources
+// RC Source - BattleOffice.rc
+//-----------------------------------------------------------------
+
+//-----------------------------------------------------------------
+// Include Files
+//-----------------------------------------------------------------
+#include "Resource.h"
+
+//-----------------------------------------------------------------
+// Icons
+//-----------------------------------------------------------------
+IDI_BATTLEOFFICE    ICON         "Res\\BattleOffice.ico"
+IDI_BATTLEOFFICE_SM ICON         "Res\\BattleOffice_sm.ico"
+
+//-----------------------------------------------------------------
+// Bitmaps
+//-----------------------------------------------------------------
+IDB_OFFICE          BITMAP       "Res\\Office.bmp"
+IDB_TARGET          BITMAP       "Res\\Target.bmp"
+IDB_POW             BITMAP       "Res\\Pow.bmp"
+IDB_GUY1            BITMAP       "Res\\Guy1.bmp"
+IDB_GUY2            BITMAP       "Res\\Guy2.bmp"
+IDB_GUY3            BITMAP       "Res\\Guy3.bmp"
+IDB_GUY4            BITMAP       "Res\\Guy4.bmp"
+IDB_GUY5            BITMAP       "Res\\Guy5.bmp"
+IDB_SMALLGUY        BITMAP       "Res\\SmallGuy.bmp"
+IDB_GAMEOVER        BITMAP       "Res\\GameOver.bmp"
+
+//-----------------------------------------------------------------
+// Wave Sounds
+//-----------------------------------------------------------------
+IDW_WHACK           WAVE         "Res\\Whack.wav"
+IDW_TAUNT           WAVE         "Res\\Taunt.wav"
+IDW_BOO             WAVE         "Res\\Boo.wav"

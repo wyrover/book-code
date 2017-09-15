@@ -1,0 +1,43 @@
+//-----------------------------------------------------------------
+// Space Out Resources
+// RC Source - SpaceOut.rc
+//-----------------------------------------------------------------
+
+//-----------------------------------------------------------------
+// Include Files
+//-----------------------------------------------------------------
+#include "Resource.h"
+
+//-----------------------------------------------------------------
+// Icons
+//-----------------------------------------------------------------
+IDI_SPACEOUT          ICON         "Res\\SpaceOut.ico"
+IDI_SPACEOUT_SM       ICON         "Res\\SpaceOut_sm.ico"
+
+//-----------------------------------------------------------------
+// Bitmaps
+//-----------------------------------------------------------------
+IDB_DESERT            BITMAP       "Res\\Desert.bmp"
+IDB_CAR               BITMAP       "Res\\Car.bmp"
+IDB_SMCAR             BITMAP       "Res\\SmCar.bmp"
+IDB_MISSILE           BITMAP       "Res\\Missile.bmp"
+IDB_BLOBBO            BITMAP       "Res\\Blobbo.bmp"
+IDB_BMISSILE          BITMAP       "Res\\BMissile.bmp"
+IDB_JELLY             BITMAP       "Res\\Jelly.bmp"
+IDB_JMISSILE          BITMAP       "Res\\JMissile.bmp"
+IDB_TIMMY             BITMAP       "Res\\Timmy.bmp"
+IDB_TMISSILE          BITMAP       "Res\\TMissile.bmp"
+IDB_SMEXPLOSION       BITMAP       "Res\\SmExplosion.bmp"
+IDB_LGEXPLOSION       BITMAP       "Res\\LgExplosion.bmp"
+IDB_GAMEOVER          BITMAP       "Res\\GameOver.bmp"
+
+//-----------------------------------------------------------------
+// Wave Sounds
+//-----------------------------------------------------------------
+IDW_MISSILE           WAVE         "Res\\Missile.wav"
+IDW_BMISSILE          WAVE         "Res\\BMissile.wav"
+IDW_JMISSILE          WAVE         "Res\\JMissile.wav"
+IDW_TMISSILE          WAVE         "Res\\TMissile.wav"
+IDW_SMEXPLODE         WAVE         "Res\\SmExplode.wav"
+IDW_LGEXPLODE         WAVE         "Res\\LgExplode.wav"
+IDW_GAMEOVER          WAVE         "Res\\GameOver.wav"

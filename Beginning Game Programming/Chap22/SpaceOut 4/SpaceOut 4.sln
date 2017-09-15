@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SpaceOut 4", "SpaceOut 4.vcproj", "{E42B58AA-B6A2-458A-B121-1891F786FC87}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{E42B58AA-B6A2-458A-B121-1891F786FC87}.Debug.ActiveCfg = Debug|Win32
+		{E42B58AA-B6A2-458A-B121-1891F786FC87}.Debug.Build.0 = Debug|Win32
+		{E42B58AA-B6A2-458A-B121-1891F786FC87}.Release.ActiveCfg = Release|Win32
+		{E42B58AA-B6A2-458A-B121-1891F786FC87}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

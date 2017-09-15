@@ -1,0 +1,33 @@
+//-----------------------------------------------------------------
+// Meteor Defense Resources
+// RC Source - MeteorDefense.rc
+//-----------------------------------------------------------------
+
+//-----------------------------------------------------------------
+// Include Files
+//-----------------------------------------------------------------
+#include "Resource.h"
+
+//-----------------------------------------------------------------
+// Icons
+//-----------------------------------------------------------------
+IDI_METEORDEFENSE     ICON         "Res\\MeteorDefense.ico"
+IDI_METEORDEFENSE_SM  ICON         "Res\\MeteorDefense_sm.ico"
+
+//-----------------------------------------------------------------
+// Bitmaps
+//-----------------------------------------------------------------
+IDB_GROUND            BITMAP       "Res\\Ground.bmp"
+IDB_TARGET            BITMAP       "Res\\Target.bmp"
+IDB_CITY              BITMAP       "Res\\City.bmp"
+IDB_METEOR            BITMAP       "Res\\Meteor.bmp"
+IDB_MISSILE           BITMAP       "Res\\Missile.bmp"
+IDB_EXPLOSION         BITMAP       "Res\\Explosion.bmp"
+IDB_GAMEOVER          BITMAP       "Res\\GameOver.bmp"
+
+//-----------------------------------------------------------------
+// Wave Sounds
+//-----------------------------------------------------------------
+IDW_FIRE              WAVE         "Res\\Fire.wav"
+IDW_EXPLODE           WAVE         "Res\\Explode.wav"
+IDW_BIGEXPLODE        WAVE         "Res\\BigExplode.wav"

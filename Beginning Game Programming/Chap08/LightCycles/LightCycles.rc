@@ -1,0 +1,28 @@
+//-----------------------------------------------------------------
+// Light Cycles Resources
+// RC Source - LightCycles.rc
+//-----------------------------------------------------------------
+
+//-----------------------------------------------------------------
+// Include Files
+//-----------------------------------------------------------------
+#include "Resource.h"
+
+//-----------------------------------------------------------------
+// Icons
+//-----------------------------------------------------------------
+IDI_LIGHTCYCLES     ICON         "Res\\LightCycles.ico"
+IDI_LIGHTCYCLES_SM  ICON         "Res\\LightCycles_sm.ico"
+
+//-----------------------------------------------------------------
+// Bitmaps
+//-----------------------------------------------------------------
+IDB_BACKGROUND      BITMAP       "Res\\Background.bmp"
+IDB_CYCLEBLUE_0     BITMAP       "Res\\CycleBlue_0.bmp"
+IDB_CYCLEBLUE_90    BITMAP       "Res\\CycleBlue_90.bmp"
+IDB_CYCLEBLUE_180   BITMAP       "Res\\CycleBlue_180.bmp"
+IDB_CYCLEBLUE_270   BITMAP       "Res\\CycleBlue_270.bmp"
+IDB_CYCLEORANGE_0   BITMAP       "Res\\CycleOrange_0.bmp"
+IDB_CYCLEORANGE_90  BITMAP       "Res\\CycleOrange_90.bmp"
+IDB_CYCLEORANGE_180 BITMAP       "Res\\CycleOrange_180.bmp"
+IDB_CYCLEORANGE_270 BITMAP       "Res\\CycleOrange_270.bmp"

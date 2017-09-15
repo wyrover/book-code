@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LightCycles", "LightCycles.vcproj", "{F92344C1-A1D9-48EA-8EB0-E9A4B39EC612}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{F92344C1-A1D9-48EA-8EB0-E9A4B39EC612}.Debug.ActiveCfg = Debug|Win32
+		{F92344C1-A1D9-48EA-8EB0-E9A4B39EC612}.Debug.Build.0 = Debug|Win32
+		{F92344C1-A1D9-48EA-8EB0-E9A4B39EC612}.Release.ActiveCfg = Release|Win32
+		{F92344C1-A1D9-48EA-8EB0-E9A4B39EC612}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

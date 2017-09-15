@@ -1,0 +1,26 @@
+//-----------------------------------------------------------------
+// Henway Resources
+// RC Source - Henway.rc
+//-----------------------------------------------------------------
+
+//-----------------------------------------------------------------
+// Include Files
+//-----------------------------------------------------------------
+#include "Resource.h"
+
+//-----------------------------------------------------------------
+// Icons
+//-----------------------------------------------------------------
+IDI_HENWAY         ICON         "Res\\Henway.ico"
+IDI_HENWAY_SM      ICON         "Res\\Henway_sm.ico"
+
+//-----------------------------------------------------------------
+// Bitmaps
+//-----------------------------------------------------------------
+IDB_HIGHWAY        BITMAP       "Res\\Highway.bmp"
+IDB_CHICKEN        BITMAP       "Res\\Chicken.bmp"
+IDB_CAR1           BITMAP       "Res\\Car1.bmp"
+IDB_CAR2           BITMAP       "Res\\Car2.bmp"
+IDB_CAR3           BITMAP       "Res\\Car3.bmp"
+IDB_CAR4           BITMAP       "Res\\Car4.bmp"
+IDB_CHICKENHEAD    BITMAP       "Res\\ChickenHead.bmp"

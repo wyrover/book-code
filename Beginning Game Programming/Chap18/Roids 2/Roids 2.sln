@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Roids 2", "Roids 2.vcproj", "{2C35027B-3C5A-4C3B-816B-BE34B8DBD030}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{2C35027B-3C5A-4C3B-816B-BE34B8DBD030}.Debug.ActiveCfg = Debug|Win32
+		{2C35027B-3C5A-4C3B-816B-BE34B8DBD030}.Debug.Build.0 = Debug|Win32
+		{2C35027B-3C5A-4C3B-816B-BE34B8DBD030}.Release.ActiveCfg = Release|Win32
+		{2C35027B-3C5A-4C3B-816B-BE34B8DBD030}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

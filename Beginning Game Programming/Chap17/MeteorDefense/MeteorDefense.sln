@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MeteorDefense", "MeteorDefense.vcproj", "{CD7C3A27-2AD1-4352-A65C-A57769AA7E0C}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{CD7C3A27-2AD1-4352-A65C-A57769AA7E0C}.Debug.ActiveCfg = Debug|Win32
+		{CD7C3A27-2AD1-4352-A65C-A57769AA7E0C}.Debug.Build.0 = Debug|Win32
+		{CD7C3A27-2AD1-4352-A65C-A57769AA7E0C}.Release.ActiveCfg = Release|Win32
+		{CD7C3A27-2AD1-4352-A65C-A57769AA7E0C}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal
