@@ -188,10 +188,11 @@ configurations { "Debug", "Release", "Debug_MT", "Release_MT", "TRACE", "TRACE_M
         optimize "Speed"  
         buildoptions { "/Od" } 
         includedirs
-        {            
-            "%{WORK_PATH}/3rdparty"    
+        {           
+            "%{WORK_PATH}/3rdparty",
+            "%{BOOK_CODE_PATH}/3rdparty"
         }  
-        links { "tracetool-s.lib" }         
+        links { "tracetool.lib" }         
 
     filter "configurations:TRACE_MT"
         defines { "NDEBUG", "TRACE_TOOL" }
@@ -200,9 +201,10 @@ configurations { "Debug", "Release", "Debug_MT", "Release_MT", "TRACE", "TRACE_M
         buildoptions { "/Od" }  
         includedirs
         {            
-            "%{WORK_PATH}/3rdparty"    
+            "%{WORK_PATH}/3rdparty",
+            "%{BOOK_CODE_PATH}/3rdparty"
         }    
-        links { "tracetool-s-mt.lib" }     
+        links { "tracetool-mt.lib" }     
         
     filter { "kind:StaticLib", "configurations:Debug*", "configurations:*_MT"}
         targetsuffix "-mt-gd"    
@@ -372,13 +374,20 @@ configurations { "Debug", "Release", "Debug_MT", "Release_MT", "TRACE", "TRACE_M
         kind "WindowedApp"                             
         defines {  }
         flags { "MFC", "WinMain" }
-        removeconfigurations "*_MT"              
+        removeconfigurations "*_MT"  
+        vpaths 
+        { 
+            ["Header Files"] = {"**.h", "**.hpp"},
+            ["Source Files"] = {"**.c", "**.cpp", "**.cc"},
+            ["Resource Files"] = {"**.rc", "**.rc2"}
+        }
         files
         {                                  
             dir .. "/%{prj.name}/**.h",
             dir .. "/%{prj.name}/**.cpp", 
             dir .. "/%{prj.name}/**.c", 
-            dir .. "/%{prj.name}/**.rc" 
+            dir .. "/%{prj.name}/**.rc",
+            dir .. "/%{prj.name}/**.rc2" 
         }
         removefiles
         {               
@@ -400,12 +409,19 @@ configurations { "Debug", "Release", "Debug_MT", "Release_MT", "TRACE", "TRACE_M
         if mbcs == "mbcs" then
             characterset "MBCS"
         end 
+        vpaths 
+        { 
+            ["Header Files"] = {"**.h", "**.hpp"},
+            ["Source Files"] = {"**.c", "**.cpp", "**.cc"},
+            ["Resource Files"] = {"**.rc", "**.rc2"}
+        }
         files
         {                                  
             dir .. "/%{prj.name}/**.h",
             dir .. "/%{prj.name}/**.cpp", 
             dir .. "/%{prj.name}/**.c", 
-            dir .. "/%{prj.name}/**.rc" 
+            dir .. "/%{prj.name}/**.rc",
+            dir .. "/%{prj.name}/**.rc2"
         }
         removefiles
         {               
