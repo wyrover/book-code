@@ -496,7 +496,8 @@ configurations { "Debug", "Release", "Debug_MT", "Release_MT", "TRACE", "TRACE_M
         includedirs
         {               
             "3rdparty",   
-            "3rdparty/wtl"
+            "3rdparty/wtl",
+            "%{BOOK_CODE_PATH}/3rdparty/wtl"
         }        
         has_stdafx(name, dir)
     end
@@ -510,6 +511,7 @@ configurations { "Debug", "Release", "Debug_MT", "Release_MT", "TRACE", "TRACE_M
             dir .. "/%{prj.name}/**.h",
             dir .. "/%{prj.name}/**.cpp", 
             dir .. "/%{prj.name}/**.c", 
+            dir .. "/%{prj.name}/**.def", 
             dir .. "/%{prj.name}/**.rc" 
         }
         removefiles
