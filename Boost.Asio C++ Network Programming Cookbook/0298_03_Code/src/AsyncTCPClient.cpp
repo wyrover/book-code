@@ -6,7 +6,9 @@
 // doc/html/boost_asio/reference/basic_stream_socket/
 // cancel/overload1.html" for details.
 #ifdef BOOST_OS_WINDOWS
+#ifndef _WIN32_WINNT
 #define _WIN32_WINNT 0x0501
+#endif /* _WIN32_WINNT */
 
 #if _WIN32_WINNT <= 0x0502 // Windows Server 2003 or earlier.
 	#define BOOST_ASIO_DISABLE_IOCP
@@ -191,7 +193,7 @@ session->m_response_buf,
 private:
 	void onRequestComplete(std::shared_ptr<Session> session) {
 		// Shutting down the connection. This method may
-		// fail in case socket is not connected. We don’t care 
+		// fail in case socket is not connected. We donâ€™t care 
 		// about the error code if this function fails.
 		boost::system::error_code ignored_ec;
 
@@ -256,7 +258,7 @@ int main()
 	try {
 		AsyncTCPClient client;
 
-		// Here we emulate the user’s behavior.
+		// Here we emulate the userâ€™s behavior.
 
 		// User initiates a request with id 1.
 		client.emulateLongComputationOp(10, "127.0.0.1", 3333,
