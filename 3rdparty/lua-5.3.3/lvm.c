@@ -579,8 +579,10 @@ void luaV_concat(lua_State *L, int total)
             for (n = 1; n < total && tostring(L, top - n - 1); n++) {
                 size_t l = vslen(top - n - 1);
 
-                if (l >= (MAX_SIZE / sizeof(char)) - tl)
+                if (l_unlikely(l >= (MAX_SIZE/sizeof(char)) - tl)) {
+                    L->top = top - total;  /* pop strings to avoid wasting stack */
                     luaG_runerror(L, "string length overflow");
+                }
 
                 tl += l;
             }
@@ -598,7 +600,7 @@ void luaV_concat(lua_State *L, int total)
         }
 
         total -= n - 1; /* got 'n' strings to create 1 new */
-        L->top -= n - 1; /* popped 'n' strings and pushed one */
+        L->top = top - (n - 1);  /* popped 'n' strings and pushed one */
     } while (total > 1);  /* repeat until only 1 result left */
 }
 
