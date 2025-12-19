@@ -33,8 +33,6 @@ typedef struct {
     uint32_t table1[256]; /**< Table of big-endian indices from HUFF record data1 */
     uint32_t mincode_table[HUFF_CODETABLE_SIZE]; /**< Table of big-endian mincodes from HUFF record data2 */
     uint32_t maxcode_table[HUFF_CODETABLE_SIZE]; /**< Table of big-endian maxcodes from HUFF record data2 */
-    uint32_t mincode_table[33]; /**< Table of big-endian mincodes from HUFF record data2 */
-    uint32_t maxcode_table[33]; /**< Table of big-endian maxcodes from HUFF record data2 */
     uint16_t *symbol_offsets; /**< Index of symbol offsets parsed from CDIC records (index_count entries) */
     unsigned char **symbols; /**< Array of pointers to start of symbols data in each CDIC record (index = number of CDIC record) */
 } MOBIHuffCdic;
